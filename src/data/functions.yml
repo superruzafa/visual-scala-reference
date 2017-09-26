@@ -9,7 +9,7 @@
   signature: "collect[B](pf: PartialFunction[A, B]): Collection[B]"
   description:
     en: Builds a new collection by applying a partial function to all elements of this collection on which the function is defined.
-    es:
+    es: Construye una nueva colección aplicando una función parcial a todos los elementos de esta colección para los que dicha función está definida.
 
 - name: collectFirst
   signature: "collectFirst[B](pf: PartialFunction[A, B]): Option[B]"
