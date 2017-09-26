@@ -19,21 +19,33 @@
           <h2>filter</h2>
           <p><code>filter(p: (A) ⇒ Boolean): Collection[A]</code></p>
           <p>Selects all elements of this traversable collection which satisfy a predicate.</p>
+          <figure>
+            <img src="images/filter.png" alt="filter" />
+          </figure>
         </article>
         <article id="#flatMap">
           <h2>flatMap</h2>
-          <p><code>flatMap[B](p: (A) ⇒ Collection[B]): Collection[B]</code></p>
+          <p><code>flatMap[B](f: (A) ⇒ Collection[B]): Collection[B]</code></p>
           <p>Builds a new collection by applying a function to all elements of this collection and using the elements of the resulting collections.</p>
+          <figure>
+            <img src="images/flatMap.png" alt="flatMap" />
+          </figure>
         </article>
         <article id="#map">
           <h2>map</h2>
-          <p><code>map[B](p: (A) ⇒ B): Collection[B]</code></p>
+          <p><code>map[B](f: (A) ⇒ B): Collection[B]</code></p>
           <p>Builds a new collection by applying a function to all elements of this collection.</p>
+          <figure>
+            <img src="images/map.png" alt="map" />
+          </figure>
         </article>
         <article id="#zip">
           <h2>zip</h2>
           <p><code>zip[B](that: GenIterable[B]): Collection[A, B]</code></p>
           <p>Returns a collection formed from this one and another iterable collection by combining corresponding elements in pairs.</p>
+          <figure>
+            <img src="images/zip.png" alt="zip" />
+          </figure>
         </article>
     </sectio>
   </div>

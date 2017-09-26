@@ -1,0 +1,30 @@
+\tikzstyle{cell} = [
+  draw,
+  line width = 0.3mm,
+  minimum size = 1cm,
+  outer sep = 0,
+  fill = white
+]
+
+\tikzstyle{collection} = [
+  inner sep = 0,
+  column sep = -0.3mm,
+  nodes = cell
+]
+
+\tikzstyle{ellipsis} = [
+  loosely dash dot,
+  line width = 0.15mm,
+  minimum width = 1.5cm,
+  node contents = $\ldots$,
+  fill = none
+]
+
+\newcommand{\ellipsis}{ \node [ellipsis]; }
+
+\tikzstyle{arrow} = [-latex]
+
+\tikzstyle{arrow label} = [
+  scale = 0.8,
+  fill = white
+]

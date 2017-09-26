@@ -6,13 +6,13 @@
     es: Selecciona todos los elementos de la colección que satisfacen un predicado.
 
 - name: flatMap
-  signature: "flatMap[B](p: (A) ⇒ Collection[B]): Collection[B]"
+  signature: "flatMap[B](f: (A) ⇒ Collection[B]): Collection[B]"
   description:
     en: Builds a new collection by applying a function to all elements of this collection and using the elements of the resulting collections.
     es: Construye una nueva colección tras aplicar una función a todos los elementos de esta colección. La función devuelve una colección de elementos.
 
 - name: map
-  signature: "map[B](p: (A) ⇒ B): Collection[B]"
+  signature: "map[B](f: (A) ⇒ B): Collection[B]"
   description:
     en: Builds a new collection by applying a function to all elements of this collection.
     es: Construye una nueva colección aplicando una función a todos los elementos de esta colección.
