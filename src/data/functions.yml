@@ -1,0 +1,24 @@
+---
+- name: filter
+  signature: "filter(p: (A) ⇒ Boolean): Collection[A]"
+  description:
+    en: Selects all elements of this traversable collection which satisfy a predicate.
+    es: Selecciona todos los elementos de la colección que satisfacen un predicado.
+
+- name: flatMap
+  signature: "flatMap[B](p: (A) ⇒ Collection[B]): Collection[B]"
+  description:
+    en: Builds a new collection by applying a function to all elements of this collection and using the elements of the resulting collections.
+    es: Construye una nueva colección tras aplicar una función a todos los elementos de esta colección. La función devuelve una colección de elementos.
+
+- name: map
+  signature: "map[B](p: (A) ⇒ B): Collection[B]"
+  description:
+    en: Builds a new collection by applying a function to all elements of this collection.
+    es: Construye una nueva colección aplicando una función a todos los elementos de esta colección.
+
+- name: zip
+  signature: "zip[B](that: GenIterable[B]): Collection[A, B]"
+  description:
+    en: Returns a collection formed from this one and another iterable collection by combining corresponding elements in pairs.
+    es: Devuelve una colección formada por los elementos de dos colecciones distintas combinados en parejas.

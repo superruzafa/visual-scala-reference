@@ -5,5 +5,19 @@
 </head>
 <body>
   <h1>Visual Scala Reference ({{ language }})</h1>
+  <div>
+    <aside>
+      <ul>
+        {{# functions }}
+          <li><a href="#{{ name }}" title="{{ name }}">{{ name }}</a></li>
+        {{/ functions }}
+      </ul>
+    </aside>
+    <section>
+      {{# functions }}
+        {{> function }}
+      {{/ functions }}
+    </sectio>
+  </div>
 </body>
 </html>
