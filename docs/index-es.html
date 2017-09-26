@@ -103,7 +103,7 @@
     <section>
         <article id="aggregate">
           <h2>aggregate</h2>
-          <p></p>
+          <p>   </p>
           <p><code>aggregate[B](z: ⇒ B)(seqop: (B, A) ⇒ B, combop: (B, B) ⇒ B): B</code></p>
           <figure>
             <img src="images/aggregate.png" alt="aggregate" />
@@ -111,7 +111,7 @@
         </article>
         <article id="collect">
           <h2>collect</h2>
-          <p>Builds a new collection by applying a partial function to all elements of this collection on which the function is defined.</p>
+          <p>  Builds a new collection by applying a partial function to all elements of this collection on which the function is defined. </p>
           <p><code>collect[B](pf: PartialFunction[A, B]): Collection[B]</code></p>
           <figure>
             <img src="images/collect.png" alt="collect" />
@@ -119,7 +119,7 @@
         </article>
         <article id="collectFirst">
           <h2>collectFirst</h2>
-          <p>Finds the first element of the traversable or iterator for which the given partial function is defined, and applies the partial function to it.</p>
+          <p>  Finds the first element of the traversable or iterator for which the given partial function is defined, and applies the partial function to it. </p>
           <p><code>collectFirst[B](pf: PartialFunction[A, B]): Option[B]</code></p>
           <figure>
             <img src="images/collectFirst.png" alt="collectFirst" />
@@ -127,7 +127,7 @@
         </article>
         <article id="combinations">
           <h2>combinations</h2>
-          <p>Iterates over combinations.</p>
+          <p>  Iterates over combinations. </p>
           <p><code>combinations(n: Int): Iterator[Collection[A]]</code></p>
           <figure>
             <img src="images/combinations.png" alt="combinations" />
@@ -135,7 +135,7 @@
         </article>
         <article id="contains">
           <h2>contains</h2>
-          <p>Tests whether this sequence contains a given value as an element.</p>
+          <p>  Tests whether this sequence contains a given value as an element. </p>
           <p><code>contains[A1 &gt;: A](elem: A1): Boolean</code></p>
           <figure>
             <img src="images/contains.png" alt="contains" />
@@ -143,7 +143,7 @@
         </article>
         <article id="containsSlice">
           <h2>containsSlice</h2>
-          <p>Tests whether this sequence contains a given sequence as a slice.</p>
+          <p>  Tests whether this sequence contains a given sequence as a slice. </p>
           <p><code>containsSlice[B](that: GenSeq[B]): Boolean</code></p>
           <figure>
             <img src="images/containsSlice.png" alt="containsSlice" />
@@ -151,7 +151,7 @@
         </article>
         <article id="count">
           <h2>count</h2>
-          <p>Counts the number of elements in the traversable or tierator which satisfy a predicate.</p>
+          <p>  Counts the number of elements in the traversable or tierator which satisfy a predicate. </p>
           <p><code>count(p: (A) ⇒ Boolean): Int</code></p>
           <figure>
             <img src="images/count.png" alt="count" />
@@ -159,7 +159,7 @@
         </article>
         <article id="diff">
           <h2>diff</h2>
-          <p>Computes the multiset difference between this and another collection.</p>
+          <p>  Computes the multiset difference between this and another collection. </p>
           <p><code>diff(that: Seq[A]): Collection[A]</code></p>
           <figure>
             <img src="images/diff.png" alt="diff" />
@@ -167,7 +167,7 @@
         </article>
         <article id="distinct">
           <h2>distinct</h2>
-          <p>Builds a new collection from this one without any duplicate elements.</p>
+          <p>  Builds a new collection from this one without any duplicate elements. </p>
           <p><code>distinct: Collection[A]</code></p>
           <figure>
             <img src="images/distinct.png" alt="distinct" />
@@ -175,7 +175,7 @@
         </article>
         <article id="drop">
           <h2>drop</h2>
-          <p>Selects all elements except the first &lt;var&gt;n&lt;/var&gt; ones.</p>
+          <p>  Selects all elements except the first <var>n</var> ones. </p>
           <p><code>drop(n: Int): Collection[A]</code></p>
           <figure>
             <img src="images/drop.png" alt="drop" />
@@ -183,7 +183,7 @@
         </article>
         <article id="dropRight">
           <h2>dropRight</h2>
-          <p>Select all elements except last &lt;var&gt;n&lt;/var&gt; ones.</p>
+          <p>  Select all elements except last <var>n</var> ones. </p>
           <p><code>dropRight(n: Int): Collection[A]</code></p>
           <figure>
             <img src="images/dropRight.png" alt="dropRight" />
@@ -191,7 +191,7 @@
         </article>
         <article id="dropWhile">
           <h2>dropWhile</h2>
-          <p>Drops longest prefix of elements that satisfy a predicate.</p>
+          <p>  Drops longest prefix of elements that satisfy a predicate. </p>
           <p><code>dropWhile(p: (A) ⇒ Boolean): Collection[A]</code></p>
           <figure>
             <img src="images/dropWhile.png" alt="dropWhile" />
@@ -199,7 +199,7 @@
         </article>
         <article id="endsWith">
           <h2>endsWith</h2>
-          <p>Tests whether this collection ends with the given sequence.</p>
+          <p>  Tests whether this collection ends with the given sequence. </p>
           <p><code>endsWith[B](that: GenSeq[B]): Boolean</code></p>
           <figure>
             <img src="images/endsWith.png" alt="endsWith" />
@@ -207,7 +207,7 @@
         </article>
         <article id="exists">
           <h2>exists</h2>
-          <p>Tests whether a predicate holds for at least one element of this collection.</p>
+          <p>  Tests whether a predicate holds for at least one element of this collection. </p>
           <p><code>exists(p: (A) ⇒ Boolean): Boolean</code></p>
           <figure>
             <img src="images/exists.png" alt="exists" />
@@ -215,7 +215,7 @@
         </article>
         <article id="filter">
           <h2>filter</h2>
-          <p>Selecciona todos los elementos de la colección que satisfacen un predicado.</p>
+          <p>Selecciona todos los elementos de la colección que satisfacen un predicado. </p>
           <p><code>filter(p: (A) ⇒ Boolean): Collection[A]</code></p>
           <figure>
             <img src="images/filter.png" alt="filter" />
@@ -223,7 +223,7 @@
         </article>
         <article id="filterNot">
           <h2>filterNot</h2>
-          <p>Selects all elements of this collection which do not satisfy a predicate.</p>
+          <p>  Selects all elements of this collection which do not satisfy a predicate. </p>
           <p><code>filterNot(p: (A) ⇒ Boolean): Collection[A]</code></p>
           <figure>
             <img src="images/filterNot.png" alt="filterNot" />
@@ -231,7 +231,7 @@
         </article>
         <article id="find">
           <h2>find</h2>
-          <p>Finds the first element of the collection satisfying a predicate, if any.</p>
+          <p>  Finds the first element of the collection satisfying a predicate, if any. </p>
           <p><code>find(p: (A) ⇒ Boolean): Option[A]</code></p>
           <figure>
             <img src="images/find.png" alt="find" />
@@ -239,7 +239,7 @@
         </article>
         <article id="flatMap">
           <h2>flatMap</h2>
-          <p>Construye una nueva colección tras aplicar una función a todos los elementos de esta colección. La función devuelve una colección de elementos.</p>
+          <p>Construye una nueva colección tras aplicar una función a todos los elementos de esta colección. La función devuelve una colección de elementos. </p>
           <p><code>flatMap[B](f: (A) ⇒ Collection[B]): Collection[B]</code></p>
           <figure>
             <img src="images/flatMap.png" alt="flatMap" />
@@ -247,7 +247,7 @@
         </article>
         <article id="flatten">
           <h2>flatten</h2>
-          <p>Converts this collection of collections into a collection formed by the elements of the inner collections.</p>
+          <p>  Converts this collection of collections into a collection formed by the elements of the inner collections. </p>
           <p><code>flatten[B]: Collection[B]</code></p>
           <figure>
             <img src="images/flatten.png" alt="flatten" />
@@ -255,7 +255,7 @@
         </article>
         <article id="fold">
           <h2>fold</h2>
-          <p>Folds the elements of this collection using the specified associative binary operator.</p>
+          <p>  Folds the elements of this collection using the specified associative binary operator. </p>
           <p><code>fold[A1 &gt;: A](z: A1)(op: (A1, A1) ⇒ A1): A1</code></p>
           <figure>
             <img src="images/fold.png" alt="fold" />
@@ -263,7 +263,7 @@
         </article>
         <article id="foldLeft">
           <h2>foldLeft</h2>
-          <p>Applies a binary operator to a start value and all elements of this collection, going left to right.</p>
+          <p>  Applies a binary operator to a start value and all elements of this collection, going left to right. </p>
           <p><code>foldLeft[B](z: B)(op: (B, A) ⇒ B): B</code></p>
           <figure>
             <img src="images/foldLeft.png" alt="foldLeft" />
@@ -271,7 +271,7 @@
         </article>
         <article id="foldRight">
           <h2>foldRight</h2>
-          <p>Applies a binary operator to a start value and all elements of this collection, going right to left.</p>
+          <p>  Applies a binary operator to a start value and all elements of this collection, going right to left. </p>
           <p><code>foldLeft[B](z: B)(op: (A, B) ⇒ B): B</code></p>
           <figure>
             <img src="images/foldRight.png" alt="foldRight" />
@@ -279,7 +279,7 @@
         </article>
         <article id="forall">
           <h2>forall</h2>
-          <p>Tests whether a predicate holds for all elements of this collection.</p>
+          <p>  Tests whether a predicate holds for all elements of this collection. </p>
           <p><code>forall(p: (A) ⇒ Boolean): Boolean</code></p>
           <figure>
             <img src="images/forall.png" alt="forall" />
@@ -287,7 +287,7 @@
         </article>
         <article id="foreach">
           <h2>foreach</h2>
-          <p>Applies a function &lt;var&gt;f&lt;/var&gt; to all elements of this collection.</p>
+          <p>  Applies a function <var>f</var> to all elements of this collection. </p>
           <p><code>foreach(f: (A) ⇒ Unit): Unit</code></p>
           <figure>
             <img src="images/foreach.png" alt="foreach" />
@@ -295,7 +295,7 @@
         </article>
         <article id="groupBy">
           <h2>groupBy</h2>
-          <p>Partitions this collection into a map of collections according to some discriminator function.</p>
+          <p>  Partitions this collection into a map of collections according to some discriminator function. </p>
           <p><code>groupBy[K](f: (A) ⇒ K): Map[K, Collection[A]]</code></p>
           <figure>
             <img src="images/groupBy.png" alt="groupBy" />
@@ -303,7 +303,7 @@
         </article>
         <article id="grouped">
           <h2>grouped</h2>
-          <p>Partitions elements in fixed size iterable collections.</p>
+          <p>  Partitions elements in fixed size iterable collections. </p>
           <p><code>grouped(size: Int): Iterator[Collection[A]]</code></p>
           <figure>
             <img src="images/grouped.png" alt="grouped" />
@@ -311,7 +311,7 @@
         </article>
         <article id="head">
           <h2>head</h2>
-          <p>Selects the first element of this collection.</p>
+          <p>  Selects the first element of this collection. </p>
           <p><code>head: A</code></p>
           <figure>
             <img src="images/head.png" alt="head" />
@@ -319,7 +319,7 @@
         </article>
         <article id="headOption">
           <h2>headOption</h2>
-          <p>Optionally selects the first element.</p>
+          <p>  Optionally selects the first element. </p>
           <p><code>headOption: Option[A]</code></p>
           <figure>
             <img src="images/headOption.png" alt="headOption" />
@@ -327,7 +327,7 @@
         </article>
         <article id="indexOf">
           <h2>indexOf</h2>
-          <p>Finds index of first occurrence of some value in this list after or at some start index.</p>
+          <p>  Finds index of first occurrence of some value in this list after or at some start index. </p>
           <p><code>indexOf(elem: A, from: Int): Int</code></p>
           <figure>
             <img src="images/indexOf.png" alt="indexOf" />
@@ -335,7 +335,7 @@
         </article>
         <article id="indexOfSlice">
           <h2>indexOfSlice</h2>
-          <p>Finds first index after or at a start index where this collection contains a given sequence as a slice.</p>
+          <p>  Finds first index after or at a start index where this collection contains a given sequence as a slice. </p>
           <p><code>indexOfSlice[B &gt;: A](that: GenSeq[B], from: Int): Int</code></p>
           <figure>
             <img src="images/indexOfSlice.png" alt="indexOfSlice" />
@@ -343,7 +343,7 @@
         </article>
         <article id="indexWhere">
           <h2>indexWhere</h2>
-          <p>Finds index of the first element satisfying some predicate after or at some start index.</p>
+          <p>  Finds index of the first element satisfying some predicate after or at some start index. </p>
           <p><code>indexWhere(p: (A) ⇒ Boolean, from: Int): Int</code></p>
           <figure>
             <img src="images/indexWhere.png" alt="indexWhere" />
@@ -351,7 +351,7 @@
         </article>
         <article id="indices">
           <h2>indices</h2>
-          <p>Produces ther range of all indices of this collection.</p>
+          <p>  Produces ther range of all indices of this collection. </p>
           <p><code>indices: Range</code></p>
           <figure>
             <img src="images/indices.png" alt="indices" />
@@ -359,7 +359,7 @@
         </article>
         <article id="init">
           <h2>init</h2>
-          <p>Select all elements except the last.</p>
+          <p>  Select all elements except the last. </p>
           <p><code>Collection[A]</code></p>
           <figure>
             <img src="images/init.png" alt="init" />
@@ -367,7 +367,7 @@
         </article>
         <article id="inits">
           <h2>inits</h2>
-          <p>Iterates over the inits of this collection.</p>
+          <p>  Iterates over the inits of this collection. </p>
           <p><code>inits: Iterator[Collection[A]]</code></p>
           <figure>
             <img src="images/inits.png" alt="inits" />
@@ -375,7 +375,7 @@
         </article>
         <article id="intersect">
           <h2>intersect</h2>
-          <p>Computes the multiset intersection betwwen this collection and another sequence</p>
+          <p>  Computes the multiset intersection betwwen this collection and another sequence </p>
           <p><code>intersect(that: Seq[A]): Collection[A]</code></p>
           <figure>
             <img src="images/intersect.png" alt="intersect" />
@@ -383,7 +383,7 @@
         </article>
         <article id="isEmpty">
           <h2>isEmpty</h2>
-          <p>Tests whether this collection is empty.</p>
+          <p>  Tests whether this collection is empty. </p>
           <p><code>isEmpty: Boolean</code></p>
           <figure>
             <img src="images/isEmpty.png" alt="isEmpty" />
@@ -391,7 +391,7 @@
         </article>
         <article id="last">
           <h2>last</h2>
-          <p>Selects the last element.</p>
+          <p>  Selects the last element. </p>
           <p><code>last: A</code></p>
           <figure>
             <img src="images/last.png" alt="last" />
@@ -399,7 +399,7 @@
         </article>
         <article id="lastIndexOf">
           <h2>lastIndexOf</h2>
-          <p>Finds index of last occurrence of some value in this list before or at a given end index.</p>
+          <p>  Finds index of last occurrence of some value in this list before or at a given end index. </p>
           <p><code>lastIndexOf(elem: A): Int</code></p>
           <figure>
             <img src="images/lastIndexOf.png" alt="lastIndexOf" />
@@ -407,7 +407,7 @@
         </article>
         <article id="lastIndexOfSlice">
           <h2>lastIndexOfSlice</h2>
-          <p>Finds last index before or at a given end index where this collection contains a given sequence as a slice.</p>
+          <p>  Finds last index before or at a given end index where this collection contains a given sequence as a slice. </p>
           <p><code>lastIndexOfSlice[B &gt;: A](that: GenSeq[B], end: Int): Int</code></p>
           <figure>
             <img src="images/lastIndexOfSlice.png" alt="lastIndexOfSlice" />
@@ -415,7 +415,7 @@
         </article>
         <article id="lastIndexWhere">
           <h2>lastIndexWhere</h2>
-          <p>Finds index of last element satisfying some predicate before or at a given end index.</p>
+          <p>  Finds index of last element satisfying some predicate before or at a given end index. </p>
           <p><code>lastIndexWhere(p: (A) ⇒ Boolean, end: Int): Int</code></p>
           <figure>
             <img src="images/lastIndexWhere.png" alt="lastIndexWhere" />
@@ -423,7 +423,7 @@
         </article>
         <article id="lastOption">
           <h2>lastOption</h2>
-          <p>Optionally selects the last element.</p>
+          <p>  Optionally selects the last element. </p>
           <p><code>lastOption: Option[A]</code></p>
           <figure>
             <img src="images/lastOption.png" alt="lastOption" />
@@ -431,7 +431,7 @@
         </article>
         <article id="length">
           <h2>length</h2>
-          <p>The length of the collection.</p>
+          <p>  The length of the collection. </p>
           <p><code>length: Int</code></p>
           <figure>
             <img src="images/length.png" alt="length" />
@@ -439,7 +439,7 @@
         </article>
         <article id="map">
           <h2>map</h2>
-          <p>Construye una nueva colección aplicando una función a todos los elementos de esta colección.</p>
+          <p>Construye una nueva colección aplicando una función a todos los elementos de esta colección. </p>
           <p><code>map[B](f: (A) ⇒ B): Collection[B]</code></p>
           <figure>
             <img src="images/map.png" alt="map" />
@@ -447,7 +447,7 @@
         </article>
         <article id="mapConserve">
           <h2>mapConserve</h2>
-          <p>Builds a new collection by applying a function to all elements of this collection.</p>
+          <p>  Builds a new collection by applying a function to all elements of this collection. </p>
           <p><code>mapConserve(f: (A) ⇒ A): Collection[A]</code></p>
           <figure>
             <img src="images/mapConserve.png" alt="mapConserve" />
@@ -455,7 +455,7 @@
         </article>
         <article id="max">
           <h2>max</h2>
-          <p>Finds the largest element.</p>
+          <p>  Finds the largest element. </p>
           <p><code>max: A</code></p>
           <figure>
             <img src="images/max.png" alt="max" />
@@ -463,7 +463,7 @@
         </article>
         <article id="maxBy">
           <h2>maxBy</h2>
-          <p>Finds the first element which yields the largest value measured by function &lt;var&gt;f&lt;/var&gt;.</p>
+          <p>  Finds the first element which yields the largest value measured by function <var>f</var>. </p>
           <p><code>maxBy[B](f: (A) ⇒ B): A</code></p>
           <figure>
             <img src="images/maxBy.png" alt="maxBy" />
@@ -471,7 +471,7 @@
         </article>
         <article id="min">
           <h2>min</h2>
-          <p>Finds the smallest element.</p>
+          <p>  Finds the smallest element. </p>
           <p><code>min: A</code></p>
           <figure>
             <img src="images/min.png" alt="min" />
@@ -479,7 +479,7 @@
         </article>
         <article id="minBy">
           <h2>minBy</h2>
-          <p>Finds the first element which yields the smallest value measured by function &lt;var&gt;f&lt;/var&gt;.</p>
+          <p>  Finds the first element which yields the smallest value measured by function <var>f</var>. </p>
           <p><code>minBy[B](f: (A) ⇒ B): A</code></p>
           <figure>
             <img src="images/minBy.png" alt="minBy" />
@@ -487,7 +487,7 @@
         </article>
         <article id="mkString">
           <h2>mkString</h2>
-          <p>Displays all elements of this collection in a string.</p>
+          <p>  Displays all elements of this collection in a string. </p>
           <p><code>mkString(start: String, sep: String, end: String): String</code></p>
           <figure>
             <img src="images/mkString.png" alt="mkString" />
@@ -495,7 +495,7 @@
         </article>
         <article id="nonEmpty">
           <h2>nonEmpty</h2>
-          <p>Tests whether the collection is not empty.</p>
+          <p>  Tests whether the collection is not empty. </p>
           <p><code>nonEmpty: Boolean</code></p>
           <figure>
             <img src="images/nonEmpty.png" alt="nonEmpty" />
@@ -503,7 +503,7 @@
         </article>
         <article id="padTo">
           <h2>padTo</h2>
-          <p>A copy of this list with an element value appended until a given target length is reached.</p>
+          <p>  A copy of this list with an element value appended until a given target length is reached. </p>
           <p><code>padTo(len: Int, elem: A): Collection[A]</code></p>
           <figure>
             <img src="images/padTo.png" alt="padTo" />
@@ -511,7 +511,7 @@
         </article>
         <article id="partition">
           <h2>partition</h2>
-          <p>Partitions this collection in two collections according to a predicate.</p>
+          <p>  Partitions this collection in two collections according to a predicate. </p>
           <p><code>partition(p: (A) ⇒ Boolean): (Collection[A], Collection[A])</code></p>
           <figure>
             <img src="images/partition.png" alt="partition" />
@@ -519,7 +519,7 @@
         </article>
         <article id="patch">
           <h2>patch</h2>
-          <p>Produces a new list where a slice of elements in this list is replaced by another sequence.</p>
+          <p>  Produces a new list where a slice of elements in this list is replaced by another sequence. </p>
           <p><code>patch(from: Int, that: GenSeq[A], replaced: Int): Collection[A]</code></p>
           <figure>
             <img src="images/patch.png" alt="patch" />
@@ -527,7 +527,7 @@
         </article>
         <article id="permutations">
           <h2>permutations</h2>
-          <p>Iterates over distinct permutations.</p>
+          <p>  Iterates over distinct permutations. </p>
           <p><code>permutations: Iterator[Collection[A]]</code></p>
           <figure>
             <img src="images/permutations.png" alt="permutations" />
@@ -535,7 +535,7 @@
         </article>
         <article id="prefixLength">
           <h2>prefixLength</h2>
-          <p>Returns the length of the longest prefix whose elements all satisfy some predicate.</p>
+          <p>  Returns the length of the longest prefix whose elements all satisfy some predicate. </p>
           <p><code>prefixLength(p: (A) ⇒ Boolean): Int</code></p>
           <figure>
             <img src="images/prefixLength.png" alt="prefixLength" />
@@ -543,7 +543,7 @@
         </article>
         <article id="reduce">
           <h2>reduce</h2>
-          <p>Reduces the elements of this collection using the specified associative binary operator.</p>
+          <p>  Reduces the elements of this collection using the specified associative binary operator. </p>
           <p><code>reduce[A1 &gt;: A](op: (A1, A1) ⇒ A1): A1</code></p>
           <figure>
             <img src="images/reduce.png" alt="reduce" />
@@ -551,7 +551,7 @@
         </article>
         <article id="reduceLeft">
           <h2>reduceLeft</h2>
-          <p>Applies a binary operator to all elements of this collection, going left to right.</p>
+          <p>  Applies a binary operator to all elements of this collection, going left to right. </p>
           <p><code>reduceLeft[B &gt;: A](op: (B, A) ⇒ B): B</code></p>
           <figure>
             <img src="images/reduceLeft.png" alt="reduceLeft" />
@@ -559,7 +559,7 @@
         </article>
         <article id="reduceLeftOption">
           <h2>reduceLeftOption</h2>
-          <p>Optionally applies a binary operator to all elements of this collection, going left to right.</p>
+          <p>  Optionally applies a binary operator to all elements of this collection, going left to right. </p>
           <p><code>reduceLeftOption[B &gt;: A](op: (B, A) ⇒ B): Option[B]</code></p>
           <figure>
             <img src="images/reduceLeftOption.png" alt="reduceLeftOption" />
@@ -567,7 +567,7 @@
         </article>
         <article id="reduceOption">
           <h2>reduceOption</h2>
-          <p>Reduces the elements of this collection, if any, using the specified associative binary operator.</p>
+          <p>  Reduces the elements of this collection, if any, using the specified associative binary operator. </p>
           <p><code>reduceOption[A1 &gt;: A](op: (A1, A1) ⇒ A1): Option[A1]</code></p>
           <figure>
             <img src="images/reduceOption.png" alt="reduceOption" />
@@ -575,7 +575,7 @@
         </article>
         <article id="reduceRight">
           <h2>reduceRight</h2>
-          <p>Applies a binary operator to all elements of this collection, going right to left.</p>
+          <p>  Applies a binary operator to all elements of this collection, going right to left. </p>
           <p><code>reduceRight[B &gt;: A](op: (A, B) ⇒ B): B</code></p>
           <figure>
             <img src="images/reduceRight.png" alt="reduceRight" />
@@ -583,7 +583,7 @@
         </article>
         <article id="reduceRightOption">
           <h2>reduceRightOption</h2>
-          <p>Optionally, applies a binary operator to all elements of this collection, going right to left.</p>
+          <p>  Optionally, applies a binary operator to all elements of this collection, going right to left. </p>
           <p><code>reduceRightOption[B &gt;: A](op: (A, B) ⇒ B): Option[B]</code></p>
           <figure>
             <img src="images/reduceRightOption.png" alt="reduceRightOption" />
@@ -591,7 +591,7 @@
         </article>
         <article id="reverse">
           <h2>reverse</h2>
-          <p>Returns new collection with elements in reversed order.</p>
+          <p>  Returns new collection with elements in reversed order. </p>
           <p><code>reverse: Collection[A]</code></p>
           <figure>
             <img src="images/reverse.png" alt="reverse" />
@@ -599,7 +599,7 @@
         </article>
         <article id="reverseMap">
           <h2>reverseMap</h2>
-          <p>Builds a new collection by applying a function to all elements of this collection and collecting the results in reversed order.</p>
+          <p>  Builds a new collection by applying a function to all elements of this collection and collecting the results in reversed order. </p>
           <p><code>reverseMap(f: (A) ⇒ B): Collection[A]</code></p>
           <figure>
             <img src="images/reverseMap.png" alt="reverseMap" />
@@ -607,7 +607,7 @@
         </article>
         <article id="sameElements">
           <h2>sameElements</h2>
-          <p>Checks if the other collection contains the same elements in the same order as this one.</p>
+          <p>  Checks if the other collection contains the same elements in the same order as this one. </p>
           <p><code>sameElements(that: GenIterable[A]): Boolean</code></p>
           <figure>
             <img src="images/sameElements.png" alt="sameElements" />
@@ -615,7 +615,7 @@
         </article>
         <article id="scan">
           <h2>scan</h2>
-          <p>Computes a prefix scan of the elements of the collection.</p>
+          <p>  Computes a prefix scan of the elements of the collection. </p>
           <p><code>scan[B &gt;: A](z: B)(op: (B, B) ⇒ B)</code></p>
           <figure>
             <img src="images/scan.png" alt="scan" />
@@ -623,7 +623,7 @@
         </article>
         <article id="scanLeft">
           <h2>scanLeft</h2>
-          <p>Produces a collection containing cumulative results of applying the operator going left to right.</p>
+          <p>  Produces a collection containing cumulative results of applying the operator going left to right. </p>
           <p><code>scanLeft[B](z: B)(op: (B, A) ⇒ B)</code></p>
           <figure>
             <img src="images/scanLeft.png" alt="scanLeft" />
@@ -631,7 +631,7 @@
         </article>
         <article id="scanRight">
           <h2>scanRight</h2>
-          <p>Produces a collection containing cumulative results of applying the operator going right to left.</p>
+          <p>  Produces a collection containing cumulative results of applying the operator going right to left. </p>
           <p><code>scanRight[B](z: B)(op: (A, B) ⇒ B)</code></p>
           <figure>
             <img src="images/scanRight.png" alt="scanRight" />
@@ -639,7 +639,7 @@
         </article>
         <article id="segmentLength">
           <h2>segmentLength</h2>
-          <p>Computes length of longest segment whose elements all satisfy some predicate.</p>
+          <p>  Computes length of longest segment whose elements all satisfy some predicate. </p>
           <p><code>segmentLength(p: (A) ⇒ Boolean, from: Int): Int</code></p>
           <figure>
             <img src="images/segmentLength.png" alt="segmentLength" />
@@ -647,7 +647,7 @@
         </article>
         <article id="size">
           <h2>size</h2>
-          <p>The size of this sequence.</p>
+          <p>  The size of this sequence. </p>
           <p><code>size: Int</code></p>
           <figure>
             <img src="images/size.png" alt="size" />
@@ -655,7 +655,7 @@
         </article>
         <article id="slice">
           <h2>slice</h2>
-          <p></p>
+          <p>   </p>
           <p><code>slice(from: Int, until: Int): Collection[A]</code></p>
           <figure>
             <img src="images/slice.png" alt="slice" />
@@ -663,7 +663,7 @@
         </article>
         <article id="sliding">
           <h2>sliding</h2>
-          <p>Groups elements in fixed size blocks by passing a &quot;sliding window&quot; over them.</p>
+          <p>  Groups elements in fixed size blocks by passing a "sliding window" over them. </p>
           <p><code>sliding(size: Int, step: Int): Iterator[Collection[A]]</code></p>
           <figure>
             <img src="images/sliding.png" alt="sliding" />
@@ -671,7 +671,7 @@
         </article>
         <article id="sortBy">
           <h2>sortBy</h2>
-          <p>Sorts this collection according to the Ordering which results from transforming an implicitly given Ordering with a transformation function.</p>
+          <p>  Sorts this collection according to the Ordering which results from transforming an implicitly given Ordering with a transformation function. </p>
           <p><code>sortBy[B](f: (A) ⇒ B)(implicit ord: math.Ordering[B]): Collection[A]</code></p>
           <figure>
             <img src="images/sortBy.png" alt="sortBy" />
@@ -679,7 +679,7 @@
         </article>
         <article id="sortWith">
           <h2>sortWith</h2>
-          <p>Sorts this collection according to a comparison function.</p>
+          <p>  Sorts this collection according to a comparison function. </p>
           <p><code>sortWith(lt: (A, A) ⇒ Boolean): Collection[A]</code></p>
           <figure>
             <img src="images/sortWith.png" alt="sortWith" />
@@ -687,7 +687,7 @@
         </article>
         <article id="sorted">
           <h2>sorted</h2>
-          <p>Sorts this collection according to an Ordering.</p>
+          <p>  Sorts this collection according to an Ordering. </p>
           <p><code>sorted[B &gt;: A]</code></p>
           <figure>
             <img src="images/sorted.png" alt="sorted" />
@@ -695,7 +695,7 @@
         </article>
         <article id="span">
           <h2>span</h2>
-          <p>Splits this collection into a prefix/suffix pair according to a predicate.</p>
+          <p>  Splits this collection into a prefix/suffix pair according to a predicate. </p>
           <p><code>span(p: (A) ⇒ Boolean): (Collection[A], Collection[A])</code></p>
           <figure>
             <img src="images/span.png" alt="span" />
@@ -703,7 +703,7 @@
         </article>
         <article id="splitAt">
           <h2>splitAt</h2>
-          <p>Splits this collection into two at a given position.</p>
+          <p>  Splits this collection into two at a given position. </p>
           <p><code>splitAt(n: Int): (Collection[A], Collection[A])</code></p>
           <figure>
             <img src="images/splitAt.png" alt="splitAt" />
@@ -711,7 +711,7 @@
         </article>
         <article id="startsWith">
           <h2>startsWith</h2>
-          <p>Tests whether this collection contains the given sequence at a given index.</p>
+          <p>  Tests whether this collection contains the given sequence at a given index. </p>
           <p><code>startsWith[B](that: GenSeq[B], offset: Int): Boolean</code></p>
           <figure>
             <img src="images/startsWith.png" alt="startsWith" />
@@ -719,7 +719,7 @@
         </article>
         <article id="sum">
           <h2>sum</h2>
-          <p>Sums up the elements of this collection.</p>
+          <p>  Sums up the elements of this collection. </p>
           <p><code>sum: A</code></p>
           <figure>
             <img src="images/sum.png" alt="sum" />
@@ -727,7 +727,7 @@
         </article>
         <article id="tail">
           <h2>tail</h2>
-          <p>Selects all elements except the first.</p>
+          <p>  Selects all elements except the first. </p>
           <p><code>tail: Collection[A]</code></p>
           <figure>
             <img src="images/tail.png" alt="tail" />
@@ -735,7 +735,7 @@
         </article>
         <article id="tails">
           <h2>tails</h2>
-          <p>Iterates over the tails of this collection.</p>
+          <p>  Iterates over the tails of this collection. </p>
           <p><code>tails: Iterator[Collection[A]]</code></p>
           <figure>
             <img src="images/tails.png" alt="tails" />
@@ -743,7 +743,7 @@
         </article>
         <article id="take">
           <h2>take</h2>
-          <p>selects first &lt;var&gt;n&lt;/var&gt; elements.</p>
+          <p>  selects first <var>n</var> elements. </p>
           <p><code>take(n: Int): Collection[A]</code></p>
           <figure>
             <img src="images/take.png" alt="take" />
@@ -751,7 +751,7 @@
         </article>
         <article id="takeRight">
           <h2>takeRight</h2>
-          <p>Selects last &lt;var&gt;n&lt;/var&gt; elements.</p>
+          <p>  Selects last <var>n</var> elements. </p>
           <p><code>takeRight(n: Int): Collection[A]</code></p>
           <figure>
             <img src="images/takeRight.png" alt="takeRight" />
@@ -759,7 +759,7 @@
         </article>
         <article id="takeWhile">
           <h2>takeWhile</h2>
-          <p>Takes longest prefix of elements that satisfy a predicate.</p>
+          <p>  Takes longest prefix of elements that satisfy a predicate. </p>
           <p><code>takeWhile(p: (A) ⇒ Boolean): Collection[A]</code></p>
           <figure>
             <img src="images/takeWhile.png" alt="takeWhile" />
@@ -767,7 +767,7 @@
         </article>
         <article id="union">
           <h2>union</h2>
-          <p>Produces a new collection which contains all elements of this one and also all elements of a given sequence.</p>
+          <p>  Produces a new collection which contains all elements of this one and also all elements of a given sequence. </p>
           <p><code>union(that: Seq[A]): Collection[A]</code></p>
           <figure>
             <img src="images/union.png" alt="union" />
@@ -775,7 +775,7 @@
         </article>
         <article id="unzip">
           <h2>unzip</h2>
-          <p>Converts this collection of pairs into two collections of the first and second half of each pair.</p>
+          <p>  Converts this collection of pairs into two collections of the first and second half of each pair. </p>
           <p><code>unzip[A1, A2](implicit asPair: (A) ⇒ (A1, A2)): (Collection[A1], Collection[A2])</code></p>
           <figure>
             <img src="images/unzip.png" alt="unzip" />
@@ -783,7 +783,7 @@
         </article>
         <article id="unzip3">
           <h2>unzip3</h2>
-          <p>Converts this collection of triples into three collections of the first, second, and third element of each triple.</p>
+          <p>  Converts this collection of triples into three collections of the first, second, and third element of each triple. </p>
           <p><code>unzip3[A1, A2, A3](implicit asTriple: (A) ⇒ (A1, A2, A3)): (Collection[A1], Collection[A2], Collection[A3])</code></p>
           <figure>
             <img src="images/unzip3.png" alt="unzip3" />
@@ -791,7 +791,7 @@
         </article>
         <article id="updated">
           <h2>updated</h2>
-          <p>A copy of this collection with one single replaced element.</p>
+          <p>  A copy of this collection with one single replaced element. </p>
           <p><code>updated(index: Int, elem: A): Collection[A]</code></p>
           <figure>
             <img src="images/updated.png" alt="updated" />
@@ -799,7 +799,7 @@
         </article>
         <article id="zip">
           <h2>zip</h2>
-          <p>Devuelve una colección formada por los elementos de dos colecciones distintas combinados en parejas.</p>
+          <p>Devuelve una colección formada por los elementos de dos colecciones distintas combinados en parejas. </p>
           <p><code>zip[B](that: GenIterable[B]): Collection[A, B]</code></p>
           <figure>
             <img src="images/zip.png" alt="zip" />
@@ -807,7 +807,7 @@
         </article>
         <article id="zipAll">
           <h2>zipAll</h2>
-          <p>Returns a collection formed from this and another one by combining corresponding elements in pairs. If one of the two collections is shorter than the other, placeholder elements are used to extend the shorter collection to the length of the longer.</p>
+          <p>  Returns a collection formed from this and another one by combining corresponding elements in pairs. If one of the two collections is shorter than the other, placeholder elements are used to extend the shorter collection to the length of the longer. </p>
           <p><code>zipAll[B](that: Iterable[B], thisElem: A, thatElem: B): Collection[(A, B)]</code></p>
           <figure>
             <img src="images/zipAll.png" alt="zipAll" />
@@ -815,7 +815,7 @@
         </article>
         <article id="zipWithIndex">
           <h2>zipWithIndex</h2>
-          <p>Zips this collection with its indices.</p>
+          <p>  Zips this collection with its indices. </p>
           <p><code>zipWithIndex: Collection[A, Int]</code></p>
           <figure>
             <img src="images/zipWithIndex.png" alt="zipWithIndex" />

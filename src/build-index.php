@@ -13,8 +13,13 @@ $mustache = new Mustache_Engine([
 ]);
 
 $translator = function($text) {
-  return preg_replace_callback('/\{\{\{?\s*(\w(?:[\w\.])*)\s*\}\}\}?/', function($x) {
-    return sprintf('{{ %1$s.%2$s }}{{^ %1$s.%2$s }}{{ %1$s.%3$s }}{{/ %1$s.%2$s }}', $x[1], LANGUAGE, DEFAULT_LANGUAGE);
+  return preg_replace_callback('/(\{\{\{?)\s*(\w(?:[\w\.])*)\s*(\}\}\})?/', function($matches) {
+    $openBraces = $matches[1];
+    $closeBraces = $matches[3];
+    $key = $matches[2];
+    $keyLang = sprintf('%s.%s', $key, LANGUAGE);
+    $keyDefaultLang = sprintf('%s.%s', $key, DEFAULT_LANGUAGE);
+    return "$openBraces $keyLang $closeBraces {{^ $keyLang }} $openBraces $keyDefaultLang $closeBraces {{/ $keyLang }}";
   }, $text);
 };
 
