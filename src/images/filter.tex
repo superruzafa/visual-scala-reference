@@ -27,11 +27,10 @@
   2/\true/265,
   i/\true/265,
   i+1/\false/below,
-  n-2/\true/below,
+  n-2/\true/275,
   n-1/\false/275
 } {
-  % pin={[func result, pin position=\a] \b}
-  \node (pa\i) [below of = a\i, predicate] {$p(a_{\i})$};
+  \node (pa\i) [below of = a\i, predicate, pin={[function result, pin position=\a] \b}] {$p(a_{\i})$};
   \draw (a\i) -- (pa\i);
 }
     
