@@ -9,13 +9,15 @@ PDF2PNGFLAGS := -density 200 -quality 10
 PDF2SVG := pdf2svg
 PDF2SVGFLAGS :=
 
+LANGUAGES := en es
+
 DATAFILES := $(wildcard src/data/*)
 VIEWFILES := $(wildcard src/views/*)
 TEXSHAREDFILES := $(wildcard src/images/_*.tex)
 TEXFILES := $(filter-out $(TEXSHAREDFILES),$(wildcard src/images/*))
 PNGFILES := $(patsubst src/images/%.tex,docs/images/%.png,$(TEXFILES))
 SVGFILES := $(patsubst src/images/%.tex,docs/images/%.svg,$(TEXFILES))
-HTMLFILES := $(addprefix docs/,index.html index-es.html)
+HTMLFILES := $(foreach lang,$(LANGUAGES),$(addprefix docs/,index-$(lang).html))
 TARGET := $(HTMLFILES) $(PNGFILES) $(SVGFILES)
 
 TMPDIR := .tmp

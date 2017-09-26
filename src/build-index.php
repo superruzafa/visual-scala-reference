@@ -13,7 +13,7 @@ $mustache = new Mustache_Engine([
 ]);
 
 $translator = function($text) {
-  return preg_replace_callback('/(\{\{\{?)\s*(\w(?:[\w\.])*)\s*(\}\}\})?/', function($matches) {
+  return preg_replace_callback('/(\{\{\{?)\s*(\w(?:[\w\.])*)\s*(\}\}\}?)/', function($matches) {
     $openBraces = $matches[1];
     $closeBraces = $matches[3];
     $key = $matches[2];
@@ -24,11 +24,22 @@ $translator = function($text) {
 };
 
 $functions = Yaml::parse(file_get_contents(__DIR__ . '/data/functions.yml'));
+$languages = Yaml::parse(file_get_contents(__DIR__ . '/data/languages.yml'));
+$messages = Yaml::parse(file_get_contents(__DIR__ . '/data/messages.yml'));
+
+$currentLanguage = null;
+foreach ($languages as $l) {
+  if ($l['code'] == LANGUAGE) {
+    $currentLanguage = $l;
+    break;
+  }
+}
 
 $context = [
-  'language' => LANGUAGE,
-  'translate' => $translator,
-
+  't' => $translator,
+  'lang' => $currentLanguage,
+  'allLangs' => $languages,
+  'messages' => $messages,
   'functions' => $functions,
 ];
 $html = $mustache->render('index', $context);

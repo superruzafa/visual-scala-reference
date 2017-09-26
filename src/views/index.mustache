@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ lang.code }}">
 <head>
   <meta charset="utf-8" />
-  <title>Visual Scala Reference ({{ language }})</title>
+  <title>{{# t }}{{ messages.title }}{{/ t }}</title>
 </head>
 <body>
-  <h1>Visual Scala Reference ({{ language }})</h1>
+  <header>
+    <h1>{{# t }}{{ messages.title }}{{/ t }}</h1>
+    <p>{{# t }}{{ messages.availableLanguages }}{{/ t }}</p>
+    <ul>
+      {{# allLangs }}
+        <li><a href="index-{{ code }}.html">{{ name }}</a></li>
+      {{/ allLangs }}
+    </ul>
+  </header>
   <div>
     <aside>
       <ul>

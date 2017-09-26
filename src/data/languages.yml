@@ -1,0 +1,8 @@
+---
+- name: English
+  englishName: English
+  code: en
+
+- name: Español
+  englishName: Spanish
+  code: es
