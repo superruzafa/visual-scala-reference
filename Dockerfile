@@ -7,7 +7,10 @@ RUN apt-get update && \
       texlive-latex-extra \
       imagemagick \
       ghostscript \
-      pdf2svg
+      pdf2svg \
+      libcairo2-dev \
+      libpoppler-glib-dev
+
 
 VOLUME /code
 WORKDIR /code

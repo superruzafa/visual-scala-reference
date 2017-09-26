@@ -382,13 +382,13 @@
   description:
     en: Checks if the other collection contains the same elements in the same order as this one.
     es:
-      
+
 - name: scan
   signature: "scan[B >: A](z: B)(op: (B, B) ⇒ B)"
   description:
     en: Computes a prefix scan of the elements of the collection.
     es:
-      
+
 - name: scanLeft
   signature: "scanLeft[B](z: B)(op: (B, A) ⇒ B)"
   description:
