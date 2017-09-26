@@ -1,0 +1,14 @@
+{
+  "name": "superruzafa/visual-scala-reference",
+  "description": "A Visual Scala Reference",
+  "type": "project",
+  "require-dev": {
+    "mustache/mustache": "^2.12"
+  },
+  "license": "MIT",
+  "authors": [{
+    "name": "Alfonso Ruzafa",
+    "email": "superruzafa@gmail.com"
+  }],
+  "minimum-stability": "stable"
+}
