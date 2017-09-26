@@ -1,0 +1,42 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+    \node (0)     {$a_0$}; &
+    \node (1)     {$a_1$}; &
+    \node (2)     {$a_2$}; &
+    \ellipsis              &
+    \node (i)     {$a_i$}; &
+    \node (i+1)   {$a_{i+1}$}; &
+    \ellipsis              &
+    \node (n-2)   {$a_{n-2}$}; &
+    \node (n-1)   {$a_{n-1}$}; \\
+};
+    
+\matrix (B) [collection, name prefix = b, below of = A, node distance = 4cm] {
+    \node (0)     {$a_0$}; &
+    \node (2)     {$a_2$}; &
+    \ellipsis              &
+    \node (i)     {$a_i$}; &
+    \ellipsis              &
+    \node (n-2)   {$a_{n-2}$}; \\
+};
+    
+\foreach \i/\b/\a in {
+  0/\true/265,
+  1/\false/below,
+  2/\true/265,
+  i/\true/265,
+  i+1/\false/below,
+  n-2/\true/below,
+  n-1/\false/275
+} {
+  % pin={[func result, pin position=\a] \b}
+  \node (pa\i) [below of = a\i, predicate] {$p(a_{\i})$};
+  \draw (a\i) -- (pa\i);
+}
+    
+\foreach \i in {0, 2, i, n-2} {
+  \draw (pa\i) [arrow, smooth] to (b\i);
+}
+
+\input{_footer.tex}
