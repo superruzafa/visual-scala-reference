@@ -10,16 +10,16 @@ DATAFILES := $(wildcard src/data/*)
 VIEWFILES := $(wildcard src/views/*)
 TEXSHAREDFILES := $(wildcard src/images/_*.tex)
 TEXFILES := $(filter-out $(TEXSHAREDFILES),$(wildcard src/images/*))
-PNGFILES := $(patsubst src/images/%.tex,gh-pages/images/%.png,$(TEXFILES))
-HTMLFILES := $(addprefix gh-pages/,index.html index-es.html)
+PNGFILES := $(patsubst src/images/%.tex,docs/images/%.png,$(TEXFILES))
+HTMLFILES := $(addprefix docs/,index.html index-es.html)
 TARGET := $(HTMLFILES) $(PNGFILES)
 
 all: $(TARGET)
 
-gh-pages/%.html: src/build-index.php $(VIEWFILES) $(DATAFILES)
+docs/%.html: src/build-index.php $(VIEWFILES) $(DATAFILES)
 	$(PHP) src/build-index.php $@
 
-gh-pages/%.png: src/%.tex $(TEXSHAREDFILES)
+docs/%.png: src/%.tex $(TEXSHAREDFILES)
 	pushd $(<D) && \
 	$(TEX2PDF) $(TEX2PDFFLAGS) -output-directory=/tmp -jobname=image $(<F) && \
 	popd
