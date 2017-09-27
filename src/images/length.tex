@@ -1,0 +1,13 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1)   {$a_1$};     &
+  \node (2)   {$a_2$};     &
+  \ellipsis                &
+  \node (n-1) {$a_{n-1}$}; &
+  \node (n)   {$a_n$};     \\
+};
+
+\bottommeasure{n}{a1.south west}{an.south east}
+
+\input{_footer.tex}
