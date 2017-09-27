@@ -1,0 +1,26 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix = a] {
+  \node (0)    {$a_0$}; &
+  \node (1)    {$a_1$}; &
+  \ellipsis &
+  \node (i)    {$a_i$}; &
+  \ellipsis &
+  \node (n-1)  {$a_{n-1}$}; \\
+};
+
+\node (B) [option, below of=ai, node distance = 4cm] {$a_i$};
+
+\foreach \i/\d/\p in {
+  0/\false/below,
+  1/\false/below,
+  i/\true/280}
+{
+  \node (pfa\i) [below of = a\i, pin={[function result, pin position = \p] \d}] {$\exists \, pf(a_{\i})$};
+}
+
+\draw (pfa0.south) [arrow, bend right = 45] to (pfa1.south);
+\draw (pfa1.south) [arrow, bend right = 37] to (pfai.south);
+\draw (pfai.south) [arrow] -- (B);
+
+\input{_footer.tex}
