@@ -127,7 +127,7 @@
         </article>
         <article id="collectFirst">
           <h2>collectFirst</h2>
-          <p>Finds the first element of the traversable or iterator for which the given partial function is defined, and applies the partial function to it. </p>
+          <p>Finds the first element of the collection for which the given partial function is defined, and applies the partial function to it. </p>
           <p><code>collectFirst[B](pf: PartialFunction[A, B]): Option[B]</code></p>
           <figure>
             <img src="images/collectFirst.svg" alt="collectFirst" />
@@ -143,7 +143,7 @@
         </article>
         <article id="contains">
           <h2>contains</h2>
-          <p>Tests whether this sequence contains a given value as an element. </p>
+          <p>Tests whether this collection contains a given value as an element. </p>
           <p><code>contains[A1 &gt;: A](elem: A1): Boolean</code></p>
           <figure>
             <img src="images/contains.svg" alt="contains" />
@@ -151,7 +151,7 @@
         </article>
         <article id="containsSlice">
           <h2>containsSlice</h2>
-          <p>Tests whether this sequence contains a given sequence as a slice. </p>
+          <p>Tests whether this collection contains a given sequence as a slice. </p>
           <p><code>containsSlice[B](that: GenSeq[B]): Boolean</code></p>
           <figure>
             <img src="images/containsSlice.svg" alt="containsSlice" />
@@ -159,7 +159,7 @@
         </article>
         <article id="count">
           <h2>count</h2>
-          <p>Counts the number of elements in the traversable or tierator which satisfy a predicate. </p>
+          <p>Counts the number of elements in the collection which satisfy a predicate. </p>
           <p><code>count(p: (A) ⇒ Boolean): Int</code></p>
           <figure>
             <img src="images/count.svg" alt="count" />
@@ -335,7 +335,7 @@
         </article>
         <article id="indexOf">
           <h2>indexOf</h2>
-          <p>Finds index of first occurrence of some value in this list after or at some start index. </p>
+          <p>Finds index of first occurrence of some value in this collection after or at some start index. </p>
           <p><code>indexOf(elem: A, from: Int): Int</code></p>
           <figure>
             <img src="images/indexOf.svg" alt="indexOf" />
@@ -359,7 +359,7 @@
         </article>
         <article id="indices">
           <h2>indices</h2>
-          <p>Produces ther range of all indices of this collection. </p>
+          <p>Produces the range of all indices of this collection. </p>
           <p><code>indices: Range</code></p>
           <figure>
             <img src="images/indices.svg" alt="indices" />
@@ -383,7 +383,7 @@
         </article>
         <article id="intersect">
           <h2>intersect</h2>
-          <p>Computes the multiset intersection betwwen this collection and another sequence </p>
+          <p>Computes the multiset intersection between this collection and another sequence. </p>
           <p><code>intersect(that: Seq[A]): Collection[A]</code></p>
           <figure>
             <img src="images/intersect.svg" alt="intersect" />
@@ -407,8 +407,8 @@
         </article>
         <article id="lastIndexOf">
           <h2>lastIndexOf</h2>
-          <p>Finds index of last occurrence of some value in this list before or at a given end index. </p>
-          <p><code>lastIndexOf(elem: A): Int</code></p>
+          <p>Finds index of last occurrence of some value in this colección before or at a given end index. </p>
+          <p><code>lastIndexOf(elem: A, end: Int): Int</code></p>
           <figure>
             <img src="images/lastIndexOf.svg" alt="lastIndexOf" />
           </figure>
@@ -455,7 +455,7 @@
         </article>
         <article id="mapConserve">
           <h2>mapConserve</h2>
-          <p>Builds a new collection by applying a function to all elements of this collection. </p>
+          <p>Builds a new collection by applying a function to all elements of this collection. Like <code>xs map f</code>, but returns <var>xs</var> unchanged if function <var>f</var> maps all elements to themselves (as determined by <var>eq</var>) </p>
           <p><code>mapConserve(f: (A) ⇒ A): Collection[A]</code></p>
           <figure>
             <img src="images/mapConserve.svg" alt="mapConserve" />
@@ -511,7 +511,7 @@
         </article>
         <article id="padTo">
           <h2>padTo</h2>
-          <p>A copy of this list with an element value appended until a given target length is reached. </p>
+          <p>A copy of this collection with an element value appended until a given target length is reached. </p>
           <p><code>padTo(len: Int, elem: A): Collection[A]</code></p>
           <figure>
             <img src="images/padTo.svg" alt="padTo" />
@@ -527,7 +527,7 @@
         </article>
         <article id="patch">
           <h2>patch</h2>
-          <p>Produces a new list where a slice of elements in this list is replaced by another sequence. </p>
+          <p>Produces a new collection where a slice of elements in this collection is replaced by another sequence. </p>
           <p><code>patch(from: Int, that: GenSeq[A], replaced: Int): Collection[A]</code></p>
           <figure>
             <img src="images/patch.svg" alt="patch" />
@@ -655,7 +655,7 @@
         </article>
         <article id="size">
           <h2>size</h2>
-          <p>The size of this sequence. </p>
+          <p>The size of this collection. </p>
           <p><code>size: Int</code></p>
           <figure>
             <img src="images/size.svg" alt="size" />
@@ -751,7 +751,7 @@
         </article>
         <article id="take">
           <h2>take</h2>
-          <p>selects first <var>n</var> elements. </p>
+          <p>Selects first <var>n</var> elements. </p>
           <p><code>take(n: Int): Collection[A]</code></p>
           <figure>
             <img src="images/take.svg" alt="take" />
