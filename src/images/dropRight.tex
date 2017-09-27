@@ -1,0 +1,22 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix = a] {
+  \node (1)     {$a_1$};       &
+  \ellipsis                    &
+  \node (m-n)   {$a_{m-n}$};   &
+  \node (m-n+1) {$a_{m-n+1}$}; &
+  \ellipsis                    &
+  \node (m-1)   {$a_{m-1}$};   &
+  \node (m)     {$a_{m}$};     \\
+};
+
+\matrix (B) [collection, node distance = 3cm, below of = A, matrix anchor = b1.west] at (a1.west) {
+  \node (b1)     {$a_1$};       &
+  \ellipsis                    &
+  \node (bm-n)   {$a_{m-n}$};   \\
+};
+
+\bottommeasure{n}{am-n+1.south west}{am.south east}
+\bracetobrace {a1.south west}{am-n.south east}{b1.north west}{bm-n.north east}
+
+\input{_footer.tex}

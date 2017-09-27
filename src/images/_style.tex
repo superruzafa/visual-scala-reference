@@ -44,4 +44,38 @@
   in = 90
 ]
 
-\tikzstyle{function result}=[pin edge={->, decorate, decoration={snake, amplitude=0.5mm}}]
+\tikzstyle{function result}=[
+  pin edge={->, decorate, decoration={snake, amplitude=0.5mm}}
+]
+
+\tikzstyle{measure}=[
+  arrows={Stealth[inset=0pt, angle'=30]-Stealth[inset=0pt, angle'=30]}
+]
+
+\newcommand{\bottommeasure}[4][5mm] {
+  \begin{scope}[line width = 0.1mm]
+    \coordinate (x) at ([yshift = -#1] #3);
+    \draw (x) [measure] -- node [label={[label distance=-1mm]above:#2}] {} (x -| #4);
+    \draw (#3) -- ++(0, -#1) -- +(0, -1.25mm);
+    \draw (#4) -- ++(0, -#1) -- +(0, -1.25mm);
+  \end{scope}
+}
+
+\tikzstyle{bottombrace}=[
+  decorate, decoration={brace, amplitude=1mm, raise=1mm, mirror}
+]
+\tikzstyle{topbrace}=[
+  decorate, decoration={brace, amplitude=1mm, raise=1mm}
+]
+\tikzstyle{from brace}=[shorten <=2mm]
+\tikzstyle{to brace}=[shorten >=2mm]
+
+\newcommand{\bracetobrace}[4] {
+  \coordinate (a) at ([xshift=+0.1em, yshift=-0.5em] #1);
+  \coordinate (b) at ([xshift=-0.1em, yshift=-0.5em] #2);
+  \coordinate (c) at ([xshift=+0.1em, yshift=0.5em] #3);
+  \coordinate (d) at ([xshift=-0.1em, yshift=0.5em] #4);
+  \draw [bottombrace] (a) -- coordinate (e) (b);
+  \draw [topbrace] (c) -- coordinate (f) (d);
+  \draw [from brace, to brace, arrow] (e) -- (f);
+}
