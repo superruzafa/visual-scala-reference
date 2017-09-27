@@ -1,0 +1,17 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1) {$a_1$}; &
+  \node (2) {$a_2$}; &
+  \ellipsis          &
+  \node (i) {$a_i$}; &
+  \ellipsis          &
+  \node (n) {$a_n$}; \\
+};
+
+\foreach \i in {1, 2, i, n} {
+  \node (fa\i) [below of=a\i, node distance=2cm] {$f(a_\i)$};
+  \draw (a\i) [arrow] -- (fa\i);
+}
+
+\input{_footer.tex}
