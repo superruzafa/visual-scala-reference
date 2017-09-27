@@ -1,0 +1,51 @@
+\input{_header.tex}
+
+% \matrix (A) [collection, name prefix=a] {
+%     \node (1) {$a_1$}; &
+%     \node (2) {$a_2$}; &
+%     \ellipsis          &
+%     \node (i) {$a_i$}; &
+%     \ellipsis          &
+%     \node (n) {$a_n$}; \\
+% };
+%
+% \node (z) [elem, left of=a1, node distance=2cm] {$z$};
+%
+% \foreach \i/\z [count=\c] in {1/z,2/z_1,i/z_{i-1},n/z_{n-1}} {
+%   \node (f\i) [below of=a\i, node distance={1cm + \c * 1cm}, xshift=-1em] {$f(\z, a_{\i})$};
+%   \draw (a\i) [arrow] to (a\i |- f\i.north);
+% }
+%
+% \node (B) [elem, below of=fn, node distance=1.5cm] {$b$};
+%
+% \draw [arrow, out=270, in=90] (z.south) to (f1.120);
+% \draw [arrow, out=0, in=90] (f1.east) to (f2.120);
+% \draw [arrow, out=0, in=90] (f2.east) to (fi.120);
+% \draw [arrow, out=0, in=90] (fi.east) to (fn.135);
+% \draw [arrow] (fn.south) -- (B.north);
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1)   {$a_1$};     &
+  \ellipsis                &
+  \node (n-i) {$a_{n-i}$}; &
+  \ellipsis                &
+  \node (n-1) {$a_{n-1}$}; &
+  \node (n)   {$a_n$};     \\
+};
+
+\node (z) [elem, right of=an, node distance=15mm] {$z$};
+
+\foreach \i/\j/\z [count=\c] in {1/n/z, 2/n-1/z_1, i/n-i/z_i, n-1/1/z_{n-1}} {
+  \node (f\i) [below of=a\j, node distance={1cm + \c * 1cm}, xshift=1em] {$f(a_{\j}, \z)$};
+  \draw (a\j) [arrow] -- (a\j |- f\i.north);
+}
+
+\node (B) [elem, below of=fn-1, node distance=1.5cm] {$b$};
+
+\draw [arrow, out=270, in=90] (z.south) to (f1.45);
+\draw [arrow, out=180, in=90] (f1.west) to (f2.30);
+\draw [arrow, out=180, in=90] (f2.west) to (fi.40);
+\draw [arrow, out=180, in=90] (fi.west) to (fn-1.40);
+\draw [arrow] (fn-1) -- (B);
+
+\input{_footer.tex}
