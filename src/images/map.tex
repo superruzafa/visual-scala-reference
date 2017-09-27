@@ -1,24 +1,24 @@
 \input{_header.tex}
 
 \matrix (A) [collection, name prefix=a] {
-  \node (0) {$a_0$}; &
   \node (1) {$a_1$}; &
+  \node (2) {$a_2$}; &
   \ellipsis          &
   \node (i) {$a_i$}; &
   \ellipsis          &
-  \node (n-1) {$a_{n-1}$}; \\
+  \node (n) {$a_n$}; \\
 };
 
 \matrix (B) [collection, name prefix=b, below of=A, node distance = 3cm] {
-  \node (0) {$b_0$}; &
   \node (1) {$b_1$}; &
+  \node (2) {$b_2$}; &
   \ellipsis          &
   \node (i) {$b_i$}; &
   \ellipsis          &
-  \node (n-1) {$b_{n-1}$}; \\
+  \node (n) {$b_n$}; \\
 };
 
-\foreach \i in {0, 1, i, n-1} {
+\foreach \i in {1, 2, i, n} {
   \draw (a\i) [arrow] -- node [arrow label] {$f(a_{\i})$} (b\i);
 }
 

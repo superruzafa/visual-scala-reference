@@ -1,39 +1,39 @@
 \input{_header.tex}
 
 \matrix (A) [collection, name prefix=a] {
-    \node (0)     {$a_0$}; &
-    \node (1)     {$a_1$}; &
-    \node (2)     {$a_2$}; &
-    \ellipsis              &
-    \node (i)     {$a_i$}; &
-    \node (i+1)   {$a_{i+1}$}; &
-    \ellipsis              &
-    \node (n-2)   {$a_{n-2}$}; &
-    \node (n-1)   {$a_{n-1}$}; \\
+    \node (1)   {$a_1$};     &
+    \node (2)   {$a_2$};     &
+    \node (3)   {$a_3$};     &
+    \ellipsis                &
+    \node (i)   {$a_i$};     &
+    \node (i+1) {$a_{i+1}$}; &
+    \ellipsis                &
+    \node (n-1) {$a_{n-1}$}; &
+    \node (n)   {$a_n$};     \\
 };
     
 \matrix (B) [collection, name prefix = b, below of = A, node distance = 4cm] {
-    \node (1)     {$a_0$}; &
-    \ellipsis              &
-    \node (i+1)     {$a_i$}; &
-    \ellipsis              &
-    \node (n-1)   {$a_{n-1}$}; \\
+    \node (2)   {$a_2$};     &
+    \ellipsis                &
+    \node (i+1) {$a_{i+1}$}; &
+    \ellipsis                &
+    \node (n) {$a_n$};       \\
 };
     
 \foreach \i/\b/\a in {
-  0/\true/below,
-  1/\false/265,
-  2/\true/below,
+  1/\true/below,
+  2/\false/265,
+  3/\true/below,
   i/\true/below,
   i+1/\false/275,
-  n-2/\true/below,
-  n-1/\false/275
-} {
+  n-1/\true/below,
+  n/\false/275}
+{
   \node (pa\i) [below of = a\i, predicate, pin={[function result, pin position=\a] \b}] {$p(a_{\i})$};
   \draw (a\i) -- (pa\i);
 }
     
-\foreach \i in {1, i+1, n-1} {
+\foreach \i in {2, i+1, n} {
   \draw (pa\i) [arrow, smooth] to (b\i);
 }
 
