@@ -1,0 +1,39 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1) {$a_1$}; &
+  \node (2) {$a_2$}; &
+  \ellipsis          &
+  \node (i) {$a_i$}; &
+  \ellipsis          &
+  \node (n) {$a_n$}; \\
+};
+
+\begin{scope}
+  \tikzstyle{every node}=[scale=0.8]
+  \matrix (Bt) [collection, name prefix=bt, below of=A, node distance=3cm] {
+    \node (1) {$b_1$}; &
+    \node (2) {$b_2$}; &
+    \ellipsis          &
+    \node (i) {$b_i$}; &
+    \ellipsis          &
+    \node (n) {$b_n$}; \\
+  };
+\end{scope}
+
+\matrix (B) [collection, name prefix=b, below of=Bt, node distance=3cm] {
+  \node (n) {$b_n$}; &
+  \ellipsis          &
+  \node (i) {$b_i$}; &
+  \ellipsis          &
+  \node (2) {$b_2$}; &
+  \node (1) {$b_1$}; \\
+};
+
+\foreach \i in{1,2,i,n} {
+  \draw (a\i) [arrow, out=270, in=90] to node [arrow label] {$f(a_{\i})$} (bt\i);
+}
+
+\bracetobrace{Bt.south west}{Bt.south east}{B.north west}{B.north east};
+
+\input{_footer.tex}
