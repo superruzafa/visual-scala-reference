@@ -1,0 +1,35 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1) {$a_1$};       &
+  \node (2) {$a_2$};       &
+  \ellipsis                &
+  \node (i) {$a_i$};       &
+  \node (i+1) {$a_{i+1}$}; &
+  \ellipsis                &
+  \node (n) {$a_n$};       \\
+};
+
+\matrix (B) [collection, matrix anchor=bi+1.west, below of=A, node distance=5cm] at (ai+1.west) {
+  \node (bi+1) {$a_{i+1}$}; &
+  \ellipsis                &
+  \node (bn) {$a_n$};       \\
+};
+
+\foreach \i/\d/\p in {
+  1/\true/below,
+  2/\true/below,
+  i/\true/below,
+  i+1/\false/below}
+{
+  \node (pa\i) [predicate, below=1mm of a\i, pin={[function result, pin position=\p] \d}] {$p(a_{\i})$};
+  \draw (a\i) -- (pa\i);
+}
+
+\draw (pa1) [iteration] to (pa2);
+\draw (pa2) [iteration] to (pai);
+\draw (pai) [iteration] to (pai+1);
+
+\bracetobrace{ai+1.south west}{an.south east}{bi+1.north west}{bn.north east}
+
+\input{_footer.tex}
