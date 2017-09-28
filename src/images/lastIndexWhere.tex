@@ -1,0 +1,35 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1) {$a_1$};       &
+  \node (2) {$a_2$};       &
+  \ellipsis                &
+  \node (i-1) {$a_{i-1}$}; &
+  \node (i) {$a_{i}$}; &
+  \node (i+1)   {$a_{i+1}$};     &
+  \ellipsis                &
+  \node (n) {$a_n$};       \\
+};
+
+\node (B) [elem, below of=ai, node distance=4cm] {$i$};
+
+\foreach \i/\d/\p in {
+  1/\true/below,
+  2/\false/below,
+  i-1/\false/below,
+  i/\true/310,
+  i+1/\false/310}
+{
+  \node (pa\i) [predicate, below=1mm of a\i, pin={[function result, pin position=\p] \d}] {$p(a_{\i})$};
+  \draw (a\i) -- (pa\i);
+}
+
+\draw (pa1.south) [iteration] to (pa2.south);
+\draw (pa2.south) [iteration, bend right=37] to (pai-1.south);
+\draw (pai-1.south) [iteration] to (pai.south);
+\draw (pai.south) [iteration, bend right=37] to (pai+1.south);
+\draw (pai.south) [arrow] -- (B);
+
+\toppointer{ai+1.north east}{end}
+
+\input{_footer.tex}

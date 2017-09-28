@@ -20,8 +20,8 @@
   \draw (a\i) -- (pfa\i);
 }
 
-\draw (pfa1.south) [arrow, bend right=45] to (pfa2.south);
-\draw (pfa2.south) [arrow, bend right=37] to (pfai.south);
+\draw (pfa1.south) [iteration] to (pfa2.south);
+\draw (pfa2.south) [iteration, bend right=37] to (pfai.south);
 \draw (pfai.south) [arrow] -- node [arrow label] {$pf(a_i)$} (B);
 
 \input{_footer.tex}

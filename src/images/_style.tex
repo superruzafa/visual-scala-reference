@@ -32,11 +32,18 @@
 
 \newcommand{\ellipsis}{ \node [ellipsis]; }
 
-\tikzstyle{arrow}=[-latex]
+\tikzstyle{arrow}=[draw=black, -latex]
 
 \tikzstyle{arrow label}=[
   font=\small,
   fill=white!0
+]
+
+\tikzstyle{iteration}=[
+  arrow,
+  bend right=45,
+  densely dashed,
+  draw=gray!75
 ]
 
 \tikzstyle{predicate}=[
@@ -82,4 +89,8 @@
   \draw [bottombrace] (a) -- coordinate (e) (b);
   \draw [topbrace] (c) -- coordinate (f) (d);
   \draw [from brace, to brace, arrow] (e) -- (f);
+}
+
+\newcommand{\toppointer}[2] {
+  \draw ([yshift=1mm] #1) [Latex-] -- ([yshift=1cm] #1) node [anchor=south] {#2};
 }
