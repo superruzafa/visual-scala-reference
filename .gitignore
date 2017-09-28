@@ -1,3 +1,4 @@
 .dockerimage
 composer.phar
 /vendor/
+/.cache/

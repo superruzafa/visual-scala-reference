@@ -5,7 +5,7 @@ PHP := php
 TEX2PDF := pdflatex
 TEX2PDFFLAGS := -halt-on-error
 PDF2PNG := convert
-PDF2PNGFLAGS := -density 200 -quality 10
+PDF2PNGFLAGS := -density 200 -quality 10 -define png:include-chunk=none
 PDF2SVG := pdf2svg
 PDF2SVGFLAGS :=
 
@@ -20,23 +20,22 @@ SVGFILES := $(patsubst src/images/%.tex,docs/images/%.svg,$(TEXFILES))
 HTMLFILES := $(foreach lang,$(LANGUAGES),$(addprefix docs/,index-$(lang).html))
 TARGET := $(HTMLFILES) $(PNGFILES) $(SVGFILES)
 
-TMPDIR := .tmp
+CACHEDIR := .cache
 
 all: $(TARGET)
-	@rm -rf $(TMPDIR)
 
 docs/%.html: src/build-index.php $(VIEWFILES) $(DATAFILES)
 	$(PHP) src/build-index.php $@
 
-docs/%.png: $(TMPDIR)/%.pdf
+docs/%.png: $(CACHEDIR)/%.pdf
 	mkdir -p $(@D)
 	$(PDF2PNG) $(PDF2PNGFLAGS) $< $@
 
-docs/%.svg: $(TMPDIR)/%.pdf
+docs/%.svg: $(CACHEDIR)/%.pdf
 	mkdir -p $(@D)
 	$(PDF2SVG) $(PDF2SVGFLAGS) $< $@
 
-$(TMPDIR)/%.pdf: src/%.tex $(TEXSHAREDFILES)
+$(CACHEDIR)/%.pdf: src/%.tex $(TEXSHAREDFILES)
 	mkdir -p $(@D)
 	pushd $(<D) && \
 	$(TEX2PDF) $(TEX2PDFFLAGS) -output-directory=/tmp -jobname=image $(<F) && \
@@ -52,3 +51,5 @@ composer.lock: composer.json
 
 composer.phar:
 	$(CURL) -sS https://getcomposer.org/installer | php
+
+.PRECIOUS: $(CACHEDIR)/%.pdf
