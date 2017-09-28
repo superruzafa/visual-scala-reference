@@ -1,0 +1,69 @@
+\input{_header.tex}
+
+\matrix (B) [collection, name prefix=b] {
+  \node (11) {$b_{1_1}$};   &
+  \node (12) {$b_{1_2}$};   &
+  \node (13) {$b_{1_3}$};   &
+  \node (21) {$b_{2_1}$}; &
+  \node (22) {$b_{2_2}$}; &
+  \ellipsis                &
+  \node (i1) {$b_{i_1}$}; &
+  \ellipsis                &
+  \node (n1) {$b_{n_1}$}; &
+  \node (nell) [ellipsis] {}; &
+  \node (nm) {$b_{n_m}$}; \\
+};
+
+\matrix (A) [collection, name prefix=a, above of=B, node distance=5.5cm] {
+  \node (1) {$a_1$}; &
+  \node (2) {$a_2$}; &
+  \ellipsis          &
+  \node (i) {$a_i$}; &
+  \ellipsis          &
+  \node (n) {$a_n$}; \\
+};
+
+\begin{scope}
+  \tikzstyle{every node}=[scale=0.8]
+  \matrix (A1) [collection, above of=b12, node distance=2.5cm] at (b12.north) {
+    \node (a11) {$b_{1_1}$}; &
+    \node (a12) {$b_{1_2}$}; &
+    \node (a13) {$b_{1_3}$}; \\
+  };
+  \matrix (A2) [collection, above of=b21, node distance=2.5cm] at (b21.north east) {
+    \node (a21) {$b_{2_1}$}; &
+    \node (a22) {$b_{2_2}$}; \\
+  };
+  \matrix (Ai) [collection, above of=bi1, node distance=2.5cm] at (bi1.north) {
+    \node (ai1) {$b_{i_1}$}; \\
+  };
+  \matrix (An) [collection, above of=anell, node distance=2.5cm] at (bnell.north) {
+    \node (an1) {$b_{n_1}$}; &
+    \node (anell) [ellipsis]; &
+    \node (anm) {$b_{n_m}$}; \\
+  };
+\end{scope}
+
+
+\draw [topbrace] (a11.north west) -- coordinate (fa1) (a13.north east);
+\draw [arrow, to brace, smooth] (a1) to node [arrow label] {$f(a_1)$} (fa1);
+
+\draw [topbrace] (a21.north west) -- coordinate (fa2) (a22.north east);
+\draw [arrow, to brace, smooth] (a2) to node [arrow label] {$f(a_2)$} (fa2);
+
+\draw [topbrace] (ai1.north west) -- coordinate (fai) (ai1.north east);
+\draw [arrow, to brace, smooth] (ai) to node [arrow label] {$f(a_i)$} (fai);
+
+\draw [topbrace] (an1.north west) -- coordinate (fan) (anm.north east);
+\draw [arrow, to brace, smooth] (an) to node [arrow label] {$f(a_n)$} (fan);
+
+\foreach \i in {11,12,13,21,22,i1,n1,nm} {
+  \draw [arrow, smooth] (a\i) to (b\i);
+}
+
+% 
+% \foreach \i in {1, 2, i, n} {
+%   \draw (a\i) [arrow] -- node [arrow label] {$f(a_{\i})$} (b\i);
+% }
+
+\input{_footer.tex}
