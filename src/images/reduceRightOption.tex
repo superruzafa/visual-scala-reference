@@ -1,0 +1,32 @@
+\input{_header.tex}
+
+\matrix (a) [collection, name prefix=a] {
+  \node (1) {$a_1$};       &
+  \ellipsis;               &
+  \node (n-i) {$a_{n-i}$};     &
+  \ellipsis;               &
+  \node (n-2) {$a_{n-2}$}; &
+  \node (n-1) {$a_{n-1}$}; &
+  \node (n)   {$a_n$};     \\
+};
+
+\node (f1)   [below=1cm of an.south west] {$f(a_{n-1}, a_n)$};
+\node (f2)   [below=2cm of an-1.south west] {$f(a_{n-2}, z_1)$};
+\node (fi-1) [below=3cm of an-i.south east] {$f(a_i, z_{n-i+1})$};
+\node (fn-1) [below=4cm of a1.south east] {$f(a_1, z_{n-1})$};
+\node (b)    [option, below=1cm of fn-1] {$b$};
+%
+\begin{scope}
+  \tikzstyle{every path}=[arrow]
+  \draw [out=south, in=north] (an) to (f1.30);
+  \draw [out=south, in=north] (an-1) to (f1.120);
+  \draw [out=west, in=north] (f1.west) to (f2.30);
+  \draw [out=south, in=north] (an-2) to (f2.120);
+  \draw [out=west, in=north] (f2.west) to (fi-1.30);
+  \draw [out=south, in=north] (an-i) to (fi-1.120);
+  \draw [out=west, in=north] (fi-1.west) to (fn-1.30);
+  \draw [out=south, in=north] (a1) to (fn-1.120);
+  \draw (fn-1.south) -- (b);
+\end{scope}
+
+\input{_footer.tex}
