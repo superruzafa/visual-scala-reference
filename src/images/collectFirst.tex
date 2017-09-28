@@ -1,6 +1,6 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix = a] {
+\matrix (A) [collection, name prefix=a] {
   \node (1) {$a_1$}; &
   \node (2) {$a_2$}; &
   \ellipsis          &
@@ -9,18 +9,19 @@
   \node (n) {$a_n$}; \\
 };
 
-\node (B) [option, below of=ai, node distance = 4cm] {$b$};
+\node (B) [option, below of=ai, node distance=4cm] {$b$};
 
 \foreach \i/\d/\p in {
   1/\false/below,
   2/\false/below,
   i/\true/310}
 {
-  \node (pfa\i) [below of = a\i, pin={[function result, pin position = \p] \d}] {$\exists \, pf(a_{\i})$};
+  \node (pfa\i) [predicate, below=1mm of a\i, pin={[function result, pin position=\p] \d}] {$\exists \, pf(a_{\i})$};
+  \draw (a\i) -- (pfa\i);
 }
 
-\draw (pfa1.south) [arrow, bend right = 45] to (pfa2.south);
-\draw (pfa2.south) [arrow, bend right = 37] to (pfai.south);
+\draw (pfa1.south) [arrow, bend right=45] to (pfa2.south);
+\draw (pfa2.south) [arrow, bend right=37] to (pfai.south);
 \draw (pfai.south) [arrow] -- node [arrow label] {$pf(a_i)$} (B);
 
 \input{_footer.tex}

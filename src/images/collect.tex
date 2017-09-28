@@ -27,7 +27,7 @@
   n-1/\true/235,
   n/\false/275}
 {
-  \node (pfa\i) [below of=a\i, predicate, pin={[function result, pin position=\a] \d}] {$\exists \, pf(a_{\i})$};
+  \node (pfa\i) [predicate, below=1mm of a\i, pin={[function result, pin position=\a] \d}] {$\exists \, pf(a_{\i})$};
   \draw (a\i) -- (pfa\i);
 }
 

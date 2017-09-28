@@ -12,7 +12,7 @@
     \node (n)   {$a_n$};     \\
 };
     
-\matrix (B) [collection, name prefix = b, below of = A, node distance = 4cm] {
+\matrix (B) [collection, name prefix=b, below of=A, node distance=4cm] {
     \node (1)   {$a_1$}; &
     \node (3)   {$a_3$}; &
     \ellipsis            &
@@ -30,11 +30,11 @@
   n-1/\true/275,
   n/\false/270}
 {
-  \node (pa\i) [below of = a\i, predicate, pin={[function result, pin position=\a] \b}] {$p(a_{\i})$};
+  \node (pa\i) [predicate, below=1mm of a\i, pin={[function result, pin position=\a] \b}] {$p(a_{\i})$};
   \draw (a\i) -- (pa\i);
 }
     
-\foreach \i in {1, 3, i, n-1} {
+\foreach \i in {1,3,i,n-1} {
   \draw (pa\i) [arrow, smooth] to (b\i);
 }
 

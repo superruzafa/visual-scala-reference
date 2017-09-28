@@ -1,51 +1,51 @@
 \newcommand{\true}{\textcolor{green}{\ding{51}}}
 \newcommand{\false}{\textcolor{red}{\ding{55}}}
 
-\tikzstyle{elem} = [
-  font = \large
+\tikzstyle{elem}=[
+  font=\large
 ]
 
-\tikzstyle{cell} = [
+\tikzstyle{cell}=[
   draw,
-  line width = 0.4mm,
-  minimum size = 1.3cm,
-  outer sep = 0,
-  fill = white,
-  font = \large
+  line width=0.4mm,
+  minimum size=1.3cm,
+  outer sep=0,
+  fill=white,
+  font=\large
 ]
 
-\tikzstyle{collection} = [
-  inner sep = 0,
-  column sep = -0.3mm,
-  nodes = cell
+\tikzstyle{collection}=[
+  inner sep=0,
+  column sep=-0.3mm,
+  nodes=cell
 ]
 
-\tikzstyle{option} = [cell]
+\tikzstyle{option}=[cell]
 
-\tikzstyle{ellipsis} = [
+\tikzstyle{ellipsis}=[
   loosely dash dot,
-  line width = 0.15mm,
-  minimum width = 1.5cm,
-  node contents = $\ldots$,
-  fill = none
+  line width=0.15mm,
+  minimum width=1.5cm,
+  node contents=$\ldots$,
+  fill=none
 ]
 
 \newcommand{\ellipsis}{ \node [ellipsis]; }
 
-\tikzstyle{arrow} = [-latex]
+\tikzstyle{arrow}=[-latex]
 
-\tikzstyle{arrow label} = [
-  scale = 0.8,
-  fill = white!0
+\tikzstyle{arrow label}=[
+  font=\small,
+  fill=white!0
 ]
 
-\tikzstyle{predicate} = [
-  scale = 0.9
+\tikzstyle{predicate}=[
+  font=\small
 ]
 
-\tikzstyle{smooth} = [
-  out = 270,
-  in = 90
+\tikzstyle{smooth}=[
+  out=270,
+  in=90
 ]
 
 \tikzstyle{function result}=[
@@ -57,8 +57,8 @@
 ]
 
 \newcommand{\bottommeasure}[4][5mm] {
-  \begin{scope}[line width = 0.1mm]
-    \coordinate (x) at ([yshift = -#1] #3);
+  \begin{scope}[line width=0.1mm]
+    \coordinate (x) at ([yshift=-#1] #3);
     \draw (x) [measure] -- node [label={[label distance=-1mm]above:#2}] {} (x -| #4);
     \draw (#3) -- ++(0, -#1) -- +(0, -1.25mm);
     \draw (#4) -- ++(0, -#1) -- +(0, -1.25mm);
