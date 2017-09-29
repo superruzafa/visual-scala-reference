@@ -141,7 +141,7 @@
   signature: "foreach(f: (A) ⇒ Unit): Unit"
   description:
     en: Applies a function <var>f</var> to all elements of this collection.
-    es: Aplica un función <var>f</var> a todos los elementos de esta colección.
+    es: Aplica una función <var>f</var> a todos los elementos de esta colección.
 
 - name: groupBy
   signature: "groupBy[K](f: (A) ⇒ K): Map[K, Collection[A]]"
@@ -192,7 +192,7 @@
     es: Produce un rango con todos los índices de esta colección.
 
 - name: init
-  signature: "Collection[A]"
+  signature: "init: Collection[A]"
   description:
     en: Select all elements except the last.
     es: Selecciona todos los elementos excepto el último.
