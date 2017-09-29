@@ -1,0 +1,27 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+    \node (1)   {$a_1$};     &
+    \ellipsis                &
+    \node (n)   {$a_n$};     &
+    \node (n+1) {$a_{n+1}$}; &
+    \ellipsis                &
+    \node (n+m) {$a_{n+m}$}; \\
+};
+
+\matrix [collection, left delimiter=(, right delimiter=), below of=A, name prefix=b, node distance=3cm] {
+  \node (1)   {$a_1$};     &
+  \ellipsis                &
+  \node (n)   {$a_n$};     &
+  \tuplecomma              &
+  \node (n+1) {$a_{n+1}$}; &
+  \ellipsis                &
+  \node (n+m) {$a_{n+m}$}; \\
+};
+
+\toppointer{an.north east}{n}
+
+\bracetobrace{a1.south west}{an.south east}{b1.north west}{bn.north east}
+\bracetobrace{an+1.south west}{an+m.south east}{bn+1.north west}{bn+m.north east}
+
+\input{_footer.tex}
