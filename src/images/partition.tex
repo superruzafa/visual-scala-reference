@@ -1,0 +1,47 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+    \node (1)   {$a_1$};     &
+    \node (2)   {$a_2$};     &
+    \node (3)   {$a_3$};     &
+    \ellipsis                &
+    \node (i)   {$a_i$};     &
+    \node (i+1) {$a_{i+1}$}; &
+    \ellipsis                &
+    \node (n-1) {$a_{n-1}$}; &
+    \node (n)   {$a_n$};     \\
+};
+
+\foreach \i/\b/\a in {
+  1/\true/260,
+  2/\false/265,
+  3/\true/310,
+  i/\true/250,
+  i+1/\false/250,
+  n-1/\true/275,
+  n/\false/310}
+{
+  \node (pa\i) [predicate, below=1mm of a\i, pin={[function result, pin position=\a] \b}] {$p(a_{\i})$};
+  \draw (a\i) -- (pa\i);
+}
+
+\matrix [collection, left delimiter=(, right delimiter=), below of=A, name prefix=b, node distance=5cm] {
+  \node (1)   {$a_1$};     &
+  \node (3)   {$a_3$};     &
+  \ellipsis                &
+  \node (i)   {$a_i$};     &
+  \ellipsis                &
+  \node (n-1) {$a_{n-1}$}; &
+  \tuplecomma              &
+  \node (2)   {$a_2$};     &
+  \ellipsis                &
+  \node (i+1) {$a_{i+1}$}; &
+  \ellipsis                &
+  \node (n)   {$a_n$};     \\
+};
+
+\foreach \i in {1,2,3,i,i+1,n-1,n} {
+  \draw (pa\i) [arrow, white border, smooth] to (b\i);
+}
+
+\input{_footer.tex}

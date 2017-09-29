@@ -32,11 +32,27 @@
 
 \newcommand{\ellipsis}{ \node [ellipsis]; }
 
+\tikzstyle{tuple comma}=[
+  minimum width=2em,
+  draw=none,
+  fill=none,
+  column sep=0.3mm,
+  node contents={,}
+]
+
+\newcommand{\tuplecomma}{ \node [tuple comma]; }
+
 \tikzstyle{arrow}=[draw=black, -latex]
 
 \tikzstyle{arrow label}=[
   font=\small,
   fill=white!0
+]
+
+\tikzstyle{white border}=[
+  preaction={draw=white, line cap=butt, -, line width=0.5em},
+  shorten <= 1pt,
+  shorten >= 1pt
 ]
 
 \tikzstyle{iteration}=[
