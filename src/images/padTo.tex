@@ -1,0 +1,30 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1)   {$a_1$};     &
+  \node (2)   {$a_2$};     &
+  \ellipsis                &
+  \node (n)   {$a_n$};     \\
+};
+
+\matrix (B) [collection, below of=A, matrix anchor=b1.west, node distance=3cm] at (a1.west) {
+  \node (b1)   {$a_1$};   &
+  \node (b2)   {$a_2$};   &
+  \ellipsis               &
+  \node (bn)   {$a_n$};   &
+  \node (bn+1)   {elem};  &
+  \node (bn+2)   {elem};  &
+  \ellipsis               &
+  \node (blen)   {elem};  \\
+};
+
+\node (elem) [elem, above=2cm of bn+2.north east] {elem};
+
+\foreach \i in {n+1,n+2,len} {
+  \draw (elem) [arrow, smooth] to (b\i);
+}
+
+\bracetobrace{a1.south west}{an.south east}{b1.north west}{bn.north east}
+\bottommeasure{len}{b1.south west}{blen.south east}
+
+\input{_footer.tex}
