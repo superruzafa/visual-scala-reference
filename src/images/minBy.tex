@@ -1,0 +1,33 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1) {$a_1$};   &
+  \node (2) {$a_2$};   &
+  \ellipsis            &
+  \node (i) {$a_{i}$}; &
+  \ellipsis            &
+  \node (n) {$a_n$};   \\
+};
+
+\node (B) [elem, below of=ai, node distance=4cm] {$a_i$};
+
+\begin{scope}
+  \tikzstyle{every node}=[predicate]
+  \node (fa1) [below=1mm of a1] {$f(a_1)$};
+  \node (fa2) [below=1mm of a2] {$f(a_2)$};
+  \node (fai) [below=1mm of ai, pin={[function result, pin position=240] min}] {$f(a_i)$};
+  \node (fan) [below=1mm of an] {$f(a_n)$};
+\end{scope}
+
+\foreach \i in {1,2,i,n} {
+  \draw (a\i) -- (fa\i);
+}
+
+\draw (fai.south) [arrow] -- coordinate (x) (B);
+
+\matrix [matrix of nodes, left delimiter=\{, right of=x, matrix anchor=x1.south west] {
+  \node (x1) {$f(a_i) < f(a_j),\, j \in [1, i - 1]$}; \\
+  \node {$f(a_i) \leq f(a_k),\, k \in [i + 1, n]$}; \\
+};
+
+\input{_footer.tex}
