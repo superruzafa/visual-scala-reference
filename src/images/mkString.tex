@@ -1,0 +1,24 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1) {$a_1$}; &
+  \node (2) {$a_2$}; &
+  \ellipsis          &
+  \node (i) {$a_i$}; &
+  \ellipsis          &
+  \node (n) {$a_n$}; \\
+};
+
+
+\matrix (B) [matrix of nodes, align=left, left delimiter=\{, matrix anchor=sep.west, right of=an] at (an.east) {
+  \node {start=``(''};     \\
+  \node (sep) {sep=``,''}; \\
+  \node {end=``)''};       \\
+};
+
+\draw (A.south west) [bottombrace] -- coordinate (x) (A.south west -| B.south east);
+
+\node (B) [below=10mm of x] {``($a_1$,$a_2$,$\ldots$,$a_i$,$\ldots$,$a_n$)''};
+\draw (x) [arrow, from brace] -- (B);
+
+\input{_footer.tex}
