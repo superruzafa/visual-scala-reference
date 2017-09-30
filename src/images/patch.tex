@@ -1,0 +1,37 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1)   {$a_1$};     &
+  \node (2)   {$a_2$};     &
+  \node (3)   {$a_3$};     &
+  \ellipsis                &
+  \node (n-2) {$a_{n-2}$}; &
+  \node (n-1) {$a_{n-1}$}; &
+  \node (n)   {$a_n$};     \\
+};
+
+\matrix (B) [collection, node distance=2cm, right of=an, matrix anchor=b1.east] at (an.east) {
+  \node (b1) {$b_1$}; &
+  \ellipsis           &
+  \node (bn) {$b_n$}; \\
+};
+
+\matrix (C) [collection, name prefix=c, node distance=4cm, below of=A] {
+  \node (a1)   {$a_1$}; &
+  \node (a2)   {$a_2$}; &
+  \node (b1) {$b_1$};  &
+  \ellipsis            &
+  \node (bn) {$b_n$};  &
+  \node (an-1) {$a_{n-1}$}; &
+  \node (an)   {$a_n$}; \\
+};
+
+\toppointer{a3.north west}{from}
+\bottommeasure{replaced}{a3.south west}{an-2.south east}
+\bracetobrace{a1.south west}{a2.south east}{ca1.north west}{ca2.north east}
+\bracetobrace{an-1.south west}{an.south east}{can-1.north west}{can.north east}
+\draw (b1.south west) [bottombrace] -- coordinate (x) (bn.south east);
+\draw (cb1.north west) [topbrace] -- coordinate (y) (cbn.north east);
+\draw ([yshift=-2mm] x) [white border, arrow, out=240, in=60] to ([yshift=2mm] y);
+
+\input{_footer.tex}
