@@ -1,0 +1,44 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+    \node (1) {$a_1$}; &
+    \node (2) {$a_2$}; &
+    \ellipsis          &
+    \node (i) {$a_i$}; &
+    \ellipsis          &
+    \node (n) {$a_n$}; \\
+};
+
+\matrix (Z) [collection, matrix anchor=west, below of=A, node distance=2cm] at (A.west) {
+    \node (z1) {$(a_1, b_1)$};       &
+    \node (z2) {$(a_2, b_2)$};       &
+    \ellipsis                        &
+    \node (zi) {$(a_i, b_i)$};       &
+    \ellipsis                        &
+    \node (zn) {$(a_n, b_n)$};       &
+    \node (zn+1)  [xscale=0.77] {$(a_f, b_{n+1})$}; &
+    \ellipsis                        &
+    \node (zn+m) [xscale=0.73] {$(a_f, b_{n+m})$}; \\
+};
+
+\matrix (B) [collection, matrix anchor=west, below of=A, node distance=4cm] at (A.west) {
+    \node (b1) {$b_1$};       &
+    \node (b2) {$b_2$};       &
+    \ellipsis                 &
+    \node (bi) {$b_i$};       &
+    \ellipsis                 &
+    \node (bn) {$b_n$};       &
+    \node (bn+1) {$b_{n+1}$}; &
+    \ellipsis                 &
+    \node (bn+m) {$b_{n+m}$}; \\
+};
+
+\node (af) [elem, right of=an, node distance=15mm] {$a_f$};
+\node (bf) [elem, right of=bn+m, node distance=15mm] {$b_f$};
+
+\foreach \a/\b in {1/1,2/2,i/i,n/n,f/n+1,f/n+m} {
+  \draw [arrow, white border] (a\a) -- (z\b.north) -- ([xshift=-0.7em, yshift=-1em] z\b.north);
+  \draw [arrow, white border] (b\b) -- (b\b |- z\b.south)  -- ([xshift=+0.7em, yshift=+1em] z\b.south);
+}
+
+\input{_footer.tex}

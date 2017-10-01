@@ -1,0 +1,33 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1) {$a_1$}; &
+  \node (2) {$a_2$}; &
+  \ellipsis          &
+  \node (i) {$a_i$}; &
+  \ellipsis          &
+  \node (n) {$a_n$}; \\
+};
+
+\matrix (B) [matrix anchor=b1.west, below of=A, collection, node distance=3cm] at (A.west) {
+  \node (b1) {$(a_1, 0)$};                 &
+  \node (b2) {$(a_2, 1)$};                 &
+  \ellipsis                                &
+  \node (bi) [xscale=0.78] {$(a_i, i-1)$}; &
+  \ellipsis                                &
+  \node (bn) [xscale=0.69] {$(a_n, n-1)$}; \\
+};
+
+% \bracetobrace{A.south west}{A.south east}{B.north west}{B.north east}
+
+\begin{scope}
+  \tikzstyle{every edge}=[arrow]
+  \foreach \i in {1,2,i,n} {
+    \draw (a\i) [white border] -- ([yshift=-0.2em] b\i.north);
+    \draw (a\i) -- (b\i.north)
+      edge ([xshift=-0.7em, yshift=-1em] b\i.north)
+      edge ([xshift=+0.7em, yshift=-1em] b\i.north);
+  }
+\end{scope}
+
+\input{_footer.tex}

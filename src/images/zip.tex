@@ -1,0 +1,37 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+    \node (1) {$a_1$}; &
+    \node (2) {$a_2$}; &
+    \ellipsis          &
+    \node (i) {$a_i$}; &
+    \ellipsis          &
+    \node (n) {$a_n$}; \\
+};
+
+\matrix (azipb) [collection, matrix anchor=west, below of=A, node distance=2cm] at (A.west) {
+    \node (z1) {$(a_1, b_1)$}; &
+    \node (z2) {$(a_2, b_2)$}; &
+    \ellipsis                  &
+    \node (zi) {$(a_i, b_i)$}; &
+    \ellipsis                  &
+    \node (zn) {$(a_n, b_n)$}; \\
+};
+
+\matrix (B) [collection, matrix anchor=west, below of=A, node distance=4cm] at (A.west) {
+    \node (b1) {$b_1$};       &
+    \node (b2) {$b_2$};       &
+    \ellipsis                 &
+    \node (bi) {$b_i$};       &
+    \ellipsis                 &
+    \node (bn) {$b_n$};       &
+    \ellipsis                 &
+    \node (bn+m) {$b_{n+m}$}; \\
+};
+
+\foreach \i in {1,2,i,n} {
+  \draw [arrow, white border] (a\i) -- (a\i |- z\i.north) -- ([xshift=-0.7em, yshift=-1em] z\i.north);
+  \draw [arrow, white border] (b\i) -- (b\i |- z\i.south)  -- ([xshift=+0.7em, yshift=+1em] z\i.south);
+}
+
+\input{_footer.tex}
