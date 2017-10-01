@@ -1,0 +1,27 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1) {$a_1$};       &
+  \node (2) {$a_2$};       &
+  \node (3) {$a_3$};       &
+  \ellipsis                &
+  \node (i-1) {$a_{i-1}$};       &
+  \node (i) {$a_i$};       &
+  \node (i+1) {$a_{i+1}$}; &
+  \ellipsis                &
+  \node (n) {$a_n$};       \\
+};
+
+\toppointer{a2.north}{from}
+\toppointer{ai.north}{to}
+
+\matrix (B) [collection, below of=A, matrix anchor=b1.west, node distance=3cm] at (a3.west) {
+  \node (b1) {$a_3$};      &
+  \ellipsis                &
+  \node (m-1) {$a_{i-1}$}; &
+  \node (m) {$a_i$};       \\
+};
+
+\bracetobrace{a3.south west}{ai.south east}{B.north west}{B.north east};
+
+\input{_footer.tex}
