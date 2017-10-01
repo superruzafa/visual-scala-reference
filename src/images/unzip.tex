@@ -1,0 +1,30 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1) {$(a_1, b_1)$}; &
+  \ellipsis                 &
+  \node (i) {$(a_i, b_i)$}; &
+  \ellipsis                 &
+  \node (n) {$(a_n, b_n)$}; \\
+};
+
+\matrix [collection, left delimiter=(, right delimiter=), below of=A, node distance=5cm] {
+  \node (za1) {$a_1$}; &
+  \ellipsis            &
+  \node (zai) {$a_i$}; &
+  \ellipsis            &
+  \node (zan) {$a_n$}; &
+  \tuplecomma          &
+  \node (zb1) {$b_1$}; &
+  \ellipsis            &
+  \node (zbi) {$b_i$}; &
+  \ellipsis            &
+  \node (zbn) {$b_n$}; \\
+};
+
+\foreach \i in {1,i,n} {
+  \draw ([shift={(-0.7em, 0.7em)}] a\i.south) [arrow, smooth, white border] to (za\i.north);
+  \draw ([shift={(+0.7em, 0.7em)}] a\i.south) [arrow, smooth, white border] to (zb\i.north);
+}
+
+\input{_footer.tex}

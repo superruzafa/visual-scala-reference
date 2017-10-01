@@ -1,0 +1,29 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1) {$(a_1, b_1, c_1)$}; &
+  \ellipsis                      &
+  \node (n) {$(a_n, b_n, c_n)$}; \\
+};
+
+\matrix [collection, left delimiter=(, right delimiter=), below of=A, node distance=5cm] {
+  \node (za1) {$a_1$}; &
+  \ellipsis            &
+  \node (zan) {$a_n$}; &
+  \tuplecomma          &
+  \node (zb1) {$b_1$}; &
+  \ellipsis            &
+  \node (zbn) {$b_n$}; &
+  \tuplecomma          &
+  \node (zc1) {$c_1$}; &
+  \ellipsis            &
+  \node (zcn) {$c_n$}; \\
+};
+
+\foreach \i in {1,n} {
+  \draw ([shift={(-1.5em, 0.7em)}] a\i.south) [arrow, smooth, white border] to (za\i.north);
+  \draw ([shift={(0em, 0.7em)}] a\i.south) [arrow, smooth, white border] to (zb\i.north);
+  \draw ([shift={(+1.5em, 0.7em)}] a\i.south) [arrow, smooth, white border] to (zc\i.north);
+}
+
+\input{_footer.tex}
