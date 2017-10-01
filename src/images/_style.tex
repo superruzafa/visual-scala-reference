@@ -55,6 +55,14 @@
   shorten >= 1pt
 ]
 
+\tikzstyle{middotted}=[
+  decorate,
+  decoration={
+    border, angle=90, segment length=2pt, amplitude=\pgflinewidth,
+    pre=curveto, pre length=5mm, post=curveto, post length=5mm
+  }
+]
+
 \tikzstyle{iteration}=[
   arrow,
   bend right=45,
