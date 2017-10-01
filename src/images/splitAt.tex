@@ -3,25 +3,25 @@
 \matrix (A) [collection, name prefix=a] {
     \node (1)   {$a_1$};     &
     \ellipsis                &
-    \node (n)   {$a_n$};     &
-    \node (n+1) {$a_{n+1}$}; &
+    \node (i)   {$a_i$};     &
+    \node (i+1) {$a_{i+1}$}; &
     \ellipsis                &
-    \node (n+m) {$a_{n+m}$}; \\
+    \node (n) {$a_{n}$}; \\
 };
 
 \matrix [collection, left delimiter=(, right delimiter=), below of=A, name prefix=b, node distance=3cm] {
   \node (1)   {$a_1$};     &
   \ellipsis                &
-  \node (n)   {$a_n$};     &
+  \node (i)   {$a_i$};     &
   \tuplecomma              &
-  \node (n+1) {$a_{n+1}$}; &
+  \node (i+1) {$a_{i+1}$}; &
   \ellipsis                &
-  \node (n+m) {$a_{n+m}$}; \\
+  \node (n) {$a_{n}$};     \\
 };
 
-\toppointer{an.north}{n}
+\toppointer{ai.north}{i}
 
-\bracetobrace{a1.south west}{an.south east}{b1.north west}{bn.north east}
-\bracetobrace{an+1.south west}{an+m.south east}{bn+1.north west}{bn+m.north east}
+\bracetobrace{a1.south west}{ai.south east}{b1.north west}{bi.north east}
+\bracetobrace{ai+1.south west}{an.south east}{bi+1.north west}{bn.north east}
 
 \input{_footer.tex}

@@ -5,7 +5,7 @@
   \node (2) {$a_2$};       &
   \node (3) {$a_3$};       &
   \ellipsis                &
-  \node (i-1) {$a_{i-1}$};       &
+  \node (i-1) {$a_{i-1}$}; &
   \node (i) {$a_i$};       &
   \node (i+1) {$a_{i+1}$}; &
   \ellipsis                &
@@ -13,7 +13,7 @@
 };
 
 \toppointer{a2.north}{from}
-\toppointer{ai.north}{to}
+\toppointer{ai.north}{until}
 
 \matrix (B) [collection, below of=A, matrix anchor=b1.west, node distance=3cm] at (a3.west) {
   \node (b1) {$a_3$};      &
