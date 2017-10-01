@@ -1,0 +1,15 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1) {$a_1$}; &
+  \node (2) {$a_2$}; &
+  \ellipsis          &
+  \node (n) {$a_n$}; \\
+};
+
+\draw [bottombrace] (a1.south west) -- coordinate(x) (an.south east);
+
+\node (B) [below=1cm of A] {$\displaystyle \prod_{i=1}^n a_i$};
+\draw (x) [arrow, from brace] -- (B);
+
+\input{_footer.tex}

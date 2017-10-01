@@ -333,6 +333,12 @@
     en: Returns the length of the longest prefix whose elements all satisfy some predicate.
     es: Devuelve la longitud del mayor prefijo cuyos elementos satisfacen algún predicado.
 
+- name: product
+  signature: "product: A"
+  description:
+    en: Multiplies up the elements of this collection.
+    es: Multiplica los elementos de esta colección.
+
 - name: reduce
   signature: "reduce[A1 >: A](op: (A1, A1) ⇒ A1): A1"
   description:
