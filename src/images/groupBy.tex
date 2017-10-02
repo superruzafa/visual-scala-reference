@@ -1,0 +1,50 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+    \node (1)   {$a_1$};     &
+    \node (2)   {$a_2$};     &
+    \node (3)   {$a_3$};     &
+    \ellipsis                &
+    \node (i)   {$a_i$};     &
+    \node (i+1) {$a_{i+1}$}; &
+    \ellipsis                &
+    \node (n)   {$a_n$};     \\
+};
+
+\foreach \i/\k in {1/k_1, 2/k_2, 3/k_1, i/k_m, i+1/k_2, n/k_m} {
+  \node (fa\i) [predicate, below=1mm of a\i, pin={[function result, pin position=below] $\k$}] {$f(a_{\i})$};
+  \draw (a\i) -- (fa\i);
+}
+
+\matrix (K) [map keys, below left=3cm and 2cm of A.center] {
+  \node (k1) {$k_1$}; \\
+  \node (k2) {$k_2$}; \\
+  \node {$\vdots$}; \\
+  \node (km) {$k_m$}; \\
+};
+
+\matrix (K1) [map values, right=1cm of k1.east] {
+  \node                        {$a_1$};    &
+  \node                        {$a_3$};    &
+  \node [draw=none, fill=none] {$\ldots$}; \\
+};
+
+\matrix (K2) [map values, right=1cm of k2.east] {
+  \node                        {$a_2$};     &
+  \node [draw=none, fill=none] {$\ldots$};  &
+  \node                        {$a_{i+1}$}; &
+  \node [draw=none, fill=none] {$\ldots$};  \\
+};
+
+\matrix (Km) [map values, right=1cm of km.east] {
+  \node                        {$a_2$};     &
+  \node [draw=none, fill=none] {$\ldots$};  &
+  \node                        {$a_{i+1}$}; &
+  \node [draw=none, fill=none] {$\ldots$};  \\
+};
+
+\draw (k1) [map to] -- (K1);
+\draw (k2) [map to] -- (K2);
+\draw (km) [map to] -- (Km);
+
+\input{_footer.tex}
