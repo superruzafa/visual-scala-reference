@@ -1,0 +1,52 @@
+\input{_header.tex}
+
+\matrix (B) [collection, name prefix=b] {
+  \node (11) {$b_{1_1}$};     &
+  \node (12) {$b_{1_2}$};     &
+  \node (13) {$b_{1_3}$};     &
+  \node (21) {$b_{2_1}$};     &
+  \node (22) {$b_{2_2}$};     &
+  \ellipsis                   &
+  \node (i1) {$b_{i_1}$};     &
+  \ellipsis                   &
+  \node (n1) {$b_{n_1}$};     &
+  \node (nell) [ellipsis] {}; &
+  \node (nm) {$b_{n_m}$};     \\
+};
+
+\begin{scope}
+  \tikzstyle{every node}=[scale=0.8]
+  \matrix (A1) [collection, above of=b12, node distance=2.5cm] at (b12.north) {
+    \node (a11) {$b_{1_1}$}; &
+    \node (a12) {$b_{1_2}$}; &
+    \node (a13) {$b_{1_3}$}; \\
+  };
+  \matrix (A2) [collection, above of=b21, node distance=2.5cm] at (b21.north east) {
+    \node (a21) {$b_{2_1}$}; &
+    \node (a22) {$b_{2_2}$}; \\
+  };
+  \matrix (Ai) [collection, above of=bi1, node distance=2.5cm] at (bi1.north) {
+    \node (ai1) {$b_{i_1}$}; \\
+  };
+  \matrix (An) [collection, above of=anell, node distance=2.5cm] at (bnell.north) {
+    \node (an1) {$b_{n_1}$};  &
+    \node (anell) [ellipsis]; &
+    \node (anm) {$b_{n_m}$};  \\
+  };
+\end{scope}
+
+\begin{scope}[on background layer]
+  \tikzstyle{every path}=[cell]
+  \draw ([shift={(-3mm, 3mm)}] A1.north west) rectangle ([shift={(3mm, -3mm)}] A1.south east);
+  \draw ([shift={(-3mm, 3mm)}] A2.north west) rectangle ([shift={(3mm, -3mm)}] A2.south east);
+  \draw ([shift={(+3mm, 3mm)}] A2.north east) [ellipsis] rectangle node {$\ldots$} ([shift={(-3mm, -3mm)}] Ai.south west);
+  \draw ([shift={(-3mm, 3mm)}] Ai.north west) rectangle coordinate (e1) ([shift={(3mm, -3mm)}] Ai.south east);
+  \draw ([shift={(+3mm, 3mm)}] Ai.north east) [ellipsis] rectangle node {$\ldots$} ([shift={(-3mm, -3mm)}] An.south west);
+  \draw ([shift={(-3mm, 3mm)}] An.north west) rectangle ([shift={(3mm, -3mm)}] An.south east);
+\end{scope}
+
+\foreach \from/\to in {a11/b11, a12/b12, a13/b13, a21/b21, a22/b22, ai1/bi1, an1/bn1, anm/bnm} {
+  \draw ([yshift=0.5em] \from.south) [arrow, smooth, white border] to (\to);
+}
+
+\input{_footer.tex}
