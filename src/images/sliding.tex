@@ -1,0 +1,45 @@
+\input{_header.tex}
+
+\matrix (A) [collection] {
+  \node (a1) {$a_1$};   &
+  \node [ellipsis];     &
+  \node (ai) {$a_i$};   &
+  \node [ellipsis];     &
+  \node (aj) {$a_j$};   &
+  \node [ellipsis];     &
+  \node (ak)   {$a_k$}; &
+  \node [ellipsis, minimum width=20mm]; &
+  \node (am)   {$a_m$}; &
+  \node [ellipsis];     &
+  \node (an) {$a_n$};   \\
+};
+
+\matrix (A1) [collection, below=20mm of a1, matrix anchor=A1a1.north west] at (a1.south west) {
+  \node (A1a1) {$a_1$};    &
+  \node (A1ae) [ellipsis]; &
+  \node (A1as) {$a_i$};    \\
+};
+
+\matrix (A2) [collection, below=20mm of ai, matrix anchor=A2a1.north west] at (aj.south west) {
+  \node (A2a1) {$a_j$};    &
+  \node (A2ae) [ellipsis]; &
+  \node (A2as) {$a_k$};    \\
+};
+
+\matrix (A3) [collection, below=20mm of aj, matrix anchor=A3a1.north west] at (am.south west) {
+  \node (A3a1) {$a_m$};    &
+  \node (A3ae) [ellipsis]; &
+  \node (A3as) {$a_n$};    \\
+};
+
+\topmeasure{size}{A1.north west}{A1.north east}
+\topmeasure{size}{A2.north west}{A2.north east}
+\topmeasure{$\leq$ size}{A3.north west}{A3.north east}
+
+\toppointer{aj.north}{step}
+\toppointer{am.north}{step}
+
+\draw [iteration, shorten >=1mm, shorten <=1mm] (A1as) -- (A2a1);
+\draw [iteration, shorten >=1mm, shorten <=1mm] (A2as) -- (A3a1);
+
+\input{_footer.tex}
