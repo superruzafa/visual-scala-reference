@@ -1,0 +1,23 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1)   {$a_1$}; &
+  \node (2)   {$a_2$}; &
+  \node (2)   {$a_1$}; &
+  \node (2)   {$a_n$}; &
+  \ellipsis            &
+  \node (n-1) {$a_2$}; &
+  \node (n-1) {$a_n$}; &
+  \node (n)   {$a_1$}; \\
+};
+
+\matrix (B) [collection, below=3cm of A, name prefix=b] {
+  \node (1) {$a_1$}; &
+  \node (2) {$a_2$}; &
+  \ellipsis          &
+  \node (n) {$a_n$}; \\
+};
+
+\bracetobrace {A.south west}{A.south east}{B.north west}{B.north east}
+
+\input{_footer.tex}
