@@ -3,30 +3,40 @@
 <head>
   <meta charset="utf-8" />
   <title>{{# t }}{{ messages.title }}{{/ t }}</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header>
-    <h1>{{# t }}{{ messages.title }}{{/ t }}</h1>
-    <p>{{# t }}{{ messages.availableLanguages }}{{/ t }}</p>
-    <ul>
-      {{# allLangs }}
-        <li><a href="index-{{ code }}.html">{{ name }}</a></li>
-      {{/ allLangs }}
-    </ul>
-  </header>
-  <div>
-    <aside>
-      <ul>
+  <div class="container-fluid">
+    <div class="row">
+      <header class="col">
+        <h1>{{# t }}{{ messages.title }}{{/ t }}</h1>
+        <p>{{# t }}{{ messages.availableLanguages }}{{/ t }}</p>
+        <ul>
+          {{# allLangs }}
+            <li><a href="index-{{ code }}.html">{{ name }}</a></li>
+          {{/ allLangs }}
+        </ul>
+      </header>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <aside class="col-md-4 col-lg-2">
+        <ul class="list-group">
+          {{# functions }}
+            <li class="list-unstyled"><a href="#{{ name }}" title="{{ name }}">{{ name }}</a></li>
+          {{/ functions }}
+        </ul>
+      </aside>
+      <section class="col-md-8 col-lg-10">
         {{# functions }}
-          <li><a href="#{{ name }}" title="{{ name }}">{{ name }}</a></li>
+          {{> function }}
         {{/ functions }}
-      </ul>
-    </aside>
-    <section>
-      {{# functions }}
-        {{> function }}
-      {{/ functions }}
-    </sectio>
+      </section>
+      </div>
+    </div>
   </div>
 </body>
 </html>
