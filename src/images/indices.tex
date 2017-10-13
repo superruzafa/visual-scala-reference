@@ -10,12 +10,12 @@
 };
 
 \matrix (B) [collection, name prefix=b, below of=A, node distance = 3cm] {
-  \node (1) {$1$}; &
-  \node (2) {$2$}; &
-  \ellipsis        &
-  \node (i) {$i$}; &
-  \ellipsis        &
-  \node (n) {$n$}; \\
+  \node (1) {$0$};   &
+  \node (2) {$1$};   &
+  \ellipsis          &
+  \node (i) {$i-1$}; &
+  \ellipsis          &
+  \node (n) {$n-1$}; \\
 };
 
 \foreach \i in {1, 2, i, n} {
