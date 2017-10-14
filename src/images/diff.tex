@@ -1,0 +1,39 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1) {$a_1$}; &
+  \node (2) {$a_2$}; &
+  \node (3) {$a_3$}; &
+  \ellipsis          &
+  \node (i) {$a_i$}; &
+  \node (i) {$a_{i+1}$}; &
+  \ellipsis          &
+  \node (n) {$a_n$}; \\
+};
+
+\matrix (A1) [collection, right=1cm of A] {
+  \node (b2) {$a_2$}; &
+  \node (bi) {$a_{i+1}$}; &
+  \node (bn) {$a_{n+1}$}; \\
+};
+
+
+\coordinate (b2a) at ([yshift=5mm] b2.north);
+\coordinate (bia) at ([yshift=10mm] bi.north);
+\draw [white border, -{Rays[red, line join=round]}] (b2.north) -- (b2a) -- (a2 |- b2a) -- (a2.north);
+\draw [white border, -{Rays[red, line join=round]}] (bi.north) -- (bia) -- (ai |- bia) -- (ai.north);
+
+\matrix (B) [collection, name prefix=b, below of=A, node distance=3cm] {
+  \node (1) {$a_1$}; &
+  \node (3) {$a_3$}; &
+  \ellipsis          &
+  \node (i) {$a_i$}; &
+  \ellipsis          &
+  \node (n) {$a_n$}; \\
+};
+
+\bracetobrace{A.south west}{A.south east}{B.north west}{B.north east}
+
+
+
+\input{_footer.tex}
