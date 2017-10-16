@@ -126,7 +126,7 @@
     es: Aplica un operador binario a un valor inicial y a todos los elementos de la colección, yendo de izquierda a derecha.
 
 - name: foldRight
-  signature: "foldLeft[B](z: B)(op: (A, B) ⇒ B): B"
+  signature: "foldRight[B](z: B)(op: (A, B) ⇒ B): B"
   description:
     en: Applies a binary operator to a start value and all elements of this collection, going right to left.
     es: Aplica un operador binario a un valor inicial y a todos los elementos de la colección, yendo de derecha a izquierda.
@@ -505,7 +505,7 @@
   signature: "takeWhile(p: (A) ⇒ Boolean): Collection[A]"
   description:
     en: Takes longest prefix of elements that satisfy a predicate.
-    es: Toma el mayor prefijo de elements que satisfacen un predicado.
+    es: Toma el mayor prefijo de elementos que satisfacen un predicado.
 
 - name: union
   signature: "union(that: Seq[A]): Collection[A]"

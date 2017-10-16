@@ -1,18 +1,15 @@
 \input{_header.tex}
 
 \matrix (A) [collection, name prefix=a] {
-  \node (1)   {$a_1$};     &
-  \node (2)   {$a_2$};     &
-  \ellipsis                &
-  \node (n)   {$a_n$};     \\
+  \node (1)   {$a_1$}; &
+  \node (2)   {$a_2$}; &
+  \ellipsis            &
+  \node (n)   {$a_n$}; \\
 };
 
 \bottommeasure{n}{a1.south west}{an.south east}
 
-\node (e) [below=15mm of A] {$n==0$};
 \node (B) [below=27mm of A] {\false};
-
-\draw [arrow] ([yshift=-7mm] A.south) -- (e);
-\draw [arrow] (e) -- (B);
+\draw ([yshift=-7mm] A.south) [arrow] -- node [arrow label] {$\textrm{n} = 0?$} (B);
 
 \input{_footer.tex}

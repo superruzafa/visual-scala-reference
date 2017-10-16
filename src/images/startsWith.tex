@@ -19,14 +19,16 @@
 \begin{scope}
   \tikzstyle{every path}=[Latex-Latex]
   \tikzstyle{every node}=[arrow label]
-  \draw (a2) -- node {== \true} (b2);
-  \draw (a3) -- node {== \true} (b3);
-  \draw (a4) -- node (p4) {== \true} (b4);
+  \draw (a2) -- node (t1) {= \true} (b2);
+  \draw (a3) -- node (t2) {= \true} (b3);
+  \draw (a4) -- node (t3) {= \true} (b4);
 \end{scope}
 
-\node (B) [elem, right=5cm of p4] {\true};
-\draw [arrow] (p4) -- (B);
+\node (B) [elem, right=5cm of t3] {\true};
+\draw [arrow] (t3) -- (B);
 
 \toppointer{a2.north}{offset}
+
+\draw (t1.north west) [rounded corners=0.5em] rectangle (t3.south east);
 
 \input{_footer.tex}

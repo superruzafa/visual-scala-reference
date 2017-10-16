@@ -13,19 +13,19 @@
 
 \node (B) [elem, below of=ai, node distance=4cm] {$i$};
 
-\foreach \i/\d/\p in {
-  1/\true/below,
-  2/\false/below,
-  i-1/\false/below,
-  i/\true/310,
-  i+1/\false/310}
+\foreach \i/\d/\s/\p in {
+  1/\true/0.5em/below,
+  2/\false/2em/below,
+  i-1/\false/0.5em/below,
+  i/\true/2em/310,
+  i+1/\false/0.5em/310}
 {
-  \node (pa\i) [predicate, align=center, below=1mm of a\i, pin={[function result, pin position=\p] \d}] {$a_{\i}$\\==\\elem};
+  \node (pa\i) [predicate, align=center, below=\s of a\i, pin={[function result, pin position=\p] \d}] {$a_{\i}$ = elem?};
   \draw (a\i) -- (pa\i);
 }
 
 \draw (pa1.south) [iteration] to (pa2.south);
-\draw (pa2.south) [iteration, bend right=37] to (pai-1.south);
+\draw (pa2.south) [iteration, bend right=37, middotted] to (pai-1.south);
 \draw (pai-1.south) [iteration] to (pai.south);
 \draw (pai.south) [iteration, bend right=37] to (pai+1.south);
 \draw (pai.south) [arrow] -- (B);

@@ -16,12 +16,12 @@
   2/\false/below,
   i/\true/310}
 {
-  \node (pfa\i) [predicate, below=1mm of a\i, pin={[function result, pin position=\p] \d}] {$\exists \, pf(a_{\i})$};
+  \node (pfa\i) [predicate, below=0.5em of a\i, pin={[function result, pin position=\p] \d}] {$\exists \, \texttt{pf}(a_{\i})$};
   \draw (a\i) -- (pfa\i);
 }
 
 \draw (pfa1.south) [iteration] to (pfa2.south);
 \draw (pfa2.south) [iteration, bend right=37] to (pfai.south);
-\draw (pfai.south) [arrow] -- node [arrow label] {$pf(a_i)$} (B);
+\draw (pfai.south) [arrow] -- node [arrow label] {$\texttt{pf}(a_i)$} (B);
 
 \input{_footer.tex}

@@ -9,17 +9,17 @@
   \node (n) {$a_n$}; \\
 };
 
-\matrix (B) [collection, name prefix=b, below of=A, node distance = 3cm] {
-  \node (1) {$b_1$}; &
-  \node (2) {$b_2$}; &
+\matrix (B) [collection, below=2cm of A] {
+  \node (b1) {$b_1$}; &
+  \node (b2) {$b_2$}; &
   \ellipsis          &
-  \node (i) {$b_i$}; &
+  \node (bi) {$b_i$}; &
   \ellipsis          &
-  \node (n) {$b_n$}; \\
+  \node (bn) {$b_n$}; \\
 };
 
 \foreach \i in {1, 2, i, n} {
-  \draw (a\i) [arrow] -- node [arrow label] {$f(a_{\i})$} (b\i);
+  \draw (a\i) [arrow] -- node [arrow label] {$\texttt{f}(a_{\i})$} (b\i);
 }
 
 \input{_footer.tex}
