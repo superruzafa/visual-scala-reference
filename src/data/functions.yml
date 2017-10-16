@@ -2,8 +2,8 @@
 - name: aggregate
   signature: "aggregate[B](z: ⇒ B)(seqop: (B, A) ⇒ B, combop: (B, B) ⇒ B): B"
   description:
-    en:
-    es:
+    en: Aggregates the results of applying an operator to subsequent elements.
+    es: Agrega los resultados de aplicar un operador a elementos subsecuentes.
 
 - name: collect
   signature: "collect[B](pf: PartialFunction[A, B]): Collection[B]"
