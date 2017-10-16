@@ -8,6 +8,8 @@ RUN apt-get update && \
       imagemagick \
       ghostscript \
       pdf2svg
+      
+EXPOSE 8080
 
 VOLUME /code
 WORKDIR /code

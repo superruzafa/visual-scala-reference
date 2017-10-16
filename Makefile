@@ -9,6 +9,9 @@ build: .dockerimage
 dev: .dockerimage
 	$(DOCKER) run --rm -v $$PWD:/code -it -w /code --entrypoint bash $(DOCKER_IMAGE)
 
+server: .dockerimage
+	$(DOCKER) run --rm -v $$PWD:/code -it -w /code -p 8080:8080 $(DOCKER_IMAGE) server
+
 .dockerimage: Dockerfile
 	$(DOCKER) build -t $(DOCKER_IMAGE) .
 	touch $@
