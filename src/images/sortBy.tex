@@ -1,0 +1,30 @@
+\input{_header.tex}
+
+\matrix (A) [collection] {
+  \node (a2) {$a_2$}; &
+  \ellipsis           &
+  \node (an) {$a_n$}; &
+  \ellipsis           &
+  \node (a1) {$a_1$}; &
+  \ellipsis           &
+  \node (ai) {$a_i$}; \\
+};
+
+\matrix (B) [collection, below=3cm of A] {
+  \node (b1) {$a_1$}; &
+  \node (b2) {$a_2$}; &
+  \ellipsis           &
+  \node (bi) {$a_i$}; &
+  \ellipsis           &
+  \node (bn) {$a_n$}; \\
+};
+
+\foreach \i in {1,2,i,n} {
+  \node (fa\i) [predicate, below=0.5em of a\i, pin={[function result, pin position=335]$w_{\i}$}] {$\texttt{f}(a_{\i})$};
+  \draw (a\i) -- (fa\i);
+  \draw (fa\i) [arrow, smooth, white border] to (b\i);
+}
+
+\node [above right=5mm and 5mm of B] {$w_j \leq w_k \, \forall j < k$};
+
+\input{_footer.tex}

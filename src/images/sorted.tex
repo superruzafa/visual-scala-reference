@@ -1,0 +1,26 @@
+\input{_header.tex}
+
+\matrix (A) [collection] {
+  \node {$a_2$}; &
+  \ellipsis      &
+  \node {$a_n$}; &
+  \ellipsis      &
+  \node {$a_1$}; &
+  \ellipsis      &
+  \node {$a_i$}; \\
+};
+
+\matrix (B) [collection, below=2cm of A] {
+  \node {$a_1$}; &
+  \node {$a_2$}; &
+  \ellipsis      &
+  \node {$a_i$}; &
+  \ellipsis      &
+  \node {$a_n$}; \\
+};
+
+\draw (A.south west) [bottombrace] -- coordinate(c) (A.south east);
+\draw (B.north west) [topbrace] -- coordinate(d) (B.north east);
+\draw (c) [arrow, from brace, to brace] -- node [arrow label] {$a_j \leq a_k \, \forall j < k$} (d);
+
+\input{_footer.tex}
