@@ -25,16 +25,16 @@
       </ul>
     </div>
   </header>
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
-      <aside class="col-md-4 col-lg-2">
-        <ul class="collapse list-group">
+      <aside class="col-sm-5 col-md-4 col-lg-3">
+        <ul class="d-none d-sm-block">
           {{# functions }}
             <li class="list-unstyled"><a href="#{{ name }}" title="{{ name }}">{{ name }}</a></li>
           {{/ functions }}
         </ul>
       </aside>
-      <section class="col-md-8 col-lg-10">
+      <section class="col-sm-7 col-md-8 col-lg-9">
         {{# functions }}
           {{> function }}
         {{/ functions }}
