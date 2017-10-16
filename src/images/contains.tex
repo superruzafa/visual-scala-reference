@@ -12,13 +12,13 @@
 
 \node (B) [elem, below of=ai, node distance=4cm] {\true};
 
-\foreach \i/\d/\p in {
-  1/\false/below,
-  2/\false/below,
-  i-1/\false/below,
-  i/\true/310}
+\foreach \i/\d/\s/\p in {
+  1/\false/0.5em/below,
+  2/\false/2em/below,
+  i-1/\false/0.5em/below,
+  i/\true/2em/310}
 {
-  \node (pa\i) [predicate, align=center, below=1mm of a\i, pin={[function result, pin position=\p] \d}] {$a_{\i}$\\==\\elem};
+  \node (pa\i) [predicate, align=center, below=\s of a\i, pin={[function result, pin position=\p] \d}] {$a_{\i} = \textrm{elem}$};
   \draw (a\i) -- (pa\i);
 }
 

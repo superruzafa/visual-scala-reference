@@ -1,17 +1,17 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1) {$a_1$};   &
-  \node [ellipsis];     &
-  \node (ai) {$a_i$};   &
-  \node [ellipsis];     &
-  \node (aj) {$a_j$};   &
-  \node [ellipsis];     &
-  \node (ak)   {$a_k$}; &
-  \node [ellipsis, minimum width=20mm]; &
-  \node (am)   {$a_m$}; &
-  \node [ellipsis];     &
-  \node (an) {$a_n$};   \\
+  \node (a1) {$a_1$}; &
+  \node [ellipsis];   &
+  \node (ai) {$a_i$}; &
+  \node [ellipsis];   &
+  \node (aj) {$a_j$}; &
+  \node [ellipsis];   &
+  \node (ak) {$a_k$}; &
+  \node [ellipsis, minimum width=25mm]; &
+  \node (am) {$a_m$}; &
+  \node [ellipsis, minimum width=8mm];  &
+  \node (an) {$a_n$}; \\
 };
 
 \matrix (A1) [collection, below=20mm of a1, matrix anchor=A1a1.north west] at (a1.south west) {
@@ -28,7 +28,7 @@
 
 \matrix (A3) [collection, below=20mm of aj, matrix anchor=A3a1.north west] at (am.south west) {
   \node (A3a1) {$a_m$};    &
-  \node (A3ae) [ellipsis]; &
+  \node (A3ae) [ellipsis, minimum width=8mm]; &
   \node (A3as) {$a_n$};    \\
 };
 
@@ -40,6 +40,6 @@
 \toppointer{am.north}{step}
 
 \draw [iteration, shorten >=1mm, shorten <=1mm] (A1as) -- (A2a1);
-\draw [iteration, shorten >=1mm, shorten <=1mm] (A2as) -- (A3a1);
+\draw [iteration, shorten >=1mm, shorten <=1mm, middotted] (A2as) -- (A3a1);
 
 \input{_footer.tex}

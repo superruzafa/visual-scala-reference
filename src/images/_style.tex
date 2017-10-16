@@ -21,6 +21,13 @@
   nodes=cell
 ]
 
+\tikzstyle{empty}=[
+  draw=gray,
+  minimum height=1.3cm,
+  dashed,
+  line width=0.2mm
+]
+
 \tikzstyle{map keys}=[
   collection,
   nodes={draw=none, minimum height=12mm}
@@ -31,7 +38,13 @@
   nodes={minimum size=1cm }
 ]
 
-\tikzstyle{option}=[cell]
+\tikzstyle{option}=[
+  cell,
+  line width=0.2mm,
+  double,
+  minimum size=0.9cm,
+  label={right::Option},
+]
 
 \tikzstyle{map to}=[Square-Latex]
 

@@ -52,4 +52,8 @@ composer.lock: composer.json
 composer.phar:
 	$(CURL) -sS https://getcomposer.org/installer | php
 
+server:
+	$(PHP) -S 0.0.0.0:8080 src/dev-server.php
+
 .PRECIOUS: $(CACHEDIR)/%.pdf
+.PHONY: server

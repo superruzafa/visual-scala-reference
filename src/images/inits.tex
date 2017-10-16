@@ -1,0 +1,46 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1)   {$a_1$};     &
+  \node (2)   {$a_2$};     &
+  \ellipsis                &
+  \node (n-1) {$a_{n-1}$}; &
+  \node (n)   {$a_n$};     \\
+};
+
+\matrix (I1) [collection, below=1cm of A, matrix anchor=i11.north west] at (a1.south west) {
+  \node (i11)   {$a_1$};     &
+  \node (i12)   {$a_2$};     &
+  \ellipsis                &
+  \node (i1n-1) {$a_{n-1}$}; &
+  \node (i1n)   {$a_n$};     \\
+};
+
+\matrix (I2) [collection, below=5mm of I1, matrix anchor=i2n.north west] at (i11.south west) {
+  \node (i2n) {$a_1$};     &
+  \node       {$a_2$};     &
+  \ellipsis                &
+  \node       {$a_{n-1}$}; \\
+};
+
+\matrix (IN-1) [collection, below=10mm of I2, matrix anchor=in-11.north west] at (i2n.south west) {
+  \node (in-11) {$a_1$}; &
+  \node         {$a_2$}; \\
+};
+
+\matrix (IN) [collection, below=5mm of IN-1, matrix anchor=in1.north west] at (in-11.south west) {
+  \node (in1) {$a_1$};     \\
+};
+
+\node (empty) [below=5mm of IN, empty, anchor=north west] at (in1.south west) {$$};
+
+\begin{scope}
+  \tikzstyle{every path}=[arrow, iteration]
+  \draw ([xshift=-1cm] i11.west) -- (i11.west);
+  \draw (i11.west) to (i2n.west);
+  \draw (i2n.west) [middotted] to (in-11.west);
+  \draw (in-11.west) to (in1.west);
+  \draw (in1.west) to (empty.west);
+\end{scope}
+
+\input{_footer.tex}

@@ -11,28 +11,28 @@
     \node (n)   {$a_n$};     \\
 };
 
-\matrix (B) [collection, name prefix=b, below of=A, node distance=4cm] {
-    \node (2)   {$b_1$};     &
-    \ellipsis                &
-    \node (i)   {$b_j$};     &
-    \ellipsis                &
-    \node (n-1) {$b_m$}; \\
+\matrix (B) [collection, below=4cm of A] {
+    \node (b2)   {$b_1$}; &
+    \ellipsis             &
+    \node (bi)   {$b_j$}; &
+    \ellipsis             &
+    \node (bn-1) {$b_m$}; \\
 };
 
-\foreach \i/\d/\a in {
-  1/\false/below,
-  2/\true/265,
-  i/\true/265,
-  i+1/\false/below,
-  n-1/\true/235,
-  n/\false/275}
+\foreach \i/\d/\s/\a in {
+  1/\false/0.5em/below,
+  2/\true/2em/265,
+  i/\true/0.5em/265,
+  i+1/\false/2em/below,
+  n-1/\true/0.5em/235,
+  n/\false/2em/275}
 {
-  \node (pfa\i) [predicate, below=1mm of a\i, pin={[function result, pin position=\a] \d}] {$\exists \, pf(a_{\i})$};
+  \node (pfa\i) [predicate, below=\s of a\i, pin={[function result, pin position=\a] \d}] {$\exists \, \texttt{pf}(a_{\i})$?};
   \draw (a\i) -- (pfa\i);
 }
 
 \foreach \i in {2,i,n-1} {
-  \draw (pfa\i) [arrow, smooth] to node [arrow label] {$pf(a_{\i})$} (b\i);
+  \draw (pfa\i) [arrow, smooth] to node [arrow label, near end] {$\texttt{pf}(a_{\i})$} (b\i);
 }
 
 \input{_footer.tex}

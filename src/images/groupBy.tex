@@ -12,7 +12,7 @@
 };
 
 \foreach \i/\k in {1/k_1, 2/k_2, 3/k_1, i/k_m, i+1/k_2, n/k_m} {
-  \node (fa\i) [predicate, below=1mm of a\i, pin={[function result, pin position=below] $\k$}] {$f(a_{\i})$};
+  \node (fa\i) [predicate, below=0.5em of a\i, pin={[function result, pin position=below] $\k$}] {$\texttt{f}(a_{\i})$};
   \draw (a\i) -- (fa\i);
 }
 
@@ -37,10 +37,10 @@
 };
 
 \matrix (Km) [map values, right=1cm of km.east] {
-  \node                        {$a_2$};     &
-  \node [draw=none, fill=none] {$\ldots$};  &
-  \node                        {$a_{i+1}$}; &
-  \node [draw=none, fill=none] {$\ldots$};  \\
+  \node [draw=none, fill=none] {$\ldots$}; &
+  \node                        {$a_i$};    &
+  \node [draw=none, fill=none] {$\ldots$}; &
+  \node                        {$a_n$};    \\
 };
 
 \draw (k1) [map to] -- (K1);

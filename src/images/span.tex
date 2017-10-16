@@ -1,12 +1,12 @@
 \input{_header.tex}
 
 \matrix (A) [collection, name prefix=a] {
-    \node (1)   {$a_1$};     &
-    \node (2)   {$a_2$};     &
-    \node (3)   {$a_3$};     &
-    \node (4)   {$a_4$};     &
-    \ellipsis                &
-    \node (n)   {$a_n$};     \\
+    \node (1)   {$a_1$}; &
+    \node (2)   {$a_2$}; &
+    \node (3)   {$a_3$}; &
+    \node (4)   {$a_4$}; &
+    \ellipsis            &
+    \node (n)   {$a_n$}; \\
 };
 
 \foreach \i/\b/\a in {
@@ -15,7 +15,7 @@
   3/\true/below,
   4/\false/below}
 {
-  \node (pa\i) [predicate, below=1mm of a\i, pin={[function result, pin position=\a] \b}] {$p(a_{\i})$};
+  \node (pa\i) [predicate, below=1mm of a\i, pin={[function result, pin position=\a] \b}] {$\texttt{p}(a_{\i})$};
   \draw (a\i) -- (pa\i);
 }
 

@@ -11,35 +11,22 @@
     \node (n) {$a_n$};       \\
 };
 
-\node (z) [elem, left=5mm of a1] {$z$};
+\node (z) [elem, left=5mm of a1] {z};
 
-\node (f1) [below=15mm of a1.west]   {$seqop(z, a_1)$};
-\node (f2) [below=25mm of a2.west]   {$seqop(z_1, a_2)$};
-\node (f3) [below=15mm of ai+1.west] {$seqop(a_i, a_{i+1})$};
-\node (f4) [below=15mm of an.west]   {$seqop(a_{n-1}, a_n)$};
+\node (f1) [below=15mm of a1.west]   {$\texttt{seqop}(\textrm{z}, a_1)$};
+\node (f2) [below=25mm of a2.west]   {$\texttt{seqop}(z_1, a_2)$};
+\node (f3) [below=15mm of ai+1.west] {$\texttt{seqop}(a_i, a_{i+1})$};
+\node (f4) [below=15mm of an.west]   {$\texttt{seqop}(a_{n-1}, a_n)$};
 
-\node (f5) [below=30mm of ae1] {$combop(z_j, z_k)$};
-% \node (f6) [below=30mm of ae2] {$combop(z_1, a_n)$};
-\node (f6) [below=50mm of ai+1.west] {$combop(z_l, z_m)$};
+\node (f5) [below=30mm of ae1] {$\texttt{combop}(z_j, z_k)$};
+\node (f6) [below=50mm of ai+1.west] {$\texttt{combop}(z_l, z_m)$};
 
 \node (B) [elem, below=10mm of f6] {$b$};
-% \node (f3) [below=35mm of a1] {$f(z_2, a_1)$};
-% \node (fn) [below=45mm of ai] {$f(z_{n-1}, a_i)$};
-%
-% \node (B) [elem, below=10mm of fn] {$b$};
-
-% \foreach \i/\z [count=\c] in {1/z,2/z_1,i/z_{i-1},n/z_{n-1}} {
-%   \node (f\i) [below of=a\i, node distance={1cm + \c * 1cm}, xshift=-1em] {$f(\z, a_{\i})$};
-%   \draw (a\i) [arrow] to (a\i |- f\i.north);
-% }
-%
-% \node (B) [elem, below of=fn, node distance=1.5cm] {$b$};
-%
 
 \begin{scope}
   \tikzstyle{every path}=[arrow]
-  \draw [white border, out=270, in=90] (z.south) to (f1.70);
-  \draw [white border, out=270, in=90] (a1.south) to (f1.30);
+  \draw [white border, out=270, in=90] (z.south) to (f1.50);
+  \draw [white border, out=270, in=90] (a1.south) to (f1.25);
 
   \draw [white border, out=270, in=90] (ai.south) to (f3.70);
   \draw [white border, out=270, in=90] (ai+1.south) to (f3.25);

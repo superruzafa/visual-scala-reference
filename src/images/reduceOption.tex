@@ -1,0 +1,37 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+    \node (1) {$a_1$}; &
+    \node (2) {$a_2$}; &
+    \node (3) {$a_3$}; &
+    \ellipsis          &
+    \node (i) {$a_i$}; &
+    \ellipsis          &
+    \node (n) {$a_n$}; \\
+};
+
+\node (f1) [below=15mm of a2] {$\texttt{op}(a_2, a_i)$};
+\node (f2) [below=25mm of an] {$\texttt{op}(z_1, a_n)$};
+\node (f3) [below=35mm of a1] {$\texttt{op}(a_1, z_2)$};
+\node (fn) [below=45mm of ai] {$\texttt{op}(z_{n-1}, a_3)$};
+
+\node (B) [option, below=10mm of fn] {$b$};
+
+\begin{scope}
+  \tikzstyle{every path}=[arrow]
+  \draw [white border, out=270, in=90] (a2.south) to (f1.110);
+  \draw [white border, out=270, in=90] (ai.south) to (f1.45);
+
+  \draw [white border, out=270, in=90] (an.south) to (f2.45);
+  \draw [white border, out=0, in=90] (f1.east) to (f2.120);
+
+  \draw [white border, out=270, in=90] (a1.south) to (f3.120);
+  \draw [white border, out=180, in=60] (f2.west) to (f3.45);
+
+  \draw [white border, out=270, in=90] (a3.south) to (fn.30);
+  \draw [white border, out=0, in=90] (f3.east) [middotted] to (fn.120);
+
+  \draw (fn.south) -- (B.north);
+\end{scope}
+
+\input{_footer.tex}

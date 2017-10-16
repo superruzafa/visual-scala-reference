@@ -20,12 +20,14 @@
 \begin{scope}
   \tikzstyle{every path}=[Latex-Latex]
   \tikzstyle{every node}=[arrow label]
-  \draw (an-3) -- node {== \true} (bn-3);
-  \draw (an-2) -- node {== \true} (bn-2);
-  \draw (an-1) -- node (pn-1) {== \false} (bn-1);
+  \draw (an-3) -- node (t1) {=? \true} (bn-3);
+  \draw (an-2) -- node (t2) {=? \true} (bn-2);
+  \draw (an-1) -- node (t3) {=? \false} (bn-1);
 \end{scope}
 
-\node (B) [elem, right=3cm of pn-1] {\false};
-\draw [arrow] (pn-1) -- (B);
+\node (B) [elem, right=3cm of t3] {\false};
+\draw [arrow] (t3) -- (B);
+
+\draw (t1.north west) [rounded corners=0.5em] rectangle (t3.south east);
 
 \input{_footer.tex}
