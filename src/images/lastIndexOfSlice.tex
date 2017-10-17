@@ -1,0 +1,30 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1)   {$a_1$};     &
+  \ellipsis                &
+  \node (i)   {$a_i$};     &
+  \node (i+1) {$a_{i+1}$}; &
+  \node (i+2) {$a_{i+2}$}; &
+  \ellipsis                &
+  \node (i+j) {$a_{i+j}$}; &
+  \ellipsis                &
+  \node (n)   {$a_n$};     \\
+};
+
+\matrix [collection, right=1cm of A] {
+  \node (bi)   {$a_i$};     &
+  \node (bi+1) {$a_{i+1}$}; &
+  \node (bi+2) {$a_{i+2}$}; \\
+};
+
+\toppointer{ai+j.north}{end}
+
+\draw (ai.south west) [bottombrace] -- coordinate (c) (ai+2.south east);
+\draw (bi.south west) [bottombrace] -- coordinate (d) (bi+2.south east);
+
+\draw (c) [from brace] -- +(0, -2em) [to brace] -- node (e) [arrow label] {$=?$ \true} ([yshift=-2em] d) -- (d);
+\node (f) [elem, below=1cm of e] {$i$};
+\draw (e) [arrow] -- (f);
+
+\input{_footer.tex}
