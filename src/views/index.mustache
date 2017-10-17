@@ -3,30 +3,44 @@
 <head>
   <meta charset="utf-8" />
   <title>{{# t }}{{ messages.title }}{{/ t }}</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-latest.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>{{# t }}{{ messages.title }}{{/ t }}</h1>
-    <p>{{# t }}{{ messages.availableLanguages }}{{/ t }}</p>
-    <ul>
-      {{# allLangs }}
-        <li><a href="index-{{ code }}.html">{{ name }}</a></li>
-      {{/ allLangs }}
-    </ul>
-  </header>
-  <div>
-    <aside>
-      <ul>
-        {{# functions }}
-          <li><a href="#{{ name }}" title="{{ name }}">{{ name }}</a></li>
-        {{/ functions }}
+  <header class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand">
+      <img src="assets/scala-logo.png" width="100" alt="" />
+      {{# t }}{{ messages.title }}{{/ t }}
+    </a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        {{# allLangs }}
+          <li class="nav-item">
+            <a class="nav-link" href="index-{{ code }}.html">{{ name }}</a></li>
+          </li>
+        {{/ allLangs }}
       </ul>
-    </aside>
-    <section>
-      {{# functions }}
-        {{> function }}
-      {{/ functions }}
-    </sectio>
+    </div>
+  </header>
+  <div class="container">
+    <div class="row">
+      <aside class="col-sm-5 col-md-4 col-lg-3">
+        <ul class="d-none d-sm-block">
+          {{# functions }}
+            <li class="list-unstyled"><a href="#{{ name }}" title="{{ name }}">{{ name }}</a></li>
+          {{/ functions }}
+        </ul>
+      </aside>
+      <section class="col-sm-7 col-md-8 col-lg-9">
+        {{# functions }}
+          {{> function }}
+        {{/ functions }}
+      </section>
+      </div>
+    </div>
   </div>
 </body>
 </html>
