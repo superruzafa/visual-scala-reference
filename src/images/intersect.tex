@@ -1,0 +1,30 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node {$a_1$};     &
+  \ellipsis          &
+  \node {$a_{i-1}$}; &
+  \node {$a_i$};     \\
+};
+
+\matrix (B) [collection, right=1cm of A] {
+  \node {$a_i$};     &
+  \node {$a_{i+1}$}; &
+  \ellipsis          &
+  \node {$a_n$};     \\
+};
+
+\matrix (AiB) [collection, below=3cm of A] {
+  \node {$a_i$}; \\
+};
+
+\draw (A.south west) [bottombrace] -- coordinate (c) (A.south east);
+\draw (B.south west) [bottombrace] -- coordinate (d) (B.south east);
+\draw (AiB.north west) [topbrace] -- coordinate (e) (AiB.north east);
+
+\node (i) [draw, circle, above=1cm of e] {$\cap$};
+\draw (c) [arrow, from brace] to (i);
+\draw (d) [arrow, from brace, rounded corners=1em] |- (i);
+\draw (i) [arrow, to brace] to (e);
+
+\input{_footer.tex}
