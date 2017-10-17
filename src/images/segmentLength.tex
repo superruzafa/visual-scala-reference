@@ -1,0 +1,35 @@
+\input{_header.tex}
+
+\matrix (A) [collection] {
+  \node (a1)     {$a_1$};       &
+  \ellipsis                     &
+  \node (ai)     {$a_i$};       &
+  \node (ai+1)   {$a_{i+1}$};   &
+  \ellipsis                     &
+  \node (ai+j-1) {$a_{i+j-1}$}; &
+  \node (ai+j)   {$a_{i+j}$};   &
+  \ellipsis                     &
+  \node (an)     {$a_n$};       \\
+};
+
+\toppointer{ai.north}{from}
+
+\foreach \i/\d/\p in {
+  i/\true/below,
+  i+1/\true/below,
+  i+j-1/\true/below,
+  i+j/\false/below}
+{
+  \node (pa\i) [predicate, below=1mm of a\i, pin={[function result, pin position=\p] \d}] {$\texttt{p}(a_{\i})$};
+  \draw (a\i) -- (pa\i);
+}
+
+\draw (pai.south) [iteration] to (pai+1.south);
+\draw (pai+1.south) [iteration, middotted] to (pai+j-1.south);
+\draw (pai+j-1.south) [iteration] to (pai+j.south);
+
+\draw ([yshift=-15mm] ai.south west) [bottombrace] -- coordinate(x) ([yshift=-15mm] ai+j-1.south east);
+\node (elem) [elem, below=15mm of x] {$j$};
+\draw (x) [arrow, from brace] -- (elem);
+
+\input{_footer.tex}
