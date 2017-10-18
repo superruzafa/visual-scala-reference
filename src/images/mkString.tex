@@ -12,13 +12,13 @@
 
 \matrix (B) [matrix of nodes, align=left, left delimiter=\{, matrix anchor=sep.west, right of=an] at (an.east) {
   \node {start=``(''};     \\
-  \node (sep) {sep=``,''}; \\
+  \node (sep) {sep=``, ''}; \\
   \node {end=``)''};       \\
 };
 
 \draw (A.south west) [bottombrace] -- coordinate (x) (A.south west -| B.south east);
 
-\node (B) [below=10mm of x] {``($a_1$,$a_2$,$\ldots$,$a_i$,$\ldots$,$a_n$)''};
+\node (B) [elem, below=10mm of x] {``($a_1$, $a_2$, $\ldots$, $a_i$, $\ldots$, $a_n$)''};
 \draw (x) [arrow, from brace] -- (B);
 
 \input{_footer.tex}
