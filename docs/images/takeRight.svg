@@ -233,7 +233,7 @@
 <g clip-path="url(#clip10)" clip-rule="nonzero">
 <path style="fill:none;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -18.424313 -63.780125 C -17.998531 -62.928562 -17.006344 -62.362156 -15.592281 -62.362156 L 55.349125 -62.362156 C 56.763187 -62.362156 57.755375 -61.79575 58.181156 -60.944187 C 58.606937 -61.79575 59.599125 -62.362156 61.017094 -62.362156 L 131.954594 -62.362156 C 133.372562 -62.362156 134.36475 -62.928562 134.790531 -63.780125 " transform="matrix(1,0,0,-1,135.354,44.298)"/>
 </g>
-<path style="fill:none;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 58.181156 -24.096531 L 58.181156 -57.35825 " transform="matrix(1,0,0,-1,135.354,44.298)"/>
+<path style="fill:none;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 58.181156 -24.096531 C 58.181156 -37.217625 58.181156 -47.823094 58.181156 -57.35825 " transform="matrix(1,0,0,-1,135.354,44.298)"/>
 <path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 193.535156 105.242188 C 193.734375 104.179688 194.332031 102.453125 195.03125 101.257812 L 192.042969 101.257812 C 192.738281 102.453125 193.335938 104.179688 193.535156 105.242188 "/>
 </g>
 </svg>

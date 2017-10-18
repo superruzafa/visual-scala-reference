@@ -155,7 +155,7 @@
   \coordinate (d) at (#4);
   \draw [bottombrace] (a) -- coordinate (e) (b);
   \draw [topbrace] (c) -- coordinate (f) (d);
-  \draw [from brace, to brace, arrow] (e) -- (f);
+  \draw [from brace, to brace, smooth, arrow] (e) to (f);
 }
 
 \newcommand{\toppointer}[2] {
