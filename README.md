@@ -31,4 +31,4 @@ Example: if you are editing the `src/images/map.tex` file you can watch the chan
 
 English is the default language for this guide. If you want to translate it to another language please send me a pull request.
 
-The translatable files are stored in the 'data' subdirectories.
+The translatable files are stored in the `data` subdirectories.
