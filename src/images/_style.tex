@@ -81,6 +81,14 @@
   shorten >= 1pt
 ]
 
+\tikzstyle{start dots}=[
+  decorate,
+  decoration={
+    border, angle=90, segment length=2pt, amplitude=\pgflinewidth,
+    pre=curveto, pre length=0, post=curveto, post length=5mm
+  }
+]
+
 \tikzstyle{middotted}=[
   decorate,
   decoration={
