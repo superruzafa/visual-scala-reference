@@ -6,7 +6,7 @@ if (empty($filename)) {
 }
 
 $localPath = "docs/$filename";
-exec("make -f dev.mk $path", $output, $return);
+exec("make -f dev.mk $localPath", $output, $return);
 
 if ($return != 0) {
   http_response_code(500);
