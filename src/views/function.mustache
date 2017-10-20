@@ -1,7 +1,11 @@
 <article id="{{ name }}">
   <h2>{{ name }}</h2>
   <p>{{# t }}{{{ description }}}{{/ t }}</p>
-  <p><code>{{ signature }}</code></p>
+  <ul class="signatures">
+    {{# signatures }}
+      <li class="list-unstyled"><code>{{ . }}</code></li>
+    {{/ signatures }}
+  </ul>
   <figure class="figure">
     <img class="figure-img img-fluid" src="images/{{ name }}.svg" />
   </figure>

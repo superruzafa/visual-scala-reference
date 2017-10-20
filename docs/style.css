@@ -5,3 +5,7 @@ article + article {
 header {
   margin-bottom: 3rem;
 }
+
+.signatures {
+  padding-left: 0;
+}

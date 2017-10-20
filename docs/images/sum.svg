@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="154.347pt" height="102.573pt" viewBox="0 0 154.347 102.573" version="1.1">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="117.213pt" height="102.573pt" viewBox="0 0 117.213 102.573" version="1.1">
 <defs>
 <g>
 <symbol overflow="visible" id="glyph0-0">
@@ -58,10 +58,10 @@
 </symbol>
 </g>
 <clipPath id="clip1">
-  <path d="M 116 0 L 154.347656 0 L 154.347656 38 L 116 38 Z M 116 0 "/>
+  <path d="M 74 0 L 117.214844 0 L 117.214844 38 L 74 38 Z M 74 0 "/>
 </clipPath>
 <clipPath id="clip2">
-  <path d="M 0 34 L 154.347656 34 L 154.347656 49 L 0 49 Z M 0 34 "/>
+  <path d="M 0 34 L 117.214844 34 L 117.214844 49 L 0 49 Z M 0 34 "/>
 </clipPath>
 </defs>
 <g id="surface1">
@@ -79,7 +79,9 @@
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
   <use xlink:href="#glyph1-2" x="56.832" y="22.462"/>
 </g>
+<g clip-path="url(#clip1)" clip-rule="nonzero">
 <path style="fill:none;stroke-width:0.42517;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-dasharray:2.98883,3.9851,1.13385,3.9851;stroke-miterlimit:10;" d="M -21.259531 -18.425969 L 21.26 -18.425969 L 21.26 18.425594 L -21.259531 18.425594 Z M -21.259531 -18.425969 " transform="matrix(1,0,0,-1,95.74,18.992)"/>
+</g>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
   <use xlink:href="#glyph0-2" x="88.87" y="19.573"/>
 </g>
@@ -89,39 +91,36 @@
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
   <use xlink:href="#glyph0-2" x="99.35471" y="19.573"/>
 </g>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 116.929688 37.417969 L 153.78125 37.417969 L 153.78125 0.566406 L 116.929688 0.566406 Z M 116.929688 37.417969 "/>
-<g clip-path="url(#clip1)" clip-rule="nonzero">
-<path style="fill:none;stroke-width:1.13385;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -18.424312 -18.425969 L 18.42725 -18.425969 L 18.42725 18.425594 L -18.424312 18.425594 Z M -18.424312 -18.425969 " transform="matrix(1,0,0,-1,135.354,18.992)"/>
+<path style="fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;stroke-width:1.13385;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -18.423594 -18.425969 L 18.424063 -18.425969 L 18.424063 18.425594 L -18.423594 18.425594 Z M -18.423594 -18.425969 " transform="matrix(1,0,0,-1,95.74,18.992)"/>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-1" x="89.85" y="20.669"/>
 </g>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-  <use xlink:href="#glyph0-1" x="129.464" y="20.669"/>
-</g>
-<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-  <use xlink:href="#glyph2-1" x="135.609" y="22.462"/>
+  <use xlink:href="#glyph2-1" x="95.995" y="22.462"/>
 </g>
 <g clip-path="url(#clip2)" clip-rule="nonzero">
-<path style="fill:none;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -76.606594 -21.261906 C -76.180812 -22.109563 -75.188625 -22.675969 -73.774562 -22.675969 L -2.833156 -22.675969 C -1.419094 -22.675969 -0.426906 -23.246281 -0.001125 -24.093938 C 0.424656 -23.246281 1.416844 -22.675969 2.834813 -22.675969 L 73.772313 -22.675969 C 75.190281 -22.675969 76.182469 -22.109563 76.60825 -21.261906 " transform="matrix(1,0,0,-1,77.173,18.992)"/>
+<path style="fill:none;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -58.039594 -21.261906 C -57.613813 -22.109563 -56.621625 -22.675969 -55.203656 -22.675969 L -4.07475 -22.675969 C -2.656781 -22.675969 -1.664594 -23.246281 -1.238813 -24.093938 C -0.813031 -23.246281 0.17525 -22.675969 1.593219 -22.675969 L 52.726031 -22.675969 C 54.144 -22.675969 55.136187 -22.109563 55.558062 -21.261906 " transform="matrix(1,0,0,-1,58.606,18.992)"/>
 </g>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-  <use xlink:href="#glyph3-1" x="69.589" y="74.048"/>
+  <use xlink:href="#glyph3-1" x="51.022" y="74.048"/>
 </g>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-  <use xlink:href="#glyph4-1" x="64.856" y="77.037"/>
+  <use xlink:href="#glyph4-1" x="46.289" y="77.037"/>
 </g>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-  <use xlink:href="#glyph3-2" x="65.599" y="98.256"/>
+  <use xlink:href="#glyph3-2" x="47.032" y="98.256"/>
 </g>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-  <use xlink:href="#glyph5-1" x="68.417" y="98.256"/>
-  <use xlink:href="#glyph5-2" x="74.533023" y="98.256"/>
+  <use xlink:href="#glyph5-1" x="49.85" y="98.256"/>
+  <use xlink:href="#glyph5-2" x="55.966023" y="98.256"/>
 </g>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-  <use xlink:href="#glyph6-1" x="80.907" y="86.502"/>
+  <use xlink:href="#glyph6-1" x="62.34" y="86.502"/>
 </g>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-  <use xlink:href="#glyph3-2" x="86.173" y="87.996"/>
+  <use xlink:href="#glyph3-2" x="67.606" y="87.996"/>
 </g>
-<path style="fill:none;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -0.001125 -24.093938 L -0.001125 -43.953313 " transform="matrix(1,0,0,-1,77.173,18.992)"/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 77.171875 66.53125 C 77.371094 65.46875 77.96875 63.742188 78.667969 62.546875 L 75.679688 62.546875 C 76.375 63.742188 76.972656 65.46875 77.171875 66.53125 "/>
+<path style="fill:none;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -1.090375 -24.093938 L -0.570844 -43.953313 " transform="matrix(1,0,0,-1,58.606,18.992)"/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 58.128906 66.53125 C 58.300781 65.460938 58.855469 63.71875 59.519531 62.507812 L 56.53125 62.585938 C 57.261719 63.761719 57.902344 65.472656 58.128906 66.53125 "/>
 </g>
 </svg>

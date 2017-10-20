@@ -48,15 +48,16 @@
 
 \tikzstyle{map to}=[Square-Latex]
 
-\tikzstyle{ellipsis}=[
+\tikzset{ellipsis/.style={
   loosely dash dot,
   line width=0.15mm,
-  minimum width=1.5cm,
+  minimum width=#1,
   node contents=$\ldots$,
   fill=none
-]
+}}
+% \tikzset{ellipsis/.default=1.5cm}
 
-\newcommand{\ellipsis}{ \node [ellipsis]; }
+\newcommand{\ellipsis}[1]{ \node [ellipsis=15mm]; }
 
 \tikzstyle{tuple comma}=[
   minimum width=2em,

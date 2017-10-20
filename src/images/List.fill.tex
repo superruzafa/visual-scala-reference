@@ -1,0 +1,110 @@
+\input{_header.tex}
+
+\tikzstyle{every node}=[scale=0.7]
+
+\matrix (A) [collection] {
+    \node (a1) {elem};          &
+    \node      [ellipsis=8mm]; &
+    \node (an) {elem};          \\
+};
+
+\matrix (B) [collection, right=12mm of A] {
+    \node (b1) {elem};          &
+    \node      [ellipsis=8mm]; &
+    \node (bn) {elem};          \\
+};
+
+\matrix (C) [collection, right=20mm of B] {
+    \node (c1) {elem};          &
+    \node      [ellipsis=8mm]; &
+    \node (cn) {elem};          \\
+};
+
+\matrix (D) [collection, right=12mm of C] {
+    \node (d1) {elem};          &
+    \node      [ellipsis=8mm]; &
+    \node (dn) {elem};          \\
+};
+
+\begin{scope}[on background layer]
+  \tikzstyle{every path}=[cell]
+  
+  \coordinate (A1nw) at ([shift={(-2mm, 2mm)}] A.north west);
+  \coordinate (A1ne) at ([shift={(+2mm, 2mm)}] A.north east);
+  \coordinate (A1se) at ([shift={(+2mm, -2mm)}] A.south east);
+  
+  \coordinate (B1nw) at ([shift={(-2mm, 2mm)}] B.north west);
+  \coordinate (B1ne) at ([shift={(+2mm, 2mm)}] B.north east);
+  \coordinate (B1se) at ([shift={(+2mm, -2mm)}] B.south east);
+  \coordinate (B1sw) at ([shift={(-2mm, -2mm)}] B.south west);
+
+  \coordinate (C1nw) at ([shift={(-2mm, 2mm)}] C.north west);
+  \coordinate (C1ne) at ([shift={(+2mm, 2mm)}] C.north east);
+  \coordinate (C1se) at ([shift={(+2mm, -2mm)}] C.south east);
+  \coordinate (C1sw) at ([shift={(-2mm, -2mm)}] C.south west);
+
+  \coordinate (D1nw) at ([shift={(-2mm, 2mm)}] D.north west);
+  \coordinate (D1ne) at ([shift={(+2mm, 2mm)}] D.north east);
+  \coordinate (D1se) at ([shift={(+2mm, -2mm)}] D.south east);
+  \coordinate (D1sw) at ([shift={(-2mm, -2mm)}] D.south west);
+  
+  \coordinate (Axnw) at ([shift={(-2mm, 2mm)}] A1nw);
+  \coordinate (Bxse) at ([shift={(+2mm, -2mm)}] B1se);
+  \coordinate (Cxnw) at ([shift={(-2mm, 2mm)}] C1nw);
+  \coordinate (Dxse) at ([shift={(+2mm, -2mm)}] D1se);
+  
+  \coordinate (Annw) at ([shift={(-4mm, 4mm)}] A1nw);
+  \coordinate (Bnse) at ([shift={(+4mm, -4mm)}] B1se);
+  \coordinate (Bnne) at ([shift={(+4mm, +4mm)}] B1ne);
+  \coordinate (Cnnw) at ([shift={(-4mm, 4mm)}] C1nw);
+  \coordinate (Cnsw) at ([shift={(-4mm, -4mm)}] C1sw);
+  \coordinate (Dnse) at ([shift={(+4mm, -4mm)}] D1se);
+  \coordinate (Dnne) at ([shift={(+4mm, +4mm)}] D1ne);
+
+  \draw (Bnne) [ellipsis=15mm] rectangle node {$\ldots$} (Cnsw);
+  
+  \draw (Annw) rectangle (Bnse);
+  \draw (Cnnw) rectangle (Dnse);
+
+  \draw (Axnw) [loosely dash dot, line width=0.1mm] rectangle (Bxse);
+  \draw (Cxnw) [loosely dash dot, line width=0.1mm] rectangle (Dxse);
+
+  \draw (A1ne) [ellipsis=15mm] rectangle node {$\ldots$} (B1sw);
+  \draw (C1ne) [ellipsis=15mm] rectangle node {$\ldots$} (D1sw);
+
+  \draw (A1nw) rectangle (A1se);
+  \draw (B1nw) rectangle (B1se);
+  \draw (C1nw) rectangle (C1se);
+  \draw (D1nw) rectangle (D1se);
+  
+\end{scope}
+
+\draw (a1.north west) -- +(0, 5mm) coordinate (x1);
+\draw (an.north east) -- +(0, 5mm) coordinate (x2);
+\topmeasure{n1}{x1}{x2}
+
+\draw (b1.north west) -- +(0, 5mm) coordinate (x3);
+\draw (bn.north east) -- +(0, 5mm) coordinate (x4);
+\topmeasure{n1}{x3}{x4}
+
+\draw (c1.north west) -- +(0, 5mm) coordinate (x5);
+\draw (cn.north east) -- +(0, 5mm) coordinate (x6);
+\topmeasure{n1}{x5}{x6}
+
+\draw (d1.north west) -- +(0, 5mm) coordinate (x7);
+\draw (dn.north east) -- +(0, 5mm) coordinate (x8);
+\topmeasure{n1}{x7}{x8}
+
+\draw (A1nw) -- +(0, 10mm) coordinate (y1);
+\draw (B1ne) -- +(0, 10mm) coordinate (y2);
+\topmeasure{n2}{y1}{y2}
+
+\draw (C1nw) -- +(0, 10mm) coordinate (y3);
+\draw (D1ne) -- +(0, 10mm) coordinate (y4);
+\topmeasure{n2}{y3}{y4}
+
+\draw (Annw) -- +(0, 15mm) coordinate (z1);
+\draw (Dnne) -- +(0, 15mm) coordinate (z2);
+\topmeasure{n\textit{m}}{z1}{z2}
+
+\input{_footer.tex}

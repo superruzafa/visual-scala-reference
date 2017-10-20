@@ -123,13 +123,16 @@
         <p><strong>List specific functions </strong></p>
         <ul class="d-none d-sm-block">
             <li class="list-unstyled"><a href="#List.range" title="List.range">List.range</a></li>
+            <li class="list-unstyled"><a href="#List.fill" title="List.fill">List.fill</a></li>
         </ul>
       </aside>
       <section class="col-sm-7 col-md-8 col-lg-9">
           <article id="aggregate">
             <h2>aggregate</h2>
             <p>Aggregates the results of applying an operator to subsequent elements. </p>
-            <p><code>aggregate[B](z: ⇒ B)(seqop: (B, A) ⇒ B, combop: (B, B) ⇒ B): B</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>aggregate[B](z: ⇒ B)(seqop: (B, A) ⇒ B, combop: (B, B) ⇒ B): B</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/aggregate.svg" />
             </figure>
@@ -137,7 +140,9 @@
           <article id="collect">
             <h2>collect</h2>
             <p>Builds a new collection by applying a partial function to all elements of this collection on which the function is defined. </p>
-            <p><code>collect[B](pf: PartialFunction[A, B]): Collection[B]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>collect[B](pf: PartialFunction[A, B]): Collection[B]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/collect.svg" />
             </figure>
@@ -145,7 +150,9 @@
           <article id="collectFirst">
             <h2>collectFirst</h2>
             <p>Finds the first element of the collection for which the given partial function is defined, and applies the partial function to it. </p>
-            <p><code>collectFirst[B](pf: PartialFunction[A, B]): Option[B]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>collectFirst[B](pf: PartialFunction[A, B]): Option[B]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/collectFirst.svg" />
             </figure>
@@ -153,7 +160,9 @@
           <article id="combinations">
             <h2>combinations</h2>
             <p>Iterates over combinations. </p>
-            <p><code>combinations(n: Int): Iterator[Collection[A]]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>combinations(n: Int): Iterator[Collection[A]]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/combinations.svg" />
             </figure>
@@ -161,7 +170,9 @@
           <article id="contains">
             <h2>contains</h2>
             <p>Tests whether this collection contains a given value as an element. </p>
-            <p><code>contains[A1 &gt;: A](elem: A1): Boolean</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>contains[A1 &gt;: A](elem: A1): Boolean</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/contains.svg" />
             </figure>
@@ -169,7 +180,9 @@
           <article id="containsSlice">
             <h2>containsSlice</h2>
             <p>Tests whether this collection contains a given sequence as a slice. </p>
-            <p><code>containsSlice[B](that: GenSeq[B]): Boolean</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>containsSlice[B](that: GenSeq[B]): Boolean</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/containsSlice.svg" />
             </figure>
@@ -177,7 +190,9 @@
           <article id="count">
             <h2>count</h2>
             <p>Counts the number of elements in the collection which satisfy a predicate. </p>
-            <p><code>count(p: (A) ⇒ Boolean): Int</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>count(p: (A) ⇒ Boolean): Int</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/count.svg" />
             </figure>
@@ -185,7 +200,9 @@
           <article id="diff">
             <h2>diff</h2>
             <p>Computes the multiset difference between this and another collection. </p>
-            <p><code>diff(that: Seq[A]): Collection[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>diff(that: Seq[A]): Collection[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/diff.svg" />
             </figure>
@@ -193,7 +210,9 @@
           <article id="distinct">
             <h2>distinct</h2>
             <p>Builds a new collection from this one without any duplicate elements. </p>
-            <p><code>distinct: Collection[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>distinct: Collection[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/distinct.svg" />
             </figure>
@@ -201,7 +220,9 @@
           <article id="drop">
             <h2>drop</h2>
             <p>Selects all elements except the first <var>n</var> ones. </p>
-            <p><code>drop(n: Int): Collection[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>drop(n: Int): Collection[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/drop.svg" />
             </figure>
@@ -209,7 +230,9 @@
           <article id="dropRight">
             <h2>dropRight</h2>
             <p>Select all elements except last <var>n</var> ones. </p>
-            <p><code>dropRight(n: Int): Collection[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>dropRight(n: Int): Collection[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/dropRight.svg" />
             </figure>
@@ -217,7 +240,9 @@
           <article id="dropWhile">
             <h2>dropWhile</h2>
             <p>Drops longest prefix of elements that satisfy a predicate. </p>
-            <p><code>dropWhile(p: (A) ⇒ Boolean): Collection[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>dropWhile(p: (A) ⇒ Boolean): Collection[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/dropWhile.svg" />
             </figure>
@@ -225,7 +250,9 @@
           <article id="endsWith">
             <h2>endsWith</h2>
             <p>Tests whether this collection ends with the given sequence. </p>
-            <p><code>endsWith[B](that: GenSeq[B]): Boolean</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>endsWith[B](that: GenSeq[B]): Boolean</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/endsWith.svg" />
             </figure>
@@ -233,7 +260,9 @@
           <article id="exists">
             <h2>exists</h2>
             <p>Tests whether a predicate holds for at least one element of this collection. </p>
-            <p><code>exists(p: (A) ⇒ Boolean): Boolean</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>exists(p: (A) ⇒ Boolean): Boolean</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/exists.svg" />
             </figure>
@@ -241,7 +270,9 @@
           <article id="filter">
             <h2>filter</h2>
             <p>Selects all elements of this traversable collection which satisfy a predicate. </p>
-            <p><code>filter(p: (A) ⇒ Boolean): Collection[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>filter(p: (A) ⇒ Boolean): Collection[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/filter.svg" />
             </figure>
@@ -249,7 +280,9 @@
           <article id="filterNot">
             <h2>filterNot</h2>
             <p>Selects all elements of this collection which do not satisfy a predicate. </p>
-            <p><code>filterNot(p: (A) ⇒ Boolean): Collection[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>filterNot(p: (A) ⇒ Boolean): Collection[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/filterNot.svg" />
             </figure>
@@ -257,7 +290,9 @@
           <article id="find">
             <h2>find</h2>
             <p>Finds the first element of the collection satisfying a predicate, if any. </p>
-            <p><code>find(p: (A) ⇒ Boolean): Option[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>find(p: (A) ⇒ Boolean): Option[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/find.svg" />
             </figure>
@@ -265,7 +300,9 @@
           <article id="flatMap">
             <h2>flatMap</h2>
             <p>Builds a new collection by applying a function to all elements of this collection and using the elements of the resulting collections. </p>
-            <p><code>flatMap[B](f: (A) ⇒ Collection[B]): Collection[B]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>flatMap[B](f: (A) ⇒ Collection[B]): Collection[B]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/flatMap.svg" />
             </figure>
@@ -273,7 +310,9 @@
           <article id="flatten">
             <h2>flatten</h2>
             <p>Converts this collection of collections into a collection formed by the elements of the inner collections. </p>
-            <p><code>flatten[B]: Collection[B]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>flatten[B]: Collection[B]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/flatten.svg" />
             </figure>
@@ -281,7 +320,9 @@
           <article id="fold">
             <h2>fold</h2>
             <p>Folds the elements of this collection using the specified associative binary operator. </p>
-            <p><code>fold[A1 &gt;: A](z: A1)(op: (A1, A1) ⇒ A1): A1</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>fold[A1 &gt;: A](z: A1)(op: (A1, A1) ⇒ A1): A1</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/fold.svg" />
             </figure>
@@ -289,7 +330,9 @@
           <article id="foldLeft">
             <h2>foldLeft</h2>
             <p>Applies a binary operator to a start value and all elements of this collection, going left to right. </p>
-            <p><code>foldLeft[B](z: B)(op: (B, A) ⇒ B): B</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>foldLeft[B](z: B)(op: (B, A) ⇒ B): B</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/foldLeft.svg" />
             </figure>
@@ -297,7 +340,9 @@
           <article id="foldRight">
             <h2>foldRight</h2>
             <p>Applies a binary operator to a start value and all elements of this collection, going right to left. </p>
-            <p><code>foldRight[B](z: B)(op: (A, B) ⇒ B): B</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>foldRight[B](z: B)(op: (A, B) ⇒ B): B</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/foldRight.svg" />
             </figure>
@@ -305,7 +350,9 @@
           <article id="forall">
             <h2>forall</h2>
             <p>Tests whether a predicate holds for all elements of this collection. </p>
-            <p><code>forall(p: (A) ⇒ Boolean): Boolean</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>forall(p: (A) ⇒ Boolean): Boolean</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/forall.svg" />
             </figure>
@@ -313,7 +360,9 @@
           <article id="foreach">
             <h2>foreach</h2>
             <p>Applies a function <var>f</var> to all elements of this collection. </p>
-            <p><code>foreach(f: (A) ⇒ Unit): Unit</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>foreach(f: (A) ⇒ Unit): Unit</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/foreach.svg" />
             </figure>
@@ -321,7 +370,9 @@
           <article id="groupBy">
             <h2>groupBy</h2>
             <p>Partitions this collection into a map of collections according to some discriminator function. </p>
-            <p><code>groupBy[K](f: (A) ⇒ K): Map[K, Collection[A]]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>groupBy[K](f: (A) ⇒ K): Map[K, Collection[A]]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/groupBy.svg" />
             </figure>
@@ -329,7 +380,9 @@
           <article id="grouped">
             <h2>grouped</h2>
             <p>Partitions elements in fixed size iterable collections. </p>
-            <p><code>grouped(size: Int): Iterator[Collection[A]]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>grouped(size: Int): Iterator[Collection[A]]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/grouped.svg" />
             </figure>
@@ -337,7 +390,9 @@
           <article id="head">
             <h2>head</h2>
             <p>Selects the first element of this collection. </p>
-            <p><code>head: A</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>head: A</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/head.svg" />
             </figure>
@@ -345,7 +400,9 @@
           <article id="headOption">
             <h2>headOption</h2>
             <p>Optionally selects the first element. </p>
-            <p><code>headOption: Option[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>headOption: Option[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/headOption.svg" />
             </figure>
@@ -353,7 +410,9 @@
           <article id="indexOf">
             <h2>indexOf</h2>
             <p>Finds index of first occurrence of some value in this collection after or at some start index. </p>
-            <p><code>indexOf(elem: A, from: Int): Int</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>indexOf(elem: A, from: Int): Int</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/indexOf.svg" />
             </figure>
@@ -361,7 +420,9 @@
           <article id="indexOfSlice">
             <h2>indexOfSlice</h2>
             <p>Finds first index after or at a start index where this collection contains a given sequence as a slice. </p>
-            <p><code>indexOfSlice[B &gt;: A](that: GenSeq[B], from: Int): Int</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>indexOfSlice[B &gt;: A](that: GenSeq[B], from: Int): Int</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/indexOfSlice.svg" />
             </figure>
@@ -369,7 +430,9 @@
           <article id="indexWhere">
             <h2>indexWhere</h2>
             <p>Finds index of the first element satisfying some predicate after or at some start index. </p>
-            <p><code>indexWhere(p: (A) ⇒ Boolean, from: Int): Int</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>indexWhere(p: (A) ⇒ Boolean, from: Int): Int</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/indexWhere.svg" />
             </figure>
@@ -377,7 +440,9 @@
           <article id="indices">
             <h2>indices</h2>
             <p>Produces the range of all indices of this collection. </p>
-            <p><code>indices: Range</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>indices: Range</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/indices.svg" />
             </figure>
@@ -385,7 +450,9 @@
           <article id="init">
             <h2>init</h2>
             <p>Select all elements except the last. </p>
-            <p><code>init: Collection[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>init: Collection[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/init.svg" />
             </figure>
@@ -393,7 +460,9 @@
           <article id="inits">
             <h2>inits</h2>
             <p>Iterates over the inits of this collection. </p>
-            <p><code>inits: Iterator[Collection[A]]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>inits: Iterator[Collection[A]]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/inits.svg" />
             </figure>
@@ -401,7 +470,9 @@
           <article id="intersect">
             <h2>intersect</h2>
             <p>Computes the multiset intersection between this collection and another sequence. </p>
-            <p><code>intersect(that: Seq[A]): Collection[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>intersect(that: Seq[A]): Collection[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/intersect.svg" />
             </figure>
@@ -409,7 +480,9 @@
           <article id="isEmpty">
             <h2>isEmpty</h2>
             <p>Tests whether this collection is empty. </p>
-            <p><code>isEmpty: Boolean</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>isEmpty: Boolean</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/isEmpty.svg" />
             </figure>
@@ -417,7 +490,9 @@
           <article id="last">
             <h2>last</h2>
             <p>Selects the last element. </p>
-            <p><code>last: A</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>last: A</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/last.svg" />
             </figure>
@@ -425,7 +500,9 @@
           <article id="lastIndexOf">
             <h2>lastIndexOf</h2>
             <p>Finds index of last occurrence of some value in this colección before or at a given end index. </p>
-            <p><code>lastIndexOf(elem: A, end: Int): Int</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>lastIndexOf(elem: A, end: Int): Int</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/lastIndexOf.svg" />
             </figure>
@@ -433,7 +510,9 @@
           <article id="lastIndexOfSlice">
             <h2>lastIndexOfSlice</h2>
             <p>Finds last index before or at a given end index where this collection contains a given sequence as a slice. </p>
-            <p><code>lastIndexOfSlice[B &gt;: A](that: GenSeq[B], end: Int): Int</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>lastIndexOfSlice[B &gt;: A](that: GenSeq[B], end: Int): Int</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/lastIndexOfSlice.svg" />
             </figure>
@@ -441,7 +520,9 @@
           <article id="lastIndexWhere">
             <h2>lastIndexWhere</h2>
             <p>Finds index of last element satisfying some predicate before or at a given end index. </p>
-            <p><code>lastIndexWhere(p: (A) ⇒ Boolean, end: Int): Int</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>lastIndexWhere(p: (A) ⇒ Boolean, end: Int): Int</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/lastIndexWhere.svg" />
             </figure>
@@ -449,7 +530,9 @@
           <article id="lastOption">
             <h2>lastOption</h2>
             <p>Optionally selects the last element. </p>
-            <p><code>lastOption: Option[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>lastOption: Option[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/lastOption.svg" />
             </figure>
@@ -457,7 +540,9 @@
           <article id="length">
             <h2>length</h2>
             <p>The length of the collection. </p>
-            <p><code>length: Int</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>length: Int</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/length.svg" />
             </figure>
@@ -465,7 +550,9 @@
           <article id="map">
             <h2>map</h2>
             <p>Builds a new collection by applying a function to all elements of this collection. </p>
-            <p><code>map[B](f: (A) ⇒ B): Collection[B]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>map[B](f: (A) ⇒ B): Collection[B]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/map.svg" />
             </figure>
@@ -473,7 +560,9 @@
           <article id="mapConserve">
             <h2>mapConserve</h2>
             <p>Builds a new collection by applying a function to all elements of this collection. Like <code>xs map f</code>, but returns <var>xs</var> unchanged if function <var>f</var> maps all elements to themselves (as determined by <var>eq</var>) </p>
-            <p><code>mapConserve(f: (A) ⇒ A): Collection[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>mapConserve(f: (A) ⇒ A): Collection[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/mapConserve.svg" />
             </figure>
@@ -481,7 +570,9 @@
           <article id="max">
             <h2>max</h2>
             <p>Finds the largest element. </p>
-            <p><code>max: A</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>max: A</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/max.svg" />
             </figure>
@@ -489,7 +580,9 @@
           <article id="maxBy">
             <h2>maxBy</h2>
             <p>Finds the first element which yields the largest value measured by function <var>f</var>. </p>
-            <p><code>maxBy[B](f: (A) ⇒ B): A</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>maxBy[B](f: (A) ⇒ B): A</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/maxBy.svg" />
             </figure>
@@ -497,7 +590,9 @@
           <article id="min">
             <h2>min</h2>
             <p>Finds the smallest element. </p>
-            <p><code>min: A</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>min: A</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/min.svg" />
             </figure>
@@ -505,7 +600,9 @@
           <article id="minBy">
             <h2>minBy</h2>
             <p>Finds the first element which yields the smallest value measured by function <var>f</var>. </p>
-            <p><code>minBy[B](f: (A) ⇒ B): A</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>minBy[B](f: (A) ⇒ B): A</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/minBy.svg" />
             </figure>
@@ -513,7 +610,9 @@
           <article id="mkString">
             <h2>mkString</h2>
             <p>Displays all elements of this collection in a string. </p>
-            <p><code>mkString(start: String, sep: String, end: String): String</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>mkString(start: String, sep: String, end: String): String</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/mkString.svg" />
             </figure>
@@ -521,7 +620,9 @@
           <article id="nonEmpty">
             <h2>nonEmpty</h2>
             <p>Tests whether the collection is not empty. </p>
-            <p><code>nonEmpty: Boolean</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>nonEmpty: Boolean</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/nonEmpty.svg" />
             </figure>
@@ -529,7 +630,9 @@
           <article id="padTo">
             <h2>padTo</h2>
             <p>A copy of this collection with an element value appended until a given target length is reached. </p>
-            <p><code>padTo(len: Int, elem: A): Collection[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>padTo(len: Int, elem: A): Collection[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/padTo.svg" />
             </figure>
@@ -537,7 +640,9 @@
           <article id="partition">
             <h2>partition</h2>
             <p>Partitions this collection in two collections according to a predicate. </p>
-            <p><code>partition(p: (A) ⇒ Boolean): (Collection[A], Collection[A])</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>partition(p: (A) ⇒ Boolean): (Collection[A], Collection[A])</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/partition.svg" />
             </figure>
@@ -545,7 +650,9 @@
           <article id="patch">
             <h2>patch</h2>
             <p>Produces a new collection where a slice of elements in this collection is replaced by another sequence. </p>
-            <p><code>patch(from: Int, that: GenSeq[A], replaced: Int): Collection[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>patch(from: Int, that: GenSeq[A], replaced: Int): Collection[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/patch.svg" />
             </figure>
@@ -553,7 +660,9 @@
           <article id="permutations">
             <h2>permutations</h2>
             <p>Iterates over distinct permutations. </p>
-            <p><code>permutations: Iterator[Collection[A]]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>permutations: Iterator[Collection[A]]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/permutations.svg" />
             </figure>
@@ -561,7 +670,9 @@
           <article id="prefixLength">
             <h2>prefixLength</h2>
             <p>Returns the length of the longest prefix whose elements all satisfy some predicate. </p>
-            <p><code>prefixLength(p: (A) ⇒ Boolean): Int</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>prefixLength(p: (A) ⇒ Boolean): Int</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/prefixLength.svg" />
             </figure>
@@ -569,7 +680,9 @@
           <article id="product">
             <h2>product</h2>
             <p>Multiplies up the elements of this collection. </p>
-            <p><code>product: A</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>product: A</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/product.svg" />
             </figure>
@@ -577,7 +690,9 @@
           <article id="reduce">
             <h2>reduce</h2>
             <p>Reduces the elements of this collection using the specified associative binary operator. </p>
-            <p><code>reduce[A1 &gt;: A](op: (A1, A1) ⇒ A1): A1</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>reduce[A1 &gt;: A](op: (A1, A1) ⇒ A1): A1</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/reduce.svg" />
             </figure>
@@ -585,7 +700,9 @@
           <article id="reduceLeft">
             <h2>reduceLeft</h2>
             <p>Applies a binary operator to all elements of this collection, going left to right. </p>
-            <p><code>reduceLeft[B &gt;: A](op: (B, A) ⇒ B): B</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>reduceLeft[B &gt;: A](op: (B, A) ⇒ B): B</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/reduceLeft.svg" />
             </figure>
@@ -593,7 +710,9 @@
           <article id="reduceLeftOption">
             <h2>reduceLeftOption</h2>
             <p>Optionally applies a binary operator to all elements of this collection, going left to right. </p>
-            <p><code>reduceLeftOption[B &gt;: A](op: (B, A) ⇒ B): Option[B]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>reduceLeftOption[B &gt;: A](op: (B, A) ⇒ B): Option[B]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/reduceLeftOption.svg" />
             </figure>
@@ -601,7 +720,9 @@
           <article id="reduceOption">
             <h2>reduceOption</h2>
             <p>Reduces the elements of this collection, if any, using the specified associative binary operator. </p>
-            <p><code>reduceOption[A1 &gt;: A](op: (A1, A1) ⇒ A1): Option[A1]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>reduceOption[A1 &gt;: A](op: (A1, A1) ⇒ A1): Option[A1]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/reduceOption.svg" />
             </figure>
@@ -609,7 +730,9 @@
           <article id="reduceRight">
             <h2>reduceRight</h2>
             <p>Applies a binary operator to all elements of this collection, going right to left. </p>
-            <p><code>reduceRight[B &gt;: A](op: (A, B) ⇒ B): B</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>reduceRight[B &gt;: A](op: (A, B) ⇒ B): B</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/reduceRight.svg" />
             </figure>
@@ -617,7 +740,9 @@
           <article id="reduceRightOption">
             <h2>reduceRightOption</h2>
             <p>Optionally, applies a binary operator to all elements of this collection, going right to left. </p>
-            <p><code>reduceRightOption[B &gt;: A](op: (A, B) ⇒ B): Option[B]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>reduceRightOption[B &gt;: A](op: (A, B) ⇒ B): Option[B]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/reduceRightOption.svg" />
             </figure>
@@ -625,7 +750,9 @@
           <article id="reverse">
             <h2>reverse</h2>
             <p>Returns new collection with elements in reversed order. </p>
-            <p><code>reverse: Collection[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>reverse: Collection[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/reverse.svg" />
             </figure>
@@ -633,7 +760,9 @@
           <article id="reverseMap">
             <h2>reverseMap</h2>
             <p>Builds a new collection by applying a function to all elements of this collection and collecting the results in reversed order. </p>
-            <p><code>reverseMap(f: (A) ⇒ B): Collection[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>reverseMap(f: (A) ⇒ B): Collection[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/reverseMap.svg" />
             </figure>
@@ -641,7 +770,9 @@
           <article id="sameElements">
             <h2>sameElements</h2>
             <p>Checks if the other collection contains the same elements in the same order as this one. </p>
-            <p><code>sameElements(that: GenIterable[A]): Boolean</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>sameElements(that: GenIterable[A]): Boolean</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/sameElements.svg" />
             </figure>
@@ -649,7 +780,9 @@
           <article id="scan">
             <h2>scan</h2>
             <p>Computes a prefix scan of the elements of the collection. </p>
-            <p><code>scan[B &gt;: A](z: B)(op: (B, B) ⇒ B)</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>scan[B &gt;: A](z: B)(op: (B, B) ⇒ B)</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/scan.svg" />
             </figure>
@@ -657,7 +790,9 @@
           <article id="scanLeft">
             <h2>scanLeft</h2>
             <p>Produces a collection containing cumulative results of applying the operator going left to right. </p>
-            <p><code>scanLeft[B](z: B)(op: (B, A) ⇒ B)</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>scanLeft[B](z: B)(op: (B, A) ⇒ B)</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/scanLeft.svg" />
             </figure>
@@ -665,7 +800,9 @@
           <article id="scanRight">
             <h2>scanRight</h2>
             <p>Produces a collection containing cumulative results of applying the operator going right to left. </p>
-            <p><code>scanRight[B](z: B)(op: (A, B) ⇒ B)</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>scanRight[B](z: B)(op: (A, B) ⇒ B)</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/scanRight.svg" />
             </figure>
@@ -673,7 +810,9 @@
           <article id="segmentLength">
             <h2>segmentLength</h2>
             <p>Computes length of longest segment whose elements all satisfy some predicate. </p>
-            <p><code>segmentLength(p: (A) ⇒ Boolean, from: Int): Int</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>segmentLength(p: (A) ⇒ Boolean, from: Int): Int</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/segmentLength.svg" />
             </figure>
@@ -681,7 +820,9 @@
           <article id="size">
             <h2>size</h2>
             <p>The size of this collection. </p>
-            <p><code>size: Int</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>size: Int</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/size.svg" />
             </figure>
@@ -689,7 +830,9 @@
           <article id="slice">
             <h2>slice</h2>
             <p>   </p>
-            <p><code>slice(from: Int, until: Int): Collection[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>slice(from: Int, until: Int): Collection[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/slice.svg" />
             </figure>
@@ -697,7 +840,9 @@
           <article id="sliding">
             <h2>sliding</h2>
             <p>Groups elements in fixed size blocks by passing a "sliding window" over them. </p>
-            <p><code>sliding(size: Int, step: Int): Iterator[Collection[A]]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>sliding(size: Int, step: Int): Iterator[Collection[A]]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/sliding.svg" />
             </figure>
@@ -705,7 +850,9 @@
           <article id="sortBy">
             <h2>sortBy</h2>
             <p>Sorts this collection according to the Ordering which results from transforming an implicitly given Ordering with a transformation function. </p>
-            <p><code>sortBy[B](f: (A) ⇒ B)(implicit ord: math.Ordering[B]): Collection[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>sortBy[B](f: (A) ⇒ B)(implicit ord: math.Ordering[B]): Collection[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/sortBy.svg" />
             </figure>
@@ -713,7 +860,9 @@
           <article id="sortWith">
             <h2>sortWith</h2>
             <p>Sorts this collection according to a comparison function. </p>
-            <p><code>sortWith(lt: (A, A) ⇒ Boolean): Collection[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>sortWith(lt: (A, A) ⇒ Boolean): Collection[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/sortWith.svg" />
             </figure>
@@ -721,7 +870,9 @@
           <article id="sorted">
             <h2>sorted</h2>
             <p>Sorts this collection according to an Ordering. </p>
-            <p><code>sorted[B &gt;: A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>sorted[B &gt;: A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/sorted.svg" />
             </figure>
@@ -729,7 +880,9 @@
           <article id="span">
             <h2>span</h2>
             <p>Splits this collection into a prefix/suffix pair according to a predicate. </p>
-            <p><code>span(p: (A) ⇒ Boolean): (Collection[A], Collection[A])</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>span(p: (A) ⇒ Boolean): (Collection[A], Collection[A])</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/span.svg" />
             </figure>
@@ -737,7 +890,9 @@
           <article id="splitAt">
             <h2>splitAt</h2>
             <p>Splits this collection into two at a given position. </p>
-            <p><code>splitAt(n: Int): (Collection[A], Collection[A])</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>splitAt(n: Int): (Collection[A], Collection[A])</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/splitAt.svg" />
             </figure>
@@ -745,7 +900,9 @@
           <article id="startsWith">
             <h2>startsWith</h2>
             <p>Tests whether this collection contains the given sequence at a given index. </p>
-            <p><code>startsWith[B](that: GenSeq[B], offset: Int): Boolean</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>startsWith[B](that: GenSeq[B], offset: Int): Boolean</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/startsWith.svg" />
             </figure>
@@ -753,7 +910,9 @@
           <article id="sum">
             <h2>sum</h2>
             <p>Sums up the elements of this collection. </p>
-            <p><code>sum: A</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>sum: A</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/sum.svg" />
             </figure>
@@ -761,7 +920,9 @@
           <article id="tail">
             <h2>tail</h2>
             <p>Selects all elements except the first. </p>
-            <p><code>tail: Collection[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>tail: Collection[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/tail.svg" />
             </figure>
@@ -769,7 +930,9 @@
           <article id="tails">
             <h2>tails</h2>
             <p>Iterates over the tails of this collection. </p>
-            <p><code>tails: Iterator[Collection[A]]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>tails: Iterator[Collection[A]]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/tails.svg" />
             </figure>
@@ -777,7 +940,9 @@
           <article id="take">
             <h2>take</h2>
             <p>Selects first <var>n</var> elements. </p>
-            <p><code>take(n: Int): Collection[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>take(n: Int): Collection[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/take.svg" />
             </figure>
@@ -785,7 +950,9 @@
           <article id="takeRight">
             <h2>takeRight</h2>
             <p>Selects last <var>n</var> elements. </p>
-            <p><code>takeRight(n: Int): Collection[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>takeRight(n: Int): Collection[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/takeRight.svg" />
             </figure>
@@ -793,7 +960,9 @@
           <article id="takeWhile">
             <h2>takeWhile</h2>
             <p>Takes longest prefix of elements that satisfy a predicate. </p>
-            <p><code>takeWhile(p: (A) ⇒ Boolean): Collection[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>takeWhile(p: (A) ⇒ Boolean): Collection[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/takeWhile.svg" />
             </figure>
@@ -801,7 +970,9 @@
           <article id="union">
             <h2>union</h2>
             <p>Produces a new collection which contains all elements of this one and also all elements of a given sequence. </p>
-            <p><code>union(that: Seq[A]): Collection[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>union(that: Seq[A]): Collection[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/union.svg" />
             </figure>
@@ -809,7 +980,9 @@
           <article id="unzip">
             <h2>unzip</h2>
             <p>Converts this collection of pairs into two collections of the first and second half of each pair. </p>
-            <p><code>unzip[A1, A2](implicit asPair: (A) ⇒ (A1, A2)): (Collection[A1], Collection[A2])</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>unzip[A1, A2](implicit asPair: (A) ⇒ (A1, A2)): (Collection[A1], Collection[A2])</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/unzip.svg" />
             </figure>
@@ -817,7 +990,9 @@
           <article id="unzip3">
             <h2>unzip3</h2>
             <p>Converts this collection of triples into three collections of the first, second, and third element of each triple. </p>
-            <p><code>unzip3[A1, A2, A3](implicit asTriple: (A) ⇒ (A1, A2, A3)): (Collection[A1], Collection[A2], Collection[A3])</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>unzip3[A1, A2, A3](implicit asTriple: (A) ⇒ (A1, A2, A3)): (Collection[A1], Collection[A2], Collection[A3])</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/unzip3.svg" />
             </figure>
@@ -825,7 +1000,9 @@
           <article id="updated">
             <h2>updated</h2>
             <p>A copy of this collection with one single replaced element. </p>
-            <p><code>updated(index: Int, elem: A): Collection[A]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>updated(index: Int, elem: A): Collection[A]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/updated.svg" />
             </figure>
@@ -833,7 +1010,9 @@
           <article id="zip">
             <h2>zip</h2>
             <p>Returns a collection formed from this and another one by combining corresponding elements in pairs. </p>
-            <p><code>zip[B](that: GenIterable[B]): Collection[A, B]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>zip[B](that: GenIterable[B]): Collection[A, B]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/zip.svg" />
             </figure>
@@ -841,7 +1020,9 @@
           <article id="zipAll">
             <h2>zipAll</h2>
             <p>Returns a collection formed from this and another one by combining corresponding elements in pairs. If one of the two collections is shorter than the other, placeholder elements are used to extend the shorter collection to the length of the longer. </p>
-            <p><code>zipAll[B](that: Iterable[B], thisElem: A, thatElem: B): Collection[(A, B)]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>zipAll[B](that: Iterable[B], thisElem: A, thatElem: B): Collection[(A, B)]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/zipAll.svg" />
             </figure>
@@ -849,7 +1030,9 @@
           <article id="zipWithIndex">
             <h2>zipWithIndex</h2>
             <p>Zips this collection with its indices. </p>
-            <p><code>zipWithIndex: Collection[A, Int]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>zipWithIndex: Collection[A, Int]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/zipWithIndex.svg" />
             </figure>
@@ -857,9 +1040,25 @@
           <article id="List.range">
             <h2>List.range</h2>
             <p>Produces a collection containing a sequence of increasing of integers </p>
-            <p><code>List.range(start: Int, end: Int, step: Int): List[Int]</code></p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>List.range(start: Int, end: Int, step: Int): List[Int]</code></li>
+            </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/List.range.svg" />
+            </figure>
+          </article>
+          <article id="List.fill">
+            <h2>List.fill</h2>
+            <p>Produces a (n-dimensional) collection containing the results of some element computation a number of times. </p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>List.fill[A](n: Int)(elem: ⇒ A): List[A]</code></li>
+                <li class="list-unstyled"><code>List.fill[A](n1: Int, n2: Int)(elem: ⇒ A): List[List[A]]</code></li>
+                <li class="list-unstyled"><code>List.fill[A](n1: Int, n2: Int, n3: Int)(elem: ⇒ A): List[List[List[A]]]</code></li>
+                <li class="list-unstyled"><code>List.fill[A](n1: Int, n2: Int, n3: Int, n4: Int)(elem: ⇒ A): List[List[List[List[A]]]]</code></li>
+                <li class="list-unstyled"><code>List.fill[A](n1: Int, n2: Int, n3: Int, n4: Int, n5: Int)(elem: ⇒ A): List[List[List[List[List[A]]]]]</code></li>
+            </ul>
+            <figure class="figure">
+              <img class="figure-img img-fluid" src="images/List.fill.svg" />
             </figure>
           </article>
       </section>

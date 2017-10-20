@@ -1,6 +1,17 @@
 ---
 - name: List.range
-  signature: "List.range(start: Int, end: Int, step: Int): List[Int]"
+  signatures:
+  - "List.range(start: Int, end: Int, step: Int): List[Int]"
   description:
     en: Produces a collection containing a sequence of increasing of integers
     es: Produce una colección que contiene una secuencia de enteros incrementales.
+
+- name: List.fill
+  signatures:
+  - "List.fill[A](n: Int)(elem: ⇒ A): List[A]"
+  - "List.fill[A](n1: Int, n2: Int)(elem: ⇒ A): List[List[A]]"
+  - "List.fill[A](n1: Int, n2: Int, n3: Int)(elem: ⇒ A): List[List[List[A]]]"
+  - "List.fill[A](n1: Int, n2: Int, n3: Int, n4: Int)(elem: ⇒ A): List[List[List[List[A]]]]"
+  - "List.fill[A](n1: Int, n2: Int, n3: Int, n4: Int, n5: Int)(elem: ⇒ A): List[List[List[List[List[A]]]]]"
+  description:
+    en: Produces a (n-dimensional) collection containing the results of some element computation a number of times.
