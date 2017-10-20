@@ -24,6 +24,7 @@ $translator = function($text) {
 };
 
 $functions = Yaml::parse(file_get_contents(__DIR__ . '/data/functions.yml'));
+$listFunctions = Yaml::parse(file_get_contents(__DIR__ . '/data/list.yml'));
 $languages = Yaml::parse(file_get_contents(__DIR__ . '/data/languages.yml'));
 $messages = Yaml::parse(file_get_contents(__DIR__ . '/data/messages.yml'));
 
@@ -41,6 +42,7 @@ $context = [
   'allLangs' => $languages,
   'messages' => $messages,
   'functions' => $functions,
+  'listFunctions' => $listFunctions,
 ];
 $html = $mustache->render('index', $context);
 

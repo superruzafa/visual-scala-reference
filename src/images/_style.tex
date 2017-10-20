@@ -159,5 +159,9 @@
 }
 
 \newcommand{\toppointer}[2] {
-  \draw ([yshift=1mm] #1) [Latex-] -- ([yshift=1cm] #1) node [anchor=south] {#2};
+  \draw ([yshift=1mm] #1) [Latex-] -- ([yshift=9mm] #1) node [anchor=south] {#2};
+}
+
+\newcommand{\topinject}[2] {
+  \draw ([yshift=-4mm] #1) [Latex-, white border, draw=black] -- ([yshift=6mm] #1) node [anchor=south] {#2};
 }

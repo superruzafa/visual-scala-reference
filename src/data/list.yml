@@ -1,0 +1,6 @@
+---
+- name: List.range
+  signature: "List.range(start: Int, end: Int, step: Int): List[Int]"
+  description:
+    en: Produces a collection containing a sequence of increasing of integers
+    es: Produce una colección que contiene una secuencia de enteros incrementales.

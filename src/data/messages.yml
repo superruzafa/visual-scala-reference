@@ -1,10 +1,16 @@
 ---
-availableLanguages:
-  en: Available languages
-  es: Idiomas disponibles
 title:
   en: Visual Scala Reference
   es: Referencia visual de Scala
 description:
   en: A visual guide to Scala functions. Graphical examples of Scala functions.
   es: Una guía visual de las funciones de Scala. Ejemplos gráficos de funciones de Scala.
+availableLanguages:
+  en: Available languages
+  es: Idiomas disponibles
+commonFunctions:
+  en: Common functions
+  es: Funciones comunes
+listSpecificFunctions:
+  en: List specific functions
+  es: Funciones específicas de List
