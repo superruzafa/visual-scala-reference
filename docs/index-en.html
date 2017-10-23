@@ -26,7 +26,6 @@
   <div class="container">
     <div class="row">
       <aside class="col-sm-5 col-md-4 col-lg-3">
-        <p><strong>Common functions </strong></p>
         <ul class="d-none d-sm-block">
             <li class="list-unstyled"><a href="#aggregate" title="aggregate">aggregate</a></li>
             <li class="list-unstyled"><a href="#collect" title="collect">collect</a></li>
@@ -42,6 +41,7 @@
             <li class="list-unstyled"><a href="#dropWhile" title="dropWhile">dropWhile</a></li>
             <li class="list-unstyled"><a href="#endsWith" title="endsWith">endsWith</a></li>
             <li class="list-unstyled"><a href="#exists" title="exists">exists</a></li>
+            <li class="list-unstyled"><a href="#fill" title="fill">fill</a></li>
             <li class="list-unstyled"><a href="#filter" title="filter">filter</a></li>
             <li class="list-unstyled"><a href="#filterNot" title="filterNot">filterNot</a></li>
             <li class="list-unstyled"><a href="#find" title="find">find</a></li>
@@ -84,6 +84,7 @@
             <li class="list-unstyled"><a href="#permutations" title="permutations">permutations</a></li>
             <li class="list-unstyled"><a href="#prefixLength" title="prefixLength">prefixLength</a></li>
             <li class="list-unstyled"><a href="#product" title="product">product</a></li>
+            <li class="list-unstyled"><a href="#range" title="range">range</a></li>
             <li class="list-unstyled"><a href="#reduce" title="reduce">reduce</a></li>
             <li class="list-unstyled"><a href="#reduceLeft" title="reduceLeft">reduceLeft</a></li>
             <li class="list-unstyled"><a href="#reduceLeftOption" title="reduceLeftOption">reduceLeftOption</a></li>
@@ -107,6 +108,7 @@
             <li class="list-unstyled"><a href="#splitAt" title="splitAt">splitAt</a></li>
             <li class="list-unstyled"><a href="#startsWith" title="startsWith">startsWith</a></li>
             <li class="list-unstyled"><a href="#sum" title="sum">sum</a></li>
+            <li class="list-unstyled"><a href="#tabulate" title="tabulate">tabulate</a></li>
             <li class="list-unstyled"><a href="#tail" title="tail">tail</a></li>
             <li class="list-unstyled"><a href="#tails" title="tails">tails</a></li>
             <li class="list-unstyled"><a href="#take" title="take">take</a></li>
@@ -119,12 +121,6 @@
             <li class="list-unstyled"><a href="#zip" title="zip">zip</a></li>
             <li class="list-unstyled"><a href="#zipAll" title="zipAll">zipAll</a></li>
             <li class="list-unstyled"><a href="#zipWithIndex" title="zipWithIndex">zipWithIndex</a></li>
-        </ul>
-        <p><strong>List specific functions </strong></p>
-        <ul class="d-none d-sm-block">
-            <li class="list-unstyled"><a href="#List.range" title="List.range">List.range</a></li>
-            <li class="list-unstyled"><a href="#List.fill" title="List.fill">List.fill</a></li>
-            <li class="list-unstyled"><a href="#List.tabulate" title="List.tabulate">List.tabulate</a></li>
         </ul>
       </aside>
       <section class="col-sm-7 col-md-8 col-lg-9">
@@ -266,6 +262,16 @@
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/exists.svg" />
+            </figure>
+          </article>
+          <article id="fill">
+            <h2>fill</h2>
+            <p>Produces a n-dimensional collection containing the results of some element computation a number of times. </p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>fill[A](n<sub>1</sub>: Int, ...n<sub>m</sub>: Int)(elem: ⇒ A): Collection[... Collection[A] ...]</code></li>
+            </ul>
+            <figure class="figure">
+              <img class="figure-img img-fluid" src="images/fill.svg" />
             </figure>
           </article>
           <article id="filter">
@@ -688,6 +694,16 @@
               <img class="figure-img img-fluid" src="images/product.svg" />
             </figure>
           </article>
+          <article id="range">
+            <h2>range</h2>
+            <p>Produces a collection containing a sequence of increasing of integers </p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>range(start: Int, end: Int, step: Int): Collection[Int]</code></li>
+            </ul>
+            <figure class="figure">
+              <img class="figure-img img-fluid" src="images/range.svg" />
+            </figure>
+          </article>
           <article id="reduce">
             <h2>reduce</h2>
             <p>Reduces the elements of this collection using the specified associative binary operator. </p>
@@ -918,6 +934,16 @@
               <img class="figure-img img-fluid" src="images/sum.svg" />
             </figure>
           </article>
+          <article id="tabulate">
+            <h2>tabulate</h2>
+            <p>Produces a n-dimensional collection containing values of a given function over ranges of integer values starting from 0. </p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>tabulate[A](n<sub>1</sub>: Int, ..., n<sub>m</sub>: Int)(f: (Int, ..., Int): ⇒ A): Collection[... Collection[A] ...]</code></li>
+            </ul>
+            <figure class="figure">
+              <img class="figure-img img-fluid" src="images/tabulate.svg" />
+            </figure>
+          </article>
           <article id="tail">
             <h2>tail</h2>
             <p>Selects all elements except the first. </p>
@@ -1036,40 +1062,6 @@
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/zipWithIndex.svg" />
-            </figure>
-          </article>
-          <article id="List.range">
-            <h2>List.range</h2>
-            <p>Produces a collection containing a sequence of increasing of integers </p>
-            <ul class="signatures">
-                <li class="list-unstyled"><code>List.range(start: Int, end: Int, step: Int): List[Int]</code></li>
-            </ul>
-            <figure class="figure">
-              <img class="figure-img img-fluid" src="images/List.range.svg" />
-            </figure>
-          </article>
-          <article id="List.fill">
-            <h2>List.fill</h2>
-            <p>Produces a (n-dimensional) collection containing the results of some element computation a number of times. </p>
-            <ul class="signatures">
-                <li class="list-unstyled"><code>List.fill[A](n: Int)(elem: ⇒ A): List[A]</code></li>
-                <li class="list-unstyled"><code>List.fill[A](n1: Int, n2: Int)(elem: ⇒ A): List[List[A]]</code></li>
-                <li class="list-unstyled"><code>List.fill[A](n1: Int, n2: Int, n3: Int)(elem: ⇒ A): List[List[List[A]]]</code></li>
-                <li class="list-unstyled"><code>List.fill[A](n1: Int, n2: Int, n3: Int, n4: Int)(elem: ⇒ A): List[List[List[List[A]]]]</code></li>
-                <li class="list-unstyled"><code>List.fill[A](n1: Int, n2: Int, n3: Int, n4: Int, n5: Int)(elem: ⇒ A): List[List[List[List[List[A]]]]]</code></li>
-            </ul>
-            <figure class="figure">
-              <img class="figure-img img-fluid" src="images/List.fill.svg" />
-            </figure>
-          </article>
-          <article id="List.tabulate">
-            <h2>List.tabulate</h2>
-            <p>Produces a n-dimensional collection containing values of a given function over ranges of integer values starting from 0. </p>
-            <ul class="signatures">
-                <li class="list-unstyled"><code>tabulate[A](n<sub>1</sub>: Int, ..., n<sub>m</sub>: Int)(f: (Int, ..., Int): ⇒ A): Collection[... Collection[A] ...]</code></li>
-            </ul>
-            <figure class="figure">
-              <img class="figure-img img-fluid" src="images/List.tabulate.svg" />
             </figure>
           </article>
       </section>

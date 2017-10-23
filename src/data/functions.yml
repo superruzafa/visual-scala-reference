@@ -97,6 +97,12 @@
     en: Tests whether a predicate holds for at least one element of this collection.
     es: Comprueba si un predicado es válido para al menos un elemento de esta colección.
 
+- name: fill
+  signatures:
+  - "fill[A](n<sub>1</sub>: Int, ...n<sub>m</sub>: Int)(elem: ⇒ A): Collection[... Collection[A] ...]"
+  description:
+    en: Produces a n-dimensional collection containing the results of some element computation a number of times.
+
 - name: filter
   signatures:
   - "filter(p: (A) ⇒ Boolean): Collection[A]"
@@ -395,6 +401,13 @@
     en: Multiplies up the elements of this collection.
     es: Multiplica los elementos de esta colección.
 
+- name: range
+  signatures:
+  - "range(start: Int, end: Int, step: Int): Collection[Int]"
+  description:
+    en: Produces a collection containing a sequence of increasing of integers
+    es: Produce una colección que contiene una secuencia de enteros incrementales.
+
 - name: reduce
   signatures:
   - "reduce[A1 >: A](op: (A1, A1) ⇒ A1): A1"
@@ -555,6 +568,12 @@
   description:
     en: Sums up the elements of this collection.
     es: Suma los elementos de esta colección.
+
+- name: tabulate
+  signatures:
+  - "tabulate[A](n<sub>1</sub>: Int, ..., n<sub>m</sub>: Int)(f: (Int, ..., Int): ⇒ A): Collection[... Collection[A] ...]"
+  description:
+    en: Produces a n-dimensional collection containing values of a given function over ranges of integer values starting from 0.
 
 - name: tail
   signatures:

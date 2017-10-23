@@ -57,7 +57,7 @@
 }}
 % \tikzset{ellipsis/.default=1.5cm}
 
-\newcommand{\ellipsis}[1]{ \node [ellipsis=15mm]; }
+\newcommand{\ellipsis}[1][15mm]{ \node [ellipsis=#1]; }
 
 \tikzstyle{tuple comma}=[
   minimum width=2em,

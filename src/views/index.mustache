@@ -25,26 +25,16 @@
   <div class="container">
     <div class="row">
       <aside class="col-sm-5 col-md-4 col-lg-3">
-        <p><strong>{{# t }}{{ messages.commonFunctions }}{{/ t }}</strong></p>
         <ul class="d-none d-sm-block">
           {{# functions }}
             <li class="list-unstyled"><a href="#{{ name }}" title="{{ name }}">{{ name }}</a></li>
           {{/ functions }}
-        </ul>
-        <p><strong>{{# t }}{{ messages.listSpecificFunctions }}{{/ t }}</strong></p>
-        <ul class="d-none d-sm-block">
-          {{# listFunctions }}
-            <li class="list-unstyled"><a href="#{{ name }}" title="{{ name }}">{{ name }}</a></li>
-          {{/ listFunctions }}
         </ul>
       </aside>
       <section class="col-sm-7 col-md-8 col-lg-9">
         {{# functions }}
           {{> function }}
         {{/ functions }}
-        {{# listFunctions }}
-          {{> function }}
-        {{/ listFunctions }}
       </section>
       </div>
     </div>
