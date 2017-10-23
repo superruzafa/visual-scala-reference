@@ -138,7 +138,7 @@
             <h2>collect</h2>
             <p>Construye una nueva colección aplicando una función parcial a todos los elementos de esta colección para los que dicha función está definida. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>collect[B](pf: PartialFunction[A, B]): Collection[B]</code></li>
+                <li class="list-unstyled"><code>collect[B](pf: PartialFunction[A, B]): <em>Collection</em>[B]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/collect.svg" />
@@ -158,7 +158,7 @@
             <h2>combinations</h2>
             <p>Itera sobre combinaciones. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>combinations(n: Int): Iterator[Collection[A]]</code></li>
+                <li class="list-unstyled"><code>combinations(n: Int): Iterator[<em>Collection</em>[A]]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/combinations.svg" />
@@ -198,7 +198,7 @@
             <h2>diff</h2>
             <p>Calcula la diferencia multiconjunto entre esta colección y otra. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>diff(that: Seq[A]): Collection[A]</code></li>
+                <li class="list-unstyled"><code>diff(that: Seq[A]): <em>Collection</em>[A]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/diff.svg" />
@@ -208,7 +208,7 @@
             <h2>distinct</h2>
             <p>Construye una nueva colección a partir de esta sin ningún elemento duplicado. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>distinct: Collection[A]</code></li>
+                <li class="list-unstyled"><code>distinct: <em>Collection</em>[A]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/distinct.svg" />
@@ -218,7 +218,7 @@
             <h2>drop</h2>
             <p>Selecciona todos los elementos excepto los <var>n</var> primeros. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>drop(n: Int): Collection[A]</code></li>
+                <li class="list-unstyled"><code>drop(n: Int): <em>Collection</em>[A]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/drop.svg" />
@@ -228,7 +228,7 @@
             <h2>dropRight</h2>
             <p>Selecciona todos los elementos excepto los <var>n</var> últimos. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>dropRight(n: Int): Collection[A]</code></li>
+                <li class="list-unstyled"><code>dropRight(n: Int): <em>Collection</em>[A]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/dropRight.svg" />
@@ -238,7 +238,7 @@
             <h2>dropWhile</h2>
             <p>Descarta el mayor prefijo de elementos que satisfacen un predicado. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>dropWhile(p: (A) ⇒ Boolean): Collection[A]</code></li>
+                <li class="list-unstyled"><code>dropWhile(p: (A) ⇒ Boolean): <em>Collection</em>[A]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/dropWhile.svg" />
@@ -266,9 +266,9 @@
           </article>
           <article id="fill">
             <h2>fill</h2>
-            <p>  Produces a n-dimensional collection containing the results of some element computation a number of times. </p>
+            <p>Produce una colección n-dimensional que contiene el resultado de cierta computación para un elemento un numero de veces. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>fill[A](n<sub>1</sub>: Int, ...n<sub>m</sub>: Int)(elem: ⇒ A): Collection[... Collection[A] ...]</code></li>
+                <li class="list-unstyled"><code><em>Collection</em>.fill[A](n<sub>1</sub>: Int, ..., n<sub>m</sub>: Int)(elem: ⇒ A): <em>Collection</em>[... <em>Collection</em>[A] ...]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/fill.svg" />
@@ -278,7 +278,7 @@
             <h2>filter</h2>
             <p>Selecciona todos los elementos de la colección que satisfacen un predicado. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>filter(p: (A) ⇒ Boolean): Collection[A]</code></li>
+                <li class="list-unstyled"><code>filter(p: (A) ⇒ Boolean): <em>Collection</em>[A]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/filter.svg" />
@@ -288,7 +288,7 @@
             <h2>filterNot</h2>
             <p>Selecciona todos los elementos de la colección que no satisfacen un predicado. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>filterNot(p: (A) ⇒ Boolean): Collection[A]</code></li>
+                <li class="list-unstyled"><code>filterNot(p: (A) ⇒ Boolean): <em>Collection</em>[A]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/filterNot.svg" />
@@ -308,7 +308,7 @@
             <h2>flatMap</h2>
             <p>Construye una nueva colección tras aplicar una función a todos los elementos de esta colección. La función devuelve una colección de elementos. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>flatMap[B](f: (A) ⇒ Collection[B]): Collection[B]</code></li>
+                <li class="list-unstyled"><code>flatMap[B](f: (A) ⇒ <em>Collection</em>[B]): <em>Collection</em>[B]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/flatMap.svg" />
@@ -318,7 +318,7 @@
             <h2>flatten</h2>
             <p>Convierte esta colección de colecciones en una colección compuesta por los elementos de las colecciones internas. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>flatten[B]: Collection[B]</code></li>
+                <li class="list-unstyled"><code>flatten[B]: <em>Collection</em>[B]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/flatten.svg" />
@@ -378,7 +378,7 @@
             <h2>groupBy</h2>
             <p>Parte esta colección en un mapa de colecciones de acuerdo a una función discriminadora. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>groupBy[K](f: (A) ⇒ K): Map[K, Collection[A]]</code></li>
+                <li class="list-unstyled"><code>groupBy[K](f: (A) ⇒ K): Map[K, <em>Collection</em>[A]]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/groupBy.svg" />
@@ -388,7 +388,7 @@
             <h2>grouped</h2>
             <p>Parte los elementos en colecciones iterables de tamaño fijo. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>grouped(size: Int): Iterator[Collection[A]]</code></li>
+                <li class="list-unstyled"><code>grouped(size: Int): Iterator[<em>Collection</em>[A]]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/grouped.svg" />
@@ -458,7 +458,7 @@
             <h2>init</h2>
             <p>Selecciona todos los elementos excepto el último. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>init: Collection[A]</code></li>
+                <li class="list-unstyled"><code>init: <em>Collection</em>[A]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/init.svg" />
@@ -468,7 +468,7 @@
             <h2>inits</h2>
             <p>Itera sobre los <code>inits</code> de esta colección. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>inits: Iterator[Collection[A]]</code></li>
+                <li class="list-unstyled"><code>inits: Iterator[<em>Collection</em>[A]]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/inits.svg" />
@@ -478,7 +478,7 @@
             <h2>intersect</h2>
             <p>Computa la intersección multiconjunto entre esta colección y otra secuencia. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>intersect(that: Seq[A]): Collection[A]</code></li>
+                <li class="list-unstyled"><code>intersect(that: Seq[A]): <em>Collection</em>[A]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/intersect.svg" />
@@ -558,7 +558,7 @@
             <h2>map</h2>
             <p>Construye una nueva colección aplicando una función a todos los elementos de esta colección. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>map[B](f: (A) ⇒ B): Collection[B]</code></li>
+                <li class="list-unstyled"><code>map[B](f: (A) ⇒ B): <em>Collection</em>[B]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/map.svg" />
@@ -568,7 +568,7 @@
             <h2>mapConserve</h2>
             <p>Construye una nueva colección aplicando una función a todos los elementos de esta colección. Igual que <code>xs map f</code> pero devuelve <var>xs</var> intacto si la función <var>f</var> mapea todos los elementos a sí mismos (determinado por <var>eq</var>) </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>mapConserve(f: (A) ⇒ A): Collection[A]</code></li>
+                <li class="list-unstyled"><code>mapConserve(f: (A) ⇒ A): <em>Collection</em>[A]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/mapConserve.svg" />
@@ -638,7 +638,7 @@
             <h2>padTo</h2>
             <p>Una copia de esta colección anexando un mismo valor hasta alcanzar una longitud dada. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>padTo(len: Int, elem: A): Collection[A]</code></li>
+                <li class="list-unstyled"><code>padTo(len: Int, elem: A): <em>Collection</em>[A]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/padTo.svg" />
@@ -648,7 +648,7 @@
             <h2>partition</h2>
             <p>Parte esta colección en dos colecciones de acuerdo a un predicado. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>partition(p: (A) ⇒ Boolean): (Collection[A], Collection[A])</code></li>
+                <li class="list-unstyled"><code>partition(p: (A) ⇒ Boolean): (<em>Collection</em>[A], <em>Collection</em>[A])</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/partition.svg" />
@@ -658,7 +658,7 @@
             <h2>patch</h2>
             <p>Produce una nueva colección donde una subcolección de elementos es reemplazada por otra secuencia. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>patch(from: Int, that: GenSeq[A], replaced: Int): Collection[A]</code></li>
+                <li class="list-unstyled"><code>patch(from: Int, that: GenSeq[A], replaced: Int): <em>Collection</em>[A]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/patch.svg" />
@@ -668,7 +668,7 @@
             <h2>permutations</h2>
             <p>Itera sobre distintas permutaciones. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>permutations: Iterator[Collection[A]]</code></li>
+                <li class="list-unstyled"><code>permutations: Iterator[<em>Collection</em>[A]]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/permutations.svg" />
@@ -698,7 +698,7 @@
             <h2>range</h2>
             <p>Produce una colección que contiene una secuencia de enteros incrementales. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>range(start: Int, end: Int, step: Int): Collection[Int]</code></li>
+                <li class="list-unstyled"><code><em>Collection</em>.range(start: Int, end: Int, step: Int): <em>Collection</em>[Int]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/range.svg" />
@@ -768,7 +768,7 @@
             <h2>reverse</h2>
             <p>Devuelve una nueva colección con los elementos en orden inverso. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>reverse: Collection[A]</code></li>
+                <li class="list-unstyled"><code>reverse: <em>Collection</em>[A]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/reverse.svg" />
@@ -778,7 +778,7 @@
             <h2>reverseMap</h2>
             <p>Construye una nueva colección aplicando una función a todos los elementos de esta colección y recolectando los resultados en orden inverso. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>reverseMap(f: (A) ⇒ B): Collection[A]</code></li>
+                <li class="list-unstyled"><code>reverseMap(f: (A) ⇒ B): <em>Collection</em>[A]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/reverseMap.svg" />
@@ -848,7 +848,7 @@
             <h2>slice</h2>
             <p>   </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>slice(from: Int, until: Int): Collection[A]</code></li>
+                <li class="list-unstyled"><code>slice(from: Int, until: Int): <em>Collection</em>[A]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/slice.svg" />
@@ -858,7 +858,7 @@
             <h2>sliding</h2>
             <p>Agrupa elementos en bloques de tamaño fijo pasando una "ventana deslizante" sobre ellos. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>sliding(size: Int, step: Int): Iterator[Collection[A]]</code></li>
+                <li class="list-unstyled"><code>sliding(size: Int, step: Int): Iterator[<em>Collection</em>[A]]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/sliding.svg" />
@@ -868,7 +868,7 @@
             <h2>sortBy</h2>
             <p>Ordena esta colección de acuerdo al Ordering resultado de transformar un Ordering dado implícitamente con una función de transformación. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>sortBy[B](f: (A) ⇒ B)(implicit ord: math.Ordering[B]): Collection[A]</code></li>
+                <li class="list-unstyled"><code>sortBy[B](f: (A) ⇒ B)(implicit ord: math.Ordering[B]): <em>Collection</em>[A]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/sortBy.svg" />
@@ -878,7 +878,7 @@
             <h2>sortWith</h2>
             <p>Ordena esta colección de acuerdo a una función de comparación. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>sortWith(lt: (A, A) ⇒ Boolean): Collection[A]</code></li>
+                <li class="list-unstyled"><code>sortWith(lt: (A, A) ⇒ Boolean): <em>Collection</em>[A]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/sortWith.svg" />
@@ -898,7 +898,7 @@
             <h2>span</h2>
             <p>Parte esta colección en un par prefijo/sufijo de acuerdo a un predicado. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>span(p: (A) ⇒ Boolean): (Collection[A], Collection[A])</code></li>
+                <li class="list-unstyled"><code>span(p: (A) ⇒ Boolean): (<em>Collection</em>[A], <em>Collection</em>[A])</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/span.svg" />
@@ -908,7 +908,7 @@
             <h2>splitAt</h2>
             <p>Parte esta colección en dos en una posición dada. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>splitAt(n: Int): (Collection[A], Collection[A])</code></li>
+                <li class="list-unstyled"><code>splitAt(n: Int): (<em>Collection</em>[A], <em>Collection</em>[A])</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/splitAt.svg" />
@@ -936,9 +936,9 @@
           </article>
           <article id="tabulate">
             <h2>tabulate</h2>
-            <p>  Produces a n-dimensional collection containing values of a given function over ranges of integer values starting from 0. </p>
+            <p>Produce una colección n-dimensional que contiene los valores de una cierta función sobre el rango de valores enteros empezando por 0. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>tabulate[A](n<sub>1</sub>: Int, ..., n<sub>m</sub>: Int)(f: (Int, ..., Int): ⇒ A): Collection[... Collection[A] ...]</code></li>
+                <li class="list-unstyled"><code><em>Collection</em>.tabulate[A](n<sub>1</sub>: Int, ..., n<sub>m</sub>: Int)(f: (Int, ..., Int): ⇒ A): <em>Collection</em>[... <em>Collection</em>[A] ...]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/tabulate.svg" />
@@ -948,7 +948,7 @@
             <h2>tail</h2>
             <p>Selecciona todos los elementos excepto el primero. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>tail: Collection[A]</code></li>
+                <li class="list-unstyled"><code>tail: <em>Collection</em>[A]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/tail.svg" />
@@ -958,7 +958,7 @@
             <h2>tails</h2>
             <p>Itera sobre las colas de esta colección. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>tails: Iterator[Collection[A]]</code></li>
+                <li class="list-unstyled"><code>tails: Iterator[<em>Collection</em>[A]]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/tails.svg" />
@@ -968,7 +968,7 @@
             <h2>take</h2>
             <p>Selecciona los primeros <var>n</var> elementos. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>take(n: Int): Collection[A]</code></li>
+                <li class="list-unstyled"><code>take(n: Int): <em>Collection</em>[A]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/take.svg" />
@@ -978,7 +978,7 @@
             <h2>takeRight</h2>
             <p>Selecciona los últimos <var>n</var> elementos. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>takeRight(n: Int): Collection[A]</code></li>
+                <li class="list-unstyled"><code>takeRight(n: Int): <em>Collection</em>[A]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/takeRight.svg" />
@@ -988,7 +988,7 @@
             <h2>takeWhile</h2>
             <p>Toma el mayor prefijo de elementos que satisfacen un predicado. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>takeWhile(p: (A) ⇒ Boolean): Collection[A]</code></li>
+                <li class="list-unstyled"><code>takeWhile(p: (A) ⇒ Boolean): <em>Collection</em>[A]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/takeWhile.svg" />
@@ -998,7 +998,7 @@
             <h2>union</h2>
             <p>Produce una nueva colección que contiene todos los elementos de esta y los de otra secuencia. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>union(that: Seq[A]): Collection[A]</code></li>
+                <li class="list-unstyled"><code>union(that: Seq[A]): <em>Collection</em>[A]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/union.svg" />
@@ -1008,7 +1008,7 @@
             <h2>unzip</h2>
             <p>Convierte esta colección de pares en dos colecciones, una compuesta por el primer miembro y otra por el segundo. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>unzip[A1, A2](implicit asPair: (A) ⇒ (A1, A2)): (Collection[A1], Collection[A2])</code></li>
+                <li class="list-unstyled"><code>unzip[A1, A2](implicit asPair: (A) ⇒ (A1, A2)): (<em>Collection</em>[A1], <em>Collection</em>[A2])</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/unzip.svg" />
@@ -1018,7 +1018,7 @@
             <h2>unzip3</h2>
             <p>Convierte esta colección de ternas en tres colecciones del primer, segundo y tercer elemento de cada terna. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>unzip3[A1, A2, A3](implicit asTriple: (A) ⇒ (A1, A2, A3)): (Collection[A1], Collection[A2], Collection[A3])</code></li>
+                <li class="list-unstyled"><code>unzip3[A1, A2, A3](implicit asTriple: (A) ⇒ (A1, A2, A3)): (<em>Collection</em>[A1], <em>Collection</em>[A2], <em>Collection</em>[A3])</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/unzip3.svg" />
@@ -1028,7 +1028,7 @@
             <h2>updated</h2>
             <p>Una copia de esta colección con un único elemento reemplazado. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>updated(index: Int, elem: A): Collection[A]</code></li>
+                <li class="list-unstyled"><code>updated(index: Int, elem: A): <em>Collection</em>[A]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/updated.svg" />
@@ -1038,7 +1038,7 @@
             <h2>zip</h2>
             <p>Devuelve una colección formada por los elementos de dos colecciones distintas combinados en parejas. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>zip[B](that: GenIterable[B]): Collection[A, B]</code></li>
+                <li class="list-unstyled"><code>zip[B](that: GenIterable[B]): <em>Collection</em>[A, B]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/zip.svg" />
@@ -1048,7 +1048,7 @@
             <h2>zipAll</h2>
             <p>Devuelve una colección formada por los elementos de dos colecciones distintas combinados en parejas. Si una de las colecciones es menor que la otra, se usan elementos comodín en la más corta hasta alcanzar la longitud de la más larga. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>zipAll[B](that: Iterable[B], thisElem: A, thatElem: B): Collection[(A, B)]</code></li>
+                <li class="list-unstyled"><code>zipAll[B](that: Iterable[B], thisElem: A, thatElem: B): <em>Collection</em>[(A, B)]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/zipAll.svg" />
@@ -1058,7 +1058,7 @@
             <h2>zipWithIndex</h2>
             <p>Combina cada elemento de esta colección con su índice. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>zipWithIndex: Collection[A, Int]</code></li>
+                <li class="list-unstyled"><code>zipWithIndex: <em>Collection</em>[A, Int]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/zipWithIndex.svg" />
