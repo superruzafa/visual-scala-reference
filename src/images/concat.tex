@@ -1,0 +1,48 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node {$a_1$}; &
+  \node {$a_2$}; &
+  \ellipsis      &
+  \node {$a_i$}; \\
+};
+
+\node (B) [right=5mm of A, empty] {};
+
+\matrix (C) [collection, right=5mm of B] {
+  \node   {$a_j$};     &
+  \ellipsis            &
+  \node   {$a_{j+m}$}; \\
+};
+
+\node (D) [right=5mm of C] {$\cdots$}; 
+
+\matrix (E) [collection, right=5mm of D] {
+  \node   {$a_k$};     &
+  \ellipsis            &
+  \node   {$a_{k+n}$}; \\
+};
+
+\draw (A.north west) [draw=none] -- coordinate (x) (E.south east);
+
+\matrix (Z) [collection, below=3cm of x] {
+  \node (z1)   {$a_1$};     &
+  \node (z2)   {$a_2$};     &
+  \ellipsis                 &
+  \node (zi)   {$a_i$};     &
+  \node (zj)   {$a_j$};     &
+  \ellipsis                 &
+  \node (zj+m) {$a_{j+m}$}; &
+  \ellipsis                 &
+  \node (zk)   {$a_k$};     &
+  \ellipsis                 &
+  \node (zk+n) {$a_{k+n}$}; \\
+};
+
+\bracetobrace{A.south west}{A.south east}{z1.north west}{zi.north east}
+\bracetobrace{C.south west}{C.south east}{[xshift=1pt] zj.north west}{[xshift=-1pt] zj+m.north east}
+\draw (B) [arrow, smooth, shorten <=2mm, shorten >=2mm] to (zi.north east);
+\bracetobrace{E.south west}{E.south east}{[xshift=1pt] zk.north west}{zk+n.north east}
+
+
+\input{_footer.tex}

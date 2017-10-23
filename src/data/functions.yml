@@ -27,6 +27,13 @@
     en: Iterates over combinations.
     es: Itera sobre combinaciones.
 
+- name: concat
+  signatures:
+  - "<em>Collection</em>.concat(xss: Traversable[A]*): <em>Collection</em>[A]"
+  description:
+    en: Concatenates all argument collections into a single collection.
+    es: Concatena todas las colecciones argumento en una única colección.
+
 - name: contains
   signatures:
   - "contains[A1 >: A](elem: A1): Boolean"
