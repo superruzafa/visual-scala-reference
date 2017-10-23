@@ -124,6 +124,7 @@
         <ul class="d-none d-sm-block">
             <li class="list-unstyled"><a href="#List.range" title="List.range">List.range</a></li>
             <li class="list-unstyled"><a href="#List.fill" title="List.fill">List.fill</a></li>
+            <li class="list-unstyled"><a href="#List.tabulate" title="List.tabulate">List.tabulate</a></li>
         </ul>
       </aside>
       <section class="col-sm-7 col-md-8 col-lg-9">
@@ -171,7 +172,7 @@
             <h2>contains</h2>
             <p>Comprueba si esta colección contiene un valor dado en forma de elemento. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>contains[A1 &gt;: A](elem: A1): Boolean</code></li>
+                <li class="list-unstyled"><code>contains[A1 >: A](elem: A1): Boolean</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/contains.svg" />
@@ -321,7 +322,7 @@
             <h2>fold</h2>
             <p>Pliega los elementos de esta colección utilizando un operador binario asociativo. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>fold[A1 &gt;: A](z: A1)(op: (A1, A1) ⇒ A1): A1</code></li>
+                <li class="list-unstyled"><code>fold[A1 >: A](z: A1)(op: (A1, A1) ⇒ A1): A1</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/fold.svg" />
@@ -421,7 +422,7 @@
             <h2>indexOfSlice</h2>
             <p>Encuentra el primer índice empezando por uno inicial donde esta colección contiene una secuencia dada como subcolección. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>indexOfSlice[B &gt;: A](that: GenSeq[B], from: Int): Int</code></li>
+                <li class="list-unstyled"><code>indexOfSlice[B >: A](that: GenSeq[B], from: Int): Int</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/indexOfSlice.svg" />
@@ -511,7 +512,7 @@
             <h2>lastIndexOfSlice</h2>
             <p>Encuentra el último índice antes de uno en particular donde esta colección contiene una secuencia dada como subcolección. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>lastIndexOfSlice[B &gt;: A](that: GenSeq[B], end: Int): Int</code></li>
+                <li class="list-unstyled"><code>lastIndexOfSlice[B >: A](that: GenSeq[B], end: Int): Int</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/lastIndexOfSlice.svg" />
@@ -691,7 +692,7 @@
             <h2>reduce</h2>
             <p>Reduce los elementos de esta colección utilizando un operador binario asociativo. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>reduce[A1 &gt;: A](op: (A1, A1) ⇒ A1): A1</code></li>
+                <li class="list-unstyled"><code>reduce[A1 >: A](op: (A1, A1) ⇒ A1): A1</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/reduce.svg" />
@@ -701,7 +702,7 @@
             <h2>reduceLeft</h2>
             <p>Aplica un operador binario a todos los elementos de esta colección, yendo de izquierda a derecha. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>reduceLeft[B &gt;: A](op: (B, A) ⇒ B): B</code></li>
+                <li class="list-unstyled"><code>reduceLeft[B >: A](op: (B, A) ⇒ B): B</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/reduceLeft.svg" />
@@ -711,7 +712,7 @@
             <h2>reduceLeftOption</h2>
             <p>Opcionalmente aplica un operador binario a todos los elementos de esta colección, yendo de izquierda a derecha. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>reduceLeftOption[B &gt;: A](op: (B, A) ⇒ B): Option[B]</code></li>
+                <li class="list-unstyled"><code>reduceLeftOption[B >: A](op: (B, A) ⇒ B): Option[B]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/reduceLeftOption.svg" />
@@ -721,7 +722,7 @@
             <h2>reduceOption</h2>
             <p>Reduce los elementos de esta colección, si lo hubiese, utilizando un operador binario asociativo. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>reduceOption[A1 &gt;: A](op: (A1, A1) ⇒ A1): Option[A1]</code></li>
+                <li class="list-unstyled"><code>reduceOption[A1 >: A](op: (A1, A1) ⇒ A1): Option[A1]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/reduceOption.svg" />
@@ -731,7 +732,7 @@
             <h2>reduceRight</h2>
             <p>Aplica un operador binario a todos los elementos de esta colección, yendo de derecha a izquierda. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>reduceRight[B &gt;: A](op: (A, B) ⇒ B): B</code></li>
+                <li class="list-unstyled"><code>reduceRight[B >: A](op: (A, B) ⇒ B): B</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/reduceRight.svg" />
@@ -741,7 +742,7 @@
             <h2>reduceRightOption</h2>
             <p>Opcionalmente aplica un operador binario a todos los elementos de esta colección, yendo de derecha a izquierda. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>reduceRightOption[B &gt;: A](op: (A, B) ⇒ B): Option[B]</code></li>
+                <li class="list-unstyled"><code>reduceRightOption[B >: A](op: (A, B) ⇒ B): Option[B]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/reduceRightOption.svg" />
@@ -781,7 +782,7 @@
             <h2>scan</h2>
             <p>Computa un scan prefijado de los elementos de la colección. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>scan[B &gt;: A](z: B)(op: (B, B) ⇒ B)</code></li>
+                <li class="list-unstyled"><code>scan[B >: A](z: B)(op: (B, B) ⇒ B)</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/scan.svg" />
@@ -871,7 +872,7 @@
             <h2>sorted</h2>
             <p>Ordena esta colección de acuerdo a un Ordering. </p>
             <ul class="signatures">
-                <li class="list-unstyled"><code>sorted[B &gt;: A]</code></li>
+                <li class="list-unstyled"><code>sorted[B >: A]</code></li>
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/sorted.svg" />
@@ -1059,6 +1060,16 @@
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/List.fill.svg" />
+            </figure>
+          </article>
+          <article id="List.tabulate">
+            <h2>List.tabulate</h2>
+            <p>  Produces a n-dimensional collection containing values of a given function over ranges of integer values starting from 0. </p>
+            <ul class="signatures">
+                <li class="list-unstyled"><code>tabulate[A](n<sub>1</sub>: Int, ..., n<sub>m</sub>: Int)(f: (Int, ..., Int): ⇒ A): Collection[... Collection[A] ...]</code></li>
+            </ul>
+            <figure class="figure">
+              <img class="figure-img img-fluid" src="images/List.tabulate.svg" />
             </figure>
           </article>
       </section>

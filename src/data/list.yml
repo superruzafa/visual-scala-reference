@@ -15,3 +15,9 @@
   - "List.fill[A](n1: Int, n2: Int, n3: Int, n4: Int, n5: Int)(elem: ⇒ A): List[List[List[List[List[A]]]]]"
   description:
     en: Produces a (n-dimensional) collection containing the results of some element computation a number of times.
+
+- name: List.tabulate
+  signatures:
+  - "List.tabulate[A](n<sub>1</sub>: Int, ..., n<sub>m</sub>: Int)(f: (Int, ..., Int): ⇒ A): List[... List[A] ...]"
+  description:
+    en: Produces a n-dimensional collection containing values of a given function over ranges of integer values starting from 0.
