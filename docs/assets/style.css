@@ -27,6 +27,7 @@ article .function-name {
 
 article .function-signatures {
   padding-left: 0;
+  margin-bottom: 2rem;
 }
 
 article .function-signatures code {
@@ -120,4 +121,19 @@ section {
   font-size: 0.9rem;
   margin-top: 16px;
   padding-left: 0;
+}
+
+.hljs {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.hljs-title {
+}
+
+.hljs-keyword {
+  color: rgb(127, 0, 84);
+}
+
+.hljs-type {
+  color: rgba(0, 15, 155);
 }

@@ -1,322 +1,322 @@
 ---
 - name: aggregate
   signatures:
-  - "aggregate[B](z: ⇒ B)(seqop: (B, A) ⇒ B, combop: (B, B) ⇒ B): B"
+  - "def aggregate[B](z: ⇒ B)(seqop: (B, A) ⇒ B, combop: (B, B) ⇒ B): B"
   description:
     en: Aggregates the results of applying an operator to subsequent elements.
     es: Agrega los resultados de aplicar un operador a elementos subsecuentes.
 
 - name: collect
   signatures:
-  - "collect[B](pf: PartialFunction[A, B]): <em>Collection</em>[B]"
+  - "def collect[B](pf: PartialFunction[A, B]): <em>Collection</em>[B]"
   description:
     en: Builds a new collection by applying a partial function to all elements of this collection on which the function is defined.
     es: Construye una nueva colección aplicando una función parcial a todos los elementos de esta colección para los que dicha función está definida.
 
 - name: collectFirst
   signatures:
-  - "collectFirst[B](pf: PartialFunction[A, B]): Option[B]"
+  - "def collectFirst[B](pf: PartialFunction[A, B]): Option[B]"
   description:
     en: Finds the first element of the collection for which the given partial function is defined, and applies the partial function to it.
     es: Encuentra el primer elemento de la colección para el cual está definida una función parcial, aplicando después dicha función parcial.
 
 - name: combinations
   signatures:
-  - "combinations(n: Int): Iterator[<em>Collection</em>[A]]"
+  - "def combinations(n: Int): Iterator[<em>Collection</em>[A]]"
   description:
     en: Iterates over combinations.
     es: Itera sobre combinaciones.
 
 - name: concat
   signatures:
-  - "<em>Collection</em>.concat(xss: Traversable[A]*): <em>Collection</em>[A]"
+  - "def <em>Collection</em>.concat(xss: Traversable[A]*): <em>Collection</em>[A]"
   description:
     en: Concatenates all argument collections into a single collection.
     es: Concatena todas las colecciones argumento en una única colección.
 
 - name: contains
   signatures:
-  - "contains[A1 >: A](elem: A1): Boolean"
+  - "def contains[A1 >: A](elem: A1): Boolean"
   description:
     en: Tests whether this collection contains a given value as an element.
     es: Comprueba si esta colección contiene un valor dado en forma de elemento.
 
 - name: containsSlice
   signatures:
-  - "containsSlice[B](that: GenSeq[B]): Boolean"
+  - "def containsSlice[B](that: GenSeq[B]): Boolean"
   description:
     en: Tests whether this collection contains a given sequence as a slice.
     es: Comprueba si esta colección contiene una secuencia dada en forma de subcolección.
 
 - name: count
   signatures:
-  - "count(p: (A) ⇒ Boolean): Int"
+  - "def count(p: (A) ⇒ Boolean): Int"
   description:
     en: Counts the number of elements in the collection which satisfy a predicate.
     es: Cuenta el número de elementos en la colección que satisfacen un predicado.
 
 - name: diff
   signatures:
-  - "diff(that: Seq[A]): <em>Collection</em>[A]"
+  - "def diff(that: Seq[A]): <em>Collection</em>[A]"
   description:
     en: Computes the multiset difference between this and another collection.
     es: Calcula la diferencia multiconjunto entre esta colección y otra.
 
 - name: distinct
   signatures:
-  - "distinct: <em>Collection</em>[A]"
+  - "def distinct: <em>Collection</em>[A]"
   description:
     en: Builds a new collection from this one without any duplicate elements.
     es: Construye una nueva colección a partir de esta sin ningún elemento duplicado.
 
 - name: drop
   signatures:
-  - "drop(n: Int): <em>Collection</em>[A]"
+  - "def drop(n: Int): <em>Collection</em>[A]"
   description:
     en: Selects all elements except the first <var>n</var> ones.
     es: Selecciona todos los elementos excepto los <var>n</var> primeros.
 
 - name: dropRight
   signatures:
-  - "dropRight(n: Int): <em>Collection</em>[A]"
+  - "def dropRight(n: Int): <em>Collection</em>[A]"
   description:
     en: Select all elements except last <var>n</var> ones.
     es: Selecciona todos los elementos excepto los <var>n</var> últimos.
 
 - name: dropWhile
   signatures:
-  - "dropWhile(p: (A) ⇒ Boolean): <em>Collection</em>[A]"
+  - "def dropWhile(p: (A) ⇒ Boolean): <em>Collection</em>[A]"
   description:
     en: Drops longest prefix of elements that satisfy a predicate.
     es: Descarta el mayor prefijo de elementos que satisfacen un predicado.
 
 - name: endsWith
   signatures:
-  - "endsWith[B](that: GenSeq[B]): Boolean"
+  - "def endsWith[B](that: GenSeq[B]): Boolean"
   description:
     en: Tests whether this collection ends with the given sequence.
     es: Comprueba si esta colección termina con una secuencia dada.
 
 - name: exists
   signatures:
-  - "exists(p: (A) ⇒ Boolean): Boolean"
+  - "def exists(p: (A) ⇒ Boolean): Boolean"
   description:
     en: Tests whether a predicate holds for at least one element of this collection.
     es: Comprueba si un predicado es válido para al menos un elemento de esta colección.
 
 - name: fill
   signatures:
-  - "<em>Collection</em>.fill[A](n<sub>1</sub>: Int, ..., n<sub>m</sub>: Int)(elem: ⇒ A): <em>Collection</em>[... <em>Collection</em>[A] ...]"
+  - "def <em>Collection</em>.fill[A](n<sub>1</sub>: Int, ..., n<sub>m</sub>: Int)(elem: ⇒ A): <em>Collection</em>[... <em>Collection</em>[A] ...]"
   description:
     en: Produces a n-dimensional collection containing the results of some element computation a number of times.
     es: Produce una colección n-dimensional que contiene el resultado de cierta computación para un elemento un numero de veces.
 
 - name: filter
   signatures:
-  - "filter(p: (A) ⇒ Boolean): <em>Collection</em>[A]"
+  - "def filter(p: (A) ⇒ Boolean): <em>Collection</em>[A]"
   description:
     en: Selects all elements of this traversable collection which satisfy a predicate.
     es: Selecciona todos los elementos de la colección que satisfacen un predicado.
 
 - name: filterNot
   signatures:
-  - "filterNot(p: (A) ⇒ Boolean): <em>Collection</em>[A]"
+  - "def filterNot(p: (A) ⇒ Boolean): <em>Collection</em>[A]"
   description:
     en: Selects all elements of this collection which do not satisfy a predicate.
     es: Selecciona todos los elementos de la colección que no satisfacen un predicado.
 
 - name: find
   signatures:
-  - "find(p: (A) ⇒ Boolean): Option[A]"
+  - "def find(p: (A) ⇒ Boolean): Option[A]"
   description:
     en: Finds the first element of the collection satisfying a predicate, if any.
     es: Encuentra el primer elemento de la colección que satisface un predicado, si es que existe.
 
 - name: flatMap
   signatures:
-  - "flatMap[B](f: (A) ⇒ <em>Collection</em>[B]): <em>Collection</em>[B]"
+  - "def flatMap[B](f: (A) ⇒ <em>Collection</em>[B]): <em>Collection</em>[B]"
   description:
     en: Builds a new collection by applying a function to all elements of this collection and using the elements of the resulting collections.
     es: Construye una nueva colección tras aplicar una función a todos los elementos de esta colección. La función devuelve una colección de elementos.
 
 - name: flatten
   signatures:
-  - "flatten[B]: <em>Collection</em>[B]"
+  - "def flatten[B]: <em>Collection</em>[B]"
   description:
     en: Converts this collection of collections into a collection formed by the elements of the inner collections.
     es: Convierte esta colección de colecciones en una colección compuesta por los elementos de las colecciones internas.
 
 - name: fold
   signatures:
-  - "fold[A1 >: A](z: A1)(op: (A1, A1) ⇒ A1): A1"
+  - "def fold[A1 >: A](z: A1)(op: (A1, A1) ⇒ A1): A1"
   description:
     en: Folds the elements of this collection using the specified associative binary operator.
     es: Pliega los elementos de esta colección utilizando un operador binario asociativo.
 
 - name: foldLeft
   signatures:
-  - "foldLeft[B](z: B)(op: (B, A) ⇒ B): B"
+  - "def foldLeft[B](z: B)(op: (B, A) ⇒ B): B"
   description:
     en: Applies a binary operator to a start value and all elements of this collection, going left to right.
     es: Aplica un operador binario a un valor inicial y a todos los elementos de la colección, yendo de izquierda a derecha.
 
 - name: foldRight
   signatures:
-  - "foldRight[B](z: B)(op: (A, B) ⇒ B): B"
+  - "def foldRight[B](z: B)(op: (A, B) ⇒ B): B"
   description:
     en: Applies a binary operator to a start value and all elements of this collection, going right to left.
     es: Aplica un operador binario a un valor inicial y a todos los elementos de la colección, yendo de derecha a izquierda.
 
 - name: forall
   signatures:
-  - "forall(p: (A) ⇒ Boolean): Boolean"
+  - "def forall(p: (A) ⇒ Boolean): Boolean"
   description:
     en: Tests whether a predicate holds for all elements of this collection.
     es: Comprueba si un predicado es válido para todos los elementos de esta colección.
 
 - name: foreach
   signatures:
-  - "foreach(f: (A) ⇒ Unit): Unit"
+  - "def foreach(f: (A) ⇒ Unit): Unit"
   description:
     en: Applies a function <var>f</var> to all elements of this collection.
     es: Aplica una función <var>f</var> a todos los elementos de esta colección.
 
 - name: groupBy
   signatures:
-  - "groupBy[K](f: (A) ⇒ K): Map[K, <em>Collection</em>[A]]"
+  - "def groupBy[K](f: (A) ⇒ K): Map[K, <em>Collection</em>[A]]"
   description:
     en: Partitions this collection into a map of collections according to some discriminator function.
     es: Parte esta colección en un mapa de colecciones de acuerdo a una función discriminadora.
 
 - name: grouped
   signatures:
-  - "grouped(size: Int): Iterator[<em>Collection</em>[A]]"
+  - "def grouped(size: Int): Iterator[<em>Collection</em>[A]]"
   description:
     en: Partitions elements in fixed size iterable collections.
     es: Parte los elementos en colecciones iterables de tamaño fijo.
 
 - name: head
   signatures:
-  - "head: A"
+  - "def head: A"
   description:
     en: Selects the first element of this collection.
     es: Selecciona el primer elemento de esta colección.
 
 - name: headOption
   signatures:
-  - "headOption: Option[A]"
+  - "def headOption: Option[A]"
   description:
     en: Optionally selects the first element.
     es: Opcionalmente selecciona el primer elemento de esta colección.
 
 - name: indexOf
   signatures:
-  - "indexOf(elem: A, from: Int): Int"
+  - "def indexOf(elem: A, from: Int): Int"
   description:
     en: Finds index of first occurrence of some value in this collection after or at some start index.
     es: Encuentra el índice de la primera ocurrencia de algún valor en esta colección empezando por un índice inicial.
 
 - name: indexOfSlice
   signatures:
-  - "indexOfSlice[B >: A](that: GenSeq[B], from: Int): Int"
+  - "def indexOfSlice[B >: A](that: GenSeq[B], from: Int): Int"
   description:
     en: Finds first index after or at a start index where this collection contains a given sequence as a slice.
     es: Encuentra el primer índice empezando por uno inicial donde esta colección contiene una secuencia dada como subcolección.
 
 - name: indexWhere
   signatures:
-  - "indexWhere(p: (A) ⇒ Boolean, from: Int): Int"
+  - "def indexWhere(p: (A) ⇒ Boolean, from: Int): Int"
   description:
     en: Finds index of the first element satisfying some predicate after or at some start index.
     es: Encuentra el índice el primer elemento que satisface un predicado empezando por un índice inicial.
 
 - name: indices
   signatures:
-  - "indices: Range"
+  - "def indices: Range"
   description:
     en: Produces the range of all indices of this collection.
     es: Produce un rango con todos los índices de esta colección.
 
 - name: init
   signatures:
-  - "init: <em>Collection</em>[A]"
+  - "def init: <em>Collection</em>[A]"
   description:
     en: Select all elements except the last.
     es: Selecciona todos los elementos excepto el último.
 
 - name: inits
   signatures:
-  - "inits: Iterator[<em>Collection</em>[A]]"
+  - "def inits: Iterator[<em>Collection</em>[A]]"
   description:
     en: Iterates over the inits of this collection.
     es: Itera sobre los <code>inits</code> de esta colección.
 
 - name: intersect
   signatures:
-  - "intersect(that: Seq[A]): <em>Collection</em>[A]"
+  - "def intersect(that: Seq[A]): <em>Collection</em>[A]"
   description:
     en: Computes the multiset intersection between this collection and another sequence.
     es: Computa la intersección multiconjunto entre esta colección y otra secuencia.
 
 - name: isEmpty
   signatures:
-  - "isEmpty: Boolean"
+  - "def isEmpty: Boolean"
   description:
     en: Tests whether this collection is empty.
     es: Comprueba si esta colección está vacía.
 
 - name: last
   signatures:
-  - "last: A"
+  - "def last: A"
   description:
     en: Selects the last element.
     es: Selecciona el último elemento.
 
 - name: lastIndexOf
   signatures:
-  - "lastIndexOf(elem: A, end: Int): Int"
+  - "def lastIndexOf(elem: A, end: Int): Int"
   description:
     en: Finds index of last occurrence of some value in this colección before or at a given end index.
     es: Encuentra el índice de la última ocurrencia de algún valor en esta colección antes de un índice en particular.
 
 - name: lastIndexOfSlice
   signatures:
-  - "lastIndexOfSlice[B >: A](that: GenSeq[B], end: Int): Int"
+  - "def lastIndexOfSlice[B >: A](that: GenSeq[B], end: Int): Int"
   description:
     en: Finds last index before or at a given end index where this collection contains a given sequence as a slice.
     es: Encuentra el último índice antes de uno en particular donde esta colección contiene una secuencia dada como subcolección.
 
 - name: lastIndexWhere
   signatures:
-  - "lastIndexWhere(p: (A) ⇒ Boolean, end: Int): Int"
+  - "def lastIndexWhere(p: (A) ⇒ Boolean, end: Int): Int"
   description:
     en: Finds index of last element satisfying some predicate before or at a given end index.
     es: Encuentra el índice del último elemento que satisface algún predicado antes de un índice en particular.
 
 - name: lastOption
   signatures:
-  - "lastOption: Option[A]"
+  - "def lastOption: Option[A]"
   description:
     en: Optionally selects the last element.
     es: Opcionalmente selecciona el último elemento.
 
 - name: length
   signatures:
-  - "length: Int"
+  - "def length: Int"
   description:
     en: The length of the collection.
     es: La longitud de la colección.
 
 - name: map
   signatures:
-  - "map[B](f: (A) ⇒ B): <em>Collection</em>[B]"
+  - "def map[B](f: (A) ⇒ B): <em>Collection</em>[B]"
   description:
     en: Builds a new collection by applying a function to all elements of this collection.
     es: Construye una nueva colección aplicando una función a todos los elementos de esta colección.
 
 - name: mapConserve
   signatures:
-  - "mapConserve(f: (A) ⇒ A): <em>Collection</em>[A]"
+  - "def mapConserve(f: (A) ⇒ A): <em>Collection</em>[A]"
   description:
     en:
       Builds a new collection by applying a function to all elements of this collection.
@@ -327,336 +327,336 @@
 
 - name: max
   signatures:
-  - "max: A"
+  - "def max: A"
   description:
     en: Finds the largest element.
     es: Encuentra el mayor elemento.
 
 - name: maxBy
   signatures:
-  - "maxBy[B](f: (A) ⇒ B): A"
+  - "def maxBy[B](f: (A) ⇒ B): A"
   description:
     en: Finds the first element which yields the largest value measured by function <var>f</var>.
     es: Encuentra el primer elemento que arroja el mayor valor medido por la función <var>f</var>.
 
 - name: min
   signatures:
-  - "min: A"
+  - "def min: A"
   description:
     en: Finds the smallest element.
     es: Encuentra el menor elemento.
 
 - name: minBy
   signatures:
-  - "minBy[B](f: (A) ⇒ B): A"
+  - "def minBy[B](f: (A) ⇒ B): A"
   description:
     en: Finds the first element which yields the smallest value measured by function <var>f</var>.
     es: Encuentra el primer elemento que arroja el menor valor medido por la función <var>f</var>.
 
 - name: mkString
   signatures:
-  - "mkString(start: String, sep: String, end: String): String"
+  - "def mkString(start: String, sep: String, end: String): String"
   description:
     en: Displays all elements of this collection in a string.
     es: Muestra todos los elementos de esta colección como una cadena.
 
 - name: nonEmpty
   signatures:
-  - "nonEmpty: Boolean"
+  - "def nonEmpty: Boolean"
   description:
     en: Tests whether the collection is not empty.
     es: Comprueba si esta colección es no vacía.
 
 - name: padTo
   signatures:
-  - "padTo(len: Int, elem: A): <em>Collection</em>[A]"
+  - "def padTo(len: Int, elem: A): <em>Collection</em>[A]"
   description:
     en: A copy of this collection with an element value appended until a given target length is reached.
     es: Una copia de esta colección anexando un mismo valor hasta alcanzar una longitud dada.
 
 - name: partition
   signatures:
-  - "partition(p: (A) ⇒ Boolean): (<em>Collection</em>[A], <em>Collection</em>[A])"
+  - "def partition(p: (A) ⇒ Boolean): (<em>Collection</em>[A], <em>Collection</em>[A])"
   description:
     en: Partitions this collection in two collections according to a predicate.
     es: Parte esta colección en dos colecciones de acuerdo a un predicado.
 
 - name: patch
   signatures:
-  - "patch(from: Int, that: GenSeq[A], replaced: Int): <em>Collection</em>[A]"
+  - "def patch(from: Int, that: GenSeq[A], replaced: Int): <em>Collection</em>[A]"
   description:
     en: Produces a new collection where a slice of elements in this collection is replaced by another sequence.
     es: Produce una nueva colección donde una subcolección de elementos es reemplazada por otra secuencia.
 
 - name: permutations
   signatures:
-  - "permutations: Iterator[<em>Collection</em>[A]]"
+  - "def permutations: Iterator[<em>Collection</em>[A]]"
   description:
     en: Iterates over distinct permutations.
     es: Itera sobre distintas permutaciones.
 
 - name: prefixLength
   signatures:
-  - "prefixLength(p: (A) ⇒ Boolean): Int"
+  - "def prefixLength(p: (A) ⇒ Boolean): Int"
   description:
     en: Returns the length of the longest prefix whose elements all satisfy some predicate.
     es: Devuelve la longitud del mayor prefijo cuyos elementos satisfacen algún predicado.
 
 - name: product
   signatures:
-  - "product: A"
+  - "def product: A"
   description:
     en: Multiplies up the elements of this collection.
     es: Multiplica los elementos de esta colección.
 
 - name: range
   signatures:
-  - "<em>Collection</em>.range(start: Int, end: Int, step: Int): <em>Collection</em>[Int]"
+  - "def <em>Collection</em>.range(start: Int, end: Int, step: Int): <em>Collection</em>[Int]"
   description:
     en: Produces a collection containing a sequence of increasing of integers
     es: Produce una colección que contiene una secuencia de enteros incrementales.
 
 - name: reduce
   signatures:
-  - "reduce[A1 >: A](op: (A1, A1) ⇒ A1): A1"
+  - "def reduce[A1 >: A](op: (A1, A1) ⇒ A1): A1"
   description:
     en: Reduces the elements of this collection using the specified associative binary operator.
     es: Reduce los elementos de esta colección utilizando un operador binario asociativo.
 
 - name: reduceLeft
   signatures:
-  - "reduceLeft[B >: A](op: (B, A) ⇒ B): B"
+  - "def reduceLeft[B >: A](op: (B, A) ⇒ B): B"
   description:
     en: Applies a binary operator to all elements of this collection, going left to right.
     es: Aplica un operador binario a todos los elementos de esta colección, yendo de izquierda a derecha.
 
 - name: reduceLeftOption
   signatures:
-  - "reduceLeftOption[B >: A](op: (B, A) ⇒ B): Option[B]"
+  - "def reduceLeftOption[B >: A](op: (B, A) ⇒ B): Option[B]"
   description:
     en: Optionally applies a binary operator to all elements of this collection, going left to right.
     es: Opcionalmente aplica un operador binario a todos los elementos de esta colección, yendo de izquierda a derecha.
 
 - name: reduceOption
   signatures:
-  - "reduceOption[A1 >: A](op: (A1, A1) ⇒ A1): Option[A1]"
+  - "def reduceOption[A1 >: A](op: (A1, A1) ⇒ A1): Option[A1]"
   description:
     en: Reduces the elements of this collection, if any, using the specified associative binary operator.
     es: Reduce los elementos de esta colección, si lo hubiese, utilizando un operador binario asociativo.
 
 - name: reduceRight
   signatures:
-  - "reduceRight[B >: A](op: (A, B) ⇒ B): B"
+  - "def reduceRight[B >: A](op: (A, B) ⇒ B): B"
   description:
     en: Applies a binary operator to all elements of this collection, going right to left.
     es: Aplica un operador binario a todos los elementos de esta colección, yendo de derecha a izquierda.
 
 - name: reduceRightOption
   signatures:
-  - "reduceRightOption[B >: A](op: (A, B) ⇒ B): Option[B]"
+  - "def reduceRightOption[B >: A](op: (A, B) ⇒ B): Option[B]"
   description:
     en: Optionally, applies a binary operator to all elements of this collection, going right to left.
     es: Opcionalmente aplica un operador binario a todos los elementos de esta colección, yendo de derecha a izquierda.
 
 - name: reverse
   signatures:
-  - "reverse: <em>Collection</em>[A]"
+  - "def reverse: <em>Collection</em>[A]"
   description:
     en: Returns new collection with elements in reversed order.
     es: Devuelve una nueva colección con los elementos en orden inverso.
 
 - name: reverseMap
   signatures:
-  - "reverseMap(f: (A) ⇒ B): <em>Collection</em>[A]"
+  - "def reverseMap(f: (A) ⇒ B): <em>Collection</em>[A]"
   description:
     en: Builds a new collection by applying a function to all elements of this collection and collecting the results in reversed order.
     es: Construye una nueva colección aplicando una función a todos los elementos de esta colección y recolectando los resultados en orden inverso.
 
 - name: sameElements
   signatures:
-  - "sameElements(that: GenIterable[A]): Boolean"
+  - "def sameElements(that: GenIterable[A]): Boolean"
   description:
     en: Checks if the other collection contains the same elements in the same order as this one.
     es: Comprueba si otra colección contiene los mismos elementos en el mismo orden que esta.
 
 - name: scan
   signatures:
-  - "scan[B >: A](z: B)(op: (B, B) ⇒ B)"
+  - "def scan[B >: A](z: B)(op: (B, B) ⇒ B)"
   description:
     en: Computes a prefix scan of the elements of the collection.
     es: Computa un scan prefijado de los elementos de la colección.
 
 - name: scanLeft
   signatures:
-  - "scanLeft[B](z: B)(op: (B, A) ⇒ B)"
+  - "def scanLeft[B](z: B)(op: (B, A) ⇒ B)"
   description:
     en: Produces a collection containing cumulative results of applying the operator going left to right.
     es: Produce una colección que contiene los resultados parciales de aplicar el operador, yendo de izquierda a derecha.
 
 - name: scanRight
   signatures:
-  - "scanRight[B](z: B)(op: (A, B) ⇒ B)"
+  - "def scanRight[B](z: B)(op: (A, B) ⇒ B)"
   description:
     en: Produces a collection containing cumulative results of applying the operator going right to left.
     es: Produce una colección que contiene los resultados parciales de aplicar el operador, yendo de derecha a izquierda.
 
 - name: segmentLength
   signatures:
-  - "segmentLength(p: (A) ⇒ Boolean, from: Int): Int"
+  - "def segmentLength(p: (A) ⇒ Boolean, from: Int): Int"
   description:
     en: Computes length of longest segment whose elements all satisfy some predicate.
     es: Computa la longitud del mayor segmento cuyos elementos satisfacen un predicado.
 
 - name: size
   signatures:
-  - "size: Int"
+  - "def size: Int"
   description:
     en: The size of this collection.
     es: El tamaño de esta colección.
 
 - name: slice
   signatures:
-  - "slice(from: Int, until: Int): <em>Collection</em>[A]"
+  - "def slice(from: Int, until: Int): <em>Collection</em>[A]"
   description:
     en:
     es:
 
 - name: sliding
   signatures:
-  - "sliding(size: Int, step: Int): Iterator[<em>Collection</em>[A]]"
+  - "def sliding(size: Int, step: Int): Iterator[<em>Collection</em>[A]]"
   description:
     en: Groups elements in fixed size blocks by passing a "sliding window" over them.
     es: Agrupa elementos en bloques de tamaño fijo pasando una "ventana deslizante" sobre ellos.
 
 - name: sortBy
   signatures:
-  - "sortBy[B](f: (A) ⇒ B)(implicit ord: math.Ordering[B]): <em>Collection</em>[A]"
+  - "def sortBy[B](f: (A) ⇒ B)(implicit ord: math.Ordering[B]): <em>Collection</em>[A]"
   description:
     en: Sorts this collection according to the Ordering which results from transforming an implicitly given Ordering with a transformation function.
     es: Ordena esta colección de acuerdo al Ordering resultado de transformar un Ordering dado implícitamente con una función de transformación.
 
 - name: sortWith
   signatures:
-  - "sortWith(lt: (A, A) ⇒ Boolean): <em>Collection</em>[A]"
+  - "def sortWith(lt: (A, A) ⇒ Boolean): <em>Collection</em>[A]"
   description:
     en: Sorts this collection according to a comparison function.
     es: Ordena esta colección de acuerdo a una función de comparación.
 
 - name: sorted
   signatures:
-  - "sorted[B >: A]"
+  - "def sorted[B >: A]"
   description:
     en: Sorts this collection according to an Ordering.
     es: Ordena esta colección de acuerdo a un Ordering.
 
 - name: span
   signatures:
-  - "span(p: (A) ⇒ Boolean): (<em>Collection</em>[A], <em>Collection</em>[A])"
+  - "def span(p: (A) ⇒ Boolean): (<em>Collection</em>[A], <em>Collection</em>[A])"
   description:
     en: Splits this collection into a prefix/suffix pair according to a predicate.
     es: Parte esta colección en un par prefijo/sufijo de acuerdo a un predicado.
 
 - name: splitAt
   signatures:
-  - "splitAt(n: Int): (<em>Collection</em>[A], <em>Collection</em>[A])"
+  - "def splitAt(n: Int): (<em>Collection</em>[A], <em>Collection</em>[A])"
   description:
     en: Splits this collection into two at a given position.
     es: Parte esta colección en dos en una posición dada.
 
 - name: startsWith
   signatures:
-  - "startsWith[B](that: GenSeq[B], offset: Int): Boolean"
+  - "def startsWith[B](that: GenSeq[B], offset: Int): Boolean"
   description:
     en: Tests whether this collection contains the given sequence at a given index.
     es: Comprueba si esta colección contiene la secuencia dada en un índice en particular.
 
 - name: sum
   signatures:
-  - "sum: A"
+  - "def sum: A"
   description:
     en: Sums up the elements of this collection.
     es: Suma los elementos de esta colección.
 
 - name: tabulate
   signatures:
-  - "<em>Collection</em>.tabulate[A](n<sub>1</sub>: Int, ..., n<sub>m</sub>: Int)(f: (Int, ..., Int): ⇒ A): <em>Collection</em>[... <em>Collection</em>[A] ...]"
+  - "def <em>Collection</em>.tabulate[A](n<sub>1</sub>: Int, ..., n<sub>m</sub>: Int)(f: (Int, ..., Int): ⇒ A): <em>Collection</em>[... <em>Collection</em>[A] ...]"
   description:
     en: Produces a n-dimensional collection containing values of a given function over ranges of integer values starting from 0.
     es: Produce una colección n-dimensional que contiene los valores de una cierta función sobre el rango de valores enteros empezando por 0.
 
 - name: tail
   signatures:
-  - "tail: <em>Collection</em>[A]"
+  - "def tail: <em>Collection</em>[A]"
   description:
     en: Selects all elements except the first.
     es: Selecciona todos los elementos excepto el primero.
 
 - name: tails
   signatures:
-  - "tails: Iterator[<em>Collection</em>[A]]"
+  - "def tails: Iterator[<em>Collection</em>[A]]"
   description:
     en: Iterates over the tails of this collection.
     es: Itera sobre las colas de esta colección.
 
 - name: take
   signatures:
-  - "take(n: Int): <em>Collection</em>[A]"
+  - "def take(n: Int): <em>Collection</em>[A]"
   description:
     en: Selects first <var>n</var> elements.
     es: Selecciona los primeros <var>n</var> elementos.
 
 - name: takeRight
   signatures:
-  - "takeRight(n: Int): <em>Collection</em>[A]"
+  - "def takeRight(n: Int): <em>Collection</em>[A]"
   description:
     en: Selects last <var>n</var> elements.
     es: Selecciona los últimos <var>n</var> elementos.
 
 - name: takeWhile
   signatures:
-  - "takeWhile(p: (A) ⇒ Boolean): <em>Collection</em>[A]"
+  - "def takeWhile(p: (A) ⇒ Boolean): <em>Collection</em>[A]"
   description:
     en: Takes longest prefix of elements that satisfy a predicate.
     es: Toma el mayor prefijo de elementos que satisfacen un predicado.
 
 - name: union
   signatures:
-  - "union(that: Seq[A]): <em>Collection</em>[A]"
+  - "def union(that: Seq[A]): <em>Collection</em>[A]"
   description:
     en: Produces a new collection which contains all elements of this one and also all elements of a given sequence.
     es: Produce una nueva colección que contiene todos los elementos de esta y los de otra secuencia.
 
 - name: unzip
   signatures:
-  - "unzip[A1, A2](implicit asPair: (A) ⇒ (A1, A2)): (<em>Collection</em>[A1], <em>Collection</em>[A2])"
+  - "def unzip[A1, A2](implicit asPair: (A) ⇒ (A1, A2)): (<em>Collection</em>[A1], <em>Collection</em>[A2])"
   description:
     en: Converts this collection of pairs into two collections of the first and second half of each pair.
     es: Convierte esta colección de pares en dos colecciones, una compuesta por el primer miembro y otra por el segundo.
 
 - name: unzip3
   signatures:
-  - "unzip3[A1, A2, A3](implicit asTriple: (A) ⇒ (A1, A2, A3)): (<em>Collection</em>[A1], <em>Collection</em>[A2], <em>Collection</em>[A3])"
+  - "def unzip3[A1, A2, A3](implicit asTriple: (A) ⇒ (A1, A2, A3)): (<em>Collection</em>[A1], <em>Collection</em>[A2], <em>Collection</em>[A3])"
   description:
     en: Converts this collection of triples into three collections of the first, second, and third element of each triple.
     es: Convierte esta colección de ternas en tres colecciones del primer, segundo y tercer elemento de cada terna.
 
 - name: updated
   signatures:
-  - "updated(index: Int, elem: A): <em>Collection</em>[A]"
+  - "def updated(index: Int, elem: A): <em>Collection</em>[A]"
   description:
     en: A copy of this collection with one single replaced element.
     es: Una copia de esta colección con un único elemento reemplazado.
 
 - name: zip
   signatures:
-  - "zip[B](that: GenIterable[B]): <em>Collection</em>[A, B]"
+  - "def zip[B](that: GenIterable[B]): <em>Collection</em>[A, B]"
   description:
     en: Returns a collection formed from this and another one by combining corresponding elements in pairs.
     es: Devuelve una colección formada por los elementos de dos colecciones distintas combinados en parejas.
 
 - name: zipAll
   signatures:
-  - "zipAll[B](that: Iterable[B], thisElem: A, thatElem: B): <em>Collection</em>[(A, B)]"
+  - "def zipAll[B](that: Iterable[B], thisElem: A, thatElem: B): <em>Collection</em>[(A, B)]"
   description:
     en:
       Returns a collection formed from this and another one by combining corresponding elements in pairs.
@@ -667,7 +667,7 @@
 
 - name: zipWithIndex
   signatures:
-  - "zipWithIndex: <em>Collection</em>[A, Int]"
+  - "def zipWithIndex: <em>Collection</em>[A, Int]"
   description:
     en: Zips this collection with its indices.
     es: Combina cada elemento de esta colección con su índice.
