@@ -11,6 +11,9 @@
   <link rel="icon" href="assets/scala-logo.png" type="image/png" sizes="64x64">
   <link rel="stylesheet" href="assets/bootstrap.min.css">
   <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/jquery-3.2.1.slim.min.js"></script>
+  <script src="assets/popper.min.js"></script>
+  <script src="assets/bootstrap.min.js"></script>
   <script src="assets/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 </head>
@@ -43,104 +46,104 @@
     <div class="row">
       <aside id="function-list" class="col-sm-4 col-md-3 col-lg-2 d-none d-sm-block">
         <ul>
-            <li class="list-unstyled"><a href="#aggregate" title="aggregate">aggregate</a></li>
-            <li class="list-unstyled"><a href="#collect" title="collect">collect</a></li>
-            <li class="list-unstyled"><a href="#collectFirst" title="collectFirst">collectFirst</a></li>
-            <li class="list-unstyled"><a href="#combinations" title="combinations">combinations</a></li>
-            <li class="list-unstyled"><a href="#concat" title="concat">concat</a></li>
-            <li class="list-unstyled"><a href="#contains" title="contains">contains</a></li>
-            <li class="list-unstyled"><a href="#containsSlice" title="containsSlice">containsSlice</a></li>
-            <li class="list-unstyled"><a href="#count" title="count">count</a></li>
-            <li class="list-unstyled"><a href="#diff" title="diff">diff</a></li>
-            <li class="list-unstyled"><a href="#distinct" title="distinct">distinct</a></li>
-            <li class="list-unstyled"><a href="#drop" title="drop">drop</a></li>
-            <li class="list-unstyled"><a href="#dropRight" title="dropRight">dropRight</a></li>
-            <li class="list-unstyled"><a href="#dropWhile" title="dropWhile">dropWhile</a></li>
-            <li class="list-unstyled"><a href="#endsWith" title="endsWith">endsWith</a></li>
-            <li class="list-unstyled"><a href="#exists" title="exists">exists</a></li>
-            <li class="list-unstyled"><a href="#fill" title="fill">fill</a></li>
-            <li class="list-unstyled"><a href="#filter" title="filter">filter</a></li>
-            <li class="list-unstyled"><a href="#filterNot" title="filterNot">filterNot</a></li>
-            <li class="list-unstyled"><a href="#find" title="find">find</a></li>
-            <li class="list-unstyled"><a href="#flatMap" title="flatMap">flatMap</a></li>
-            <li class="list-unstyled"><a href="#flatten" title="flatten">flatten</a></li>
-            <li class="list-unstyled"><a href="#fold" title="fold">fold</a></li>
-            <li class="list-unstyled"><a href="#foldLeft" title="foldLeft">foldLeft</a></li>
-            <li class="list-unstyled"><a href="#foldRight" title="foldRight">foldRight</a></li>
-            <li class="list-unstyled"><a href="#forall" title="forall">forall</a></li>
-            <li class="list-unstyled"><a href="#foreach" title="foreach">foreach</a></li>
-            <li class="list-unstyled"><a href="#groupBy" title="groupBy">groupBy</a></li>
-            <li class="list-unstyled"><a href="#grouped" title="grouped">grouped</a></li>
-            <li class="list-unstyled"><a href="#head" title="head">head</a></li>
-            <li class="list-unstyled"><a href="#headOption" title="headOption">headOption</a></li>
-            <li class="list-unstyled"><a href="#indexOf" title="indexOf">indexOf</a></li>
-            <li class="list-unstyled"><a href="#indexOfSlice" title="indexOfSlice">indexOfSlice</a></li>
-            <li class="list-unstyled"><a href="#indexWhere" title="indexWhere">indexWhere</a></li>
-            <li class="list-unstyled"><a href="#indices" title="indices">indices</a></li>
-            <li class="list-unstyled"><a href="#init" title="init">init</a></li>
-            <li class="list-unstyled"><a href="#inits" title="inits">inits</a></li>
-            <li class="list-unstyled"><a href="#intersect" title="intersect">intersect</a></li>
-            <li class="list-unstyled"><a href="#isEmpty" title="isEmpty">isEmpty</a></li>
-            <li class="list-unstyled"><a href="#last" title="last">last</a></li>
-            <li class="list-unstyled"><a href="#lastIndexOf" title="lastIndexOf">lastIndexOf</a></li>
-            <li class="list-unstyled"><a href="#lastIndexOfSlice" title="lastIndexOfSlice">lastIndexOfSlice</a></li>
-            <li class="list-unstyled"><a href="#lastIndexWhere" title="lastIndexWhere">lastIndexWhere</a></li>
-            <li class="list-unstyled"><a href="#lastOption" title="lastOption">lastOption</a></li>
-            <li class="list-unstyled"><a href="#length" title="length">length</a></li>
-            <li class="list-unstyled"><a href="#map" title="map">map</a></li>
-            <li class="list-unstyled"><a href="#mapConserve" title="mapConserve">mapConserve</a></li>
-            <li class="list-unstyled"><a href="#max" title="max">max</a></li>
-            <li class="list-unstyled"><a href="#maxBy" title="maxBy">maxBy</a></li>
-            <li class="list-unstyled"><a href="#min" title="min">min</a></li>
-            <li class="list-unstyled"><a href="#minBy" title="minBy">minBy</a></li>
-            <li class="list-unstyled"><a href="#mkString" title="mkString">mkString</a></li>
-            <li class="list-unstyled"><a href="#nonEmpty" title="nonEmpty">nonEmpty</a></li>
-            <li class="list-unstyled"><a href="#padTo" title="padTo">padTo</a></li>
-            <li class="list-unstyled"><a href="#partition" title="partition">partition</a></li>
-            <li class="list-unstyled"><a href="#patch" title="patch">patch</a></li>
-            <li class="list-unstyled"><a href="#permutations" title="permutations">permutations</a></li>
-            <li class="list-unstyled"><a href="#prefixLength" title="prefixLength">prefixLength</a></li>
-            <li class="list-unstyled"><a href="#product" title="product">product</a></li>
-            <li class="list-unstyled"><a href="#range" title="range">range</a></li>
-            <li class="list-unstyled"><a href="#reduce" title="reduce">reduce</a></li>
-            <li class="list-unstyled"><a href="#reduceLeft" title="reduceLeft">reduceLeft</a></li>
-            <li class="list-unstyled"><a href="#reduceLeftOption" title="reduceLeftOption">reduceLeftOption</a></li>
-            <li class="list-unstyled"><a href="#reduceOption" title="reduceOption">reduceOption</a></li>
-            <li class="list-unstyled"><a href="#reduceRight" title="reduceRight">reduceRight</a></li>
-            <li class="list-unstyled"><a href="#reduceRightOption" title="reduceRightOption">reduceRightOption</a></li>
-            <li class="list-unstyled"><a href="#reverse" title="reverse">reverse</a></li>
-            <li class="list-unstyled"><a href="#reverseMap" title="reverseMap">reverseMap</a></li>
-            <li class="list-unstyled"><a href="#sameElements" title="sameElements">sameElements</a></li>
-            <li class="list-unstyled"><a href="#scan" title="scan">scan</a></li>
-            <li class="list-unstyled"><a href="#scanLeft" title="scanLeft">scanLeft</a></li>
-            <li class="list-unstyled"><a href="#scanRight" title="scanRight">scanRight</a></li>
-            <li class="list-unstyled"><a href="#segmentLength" title="segmentLength">segmentLength</a></li>
-            <li class="list-unstyled"><a href="#size" title="size">size</a></li>
-            <li class="list-unstyled"><a href="#slice" title="slice">slice</a></li>
-            <li class="list-unstyled"><a href="#sliding" title="sliding">sliding</a></li>
-            <li class="list-unstyled"><a href="#sortBy" title="sortBy">sortBy</a></li>
-            <li class="list-unstyled"><a href="#sortWith" title="sortWith">sortWith</a></li>
-            <li class="list-unstyled"><a href="#sorted" title="sorted">sorted</a></li>
-            <li class="list-unstyled"><a href="#span" title="span">span</a></li>
-            <li class="list-unstyled"><a href="#splitAt" title="splitAt">splitAt</a></li>
-            <li class="list-unstyled"><a href="#startsWith" title="startsWith">startsWith</a></li>
-            <li class="list-unstyled"><a href="#sum" title="sum">sum</a></li>
-            <li class="list-unstyled"><a href="#tabulate" title="tabulate">tabulate</a></li>
-            <li class="list-unstyled"><a href="#tail" title="tail">tail</a></li>
-            <li class="list-unstyled"><a href="#tails" title="tails">tails</a></li>
-            <li class="list-unstyled"><a href="#take" title="take">take</a></li>
-            <li class="list-unstyled"><a href="#takeRight" title="takeRight">takeRight</a></li>
-            <li class="list-unstyled"><a href="#takeWhile" title="takeWhile">takeWhile</a></li>
-            <li class="list-unstyled"><a href="#union" title="union">union</a></li>
-            <li class="list-unstyled"><a href="#unzip" title="unzip">unzip</a></li>
-            <li class="list-unstyled"><a href="#unzip3" title="unzip3">unzip3</a></li>
-            <li class="list-unstyled"><a href="#updated" title="updated">updated</a></li>
-            <li class="list-unstyled"><a href="#zip" title="zip">zip</a></li>
-            <li class="list-unstyled"><a href="#zipAll" title="zipAll">zipAll</a></li>
-            <li class="list-unstyled"><a href="#zipWithIndex" title="zipWithIndex">zipWithIndex</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#aggregate" title="aggregate">aggregate</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#collect" title="collect">collect</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#collectFirst" title="collectFirst">collectFirst</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#combinations" title="combinations">combinations</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#concat" title="concat">concat</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#contains" title="contains">contains</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#containsSlice" title="containsSlice">containsSlice</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#count" title="count">count</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#diff" title="diff">diff</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#distinct" title="distinct">distinct</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#drop" title="drop">drop</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#dropRight" title="dropRight">dropRight</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#dropWhile" title="dropWhile">dropWhile</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#endsWith" title="endsWith">endsWith</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#exists" title="exists">exists</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#fill" title="fill">fill</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#filter" title="filter">filter</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#filterNot" title="filterNot">filterNot</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#find" title="find">find</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#flatMap" title="flatMap">flatMap</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#flatten" title="flatten">flatten</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#fold" title="fold">fold</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#foldLeft" title="foldLeft">foldLeft</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#foldRight" title="foldRight">foldRight</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#forall" title="forall">forall</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#foreach" title="foreach">foreach</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#groupBy" title="groupBy">groupBy</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#grouped" title="grouped">grouped</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#head" title="head">head</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#headOption" title="headOption">headOption</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#indexOf" title="indexOf">indexOf</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#indexOfSlice" title="indexOfSlice">indexOfSlice</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#indexWhere" title="indexWhere">indexWhere</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#indices" title="indices">indices</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#init" title="init">init</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#inits" title="inits">inits</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#intersect" title="intersect">intersect</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#isEmpty" title="isEmpty">isEmpty</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#last" title="last">last</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#lastIndexOf" title="lastIndexOf">lastIndexOf</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#lastIndexOfSlice" title="lastIndexOfSlice">lastIndexOfSlice</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#lastIndexWhere" title="lastIndexWhere">lastIndexWhere</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#lastOption" title="lastOption">lastOption</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#length" title="length">length</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#map" title="map">map</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#mapConserve" title="mapConserve">mapConserve</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#max" title="max">max</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#maxBy" title="maxBy">maxBy</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#min" title="min">min</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#minBy" title="minBy">minBy</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#mkString" title="mkString">mkString</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#nonEmpty" title="nonEmpty">nonEmpty</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#padTo" title="padTo">padTo</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#partition" title="partition">partition</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#patch" title="patch">patch</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#permutations" title="permutations">permutations</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#prefixLength" title="prefixLength">prefixLength</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#product" title="product">product</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#range" title="range">range</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#reduce" title="reduce">reduce</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#reduceLeft" title="reduceLeft">reduceLeft</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#reduceLeftOption" title="reduceLeftOption">reduceLeftOption</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#reduceOption" title="reduceOption">reduceOption</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#reduceRight" title="reduceRight">reduceRight</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#reduceRightOption" title="reduceRightOption">reduceRightOption</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#reverse" title="reverse">reverse</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#reverseMap" title="reverseMap">reverseMap</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#sameElements" title="sameElements">sameElements</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#scan" title="scan">scan</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#scanLeft" title="scanLeft">scanLeft</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#scanRight" title="scanRight">scanRight</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#segmentLength" title="segmentLength">segmentLength</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#size" title="size">size</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#slice" title="slice">slice</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#sliding" title="sliding">sliding</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#sortBy" title="sortBy">sortBy</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#sortWith" title="sortWith">sortWith</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#sorted" title="sorted">sorted</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#span" title="span">span</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#splitAt" title="splitAt">splitAt</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#startsWith" title="startsWith">startsWith</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#sum" title="sum">sum</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#tabulate" title="tabulate">tabulate</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#tail" title="tail">tail</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#tails" title="tails">tails</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#take" title="take">take</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#takeRight" title="takeRight">takeRight</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#takeWhile" title="takeWhile">takeWhile</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#union" title="union">union</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#unzip" title="unzip">unzip</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#unzip3" title="unzip3">unzip3</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#updated" title="updated">updated</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#zip" title="zip">zip</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#zipAll" title="zipAll">zipAll</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#zipWithIndex" title="zipWithIndex">zipWithIndex</a></li>
         </ul>
       </aside>
-      <section class="col-12 col-sm-8 col-md-9 col-lg-10">
+      <section class="col-12 col-sm-8 col-md-9 col-lg-10" data-spy="scroll" data-target="#function-list" data-offset="0">
           <article id="aggregate">
             <h2 class="function-name">aggregate</h2>
             <p>Agrega los resultados de aplicar un operador a elementos subsecuentes. </p>

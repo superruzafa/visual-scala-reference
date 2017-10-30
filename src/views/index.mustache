@@ -11,6 +11,9 @@
   <link rel="icon" href="assets/scala-logo.png" type="image/png" sizes="64x64">
   <link rel="stylesheet" href="assets/bootstrap.min.css">
   <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/jquery-3.2.1.slim.min.js"></script>
+  <script src="assets/popper.min.js"></script>
+  <script src="assets/bootstrap.min.js"></script>
   <script src="assets/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 </head>
@@ -43,11 +46,11 @@
       <aside id="function-list" class="col-sm-4 col-md-3 col-lg-2 d-none d-sm-block">
         <ul>
           {{# functions }}
-            <li class="list-unstyled"><a href="#{{ name }}" title="{{ name }}">{{ name }}</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#{{ name }}" title="{{ name }}">{{ name }}</a></li>
           {{/ functions }}
         </ul>
       </aside>
-      <section class="col-12 col-sm-8 col-md-9 col-lg-10">
+      <section class="col-12 col-sm-8 col-md-9 col-lg-10" data-spy="scroll" data-target="#function-list" data-offset="0">
         {{# functions }}
           {{> function }}
         {{/ functions }}

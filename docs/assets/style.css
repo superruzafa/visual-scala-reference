@@ -105,6 +105,9 @@ nav ul {
 
 section {
   margin-top: 16px;
+  position: relative;
+  height: calc(100vh);
+  overflow-y: scroll;
 }
 
 #function-list {
@@ -115,6 +118,15 @@ section {
   top: 0;
   overflow-x: hidden;
   overflow-y: scroll;
+}
+
+#function-list a {
+  padding: 0;
+}
+
+#function-list a.active {
+  color: #000;
+  font-weight: bold;
 }
 
 #function-list ul {
