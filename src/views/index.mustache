@@ -4,34 +4,48 @@
   <meta charset="utf-8" />
   <title>{{# t }}{{ messages.title }}{{/ t }}</title>
   <meta name="description" content="{{# t }}{{ messages.description }}{{/ t }}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" href="assets/scala-logo.png" type="image/png" sizes="180x180">
+  <link rel="icon" href="assets/scala-logo.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="assets/scala-logo.png" type="image/png" sizes="48x48">
+  <link rel="icon" href="assets/scala-logo.png" type="image/png" sizes="64x64">
   <link rel="stylesheet" href="assets/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <a class="d-none d-sm-block" href="https://github.com/superruzafa/visual-scala-reference.git"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 100" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
-  <header class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand">
-      <img src="assets/scala-logo.png" width="100" alt="" />
-      {{# t }}{{ messages.title }}{{/ t }}
-    </a>
-    <ul class="navbar-nav">
+  <!-- <a class="d-none d-sm-block" href="https://github.com/superruzafa/visual-scala-reference.git"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 100" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a> -->
+  <header class="">
+    <!-- <img src="assets/scala-logo.png" width="48" alt="" /> -->
+    <h1>
+      <strong class="title">
+        {{# t }}{{ messages.title }}{{/ t }}
+        <a href="https://github.com/superruzafa/visual-scala-reference">
+          <svg class="navbar-nav-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512" focusable="false"><title>GitHub</title><path d="M256 0C114.64 0 0 114.61 0 256c0 113.09 73.34 209 175.08 242.9 12.8 2.35 17.47-5.56 17.47-12.34 0-6.08-.22-22.18-.35-43.54-71.2 15.49-86.2-34.34-86.2-34.34-11.64-29.57-28.42-37.45-28.42-37.45-23.27-15.84 1.73-15.55 1.73-15.55 25.69 1.81 39.21 26.38 39.21 26.38 22.84 39.12 59.92 27.82 74.5 21.27 2.33-16.54 8.94-27.82 16.25-34.22-56.84-6.43-116.6-28.43-116.6-126.49 0-27.95 10-50.8 26.35-68.69-2.63-6.48-11.42-32.5 2.51-67.75 0 0 21.49-6.88 70.4 26.24a242.65 242.65 0 0 1 128.18 0c48.87-33.13 70.33-26.24 70.33-26.24 14 35.25 5.18 61.27 2.55 67.75 16.41 17.9 26.31 40.75 26.31 68.69 0 98.35-59.85 120-116.88 126.32 9.19 7.9 17.38 23.53 17.38 47.41 0 34.22-.31 61.83-.31 70.23 0 6.85 4.61 14.81 17.6 12.31C438.72 464.97 512 369.08 512 256.02 512 114.62 397.37 0 256 0z" fill="currentColor" fill-rule="evenodd"></path></svg>
+        </a>
+      </strong>
+      <small class="motto">{{# t }}{{{ messages.motto }}}{{/ t }}</small>
+    </h1>
+  </header>
+  <nav>
+    <ul>
       {{# allLangs }}
-        <li class="nav-item">
-          <a class="nav-link" href="index-{{ code }}.html">{{ name }}</a></li>
+        <li>
+          <a href="index-{{ code }}.html">{{ name }}</a></li>
         </li>
       {{/ allLangs }}
+      <li><a href="https://github.com/superruzafa/visual-scala-reference#translations">{{# t }}{{ messages.addYourLanguage }}{{/ t }}</a></li>
     </ul>
-  </header>
-  <div class="container">
+  </nav>
+  <div class="container-fluid">
     <div class="row">
-      <aside class="col-sm-5 col-md-4 col-lg-3">
-        <ul class="d-none d-sm-block">
+      <aside id="function-list" class="col-sm-4 col-md-3 col-lg-2 d-none d-sm-block">
+        <ul>
           {{# functions }}
             <li class="list-unstyled"><a href="#{{ name }}" title="{{ name }}">{{ name }}</a></li>
           {{/ functions }}
         </ul>
       </aside>
-      <section class="col-sm-7 col-md-8 col-lg-9">
+      <section class="col-12 col-sm-8 col-md-9 col-lg-10">
         {{# functions }}
           {{> function }}
         {{/ functions }}

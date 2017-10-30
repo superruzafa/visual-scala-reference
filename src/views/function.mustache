@@ -1,7 +1,7 @@
 <article id="{{ name }}">
-  <h2>{{ name }}</h2>
+  <h2 class="function-name">{{ name }}</h2>
   <p>{{# t }}{{{ description }}}{{/ t }}</p>
-  <ul class="signatures">
+  <ul class="function-signatures">
     {{# signatures }}
       <li class="list-unstyled"><code>{{{ . }}}</code></li>
     {{/ signatures }}
