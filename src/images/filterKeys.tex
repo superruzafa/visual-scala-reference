@@ -1,0 +1,73 @@
+\input{_header.tex}
+
+\matrix (K) [map keys] {
+    \node (k1)       {$k_1$};     \\
+    \node (k2)       {$k_2$};     \\
+    \vellipsis                    \\
+    \node (ki)       {$k_i$};     \\
+    \node (ki+1)     {$k_{i+1}$}; \\
+    \vellipsis                    \\
+    \node (kn)       {$k_n$};     \\
+};
+
+\matrix (V1) [matrix of nodes, map values, right=1cm of k1] {
+  $v_1$ & $v_2$ \\
+};
+\matrix (V2) [matrix of nodes, map values, right=1cm of k2] {
+  $v_3$ & $v_4$ & $v_5$ \\
+};
+\matrix (Vi) [matrix of nodes, map values, right=1cm of ki] {
+  $v_o$ & $v_{o+1}$ \\
+};
+\matrix (Vi+1) [matrix of nodes, map values, right=1cm of ki+1] {
+  $v_p$ \\
+};
+\matrix (Vn) [matrix of nodes, map values, right=1cm of kn] {
+  $v_q$ \\
+};
+
+\draw (k1) [map to] -- (V1);
+\draw (k2) [map to] -- (V2);
+\draw (ki) [map to] -- (Vi);
+\draw (ki+1) [map to] -- (Vi+1);
+\draw (kn) [map to] -- (Vn);
+
+\foreach \i/\b in {1/\true, 2/\false, i/\true, i+1/\false, n/\true} {
+  \node (p\i) [predicate, left=0.5em of k\i, pin={[function result, pin position=190] \b}] {$\texttt{p}(k_{\i})?$};
+  \draw (k\i) -- (p\i);
+}
+
+\draw (K.north west) [draw=none] -- coordinate (x) (K.south east);
+
+\matrix (Kf) [map keys, right=7cm of x] {
+    \node (kf1)       {$k_1$}; \\
+    \vellipsis                 \\
+    \node (kfi)       {$k_i$}; \\
+    \vellipsis                 \\
+    \node (kfn)       {$k_n$}; \\
+};
+
+\matrix (Vf1) [matrix of nodes, map values, right=1cm of kf1] {
+  $v_1$ & $v_2$ \\
+};
+\matrix (Vfi) [matrix of nodes, map values, right=1cm of kfi] {
+  $v_o$ & $v_{o+1}$ \\
+};
+\matrix (Vfn) [matrix of nodes, map values, right=1cm of kfn] {
+  $v_q$ \\
+};
+
+\draw (kf1) [map to] -- (Vf1);
+\draw (kfi) [map to] -- (Vfi);
+\draw (kfn) [map to] -- (Vfn);
+
+\draw ([xshift=45mm] k1.north east) [topbrace] -- coordinate (f1) ([xshift=45mm] k1.south east);
+\draw (f1) [arrow, from brace, out=0, in=180] to (kf1);
+
+\draw ([xshift=45mm] ki.north east) [topbrace] -- coordinate (fi) ([xshift=45mm] ki.south east);
+\draw (fi) [arrow, from brace, out=0, in=180] to (kfi);
+
+\draw ([xshift=45mm] kn.north east) [topbrace] -- coordinate (fn) ([xshift=45mm] kn.south east);
+\draw (fn) [arrow, from brace, out=0, in=180] to (kfn);
+
+\input{_footer.tex}

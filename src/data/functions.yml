@@ -118,6 +118,13 @@
     en: Selects all elements of this traversable collection which satisfy a predicate.
     es: Selecciona todos los elementos de la colección que satisfacen un predicado.
 
+- name: filterKeys
+  signatures:
+  - "def filterKeys(p: (K) ⇒ Boolean): Map[K, V]"
+  description:
+    en: Filters this map by retaining only keys satisfying a predicate.
+    es: Filtra esta mapa reteniendo solo las claves que satisfacen un predicado.
+
 - name: filterNot
   signatures:
   - "def filterNot(p: (A) ⇒ Boolean): <em>Collection</em>[A]"

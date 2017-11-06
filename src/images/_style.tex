@@ -16,8 +16,8 @@
 
 \tikzstyle{collection}=[
   inner sep=0,
-  column sep=-0.3mm,
-  row sep=-0.3mm,
+  column sep=-0.4mm,
+  row sep=-0.4mm,
   nodes=cell
 ]
 
@@ -29,13 +29,12 @@
 ]
 
 \tikzstyle{map keys}=[
-  collection,
-  nodes={draw=none, minimum height=12mm}
+  collection
 ]
 
 \tikzstyle{map values}=[
   collection,
-  nodes={minimum size=1cm }
+  nodes={minimum size=1cm}
 ]
 
 \tikzstyle{option}=[
@@ -55,9 +54,15 @@
   node contents=$\ldots$,
   fill=none
 }}
+\tikzset{vertical ellipsis/.style={
+  ellipsis,
+  node contents=$\vdots$,
+  minimum height=#1,
+}}
 % \tikzset{ellipsis/.default=1.5cm}
 
 \newcommand{\ellipsis}[1][15mm]{ \node [ellipsis=#1]; }
+\newcommand{\vellipsis}[1][15mm]{ \node [vertical ellipsis=#1]; }
 
 \tikzstyle{tuple comma}=[
   minimum width=2em,

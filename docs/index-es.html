@@ -63,6 +63,7 @@
             <li class="list-unstyled"><a class="nav-link" href="#exists" title="exists">exists</a></li>
             <li class="list-unstyled"><a class="nav-link" href="#fill" title="fill">fill</a></li>
             <li class="list-unstyled"><a class="nav-link" href="#filter" title="filter">filter</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#filterKeys" title="filterKeys">filterKeys</a></li>
             <li class="list-unstyled"><a class="nav-link" href="#filterNot" title="filterNot">filterNot</a></li>
             <li class="list-unstyled"><a class="nav-link" href="#find" title="find">find</a></li>
             <li class="list-unstyled"><a class="nav-link" href="#flatMap" title="flatMap">flatMap</a></li>
@@ -312,6 +313,16 @@
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/filter.svg" />
+            </figure>
+          </article>
+          <article id="filterKeys">
+            <h2 class="function-name">filterKeys</h2>
+            <p>Filtra esta mapa reteniendo solo las claves que satisfacen un predicado. </p>
+            <ul class="function-signatures">
+                <li class="list-unstyled"><pre><code class="scala">def filterKeys(p: (K) ⇒ Boolean): Map[K, V]</code></pre></li>
+            </ul>
+            <figure class="figure">
+              <img class="figure-img img-fluid" src="images/filterKeys.svg" />
             </figure>
           </article>
           <article id="filterNot">
