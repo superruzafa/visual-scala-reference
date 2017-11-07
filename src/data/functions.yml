@@ -272,6 +272,13 @@
     en: Tests whether this collection is empty.
     es: Comprueba si esta colección está vacía.
 
+- name: keys
+  signatures:
+  - "def keys: Iterable[V]"
+  description:
+    en: Collects all keys of this map in an iterable collection.
+    es: Recopila todas las claves de este mapa en una coleccion iterable.
+
 - name: last
   signatures:
   - "def last: A"
@@ -660,6 +667,13 @@
   description:
     en: A copy of this collection with one single replaced element.
     es: Una copia de esta colección con un único elemento reemplazado.
+
+- name: values
+  signatures:
+  - "def values: Iterable[V]"
+  description:
+    en: Collects all values of this map in an iterable collection.
+    es: Recopila todos los valores de este mapa en una coleccion iterable.
 
 - name: zip
   signatures:
