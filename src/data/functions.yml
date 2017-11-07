@@ -332,6 +332,13 @@
       Construye una nueva colección aplicando una función a todos los elementos de esta colección.
       Igual que <code>xs map f</code> pero devuelve <var>xs</var> intacto si la función <var>f</var> mapea todos los elementos a sí mismos (determinado por <var>eq</var>)
 
+- name: mapValues
+  signatures:
+  - "def mapValues[W](f: (V) ⇒ W): Map[K, W]"
+  description:
+    en: Transforms this map by applying a function to every retrieved value.
+    es: Transforma este mapa aplicando una función a cada valor.
+
 - name: max
   signatures:
   - "def max: A"
