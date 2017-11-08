@@ -281,7 +281,7 @@
 
 - name: keys
   signatures:
-  - "def keys: Iterable[V]"
+  - "def keys: Iterable[K]"
   description:
     en: Collects all keys of this map in an iterable collection.
     es: Recopila todas las claves de este mapa en una coleccion iterable.
