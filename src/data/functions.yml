@@ -188,6 +188,13 @@
     en: Applies a function <var>f</var> to all elements of this collection.
     es: Aplica una función <var>f</var> a todos los elementos de esta colección.
 
+- name: getOrElse
+  signatures:
+  - "def getOrElse(key: K, default: ⇒ V): V"
+  description:
+    en: Returns the value associated with a key, or a default value if the key is not contained in the map.
+    es: Devuelve el valor asociado a una clavo o un valor predeterminado si el mapa no contiene dicha clave.
+
 - name: groupBy
   signatures:
   - "def groupBy[K](f: (A) ⇒ K): Map[K, <em>Collection</em>[A]]"
