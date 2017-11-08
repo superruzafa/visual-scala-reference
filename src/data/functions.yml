@@ -682,6 +682,20 @@
     en: Collects all values of this map in an iterable collection.
     es: Recopila todos los valores de este mapa en una coleccion iterable.
 
+- name: withDefault
+  signatures:
+  - "def withDefault[V1 >: V](f<sub>def</sub>: (K) ⇒ V1): Map[K, V1]"
+  description:
+    en: The same map with a given default function.
+    es: El mismo mapa con una función predeterminada dado.
+
+- name: withDefaultValue
+  signatures:
+  - "def withDefaultValue[V1 >: V](v<sub>def</sub>: V1): Map[K, V1]"
+  description:
+    en: The same map with a given default value.
+    es: El mismo mapa con un valor predeterminado dado.
+
 - name: zip
   signatures:
   - "def zip[B](that: GenIterable[B]): <em>Collection</em>[A, B]"

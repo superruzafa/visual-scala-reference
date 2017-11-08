@@ -143,6 +143,8 @@
             <li class="list-unstyled"><a class="nav-link" href="#unzip3" title="unzip3">unzip3</a></li>
             <li class="list-unstyled"><a class="nav-link" href="#updated" title="updated">updated</a></li>
             <li class="list-unstyled"><a class="nav-link" href="#values" title="values">values</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#withDefault" title="withDefault">withDefault</a></li>
+            <li class="list-unstyled"><a class="nav-link" href="#withDefaultValue" title="withDefaultValue">withDefaultValue</a></li>
             <li class="list-unstyled"><a class="nav-link" href="#zip" title="zip">zip</a></li>
             <li class="list-unstyled"><a class="nav-link" href="#zipAll" title="zipAll">zipAll</a></li>
             <li class="list-unstyled"><a class="nav-link" href="#zipWithIndex" title="zipWithIndex">zipWithIndex</a></li>
@@ -1117,6 +1119,26 @@
             </ul>
             <figure class="figure">
               <img class="figure-img img-fluid" src="images/values.svg" />
+            </figure>
+          </article>
+          <article id="withDefault">
+            <h2 class="function-name">withDefault</h2>
+            <p>The same map with a given default function. </p>
+            <ul class="function-signatures">
+                <li class="list-unstyled"><pre><code class="scala">def withDefault[V1 >: V](f<sub>def</sub>: (K) ⇒ V1): Map[K, V1]</code></pre></li>
+            </ul>
+            <figure class="figure">
+              <img class="figure-img img-fluid" src="images/withDefault.svg" />
+            </figure>
+          </article>
+          <article id="withDefaultValue">
+            <h2 class="function-name">withDefaultValue</h2>
+            <p>The same map with a given default value. </p>
+            <ul class="function-signatures">
+                <li class="list-unstyled"><pre><code class="scala">def withDefaultValue[V1 >: V](v<sub>def</sub>: V1): Map[K, V1]</code></pre></li>
+            </ul>
+            <figure class="figure">
+              <img class="figure-img img-fluid" src="images/withDefaultValue.svg" />
             </figure>
           </article>
           <article id="zip">

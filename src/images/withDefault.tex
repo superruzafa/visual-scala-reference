@@ -1,0 +1,37 @@
+\input{_header.tex}
+
+\matrix (K) [map keys] {
+    \node (k1) {$k_1$}; \\
+    \node (k2) {$k_2$}; \\
+    \vellipsis          \\
+    \node (kn) {$k_n$}; \\
+};
+
+\node (default) [elem, below=10mm of K] {$\texttt{f}_{def}$};
+
+\foreach \i in {1, 2, n} {
+  \node (v\i) [elem, right=1cm of k\i] {$v_{\i}$};
+  \draw (k\i) [map to] -- (v\i);
+}
+
+\matrix (KD) [map keys, right=3cm of K] {
+    \node (kd1) {$k_1$}; \\
+    \node (kd2) {$k_2$}; \\
+    \vellipsis           \\
+    \node (kdn) {$k_n$}; \\
+};
+
+\begin{scope}[on background layer]
+  \node [cell, dash pattern=on 1pt off 2pt, draw opacity=0.5, below=0 of kdn] (kdd) {$*$};
+\end{scope}
+
+\foreach \i in {1, 2, n} {
+  \node (vd\i) [elem, right=1cm of kd\i] {$v_{\i}$};
+  \draw (kd\i) [map to] -- (vd\i);
+}
+\node (vdd) [elem, right=1cm of kdd] {$\texttt{f}_{def}(*)$};
+\draw (kdd) [map to] -- (vdd);
+
+\draw ([xshift=20mm] K.north east) [topbrace] -- ([xshift=20mm] K.north east |- default.south);
+
+\input{_footer.tex}
