@@ -13,8 +13,6 @@ PDF2PNGFLAGS := -density 200 -quality 10 -define png:include-chunk=none
 PDF2SVG := pdf2svg
 PDF2SVGFLAGS :=
 
-LANGUAGES := en es
-
 DATAFILES := $(wildcard src/data/*)
 VIEWFILES := $(wildcard src/views/*)
 TEXSHAREDFILES := $(wildcard src/images/_*.tex)
@@ -22,8 +20,8 @@ TEXFILES := $(filter-out $(TEXSHAREDFILES),$(wildcard src/images/*))
 PNGFILES := $(patsubst src/images/%.tex,docs/images/%.png,$(TEXFILES))
 SVGFILES := $(patsubst src/images/%.tex,docs/images/%.svg,$(TEXFILES))
 CSSFILES := docs/style.css
-HTMLFILES := $(foreach lang,$(LANGUAGES),$(addprefix docs/,index-$(lang).html))
-TARGET := $(HTMLFILES) $(PNGFILES) $(SVGFILES)
+HTMLFILES := docs/index.html
+TARGET := $(HTMLFILES) $(CSSFILES) $(PNGFILES) $(SVGFILES)
 
 all: $(TARGET)
 

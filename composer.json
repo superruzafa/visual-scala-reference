@@ -3,8 +3,8 @@
   "description": "A Visual Scala Reference",
   "type": "project",
   "require-dev": {
-    "mustache/mustache": "^2.12",
-    "symfony/yaml": "^3.3"
+    "symfony/yaml": "^3.3",
+    "twig/twig": "^1.35"
   },
   "license": "MIT",
   "authors": [{
