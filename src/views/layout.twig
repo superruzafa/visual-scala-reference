@@ -1,20 +1,26 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title></title>
+  <title>{{ messages.title.en }}</title>
+  <meta name="description" content="{{ messages.description.en }}" />
   <meta charset="utf-8" />
   <link rel="stylesheet" href="assets/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
   <script src="assets/highlight.pack.js"></script>
+  <script src="script.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
   <header id="main-header">
-    <h1 id="main-title"><a href="">Visual Scala Reference</a></h1>
+    <h1 id="main-title">
+      {% for lang, text in messages.title %}
+        <a class="i18n" lang="{{ lang }}" href="">{{ text }}</a>
+      {% endfor %}
+    </h1>
     <nav id="main-languages">
       <ul id="main-language-list">
         {% for lang in languages %}
-          <li class="language-link"><a href="index.html{% if lang.code != 'en' %}?lang={{ lang.code }}{% endif %}">{{ lang.name }}</a></li>
+          <li class="language-link"><a data-lang="{{ lang.code }}" href="index.html{% if lang.code != 'en' %}?lang={{ lang.code }}{% endif %}">{{ lang.name }}</a></li>
         {% endfor %}
         <li class="language-link"><a href="https://github.com/superruzafa/visual-scala-reference#translations">+</a></li>
       </ul>
