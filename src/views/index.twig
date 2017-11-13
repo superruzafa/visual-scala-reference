@@ -3,19 +3,24 @@
 {% block content %}
 <div class="container-fluid">
   <div class="row">
-    <aside id="main-aside" class="col-2">
+    <aside id="main-aside" class="col-sm-4 col-md-3 col-lg-2 d-none d-sm-block">
       <ul id="function-list">
         {% for function in functions %}
           <li class="function-link"><a href="#{{ function.name }}">{{ function.name }}</a></li>
         {% endfor %}
       </ul>
     </aside>
-    <main class="col-10">
+    <main id="function-entries" class="col-12 col-sm-8 col-md-9 col-lg-10">
       {% for function in functions %}
         <article id="{{ function.name }}" class="function-entry">
           <h2 class="function-name">{{ function.name }}</h2>
-          <p><pre><code>{{ function.signature | raw }}</code></pre></p>
-          <img src="images/{{ function.name }}.svg" alt="" />
+          {% for lang, text in function.description %}
+            <p class="i18n" lang="{{ lang }}">{{ text | raw }}</p>
+          {% endfor %}
+          <pre><code class="scala">{{ function.signature | raw }}</code></pre>
+          <figure class="figure">
+            <img class="figure-img img-fluid" src="images/{{ function.name }}.svg" alt="" />
+          </figure>
         </article>
       {% endfor %}
     </main>

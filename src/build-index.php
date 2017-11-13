@@ -17,6 +17,7 @@ $messages = Yaml::parse(file_get_contents(__DIR__ . '/data/messages.yml'));
 
 $context = [
   'functions' => $functions,
+  'languages' => $languages,
 ];
 
 $template = $twig->load('index.twig');

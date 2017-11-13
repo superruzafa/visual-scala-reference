@@ -5,6 +5,34 @@
 
 $codeFont: "Inconsolata G", monospace;
 
+.function-entry {
+  
+  &::before {
+    display: block;
+    height: 4rem;
+    margin-top: -4rem;
+    visibility: hidden;
+    content: "";
+  }
+  
+  .function-name {
+    font: normal 1.8rem/1.8rem $codeFont;
+    margin-bottom: 1.6rem;
+  }
+  
+  & + & {
+    margin-top: 4rem;
+  }
+}
+
+.hljs-keyword {
+  color: rgb(127, 0, 84);
+}
+
+.hljs-type {
+  color: rgb(0, 15, 155);
+}
+
 a,
 a:link {
   text-decoration: none;
@@ -20,23 +48,90 @@ a:active {
   color: #000;
 }
 
-.function-entry {
-  .function-name {
-    font: normal 1.8rem/1.8rem $codeFont;
-  }
-  
-  & + & {
-    margin-top: 4rem;
-  }
+code.scala {
+  background: #f8f8f8;
+  border: 1px solid #f0f0f0;
+  display: block;
+  font: normal 0.9rem/1rem $codeFont;
+  overflow-x: scroll;
+  padding: 1rem;
 }
+
+html:lang(en) .i18n:not(:lang(en)) { display: none; visibility: none; }
+html:lang(es) .i18n:not(:lang(es)) { display: none; visibility: none; }
 
 #function-list {
   list-style: none;
   padding: 0;
-}
 
-#function-list {
   .function-link {
     font: normal 0.9rem/1.4rem $codeFont;
   }
+}
+
+#main-aside {
+  border-right: 1px solid #eee;
+  height: calc(100vh - 3.2rem);
+  overflow-y: scroll;
+  padding: 1rem;
+  position: sticky;
+  top: calc(3.2rem);
+}
+
+#main-header {
+  background: #c52025;
+  background: linear-gradient(to bottom, #eb2024 0%, #c52025 100%);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  overflow: hidden;
+  padding: 0 15px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  
+  a:link,
+  a:visited {
+    color: #fff;
+  }
+
+  #main-languages {
+    margin: 0;
+    
+    #main-language-list {
+      margin: 0;
+    }
+    
+    .language-link {
+      display: inline;
+      line-height: 3.2rem;
+      
+      & + .language-link {
+        margin-left: 2ex;
+      }
+    }
+  }
+
+  #main-title {
+    float: left;
+    font-size: 1.2rem;
+    font-weight: normal;
+    line-height: 3rem;
+    margin: 0 4ex 0 0;
+  }
+  
+  #social {
+    a {
+      color: #fff;
+    }
+    
+    position: absolute;
+    top: 0;
+    right: 15px;
+    line-height: 3rem;
+    height: 0;
+  }
+}
+
+#function-entries {
+  padding: 1rem;
 }
