@@ -32,8 +32,8 @@ a:active {
   color: #000; }
 
 code.scala {
-  background: #f8f8f8;
-  border: 1px solid #f0f0f0;
+  background: #f6f8fa;
+  border-radius: 3px;
   display: block;
   font: normal 0.9rem/1rem "Inconsolata G", monospace;
   overflow-x: scroll;

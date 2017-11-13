@@ -17,7 +17,7 @@
           {% for lang, text in function.description %}
             <p class="i18n" lang="{{ lang }}">{{ text | raw }}</p>
           {% endfor %}
-          <pre><code class="scala">{{ function.signature | raw }}</code></pre>
+          <pre class="signature"><code class="scala">{{ function.signature | raw }}</code></pre>
           <figure class="figure">
             <img class="figure-img img-fluid" src="images/{{ function.name }}.svg" alt="" />
           </figure>
