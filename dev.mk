@@ -1,7 +1,11 @@
 SHELL := /bin/bash
 
+CACHEDIR := .cache
+
 CURL := curl
 PHP := php
+SASS := sass
+SASSFLAGS := --scss --cache-location $(CACHEDIR)/sass --sourcemap=none
 TEX2PDF := pdflatex
 TEX2PDFFLAGS := -halt-on-error
 PDF2PNG := convert
@@ -17,15 +21,17 @@ TEXSHAREDFILES := $(wildcard src/images/_*.tex)
 TEXFILES := $(filter-out $(TEXSHAREDFILES),$(wildcard src/images/*))
 PNGFILES := $(patsubst src/images/%.tex,docs/images/%.png,$(TEXFILES))
 SVGFILES := $(patsubst src/images/%.tex,docs/images/%.svg,$(TEXFILES))
+CSSFILES := docs/style.css
 HTMLFILES := $(foreach lang,$(LANGUAGES),$(addprefix docs/,index-$(lang).html))
 TARGET := $(HTMLFILES) $(PNGFILES) $(SVGFILES)
-
-CACHEDIR := .cache
 
 all: $(TARGET)
 
 docs/%.html: src/build-index.php $(VIEWFILES) $(DATAFILES)
 	$(PHP) src/build-index.php $@
+
+docs/%.css: src/%.scss
+	$(SASS) $(SASSFLAGS) $< $@
 
 docs/%.png: $(CACHEDIR)/%.pdf
 	mkdir -p $(@D)

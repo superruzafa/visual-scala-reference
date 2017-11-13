@@ -3,6 +3,7 @@ FROM php:5
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
       unzip \
+      ruby-sass \   
       texlive \
       texlive-latex-extra \
       imagemagick \

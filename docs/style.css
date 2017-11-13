@@ -1,114 +1,91 @@
 @font-face {
   font-family: "Inconsolata G";
-  src: url(Inconsolata-g.otf);
-}
-
+  src: url(Inconsolata-g.otf); }
 a {
-  text-decoration: none !important;
-}
+  text-decoration: none !important; }
 
 a:link,
 a:visited {
-  color: rgba(0, 0, 0, 0.7);
-}
+  color: rgba(0, 0, 0, 0.7); }
 
 a:hover,
 a:active {
-  color: rgb(0, 0, 0);
-}
+  color: black; }
 
 article + article {
-  margin-top: 3rem;
-}
+  margin-top: 3rem; }
 
 article .function-name {
-  font: normal 2.3rem/3.3rem "Inconsolata G", monospace;
-  }
+  font: normal 2.3rem/3.3rem "Inconsolata G", monospace; }
 
 article .function-signatures {
   padding-left: 0;
-  margin-bottom: 2rem;
-}
+  margin-bottom: 2rem; }
 
 article .function-signatures code {
-  font-family: "Inconsolata G", monospace !important;
-}
+  font-family: "Inconsolata G", monospace !important; }
 
 header {
   background: #c52025;
   background: linear-gradient(to bottom, #eb2024 0%, #c52025 100%);
   border-bottom: 1px solid #a42123;
   color: #fff;
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 header h1 {
   font-size: 1rem;
   line-height: 24px;
   text-align: center;
   padding: 12px 0;
-  margin: 0;
-}
+  margin: 0; }
 
 header h1 .title {
   display: block;
   font-size: 1.2rem;
   font-weight: normal;
-  margin-bottom: 1.2rem;
-}
+  margin-bottom: 1.2rem; }
 
 header h1 svg {
-  color: #fff;
-}
+  color: #fff; }
 
 header h1 .motto {
   display: block;
-  font-size: 0.8rem;
-}
+  font-size: 0.8rem; }
 
 header h1 .motto .scala-link {
-  font-weight: bold;
-}
+  font-weight: bold; }
 
 header h1 .motto .scala-link:link,
 header h1 .motto .scala-link:visited {
-  color: inherit;
-}
+  color: inherit; }
 
 header img {
-  float: left;
-}
+  float: left; }
 
 nav {
   /*box-shadow: 0 2px 2px rgb(0, 0, 0, 0.3);*/
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   font-size: 0.8em;
-  padding: 15px;
-}
+  padding: 15px; }
 
 nav li {
-  display: inline;
-}
+  display: inline; }
 
 nav li a {
-  white-space: nowrap;
-}
+  white-space: nowrap; }
 
 nav li + li {
-  margin-left: 1rem;
-}
+  margin-left: 1rem; }
 
 nav ul {
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 section {
   margin-top: 16px;
   position: relative;
   height: calc(100vh);
-  overflow-y: scroll;
-}
+  overflow-y: scroll; }
 
 #function-list {
   border-right: 1px solid rgba(0, 0, 0, 0.1);
@@ -117,35 +94,25 @@ section {
   position: sticky;
   top: 0;
   overflow-x: hidden;
-  overflow-y: scroll;
-}
+  overflow-y: scroll; }
 
 #function-list a {
-  padding: 0;
-}
+  padding: 0; }
 
 #function-list a.active {
   color: #000;
-  font-weight: bold;
-}
+  font-weight: bold; }
 
 #function-list ul {
   font-size: 0.9rem;
   margin-top: 16px;
-  padding-left: 0;
-}
+  padding-left: 0; }
 
 .hljs {
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.hljs-title {
-}
+  background-color: transparent; }
 
 .hljs-keyword {
-  color: rgb(127, 0, 84);
-}
+  color: #7f0054; }
 
 .hljs-type {
-  color: rgba(0, 15, 155);
-}
+  color: #000f9b; }
