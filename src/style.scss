@@ -3,149 +3,40 @@
   src: url(assets/Inconsolata-g.otf);
 }
 
-a {
-  text-decoration: none !important;
+$codeFont: "Inconsolata G", monospace;
+
+a,
+a:link {
+  text-decoration: none;
 }
 
 a:link,
 a:visited {
-  color: rgba(0, 0, 0, 0.7);
+  color: #444;
 }
 
 a:hover,
 a:active {
-  color: rgb(0, 0, 0);
+  color: #000;
 }
 
-article + article {
-  margin-top: 3rem;
-}
-
-article .function-name {
-  font: normal 2.3rem/3.3rem "Inconsolata G", monospace;
+.function-entry {
+  .function-name {
+    font: normal 1.8rem/1.8rem $codeFont;
   }
-
-article .function-signatures {
-  padding-left: 0;
-  margin-bottom: 2rem;
-}
-
-article .function-signatures code {
-  font-family: "Inconsolata G", monospace !important;
-}
-
-header {
-  background: #c52025;
-  background: linear-gradient(to bottom, #eb2024 0%, #c52025 100%);
-  border-bottom: 1px solid #a42123;
-  color: #fff;
-  overflow: hidden;
-}
-
-header h1 {
-  font-size: 1rem;
-  line-height: 24px;
-  text-align: center;
-  padding: 12px 0;
-  margin: 0;
-}
-
-header h1 .title {
-  display: block;
-  font-size: 1.2rem;
-  font-weight: normal;
-  margin-bottom: 1.2rem;
-}
-
-header h1 svg {
-  color: #fff;
-}
-
-header h1 .motto {
-  display: block;
-  font-size: 0.8rem;
-}
-
-header h1 .motto .scala-link {
-  font-weight: bold;
-}
-
-header h1 .motto .scala-link:link,
-header h1 .motto .scala-link:visited {
-  color: inherit;
-}
-
-header img {
-  float: left;
-}
-
-nav {
-  /*box-shadow: 0 2px 2px rgb(0, 0, 0, 0.3);*/
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  font-size: 0.8em;
-  padding: 15px;
-}
-
-nav li {
-  display: inline;
-}
-
-nav li a {
-  white-space: nowrap;
-}
-
-nav li + li {
-  margin-left: 1rem;
-}
-
-nav ul {
-  margin: 0;
-  padding: 0;
-}
-
-section {
-  margin-top: 16px;
-  position: relative;
-  height: calc(100vh);
-  overflow-y: scroll;
+  
+  & + & {
+    margin-top: 4rem;
+  }
 }
 
 #function-list {
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
-  font-family: "Inconsolata G", monospace;
-  height: 100vh;
-  position: sticky;
-  top: 0;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
-#function-list a {
+  list-style: none;
   padding: 0;
 }
 
-#function-list a.active {
-  color: #000;
-  font-weight: bold;
-}
-
-#function-list ul {
-  font-size: 0.9rem;
-  margin-top: 16px;
-  padding-left: 0;
-}
-
-.hljs {
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.hljs-title {
-}
-
-.hljs-keyword {
-  color: rgb(127, 0, 84);
-}
-
-.hljs-type {
-  color: rgb(0, 15, 155);
+#function-list {
+  .function-link {
+    font: normal 0.9rem/1.4rem $codeFont;
+  }
 }
