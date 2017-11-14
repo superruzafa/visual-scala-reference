@@ -20,6 +20,9 @@ a:visited {
 body {
   font: normal 16px/1.4rem helvetica, sans-serif; }
 
+code {
+  font-family: "Inconsolata G", monospace; }
+
 html:lang(en) .i18n:not(:lang(en)) {
   display: none;
   visibility: hidden; }
@@ -110,7 +113,8 @@ html:lang(es) .i18n:not(:lang(es)) {
     background: #f6f8fa;
     border-radius: 3px;
     display: block;
-    font: normal 0.9rem/1rem "Inconsolata G", monospace;
+    font-size: 0.9rem;
+    line-height: 1rem;
     margin-bottom: 1rem;
     overflow-x: scroll;
     padding: 1rem; }

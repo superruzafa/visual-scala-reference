@@ -29,6 +29,10 @@ body {
   font: normal 16px/1.4rem helvetica, sans-serif;
 }
 
+code {
+  font-family:  $codeFont;
+}
+
 html:lang(en) .i18n:not(:lang(en)) { display: none; visibility: hidden; }
 html:lang(es) .i18n:not(:lang(es)) { display: none; visibility: hidden; }
 
@@ -41,15 +45,15 @@ html:lang(es) .i18n:not(:lang(es)) { display: none; visibility: hidden; }
   position: sticky;
   top: calc(1.4rem + 2rem);
   width: 20ex;
-  
+
   @media (max-width: 550px) {
     display: none;
   }
-  
+
   #function-list {
     list-style: none;
     margin-bottom: 1rem;
-    
+
     .function-link {
       font: normal 0.85rem/1.4rem $codeFont;
     }
@@ -68,36 +72,36 @@ html:lang(es) .i18n:not(:lang(es)) { display: none; visibility: hidden; }
   position: sticky;
   top: 0;
   z-index: 1;
-  
+
   a:link,
   a:visited {
     color: inherit;
   }
-  
+
   #main-title {
     float: left;
     font-size: 1em;
     font-weight: 500;
     margin-right: 1rem;
     white-space: nowrap;
-    
+
     @media (max-width: 550px) {
       float: none;
       text-align: center;
       margin: 0 0 0.9rem 0;
     }
   }
-  
+
   #social {
     position: absolute;
     right: 1rem;
     top: 1rem;
-    
+
     @media (max-width: 550px) {
       display: none;
     }
   }
-  
+
   #main-languages {
     #main-language-list {
       font-size: 1em;
@@ -123,50 +127,51 @@ html:lang(es) .i18n:not(:lang(es)) { display: none; visibility: hidden; }
 #function-entries {
   margin-left: calc(1rem + 20ex + 1rem);
   padding: 1rem;
-  
+
   @media (max-width: 550px) {
     margin-left: 0;
   }
-  
+
   .function-entry {
     .function-description {
       margin-bottom: 1.2rem;
     }
-    
+
     .function-figure {
       img {
         max-width: 100%;
       }
     }
-    
+
     .function-name {
       font: normal 1.6rem/1.6rem $codeFont;
       margin-bottom: 1.8rem;
     }
-    
+
     .function-signature {
       background: #f6f8fa;
       border-radius: 3px;
       display: block;
-      font: normal 0.9rem/1rem $codeFont;
+      font-size: 0.9rem;
+      line-height: 1rem;
       margin-bottom: 1rem;
       overflow-x: scroll;
       padding: 1rem;
     }
-    
+
     &::before {
       content: "";
       display: block;
       height: 4.2rem;
       margin-top: -4.2rem;
       visibility: hidden;
-      
+
       @media (max-width: 550px) {
         height: 6.8rem;
         margin-top: -6.8rem;
       }
     }
-    
+
     & + .function-entry {
       margin-top: 4rem;
     }
