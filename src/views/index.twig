@@ -1,0 +1,25 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+<aside id="main-aside" class="col-sm-4 col-md-3 col-lg-2 d-none d-sm-block">
+  <ul id="function-list">
+    {% for function in functions %}
+      <li class="function-link"><a href="#{{ function.name }}">{{ function.name }}</a></li>
+    {% endfor %}
+  </ul>
+</aside>
+<main id="function-entries" class="col-12 col-sm-8 col-md-9 col-lg-10">
+  {% for function in functions %}
+    <article id="{{ function.name }}" class="function-entry">
+      <h2 class="function-name">{{ function.name }}</h2>
+      {% for lang, text in function.description %}
+        <p class="function-description i18n" lang="{{ lang }}">{{ text | raw }}</p>
+      {% endfor %}
+      <pre class="function-signature"><code class="scala">{{ function.signature | raw }}</code></pre>
+      <figure class="function-figure">
+        <img src="images/{{ function.name }}.svg" alt="" />
+      </figure>
+    </article>
+  {% endfor %}
+</main>
+{% endblock %}

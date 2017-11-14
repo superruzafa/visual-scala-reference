@@ -1,7 +1,11 @@
 SHELL := /bin/bash
 
+CACHEDIR := .cache
+
 CURL := curl
 PHP := php
+SASS := sass
+SASSFLAGS := --scss --cache-location $(CACHEDIR)/sass --sourcemap=none
 TEX2PDF := pdflatex
 TEX2PDFFLAGS := -halt-on-error
 PDF2PNG := convert
@@ -9,23 +13,23 @@ PDF2PNGFLAGS := -density 200 -quality 10 -define png:include-chunk=none
 PDF2SVG := pdf2svg
 PDF2SVGFLAGS :=
 
-LANGUAGES := en es
-
 DATAFILES := $(wildcard src/data/*)
 VIEWFILES := $(wildcard src/views/*)
 TEXSHAREDFILES := $(wildcard src/images/_*.tex)
 TEXFILES := $(filter-out $(TEXSHAREDFILES),$(wildcard src/images/*))
-PNGFILES := $(patsubst src/images/%.tex,docs/images/%.png,$(TEXFILES))
+PNGFILES := $(addprefix docs/images/,filter.png map.png foldLeft.png)
 SVGFILES := $(patsubst src/images/%.tex,docs/images/%.svg,$(TEXFILES))
-HTMLFILES := $(foreach lang,$(LANGUAGES),$(addprefix docs/,index-$(lang).html))
-TARGET := $(HTMLFILES) $(PNGFILES) $(SVGFILES)
-
-CACHEDIR := .cache
+CSSFILES := docs/style.css
+HTMLFILES := docs/index.html
+TARGET := $(HTMLFILES) $(CSSFILES) $(PNGFILES) $(SVGFILES)
 
 all: $(TARGET)
 
 docs/%.html: src/build-index.php $(VIEWFILES) $(DATAFILES)
 	$(PHP) src/build-index.php $@
+
+docs/%.css: src/%.scss
+	$(SASS) $(SASSFLAGS) $< $@
 
 docs/%.png: $(CACHEDIR)/%.pdf
 	mkdir -p $(@D)
