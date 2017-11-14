@@ -69,6 +69,7 @@
           <li class="function-link"><a href="#exists">exists</a></li>
           <li class="function-link"><a href="#fill">fill</a></li>
           <li class="function-link"><a href="#filter">filter</a></li>
+          <li class="function-link"><a href="#filterKeys">filterKeys</a></li>
           <li class="function-link"><a href="#filterNot">filterNot</a></li>
           <li class="function-link"><a href="#find">find</a></li>
           <li class="function-link"><a href="#flatMap">flatMap</a></li>
@@ -78,6 +79,7 @@
           <li class="function-link"><a href="#foldRight">foldRight</a></li>
           <li class="function-link"><a href="#forall">forall</a></li>
           <li class="function-link"><a href="#foreach">foreach</a></li>
+          <li class="function-link"><a href="#getOrElse">getOrElse</a></li>
           <li class="function-link"><a href="#groupBy">groupBy</a></li>
           <li class="function-link"><a href="#grouped">grouped</a></li>
           <li class="function-link"><a href="#head">head</a></li>
@@ -90,6 +92,7 @@
           <li class="function-link"><a href="#inits">inits</a></li>
           <li class="function-link"><a href="#intersect">intersect</a></li>
           <li class="function-link"><a href="#isEmpty">isEmpty</a></li>
+          <li class="function-link"><a href="#keys">keys</a></li>
           <li class="function-link"><a href="#last">last</a></li>
           <li class="function-link"><a href="#lastIndexOf">lastIndexOf</a></li>
           <li class="function-link"><a href="#lastIndexOfSlice">lastIndexOfSlice</a></li>
@@ -98,6 +101,7 @@
           <li class="function-link"><a href="#length">length</a></li>
           <li class="function-link"><a href="#map">map</a></li>
           <li class="function-link"><a href="#mapConserve">mapConserve</a></li>
+          <li class="function-link"><a href="#mapValues">mapValues</a></li>
           <li class="function-link"><a href="#max">max</a></li>
           <li class="function-link"><a href="#maxBy">maxBy</a></li>
           <li class="function-link"><a href="#min">min</a></li>
@@ -144,6 +148,9 @@
           <li class="function-link"><a href="#unzip">unzip</a></li>
           <li class="function-link"><a href="#unzip3">unzip3</a></li>
           <li class="function-link"><a href="#updated">updated</a></li>
+          <li class="function-link"><a href="#values">values</a></li>
+          <li class="function-link"><a href="#withDefault">withDefault</a></li>
+          <li class="function-link"><a href="#withDefaultValue">withDefaultValue</a></li>
           <li class="function-link"><a href="#zip">zip</a></li>
           <li class="function-link"><a href="#zipAll">zipAll</a></li>
           <li class="function-link"><a href="#zipWithIndex">zipWithIndex</a></li>
@@ -303,6 +310,15 @@
         <img src="images/filter.svg" alt="" />
       </figure>
     </article>
+      <article id="filterKeys" class="function-entry">
+      <h2 class="function-name">filterKeys</h2>
+              <p class="function-description i18n" lang="en">Filters this map by retaining only keys satisfying a predicate.</p>
+              <p class="function-description i18n" lang="es">Filtra esta mapa reteniendo solo las claves que satisfacen un predicado.</p>
+            <pre class="function-signature"><code class="scala">def filterKeys(p: (K) ⇒ Boolean): Map[K, V]</code></pre>
+      <figure class="function-figure">
+        <img src="images/filterKeys.svg" alt="" />
+      </figure>
+    </article>
       <article id="filterNot" class="function-entry">
       <h2 class="function-name">filterNot</h2>
               <p class="function-description i18n" lang="en">Selects all elements of this collection which do not satisfy a predicate.</p>
@@ -382,6 +398,15 @@
             <pre class="function-signature"><code class="scala">def foreach(f: (A) ⇒ Unit): Unit</code></pre>
       <figure class="function-figure">
         <img src="images/foreach.svg" alt="" />
+      </figure>
+    </article>
+      <article id="getOrElse" class="function-entry">
+      <h2 class="function-name">getOrElse</h2>
+              <p class="function-description i18n" lang="en">Returns the value associated with a key, or a default value if the key is not contained in the map.</p>
+              <p class="function-description i18n" lang="es">Devuelve el valor asociado a una clavo o un valor predeterminado si el mapa no contiene dicha clave.</p>
+            <pre class="function-signature"><code class="scala">def getOrElse(key: K, default: ⇒ V): V</code></pre>
+      <figure class="function-figure">
+        <img src="images/getOrElse.svg" alt="" />
       </figure>
     </article>
       <article id="groupBy" class="function-entry">
@@ -492,6 +517,15 @@
         <img src="images/isEmpty.svg" alt="" />
       </figure>
     </article>
+      <article id="keys" class="function-entry">
+      <h2 class="function-name">keys</h2>
+              <p class="function-description i18n" lang="en">Collects all keys of this map in an iterable collection.</p>
+              <p class="function-description i18n" lang="es">Recopila todas las claves de este mapa en una coleccion iterable.</p>
+            <pre class="function-signature"><code class="scala">def keys: Iterable[K]</code></pre>
+      <figure class="function-figure">
+        <img src="images/keys.svg" alt="" />
+      </figure>
+    </article>
       <article id="last" class="function-entry">
       <h2 class="function-name">last</h2>
               <p class="function-description i18n" lang="en">Selects the last element.</p>
@@ -562,6 +596,15 @@
             <pre class="function-signature"><code class="scala">def mapConserve(f: (A) ⇒ A): <em>Collection</em>[A]</code></pre>
       <figure class="function-figure">
         <img src="images/mapConserve.svg" alt="" />
+      </figure>
+    </article>
+      <article id="mapValues" class="function-entry">
+      <h2 class="function-name">mapValues</h2>
+              <p class="function-description i18n" lang="en">Transforms this map by applying a function to every retrieved value.</p>
+              <p class="function-description i18n" lang="es">Transforma este mapa aplicando una función a cada valor.</p>
+            <pre class="function-signature"><code class="scala">def mapValues[W](f: (V) ⇒ W): Map[K, W]</code></pre>
+      <figure class="function-figure">
+        <img src="images/mapValues.svg" alt="" />
       </figure>
     </article>
       <article id="max" class="function-entry">
@@ -976,6 +1019,33 @@
             <pre class="function-signature"><code class="scala">def updated(index: Int, elem: A): <em>Collection</em>[A]</code></pre>
       <figure class="function-figure">
         <img src="images/updated.svg" alt="" />
+      </figure>
+    </article>
+      <article id="values" class="function-entry">
+      <h2 class="function-name">values</h2>
+              <p class="function-description i18n" lang="en">Collects all values of this map in an iterable collection.</p>
+              <p class="function-description i18n" lang="es">Recopila todos los valores de este mapa en una coleccion iterable.</p>
+            <pre class="function-signature"><code class="scala">def values: Iterable[V]</code></pre>
+      <figure class="function-figure">
+        <img src="images/values.svg" alt="" />
+      </figure>
+    </article>
+      <article id="withDefault" class="function-entry">
+      <h2 class="function-name">withDefault</h2>
+              <p class="function-description i18n" lang="en">The same map with a given default function.</p>
+              <p class="function-description i18n" lang="es">El mismo mapa con una función predeterminada dado.</p>
+            <pre class="function-signature"><code class="scala">def withDefault[V1 >: V](f<sub>def</sub>: (K) ⇒ V1): Map[K, V1]</code></pre>
+      <figure class="function-figure">
+        <img src="images/withDefault.svg" alt="" />
+      </figure>
+    </article>
+      <article id="withDefaultValue" class="function-entry">
+      <h2 class="function-name">withDefaultValue</h2>
+              <p class="function-description i18n" lang="en">The same map with a given default value.</p>
+              <p class="function-description i18n" lang="es">El mismo mapa con un valor predeterminado dado.</p>
+            <pre class="function-signature"><code class="scala">def withDefaultValue[V1 >: V](v<sub>def</sub>: V1): Map[K, V1]</code></pre>
+      <figure class="function-figure">
+        <img src="images/withDefaultValue.svg" alt="" />
       </figure>
     </article>
       <article id="zip" class="function-entry">

@@ -101,6 +101,12 @@
     en: Selects all elements of this traversable collection which satisfy a predicate.
     es: Selecciona todos los elementos de la colección que satisfacen un predicado.
 
+- name: filterKeys
+  signature: "def filterKeys(p: (K) ⇒ Boolean): Map[K, V]"
+  description:
+    en: Filters this map by retaining only keys satisfying a predicate.
+    es: Filtra esta mapa reteniendo solo las claves que satisfacen un predicado.
+
 - name: filterNot
   signature: "def filterNot(p: (A) ⇒ Boolean): <em>Collection</em>[A]"
   description:
@@ -154,6 +160,12 @@
   description:
     en: Applies a function <var>f</var> to all elements of this collection.
     es: Aplica una función <var>f</var> a todos los elementos de esta colección.
+
+- name: getOrElse
+  signature: "def getOrElse(key: K, default: ⇒ V): V"
+  description:
+    en: Returns the value associated with a key, or a default value if the key is not contained in the map.
+    es: Devuelve el valor asociado a una clavo o un valor predeterminado si el mapa no contiene dicha clave.
 
 - name: groupBy
   signature: "def groupBy[K](f: (A) ⇒ K): Map[K, <em>Collection</em>[A]]"
@@ -227,6 +239,12 @@
     en: Tests whether this collection is empty.
     es: Comprueba si esta colección está vacía.
 
+- name: keys
+  signature: "def keys: Iterable[K]"
+  description:
+    en: Collects all keys of this map in an iterable collection.
+    es: Recopila todas las claves de este mapa en una coleccion iterable.
+
 - name: last
   signature: "def last: A"
   description:
@@ -278,6 +296,12 @@
     es:
       Construye una nueva colección aplicando una función a todos los elementos de esta colección.
       Igual que <code>xs map f</code> pero devuelve <var>xs</var> intacto si la función <var>f</var> mapea todos los elementos a sí mismos (determinado por <var>eq</var>)
+
+- name: mapValues
+  signature: "def mapValues[W](f: (V) ⇒ W): Map[K, W]"
+  description:
+    en: Transforms this map by applying a function to every retrieved value.
+    es: Transforma este mapa aplicando una función a cada valor.
 
 - name: max
   signature: "def max: A"
@@ -554,6 +578,24 @@
   description:
     en: A copy of this collection with one single replaced element.
     es: Una copia de esta colección con un único elemento reemplazado.
+
+- name: values
+  signature: "def values: Iterable[V]"
+  description:
+    en: Collects all values of this map in an iterable collection.
+    es: Recopila todos los valores de este mapa en una coleccion iterable.
+
+- name: withDefault
+  signature: "def withDefault[V1 >: V](f<sub>def</sub>: (K) ⇒ V1): Map[K, V1]"
+  description:
+    en: The same map with a given default function.
+    es: El mismo mapa con una función predeterminada dado.
+
+- name: withDefaultValue
+  signature: "def withDefaultValue[V1 >: V](v<sub>def</sub>: V1): Map[K, V1]"
+  description:
+    en: The same map with a given default value.
+    es: El mismo mapa con un valor predeterminado dado.
 
 - name: zip
   signature: "def zip[B](that: GenIterable[B]): <em>Collection</em>[A, B]"

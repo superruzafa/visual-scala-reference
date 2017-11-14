@@ -1,0 +1,44 @@
+\input{_header.tex}
+
+\matrix (K) [map keys] {
+    \node (k1)       {$k_1$};     \\
+    \node (k2)       {$k_2$};     \\
+    \vellipsis                    \\
+    \node (ki)       {$k_i$};     \\
+    \node (ki+1)     {$k_{i+1}$}; \\
+    \vellipsis                    \\
+    \node (kn)       {$k_n$};     \\
+};
+
+\foreach \i/\b in {1/\true, 2/\false, i/\true, i+1/\false, n/\true} {
+  \node (v\i) [elem, right=1cm of k\i] {$v_{\i}$};
+  \node (p\i) [predicate, left=0.5em of k\i, pin={[function result, pin position=190] \b}] {$\texttt{p}(k_{\i})?$};
+  \draw (k\i) -- (p\i);
+  \draw (k\i) [map to] -- (v\i);
+}
+
+\draw (K.north west) [draw=none] -- coordinate (x) (K.south east);
+
+\matrix (Kf) [map keys, right=40mm of x] {
+    \node (kf1)       {$k_1$}; \\
+    \vellipsis                 \\
+    \node (kfi)       {$k_i$}; \\
+    \vellipsis                 \\
+    \node (kfn)       {$k_n$}; \\
+};
+
+\foreach \i in {1, i, n} {
+  \node (vf\i) [elem, right=1cm of kf\i] {$v_{\i}$};
+  \draw (kf\i) [map to] -- (vf\i);
+}
+
+\draw ([xshift=20mm] k1.north east) [topbrace] -- coordinate (f1) ([xshift=20mm] k1.south east);
+\draw (f1) [arrow, from brace, out=0, in=180] to (kf1);
+
+\draw ([xshift=20mm] ki.north east) [topbrace] -- coordinate (fi) ([xshift=20mm] ki.south east);
+\draw (fi) [arrow, from brace, out=0, in=180] to (kfi);
+
+\draw ([xshift=20mm] kn.north east) [topbrace] -- coordinate (fn) ([xshift=20mm] kn.south east);
+\draw (fn) [arrow, from brace, out=0, in=180] to (kfn);
+
+\input{_footer.tex}
