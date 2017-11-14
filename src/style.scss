@@ -5,24 +5,9 @@
 
 $codeFont: "Inconsolata G", monospace;
 
-.function-entry {
-  
-  &::before {
-    display: block;
-    height: 4rem;
-    margin-top: -4rem;
-    visibility: hidden;
-    content: "";
-  }
-  
-  .function-name {
-    font: normal 1.8rem/1.8rem $codeFont;
-    margin-bottom: 1.6rem;
-  }
-  
-  & + & {
-    margin-top: 4rem;
-  }
+* {
+  margin: 0;
+  padding: 0;
 }
 
 .hljs-keyword {
@@ -34,104 +19,156 @@ $codeFont: "Inconsolata G", monospace;
 }
 
 a,
-a:link {
+a:link,
+a:visited {
+  color: #333;
   text-decoration: none;
 }
 
-a:link,
-a:visited {
-  color: #444;
+body {
+  font: normal 16px/1.4rem helvetica, sans-serif;
 }
 
-a:hover,
-a:active {
-  color: #000;
-}
-
-code.scala {
-  background: #f6f8fa;
-  border-radius: 3px;
-  display: block;
-  font: normal 0.9rem/1rem $codeFont;
-  overflow-x: scroll;
-  padding: 1rem;
-}
-
-html:lang(en) .i18n:not(:lang(en)) { display: none; visibility: none; }
-html:lang(es) .i18n:not(:lang(es)) { display: none; visibility: none; }
-
-#function-list {
-  list-style: none;
-  padding: 0;
-
-  .function-link {
-    font: normal 0.9rem/1.4rem $codeFont;
-  }
-}
+html:lang(en) .i18n:not(:lang(en)) { display: none; visibility: hidden; }
+html:lang(es) .i18n:not(:lang(es)) { display: none; visibility: hidden; }
 
 #main-aside {
   border-right: 1px solid #eee;
-  height: calc(100vh - 3.2rem);
+  float: left;
+  height: calc(100vh - 4rem - 1rem - 1rem);
   overflow-y: scroll;
   padding: 1rem;
   position: sticky;
-  top: calc(3.2rem);
+  top: calc(1.4rem + 2rem);
+  width: 20ex;
+  
+  @media (max-width: 550px) {
+    display: none;
+  }
+  
+  #function-list {
+    list-style: none;
+    margin-bottom: 1rem;
+    
+    .function-link {
+      font: normal 0.85rem/1.4rem $codeFont;
+    }
+  }
 }
 
 #main-header {
   background: #c52025;
   background: linear-gradient(to bottom, #eb2024 0%, #c52025 100%);
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
   color: #fff;
+  font-size: 1rem;
+  line-height: 1.4rem;
   overflow: hidden;
-  padding: 0 15px;
+  padding: 1rem;
   position: sticky;
   top: 0;
   z-index: 1;
   
   a:link,
   a:visited {
-    color: #fff;
+    color: inherit;
   }
-
-  #main-languages {
-    margin: 0;
-    
-    #main-language-list {
-      margin: 0;
-    }
-    
-    .language-link {
-      display: inline;
-      line-height: 3.2rem;
-      
-      & + .language-link {
-        margin-left: 2ex;
-      }
-    }
-  }
-
+  
   #main-title {
     float: left;
-    font-size: 1.2rem;
-    font-weight: normal;
-    line-height: 3rem;
-    margin: 0 4ex 0 0;
+    font-size: 1em;
+    font-weight: 500;
+    margin-right: 1rem;
+    white-space: nowrap;
+    
+    @media (max-width: 550px) {
+      float: none;
+      text-align: center;
+      margin: 0 0 0.9rem 0;
+    }
   }
   
   #social {
-    a {
-      color: #fff;
-    }
-    
     position: absolute;
-    top: 0;
-    right: 15px;
-    line-height: 3rem;
-    height: 0;
+    right: 1rem;
+    top: 1rem;
+    
+    @media (max-width: 550px) {
+      display: none;
+    }
+  }
+  
+  #main-languages {
+    #main-language-list {
+      font-size: 1em;
+      list-style: none;
+      white-space: nowrap;
+
+      @media (max-width: 550px) {
+        text-align: center;
+      }
+
+      li {
+        display: inline;
+        padding: 0 0.2rem;
+
+        @media (max-width: 550px) {
+          font-size: 0.9rem;
+        }
+      }
+    }
   }
 }
 
 #function-entries {
+  margin-left: calc(1rem + 20ex + 1rem);
   padding: 1rem;
+  
+  @media (max-width: 550px) {
+    margin-left: 0;
+  }
+  
+  .function-entry {
+    .function-description {
+      margin-bottom: 1.2rem;
+    }
+    
+    .function-figure {
+      img {
+        max-width: 100%;
+      }
+    }
+    
+    .function-name {
+      font: normal 1.6rem/1.6rem $codeFont;
+      margin-bottom: 1.8rem;
+    }
+    
+    .function-signature {
+      background: #f6f8fa;
+      border-radius: 3px;
+      display: block;
+      font: normal 0.9rem/1rem $codeFont;
+      margin-bottom: 1rem;
+      overflow-x: scroll;
+      padding: 1rem;
+    }
+    
+    &::before {
+      content: "";
+      display: block;
+      height: 4.2rem;
+      margin-top: -4.2rem;
+      visibility: hidden;
+      
+      @media (max-width: 550px) {
+        height: 6.8rem;
+        margin-top: -6.8rem;
+      }
+    }
+    
+    & + .function-entry {
+      margin-top: 4rem;
+    }
+  }
 }

@@ -4,7 +4,6 @@
   <title>Visual Scala Reference</title>
   <meta name="description" content="A visual guide to Scala functions. Graphical examples of Scala functions." />
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="assets/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
   <script src="assets/highlight.pack.js"></script>
   <script src="script.js"></script>
@@ -49,965 +48,961 @@
     </a>
     </nav>
   </header>
-  <div class="container-fluid">
-  <div class="row">
-    <aside id="main-aside" class="col-sm-4 col-md-3 col-lg-2 d-none d-sm-block">
-      <ul id="function-list">
-                  <li class="function-link"><a href="#aggregate">aggregate</a></li>
-                  <li class="function-link"><a href="#collect">collect</a></li>
-                  <li class="function-link"><a href="#collectFirst">collectFirst</a></li>
-                  <li class="function-link"><a href="#combinations">combinations</a></li>
-                  <li class="function-link"><a href="#concat">concat</a></li>
-                  <li class="function-link"><a href="#contains">contains</a></li>
-                  <li class="function-link"><a href="#containsSlice">containsSlice</a></li>
-                  <li class="function-link"><a href="#count">count</a></li>
-                  <li class="function-link"><a href="#diff">diff</a></li>
-                  <li class="function-link"><a href="#distinct">distinct</a></li>
-                  <li class="function-link"><a href="#drop">drop</a></li>
-                  <li class="function-link"><a href="#dropRight">dropRight</a></li>
-                  <li class="function-link"><a href="#dropWhile">dropWhile</a></li>
-                  <li class="function-link"><a href="#endsWith">endsWith</a></li>
-                  <li class="function-link"><a href="#exists">exists</a></li>
-                  <li class="function-link"><a href="#fill">fill</a></li>
-                  <li class="function-link"><a href="#filter">filter</a></li>
-                  <li class="function-link"><a href="#filterNot">filterNot</a></li>
-                  <li class="function-link"><a href="#find">find</a></li>
-                  <li class="function-link"><a href="#flatMap">flatMap</a></li>
-                  <li class="function-link"><a href="#flatten">flatten</a></li>
-                  <li class="function-link"><a href="#fold">fold</a></li>
-                  <li class="function-link"><a href="#foldLeft">foldLeft</a></li>
-                  <li class="function-link"><a href="#foldRight">foldRight</a></li>
-                  <li class="function-link"><a href="#forall">forall</a></li>
-                  <li class="function-link"><a href="#foreach">foreach</a></li>
-                  <li class="function-link"><a href="#groupBy">groupBy</a></li>
-                  <li class="function-link"><a href="#grouped">grouped</a></li>
-                  <li class="function-link"><a href="#head">head</a></li>
-                  <li class="function-link"><a href="#headOption">headOption</a></li>
-                  <li class="function-link"><a href="#indexOf">indexOf</a></li>
-                  <li class="function-link"><a href="#indexOfSlice">indexOfSlice</a></li>
-                  <li class="function-link"><a href="#indexWhere">indexWhere</a></li>
-                  <li class="function-link"><a href="#indices">indices</a></li>
-                  <li class="function-link"><a href="#init">init</a></li>
-                  <li class="function-link"><a href="#inits">inits</a></li>
-                  <li class="function-link"><a href="#intersect">intersect</a></li>
-                  <li class="function-link"><a href="#isEmpty">isEmpty</a></li>
-                  <li class="function-link"><a href="#last">last</a></li>
-                  <li class="function-link"><a href="#lastIndexOf">lastIndexOf</a></li>
-                  <li class="function-link"><a href="#lastIndexOfSlice">lastIndexOfSlice</a></li>
-                  <li class="function-link"><a href="#lastIndexWhere">lastIndexWhere</a></li>
-                  <li class="function-link"><a href="#lastOption">lastOption</a></li>
-                  <li class="function-link"><a href="#length">length</a></li>
-                  <li class="function-link"><a href="#map">map</a></li>
-                  <li class="function-link"><a href="#mapConserve">mapConserve</a></li>
-                  <li class="function-link"><a href="#max">max</a></li>
-                  <li class="function-link"><a href="#maxBy">maxBy</a></li>
-                  <li class="function-link"><a href="#min">min</a></li>
-                  <li class="function-link"><a href="#minBy">minBy</a></li>
-                  <li class="function-link"><a href="#mkString">mkString</a></li>
-                  <li class="function-link"><a href="#nonEmpty">nonEmpty</a></li>
-                  <li class="function-link"><a href="#padTo">padTo</a></li>
-                  <li class="function-link"><a href="#partition">partition</a></li>
-                  <li class="function-link"><a href="#patch">patch</a></li>
-                  <li class="function-link"><a href="#permutations">permutations</a></li>
-                  <li class="function-link"><a href="#prefixLength">prefixLength</a></li>
-                  <li class="function-link"><a href="#product">product</a></li>
-                  <li class="function-link"><a href="#range">range</a></li>
-                  <li class="function-link"><a href="#reduce">reduce</a></li>
-                  <li class="function-link"><a href="#reduceLeft">reduceLeft</a></li>
-                  <li class="function-link"><a href="#reduceLeftOption">reduceLeftOption</a></li>
-                  <li class="function-link"><a href="#reduceOption">reduceOption</a></li>
-                  <li class="function-link"><a href="#reduceRight">reduceRight</a></li>
-                  <li class="function-link"><a href="#reduceRightOption">reduceRightOption</a></li>
-                  <li class="function-link"><a href="#reverse">reverse</a></li>
-                  <li class="function-link"><a href="#reverseMap">reverseMap</a></li>
-                  <li class="function-link"><a href="#sameElements">sameElements</a></li>
-                  <li class="function-link"><a href="#scan">scan</a></li>
-                  <li class="function-link"><a href="#scanLeft">scanLeft</a></li>
-                  <li class="function-link"><a href="#scanRight">scanRight</a></li>
-                  <li class="function-link"><a href="#segmentLength">segmentLength</a></li>
-                  <li class="function-link"><a href="#size">size</a></li>
-                  <li class="function-link"><a href="#slice">slice</a></li>
-                  <li class="function-link"><a href="#sliding">sliding</a></li>
-                  <li class="function-link"><a href="#sortBy">sortBy</a></li>
-                  <li class="function-link"><a href="#sortWith">sortWith</a></li>
-                  <li class="function-link"><a href="#sorted">sorted</a></li>
-                  <li class="function-link"><a href="#span">span</a></li>
-                  <li class="function-link"><a href="#splitAt">splitAt</a></li>
-                  <li class="function-link"><a href="#startsWith">startsWith</a></li>
-                  <li class="function-link"><a href="#sum">sum</a></li>
-                  <li class="function-link"><a href="#tabulate">tabulate</a></li>
-                  <li class="function-link"><a href="#tail">tail</a></li>
-                  <li class="function-link"><a href="#tails">tails</a></li>
-                  <li class="function-link"><a href="#take">take</a></li>
-                  <li class="function-link"><a href="#takeRight">takeRight</a></li>
-                  <li class="function-link"><a href="#takeWhile">takeWhile</a></li>
-                  <li class="function-link"><a href="#union">union</a></li>
-                  <li class="function-link"><a href="#unzip">unzip</a></li>
-                  <li class="function-link"><a href="#unzip3">unzip3</a></li>
-                  <li class="function-link"><a href="#updated">updated</a></li>
-                  <li class="function-link"><a href="#zip">zip</a></li>
-                  <li class="function-link"><a href="#zipAll">zipAll</a></li>
-                  <li class="function-link"><a href="#zipWithIndex">zipWithIndex</a></li>
-              </ul>
-    </aside>
-    <main id="function-entries" class="col-12 col-sm-8 col-md-9 col-lg-10">
-              <article id="aggregate" class="function-entry">
-          <h2 class="function-name">aggregate</h2>
-                      <p class="i18n" lang="en">Aggregates the results of applying an operator to subsequent elements.</p>
-                      <p class="i18n" lang="es">Agrega los resultados de aplicar un operador a elementos subsecuentes.</p>
-                    <pre class="signature"><code class="scala">def aggregate[B](z: ⇒ B)(seqop: (B, A) ⇒ B, combop: (B, B) ⇒ B): B</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/aggregate.svg" alt="" />
-          </figure>
-        </article>
-              <article id="collect" class="function-entry">
-          <h2 class="function-name">collect</h2>
-                      <p class="i18n" lang="en">Builds a new collection by applying a partial function to all elements of this collection on which the function is defined.</p>
-                      <p class="i18n" lang="es">Construye una nueva colección aplicando una función parcial a todos los elementos de esta colección para los que dicha función está definida.</p>
-                    <pre class="signature"><code class="scala">def collect[B](pf: PartialFunction[A, B]): <em>Collection</em>[B]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/collect.svg" alt="" />
-          </figure>
-        </article>
-              <article id="collectFirst" class="function-entry">
-          <h2 class="function-name">collectFirst</h2>
-                      <p class="i18n" lang="en">Finds the first element of the collection for which the given partial function is defined, and applies the partial function to it.</p>
-                      <p class="i18n" lang="es">Encuentra el primer elemento de la colección para el cual está definida una función parcial, aplicando después dicha función parcial.</p>
-                    <pre class="signature"><code class="scala">def collectFirst[B](pf: PartialFunction[A, B]): Option[B]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/collectFirst.svg" alt="" />
-          </figure>
-        </article>
-              <article id="combinations" class="function-entry">
-          <h2 class="function-name">combinations</h2>
-                      <p class="i18n" lang="en">Iterates over combinations.</p>
-                      <p class="i18n" lang="es">Itera sobre combinaciones.</p>
-                    <pre class="signature"><code class="scala">def combinations(n: Int): Iterator[<em>Collection</em>[A]]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/combinations.svg" alt="" />
-          </figure>
-        </article>
-              <article id="concat" class="function-entry">
-          <h2 class="function-name">concat</h2>
-                      <p class="i18n" lang="en">Concatenates all argument collections into a single collection.</p>
-                      <p class="i18n" lang="es">Concatena todas las colecciones argumento en una única colección.</p>
-                    <pre class="signature"><code class="scala">def <em>Collection</em>.concat(xss: Traversable[A]*): <em>Collection</em>[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/concat.svg" alt="" />
-          </figure>
-        </article>
-              <article id="contains" class="function-entry">
-          <h2 class="function-name">contains</h2>
-                      <p class="i18n" lang="en">Tests whether this collection contains a given value as an element.</p>
-                      <p class="i18n" lang="es">Comprueba si esta colección contiene un valor dado en forma de elemento.</p>
-                    <pre class="signature"><code class="scala">def contains[A1 >: A](elem: A1): Boolean</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/contains.svg" alt="" />
-          </figure>
-        </article>
-              <article id="containsSlice" class="function-entry">
-          <h2 class="function-name">containsSlice</h2>
-                      <p class="i18n" lang="en">Tests whether this collection contains a given sequence as a slice.</p>
-                      <p class="i18n" lang="es">Comprueba si esta colección contiene una secuencia dada en forma de subcolección.</p>
-                    <pre class="signature"><code class="scala">def containsSlice[B](that: GenSeq[B]): Boolean</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/containsSlice.svg" alt="" />
-          </figure>
-        </article>
-              <article id="count" class="function-entry">
-          <h2 class="function-name">count</h2>
-                      <p class="i18n" lang="en">Counts the number of elements in the collection which satisfy a predicate.</p>
-                      <p class="i18n" lang="es">Cuenta el número de elementos en la colección que satisfacen un predicado.</p>
-                    <pre class="signature"><code class="scala">def count(p: (A) ⇒ Boolean): Int</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/count.svg" alt="" />
-          </figure>
-        </article>
-              <article id="diff" class="function-entry">
-          <h2 class="function-name">diff</h2>
-                      <p class="i18n" lang="en">Computes the multiset difference between this and another collection.</p>
-                      <p class="i18n" lang="es">Calcula la diferencia multiconjunto entre esta colección y otra.</p>
-                    <pre class="signature"><code class="scala">def diff(that: Seq[A]): <em>Collection</em>[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/diff.svg" alt="" />
-          </figure>
-        </article>
-              <article id="distinct" class="function-entry">
-          <h2 class="function-name">distinct</h2>
-                      <p class="i18n" lang="en">Builds a new collection from this one without any duplicate elements.</p>
-                      <p class="i18n" lang="es">Construye una nueva colección a partir de esta sin ningún elemento duplicado.</p>
-                    <pre class="signature"><code class="scala">def distinct: <em>Collection</em>[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/distinct.svg" alt="" />
-          </figure>
-        </article>
-              <article id="drop" class="function-entry">
-          <h2 class="function-name">drop</h2>
-                      <p class="i18n" lang="en">Selects all elements except the first <var>n</var> ones.</p>
-                      <p class="i18n" lang="es">Selecciona todos los elementos excepto los <var>n</var> primeros.</p>
-                    <pre class="signature"><code class="scala">def drop(n: Int): <em>Collection</em>[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/drop.svg" alt="" />
-          </figure>
-        </article>
-              <article id="dropRight" class="function-entry">
-          <h2 class="function-name">dropRight</h2>
-                      <p class="i18n" lang="en">Select all elements except last <var>n</var> ones.</p>
-                      <p class="i18n" lang="es">Selecciona todos los elementos excepto los <var>n</var> últimos.</p>
-                    <pre class="signature"><code class="scala">def dropRight(n: Int): <em>Collection</em>[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/dropRight.svg" alt="" />
-          </figure>
-        </article>
-              <article id="dropWhile" class="function-entry">
-          <h2 class="function-name">dropWhile</h2>
-                      <p class="i18n" lang="en">Drops longest prefix of elements that satisfy a predicate.</p>
-                      <p class="i18n" lang="es">Descarta el mayor prefijo de elementos que satisfacen un predicado.</p>
-                    <pre class="signature"><code class="scala">def dropWhile(p: (A) ⇒ Boolean): <em>Collection</em>[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/dropWhile.svg" alt="" />
-          </figure>
-        </article>
-              <article id="endsWith" class="function-entry">
-          <h2 class="function-name">endsWith</h2>
-                      <p class="i18n" lang="en">Tests whether this collection ends with the given sequence.</p>
-                      <p class="i18n" lang="es">Comprueba si esta colección termina con una secuencia dada.</p>
-                    <pre class="signature"><code class="scala">def endsWith[B](that: GenSeq[B]): Boolean</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/endsWith.svg" alt="" />
-          </figure>
-        </article>
-              <article id="exists" class="function-entry">
-          <h2 class="function-name">exists</h2>
-                      <p class="i18n" lang="en">Tests whether a predicate holds for at least one element of this collection.</p>
-                      <p class="i18n" lang="es">Comprueba si un predicado es válido para al menos un elemento de esta colección.</p>
-                    <pre class="signature"><code class="scala">def exists(p: (A) ⇒ Boolean): Boolean</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/exists.svg" alt="" />
-          </figure>
-        </article>
-              <article id="fill" class="function-entry">
-          <h2 class="function-name">fill</h2>
-                      <p class="i18n" lang="en">Produces a n-dimensional collection containing the results of some element computation a number of times.</p>
-                      <p class="i18n" lang="es">Produce una colección n-dimensional que contiene el resultado de cierta computación para un elemento un numero de veces.</p>
-                    <pre class="signature"><code class="scala">def <em>Collection</em>.fill[A](n<sub>1</sub>: Int, ..., n<sub>m</sub>: Int)(elem: ⇒ A): <em>Collection</em>[... <em>Collection</em>[A] ...]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/fill.svg" alt="" />
-          </figure>
-        </article>
-              <article id="filter" class="function-entry">
-          <h2 class="function-name">filter</h2>
-                      <p class="i18n" lang="en">Selects all elements of this traversable collection which satisfy a predicate.</p>
-                      <p class="i18n" lang="es">Selecciona todos los elementos de la colección que satisfacen un predicado.</p>
-                    <pre class="signature"><code class="scala">def filter(p: (A) ⇒ Boolean): <em>Collection</em>[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/filter.svg" alt="" />
-          </figure>
-        </article>
-              <article id="filterNot" class="function-entry">
-          <h2 class="function-name">filterNot</h2>
-                      <p class="i18n" lang="en">Selects all elements of this collection which do not satisfy a predicate.</p>
-                      <p class="i18n" lang="es">Selecciona todos los elementos de la colección que no satisfacen un predicado.</p>
-                    <pre class="signature"><code class="scala">def filterNot(p: (A) ⇒ Boolean): <em>Collection</em>[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/filterNot.svg" alt="" />
-          </figure>
-        </article>
-              <article id="find" class="function-entry">
-          <h2 class="function-name">find</h2>
-                      <p class="i18n" lang="en">Finds the first element of the collection satisfying a predicate, if any.</p>
-                      <p class="i18n" lang="es">Encuentra el primer elemento de la colección que satisface un predicado, si es que existe.</p>
-                    <pre class="signature"><code class="scala">def find(p: (A) ⇒ Boolean): Option[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/find.svg" alt="" />
-          </figure>
-        </article>
-              <article id="flatMap" class="function-entry">
-          <h2 class="function-name">flatMap</h2>
-                      <p class="i18n" lang="en">Builds a new collection by applying a function to all elements of this collection and using the elements of the resulting collections.</p>
-                      <p class="i18n" lang="es">Construye una nueva colección tras aplicar una función a todos los elementos de esta colección. La función devuelve una colección de elementos.</p>
-                    <pre class="signature"><code class="scala">def flatMap[B](f: (A) ⇒ <em>Collection</em>[B]): <em>Collection</em>[B]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/flatMap.svg" alt="" />
-          </figure>
-        </article>
-              <article id="flatten" class="function-entry">
-          <h2 class="function-name">flatten</h2>
-                      <p class="i18n" lang="en">Converts this collection of collections into a collection formed by the elements of the inner collections.</p>
-                      <p class="i18n" lang="es">Convierte esta colección de colecciones en una colección compuesta por los elementos de las colecciones internas.</p>
-                    <pre class="signature"><code class="scala">def flatten[B]: <em>Collection</em>[B]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/flatten.svg" alt="" />
-          </figure>
-        </article>
-              <article id="fold" class="function-entry">
-          <h2 class="function-name">fold</h2>
-                      <p class="i18n" lang="en">Folds the elements of this collection using the specified associative binary operator.</p>
-                      <p class="i18n" lang="es">Pliega los elementos de esta colección utilizando un operador binario asociativo.</p>
-                    <pre class="signature"><code class="scala">def fold[A1 >: A](z: A1)(op: (A1, A1) ⇒ A1): A1</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/fold.svg" alt="" />
-          </figure>
-        </article>
-              <article id="foldLeft" class="function-entry">
-          <h2 class="function-name">foldLeft</h2>
-                      <p class="i18n" lang="en">Applies a binary operator to a start value and all elements of this collection, going left to right.</p>
-                      <p class="i18n" lang="es">Aplica un operador binario a un valor inicial y a todos los elementos de la colección, yendo de izquierda a derecha.</p>
-                    <pre class="signature"><code class="scala">def foldLeft[B](z: B)(op: (B, A) ⇒ B): B</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/foldLeft.svg" alt="" />
-          </figure>
-        </article>
-              <article id="foldRight" class="function-entry">
-          <h2 class="function-name">foldRight</h2>
-                      <p class="i18n" lang="en">Applies a binary operator to a start value and all elements of this collection, going right to left.</p>
-                      <p class="i18n" lang="es">Aplica un operador binario a un valor inicial y a todos los elementos de la colección, yendo de derecha a izquierda.</p>
-                    <pre class="signature"><code class="scala">def foldRight[B](z: B)(op: (A, B) ⇒ B): B</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/foldRight.svg" alt="" />
-          </figure>
-        </article>
-              <article id="forall" class="function-entry">
-          <h2 class="function-name">forall</h2>
-                      <p class="i18n" lang="en">Tests whether a predicate holds for all elements of this collection.</p>
-                      <p class="i18n" lang="es">Comprueba si un predicado es válido para todos los elementos de esta colección.</p>
-                    <pre class="signature"><code class="scala">def forall(p: (A) ⇒ Boolean): Boolean</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/forall.svg" alt="" />
-          </figure>
-        </article>
-              <article id="foreach" class="function-entry">
-          <h2 class="function-name">foreach</h2>
-                      <p class="i18n" lang="en">Applies a function <var>f</var> to all elements of this collection.</p>
-                      <p class="i18n" lang="es">Aplica una función <var>f</var> a todos los elementos de esta colección.</p>
-                    <pre class="signature"><code class="scala">def foreach(f: (A) ⇒ Unit): Unit</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/foreach.svg" alt="" />
-          </figure>
-        </article>
-              <article id="groupBy" class="function-entry">
-          <h2 class="function-name">groupBy</h2>
-                      <p class="i18n" lang="en">Partitions this collection into a map of collections according to some discriminator function.</p>
-                      <p class="i18n" lang="es">Parte esta colección en un mapa de colecciones de acuerdo a una función discriminadora.</p>
-                    <pre class="signature"><code class="scala">def groupBy[K](f: (A) ⇒ K): Map[K, <em>Collection</em>[A]]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/groupBy.svg" alt="" />
-          </figure>
-        </article>
-              <article id="grouped" class="function-entry">
-          <h2 class="function-name">grouped</h2>
-                      <p class="i18n" lang="en">Partitions elements in fixed size iterable collections.</p>
-                      <p class="i18n" lang="es">Parte los elementos en colecciones iterables de tamaño fijo.</p>
-                    <pre class="signature"><code class="scala">def grouped(size: Int): Iterator[<em>Collection</em>[A]]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/grouped.svg" alt="" />
-          </figure>
-        </article>
-              <article id="head" class="function-entry">
-          <h2 class="function-name">head</h2>
-                      <p class="i18n" lang="en">Selects the first element of this collection.</p>
-                      <p class="i18n" lang="es">Selecciona el primer elemento de esta colección.</p>
-                    <pre class="signature"><code class="scala">def head: A</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/head.svg" alt="" />
-          </figure>
-        </article>
-              <article id="headOption" class="function-entry">
-          <h2 class="function-name">headOption</h2>
-                      <p class="i18n" lang="en">Optionally selects the first element.</p>
-                      <p class="i18n" lang="es">Opcionalmente selecciona el primer elemento de esta colección.</p>
-                    <pre class="signature"><code class="scala">def headOption: Option[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/headOption.svg" alt="" />
-          </figure>
-        </article>
-              <article id="indexOf" class="function-entry">
-          <h2 class="function-name">indexOf</h2>
-                      <p class="i18n" lang="en">Finds index of first occurrence of some value in this collection after or at some start index.</p>
-                      <p class="i18n" lang="es">Encuentra el índice de la primera ocurrencia de algún valor en esta colección empezando por un índice inicial.</p>
-                    <pre class="signature"><code class="scala">def indexOf(elem: A, from: Int): Int</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/indexOf.svg" alt="" />
-          </figure>
-        </article>
-              <article id="indexOfSlice" class="function-entry">
-          <h2 class="function-name">indexOfSlice</h2>
-                      <p class="i18n" lang="en">Finds first index after or at a start index where this collection contains a given sequence as a slice.</p>
-                      <p class="i18n" lang="es">Encuentra el primer índice empezando por uno inicial donde esta colección contiene una secuencia dada como subcolección.</p>
-                    <pre class="signature"><code class="scala">def indexOfSlice[B >: A](that: GenSeq[B], from: Int): Int</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/indexOfSlice.svg" alt="" />
-          </figure>
-        </article>
-              <article id="indexWhere" class="function-entry">
-          <h2 class="function-name">indexWhere</h2>
-                      <p class="i18n" lang="en">Finds index of the first element satisfying some predicate after or at some start index.</p>
-                      <p class="i18n" lang="es">Encuentra el índice el primer elemento que satisface un predicado empezando por un índice inicial.</p>
-                    <pre class="signature"><code class="scala">def indexWhere(p: (A) ⇒ Boolean, from: Int): Int</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/indexWhere.svg" alt="" />
-          </figure>
-        </article>
-              <article id="indices" class="function-entry">
-          <h2 class="function-name">indices</h2>
-                      <p class="i18n" lang="en">Produces the range of all indices of this collection.</p>
-                      <p class="i18n" lang="es">Produce un rango con todos los índices de esta colección.</p>
-                    <pre class="signature"><code class="scala">def indices: Range</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/indices.svg" alt="" />
-          </figure>
-        </article>
-              <article id="init" class="function-entry">
-          <h2 class="function-name">init</h2>
-                      <p class="i18n" lang="en">Select all elements except the last.</p>
-                      <p class="i18n" lang="es">Selecciona todos los elementos excepto el último.</p>
-                    <pre class="signature"><code class="scala">def init: <em>Collection</em>[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/init.svg" alt="" />
-          </figure>
-        </article>
-              <article id="inits" class="function-entry">
-          <h2 class="function-name">inits</h2>
-                      <p class="i18n" lang="en">Iterates over the inits of this collection.</p>
-                      <p class="i18n" lang="es">Itera sobre los <code>inits</code> de esta colección.</p>
-                    <pre class="signature"><code class="scala">def inits: Iterator[<em>Collection</em>[A]]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/inits.svg" alt="" />
-          </figure>
-        </article>
-              <article id="intersect" class="function-entry">
-          <h2 class="function-name">intersect</h2>
-                      <p class="i18n" lang="en">Computes the multiset intersection between this collection and another sequence.</p>
-                      <p class="i18n" lang="es">Computa la intersección multiconjunto entre esta colección y otra secuencia.</p>
-                    <pre class="signature"><code class="scala">def intersect(that: Seq[A]): <em>Collection</em>[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/intersect.svg" alt="" />
-          </figure>
-        </article>
-              <article id="isEmpty" class="function-entry">
-          <h2 class="function-name">isEmpty</h2>
-                      <p class="i18n" lang="en">Tests whether this collection is empty.</p>
-                      <p class="i18n" lang="es">Comprueba si esta colección está vacía.</p>
-                    <pre class="signature"><code class="scala">def isEmpty: Boolean</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/isEmpty.svg" alt="" />
-          </figure>
-        </article>
-              <article id="last" class="function-entry">
-          <h2 class="function-name">last</h2>
-                      <p class="i18n" lang="en">Selects the last element.</p>
-                      <p class="i18n" lang="es">Selecciona el último elemento.</p>
-                    <pre class="signature"><code class="scala">def last: A</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/last.svg" alt="" />
-          </figure>
-        </article>
-              <article id="lastIndexOf" class="function-entry">
-          <h2 class="function-name">lastIndexOf</h2>
-                      <p class="i18n" lang="en">Finds index of last occurrence of some value in this colección before or at a given end index.</p>
-                      <p class="i18n" lang="es">Encuentra el índice de la última ocurrencia de algún valor en esta colección antes de un índice en particular.</p>
-                    <pre class="signature"><code class="scala">def lastIndexOf(elem: A, end: Int): Int</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/lastIndexOf.svg" alt="" />
-          </figure>
-        </article>
-              <article id="lastIndexOfSlice" class="function-entry">
-          <h2 class="function-name">lastIndexOfSlice</h2>
-                      <p class="i18n" lang="en">Finds last index before or at a given end index where this collection contains a given sequence as a slice.</p>
-                      <p class="i18n" lang="es">Encuentra el último índice antes de uno en particular donde esta colección contiene una secuencia dada como subcolección.</p>
-                    <pre class="signature"><code class="scala">def lastIndexOfSlice[B >: A](that: GenSeq[B], end: Int): Int</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/lastIndexOfSlice.svg" alt="" />
-          </figure>
-        </article>
-              <article id="lastIndexWhere" class="function-entry">
-          <h2 class="function-name">lastIndexWhere</h2>
-                      <p class="i18n" lang="en">Finds index of last element satisfying some predicate before or at a given end index.</p>
-                      <p class="i18n" lang="es">Encuentra el índice del último elemento que satisface algún predicado antes de un índice en particular.</p>
-                    <pre class="signature"><code class="scala">def lastIndexWhere(p: (A) ⇒ Boolean, end: Int): Int</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/lastIndexWhere.svg" alt="" />
-          </figure>
-        </article>
-              <article id="lastOption" class="function-entry">
-          <h2 class="function-name">lastOption</h2>
-                      <p class="i18n" lang="en">Optionally selects the last element.</p>
-                      <p class="i18n" lang="es">Opcionalmente selecciona el último elemento.</p>
-                    <pre class="signature"><code class="scala">def lastOption: Option[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/lastOption.svg" alt="" />
-          </figure>
-        </article>
-              <article id="length" class="function-entry">
-          <h2 class="function-name">length</h2>
-                      <p class="i18n" lang="en">The length of the collection.</p>
-                      <p class="i18n" lang="es">La longitud de la colección.</p>
-                    <pre class="signature"><code class="scala">def length: Int</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/length.svg" alt="" />
-          </figure>
-        </article>
-              <article id="map" class="function-entry">
-          <h2 class="function-name">map</h2>
-                      <p class="i18n" lang="en">Builds a new collection by applying a function to all elements of this collection.</p>
-                      <p class="i18n" lang="es">Construye una nueva colección aplicando una función a todos los elementos de esta colección.</p>
-                    <pre class="signature"><code class="scala">def map[B](f: (A) ⇒ B): <em>Collection</em>[B]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/map.svg" alt="" />
-          </figure>
-        </article>
-              <article id="mapConserve" class="function-entry">
-          <h2 class="function-name">mapConserve</h2>
-                      <p class="i18n" lang="en">Builds a new collection by applying a function to all elements of this collection. Like <code>xs map f</code>, but returns <var>xs</var> unchanged if function <var>f</var> maps all elements to themselves (as determined by <var>eq</var>)</p>
-                      <p class="i18n" lang="es">Construye una nueva colección aplicando una función a todos los elementos de esta colección. Igual que <code>xs map f</code> pero devuelve <var>xs</var> intacto si la función <var>f</var> mapea todos los elementos a sí mismos (determinado por <var>eq</var>)</p>
-                    <pre class="signature"><code class="scala">def mapConserve(f: (A) ⇒ A): <em>Collection</em>[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/mapConserve.svg" alt="" />
-          </figure>
-        </article>
-              <article id="max" class="function-entry">
-          <h2 class="function-name">max</h2>
-                      <p class="i18n" lang="en">Finds the largest element.</p>
-                      <p class="i18n" lang="es">Encuentra el mayor elemento.</p>
-                    <pre class="signature"><code class="scala">def max: A</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/max.svg" alt="" />
-          </figure>
-        </article>
-              <article id="maxBy" class="function-entry">
-          <h2 class="function-name">maxBy</h2>
-                      <p class="i18n" lang="en">Finds the first element which yields the largest value measured by function <var>f</var>.</p>
-                      <p class="i18n" lang="es">Encuentra el primer elemento que arroja el mayor valor medido por la función <var>f</var>.</p>
-                    <pre class="signature"><code class="scala">def maxBy[B](f: (A) ⇒ B): A</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/maxBy.svg" alt="" />
-          </figure>
-        </article>
-              <article id="min" class="function-entry">
-          <h2 class="function-name">min</h2>
-                      <p class="i18n" lang="en">Finds the smallest element.</p>
-                      <p class="i18n" lang="es">Encuentra el menor elemento.</p>
-                    <pre class="signature"><code class="scala">def min: A</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/min.svg" alt="" />
-          </figure>
-        </article>
-              <article id="minBy" class="function-entry">
-          <h2 class="function-name">minBy</h2>
-                      <p class="i18n" lang="en">Finds the first element which yields the smallest value measured by function <var>f</var>.</p>
-                      <p class="i18n" lang="es">Encuentra el primer elemento que arroja el menor valor medido por la función <var>f</var>.</p>
-                    <pre class="signature"><code class="scala">def minBy[B](f: (A) ⇒ B): A</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/minBy.svg" alt="" />
-          </figure>
-        </article>
-              <article id="mkString" class="function-entry">
-          <h2 class="function-name">mkString</h2>
-                      <p class="i18n" lang="en">Displays all elements of this collection in a string.</p>
-                      <p class="i18n" lang="es">Muestra todos los elementos de esta colección como una cadena.</p>
-                    <pre class="signature"><code class="scala">def mkString(start: String, sep: String, end: String): String</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/mkString.svg" alt="" />
-          </figure>
-        </article>
-              <article id="nonEmpty" class="function-entry">
-          <h2 class="function-name">nonEmpty</h2>
-                      <p class="i18n" lang="en">Tests whether the collection is not empty.</p>
-                      <p class="i18n" lang="es">Comprueba si esta colección es no vacía.</p>
-                    <pre class="signature"><code class="scala">def nonEmpty: Boolean</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/nonEmpty.svg" alt="" />
-          </figure>
-        </article>
-              <article id="padTo" class="function-entry">
-          <h2 class="function-name">padTo</h2>
-                      <p class="i18n" lang="en">A copy of this collection with an element value appended until a given target length is reached.</p>
-                      <p class="i18n" lang="es">Una copia de esta colección anexando un mismo valor hasta alcanzar una longitud dada.</p>
-                    <pre class="signature"><code class="scala">def padTo(len: Int, elem: A): <em>Collection</em>[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/padTo.svg" alt="" />
-          </figure>
-        </article>
-              <article id="partition" class="function-entry">
-          <h2 class="function-name">partition</h2>
-                      <p class="i18n" lang="en">Partitions this collection in two collections according to a predicate.</p>
-                      <p class="i18n" lang="es">Parte esta colección en dos colecciones de acuerdo a un predicado.</p>
-                    <pre class="signature"><code class="scala">def partition(p: (A) ⇒ Boolean): (<em>Collection</em>[A], <em>Collection</em>[A])</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/partition.svg" alt="" />
-          </figure>
-        </article>
-              <article id="patch" class="function-entry">
-          <h2 class="function-name">patch</h2>
-                      <p class="i18n" lang="en">Produces a new collection where a slice of elements in this collection is replaced by another sequence.</p>
-                      <p class="i18n" lang="es">Produce una nueva colección donde una subcolección de elementos es reemplazada por otra secuencia.</p>
-                    <pre class="signature"><code class="scala">def patch(from: Int, that: GenSeq[A], replaced: Int): <em>Collection</em>[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/patch.svg" alt="" />
-          </figure>
-        </article>
-              <article id="permutations" class="function-entry">
-          <h2 class="function-name">permutations</h2>
-                      <p class="i18n" lang="en">Iterates over distinct permutations.</p>
-                      <p class="i18n" lang="es">Itera sobre distintas permutaciones.</p>
-                    <pre class="signature"><code class="scala">def permutations: Iterator[<em>Collection</em>[A]]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/permutations.svg" alt="" />
-          </figure>
-        </article>
-              <article id="prefixLength" class="function-entry">
-          <h2 class="function-name">prefixLength</h2>
-                      <p class="i18n" lang="en">Returns the length of the longest prefix whose elements all satisfy some predicate.</p>
-                      <p class="i18n" lang="es">Devuelve la longitud del mayor prefijo cuyos elementos satisfacen algún predicado.</p>
-                    <pre class="signature"><code class="scala">def prefixLength(p: (A) ⇒ Boolean): Int</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/prefixLength.svg" alt="" />
-          </figure>
-        </article>
-              <article id="product" class="function-entry">
-          <h2 class="function-name">product</h2>
-                      <p class="i18n" lang="en">Multiplies up the elements of this collection.</p>
-                      <p class="i18n" lang="es">Multiplica los elementos de esta colección.</p>
-                    <pre class="signature"><code class="scala">def product: A</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/product.svg" alt="" />
-          </figure>
-        </article>
-              <article id="range" class="function-entry">
-          <h2 class="function-name">range</h2>
-                      <p class="i18n" lang="en">Produces a collection containing a sequence of increasing of integers</p>
-                      <p class="i18n" lang="es">Produce una colección que contiene una secuencia de enteros incrementales.</p>
-                    <pre class="signature"><code class="scala">def <em>Collection</em>.range(start: Int, end: Int, step: Int): <em>Collection</em>[Int]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/range.svg" alt="" />
-          </figure>
-        </article>
-              <article id="reduce" class="function-entry">
-          <h2 class="function-name">reduce</h2>
-                      <p class="i18n" lang="en">Reduces the elements of this collection using the specified associative binary operator.</p>
-                      <p class="i18n" lang="es">Reduce los elementos de esta colección utilizando un operador binario asociativo.</p>
-                    <pre class="signature"><code class="scala">def reduce[A1 >: A](op: (A1, A1) ⇒ A1): A1</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/reduce.svg" alt="" />
-          </figure>
-        </article>
-              <article id="reduceLeft" class="function-entry">
-          <h2 class="function-name">reduceLeft</h2>
-                      <p class="i18n" lang="en">Applies a binary operator to all elements of this collection, going left to right.</p>
-                      <p class="i18n" lang="es">Aplica un operador binario a todos los elementos de esta colección, yendo de izquierda a derecha.</p>
-                    <pre class="signature"><code class="scala">def reduceLeft[B >: A](op: (B, A) ⇒ B): B</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/reduceLeft.svg" alt="" />
-          </figure>
-        </article>
-              <article id="reduceLeftOption" class="function-entry">
-          <h2 class="function-name">reduceLeftOption</h2>
-                      <p class="i18n" lang="en">Optionally applies a binary operator to all elements of this collection, going left to right.</p>
-                      <p class="i18n" lang="es">Opcionalmente aplica un operador binario a todos los elementos de esta colección, yendo de izquierda a derecha.</p>
-                    <pre class="signature"><code class="scala">def reduceLeftOption[B >: A](op: (B, A) ⇒ B): Option[B]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/reduceLeftOption.svg" alt="" />
-          </figure>
-        </article>
-              <article id="reduceOption" class="function-entry">
-          <h2 class="function-name">reduceOption</h2>
-                      <p class="i18n" lang="en">Reduces the elements of this collection, if any, using the specified associative binary operator.</p>
-                      <p class="i18n" lang="es">Reduce los elementos de esta colección, si lo hubiese, utilizando un operador binario asociativo.</p>
-                    <pre class="signature"><code class="scala">def reduceOption[A1 >: A](op: (A1, A1) ⇒ A1): Option[A1]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/reduceOption.svg" alt="" />
-          </figure>
-        </article>
-              <article id="reduceRight" class="function-entry">
-          <h2 class="function-name">reduceRight</h2>
-                      <p class="i18n" lang="en">Applies a binary operator to all elements of this collection, going right to left.</p>
-                      <p class="i18n" lang="es">Aplica un operador binario a todos los elementos de esta colección, yendo de derecha a izquierda.</p>
-                    <pre class="signature"><code class="scala">def reduceRight[B >: A](op: (A, B) ⇒ B): B</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/reduceRight.svg" alt="" />
-          </figure>
-        </article>
-              <article id="reduceRightOption" class="function-entry">
-          <h2 class="function-name">reduceRightOption</h2>
-                      <p class="i18n" lang="en">Optionally, applies a binary operator to all elements of this collection, going right to left.</p>
-                      <p class="i18n" lang="es">Opcionalmente aplica un operador binario a todos los elementos de esta colección, yendo de derecha a izquierda.</p>
-                    <pre class="signature"><code class="scala">def reduceRightOption[B >: A](op: (A, B) ⇒ B): Option[B]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/reduceRightOption.svg" alt="" />
-          </figure>
-        </article>
-              <article id="reverse" class="function-entry">
-          <h2 class="function-name">reverse</h2>
-                      <p class="i18n" lang="en">Returns new collection with elements in reversed order.</p>
-                      <p class="i18n" lang="es">Devuelve una nueva colección con los elementos en orden inverso.</p>
-                    <pre class="signature"><code class="scala">def reverse: <em>Collection</em>[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/reverse.svg" alt="" />
-          </figure>
-        </article>
-              <article id="reverseMap" class="function-entry">
-          <h2 class="function-name">reverseMap</h2>
-                      <p class="i18n" lang="en">Builds a new collection by applying a function to all elements of this collection and collecting the results in reversed order.</p>
-                      <p class="i18n" lang="es">Construye una nueva colección aplicando una función a todos los elementos de esta colección y recolectando los resultados en orden inverso.</p>
-                    <pre class="signature"><code class="scala">def reverseMap(f: (A) ⇒ B): <em>Collection</em>[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/reverseMap.svg" alt="" />
-          </figure>
-        </article>
-              <article id="sameElements" class="function-entry">
-          <h2 class="function-name">sameElements</h2>
-                      <p class="i18n" lang="en">Checks if the other collection contains the same elements in the same order as this one.</p>
-                      <p class="i18n" lang="es">Comprueba si otra colección contiene los mismos elementos en el mismo orden que esta.</p>
-                    <pre class="signature"><code class="scala">def sameElements(that: GenIterable[A]): Boolean</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/sameElements.svg" alt="" />
-          </figure>
-        </article>
-              <article id="scan" class="function-entry">
-          <h2 class="function-name">scan</h2>
-                      <p class="i18n" lang="en">Computes a prefix scan of the elements of the collection.</p>
-                      <p class="i18n" lang="es">Computa un scan prefijado de los elementos de la colección.</p>
-                    <pre class="signature"><code class="scala">def scan[B >: A](z: B)(op: (B, B) ⇒ B)</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/scan.svg" alt="" />
-          </figure>
-        </article>
-              <article id="scanLeft" class="function-entry">
-          <h2 class="function-name">scanLeft</h2>
-                      <p class="i18n" lang="en">Produces a collection containing cumulative results of applying the operator going left to right.</p>
-                      <p class="i18n" lang="es">Produce una colección que contiene los resultados parciales de aplicar el operador, yendo de izquierda a derecha.</p>
-                    <pre class="signature"><code class="scala">def scanLeft[B](z: B)(op: (B, A) ⇒ B)</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/scanLeft.svg" alt="" />
-          </figure>
-        </article>
-              <article id="scanRight" class="function-entry">
-          <h2 class="function-name">scanRight</h2>
-                      <p class="i18n" lang="en">Produces a collection containing cumulative results of applying the operator going right to left.</p>
-                      <p class="i18n" lang="es">Produce una colección que contiene los resultados parciales de aplicar el operador, yendo de derecha a izquierda.</p>
-                    <pre class="signature"><code class="scala">def scanRight[B](z: B)(op: (A, B) ⇒ B)</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/scanRight.svg" alt="" />
-          </figure>
-        </article>
-              <article id="segmentLength" class="function-entry">
-          <h2 class="function-name">segmentLength</h2>
-                      <p class="i18n" lang="en">Computes length of longest segment whose elements all satisfy some predicate.</p>
-                      <p class="i18n" lang="es">Computa la longitud del mayor segmento cuyos elementos satisfacen un predicado.</p>
-                    <pre class="signature"><code class="scala">def segmentLength(p: (A) ⇒ Boolean, from: Int): Int</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/segmentLength.svg" alt="" />
-          </figure>
-        </article>
-              <article id="size" class="function-entry">
-          <h2 class="function-name">size</h2>
-                      <p class="i18n" lang="en">The size of this collection.</p>
-                      <p class="i18n" lang="es">El tamaño de esta colección.</p>
-                    <pre class="signature"><code class="scala">def size: Int</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/size.svg" alt="" />
-          </figure>
-        </article>
-              <article id="slice" class="function-entry">
-          <h2 class="function-name">slice</h2>
-                      <p class="i18n" lang="en"></p>
-                      <p class="i18n" lang="es"></p>
-                    <pre class="signature"><code class="scala">def slice(from: Int, until: Int): <em>Collection</em>[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/slice.svg" alt="" />
-          </figure>
-        </article>
-              <article id="sliding" class="function-entry">
-          <h2 class="function-name">sliding</h2>
-                      <p class="i18n" lang="en">Groups elements in fixed size blocks by passing a "sliding window" over them.</p>
-                      <p class="i18n" lang="es">Agrupa elementos en bloques de tamaño fijo pasando una "ventana deslizante" sobre ellos.</p>
-                    <pre class="signature"><code class="scala">def sliding(size: Int, step: Int): Iterator[<em>Collection</em>[A]]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/sliding.svg" alt="" />
-          </figure>
-        </article>
-              <article id="sortBy" class="function-entry">
-          <h2 class="function-name">sortBy</h2>
-                      <p class="i18n" lang="en">Sorts this collection according to the Ordering which results from transforming an implicitly given Ordering with a transformation function.</p>
-                      <p class="i18n" lang="es">Ordena esta colección de acuerdo al Ordering resultado de transformar un Ordering dado implícitamente con una función de transformación.</p>
-                    <pre class="signature"><code class="scala">def sortBy[B](f: (A) ⇒ B)(implicit ord: math.Ordering[B]): <em>Collection</em>[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/sortBy.svg" alt="" />
-          </figure>
-        </article>
-              <article id="sortWith" class="function-entry">
-          <h2 class="function-name">sortWith</h2>
-                      <p class="i18n" lang="en">Sorts this collection according to a comparison function.</p>
-                      <p class="i18n" lang="es">Ordena esta colección de acuerdo a una función de comparación.</p>
-                    <pre class="signature"><code class="scala">def sortWith(lt: (A, A) ⇒ Boolean): <em>Collection</em>[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/sortWith.svg" alt="" />
-          </figure>
-        </article>
-              <article id="sorted" class="function-entry">
-          <h2 class="function-name">sorted</h2>
-                      <p class="i18n" lang="en">Sorts this collection according to an Ordering.</p>
-                      <p class="i18n" lang="es">Ordena esta colección de acuerdo a un Ordering.</p>
-                    <pre class="signature"><code class="scala">def sorted[B >: A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/sorted.svg" alt="" />
-          </figure>
-        </article>
-              <article id="span" class="function-entry">
-          <h2 class="function-name">span</h2>
-                      <p class="i18n" lang="en">Splits this collection into a prefix/suffix pair according to a predicate.</p>
-                      <p class="i18n" lang="es">Parte esta colección en un par prefijo/sufijo de acuerdo a un predicado.</p>
-                    <pre class="signature"><code class="scala">def span(p: (A) ⇒ Boolean): (<em>Collection</em>[A], <em>Collection</em>[A])</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/span.svg" alt="" />
-          </figure>
-        </article>
-              <article id="splitAt" class="function-entry">
-          <h2 class="function-name">splitAt</h2>
-                      <p class="i18n" lang="en">Splits this collection into two at a given position.</p>
-                      <p class="i18n" lang="es">Parte esta colección en dos en una posición dada.</p>
-                    <pre class="signature"><code class="scala">def splitAt(n: Int): (<em>Collection</em>[A], <em>Collection</em>[A])</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/splitAt.svg" alt="" />
-          </figure>
-        </article>
-              <article id="startsWith" class="function-entry">
-          <h2 class="function-name">startsWith</h2>
-                      <p class="i18n" lang="en">Tests whether this collection contains the given sequence at a given index.</p>
-                      <p class="i18n" lang="es">Comprueba si esta colección contiene la secuencia dada en un índice en particular.</p>
-                    <pre class="signature"><code class="scala">def startsWith[B](that: GenSeq[B], offset: Int): Boolean</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/startsWith.svg" alt="" />
-          </figure>
-        </article>
-              <article id="sum" class="function-entry">
-          <h2 class="function-name">sum</h2>
-                      <p class="i18n" lang="en">Sums up the elements of this collection.</p>
-                      <p class="i18n" lang="es">Suma los elementos de esta colección.</p>
-                    <pre class="signature"><code class="scala">def sum: A</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/sum.svg" alt="" />
-          </figure>
-        </article>
-              <article id="tabulate" class="function-entry">
-          <h2 class="function-name">tabulate</h2>
-                      <p class="i18n" lang="en">Produces a n-dimensional collection containing values of a given function over ranges of integer values starting from 0.</p>
-                      <p class="i18n" lang="es">Produce una colección n-dimensional que contiene los valores de una cierta función sobre el rango de valores enteros empezando por 0.</p>
-                    <pre class="signature"><code class="scala">def <em>Collection</em>.tabulate[A](n<sub>1</sub>: Int, ..., n<sub>m</sub>: Int)(f: (Int, ..., Int): ⇒ A): <em>Collection</em>[... <em>Collection</em>[A] ...]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/tabulate.svg" alt="" />
-          </figure>
-        </article>
-              <article id="tail" class="function-entry">
-          <h2 class="function-name">tail</h2>
-                      <p class="i18n" lang="en">Selects all elements except the first.</p>
-                      <p class="i18n" lang="es">Selecciona todos los elementos excepto el primero.</p>
-                    <pre class="signature"><code class="scala">def tail: <em>Collection</em>[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/tail.svg" alt="" />
-          </figure>
-        </article>
-              <article id="tails" class="function-entry">
-          <h2 class="function-name">tails</h2>
-                      <p class="i18n" lang="en">Iterates over the tails of this collection.</p>
-                      <p class="i18n" lang="es">Itera sobre las colas de esta colección.</p>
-                    <pre class="signature"><code class="scala">def tails: Iterator[<em>Collection</em>[A]]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/tails.svg" alt="" />
-          </figure>
-        </article>
-              <article id="take" class="function-entry">
-          <h2 class="function-name">take</h2>
-                      <p class="i18n" lang="en">Selects first <var>n</var> elements.</p>
-                      <p class="i18n" lang="es">Selecciona los primeros <var>n</var> elementos.</p>
-                    <pre class="signature"><code class="scala">def take(n: Int): <em>Collection</em>[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/take.svg" alt="" />
-          </figure>
-        </article>
-              <article id="takeRight" class="function-entry">
-          <h2 class="function-name">takeRight</h2>
-                      <p class="i18n" lang="en">Selects last <var>n</var> elements.</p>
-                      <p class="i18n" lang="es">Selecciona los últimos <var>n</var> elementos.</p>
-                    <pre class="signature"><code class="scala">def takeRight(n: Int): <em>Collection</em>[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/takeRight.svg" alt="" />
-          </figure>
-        </article>
-              <article id="takeWhile" class="function-entry">
-          <h2 class="function-name">takeWhile</h2>
-                      <p class="i18n" lang="en">Takes longest prefix of elements that satisfy a predicate.</p>
-                      <p class="i18n" lang="es">Toma el mayor prefijo de elementos que satisfacen un predicado.</p>
-                    <pre class="signature"><code class="scala">def takeWhile(p: (A) ⇒ Boolean): <em>Collection</em>[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/takeWhile.svg" alt="" />
-          </figure>
-        </article>
-              <article id="union" class="function-entry">
-          <h2 class="function-name">union</h2>
-                      <p class="i18n" lang="en">Produces a new collection which contains all elements of this one and also all elements of a given sequence.</p>
-                      <p class="i18n" lang="es">Produce una nueva colección que contiene todos los elementos de esta y los de otra secuencia.</p>
-                    <pre class="signature"><code class="scala">def union(that: Seq[A]): <em>Collection</em>[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/union.svg" alt="" />
-          </figure>
-        </article>
-              <article id="unzip" class="function-entry">
-          <h2 class="function-name">unzip</h2>
-                      <p class="i18n" lang="en">Converts this collection of pairs into two collections of the first and second half of each pair.</p>
-                      <p class="i18n" lang="es">Convierte esta colección de pares en dos colecciones, una compuesta por el primer miembro y otra por el segundo.</p>
-                    <pre class="signature"><code class="scala">def unzip[A1, A2](implicit asPair: (A) ⇒ (A1, A2)): (<em>Collection</em>[A1], <em>Collection</em>[A2])</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/unzip.svg" alt="" />
-          </figure>
-        </article>
-              <article id="unzip3" class="function-entry">
-          <h2 class="function-name">unzip3</h2>
-                      <p class="i18n" lang="en">Converts this collection of triples into three collections of the first, second, and third element of each triple.</p>
-                      <p class="i18n" lang="es">Convierte esta colección de ternas en tres colecciones del primer, segundo y tercer elemento de cada terna.</p>
-                    <pre class="signature"><code class="scala">def unzip3[A1, A2, A3](implicit asTriple: (A) ⇒ (A1, A2, A3)): (<em>Collection</em>[A1], <em>Collection</em>[A2], <em>Collection</em>[A3])</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/unzip3.svg" alt="" />
-          </figure>
-        </article>
-              <article id="updated" class="function-entry">
-          <h2 class="function-name">updated</h2>
-                      <p class="i18n" lang="en">A copy of this collection with one single replaced element.</p>
-                      <p class="i18n" lang="es">Una copia de esta colección con un único elemento reemplazado.</p>
-                    <pre class="signature"><code class="scala">def updated(index: Int, elem: A): <em>Collection</em>[A]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/updated.svg" alt="" />
-          </figure>
-        </article>
-              <article id="zip" class="function-entry">
-          <h2 class="function-name">zip</h2>
-                      <p class="i18n" lang="en">Returns a collection formed from this and another one by combining corresponding elements in pairs.</p>
-                      <p class="i18n" lang="es">Devuelve una colección formada por los elementos de dos colecciones distintas combinados en parejas.</p>
-                    <pre class="signature"><code class="scala">def zip[B](that: GenIterable[B]): <em>Collection</em>[A, B]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/zip.svg" alt="" />
-          </figure>
-        </article>
-              <article id="zipAll" class="function-entry">
-          <h2 class="function-name">zipAll</h2>
-                      <p class="i18n" lang="en">Returns a collection formed from this and another one by combining corresponding elements in pairs. If one of the two collections is shorter than the other, placeholder elements are used to extend the shorter collection to the length of the longer.</p>
-                      <p class="i18n" lang="es">Devuelve una colección formada por los elementos de dos colecciones distintas combinados en parejas. Si una de las colecciones es menor que la otra, se usan elementos comodín en la más corta hasta alcanzar la longitud de la más larga.</p>
-                    <pre class="signature"><code class="scala">def zipAll[B](that: Iterable[B], thisElem: A, thatElem: B): <em>Collection</em>[(A, B)]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/zipAll.svg" alt="" />
-          </figure>
-        </article>
-              <article id="zipWithIndex" class="function-entry">
-          <h2 class="function-name">zipWithIndex</h2>
-                      <p class="i18n" lang="en">Zips this collection with its indices.</p>
-                      <p class="i18n" lang="es">Combina cada elemento de esta colección con su índice.</p>
-                    <pre class="signature"><code class="scala">def zipWithIndex: <em>Collection</em>[A, Int]</code></pre>
-          <figure class="figure">
-            <img class="figure-img img-fluid" src="images/zipWithIndex.svg" alt="" />
-          </figure>
-        </article>
-          </main>
-  </div>
-</div>
+  <aside id="main-aside" class="col-sm-4 col-md-3 col-lg-2 d-none d-sm-block">
+  <ul id="function-list">
+          <li class="function-link"><a href="#aggregate">aggregate</a></li>
+          <li class="function-link"><a href="#collect">collect</a></li>
+          <li class="function-link"><a href="#collectFirst">collectFirst</a></li>
+          <li class="function-link"><a href="#combinations">combinations</a></li>
+          <li class="function-link"><a href="#concat">concat</a></li>
+          <li class="function-link"><a href="#contains">contains</a></li>
+          <li class="function-link"><a href="#containsSlice">containsSlice</a></li>
+          <li class="function-link"><a href="#count">count</a></li>
+          <li class="function-link"><a href="#diff">diff</a></li>
+          <li class="function-link"><a href="#distinct">distinct</a></li>
+          <li class="function-link"><a href="#drop">drop</a></li>
+          <li class="function-link"><a href="#dropRight">dropRight</a></li>
+          <li class="function-link"><a href="#dropWhile">dropWhile</a></li>
+          <li class="function-link"><a href="#endsWith">endsWith</a></li>
+          <li class="function-link"><a href="#exists">exists</a></li>
+          <li class="function-link"><a href="#fill">fill</a></li>
+          <li class="function-link"><a href="#filter">filter</a></li>
+          <li class="function-link"><a href="#filterNot">filterNot</a></li>
+          <li class="function-link"><a href="#find">find</a></li>
+          <li class="function-link"><a href="#flatMap">flatMap</a></li>
+          <li class="function-link"><a href="#flatten">flatten</a></li>
+          <li class="function-link"><a href="#fold">fold</a></li>
+          <li class="function-link"><a href="#foldLeft">foldLeft</a></li>
+          <li class="function-link"><a href="#foldRight">foldRight</a></li>
+          <li class="function-link"><a href="#forall">forall</a></li>
+          <li class="function-link"><a href="#foreach">foreach</a></li>
+          <li class="function-link"><a href="#groupBy">groupBy</a></li>
+          <li class="function-link"><a href="#grouped">grouped</a></li>
+          <li class="function-link"><a href="#head">head</a></li>
+          <li class="function-link"><a href="#headOption">headOption</a></li>
+          <li class="function-link"><a href="#indexOf">indexOf</a></li>
+          <li class="function-link"><a href="#indexOfSlice">indexOfSlice</a></li>
+          <li class="function-link"><a href="#indexWhere">indexWhere</a></li>
+          <li class="function-link"><a href="#indices">indices</a></li>
+          <li class="function-link"><a href="#init">init</a></li>
+          <li class="function-link"><a href="#inits">inits</a></li>
+          <li class="function-link"><a href="#intersect">intersect</a></li>
+          <li class="function-link"><a href="#isEmpty">isEmpty</a></li>
+          <li class="function-link"><a href="#last">last</a></li>
+          <li class="function-link"><a href="#lastIndexOf">lastIndexOf</a></li>
+          <li class="function-link"><a href="#lastIndexOfSlice">lastIndexOfSlice</a></li>
+          <li class="function-link"><a href="#lastIndexWhere">lastIndexWhere</a></li>
+          <li class="function-link"><a href="#lastOption">lastOption</a></li>
+          <li class="function-link"><a href="#length">length</a></li>
+          <li class="function-link"><a href="#map">map</a></li>
+          <li class="function-link"><a href="#mapConserve">mapConserve</a></li>
+          <li class="function-link"><a href="#max">max</a></li>
+          <li class="function-link"><a href="#maxBy">maxBy</a></li>
+          <li class="function-link"><a href="#min">min</a></li>
+          <li class="function-link"><a href="#minBy">minBy</a></li>
+          <li class="function-link"><a href="#mkString">mkString</a></li>
+          <li class="function-link"><a href="#nonEmpty">nonEmpty</a></li>
+          <li class="function-link"><a href="#padTo">padTo</a></li>
+          <li class="function-link"><a href="#partition">partition</a></li>
+          <li class="function-link"><a href="#patch">patch</a></li>
+          <li class="function-link"><a href="#permutations">permutations</a></li>
+          <li class="function-link"><a href="#prefixLength">prefixLength</a></li>
+          <li class="function-link"><a href="#product">product</a></li>
+          <li class="function-link"><a href="#range">range</a></li>
+          <li class="function-link"><a href="#reduce">reduce</a></li>
+          <li class="function-link"><a href="#reduceLeft">reduceLeft</a></li>
+          <li class="function-link"><a href="#reduceLeftOption">reduceLeftOption</a></li>
+          <li class="function-link"><a href="#reduceOption">reduceOption</a></li>
+          <li class="function-link"><a href="#reduceRight">reduceRight</a></li>
+          <li class="function-link"><a href="#reduceRightOption">reduceRightOption</a></li>
+          <li class="function-link"><a href="#reverse">reverse</a></li>
+          <li class="function-link"><a href="#reverseMap">reverseMap</a></li>
+          <li class="function-link"><a href="#sameElements">sameElements</a></li>
+          <li class="function-link"><a href="#scan">scan</a></li>
+          <li class="function-link"><a href="#scanLeft">scanLeft</a></li>
+          <li class="function-link"><a href="#scanRight">scanRight</a></li>
+          <li class="function-link"><a href="#segmentLength">segmentLength</a></li>
+          <li class="function-link"><a href="#size">size</a></li>
+          <li class="function-link"><a href="#slice">slice</a></li>
+          <li class="function-link"><a href="#sliding">sliding</a></li>
+          <li class="function-link"><a href="#sortBy">sortBy</a></li>
+          <li class="function-link"><a href="#sortWith">sortWith</a></li>
+          <li class="function-link"><a href="#sorted">sorted</a></li>
+          <li class="function-link"><a href="#span">span</a></li>
+          <li class="function-link"><a href="#splitAt">splitAt</a></li>
+          <li class="function-link"><a href="#startsWith">startsWith</a></li>
+          <li class="function-link"><a href="#sum">sum</a></li>
+          <li class="function-link"><a href="#tabulate">tabulate</a></li>
+          <li class="function-link"><a href="#tail">tail</a></li>
+          <li class="function-link"><a href="#tails">tails</a></li>
+          <li class="function-link"><a href="#take">take</a></li>
+          <li class="function-link"><a href="#takeRight">takeRight</a></li>
+          <li class="function-link"><a href="#takeWhile">takeWhile</a></li>
+          <li class="function-link"><a href="#union">union</a></li>
+          <li class="function-link"><a href="#unzip">unzip</a></li>
+          <li class="function-link"><a href="#unzip3">unzip3</a></li>
+          <li class="function-link"><a href="#updated">updated</a></li>
+          <li class="function-link"><a href="#zip">zip</a></li>
+          <li class="function-link"><a href="#zipAll">zipAll</a></li>
+          <li class="function-link"><a href="#zipWithIndex">zipWithIndex</a></li>
+      </ul>
+</aside>
+<main id="function-entries" class="col-12 col-sm-8 col-md-9 col-lg-10">
+      <article id="aggregate" class="function-entry">
+      <h2 class="function-name">aggregate</h2>
+              <p class="function-description i18n" lang="en">Aggregates the results of applying an operator to subsequent elements.</p>
+              <p class="function-description i18n" lang="es">Agrega los resultados de aplicar un operador a elementos subsecuentes.</p>
+            <pre class="function-signature"><code class="scala">def aggregate[B](z: ⇒ B)(seqop: (B, A) ⇒ B, combop: (B, B) ⇒ B): B</code></pre>
+      <figure class="function-figure">
+        <img src="images/aggregate.svg" alt="" />
+      </figure>
+    </article>
+      <article id="collect" class="function-entry">
+      <h2 class="function-name">collect</h2>
+              <p class="function-description i18n" lang="en">Builds a new collection by applying a partial function to all elements of this collection on which the function is defined.</p>
+              <p class="function-description i18n" lang="es">Construye una nueva colección aplicando una función parcial a todos los elementos de esta colección para los que dicha función está definida.</p>
+            <pre class="function-signature"><code class="scala">def collect[B](pf: PartialFunction[A, B]): <em>Collection</em>[B]</code></pre>
+      <figure class="function-figure">
+        <img src="images/collect.svg" alt="" />
+      </figure>
+    </article>
+      <article id="collectFirst" class="function-entry">
+      <h2 class="function-name">collectFirst</h2>
+              <p class="function-description i18n" lang="en">Finds the first element of the collection for which the given partial function is defined, and applies the partial function to it.</p>
+              <p class="function-description i18n" lang="es">Encuentra el primer elemento de la colección para el cual está definida una función parcial, aplicando después dicha función parcial.</p>
+            <pre class="function-signature"><code class="scala">def collectFirst[B](pf: PartialFunction[A, B]): Option[B]</code></pre>
+      <figure class="function-figure">
+        <img src="images/collectFirst.svg" alt="" />
+      </figure>
+    </article>
+      <article id="combinations" class="function-entry">
+      <h2 class="function-name">combinations</h2>
+              <p class="function-description i18n" lang="en">Iterates over combinations.</p>
+              <p class="function-description i18n" lang="es">Itera sobre combinaciones.</p>
+            <pre class="function-signature"><code class="scala">def combinations(n: Int): Iterator[<em>Collection</em>[A]]</code></pre>
+      <figure class="function-figure">
+        <img src="images/combinations.svg" alt="" />
+      </figure>
+    </article>
+      <article id="concat" class="function-entry">
+      <h2 class="function-name">concat</h2>
+              <p class="function-description i18n" lang="en">Concatenates all argument collections into a single collection.</p>
+              <p class="function-description i18n" lang="es">Concatena todas las colecciones argumento en una única colección.</p>
+            <pre class="function-signature"><code class="scala">def <em>Collection</em>.concat(xss: Traversable[A]*): <em>Collection</em>[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/concat.svg" alt="" />
+      </figure>
+    </article>
+      <article id="contains" class="function-entry">
+      <h2 class="function-name">contains</h2>
+              <p class="function-description i18n" lang="en">Tests whether this collection contains a given value as an element.</p>
+              <p class="function-description i18n" lang="es">Comprueba si esta colección contiene un valor dado en forma de elemento.</p>
+            <pre class="function-signature"><code class="scala">def contains[A1 >: A](elem: A1): Boolean</code></pre>
+      <figure class="function-figure">
+        <img src="images/contains.svg" alt="" />
+      </figure>
+    </article>
+      <article id="containsSlice" class="function-entry">
+      <h2 class="function-name">containsSlice</h2>
+              <p class="function-description i18n" lang="en">Tests whether this collection contains a given sequence as a slice.</p>
+              <p class="function-description i18n" lang="es">Comprueba si esta colección contiene una secuencia dada en forma de subcolección.</p>
+            <pre class="function-signature"><code class="scala">def containsSlice[B](that: GenSeq[B]): Boolean</code></pre>
+      <figure class="function-figure">
+        <img src="images/containsSlice.svg" alt="" />
+      </figure>
+    </article>
+      <article id="count" class="function-entry">
+      <h2 class="function-name">count</h2>
+              <p class="function-description i18n" lang="en">Counts the number of elements in the collection which satisfy a predicate.</p>
+              <p class="function-description i18n" lang="es">Cuenta el número de elementos en la colección que satisfacen un predicado.</p>
+            <pre class="function-signature"><code class="scala">def count(p: (A) ⇒ Boolean): Int</code></pre>
+      <figure class="function-figure">
+        <img src="images/count.svg" alt="" />
+      </figure>
+    </article>
+      <article id="diff" class="function-entry">
+      <h2 class="function-name">diff</h2>
+              <p class="function-description i18n" lang="en">Computes the multiset difference between this and another collection.</p>
+              <p class="function-description i18n" lang="es">Calcula la diferencia multiconjunto entre esta colección y otra.</p>
+            <pre class="function-signature"><code class="scala">def diff(that: Seq[A]): <em>Collection</em>[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/diff.svg" alt="" />
+      </figure>
+    </article>
+      <article id="distinct" class="function-entry">
+      <h2 class="function-name">distinct</h2>
+              <p class="function-description i18n" lang="en">Builds a new collection from this one without any duplicate elements.</p>
+              <p class="function-description i18n" lang="es">Construye una nueva colección a partir de esta sin ningún elemento duplicado.</p>
+            <pre class="function-signature"><code class="scala">def distinct: <em>Collection</em>[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/distinct.svg" alt="" />
+      </figure>
+    </article>
+      <article id="drop" class="function-entry">
+      <h2 class="function-name">drop</h2>
+              <p class="function-description i18n" lang="en">Selects all elements except the first <var>n</var> ones.</p>
+              <p class="function-description i18n" lang="es">Selecciona todos los elementos excepto los <var>n</var> primeros.</p>
+            <pre class="function-signature"><code class="scala">def drop(n: Int): <em>Collection</em>[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/drop.svg" alt="" />
+      </figure>
+    </article>
+      <article id="dropRight" class="function-entry">
+      <h2 class="function-name">dropRight</h2>
+              <p class="function-description i18n" lang="en">Select all elements except last <var>n</var> ones.</p>
+              <p class="function-description i18n" lang="es">Selecciona todos los elementos excepto los <var>n</var> últimos.</p>
+            <pre class="function-signature"><code class="scala">def dropRight(n: Int): <em>Collection</em>[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/dropRight.svg" alt="" />
+      </figure>
+    </article>
+      <article id="dropWhile" class="function-entry">
+      <h2 class="function-name">dropWhile</h2>
+              <p class="function-description i18n" lang="en">Drops longest prefix of elements that satisfy a predicate.</p>
+              <p class="function-description i18n" lang="es">Descarta el mayor prefijo de elementos que satisfacen un predicado.</p>
+            <pre class="function-signature"><code class="scala">def dropWhile(p: (A) ⇒ Boolean): <em>Collection</em>[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/dropWhile.svg" alt="" />
+      </figure>
+    </article>
+      <article id="endsWith" class="function-entry">
+      <h2 class="function-name">endsWith</h2>
+              <p class="function-description i18n" lang="en">Tests whether this collection ends with the given sequence.</p>
+              <p class="function-description i18n" lang="es">Comprueba si esta colección termina con una secuencia dada.</p>
+            <pre class="function-signature"><code class="scala">def endsWith[B](that: GenSeq[B]): Boolean</code></pre>
+      <figure class="function-figure">
+        <img src="images/endsWith.svg" alt="" />
+      </figure>
+    </article>
+      <article id="exists" class="function-entry">
+      <h2 class="function-name">exists</h2>
+              <p class="function-description i18n" lang="en">Tests whether a predicate holds for at least one element of this collection.</p>
+              <p class="function-description i18n" lang="es">Comprueba si un predicado es válido para al menos un elemento de esta colección.</p>
+            <pre class="function-signature"><code class="scala">def exists(p: (A) ⇒ Boolean): Boolean</code></pre>
+      <figure class="function-figure">
+        <img src="images/exists.svg" alt="" />
+      </figure>
+    </article>
+      <article id="fill" class="function-entry">
+      <h2 class="function-name">fill</h2>
+              <p class="function-description i18n" lang="en">Produces a n-dimensional collection containing the results of some element computation a number of times.</p>
+              <p class="function-description i18n" lang="es">Produce una colección n-dimensional que contiene el resultado de cierta computación para un elemento un numero de veces.</p>
+            <pre class="function-signature"><code class="scala">def <em>Collection</em>.fill[A](n<sub>1</sub>: Int, ..., n<sub>m</sub>: Int)(elem: ⇒ A): <em>Collection</em>[... <em>Collection</em>[A] ...]</code></pre>
+      <figure class="function-figure">
+        <img src="images/fill.svg" alt="" />
+      </figure>
+    </article>
+      <article id="filter" class="function-entry">
+      <h2 class="function-name">filter</h2>
+              <p class="function-description i18n" lang="en">Selects all elements of this traversable collection which satisfy a predicate.</p>
+              <p class="function-description i18n" lang="es">Selecciona todos los elementos de la colección que satisfacen un predicado.</p>
+            <pre class="function-signature"><code class="scala">def filter(p: (A) ⇒ Boolean): <em>Collection</em>[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/filter.svg" alt="" />
+      </figure>
+    </article>
+      <article id="filterNot" class="function-entry">
+      <h2 class="function-name">filterNot</h2>
+              <p class="function-description i18n" lang="en">Selects all elements of this collection which do not satisfy a predicate.</p>
+              <p class="function-description i18n" lang="es">Selecciona todos los elementos de la colección que no satisfacen un predicado.</p>
+            <pre class="function-signature"><code class="scala">def filterNot(p: (A) ⇒ Boolean): <em>Collection</em>[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/filterNot.svg" alt="" />
+      </figure>
+    </article>
+      <article id="find" class="function-entry">
+      <h2 class="function-name">find</h2>
+              <p class="function-description i18n" lang="en">Finds the first element of the collection satisfying a predicate, if any.</p>
+              <p class="function-description i18n" lang="es">Encuentra el primer elemento de la colección que satisface un predicado, si es que existe.</p>
+            <pre class="function-signature"><code class="scala">def find(p: (A) ⇒ Boolean): Option[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/find.svg" alt="" />
+      </figure>
+    </article>
+      <article id="flatMap" class="function-entry">
+      <h2 class="function-name">flatMap</h2>
+              <p class="function-description i18n" lang="en">Builds a new collection by applying a function to all elements of this collection and using the elements of the resulting collections.</p>
+              <p class="function-description i18n" lang="es">Construye una nueva colección tras aplicar una función a todos los elementos de esta colección. La función devuelve una colección de elementos.</p>
+            <pre class="function-signature"><code class="scala">def flatMap[B](f: (A) ⇒ <em>Collection</em>[B]): <em>Collection</em>[B]</code></pre>
+      <figure class="function-figure">
+        <img src="images/flatMap.svg" alt="" />
+      </figure>
+    </article>
+      <article id="flatten" class="function-entry">
+      <h2 class="function-name">flatten</h2>
+              <p class="function-description i18n" lang="en">Converts this collection of collections into a collection formed by the elements of the inner collections.</p>
+              <p class="function-description i18n" lang="es">Convierte esta colección de colecciones en una colección compuesta por los elementos de las colecciones internas.</p>
+            <pre class="function-signature"><code class="scala">def flatten[B]: <em>Collection</em>[B]</code></pre>
+      <figure class="function-figure">
+        <img src="images/flatten.svg" alt="" />
+      </figure>
+    </article>
+      <article id="fold" class="function-entry">
+      <h2 class="function-name">fold</h2>
+              <p class="function-description i18n" lang="en">Folds the elements of this collection using the specified associative binary operator.</p>
+              <p class="function-description i18n" lang="es">Pliega los elementos de esta colección utilizando un operador binario asociativo.</p>
+            <pre class="function-signature"><code class="scala">def fold[A1 >: A](z: A1)(op: (A1, A1) ⇒ A1): A1</code></pre>
+      <figure class="function-figure">
+        <img src="images/fold.svg" alt="" />
+      </figure>
+    </article>
+      <article id="foldLeft" class="function-entry">
+      <h2 class="function-name">foldLeft</h2>
+              <p class="function-description i18n" lang="en">Applies a binary operator to a start value and all elements of this collection, going left to right.</p>
+              <p class="function-description i18n" lang="es">Aplica un operador binario a un valor inicial y a todos los elementos de la colección, yendo de izquierda a derecha.</p>
+            <pre class="function-signature"><code class="scala">def foldLeft[B](z: B)(op: (B, A) ⇒ B): B</code></pre>
+      <figure class="function-figure">
+        <img src="images/foldLeft.svg" alt="" />
+      </figure>
+    </article>
+      <article id="foldRight" class="function-entry">
+      <h2 class="function-name">foldRight</h2>
+              <p class="function-description i18n" lang="en">Applies a binary operator to a start value and all elements of this collection, going right to left.</p>
+              <p class="function-description i18n" lang="es">Aplica un operador binario a un valor inicial y a todos los elementos de la colección, yendo de derecha a izquierda.</p>
+            <pre class="function-signature"><code class="scala">def foldRight[B](z: B)(op: (A, B) ⇒ B): B</code></pre>
+      <figure class="function-figure">
+        <img src="images/foldRight.svg" alt="" />
+      </figure>
+    </article>
+      <article id="forall" class="function-entry">
+      <h2 class="function-name">forall</h2>
+              <p class="function-description i18n" lang="en">Tests whether a predicate holds for all elements of this collection.</p>
+              <p class="function-description i18n" lang="es">Comprueba si un predicado es válido para todos los elementos de esta colección.</p>
+            <pre class="function-signature"><code class="scala">def forall(p: (A) ⇒ Boolean): Boolean</code></pre>
+      <figure class="function-figure">
+        <img src="images/forall.svg" alt="" />
+      </figure>
+    </article>
+      <article id="foreach" class="function-entry">
+      <h2 class="function-name">foreach</h2>
+              <p class="function-description i18n" lang="en">Applies a function <var>f</var> to all elements of this collection.</p>
+              <p class="function-description i18n" lang="es">Aplica una función <var>f</var> a todos los elementos de esta colección.</p>
+            <pre class="function-signature"><code class="scala">def foreach(f: (A) ⇒ Unit): Unit</code></pre>
+      <figure class="function-figure">
+        <img src="images/foreach.svg" alt="" />
+      </figure>
+    </article>
+      <article id="groupBy" class="function-entry">
+      <h2 class="function-name">groupBy</h2>
+              <p class="function-description i18n" lang="en">Partitions this collection into a map of collections according to some discriminator function.</p>
+              <p class="function-description i18n" lang="es">Parte esta colección en un mapa de colecciones de acuerdo a una función discriminadora.</p>
+            <pre class="function-signature"><code class="scala">def groupBy[K](f: (A) ⇒ K): Map[K, <em>Collection</em>[A]]</code></pre>
+      <figure class="function-figure">
+        <img src="images/groupBy.svg" alt="" />
+      </figure>
+    </article>
+      <article id="grouped" class="function-entry">
+      <h2 class="function-name">grouped</h2>
+              <p class="function-description i18n" lang="en">Partitions elements in fixed size iterable collections.</p>
+              <p class="function-description i18n" lang="es">Parte los elementos en colecciones iterables de tamaño fijo.</p>
+            <pre class="function-signature"><code class="scala">def grouped(size: Int): Iterator[<em>Collection</em>[A]]</code></pre>
+      <figure class="function-figure">
+        <img src="images/grouped.svg" alt="" />
+      </figure>
+    </article>
+      <article id="head" class="function-entry">
+      <h2 class="function-name">head</h2>
+              <p class="function-description i18n" lang="en">Selects the first element of this collection.</p>
+              <p class="function-description i18n" lang="es">Selecciona el primer elemento de esta colección.</p>
+            <pre class="function-signature"><code class="scala">def head: A</code></pre>
+      <figure class="function-figure">
+        <img src="images/head.svg" alt="" />
+      </figure>
+    </article>
+      <article id="headOption" class="function-entry">
+      <h2 class="function-name">headOption</h2>
+              <p class="function-description i18n" lang="en">Optionally selects the first element.</p>
+              <p class="function-description i18n" lang="es">Opcionalmente selecciona el primer elemento de esta colección.</p>
+            <pre class="function-signature"><code class="scala">def headOption: Option[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/headOption.svg" alt="" />
+      </figure>
+    </article>
+      <article id="indexOf" class="function-entry">
+      <h2 class="function-name">indexOf</h2>
+              <p class="function-description i18n" lang="en">Finds index of first occurrence of some value in this collection after or at some start index.</p>
+              <p class="function-description i18n" lang="es">Encuentra el índice de la primera ocurrencia de algún valor en esta colección empezando por un índice inicial.</p>
+            <pre class="function-signature"><code class="scala">def indexOf(elem: A, from: Int): Int</code></pre>
+      <figure class="function-figure">
+        <img src="images/indexOf.svg" alt="" />
+      </figure>
+    </article>
+      <article id="indexOfSlice" class="function-entry">
+      <h2 class="function-name">indexOfSlice</h2>
+              <p class="function-description i18n" lang="en">Finds first index after or at a start index where this collection contains a given sequence as a slice.</p>
+              <p class="function-description i18n" lang="es">Encuentra el primer índice empezando por uno inicial donde esta colección contiene una secuencia dada como subcolección.</p>
+            <pre class="function-signature"><code class="scala">def indexOfSlice[B >: A](that: GenSeq[B], from: Int): Int</code></pre>
+      <figure class="function-figure">
+        <img src="images/indexOfSlice.svg" alt="" />
+      </figure>
+    </article>
+      <article id="indexWhere" class="function-entry">
+      <h2 class="function-name">indexWhere</h2>
+              <p class="function-description i18n" lang="en">Finds index of the first element satisfying some predicate after or at some start index.</p>
+              <p class="function-description i18n" lang="es">Encuentra el índice el primer elemento que satisface un predicado empezando por un índice inicial.</p>
+            <pre class="function-signature"><code class="scala">def indexWhere(p: (A) ⇒ Boolean, from: Int): Int</code></pre>
+      <figure class="function-figure">
+        <img src="images/indexWhere.svg" alt="" />
+      </figure>
+    </article>
+      <article id="indices" class="function-entry">
+      <h2 class="function-name">indices</h2>
+              <p class="function-description i18n" lang="en">Produces the range of all indices of this collection.</p>
+              <p class="function-description i18n" lang="es">Produce un rango con todos los índices de esta colección.</p>
+            <pre class="function-signature"><code class="scala">def indices: Range</code></pre>
+      <figure class="function-figure">
+        <img src="images/indices.svg" alt="" />
+      </figure>
+    </article>
+      <article id="init" class="function-entry">
+      <h2 class="function-name">init</h2>
+              <p class="function-description i18n" lang="en">Select all elements except the last.</p>
+              <p class="function-description i18n" lang="es">Selecciona todos los elementos excepto el último.</p>
+            <pre class="function-signature"><code class="scala">def init: <em>Collection</em>[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/init.svg" alt="" />
+      </figure>
+    </article>
+      <article id="inits" class="function-entry">
+      <h2 class="function-name">inits</h2>
+              <p class="function-description i18n" lang="en">Iterates over the inits of this collection.</p>
+              <p class="function-description i18n" lang="es">Itera sobre los <code>inits</code> de esta colección.</p>
+            <pre class="function-signature"><code class="scala">def inits: Iterator[<em>Collection</em>[A]]</code></pre>
+      <figure class="function-figure">
+        <img src="images/inits.svg" alt="" />
+      </figure>
+    </article>
+      <article id="intersect" class="function-entry">
+      <h2 class="function-name">intersect</h2>
+              <p class="function-description i18n" lang="en">Computes the multiset intersection between this collection and another sequence.</p>
+              <p class="function-description i18n" lang="es">Computa la intersección multiconjunto entre esta colección y otra secuencia.</p>
+            <pre class="function-signature"><code class="scala">def intersect(that: Seq[A]): <em>Collection</em>[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/intersect.svg" alt="" />
+      </figure>
+    </article>
+      <article id="isEmpty" class="function-entry">
+      <h2 class="function-name">isEmpty</h2>
+              <p class="function-description i18n" lang="en">Tests whether this collection is empty.</p>
+              <p class="function-description i18n" lang="es">Comprueba si esta colección está vacía.</p>
+            <pre class="function-signature"><code class="scala">def isEmpty: Boolean</code></pre>
+      <figure class="function-figure">
+        <img src="images/isEmpty.svg" alt="" />
+      </figure>
+    </article>
+      <article id="last" class="function-entry">
+      <h2 class="function-name">last</h2>
+              <p class="function-description i18n" lang="en">Selects the last element.</p>
+              <p class="function-description i18n" lang="es">Selecciona el último elemento.</p>
+            <pre class="function-signature"><code class="scala">def last: A</code></pre>
+      <figure class="function-figure">
+        <img src="images/last.svg" alt="" />
+      </figure>
+    </article>
+      <article id="lastIndexOf" class="function-entry">
+      <h2 class="function-name">lastIndexOf</h2>
+              <p class="function-description i18n" lang="en">Finds index of last occurrence of some value in this colección before or at a given end index.</p>
+              <p class="function-description i18n" lang="es">Encuentra el índice de la última ocurrencia de algún valor en esta colección antes de un índice en particular.</p>
+            <pre class="function-signature"><code class="scala">def lastIndexOf(elem: A, end: Int): Int</code></pre>
+      <figure class="function-figure">
+        <img src="images/lastIndexOf.svg" alt="" />
+      </figure>
+    </article>
+      <article id="lastIndexOfSlice" class="function-entry">
+      <h2 class="function-name">lastIndexOfSlice</h2>
+              <p class="function-description i18n" lang="en">Finds last index before or at a given end index where this collection contains a given sequence as a slice.</p>
+              <p class="function-description i18n" lang="es">Encuentra el último índice antes de uno en particular donde esta colección contiene una secuencia dada como subcolección.</p>
+            <pre class="function-signature"><code class="scala">def lastIndexOfSlice[B >: A](that: GenSeq[B], end: Int): Int</code></pre>
+      <figure class="function-figure">
+        <img src="images/lastIndexOfSlice.svg" alt="" />
+      </figure>
+    </article>
+      <article id="lastIndexWhere" class="function-entry">
+      <h2 class="function-name">lastIndexWhere</h2>
+              <p class="function-description i18n" lang="en">Finds index of last element satisfying some predicate before or at a given end index.</p>
+              <p class="function-description i18n" lang="es">Encuentra el índice del último elemento que satisface algún predicado antes de un índice en particular.</p>
+            <pre class="function-signature"><code class="scala">def lastIndexWhere(p: (A) ⇒ Boolean, end: Int): Int</code></pre>
+      <figure class="function-figure">
+        <img src="images/lastIndexWhere.svg" alt="" />
+      </figure>
+    </article>
+      <article id="lastOption" class="function-entry">
+      <h2 class="function-name">lastOption</h2>
+              <p class="function-description i18n" lang="en">Optionally selects the last element.</p>
+              <p class="function-description i18n" lang="es">Opcionalmente selecciona el último elemento.</p>
+            <pre class="function-signature"><code class="scala">def lastOption: Option[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/lastOption.svg" alt="" />
+      </figure>
+    </article>
+      <article id="length" class="function-entry">
+      <h2 class="function-name">length</h2>
+              <p class="function-description i18n" lang="en">The length of the collection.</p>
+              <p class="function-description i18n" lang="es">La longitud de la colección.</p>
+            <pre class="function-signature"><code class="scala">def length: Int</code></pre>
+      <figure class="function-figure">
+        <img src="images/length.svg" alt="" />
+      </figure>
+    </article>
+      <article id="map" class="function-entry">
+      <h2 class="function-name">map</h2>
+              <p class="function-description i18n" lang="en">Builds a new collection by applying a function to all elements of this collection.</p>
+              <p class="function-description i18n" lang="es">Construye una nueva colección aplicando una función a todos los elementos de esta colección.</p>
+            <pre class="function-signature"><code class="scala">def map[B](f: (A) ⇒ B): <em>Collection</em>[B]</code></pre>
+      <figure class="function-figure">
+        <img src="images/map.svg" alt="" />
+      </figure>
+    </article>
+      <article id="mapConserve" class="function-entry">
+      <h2 class="function-name">mapConserve</h2>
+              <p class="function-description i18n" lang="en">Builds a new collection by applying a function to all elements of this collection. Like <code>xs map f</code>, but returns <var>xs</var> unchanged if function <var>f</var> maps all elements to themselves (as determined by <var>eq</var>)</p>
+              <p class="function-description i18n" lang="es">Construye una nueva colección aplicando una función a todos los elementos de esta colección. Igual que <code>xs map f</code> pero devuelve <var>xs</var> intacto si la función <var>f</var> mapea todos los elementos a sí mismos (determinado por <var>eq</var>)</p>
+            <pre class="function-signature"><code class="scala">def mapConserve(f: (A) ⇒ A): <em>Collection</em>[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/mapConserve.svg" alt="" />
+      </figure>
+    </article>
+      <article id="max" class="function-entry">
+      <h2 class="function-name">max</h2>
+              <p class="function-description i18n" lang="en">Finds the largest element.</p>
+              <p class="function-description i18n" lang="es">Encuentra el mayor elemento.</p>
+            <pre class="function-signature"><code class="scala">def max: A</code></pre>
+      <figure class="function-figure">
+        <img src="images/max.svg" alt="" />
+      </figure>
+    </article>
+      <article id="maxBy" class="function-entry">
+      <h2 class="function-name">maxBy</h2>
+              <p class="function-description i18n" lang="en">Finds the first element which yields the largest value measured by function <var>f</var>.</p>
+              <p class="function-description i18n" lang="es">Encuentra el primer elemento que arroja el mayor valor medido por la función <var>f</var>.</p>
+            <pre class="function-signature"><code class="scala">def maxBy[B](f: (A) ⇒ B): A</code></pre>
+      <figure class="function-figure">
+        <img src="images/maxBy.svg" alt="" />
+      </figure>
+    </article>
+      <article id="min" class="function-entry">
+      <h2 class="function-name">min</h2>
+              <p class="function-description i18n" lang="en">Finds the smallest element.</p>
+              <p class="function-description i18n" lang="es">Encuentra el menor elemento.</p>
+            <pre class="function-signature"><code class="scala">def min: A</code></pre>
+      <figure class="function-figure">
+        <img src="images/min.svg" alt="" />
+      </figure>
+    </article>
+      <article id="minBy" class="function-entry">
+      <h2 class="function-name">minBy</h2>
+              <p class="function-description i18n" lang="en">Finds the first element which yields the smallest value measured by function <var>f</var>.</p>
+              <p class="function-description i18n" lang="es">Encuentra el primer elemento que arroja el menor valor medido por la función <var>f</var>.</p>
+            <pre class="function-signature"><code class="scala">def minBy[B](f: (A) ⇒ B): A</code></pre>
+      <figure class="function-figure">
+        <img src="images/minBy.svg" alt="" />
+      </figure>
+    </article>
+      <article id="mkString" class="function-entry">
+      <h2 class="function-name">mkString</h2>
+              <p class="function-description i18n" lang="en">Displays all elements of this collection in a string.</p>
+              <p class="function-description i18n" lang="es">Muestra todos los elementos de esta colección como una cadena.</p>
+            <pre class="function-signature"><code class="scala">def mkString(start: String, sep: String, end: String): String</code></pre>
+      <figure class="function-figure">
+        <img src="images/mkString.svg" alt="" />
+      </figure>
+    </article>
+      <article id="nonEmpty" class="function-entry">
+      <h2 class="function-name">nonEmpty</h2>
+              <p class="function-description i18n" lang="en">Tests whether the collection is not empty.</p>
+              <p class="function-description i18n" lang="es">Comprueba si esta colección es no vacía.</p>
+            <pre class="function-signature"><code class="scala">def nonEmpty: Boolean</code></pre>
+      <figure class="function-figure">
+        <img src="images/nonEmpty.svg" alt="" />
+      </figure>
+    </article>
+      <article id="padTo" class="function-entry">
+      <h2 class="function-name">padTo</h2>
+              <p class="function-description i18n" lang="en">A copy of this collection with an element value appended until a given target length is reached.</p>
+              <p class="function-description i18n" lang="es">Una copia de esta colección anexando un mismo valor hasta alcanzar una longitud dada.</p>
+            <pre class="function-signature"><code class="scala">def padTo(len: Int, elem: A): <em>Collection</em>[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/padTo.svg" alt="" />
+      </figure>
+    </article>
+      <article id="partition" class="function-entry">
+      <h2 class="function-name">partition</h2>
+              <p class="function-description i18n" lang="en">Partitions this collection in two collections according to a predicate.</p>
+              <p class="function-description i18n" lang="es">Parte esta colección en dos colecciones de acuerdo a un predicado.</p>
+            <pre class="function-signature"><code class="scala">def partition(p: (A) ⇒ Boolean): (<em>Collection</em>[A], <em>Collection</em>[A])</code></pre>
+      <figure class="function-figure">
+        <img src="images/partition.svg" alt="" />
+      </figure>
+    </article>
+      <article id="patch" class="function-entry">
+      <h2 class="function-name">patch</h2>
+              <p class="function-description i18n" lang="en">Produces a new collection where a slice of elements in this collection is replaced by another sequence.</p>
+              <p class="function-description i18n" lang="es">Produce una nueva colección donde una subcolección de elementos es reemplazada por otra secuencia.</p>
+            <pre class="function-signature"><code class="scala">def patch(from: Int, that: GenSeq[A], replaced: Int): <em>Collection</em>[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/patch.svg" alt="" />
+      </figure>
+    </article>
+      <article id="permutations" class="function-entry">
+      <h2 class="function-name">permutations</h2>
+              <p class="function-description i18n" lang="en">Iterates over distinct permutations.</p>
+              <p class="function-description i18n" lang="es">Itera sobre distintas permutaciones.</p>
+            <pre class="function-signature"><code class="scala">def permutations: Iterator[<em>Collection</em>[A]]</code></pre>
+      <figure class="function-figure">
+        <img src="images/permutations.svg" alt="" />
+      </figure>
+    </article>
+      <article id="prefixLength" class="function-entry">
+      <h2 class="function-name">prefixLength</h2>
+              <p class="function-description i18n" lang="en">Returns the length of the longest prefix whose elements all satisfy some predicate.</p>
+              <p class="function-description i18n" lang="es">Devuelve la longitud del mayor prefijo cuyos elementos satisfacen algún predicado.</p>
+            <pre class="function-signature"><code class="scala">def prefixLength(p: (A) ⇒ Boolean): Int</code></pre>
+      <figure class="function-figure">
+        <img src="images/prefixLength.svg" alt="" />
+      </figure>
+    </article>
+      <article id="product" class="function-entry">
+      <h2 class="function-name">product</h2>
+              <p class="function-description i18n" lang="en">Multiplies up the elements of this collection.</p>
+              <p class="function-description i18n" lang="es">Multiplica los elementos de esta colección.</p>
+            <pre class="function-signature"><code class="scala">def product: A</code></pre>
+      <figure class="function-figure">
+        <img src="images/product.svg" alt="" />
+      </figure>
+    </article>
+      <article id="range" class="function-entry">
+      <h2 class="function-name">range</h2>
+              <p class="function-description i18n" lang="en">Produces a collection containing a sequence of increasing of integers</p>
+              <p class="function-description i18n" lang="es">Produce una colección que contiene una secuencia de enteros incrementales.</p>
+            <pre class="function-signature"><code class="scala">def <em>Collection</em>.range(start: Int, end: Int, step: Int): <em>Collection</em>[Int]</code></pre>
+      <figure class="function-figure">
+        <img src="images/range.svg" alt="" />
+      </figure>
+    </article>
+      <article id="reduce" class="function-entry">
+      <h2 class="function-name">reduce</h2>
+              <p class="function-description i18n" lang="en">Reduces the elements of this collection using the specified associative binary operator.</p>
+              <p class="function-description i18n" lang="es">Reduce los elementos de esta colección utilizando un operador binario asociativo.</p>
+            <pre class="function-signature"><code class="scala">def reduce[A1 >: A](op: (A1, A1) ⇒ A1): A1</code></pre>
+      <figure class="function-figure">
+        <img src="images/reduce.svg" alt="" />
+      </figure>
+    </article>
+      <article id="reduceLeft" class="function-entry">
+      <h2 class="function-name">reduceLeft</h2>
+              <p class="function-description i18n" lang="en">Applies a binary operator to all elements of this collection, going left to right.</p>
+              <p class="function-description i18n" lang="es">Aplica un operador binario a todos los elementos de esta colección, yendo de izquierda a derecha.</p>
+            <pre class="function-signature"><code class="scala">def reduceLeft[B >: A](op: (B, A) ⇒ B): B</code></pre>
+      <figure class="function-figure">
+        <img src="images/reduceLeft.svg" alt="" />
+      </figure>
+    </article>
+      <article id="reduceLeftOption" class="function-entry">
+      <h2 class="function-name">reduceLeftOption</h2>
+              <p class="function-description i18n" lang="en">Optionally applies a binary operator to all elements of this collection, going left to right.</p>
+              <p class="function-description i18n" lang="es">Opcionalmente aplica un operador binario a todos los elementos de esta colección, yendo de izquierda a derecha.</p>
+            <pre class="function-signature"><code class="scala">def reduceLeftOption[B >: A](op: (B, A) ⇒ B): Option[B]</code></pre>
+      <figure class="function-figure">
+        <img src="images/reduceLeftOption.svg" alt="" />
+      </figure>
+    </article>
+      <article id="reduceOption" class="function-entry">
+      <h2 class="function-name">reduceOption</h2>
+              <p class="function-description i18n" lang="en">Reduces the elements of this collection, if any, using the specified associative binary operator.</p>
+              <p class="function-description i18n" lang="es">Reduce los elementos de esta colección, si lo hubiese, utilizando un operador binario asociativo.</p>
+            <pre class="function-signature"><code class="scala">def reduceOption[A1 >: A](op: (A1, A1) ⇒ A1): Option[A1]</code></pre>
+      <figure class="function-figure">
+        <img src="images/reduceOption.svg" alt="" />
+      </figure>
+    </article>
+      <article id="reduceRight" class="function-entry">
+      <h2 class="function-name">reduceRight</h2>
+              <p class="function-description i18n" lang="en">Applies a binary operator to all elements of this collection, going right to left.</p>
+              <p class="function-description i18n" lang="es">Aplica un operador binario a todos los elementos de esta colección, yendo de derecha a izquierda.</p>
+            <pre class="function-signature"><code class="scala">def reduceRight[B >: A](op: (A, B) ⇒ B): B</code></pre>
+      <figure class="function-figure">
+        <img src="images/reduceRight.svg" alt="" />
+      </figure>
+    </article>
+      <article id="reduceRightOption" class="function-entry">
+      <h2 class="function-name">reduceRightOption</h2>
+              <p class="function-description i18n" lang="en">Optionally, applies a binary operator to all elements of this collection, going right to left.</p>
+              <p class="function-description i18n" lang="es">Opcionalmente aplica un operador binario a todos los elementos de esta colección, yendo de derecha a izquierda.</p>
+            <pre class="function-signature"><code class="scala">def reduceRightOption[B >: A](op: (A, B) ⇒ B): Option[B]</code></pre>
+      <figure class="function-figure">
+        <img src="images/reduceRightOption.svg" alt="" />
+      </figure>
+    </article>
+      <article id="reverse" class="function-entry">
+      <h2 class="function-name">reverse</h2>
+              <p class="function-description i18n" lang="en">Returns new collection with elements in reversed order.</p>
+              <p class="function-description i18n" lang="es">Devuelve una nueva colección con los elementos en orden inverso.</p>
+            <pre class="function-signature"><code class="scala">def reverse: <em>Collection</em>[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/reverse.svg" alt="" />
+      </figure>
+    </article>
+      <article id="reverseMap" class="function-entry">
+      <h2 class="function-name">reverseMap</h2>
+              <p class="function-description i18n" lang="en">Builds a new collection by applying a function to all elements of this collection and collecting the results in reversed order.</p>
+              <p class="function-description i18n" lang="es">Construye una nueva colección aplicando una función a todos los elementos de esta colección y recolectando los resultados en orden inverso.</p>
+            <pre class="function-signature"><code class="scala">def reverseMap(f: (A) ⇒ B): <em>Collection</em>[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/reverseMap.svg" alt="" />
+      </figure>
+    </article>
+      <article id="sameElements" class="function-entry">
+      <h2 class="function-name">sameElements</h2>
+              <p class="function-description i18n" lang="en">Checks if the other collection contains the same elements in the same order as this one.</p>
+              <p class="function-description i18n" lang="es">Comprueba si otra colección contiene los mismos elementos en el mismo orden que esta.</p>
+            <pre class="function-signature"><code class="scala">def sameElements(that: GenIterable[A]): Boolean</code></pre>
+      <figure class="function-figure">
+        <img src="images/sameElements.svg" alt="" />
+      </figure>
+    </article>
+      <article id="scan" class="function-entry">
+      <h2 class="function-name">scan</h2>
+              <p class="function-description i18n" lang="en">Computes a prefix scan of the elements of the collection.</p>
+              <p class="function-description i18n" lang="es">Computa un scan prefijado de los elementos de la colección.</p>
+            <pre class="function-signature"><code class="scala">def scan[B >: A](z: B)(op: (B, B) ⇒ B)</code></pre>
+      <figure class="function-figure">
+        <img src="images/scan.svg" alt="" />
+      </figure>
+    </article>
+      <article id="scanLeft" class="function-entry">
+      <h2 class="function-name">scanLeft</h2>
+              <p class="function-description i18n" lang="en">Produces a collection containing cumulative results of applying the operator going left to right.</p>
+              <p class="function-description i18n" lang="es">Produce una colección que contiene los resultados parciales de aplicar el operador, yendo de izquierda a derecha.</p>
+            <pre class="function-signature"><code class="scala">def scanLeft[B](z: B)(op: (B, A) ⇒ B)</code></pre>
+      <figure class="function-figure">
+        <img src="images/scanLeft.svg" alt="" />
+      </figure>
+    </article>
+      <article id="scanRight" class="function-entry">
+      <h2 class="function-name">scanRight</h2>
+              <p class="function-description i18n" lang="en">Produces a collection containing cumulative results of applying the operator going right to left.</p>
+              <p class="function-description i18n" lang="es">Produce una colección que contiene los resultados parciales de aplicar el operador, yendo de derecha a izquierda.</p>
+            <pre class="function-signature"><code class="scala">def scanRight[B](z: B)(op: (A, B) ⇒ B)</code></pre>
+      <figure class="function-figure">
+        <img src="images/scanRight.svg" alt="" />
+      </figure>
+    </article>
+      <article id="segmentLength" class="function-entry">
+      <h2 class="function-name">segmentLength</h2>
+              <p class="function-description i18n" lang="en">Computes length of longest segment whose elements all satisfy some predicate.</p>
+              <p class="function-description i18n" lang="es">Computa la longitud del mayor segmento cuyos elementos satisfacen un predicado.</p>
+            <pre class="function-signature"><code class="scala">def segmentLength(p: (A) ⇒ Boolean, from: Int): Int</code></pre>
+      <figure class="function-figure">
+        <img src="images/segmentLength.svg" alt="" />
+      </figure>
+    </article>
+      <article id="size" class="function-entry">
+      <h2 class="function-name">size</h2>
+              <p class="function-description i18n" lang="en">The size of this collection.</p>
+              <p class="function-description i18n" lang="es">El tamaño de esta colección.</p>
+            <pre class="function-signature"><code class="scala">def size: Int</code></pre>
+      <figure class="function-figure">
+        <img src="images/size.svg" alt="" />
+      </figure>
+    </article>
+      <article id="slice" class="function-entry">
+      <h2 class="function-name">slice</h2>
+              <p class="function-description i18n" lang="en"></p>
+              <p class="function-description i18n" lang="es"></p>
+            <pre class="function-signature"><code class="scala">def slice(from: Int, until: Int): <em>Collection</em>[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/slice.svg" alt="" />
+      </figure>
+    </article>
+      <article id="sliding" class="function-entry">
+      <h2 class="function-name">sliding</h2>
+              <p class="function-description i18n" lang="en">Groups elements in fixed size blocks by passing a "sliding window" over them.</p>
+              <p class="function-description i18n" lang="es">Agrupa elementos en bloques de tamaño fijo pasando una "ventana deslizante" sobre ellos.</p>
+            <pre class="function-signature"><code class="scala">def sliding(size: Int, step: Int): Iterator[<em>Collection</em>[A]]</code></pre>
+      <figure class="function-figure">
+        <img src="images/sliding.svg" alt="" />
+      </figure>
+    </article>
+      <article id="sortBy" class="function-entry">
+      <h2 class="function-name">sortBy</h2>
+              <p class="function-description i18n" lang="en">Sorts this collection according to the Ordering which results from transforming an implicitly given Ordering with a transformation function.</p>
+              <p class="function-description i18n" lang="es">Ordena esta colección de acuerdo al Ordering resultado de transformar un Ordering dado implícitamente con una función de transformación.</p>
+            <pre class="function-signature"><code class="scala">def sortBy[B](f: (A) ⇒ B)(implicit ord: math.Ordering[B]): <em>Collection</em>[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/sortBy.svg" alt="" />
+      </figure>
+    </article>
+      <article id="sortWith" class="function-entry">
+      <h2 class="function-name">sortWith</h2>
+              <p class="function-description i18n" lang="en">Sorts this collection according to a comparison function.</p>
+              <p class="function-description i18n" lang="es">Ordena esta colección de acuerdo a una función de comparación.</p>
+            <pre class="function-signature"><code class="scala">def sortWith(lt: (A, A) ⇒ Boolean): <em>Collection</em>[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/sortWith.svg" alt="" />
+      </figure>
+    </article>
+      <article id="sorted" class="function-entry">
+      <h2 class="function-name">sorted</h2>
+              <p class="function-description i18n" lang="en">Sorts this collection according to an Ordering.</p>
+              <p class="function-description i18n" lang="es">Ordena esta colección de acuerdo a un Ordering.</p>
+            <pre class="function-signature"><code class="scala">def sorted[B >: A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/sorted.svg" alt="" />
+      </figure>
+    </article>
+      <article id="span" class="function-entry">
+      <h2 class="function-name">span</h2>
+              <p class="function-description i18n" lang="en">Splits this collection into a prefix/suffix pair according to a predicate.</p>
+              <p class="function-description i18n" lang="es">Parte esta colección en un par prefijo/sufijo de acuerdo a un predicado.</p>
+            <pre class="function-signature"><code class="scala">def span(p: (A) ⇒ Boolean): (<em>Collection</em>[A], <em>Collection</em>[A])</code></pre>
+      <figure class="function-figure">
+        <img src="images/span.svg" alt="" />
+      </figure>
+    </article>
+      <article id="splitAt" class="function-entry">
+      <h2 class="function-name">splitAt</h2>
+              <p class="function-description i18n" lang="en">Splits this collection into two at a given position.</p>
+              <p class="function-description i18n" lang="es">Parte esta colección en dos en una posición dada.</p>
+            <pre class="function-signature"><code class="scala">def splitAt(n: Int): (<em>Collection</em>[A], <em>Collection</em>[A])</code></pre>
+      <figure class="function-figure">
+        <img src="images/splitAt.svg" alt="" />
+      </figure>
+    </article>
+      <article id="startsWith" class="function-entry">
+      <h2 class="function-name">startsWith</h2>
+              <p class="function-description i18n" lang="en">Tests whether this collection contains the given sequence at a given index.</p>
+              <p class="function-description i18n" lang="es">Comprueba si esta colección contiene la secuencia dada en un índice en particular.</p>
+            <pre class="function-signature"><code class="scala">def startsWith[B](that: GenSeq[B], offset: Int): Boolean</code></pre>
+      <figure class="function-figure">
+        <img src="images/startsWith.svg" alt="" />
+      </figure>
+    </article>
+      <article id="sum" class="function-entry">
+      <h2 class="function-name">sum</h2>
+              <p class="function-description i18n" lang="en">Sums up the elements of this collection.</p>
+              <p class="function-description i18n" lang="es">Suma los elementos de esta colección.</p>
+            <pre class="function-signature"><code class="scala">def sum: A</code></pre>
+      <figure class="function-figure">
+        <img src="images/sum.svg" alt="" />
+      </figure>
+    </article>
+      <article id="tabulate" class="function-entry">
+      <h2 class="function-name">tabulate</h2>
+              <p class="function-description i18n" lang="en">Produces a n-dimensional collection containing values of a given function over ranges of integer values starting from 0.</p>
+              <p class="function-description i18n" lang="es">Produce una colección n-dimensional que contiene los valores de una cierta función sobre el rango de valores enteros empezando por 0.</p>
+            <pre class="function-signature"><code class="scala">def <em>Collection</em>.tabulate[A](n<sub>1</sub>: Int, ..., n<sub>m</sub>: Int)(f: (Int, ..., Int): ⇒ A): <em>Collection</em>[... <em>Collection</em>[A] ...]</code></pre>
+      <figure class="function-figure">
+        <img src="images/tabulate.svg" alt="" />
+      </figure>
+    </article>
+      <article id="tail" class="function-entry">
+      <h2 class="function-name">tail</h2>
+              <p class="function-description i18n" lang="en">Selects all elements except the first.</p>
+              <p class="function-description i18n" lang="es">Selecciona todos los elementos excepto el primero.</p>
+            <pre class="function-signature"><code class="scala">def tail: <em>Collection</em>[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/tail.svg" alt="" />
+      </figure>
+    </article>
+      <article id="tails" class="function-entry">
+      <h2 class="function-name">tails</h2>
+              <p class="function-description i18n" lang="en">Iterates over the tails of this collection.</p>
+              <p class="function-description i18n" lang="es">Itera sobre las colas de esta colección.</p>
+            <pre class="function-signature"><code class="scala">def tails: Iterator[<em>Collection</em>[A]]</code></pre>
+      <figure class="function-figure">
+        <img src="images/tails.svg" alt="" />
+      </figure>
+    </article>
+      <article id="take" class="function-entry">
+      <h2 class="function-name">take</h2>
+              <p class="function-description i18n" lang="en">Selects first <var>n</var> elements.</p>
+              <p class="function-description i18n" lang="es">Selecciona los primeros <var>n</var> elementos.</p>
+            <pre class="function-signature"><code class="scala">def take(n: Int): <em>Collection</em>[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/take.svg" alt="" />
+      </figure>
+    </article>
+      <article id="takeRight" class="function-entry">
+      <h2 class="function-name">takeRight</h2>
+              <p class="function-description i18n" lang="en">Selects last <var>n</var> elements.</p>
+              <p class="function-description i18n" lang="es">Selecciona los últimos <var>n</var> elementos.</p>
+            <pre class="function-signature"><code class="scala">def takeRight(n: Int): <em>Collection</em>[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/takeRight.svg" alt="" />
+      </figure>
+    </article>
+      <article id="takeWhile" class="function-entry">
+      <h2 class="function-name">takeWhile</h2>
+              <p class="function-description i18n" lang="en">Takes longest prefix of elements that satisfy a predicate.</p>
+              <p class="function-description i18n" lang="es">Toma el mayor prefijo de elementos que satisfacen un predicado.</p>
+            <pre class="function-signature"><code class="scala">def takeWhile(p: (A) ⇒ Boolean): <em>Collection</em>[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/takeWhile.svg" alt="" />
+      </figure>
+    </article>
+      <article id="union" class="function-entry">
+      <h2 class="function-name">union</h2>
+              <p class="function-description i18n" lang="en">Produces a new collection which contains all elements of this one and also all elements of a given sequence.</p>
+              <p class="function-description i18n" lang="es">Produce una nueva colección que contiene todos los elementos de esta y los de otra secuencia.</p>
+            <pre class="function-signature"><code class="scala">def union(that: Seq[A]): <em>Collection</em>[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/union.svg" alt="" />
+      </figure>
+    </article>
+      <article id="unzip" class="function-entry">
+      <h2 class="function-name">unzip</h2>
+              <p class="function-description i18n" lang="en">Converts this collection of pairs into two collections of the first and second half of each pair.</p>
+              <p class="function-description i18n" lang="es">Convierte esta colección de pares en dos colecciones, una compuesta por el primer miembro y otra por el segundo.</p>
+            <pre class="function-signature"><code class="scala">def unzip[A1, A2](implicit asPair: (A) ⇒ (A1, A2)): (<em>Collection</em>[A1], <em>Collection</em>[A2])</code></pre>
+      <figure class="function-figure">
+        <img src="images/unzip.svg" alt="" />
+      </figure>
+    </article>
+      <article id="unzip3" class="function-entry">
+      <h2 class="function-name">unzip3</h2>
+              <p class="function-description i18n" lang="en">Converts this collection of triples into three collections of the first, second, and third element of each triple.</p>
+              <p class="function-description i18n" lang="es">Convierte esta colección de ternas en tres colecciones del primer, segundo y tercer elemento de cada terna.</p>
+            <pre class="function-signature"><code class="scala">def unzip3[A1, A2, A3](implicit asTriple: (A) ⇒ (A1, A2, A3)): (<em>Collection</em>[A1], <em>Collection</em>[A2], <em>Collection</em>[A3])</code></pre>
+      <figure class="function-figure">
+        <img src="images/unzip3.svg" alt="" />
+      </figure>
+    </article>
+      <article id="updated" class="function-entry">
+      <h2 class="function-name">updated</h2>
+              <p class="function-description i18n" lang="en">A copy of this collection with one single replaced element.</p>
+              <p class="function-description i18n" lang="es">Una copia de esta colección con un único elemento reemplazado.</p>
+            <pre class="function-signature"><code class="scala">def updated(index: Int, elem: A): <em>Collection</em>[A]</code></pre>
+      <figure class="function-figure">
+        <img src="images/updated.svg" alt="" />
+      </figure>
+    </article>
+      <article id="zip" class="function-entry">
+      <h2 class="function-name">zip</h2>
+              <p class="function-description i18n" lang="en">Returns a collection formed from this and another one by combining corresponding elements in pairs.</p>
+              <p class="function-description i18n" lang="es">Devuelve una colección formada por los elementos de dos colecciones distintas combinados en parejas.</p>
+            <pre class="function-signature"><code class="scala">def zip[B](that: GenIterable[B]): <em>Collection</em>[A, B]</code></pre>
+      <figure class="function-figure">
+        <img src="images/zip.svg" alt="" />
+      </figure>
+    </article>
+      <article id="zipAll" class="function-entry">
+      <h2 class="function-name">zipAll</h2>
+              <p class="function-description i18n" lang="en">Returns a collection formed from this and another one by combining corresponding elements in pairs. If one of the two collections is shorter than the other, placeholder elements are used to extend the shorter collection to the length of the longer.</p>
+              <p class="function-description i18n" lang="es">Devuelve una colección formada por los elementos de dos colecciones distintas combinados en parejas. Si una de las colecciones es menor que la otra, se usan elementos comodín en la más corta hasta alcanzar la longitud de la más larga.</p>
+            <pre class="function-signature"><code class="scala">def zipAll[B](that: Iterable[B], thisElem: A, thatElem: B): <em>Collection</em>[(A, B)]</code></pre>
+      <figure class="function-figure">
+        <img src="images/zipAll.svg" alt="" />
+      </figure>
+    </article>
+      <article id="zipWithIndex" class="function-entry">
+      <h2 class="function-name">zipWithIndex</h2>
+              <p class="function-description i18n" lang="en">Zips this collection with its indices.</p>
+              <p class="function-description i18n" lang="es">Combina cada elemento de esta colección con su índice.</p>
+            <pre class="function-signature"><code class="scala">def zipWithIndex: <em>Collection</em>[A, Int]</code></pre>
+      <figure class="function-figure">
+        <img src="images/zipWithIndex.svg" alt="" />
+      </figure>
+    </article>
+  </main>
 </body>
 </html>
