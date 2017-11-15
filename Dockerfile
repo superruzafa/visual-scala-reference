@@ -6,6 +6,7 @@ RUN apt-get update && \
       ruby-sass \   
       texlive \
       texlive-latex-extra \
+      texlive-fonts-extra \
       imagemagick \
       ghostscript \
       pdf2svg
