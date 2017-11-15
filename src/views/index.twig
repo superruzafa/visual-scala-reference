@@ -16,9 +16,25 @@
         <p class="function-description i18n" lang="{{ lang }}">{{ text | raw }}</p>
       {% endfor %}
       <pre class="function-signature"><code class="scala">{{ function.signature | raw }}</code></pre>
-      <figure class="function-figure">
-        <img src="images/{{ function.name }}.svg" alt="" />
-      </figure>
+      <section class="function-figures">
+        {% if not function.figures or function.figures | length == 1 %}
+          <figure class="function-figure">
+            <img src="images/{{ function.name }}.svg" alt="" />
+            {% for lang, text in functions.figures %}
+              <figcaption class="i18n" lang="{{ lang }}">{{ text | raw }}</figcaption>
+            {% endfor %}
+          </figure>
+        {% else %}
+          {% for figure in function.figures %}
+            <figure class="function-figure">
+              <img src="images/{{function.name}}.{{ loop.index }}.svg" alt="" />
+              {% for lang, text in figure %}
+                <figcaption class="i18n" lang="{{ lang }}">{{ text | raw }}</figcaption>
+              {% endfor %}
+            </figure>
+          {% endfor %}
+        {% endif %}
+      </section>
     </article>
   {% endfor %}
 </main>

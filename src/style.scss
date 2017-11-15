@@ -10,6 +10,18 @@ $codeFont: "Inconsolata G", monospace;
   padding: 0;
 }
 
+.function-figure {
+  display: table;
+  margin-bottom: 3em;
+  
+  figcaption {
+    display: table-caption;
+    caption-side: bottom;
+    font-size: 0.9em;
+    margin-top: 1.1em;
+  }
+}
+
 .hljs-keyword {
   color: rgb(127, 0, 84);
 }
@@ -29,7 +41,8 @@ body {
   font: normal 16px/1.4rem helvetica, sans-serif;
 }
 
-code {
+code,
+var {
   font-family:  $codeFont;
 }
 
@@ -157,6 +170,14 @@ html:lang(es) .i18n:not(:lang(es)) { display: none; visibility: hidden; }
       margin-bottom: 1rem;
       overflow-x: scroll;
       padding: 1rem;
+    }
+    
+    .function-figures {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: stretch;
+      
     }
 
     &::before {
