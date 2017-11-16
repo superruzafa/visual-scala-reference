@@ -39,6 +39,11 @@
   description:
     en: Tests whether this collection contains a given value as an element.
     es: Comprueba si esta colección contiene un valor dado en forma de elemento.
+  figures:
+  - en: A collection that contains –at least– one element that is equal to <var>elem</var>, so <code>true</code> is returned.
+    es: Una colección que contiene al menos un elemento igual a <var>elem</var> por lo que se devuelve <code>true</code>.
+  - en: No element in this collection is <em>equal</em> to <var>elem</var> so <code>false</code> is returned.
+    es: Ningún elemento de esta colección es <em>igual</em> a <var>elem</var> por lo que se devuelve <code>false</code>.
 
 - name: containsSlice
   signature: "def containsSlice[B](that: GenSeq[B]): Boolean"

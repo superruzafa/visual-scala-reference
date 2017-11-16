@@ -1,0 +1,30 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1)   {$a_1$};     &
+  \node (2)   {$a_2$};     &
+  \ellipsis                &
+  \node (i)   {$a_i$};     &
+  \ellipsis                &
+  \node (n)   {$a_n$};     \\
+};
+
+\node (B) [elem, below right=3cm and 0cm of an.south east] {\false};
+
+\foreach \i/\s in {
+  1/0.5em,
+  2/2em,
+  i/0.5em,
+  n/0.5em}
+{
+  \node (pa\i) [predicate, align=center, below=\s of a\i, pin={[function result, pin position=below] \false}] {$a_{\i} = \textrm{elem}?$};
+  \draw (a\i) -- (pa\i);
+}
+
+\draw ([xshift=-1cm] pa1.south) [iteration] to (pa1.south);
+\draw (pa1.south) [iteration] to (pa2.south);
+\draw (pa2.south) [iteration, middotted] to (pai.south);
+\draw (pai.south) [iteration, middotted] to (pan.south);
+\draw (pan.south) [arrow, out=0, in=90] to (B.north);
+
+\input{_footer.tex}

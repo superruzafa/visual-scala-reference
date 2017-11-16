@@ -4,7 +4,6 @@
   \node (1)   {$a_1$};     &
   \node (2)   {$a_2$};     &
   \ellipsis                &
-  \node (i-1) {$a_{i-1}$}; &
   \node (i)   {$a_i$};     &
   \ellipsis                &
   \node (n)   {$a_n$};     \\
@@ -15,16 +14,15 @@
 \foreach \i/\d/\s/\p in {
   1/\false/0.5em/below,
   2/\false/2em/below,
-  i-1/\false/0.5em/below,
-  i/\true/2em/310}
+  i/\true/0.5em/310}
 {
   \node (pa\i) [predicate, align=center, below=\s of a\i, pin={[function result, pin position=\p] \d}] {$a_{\i} = \textrm{elem}?$};
   \draw (a\i) -- (pa\i);
 }
 
+\draw ([xshift=-1cm] pa1.south) [iteration] to (pa1.south);
 \draw (pa1.south) [iteration] to (pa2.south);
-\draw (pa2.south) [iteration, middotted] to (pai-1.south);
-\draw (pai-1.south) [iteration] to (pai.south);
+\draw (pa2.south) [iteration, middotted] to (pai.south);
 \draw (pai.south) [arrow] -- (B);
 
 \input{_footer.tex}
