@@ -245,6 +245,13 @@
   description:
     en: Select all elements except the last.
     es: Selecciona todos los elementos excepto el último.
+  figures:
+  - en: A collection with at least one element. All elements but the last are returned.
+    es: Una colección con al menos un elemento. Todos los elementos excepto el último son devueltos.
+  - en: A collection with just one element. The only (last) element is discarded and an empty collection is returned.
+    es: Una colección con solo un elemento. El único (último) elemento es descartado y se devuelve una colección vacía.
+  - en: An empty collection. <code>UnsupportedOperationException</code> is thrown.
+    es: Una colección vacía. Se lanza <code>UnsupportedOperationException</code>.
 
 - name: inits
   signature: "def inits: Iterator[<em>Collection</em>[A]]"
