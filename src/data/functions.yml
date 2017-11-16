@@ -98,6 +98,11 @@
   description:
     en: Tests whether a predicate holds for at least one element of this collection.
     es: Comprueba si un predicado es válido para al menos un elemento de esta colección.
+  figures:
+  - en: A collection containing at least one element that satisfies <code>p</code>. <code>true</code> is returned.
+    es: Una colección que contiene al menos un elemento que satisface <code>p</code>. Se devuelve <code>true</code>.
+  - en: A collection where no element satisfies <code>p</code>. <code>false</code> is returned.
+    es: Una colección donde ningún elemento satisface <code>p</code>. Se devuelve <code>false</code>.
 
 - name: fill
   signature: "def <em>Collection</em>.fill[A](n<sub>1</sub>: Int, ..., n<sub>m</sub>: Int)(elem: ⇒ A): <em>Collection</em>[... <em>Collection</em>[A] ...]"
