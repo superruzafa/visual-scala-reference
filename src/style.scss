@@ -35,8 +35,9 @@ $breakPoint: 550px;
 }
 
 .function-figure {
-  display: table;
   margin-bottom: 3em;
+  text-align: center;
+  
   img {
     max-width: 100%;
   }
@@ -47,6 +48,7 @@ $breakPoint: 550px;
   caption-side: bottom;
   font-size: 0.9em;
   margin-top: 1.1em;
+  min-width: 40ex;
   text-align: justify;
 }
 

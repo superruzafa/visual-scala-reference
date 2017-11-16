@@ -22,8 +22,8 @@
   margin-top: 4rem; }
 
 .function-figure {
-  display: table;
-  margin-bottom: 3em; }
+  margin-bottom: 3em;
+  text-align: center; }
   .function-figure img {
     max-width: 100%; }
 
@@ -32,6 +32,7 @@
   caption-side: bottom;
   font-size: 0.9em;
   margin-top: 1.1em;
+  min-width: 40ex;
   text-align: justify; }
 
 .function-figure-wrapper {

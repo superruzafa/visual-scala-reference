@@ -200,6 +200,11 @@
   description:
     en: Optionally selects the first element.
     es: Opcionalmente selecciona el primer elemento de esta colección.
+  figures:
+  - en: A collection with at least one element. The first one is returned wrapped with <code>Some</code>.
+    es: Una colección con al menos un elemento. El primero es devuelto con un <code>Some</code>.
+  - en: An empty collection. No head element. <code>None</code> is returned.
+    es: Una colección vacía. Sin elemento de cabeza. <code>None</code> es devuelto.
 
 - name: indexOf
   signature: "def indexOf(elem: A, from: Int): Int"
