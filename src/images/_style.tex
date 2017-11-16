@@ -149,6 +149,12 @@
 \tikzstyle{measure}=[
   arrows={Stealth[inset=0pt, angle'=30]-Stealth[inset=0pt, angle'=30]}
 ]
+\tikzstyle{direct measure}=[
+  arrows={Stealth[inset=0pt, angle'=30]-}
+]
+\tikzstyle{inverse measure}=[
+  arrows={-Stealth[inset=0pt, angle'=30]}
+]
 
 \newcommand{\bottommeasure}[4][5mm] {
   \begin{scope}[line width=0.1mm]
@@ -157,6 +163,15 @@
     \draw (#3) -- ++(0, -#1) -- +(0, -1.25mm);
     \draw (#4) -- ++(0, -#1) -- +(0, -1.25mm);
   \end{scope}
+}
+
+\newcommand{\rightbottommeasure}[4][5mm] {
+\begin{scope}[line width=0.1mm]
+  \draw (#3) -- ++(0, -#1) -- ++(0, 1.25mm) coordinate(x);
+  \draw (x) [direct measure] -- +(-3mm, 0);
+  \draw (#4) -- ++(0, -#1) -- ++(0, 1.25mm) coordinate(x);
+  \draw (x) [direct measure] -- node [label={[label distance=-1mm]above:#2}] {} +(8mm, 0);
+\end{scope}
 }
 
 \newcommand{\topmeasure}[4][5mm] {

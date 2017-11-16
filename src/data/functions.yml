@@ -270,6 +270,11 @@
   description:
     en: Tests whether this collection is empty.
     es: Comprueba si esta colección está vacía.
+  figures:
+  - en: A collection with at least one element. <code>false</code> is returned.
+    es: Una colección con al menos un elemento. Se devuelve <code>false</code>.
+  - en: An empty collection. <code>true</code> is returned.
+    es: Una colección vacía. Se devuelve <code>true</code>.
 
 - name: keys
   signature: "def keys: Iterable[K]"
@@ -370,6 +375,11 @@
   description:
     en: Tests whether the collection is not empty.
     es: Comprueba si esta colección es no vacía.
+  figures:
+  - en: A collection with at least one element. <code>true</code> is returned.
+    es: Una colección con al menos un elemento. Se devuelve <code>true</code>.
+  - en: An empty collection. <code>false</code> is returned.
+    es: Una colección vacía. Se devuelve <code>false</code>.
 
 - name: padTo
   signature: "def padTo(len: Int, elem: A): <em>Collection</em>[A]"
