@@ -333,13 +333,13 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/exists.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en">When exists, returns the first element that satisfy <code>p</code> wrapped with <code>Some</code>.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es">Cuando existe, se devuelve el primer elemento que satisface <code>p</code> envuelto con <code>Some</code>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en">A collection containing at least one element that satisfies <code>p</code>. <code>true</code> is returned.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es">Una colección que contiene al menos un elemento que satisface <code>p</code>. Se devuelve <code>true</code>.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/exists.2.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en">When no element in the collection satisfy <code>p</code> then <code>None</code> is returned.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es">Cuando ningún elemento en la colección satisface <code>p</code> entonces se devuelve <code>None</code>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en">A collection where no element satisfies <code>p</code>. <code>false</code> is returned.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es">Una colección donde ningún elemento satisface <code>p</code>. Se devuelve <code>false</code>.</figcaption>
                           </figure>
                         </section>
     </article>
@@ -466,10 +466,17 @@
               <p class="function-description i18n" lang="es">Comprueba si un predicado es válido para todos los elementos de esta colección.</p>
             <pre class="function-signature"><code class="scala">def forall(p: (A) ⇒ Boolean): Boolean</code></pre>
       <section class="function-figure-wrapper">
-                  <figure class="function-figure">
-            <img src="images/forall.svg" alt="" />
-                      </figure>
-              </section>
+                              <figure class="function-figure">
+              <img src="images/forall.1.svg" alt="" />
+                              <figcaption class="function-figure-caption i18n" lang="en">A collection containing at least one element that does not satisfy <code>p</code>. <code>false</code> is returned.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es">Una colección que contiene al menos un elemento que no satisface <code>p</code>. Se devuelve <code>false</code>.</figcaption>
+                          </figure>
+                      <figure class="function-figure">
+              <img src="images/forall.2.svg" alt="" />
+                              <figcaption class="function-figure-caption i18n" lang="en">A collection where all the elements satisfy <code>p</code>. <code>true</code> is returned.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es">Una colección donde todos los elementos satisfacen <code>p</code>. Se devuelve <code>true</code>.</figcaption>
+                          </figure>
+                        </section>
     </article>
       <article id="foreach" class="function-entry">
       <h2 class="function-name">foreach</h2>

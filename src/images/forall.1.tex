@@ -9,17 +9,18 @@
   \node (n) {$a_n$}; \\
 };
 
-\node (B) [elem, below of=ai, node distance=4cm] {\false};
+\node (B) [elem, below=3cm of ai] {\false};
 
 \foreach \i/\d/\p in {
   1/\true/below,
   2/\true/below,
   i/\false/310}
 {
-  \node (pa\i) [predicate, below=0.5em of a\i, pin={[function result, pin position=\p] \d}] {$\texttt{p}(a_{\i})$};
+  \node (pa\i) [predicate, below=0.5em of a\i, pin={[function result, pin position=\p] \d}] {$\texttt{p}(a_{\i})?$};
   \draw (a\i) -- (pa\i);
 }
 
+\draw ([xshift=-1cm] pa1.south) [iteration] to (pa1.south);
 \draw (pa1.south) [iteration] to (pa2.south);
 \draw (pa2.south) [iteration, middotted, bend right=37] to (pai.south);
 \draw (pai.south) [arrow] -- (B);
