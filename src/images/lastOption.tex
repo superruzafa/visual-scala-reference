@@ -8,7 +8,7 @@
   \node (n)   {$a_n$};     \\
 };
 
-\node (B) [option, below of=an, node distance=3cm] {$a_n$};
+\node (B) [some, below=2cm of an] {\small Some \nodepart{two} $a_n$};
 
 \draw [bottombrace] (an.south west) -- coordinate (b) (an.south east);
 \draw [arrow, from brace] (b) -- (B);

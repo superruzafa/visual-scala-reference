@@ -9,17 +9,18 @@
   \node (n) {$a_n$}; \\
 };
 
-\node (B) [option, below=3 cm of ai.south] {$b$};
+\node (B) [some, below=3 cm of ai.south] {\small Some \nodepart{two} $b_i$};
 
 \foreach \i/\d/\p in {
   1/\false/below,
   2/\false/below,
   i/\true/310}
 {
-  \node (pfa\i) [predicate, below=0.5em of a\i, pin={[function result, pin position=\p] \d}] {$\exists \, \texttt{pf}(a_{\i})$};
+  \node (pfa\i) [predicate, below=0.5em of a\i, pin={[function result, pin position=\p] \d}] {$\exists \, \texttt{pf}(a_{\i})?$};
   \draw (a\i) -- (pfa\i);
 }
 
+\draw ([xshift=-1cm] pfa1.south) [iteration] to (pfa1.south);
 \draw (pfa1.south) [iteration] to (pfa2.south);
 \draw (pfa2.south) [iteration, middotted, bend right=37] to (pfai.south);
 \draw (pfai.south) [arrow] -- node [arrow label] {$\texttt{pf}(a_i)$} (B);

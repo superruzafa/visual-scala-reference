@@ -17,10 +17,10 @@
     en: Finds the first element of the collection for which the given partial function is defined, and applies the partial function to it.
     es: Encuentra el primer elemento de la colección para el cual está definida una función parcial, aplicando después dicha función parcial.
   figures:
-  - en: <var>a<sub>i</sub></var> is the first element for which <code>pf</code> is defined. <code>pf(<var>a<sub>i</sub></var>)</code> is computed and returned wrapped with <code>Some</code>.
-    es: <var>a<sub>i</sub></var> es el primer elemento para el cual <code>pf</code> está definida. <code>pf(<var>a<sub>i</sub></var>)</code> es calculada y devuelta en forma con un <code>Some</code>.
-  - en: <var>pf</var> is defined for no element in the collection, so <code>None</code> is returned.
-    es: <var>pf</var> no está definida para ningún elemento de la colección, por lo que se devuelve <code>None</code>.
+  - en: A collection containing –at least– one element for which <code>pf</code> is defined. <code>pf</code> is applied to first of them (<var>a<sub>i</sub></var>) and the result wrapped with <code>Some</code>.
+    es: Una colección conteniendo al menos un elemento para el que <code>pf</code> está definido. <code>pf</code> es aplicado sobre el primero de ellos (<var>a<sub>i</sub></var>) y el resultado envuelto con <code>Some</code>.
+  - en: A collection where <code>pf</code> is defined for none of its elements. <code>None</code> is returned.
+    es: Una colección donde <code>pf</code> no está definida para ninguno de sus elementos. <code>None</code> es devuelto.
 
 - name: combinations
   signature: "def combinations(n: Int): Iterator[<em>Collection</em>[A]]"

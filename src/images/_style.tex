@@ -38,11 +38,24 @@
 ]
 
 \tikzstyle{option}=[
-  cell,
-  line width=0.2mm,
-  double,
-  minimum size=0.9cm,
-  label={right::Option},
+  draw,
+  line width=0.3mm,
+  minimum size=1cm,
+  outer sep=0,
+  fill=white,
+  font=\large
+]
+
+\tikzstyle{some}=[
+  option,
+  rectangle split,
+  rectangle split parts=2,
+  rectangle split draw splits=true
+]
+
+\tikzstyle{none}=[
+  option,
+  node contents={\small None},
 ]
 
 \tikzstyle{map to}=[Square-Latex]
