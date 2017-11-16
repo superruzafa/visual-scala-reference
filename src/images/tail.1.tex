@@ -4,11 +4,11 @@
   \node (1)   {$a_1$};     &
   \node (2)   {$a_2$};     &
   \ellipsis                &
-  \node (n-1) {$a_{n-1}$}; &
+  \node (n-1) {$a_{n-1}$}; & 
   \node (n)   {$a_n$};     \\
 };
 
-\matrix (B) [collection, node distance=3cm, below of=A, matrix anchor=bn-1.east] at (an-1.east) {
+\matrix (B) [collection, below=3cm of A, matrix anchor=bn-1.east] at (an-1.east) {
   \node (b2)   {$a_2$};     &
   \ellipsis                 &
   \node (bn-1) {$a_{n-1}$}; &
