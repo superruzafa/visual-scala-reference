@@ -228,6 +228,11 @@
   description:
     en: Finds index of the first element satisfying some predicate after or at some start index.
     es: Encuentra el índice el primer elemento que satisface un predicado empezando por un índice inicial.
+  figures:
+  - en: A collection that contains –at least– one element that satisfies the predicate <code>p</code>. Returns the index of the first one satisfying that predicate.
+    es: Una colección que contiene al menos un elemento que satisface el predicado <code>p</code>. Devuelve el índice del primer elemento que satisface ese predicado.
+  - en: No element in this collection satisfies <code>p</code> so <code>-1</code> is returned.
+    es: Ningún elemento de esta colección satisface <code>p</code> por lo que se devuelve <code>-1</code>.
 
 - name: indices
   signature: "def indices: Range"
