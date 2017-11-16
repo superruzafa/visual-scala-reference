@@ -211,6 +211,11 @@
   description:
     en: Finds index of first occurrence of some value in this collection after or at some start index.
     es: Encuentra el índice de la primera ocurrencia de algún valor en esta colección empezando por un índice inicial.
+  figures:
+  - en: A collection that contains –at least– one element that is equal to <var>elem</var>. The index of the first occurrence is returned.
+    es: Una colección que contiene al menos un elemento igual a <var>elem</var>. El índice de la primera ocurrencia es devuelto.
+  - en: No element in this collection is <em>equal</em> to <var>elem</var> so <code>-1</code> is returned.
+    es: Ningún elemento de esta colección es <em>igual</em> a <var>elem</var> por lo que se devuelve <code>-1</code>.
 
 - name: indexOfSlice
   signature: "def indexOfSlice[B >: A](that: GenSeq[B], from: Int): Int"
