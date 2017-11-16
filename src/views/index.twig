@@ -1,7 +1,7 @@
 {% extends "layout.twig" %}
 
 {% block content %}
-<aside id="main-aside" class="col-sm-4 col-md-3 col-lg-2 d-none d-sm-block">
+<aside id="main-sidebar" class="col-sm-4 col-md-3 col-lg-2 d-none d-sm-block">
   <ul id="function-list">
     {% for function in functions %}
       <li class="function-link"><a href="#{{ function.name }}">{{ function.name }}</a></li>
@@ -16,12 +16,12 @@
         <p class="function-description i18n" lang="{{ lang }}">{{ text | raw }}</p>
       {% endfor %}
       <pre class="function-signature"><code class="scala">{{ function.signature | raw }}</code></pre>
-      <section class="function-figures">
+      <section class="function-figure-wrapper">
         {% if not function.figures or function.figures | length == 1 %}
           <figure class="function-figure">
             <img src="images/{{ function.name }}.svg" alt="" />
             {% for lang, text in functions.figures %}
-              <figcaption class="i18n" lang="{{ lang }}">{{ text | raw }}</figcaption>
+              <figcaption class="function-figure-caption i18n" lang="{{ lang }}">{{ text | raw }}</figcaption>
             {% endfor %}
           </figure>
         {% else %}
@@ -29,7 +29,7 @@
             <figure class="function-figure">
               <img src="images/{{function.name}}.{{ loop.index }}.svg" alt="" />
               {% for lang, text in figure %}
-                <figcaption class="i18n" lang="{{ lang }}">{{ text | raw }}</figcaption>
+                <figcaption class="function-figure-caption i18n" lang="{{ lang }}">{{ text | raw }}</figcaption>
               {% endfor %}
             </figure>
           {% endfor %}

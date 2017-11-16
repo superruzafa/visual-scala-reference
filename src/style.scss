@@ -4,22 +4,77 @@
 }
 
 $codeFont: "Inconsolata G", monospace;
+$breakPoint: 550px;
 
 * {
   margin: 0;
   padding: 0;
 }
 
+.function-description {
+  margin-bottom: 1.2rem;
+}
+
+.function-entry {
+  &::before {
+    content: "";
+    display: block;
+    height: 4.2rem;
+    margin-top: -4.2rem;
+    visibility: hidden;
+
+    @media (max-width: $breakPoint) {
+      height: 6.8rem;
+      margin-top: -6.8rem;
+    }
+  }
+
+  & + .function-entry {
+    margin-top: 4rem;
+  }
+}
+
 .function-figure {
   display: table;
   margin-bottom: 3em;
-  
-  figcaption {
-    display: table-caption;
-    caption-side: bottom;
-    font-size: 0.9em;
-    margin-top: 1.1em;
+  img {
+    max-width: 100%;
   }
+}
+
+.function-figure-caption {
+  display: table-caption;
+  caption-side: bottom;
+  font-size: 0.9em;
+  margin-top: 1.1em;
+  text-align: justify;
+}
+
+.function-figure-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.function-link {
+  font: normal 0.85rem/1.4rem $codeFont;
+}
+
+.function-name {
+  font: normal 1.6rem/1.6rem $codeFont;
+  margin-bottom: 1.8rem;
+}
+
+.function-signature {
+  background: #f6f8fa;
+  border-radius: 3px;
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1rem;
+  margin-bottom: 1.2rem;
+  overflow-x: scroll;
+  padding: 1rem;
 }
 
 .hljs-keyword {
@@ -49,28 +104,18 @@ var {
 html:lang(en) .i18n:not(:lang(en)) { display: none; visibility: hidden; }
 html:lang(es) .i18n:not(:lang(es)) { display: none; visibility: hidden; }
 
-#main-aside {
-  border-right: 1px solid #eee;
-  float: left;
-  height: calc(100vh - 4rem - 1rem - 1rem);
-  overflow-y: scroll;
+#function-entries {
+  margin-left: calc(1rem + 20ex + 1rem);
   padding: 1rem;
-  position: sticky;
-  top: calc(1.4rem + 2rem);
-  width: 20ex;
 
-  @media (max-width: 550px) {
-    display: none;
+  @media (max-width: $breakPoint) {
+    margin-left: 0;
   }
+}
 
-  #function-list {
-    list-style: none;
-    margin-bottom: 1rem;
-
-    .function-link {
-      font: normal 0.85rem/1.4rem $codeFont;
-    }
-  }
+#function-list {
+  list-style: none;
+  margin-bottom: 1rem;
 }
 
 #main-header {
@@ -90,111 +135,62 @@ html:lang(es) .i18n:not(:lang(es)) { display: none; visibility: hidden; }
   a:visited {
     color: inherit;
   }
+}
 
-  #main-title {
-    float: left;
-    font-size: 1em;
-    font-weight: 500;
-    margin-right: 1rem;
-    white-space: nowrap;
+#main-language-list {
+  font-size: 1em;
+  list-style: none;
+  white-space: nowrap;
 
-    @media (max-width: 550px) {
-      float: none;
-      text-align: center;
-      margin: 0 0 0.9rem 0;
-    }
+  @media (max-width: $breakPoint) {
+    text-align: center;
   }
 
-  #social {
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
+  li {
+    display: inline;
+    padding: 0 0.2rem;
 
-    @media (max-width: 550px) {
-      display: none;
-    }
-  }
-
-  #main-languages {
-    #main-language-list {
-      font-size: 1em;
-      list-style: none;
-      white-space: nowrap;
-
-      @media (max-width: 550px) {
-        text-align: center;
-      }
-
-      li {
-        display: inline;
-        padding: 0 0.2rem;
-
-        @media (max-width: 550px) {
-          font-size: 0.9rem;
-        }
-      }
+    @media (max-width: $breakPoint) {
+      font-size: 0.9rem;
     }
   }
 }
 
-#function-entries {
-  margin-left: calc(1rem + 20ex + 1rem);
+#main-sidebar {
+  border-right: 1px solid #eee;
+  float: left;
+  height: calc(100vh - 4rem - 1rem - 1rem);
+  overflow-y: scroll;
   padding: 1rem;
+  position: sticky;
+  top: calc(1.4rem + 2rem);
+  width: 20ex;
 
-  @media (max-width: 550px) {
-    margin-left: 0;
+  @media (max-width: $breakPoint) {
+    display: none;
   }
+}
 
-  .function-entry {
-    .function-description {
-      margin-bottom: 1.2rem;
-    }
+#main-title {
+  float: left;
+  font-size: 1em;
+  font-weight: 500;
+  margin-right: 1rem;
+  white-space: nowrap;
 
-    .function-figure {
-      img {
-        max-width: 100%;
-      }
-    }
+  @media (max-width: $breakPoint) {
+    float: none;
+    text-align: center;
+    margin: 0 0 0.9rem 0;
+  }
+}
 
-    .function-name {
-      font: normal 1.6rem/1.6rem $codeFont;
-      margin-bottom: 1.8rem;
-    }
+#social {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
 
-    .function-signature {
-      background: #f6f8fa;
-      border-radius: 3px;
-      display: block;
-      font-size: 0.9rem;
-      line-height: 1rem;
-      margin-bottom: 1rem;
-      overflow-x: scroll;
-      padding: 1rem;
-    }
-    
-    .function-figures {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      align-items: stretch;
-      
-    }
-
-    &::before {
-      content: "";
-      display: block;
-      height: 4.2rem;
-      margin-top: -4.2rem;
-      visibility: hidden;
-
-      @media (max-width: 550px) {
-        height: 6.8rem;
-        margin-top: -6.8rem;
-      }
-    }
-
-    & + .function-entry {
-      margin-top: 4rem;
-    }
+  @media (max-width: $breakPoint) {
+    display: none;
   }
 }
