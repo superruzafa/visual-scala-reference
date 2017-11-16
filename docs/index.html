@@ -386,10 +386,17 @@
               <p class="function-description i18n" lang="es">Encuentra el primer elemento de la colección que satisface un predicado, si es que existe.</p>
             <pre class="function-signature"><code class="scala">def find(p: (A) ⇒ Boolean): Option[A]</code></pre>
       <section class="function-figure-wrapper">
-                  <figure class="function-figure">
-            <img src="images/find.svg" alt="" />
-                      </figure>
-              </section>
+                              <figure class="function-figure">
+              <img src="images/find.1.svg" alt="" />
+                              <figcaption class="function-figure-caption i18n" lang="en">When exists, returns the first element that satisfy <code>p</code> wrapped with <code>Some</code>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es">Cuando existe, se devuelve el primer elemento que satisface <code>p</code> envuelto con <code>Some</code>.</figcaption>
+                          </figure>
+                      <figure class="function-figure">
+              <img src="images/find.2.svg" alt="" />
+                              <figcaption class="function-figure-caption i18n" lang="en">When no element in the collection satisfy <code>p</code> then <code>None</code> is returned.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es">Cuando ningún elemento en la colección satisface <code>p</code> entonces se devuelve <code>None</code>.</figcaption>
+                          </figure>
+                        </section>
     </article>
       <article id="flatMap" class="function-entry">
       <h2 class="function-name">flatMap</h2>

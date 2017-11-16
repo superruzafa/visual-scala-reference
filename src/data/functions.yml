@@ -128,6 +128,11 @@
   description:
     en: Finds the first element of the collection satisfying a predicate, if any.
     es: Encuentra el primer elemento de la colección que satisface un predicado, si es que existe.
+  figures:
+  - en: When exists, returns the first element that satisfy <code>p</code> wrapped with <code>Some</code>.
+    es: Cuando existe, se devuelve el primer elemento que satisface <code>p</code> envuelto con <code>Some</code>.
+  - en: When no element in the collection satisfy <code>p</code> then <code>None</code> is returned.
+    es: Cuando ningún elemento en la colección satisface <code>p</code> entonces se devuelve <code>None</code>.
 
 - name: flatMap
   signature: "def flatMap[B](f: (A) ⇒ <em>Collection</em>[B]): <em>Collection</em>[B]"
