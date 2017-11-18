@@ -470,6 +470,11 @@
   description:
     en: Multiplies up the elements of this collection.
     es: Multiplica los elementos de esta colección.
+  figures:
+  - en: TBD
+    es: TBD
+  - en: TBD
+    es: TBD
 
 - name: range
   signature: "def <em>Collection</em>.range(start: Int, end: Int, step: Int): <em>Collection</em>[Int]"
@@ -614,6 +619,11 @@
   description:
     en: Sums up the elements of this collection.
     es: Suma los elementos de esta colección.
+  figures:
+  - en: TBD
+    es: TBD
+  - en: TBD
+    es: TBD
 
 - name: tabulate
   signature: "def <em>Collection</em>.tabulate[A](n<sub>1</sub>: Int, ..., n<sub>m</sub>: Int)(f: (Int, ..., Int): ⇒ A): <em>Collection</em>[... <em>Collection</em>[A] ...]"
