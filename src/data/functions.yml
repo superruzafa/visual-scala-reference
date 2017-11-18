@@ -340,6 +340,11 @@
   description:
     en: Optionally selects the last element.
     es: Opcionalmente selecciona el último elemento.
+  figures:
+  - en: A collection with at least one element. The last one is returned wrapped with <code>Some</code>.
+    es: Una colección con al menos un elemento. El último es devuelto con un <code>Some</code>.
+  - en: An empty collection. No last element. <code>None</code> is returned.
+    es: Una colección vacía. Sin elemento de cola. <code>None</code> es devuelto.
 
 - name: length
   signature: "def length: Int"
