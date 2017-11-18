@@ -379,24 +379,44 @@
   description:
     en: Finds the largest element.
     es: Encuentra el mayor elemento.
+  figures:
+  - en: TBD
+    es: TBD
+  - en: TBD
+    es: TBD
 
 - name: maxBy
   signature: "def maxBy[B](f: (A) ⇒ B): A"
   description:
     en: Finds the first element which yields the largest value measured by function <var>f</var>.
     es: Encuentra el primer elemento que arroja el mayor valor medido por la función <var>f</var>.
+  figures:
+  - en: TBD
+    es: TBD
+  - en: TBD
+    es: TBD
 
 - name: min
   signature: "def min: A"
   description:
     en: Finds the smallest element.
     es: Encuentra el menor elemento.
+  figures:
+  - en: TBD
+    es: TBD
+  - en: TBD
+    es: TBD
 
 - name: minBy
   signature: "def minBy[B](f: (A) ⇒ B): A"
   description:
     en: Finds the first element which yields the smallest value measured by function <var>f</var>.
     es: Encuentra el primer elemento que arroja el menor valor medido por la función <var>f</var>.
+  figures:
+  - en: TBD
+    es: TBD
+  - en: TBD
+    es: TBD
 
 - name: mkString
   signature: "def mkString(start: String, sep: String, end: String): String"
