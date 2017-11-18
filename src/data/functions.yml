@@ -309,6 +309,13 @@
   description:
     en: Selects the last element.
     es: Selecciona el último elemento.
+  figures:
+  - en: A collection with more than one element. The first one is returned.
+    es: Una coleción con más de un elemento. Se devuelve el primero.
+  - en: A collection with just one element. This element is returned.
+    es: Una colección con sólo un elemento. Se devuelve este elemento.
+  - en: An empty collection. <code>NoSuchElementException</code> is thrown.
+    es: Una colección vacía. Se lanza <code>NoSuchElementException</code>.
 
 - name: lastIndexOf
   signature: "def lastIndexOf(elem: A, end: Int): Int"
