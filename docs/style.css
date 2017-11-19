@@ -22,18 +22,22 @@
   margin-top: 4rem; }
 
 .function-figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin-bottom: 3em;
   text-align: center; }
   .function-figure img {
     max-width: 100%; }
 
 .function-figure-caption {
-  display: table-caption;
-  caption-side: bottom;
+  background: #f6f8fa;
+  border-radius: 8px;
   font-size: 0.9em;
-  margin-top: 1.1em;
-  min-width: 40ex;
-  text-align: justify; }
+  margin: 1.1em auto;
+  max-width: 40ex;
+  padding: 0.5em;
+  text-align: center; }
 
 .function-figure-wrapper {
   display: flex;
@@ -75,7 +79,8 @@ body {
 
 code,
 var {
-  font-family: "Inconsolata G", monospace; }
+  font-family: "Inconsolata G", monospace;
+  font-style: normal; }
 
 html:lang(en) .i18n:not(:lang(en)) {
   display: none;

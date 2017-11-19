@@ -20,8 +20,10 @@
         {% if not function.figures or function.figures | length == 1 %}
           <figure class="function-figure">
             <img src="images/{{ function.name }}.svg" alt="" />
-            {% for lang, text in functions.figures %}
-              <figcaption class="function-figure-caption i18n" lang="{{ lang }}">{{ text | raw }}</figcaption>
+            {% for figure in function.figures %}
+              {% for lang, text in figure %}
+                <figcaption class="function-figure-caption i18n" lang="{{ lang }}">{{ text | raw }}</figcaption>
+              {% endfor %}
             {% endfor %}
           </figure>
         {% else %}
