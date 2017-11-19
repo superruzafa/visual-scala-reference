@@ -493,30 +493,59 @@
   description:
     en: Applies a binary operator to all elements of this collection, going left to right.
     es: Aplica un operador binario a todos los elementos de esta colección, yendo de izquierda a derecha.
+  figures:
+  - en: TBD
+    es: TBD
+  - en: TBD
+    es: TBD
+  - en: TBD
+    es: TBD
 
 - name: reduceLeftOption
   signature: "def reduceLeftOption[B >: A](op: (B, A) ⇒ B): Option[B]"
   description:
     en: Optionally applies a binary operator to all elements of this collection, going left to right.
     es: Opcionalmente aplica un operador binario a todos los elementos de esta colección, yendo de izquierda a derecha.
+  figures:
+  - en: TBD
+    es: TBD
+  - en: TBD
+    es: TBD
 
 - name: reduceOption
   signature: "def reduceOption[A1 >: A](op: (A1, A1) ⇒ A1): Option[A1]"
   description:
     en: Reduces the elements of this collection, if any, using the specified associative binary operator.
     es: Reduce los elementos de esta colección, si lo hubiese, utilizando un operador binario asociativo.
+  figures:
+  - en: TBD
+    es: TBD
+  - en: TBD
+    es: TBD
 
 - name: reduceRight
   signature: "def reduceRight[B >: A](op: (A, B) ⇒ B): B"
   description:
     en: Applies a binary operator to all elements of this collection, going right to left.
     es: Aplica un operador binario a todos los elementos de esta colección, yendo de derecha a izquierda.
+  figures:
+  - en: TBD
+    es: TBD
+  - en: TBD
+    es: TBD
+  - en: TBD
+    es: TBD
 
 - name: reduceRightOption
   signature: "def reduceRightOption[B >: A](op: (A, B) ⇒ B): Option[B]"
   description:
     en: Optionally, applies a binary operator to all elements of this collection, going right to left.
     es: Opcionalmente aplica un operador binario a todos los elementos de esta colección, yendo de derecha a izquierda.
+  figures:
+  - en: TBD
+    es: TBD
+  - en: TBD
+    es: TBD
 
 - name: reverse
   signature: "def reverse: <em>Collection</em>[A]"
