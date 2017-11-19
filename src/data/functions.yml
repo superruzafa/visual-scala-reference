@@ -4,6 +4,11 @@
   description:
     en: Aggregates the results of applying an operator to subsequent elements.
     es: Agrega los resultados de aplicar un operador a elementos subsecuentes.
+  figures:
+  - en: <code>aggregate</code> when collections have 1 or more elements.
+    es: TBD
+  - en: <code>aggregate</code> with empty collections.
+    es: TBD
 
 - name: collect
   signature: "def collect[B](pf: PartialFunction[A, B]): <em>Collection</em>[B]"
