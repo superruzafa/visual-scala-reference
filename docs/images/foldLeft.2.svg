@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="47.597pt" height="115.736pt" viewBox="0 0 47.597 115.736" version="1.1">
+<defs>
+<g>
+<symbol overflow="visible" id="glyph0-0">
+<path style="stroke:none;" d=""/>
+</symbol>
+<symbol overflow="visible" id="glyph0-1">
+<path style="stroke:none;" d="M 4.546875 -4.8125 C 4.65625 -4.953125 4.65625 -4.96875 4.65625 -5.015625 C 4.65625 -5.15625 4.578125 -5.15625 4.375 -5.15625 L 0.625 -5.15625 L 0.484375 -3.25 L 0.75 -3.25 C 0.828125 -4.46875 1.046875 -4.90625 2.359375 -4.90625 L 3.734375 -4.90625 L 0.328125 -0.21875 C 0.328125 0 0.34375 0 0.609375 0 L 4.5 0 L 4.703125 -2.203125 L 4.4375 -2.203125 C 4.328125 -0.84375 4.125 -0.265625 2.703125 -0.265625 L 1.25 -0.265625 Z M 4.546875 -4.8125 "/>
+</symbol>
+</g>
+<clipPath id="clip1">
+  <path d="M 40 0 L 47.597656 0 L 47.597656 38 L 40 38 Z M 40 0 "/>
+</clipPath>
+</defs>
+<g id="surface1">
+<g clip-path="url(#clip1)" clip-rule="nonzero">
+<path style="fill:none;stroke-width:0.56693;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(50%,50%,50%);stroke-opacity:1;stroke-dasharray:2.98883,2.98883;stroke-miterlimit:10;" d="M -3.321125 -18.423812 L 3.3195 -18.423812 L 3.3195 18.423844 L -3.321125 18.423844 Z M -3.321125 -18.423812 " transform="matrix(1,0,0,-1,43.993,18.709)"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-1" x="3.321" y="21.283"/>
+</g>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-1" x="23.615" y="112.415"/>
+</g>
+<path style="fill:none;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -38.071125 -6.091781 C -38.071125 -37.869125 -17.778156 -53.263656 -17.778156 -81.455062 " transform="matrix(1,0,0,-1,43.993,18.709)"/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 26.214844 103.75 C 26.414062 102.6875 27.011719 100.960938 27.710938 99.765625 L 24.722656 99.765625 C 25.417969 100.960938 26.015625 102.6875 26.214844 103.75 "/>
+</g>
+</svg>

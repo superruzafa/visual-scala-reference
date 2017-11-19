@@ -162,12 +162,22 @@
   description:
     en: Applies a binary operator to a start value and all elements of this collection, going left to right.
     es: Aplica un operador binario a un valor inicial y a todos los elementos de la colección, yendo de izquierda a derecha.
+  figures:
+  - en: TBD
+    es: TBD
+  - en: TBD
+    es: TBD
 
 - name: foldRight
   signature: "def foldRight[B](z: B)(op: (A, B) ⇒ B): B"
   description:
     en: Applies a binary operator to a start value and all elements of this collection, going right to left.
     es: Aplica un operador binario a un valor inicial y a todos los elementos de la colección, yendo de derecha a izquierda.
+  figures:
+  - en: TBD
+    es: TBD
+  - en: TBD
+    es: TBD
 
 - name: forall
   signature: "def forall(p: (A) ⇒ Boolean): Boolean"

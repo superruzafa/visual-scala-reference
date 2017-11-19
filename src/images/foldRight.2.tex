@@ -1,0 +1,9 @@
+\input{_header.tex}
+
+\node (E) [empty] {};
+\node (z) [elem, right=1cm of E] {z};
+\draw (z) [draw=none] -- coordinate (x) (E);
+\node (B) [elem, below=3cm of x] {z};
+\draw (z) [smooth, arrow] to (B);
+
+\input{_footer.tex}
