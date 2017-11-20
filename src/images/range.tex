@@ -5,27 +5,15 @@
     \node (a2)   {$a_2$};     &
     \ellipsis                 &
     \node (an-1) {$a_{n-1}$}; &
-    \node (an)   {$a_n$};     &
-    \node (an+1) {$a_{n+1}$}; \\
+    \node (an)   {$a_n$};     \\
 };
 
-\matrix (B) [collection, below=30mm of A, matrix anchor=b1.north west] at (a1.south west) {
-    \node (b1)   {$a_1$};     &
-    \node (b2)   {$a_2$};     &
-    \ellipsis                 &
-    \node (bn-1) {$a_{n-1}$}; &
-    \node (bn)   {$a_n$};     \\
-};
+\toppointer{a1.north}{start}
 
-\topinject{a1.north}{start}
-\toppointer{an+1.north}{end}
+\draw (a1.south) [arrow, bend right=45] to node [below] {$+step$} (a2.south);
+\draw (a2.south) [arrow, middotted, bend right=45] to node [below] {$+step$} (an-1.south);
+\draw (an-1.south) [arrow, bend right=45] to node [below] {$+step$} (an.south);
 
-\draw (a1.south)   [iteration] to node [below] {$+step$} (a2.south);
-\draw (a2.south)   [iteration, middotted] to (an-1.south);
-\draw (an-1.south) [iteration] to node [below] {$+step$} (an.south);
-
-% \draw ([yshift=-8mm] a1.south west) [bottombrace] -- coordinate (a) ([yshift=-8mm] an.south east);
-
-\bracetobrace{[yshift=-8mm] a1.south west}{[yshift=-8mm] an.south east}{B.north west}{B.north east}
+\draw ([yshift=5mm] an.north east) node [label=above:end] {} [dashed] -- ([yshift=-5mm] an.south east);
 
 \input{_footer.tex}
