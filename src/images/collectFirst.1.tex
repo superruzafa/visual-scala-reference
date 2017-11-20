@@ -11,12 +11,12 @@
 
 \node (B) [some, below=3 cm of ai.south] {\small Some \nodepart{two} $b_i$};
 
-\foreach \i/\d/\p in {
-  1/\false/below,
-  2/\false/below,
-  i/\true/310}
+\foreach \i/\d/\s/\p in {
+  1/\false/0.5em/below,
+  2/\false/2em/below,
+  i/\true/0.5em/310}
 {
-  \node (pfa\i) [predicate, below=0.5em of a\i, pin={[function result, pin position=\p] \d}] {$\exists \, \texttt{pf}(a_{\i})?$};
+  \node (pfa\i) [predicate, below=\s of a\i, pin={[function result, pin position=\p] \d}] {$\exists \, \texttt{pf}(a_{\i})?$};
   \draw (a\i) -- (pfa\i);
 }
 

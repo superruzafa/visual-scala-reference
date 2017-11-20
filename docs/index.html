@@ -183,8 +183,8 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/collect.svg" alt="" />
-                                          <figcaption class="function-figure-caption i18n" lang="en"><code>collect</code> applies <code>pf</code> only to those elements on which <code>pf</code> is defined, discarding the others.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>collect</code> aplica <code>pf</code> sólo a aquellos elementos para los que <code>pf</code> está definida, descartando el resto.</figcaption>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>collect</code> applies <code>pf</code> only to those elements on which <code>pf</code> is defined.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>collect</code> aplica <code>pf</code> sólo a aquellos elementos para los que <code>pf</code> está definida.</figcaption>
                                     </figure>
               </section>
     </article>
@@ -196,12 +196,12 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/collectFirst.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>collectFirst</code> applies <code>pf</code> on the first element on which <code>pf</code> is defined and returns the result wrapped with <code>Some</code>.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>collectFirst</code> aplica <code>pf</code> al primer elemento para el que <code>pf</code> está definida y devuelve el resultado envuelto con <code>Some</code>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>collectFirst</code> wraps with <code>Some</code> the result of applying <code>pf</code> on the first element on which <code>pf</code> is defined.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>collectFirst</code> envuelve con <code>Some</code> el resultado de aplicar <code>pf</code> al primer elemento para el que <code>pf</code> está definida.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/collectFirst.2.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>collectFirst</code> returns <code>None</code> when <code>pf</code> is not defined for any element.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>collectFirst</code> returns <code>None</code> when <code>pf</code> is defined for no element.</figcaption>
                               <figcaption class="function-figure-caption i18n" lang="es"><code>collectFirst</code> devuelve <code>None</code> cuando <code>pf</code> no está definida para ningún elemento.</figcaption>
                           </figure>
                         </section>
@@ -214,7 +214,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/combinations.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>combinations</code> finds all possible combinations taking <var>n</var> elements at time and provides an iterator to go through them.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>combinations</code> encuentra todas las posibles combinaciones tomando <var>n</var> elementos cada vez y proporciona un iterador para recorrerlos.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="concat" class="function-entry">
@@ -225,7 +227,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/concat.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>concat</code> concatenates all collection elements into a single collection.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>concat</code> concatena los elementos de todas las colecciones en una única colección.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="contains" class="function-entry">
@@ -236,13 +240,13 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/contains.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>contains</code> returns <code>true</code> if at least one element of a collection is <em>equal to</em> <var>elem</var>.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>contains</code> devuelve <code>true</code> si al menos un elemento de una colección es <em>igual a</em> <var>elem</var>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>contains</code> returns <code>true</code> when at least one element in the collection is equal to <var>elem</var>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>contains</code> devuelve <code>true</code> cuando al menos un elemento de la colección es igual a <var>elem</var>.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/contains.2.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>contains</code> returns <code>false</code> if a collection does not contain any element <em>equal to</em> <var>elem</var>.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>contains</code> devuelve <code>false</code> si una colección no contiene ningún elemento <em>igual a</em> <var>elem</var>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>contains</code> returns <code>false</code> when the collection contains no element equal to <var>elem</var>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>contains</code> devuelve <code>false</code> cuando la colección no contiene ningún elemento igual a <var>elem</var>.</figcaption>
                           </figure>
                         </section>
     </article>
@@ -254,8 +258,8 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/containsSlice.svg" alt="" />
-                                          <figcaption class="function-figure-caption i18n" lang="en"><code>containsSlice</code> returns <code>true</code> if <var>that</var> can be found in form of subsequence.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>containsSlice</code> devuelve <code>true</code> si <var>that</var> puede ser encontrada en forma de subsecuencia.</figcaption>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>containsSlice</code> returns <code>true</code> when <var>that</var> can be found at least once as subsequence of the collection.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>containsSlice</code> devuelve <code>true</code> cuando <var>that</var> puede ser encontrada como subsecuencia de la colección al menos una vez.</figcaption>
                                     </figure>
               </section>
     </article>
@@ -280,7 +284,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/diff.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>diff</code> discards elements from the collection that are present in <var>that</var>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>diff</code> descarta los elementos de la colección que están presentes en <var>that</var>.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="distinct" class="function-entry">
@@ -291,7 +297,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/distinct.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>distinct</code> discards duplicated elements.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>distinct</code> descarta elementos duplicados.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="drop" class="function-entry">
@@ -302,7 +310,8 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/drop.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>drop</code> discards the first <var>n</var> elements.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="dropRight" class="function-entry">
@@ -339,7 +348,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/endsWith.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>endsWith</code> returns <code>false</code> when <var>that</var> is not suffix of the collection.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>endsWith</code> devuelve <code>false</code> cuando <var>that</var> no es sufijo de la colección.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="exists" class="function-entry">
@@ -350,8 +361,8 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/exists.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>exists</code> returns <code>true</code> when a collection contains one or more elements that satisfy <code>p</code>.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>exists</code> devuelve <code>true</code> cuando una colección contiene uno o más elementos que satisfacen <code>p</code>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>exists</code> returns <code>true</code> when the collection contains at least one element that satisfy <code>p</code>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>exists</code> devuelve <code>true</code> cuando la colección contiene al menos un elemento que satisface <code>p</code>.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/exists.2.svg" alt="" />
@@ -363,13 +374,13 @@
       <article id="fill" class="function-entry">
       <h2 class="function-name">fill</h2>
               <p class="function-description i18n" lang="en">Produces a n-dimensional collection containing the results of some element computation a number of times.</p>
-              <p class="function-description i18n" lang="es">Produce una colección n-dimensional que contiene el resultado de cierta computación para un elemento un numero de veces.</p>
+              <p class="function-description i18n" lang="es">Produce la colección n-dimensional que contiene el resultado de cierta computación para un elemento un numero de veces.</p>
             <pre class="function-signature"><code class="scala">def <em>Collection</em>.fill[A](n<sub>1</sub>: Int, ..., n<sub>m</sub>: Int)(elem: ⇒ A): <em>Collection</em>[... <em>Collection</em>[A] ...]</code></pre>
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/fill.svg" alt="" />
                                           <figcaption class="function-figure-caption i18n" lang="en"><code>fill</code> produces a n<sub>1</sub> × n<sub>2</sub> × … × n<sub>m</sub> dimensional collection using <var>elem</var> as element.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>fill</code> produce una colección n<sub>1</sub> × n<sub>2</sub> × … × n<sub>m</sub> dimensional utilizando <var>elem</var> como elemento.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>fill</code> produce la colección n<sub>1</sub> × n<sub>2</sub> × … × n<sub>m</sub> dimensional utilizando <var>elem</var> como elemento.</figcaption>
                                     </figure>
               </section>
     </article>
@@ -420,36 +431,40 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/find.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en">If a collection contains one or more elements that satisfy <code>p</code> then <code>find</code> returns the first of them wrapped with <code>Some</code>.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es">Si una colección contiene uno o más elementos que satisfacen <code>p</code> entonces <code>find</code> devuelve el primero de ellos envuelto con <code>Some</code>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>find</code> wraps with <code>Some</code> the first element that satisfies <code>p</code>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>find</code> envuelve con <code>Some</code> el primer elemento que satisface <code>p</code>.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/find.2.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en">If no element in a collection satisfies <code>p</code> then <code>find</code> returns <code>None</code>.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es">Si ningún elemento de una colección satisface <code>p</code> entonces <code>find</code> devuelve <code>None</code>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en">If no element in the collection satisfies <code>p</code> then <code>find</code> returns <code>None</code>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es">Si ningún elemento de la colección satisface <code>p</code> entonces <code>find</code> devuelve <code>None</code>.</figcaption>
                           </figure>
                         </section>
     </article>
       <article id="flatMap" class="function-entry">
       <h2 class="function-name">flatMap</h2>
               <p class="function-description i18n" lang="en">Builds a new collection by applying a function to all elements of this collection and using the elements of the resulting collections.</p>
-              <p class="function-description i18n" lang="es">Construye una nueva colección tras aplicar una función a todos los elementos de esta colección. La función devuelve una colección de elementos.</p>
+              <p class="function-description i18n" lang="es">Construye una nueva colección tras aplicar una función a todos los elementos de esta colección. La función devuelve la colección de elementos.</p>
             <pre class="function-signature"><code class="scala">def flatMap[B](f: (A) ⇒ <em>Collection</em>[B]): <em>Collection</em>[B]</code></pre>
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/flatMap.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>flapMap</code> applies <code>f</code> to each element and builds a new collection with the resulting subcollections's values.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>flapMap</code> aplica <code>f</code> a cada elemento y construye una nueva colección con los valores de la subcolecciones resultantes.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="flatten" class="function-entry">
       <h2 class="function-name">flatten</h2>
-              <p class="function-description i18n" lang="en">Converts this collection of collections into a collection formed by the elements of the inner collections.</p>
-              <p class="function-description i18n" lang="es">Convierte esta colección de colecciones en una colección compuesta por los elementos de las colecciones internas.</p>
+              <p class="function-description i18n" lang="en">Converts this collection of collections into the collection formed by the elements of the inner collections.</p>
+              <p class="function-description i18n" lang="es">Convierte esta colección de colecciones en la colección compuesta por los elementos de las colecciones internas.</p>
             <pre class="function-signature"><code class="scala">def flatten[B]: <em>Collection</em>[B]</code></pre>
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/flatten.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>flatten</code> builds a new collection with the subcollections' values.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>flatten</code> construye una nueva colección con los valores de las subcolecciones.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="fold" class="function-entry">
@@ -460,7 +475,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/fold.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>fold</code> applies <code>op</code> to all elements of the collection in a nondeterministic fashion using <var>z</var> as the <var>op</var>'s neutral element.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>fold</code> aplica <code>op</code> a todos los element de la colección de forma no determinística utilizando <var>z</var> como elemento neutral de <var>op</var>'s neutral.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="foldLeft" class="function-entry">
@@ -471,13 +488,13 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/foldLeft.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>foldLeft</code> applies <code>op</code> to the previous <code>op</code>'s result and the current element, going from left to right. The initial result is set to <var>z</var>.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>foldLeft</code> aplica <code>op</code> al anterior resultado de <code>op</code> y al elemento actual, yendo de izquierda a derecha. El resultado inicial se establece a <var>z</var>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>foldLeft</code> applies <code>op</code> to all elements of the collection going from left to right and using <var>z</var> in the first <var>op</var> application.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>foldLeft</code> aplica <code>op</code> a todos los element de la colección yendo de izquierda a derecha y utilizando <var>z</var> en la primera aplicación de <var>op</var>.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/foldLeft.2.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en">When a collection is empty <code>foldLeft</code> returns the <var>z</var> parameter.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es">Cuando una colección es vacía <code>foldLeft</code> devuelve el parámetro <var>z</var>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en">When the collection is empty <code>foldLeft</code> returns the <var>z</var> parameter.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es">Cuando la colección es vacía <code>foldLeft</code> devuelve el parámetro <var>z</var>.</figcaption>
                           </figure>
                         </section>
     </article>
@@ -489,13 +506,13 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/foldRight.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>foldRight</code> applies <code>op</code> to the previous <code>op</code>'s result and the current element, going from right to left. The initial result is set to <var>z</var>.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>foldRight</code> aplica <code>op</code> al anterior resultado de <code>op</code> y al elemento actual, yendo de derecha a izquierda. El resultado inicial se establece a <var>z</var>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>foldRight</code> applies <code>op</code> to all elements of the collection going from right to left and using <var>z</var> in the first <var>op</var> application.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>foldRight</code> aplica <code>op</code> a todos los element de la colección yendo de derecha a izquierda y utilizando <var>z</var> en la primera aplicación de <var>op</var>.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/foldRight.2.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en">When a collection is empty <code>foldRight</code> returns the <var>z</var> parameter.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es">Cuando una colección es vacía <code>foldRight</code> devuelve el parámetro <var>z</var>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en">When the collection is empty <code>foldRight</code> returns the <var>z</var> parameter.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es">Cuando la colección es vacía <code>foldRight</code> devuelve el parámetro <var>z</var>.</figcaption>
                           </figure>
                         </section>
     </article>
@@ -507,8 +524,8 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/forall.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>forall</code> returns <code>false</code> when a collection contains one or more elements that does not satisfy <code>p</code>.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>forall</code> devuelve <code>false</code> cuando una colección contiene uno o más elementos que no satisfacen <code>p</code>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>forall</code> returns <code>false</code> when the collection contains at least one element that does not satisfy <code>p</code>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>forall</code> devuelve <code>false</code> cuando la colección contiene al menos un elemento que no satisface <code>p</code>.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/forall.2.svg" alt="" />
@@ -525,7 +542,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/foreach.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>foreach</code> applies <code>f</code> to each element of the collection.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>foreach</code> aplica <code>f</code> a cada elemento de la colección.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="getOrElse" class="function-entry">
@@ -536,7 +555,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/getOrElse.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>getOrElse</code> returns <var>default</var> when the map does not contain <var>key</var>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>getOrElse</code> devuelve <var>default</var> cuando el mapa no contiene la clave <var>key</var>.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="groupBy" class="function-entry">
@@ -547,7 +568,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/groupBy.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>groupBy</code> applies <code>f</code> to each element to find out with which key this element should be grouped.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>groupBy</code> aplica <code>f</code> a cada elemento para saber con qué clave debe de ser agrupado este elemento.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="grouped" class="function-entry">
@@ -558,7 +581,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/grouped.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>grouped</code> splits the collection in groups of <var>size</var> elements ready to be iterated.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>grouped</code> parte la colección en grupos de <var>size</var> elementos listos para ser iterados.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="head" class="function-entry">
@@ -569,13 +594,13 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/head.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>head</code> returns the first element of a collection.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>head</code> devuelve el primer elemento de una colección.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>head</code> returns the first element of the collection.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>head</code> devuelve el primer elemento de la colección.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/head.2.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en">When a collection has a single element <code>head</code> returns that element.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es">Cuando una colección solo tiene un único elemento <code>head</code> devuelve dicho elemento.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en">If the collection has a single element then <code>head</code> returns that element.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es">Si la colección solo tiene un único elemento entonces <code>head</code> devuelve dicho elemento.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/head.3.svg" alt="" />
@@ -592,8 +617,8 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/headOption.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>headOption</code> returns the first element of a collection wrapped with <code>Some</code>.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>headOption</code> devuelve el primer elemento de una colección envuelto con <code>Some</code></figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>headOption</code> wraps with <code>Some</code> the first element of the collection.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>headOption</code> envuelve con <code>Some</code> el primer elemento de la colección.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/headOption.2.svg" alt="" />
@@ -610,13 +635,13 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/indexOf.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>indexOf</code> returns the index of the first element that, starting at <var>from</var>, is <em>equal to</em> <var>elem</var>.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>indexOf</code> devuelve el índice del primer elemento que, empezando por <var>from</var>, es <em>igual a</em> <var>elem</var>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>indexOf</code> returns the index of the first element at <var>from</var> or after that is equal to <var>elem</var>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>indexOf</code> devuelve el índice del primer elemento en o después de <var>from</var> que es igual a <var>elem</var>.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/indexOf.2.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en">If a collection does not contain any element in or after <var>from</var> <em>equal to</em> <var>elem</var> then <code>indexOf</code> returns -1.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es">Si una coleción no contiene ningún elemento ubicado en o después de <var>from</var> <em>igual a</em> <var>elem</var> entonces <code>indexOf</code> devuelve -1.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en">If the collection does not contain any element at or after <var>from</var> that is equal to <var>elem</var> then <code>indexOf</code> returns -1.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es">Si la colección no contiene ningún elemento en o después de <var>from</var> que es igual a <var>elem</var> entonces <code>indexOf</code> devuelve -1.</figcaption>
                           </figure>
                         </section>
     </article>
@@ -628,7 +653,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/indexOfSlice.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>indexOfSlice</code> returns the index of the first occurrence at or after <var>from</var> where <var>that</var> can be found as subsequence of the collection.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>indexOfSlice</code> devuelve el índice de la primera ocurrencia en o después de <var>from</var> donde <var>that</var> puede ser encontrada como subsecuencia de la colección.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="indexWhere" class="function-entry">
@@ -639,13 +666,13 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/indexWhere.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>indexWhere</code> returns the index of the first element that, starting at <var>from</var>, satisfies the predicate <var>p</var>.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>indexWhere</code> devuelve el índice del primer elemento que, empezando por <var>from</var>, satisface el predicado <var>p</var>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>indexWhere</code> returns the index of the first element at or after <var>from</var> that satisfies <var>p</var>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>indexWhere</code> devuelve el índice del primer elemento en o después de <var>from</var> que satisface <var>p</var>.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/indexWhere.2.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en">If a collection does not contain any element in or after <var>from</var> that satisfies <var>p</var> then <code>indexWhere</code> returns -1.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es">Si una coleción no contiene ningún elemento ubicado en o después de <var>from</var> que satisface <var>p</var> entonces <code>indexWhere</code> devuelve -1.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en">If the collection does not contain any element at or after <var>from</var> that satisfies <var>p</var> then <code>indexWhere</code> returns -1.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es">Si la colección no contiene ningún elemento en o después de <var>from</var> que satisface <var>p</var> entonces <code>indexWhere</code> devuelve -1.</figcaption>
                           </figure>
                         </section>
     </article>
@@ -657,7 +684,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/indices.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>indices</code> returns a zero-based range with the indices of the collection.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>indices</code> devuelve un rango de base cero con los índices de la colección.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="init" class="function-entry">
@@ -668,13 +697,13 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/init.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>init</code> returns all but the last element of a collection.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>init</code> devuelve todos excepto el último elemento de una colección.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>init</code> returns all but the last element of the collection.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>init</code> devuelve todos excepto el último elemento de la colección.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/init.2.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en">When a collection has a single element <code>init</code> returns an empty collection.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es">Cuando una colección solo tiene un único elemento <code>init</code> devuelve una colección vacía.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en">When the collection has a single element <code>init</code> returns an empty collection.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es">Cuando la colección solo tiene un único elemento <code>init</code> devuelve la colección vacía.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/init.3.svg" alt="" />
@@ -691,7 +720,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/inits.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>inits</code> finds all the possible prefixes of the collection and provides an iterator to go through them.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>inits</code> encuentra todos los prefijos posibles de la colección y proporciona un iterador para recorrerlos.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="intersect" class="function-entry">
@@ -702,7 +733,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/intersect.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>intersect</code> finds the elements that the collection and <var>that</var> have in common.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>intersect</code> encuentra los elementos que tienen en común la colección y <var>that</var>.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="isEmpty" class="function-entry">
@@ -713,13 +746,13 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/isEmpty.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>isEmpty</code> returns <code>false</code> if a collection has one or more elements.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>isEmpty</code> devuelve <code>false</code> si una colección tiene uno o más elementos.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>isEmpty</code> returns <code>false</code> when the collection has at least one element.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>isEmpty</code> devuelve <code>false</code> cuando la colección tiene al menos un elemento.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/isEmpty.2.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>isEmpty</code> returns <code>true</code> if a collection has no elements.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>isEmpty</code> devuelve <code>true</code> si una colección no tiene elementos.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>isEmpty</code> returns <code>true</code> when the collection has no elements.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>isEmpty</code> devuelve <code>true</code> cuando la colección no tiene elementos.</figcaption>
                           </figure>
                         </section>
     </article>
@@ -731,7 +764,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/keys.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>keys</code> returns an iterator to go through a map's keys.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>keys</code> devuelve un iterador para recorrer las claves de un mapa.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="last" class="function-entry">
@@ -742,13 +777,13 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/last.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>last</code> returns the last element of a collection.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>last</code> devuelve el último elemento de una colección.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>last</code> returns the last element of the collection.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>last</code> devuelve el último elemento de la colección.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/last.2.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en">When a collection has a single element <code>last</code> returns that element.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es">Cuando una colección solo tiene un único elemento <code>last</code> devuelve dicho elemento.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en">If the collection has a single element then <code>last</code> returns that element.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es">Si la colección solo tiene un único elemento entonces <code>last</code> devuelve dicho elemento.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/last.3.svg" alt="" />
@@ -765,7 +800,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/lastIndexOf.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>lastIndexOf</code> returns the index of the last element, before or at <var>end</var>, that is equal to <var>elem</var>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>lastIndexOf</code> devuelve el índice del último elemento, antes de o en <var>end</var>, que es igual a <var>elem</var>.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="lastIndexOfSlice" class="function-entry">
@@ -776,7 +813,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/lastIndexOfSlice.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>lastIndexOfSlice</code> returns the index of the last occurrence at or before <var>from</var> where <var>that</var> can be found as subsequence of the collection.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>lastIndexOfSlice</code> devuelve el índice de la última ocurrencia en o antes de <var>from</var> donde <var>that</var> puede ser encontrada como subsecuencia de la colección.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="lastIndexWhere" class="function-entry">
@@ -787,7 +826,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/lastIndexWhere.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>lastIndexWhere</code> returns the index of the last element, before or at <var>end</var>, that satisfies <var>p</var>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>lastIndexWhere</code> devuelve el índice del último elemento, antes de o en <var>end</var>, que satisface <var>p</var>.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="lastOption" class="function-entry">
@@ -798,8 +839,8 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/lastOption.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>lastOption</code> returns the last element of a collection wrapped with <code>Some</code>.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>lastOption</code> devuelve el último elemento de una colección envuelto con <code>Some</code></figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>lastOption</code> wraps with <code>Some</code> the last element of the collection.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>lastOption</code> envuelve con <code>Some</code> el último elemento de la colección.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/lastOption.2.svg" alt="" />
@@ -816,7 +857,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/length.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>length</code> returns how many elements the collection has.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>length</code> devuelve cuántos elementos tiene la colección.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="map" class="function-entry">
@@ -827,18 +870,22 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/map.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>map</code> applies <code>f</code> to each element in the collection and builds a new collection with the results.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>map</code> aplica <code>f</code> a cada elemento de la colección y construye una nueva colección con los resultados.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="mapConserve" class="function-entry">
       <h2 class="function-name">mapConserve</h2>
-              <p class="function-description i18n" lang="en">Builds a new collection by applying a function to all elements of this collection. Like <code>xs map f</code>, but returns <var>xs</var> unchanged if function <var>f</var> maps all elements to themselves (as determined by <var>eq</var>)</p>
-              <p class="function-description i18n" lang="es">Construye una nueva colección aplicando una función a todos los elementos de esta colección. Igual que <code>xs map f</code> pero devuelve <var>xs</var> intacto si la función <var>f</var> mapea todos los elementos a sí mismos (determinado por <var>eq</var>)</p>
+              <p class="function-description i18n" lang="en">Builds a new collection by applying a function to all elements of this collection assuring that the types are preserved.</p>
+              <p class="function-description i18n" lang="es">Construye una nueva colección aplicando una función a todos los elementos de esta colección asegurando que se mantienen los tipos.</p>
             <pre class="function-signature"><code class="scala">def mapConserve(f: (A) ⇒ A): <em>Collection</em>[A]</code></pre>
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/mapConserve.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>mapConserve</code> applies <code>f</code> to each element in the collection and builds a new collection with the results, while preserving the original types.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>mapConserve</code> aplica <code>f</code> a cada elemento de la colección y construye una nueva colección con los resultados, mientras mantiene el tipo original.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="mapValues" class="function-entry">
@@ -849,7 +896,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/mapValues.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>mapValues</code> builds a new map preserving the keys but using the result of apply <code>f</code> to each value.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>mapValues</code> construye un nuevo mapa conservando las claves pero utilizando el resultado de aplicar <code>f</code> a cada valor.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="max" class="function-entry">
@@ -860,8 +909,8 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/max.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>max</code> finds the element with the largest valut in a collection.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>max</code> encuentra el elemento con mayor valor en una colección.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>max</code> finds the element with the largest value in the collection.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>max</code> encuentra el elemento con mayor valor en la colección.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/max.2.svg" alt="" />
@@ -896,8 +945,8 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/min.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>min</code> finds the element with the smallest valut in a collection.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>min</code> encuentra el elemento con menor valor en una colección.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>min</code> finds the element with the smallest valut in the collection.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>min</code> encuentra el elemento con menor valor en la colección.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/min.2.svg" alt="" />
@@ -932,7 +981,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/mkString.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>mkString</code> builds an string delimited by <var>start</var> and <var>end</var> and using <var>sep</var> as separator.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>mkString</code> construye una cadena delimitada por <var>start</var> y <var>end</var> y utilizando <var>sep</var> como separador.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="nonEmpty" class="function-entry">
@@ -943,13 +994,13 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/nonEmpty.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>nonEmpty</code> returns <code>true</code> if a collection has one or more elements.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>nonEmpty</code> devuelve <code>true</code> si una colección tiene uno o más elementos.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>nonEmpty</code> returns <code>true</code> when the collection has at least one element.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>nonEmpty</code> devuelve <code>true</code> cuando la colección tiene al menos un elemento.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/nonEmpty.2.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>nonEmpty</code> returns <code>false</code> if a collection has no elements.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>nonEmpty</code> devuelve <code>false</code> si una colección no tiene elementos.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>nonEmpty</code> returns <code>false</code> when the collection has no elements.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>nonEmpty</code> devuelve <code>false</code> cuando la colección no tiene elementos.</figcaption>
                           </figure>
                         </section>
     </article>
@@ -961,7 +1012,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/padTo.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>padTo</code> appends so many <var>elem</var> elements to the collection until reach some length.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>padTo</code> añade tantos elementos <var>elem</var> a la colección hasta alcanzar cierta longitud.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="partition" class="function-entry">
@@ -985,7 +1038,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/patch.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>patch</code> replaces the segment of elements that start at <var>from</var> and has length of <var>replace</var> by the elements of another collection.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>patch</code> reemplaza el segmento de elementos que empieza en <var>from</var> y tiene longitud de <var>replace</var> por los elementos de otra colección.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="permutations" class="function-entry">
@@ -996,8 +1051,8 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/permutations.svg" alt="" />
-                                          <figcaption class="function-figure-caption i18n" lang="en"><code>permutations</code> returns an iterator over all possible permutations of a collection.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>permutations</code> devuelve un iterador sobre todas las posibles permutaciones de esta colección.</figcaption>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>permutations</code> returns an iterator to go through all possible permutations of the collection.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>permutations</code> devuelve un iterador para recorrer todas las posibles permutaciones de esta colección.</figcaption>
                                     </figure>
               </section>
     </article>
@@ -1022,8 +1077,8 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/product.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>product</code> multiplies the elements of a collection.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>product</code> multiplica los elementos de una colección.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>product</code> multiplies the elements of the collection.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>product</code> multiplica los elementos de la colección.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/product.2.svg" alt="" />
@@ -1034,13 +1089,15 @@
     </article>
       <article id="range" class="function-entry">
       <h2 class="function-name">range</h2>
-              <p class="function-description i18n" lang="en">Produces a collection containing a sequence of increasing of integers</p>
-              <p class="function-description i18n" lang="es">Produce una colección que contiene una secuencia de enteros incrementales.</p>
+              <p class="function-description i18n" lang="en">Produces the collection containing a sequence of increasing of integers</p>
+              <p class="function-description i18n" lang="es">Produce la colección que contiene una secuencia de enteros incrementales.</p>
             <pre class="function-signature"><code class="scala">def <em>Collection</em>.range(start: Int, end: Int, step: Int): <em>Collection</em>[Int]</code></pre>
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/range.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>range</code> produces the collection containing a increasing sequence of integers.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>range</code> produce la colección que contiene una secuencia creciente de enteros.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="reduce" class="function-entry">
@@ -1051,7 +1108,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/reduce.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>reduce</code> applies <code>op</code> to all elements of the collection in a nondeterministic fashion.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>reduce</code> aplica <code>op</code> a todos los element de la colección de forma no determinística.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="reduceLeft" class="function-entry">
@@ -1062,13 +1121,13 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/reduceLeft.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>reduceLeft</code> applies <code>op</code> to successive elements of a collection, going from left to right, starting with the two first elements.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>reduceLeft</code> aplica <code>op</code> a elementos sucesivos de una colección, yendo de izquierda a derecha, empezando con los dos primeros elementos.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>reduceLeft</code> applies <code>op</code> to successive elements of the collection, going from left to right, starting with the two first elements.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>reduceLeft</code> aplica <code>op</code> a elementos sucesivos de la colección, yendo de izquierda a derecha, empezando con los dos primeros elementos.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/reduceLeft.2.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en">When a collection has a single element <code>reduceLeft</code> returns that element.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es">Cuando una colección solo tiene un único elemento <code>reduceLeft</code> devuelve dicho elemento.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en">When the collection has a single element <code>reduceLeft</code> returns that element.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es">Cuando la colección solo tiene un único elemento <code>reduceLeft</code> devuelve dicho elemento.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/reduceLeft.3.svg" alt="" />
@@ -1085,8 +1144,8 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/reduceLeftOption.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>reduceLeftOption</code> applies <code>op</code> to successive elements of a collection going from left to right, starting with the two first elements and wrapping the final result with <code>Some</code>.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>reduceLeftOption</code> aplica <code>op</code> a elementos sucesivos de una colección yendo de izquierda a derecha, empezando con los dos primeros elementos y envolviendo el resultado final con <code>Some</code>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>reduceLeftOption</code> applies <code>op</code> to successive elements of the collection going from left to right, starting with the two first elements and wrapping the final result with <code>Some</code>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>reduceLeftOption</code> aplica <code>op</code> a elementos sucesivos de la colección yendo de izquierda a derecha, empezando con los dos primeros elementos y envolviendo el resultado final con <code>Some</code>.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/reduceLeftOption.2.svg" alt="" />
@@ -1103,8 +1162,8 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/reduceOption.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>reduceLeftOption</code> applies <code>op</code> to all elements of a collection in a non-deterministic fashion and wrapping the final result with <code>Some</code>.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>reduceLeftOption</code> aplica <code>op</code> a todos los element de una colección de forma no determinística y envolviendo el resultado final con <code>Some</code>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>reduceOption</code> applies <code>op</code> to all elements of the collection in a nondeterministic fashion and wrapping the final result with <code>Some</code>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>reduceOption</code> aplica <code>op</code> a todos los element de la colección de forma no determinística y envolviendo el resultado final con <code>Some</code>.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/reduceOption.2.svg" alt="" />
@@ -1121,13 +1180,13 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/reduceRight.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>reduceRight</code> applies <code>op</code> to successive elements of a collection going from right to left, starting with the two last elements.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>reduceRight</code> aplica <code>op</code> a elementos sucesivos de una colección yendo de derecha a izquierda, empezando con los dos últimos elementos.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>reduceRight</code> applies <code>op</code> to successive elements of the collection going from right to left, starting with the two last elements.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>reduceRight</code> aplica <code>op</code> a elementos sucesivos de la colección yendo de derecha a izquierda, empezando con los dos últimos elementos.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/reduceRight.2.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en">When a collection has a single element <code>reduceRight</code> returns that element.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es">Cuando una colección solo tiene un único elemento <code>reduceRight</code> devuelve dicho elemento.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en">When the collection has a single element <code>reduceRight</code> returns that element.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es">Cuando la colección solo tiene un único elemento <code>reduceRight</code> devuelve dicho elemento.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/reduceRight.3.svg" alt="" />
@@ -1144,8 +1203,8 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/reduceRightOption.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>reduceRightOption</code> applies <code>op</code> to successive elements of a collection going from right to left, starting with the two last elements and wrapping the final result with <code>Some</code>.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>reduceRightOption</code> aplica <code>op</code> a elementos sucesivos de una colección yendo de derecha a izquierda, empezando con los dos últimos elementos y envolviendo el resultado final con <code>Some</code>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>reduceRightOption</code> applies <code>op</code> to successive elements of the collection going from right to left, starting with the two last elements and wrapping the final result with <code>Some</code>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>reduceRightOption</code> aplica <code>op</code> a elementos sucesivos de la colección yendo de derecha a izquierda, empezando con los dos últimos elementos y envolviendo el resultado final con <code>Some</code>.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/reduceRightOption.2.svg" alt="" />
@@ -1175,8 +1234,8 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/reverseMap.svg" alt="" />
-                                          <figcaption class="function-figure-caption i18n" lang="en"><code>reverseMap</code> applies <var>f</var> to all elements and collects the values in reversed order.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>reverseMap</code> aplica <var>f</var> a todos los elementos y recopila los valores en orden inverso.</figcaption>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>reverseMap</code> returns a new collection by applying <var>f</var> to all elements and collecting the values in reversed order.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>reverseMap</code> devuelve una nueva colección aplicando <var>f</var> a todos los elementos y recopilando los valores en orden inverso.</figcaption>
                                     </figure>
               </section>
     </article>
@@ -1188,7 +1247,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/sameElements.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>sameElements</code> returns <var>true</var> when the collection and <var>that</var> contain the same elements in the same order.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>reverseMap</code> devuelve <var>true</var> cuando esta colección y <var>that</var> contienen los mismos elementos en el mismo orden.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="scan" class="function-entry">
@@ -1204,24 +1265,28 @@
     </article>
       <article id="scanLeft" class="function-entry">
       <h2 class="function-name">scanLeft</h2>
-              <p class="function-description i18n" lang="en">Produces a collection containing cumulative results of applying the operator going left to right.</p>
-              <p class="function-description i18n" lang="es">Produce una colección que contiene los resultados parciales de aplicar el operador, yendo de izquierda a derecha.</p>
+              <p class="function-description i18n" lang="en">Produces the collection containing cumulative results of applying the operator going left to right.</p>
+              <p class="function-description i18n" lang="es">Produce la colección que contiene los resultados parciales de aplicar el operador, yendo de izquierda a derecha.</p>
             <pre class="function-signature"><code class="scala">def scanLeft[B](z: B)(op: (B, A) ⇒ B)</code></pre>
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/scanLeft.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>scanLeft</code> applies <code>op</code> to all elements of the collection going from left to right, using <var>z</var> in the first <var>op</var> application and collecting the cumulative results.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>scanLeft</code> aplica <code>op</code> a todos los element de la colección yendo de izquierda a derecha, utilizando <var>z</var> en la primera aplicación de <var>op</var> y recopilando los resultados acumulados.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="scanRight" class="function-entry">
       <h2 class="function-name">scanRight</h2>
-              <p class="function-description i18n" lang="en">Produces a collection containing cumulative results of applying the operator going right to left.</p>
-              <p class="function-description i18n" lang="es">Produce una colección que contiene los resultados parciales de aplicar el operador, yendo de derecha a izquierda.</p>
+              <p class="function-description i18n" lang="en">Produces the collection containing cumulative results of applying the operator going right to left.</p>
+              <p class="function-description i18n" lang="es">Produce la colección que contiene los resultados parciales de aplicar el operador, yendo de derecha a izquierda.</p>
             <pre class="function-signature"><code class="scala">def scanRight[B](z: B)(op: (A, B) ⇒ B)</code></pre>
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/scanRight.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>scanRight</code> applies <code>op</code> to all elements of the collection going from right to left, using <var>z</var> in the first <var>op</var> application and collecting the cumulative results.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>scanRight</code> aplica <code>op</code> a todos los element de la colección yendo de derecha a izquierda, utilizando <var>z</var> en la primera aplicación de <var>op</var> y recopilando los resultados acumulados.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="segmentLength" class="function-entry">
@@ -1232,8 +1297,8 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/segmentLength.svg" alt="" />
-                                          <figcaption class="function-figure-caption i18n" lang="en"><code>prefixLength</code> returns the length of the longest segment starting at <var>from</var> whose elements satisfy <var>p</var>.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>prefixLength</code> devuelve la longitud del mayor segmento empezando por <var>from</var> cuyos elementos satisfacen <var>p</var>.</figcaption>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>segmentLength</code> returns the length of the longest segment starting at <var>from</var> whose elements satisfy <var>p</var>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>segmentLength</code> devuelve la longitud del mayor segmento empezando por <var>from</var> cuyos elementos satisfacen <var>p</var>.</figcaption>
                                     </figure>
               </section>
     </article>
@@ -1245,7 +1310,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/size.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>size</code> returns how many elements the collection has.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>size</code> devuelve cuántos elementos tiene la colección.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="slice" class="function-entry">
@@ -1256,7 +1323,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/slice.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>slice</code> extracts the segment that starts at the element immediately after <var>from</var> and ends at <var>until</var>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>slice</code> extrae el segmento que empieza en el elemento inmediatamente posterior a <var>from</var> y termina en <var>until</var>.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="sliding" class="function-entry">
@@ -1267,7 +1336,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/sliding.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>sliding</code> extracts groups of elements of length <var>size</var> every <var>step</var> elements and provides an iterator to go through them.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>sliding</code> extrae grupos de elementos de longitud <var>size</var> cada <var>step</var> elementos y proporciona un iterador para recorrerlos.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="sortBy" class="function-entry">
@@ -1278,7 +1349,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/sortBy.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>sortBy</code> applies <var>f</var> to each element and uses the result as weight to sort the collection.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>sortBy</code> aplica <var>f</var> a cada elemento y utiliza el resultado como peso para ordenar la colección.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="sortWith" class="function-entry">
@@ -1289,7 +1362,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/sortWith.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>sortWith</code> sorts the collection using <var>lt</var> as comparison function of two elements.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>sortWith</code> ordena la colección utilizando <var>lt</var> como función comparadora de dos elementos.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="sorted" class="function-entry">
@@ -1300,7 +1375,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/sorted.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>sorted</code> sorts the collection.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>sorted</code> ordena la colección.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="span" class="function-entry">
@@ -1311,18 +1388,22 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/span.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>span</code> selects the longest prefix of elements that satisfy <var>p</var> on the first component of a tuple and the rest of elements on the second.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>span</code> selecciona el mayor prefijo de elementos que satisfacen <var>p</var> en la primera componente de una tupla y el resto de elementos en la segunda.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="splitAt" class="function-entry">
       <h2 class="function-name">splitAt</h2>
               <p class="function-description i18n" lang="en">Splits this collection into two at a given position.</p>
               <p class="function-description i18n" lang="es">Parte esta colección en dos en una posición dada.</p>
-            <pre class="function-signature"><code class="scala">def splitAt(n: Int): (<em>Collection</em>[A], <em>Collection</em>[A])</code></pre>
+            <pre class="function-signature"><code class="scala">def splitAt(i: Int): (<em>Collection</em>[A], <em>Collection</em>[A])</code></pre>
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/splitAt.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>splitAt</code> selects the elements at or before <var>i</var> on the first component of a tuple and the rest of elements on the second.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>splitAt</code> selecciona los elementos en o antes de <var>i</var> en la primera componente de una tupla y el resto de elementos en la segunda.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="startsWith" class="function-entry">
@@ -1333,7 +1414,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/startsWith.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>startsWith</code> returns <code>true</code> when <var>that</var> is prefix of the collection.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>startsWith</code> devuelve <code>true</code> cuando <var>that</var> es prefijo de la colección.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="sum" class="function-entry">
@@ -1344,8 +1427,8 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/sum.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>sum</code> sums the elements of a collection.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>sum</code> suma los elementos de una colección.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>sum</code> sums the elements of the collection.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>sum</code> suma los elementos de la colección.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/sum.2.svg" alt="" />
@@ -1357,12 +1440,14 @@
       <article id="tabulate" class="function-entry">
       <h2 class="function-name">tabulate</h2>
               <p class="function-description i18n" lang="en">Produces a n-dimensional collection containing values of a given function over ranges of integer values starting from 0.</p>
-              <p class="function-description i18n" lang="es">Produce una colección n-dimensional que contiene los valores de una cierta función sobre el rango de valores enteros empezando por 0.</p>
+              <p class="function-description i18n" lang="es">Produce la colección n-dimensional que contiene los valores de una cierta función sobre el rango de valores enteros empezando por 0.</p>
             <pre class="function-signature"><code class="scala">def <em>Collection</em>.tabulate[A](n<sub>1</sub>: Int, ..., n<sub>m</sub>: Int)(f: (Int, ..., Int): ⇒ A): <em>Collection</em>[... <em>Collection</em>[A] ...]</code></pre>
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/tabulate.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>tabulate</code> produces a n<sub>1</sub> × n<sub>2</sub> × … × n<sub>m</sub> dimensional collection using <var>f</var> to retrieve each element.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>tabulate</code> produce la colección n<sub>1</sub> × n<sub>2</sub> × … × n<sub>m</sub> dimensional utilizando <var>f</var> para obtener cada elemento.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="tail" class="function-entry">
@@ -1373,13 +1458,13 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/tail.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"><code>tail</code> returns all but the first element of a collection.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>tail</code> devuelve todos excepto el primer elemento de una colección.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>tail</code> returns all but the first element of the collection.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>tail</code> devuelve todos excepto el primer elemento de la colección.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/tail.2.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en">When a collection has a single element <code>tail</code> returns an empty collection.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es">Cuando una colección solo tiene un único elemento <code>tail</code> devuelve una colección vacía.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en">When the collection has a single element <code>tail</code> returns an empty collection.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es">Cuando la colección solo tiene un único elemento <code>tail</code> devuelve la colección vacía.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/tail.3.svg" alt="" />
@@ -1396,7 +1481,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/tails.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>tails</code> finds all the possible suffixes of the collection and provides an iterator to go through them.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>tails</code> encuentra todos los sufijos posibles de la colección y proporciona un iterador para recorrerlos.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="take" class="function-entry">
@@ -1407,7 +1494,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/take.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>take</code> preserves the first <var>n</var> elements.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>take</code> conserva los primeros <var>n</var> elements.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="takeRight" class="function-entry">
@@ -1418,7 +1507,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/takeRight.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>takeRight</code> preserves the last <var>n</var> elements.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>takeRight</code> conserva los últimos <var>n</var> elements.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="takeWhile" class="function-entry">
@@ -1429,7 +1520,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/takeWhile.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>takeWhile</code> preserves elements while they satisfy <code>p</code>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>takeWhile</code> conserva elementos mientras satisfacen <code>p</code>.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="union" class="function-entry">
@@ -1451,7 +1544,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/unzip.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>unzip</code> select the first/second component of each element in the collection in the first/second component of a tuple.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>unzip</code> selecciona la primera/segunda componente de cada elemento en la colección en la primera/segunda componente de una tupla.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="unzip3" class="function-entry">
@@ -1462,7 +1557,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/unzip3.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>unzip3</code> select the first/second/third component of each element in the collection in the first/second/third component of a tuple.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>unzip3</code> selecciona la primera/segunda/ componente de cada elemento en la colección en la primera/segunda/tercera componente de una tupla.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="updated" class="function-entry">
@@ -1473,7 +1570,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/updated.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>updates</code> changes the element at <var>index</var> by <var>elem</var> while preserving the rest.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>updates</code> cambia el elemento en <var>index</var> por <var>elem</var> mientras conserva el resto.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="values" class="function-entry">
@@ -1484,7 +1583,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/values.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>values</code> returns an iterator to go through a map's values.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>values</code> devuelve un iterador para recorrer los valores de un mapa.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="withDefault" class="function-entry">
@@ -1495,7 +1596,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/withDefault.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>withDefault</code> uses <var>f<sub>def</sub></var> to generate a value when the map does not contain the requested key.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>withDefault</code> utiliza <var>f<sub>def</sub></var> para generar un valor cuando el mapa no contiene la clave solicitada.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="withDefaultValue" class="function-entry">
@@ -1506,29 +1609,35 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/withDefaultValue.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>withDefaultValue</code> uses <var>v<sub>def</sub></var> as value when the map does not contain the requested key.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>withDefaultValue</code> utiliza <var>v<sub>def</sub></var> como valor cuando el mapa no contiene la clave solicitada.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="zip" class="function-entry">
       <h2 class="function-name">zip</h2>
-              <p class="function-description i18n" lang="en">Returns a collection formed from this and another one by combining corresponding elements in pairs.</p>
-              <p class="function-description i18n" lang="es">Devuelve una colección formada por los elementos de dos colecciones distintas combinados en parejas.</p>
+              <p class="function-description i18n" lang="en">Returns the collection formed from this and another one by combining corresponding elements in pairs.</p>
+              <p class="function-description i18n" lang="es">Devuelve la colección formada por los elementos de dos colecciones distintas combinados en parejas.</p>
             <pre class="function-signature"><code class="scala">def zip[B](that: GenIterable[B]): <em>Collection</em>[A, B]</code></pre>
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/zip.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>zip</code> builds a new collection by combining the i-th element of this/another collection into the first/second component of a tuple.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>zip</code> construye una nueva colección combinando el i-esimo elemento de esta/otra colección en la primera/segunda componente de una tupla.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="zipAll" class="function-entry">
       <h2 class="function-name">zipAll</h2>
-              <p class="function-description i18n" lang="en">Returns a collection formed from this and another one by combining corresponding elements in pairs. If one of the two collections is shorter than the other, placeholder elements are used to extend the shorter collection to the length of the longer.</p>
-              <p class="function-description i18n" lang="es">Devuelve una colección formada por los elementos de dos colecciones distintas combinados en parejas. Si una de las colecciones es menor que la otra, se usan elementos comodín en la más corta hasta alcanzar la longitud de la más larga.</p>
+              <p class="function-description i18n" lang="en">Returns the collection formed from this and another one by combining corresponding elements in pairs. If one of the two collections is shorter than the other, placeholder elements are used to extend the shorter collection to the length of the longer.</p>
+              <p class="function-description i18n" lang="es">Devuelve la colección formada por los elementos de dos colecciones distintas combinados en parejas. Si una de las colecciones es menor que la otra, se usan elementos comodín en la más corta hasta alcanzar la longitud de la más larga.</p>
             <pre class="function-signature"><code class="scala">def zipAll[B](that: Iterable[B], thisElem: A, thatElem: B): <em>Collection</em>[(A, B)]</code></pre>
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/zipAll.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>zip</code> builds a new collection by combining the i th element of this/another collection into the first/second component of a tuple, using <var>a<sub>f</sub></var>/<var>b<sub>f</sub></var> as fill elements.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>zip</code> construye una nueva colección combinando el i-esimo elemento de esta/otra colección en la primera/segunda componente de una tupla, utilizando <var>a<sub>f</sub></var>/<var>b<sub>f</sub></var> como elementos de relleno.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="zipWithIndex" class="function-entry">
@@ -1539,7 +1648,9 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/zipWithIndex.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>zip</code> builds a new collection by combining in a tuple each element with its index.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>zip</code> construye una nueva colección combinando en una tupla cada elemento con su índice.</figcaption>
+                                    </figure>
               </section>
     </article>
   </main>

@@ -9,12 +9,12 @@
 
 \node (B) [none, below right=3cm and 0cm of an.south east];
 
-\foreach \i/\d/\p in {
-  1/\false/below,
-  2/\false/below,
-  n/\false/below}
+\foreach \i/\d/\s/\p in {
+  1/\false/0.5em/below,
+  2/\false/2em/below,
+  n/\false/0.5em/below}
 {
-  \node (pfa\i) [predicate, below=0.5em of a\i, pin={[function result, pin position=\p] \d}] {$\exists \, \texttt{pf}(a_{\i})$};
+  \node (pfa\i) [predicate, below=\s of a\i, pin={[function result, pin position=\p] \d}] {$\exists \, \texttt{pf}(a_{\i})?$};
   \draw (a\i) -- (pfa\i);
 }
 

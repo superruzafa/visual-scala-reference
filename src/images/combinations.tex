@@ -9,28 +9,28 @@
   \node (m)   {$a_m$}; \\
 };
 
-\matrix (C1) [collection, below=2cm of A, matrix anchor=c11.north west] at (a1.south west) {
+\matrix (C1) [collection, below=2cm of A] {
   \node (c11) {$a_1$}; &
   \node       {$a_2$}; &
   \ellipsis            &
   \node       {$a_n$}; \\
 };
 
-\matrix (C2) [collection, below=15mm of C1, matrix anchor=c21.north west] at (c11.south west) {
+\matrix (C2) [collection, below=15mm of C1] {
   \node (c21) {$a_1$};       &
   \node       {$a_2$};       &
   \ellipsis                  &
   \node       {$a_{n + 1}$}; \\
 };
 
-\matrix (C3) [collection, below=15mm of C2, matrix anchor=c31.north west] at (c21.south west) {
+\matrix (C3) [collection, below=15mm of C2] {
   \node (c31) {$a_1$}; &
   \node       {$a_2$}; &
   \ellipsis            &
   \node       {$a_m$}; \\
 };
 
-\matrix (C4) [collection, below=15mm of C3, matrix anchor=c41.north west] at (c31.south west) {
+\matrix (C4) [collection, below=15mm of C3] {
   \node (c41) {$a_{m-n+1}$}; &
   \node       {$a_{m-n+2}$}; &
   \ellipsis                  &

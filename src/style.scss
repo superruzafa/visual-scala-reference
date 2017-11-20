@@ -79,7 +79,7 @@ $breakPoint: 550px;
   font-size: 0.9rem;
   line-height: 1rem;
   margin-bottom: 1.2rem;
-  overflow-x: scroll;
+  overflow-x: auto;
   padding: 1rem;
 }
 
@@ -167,7 +167,7 @@ html:lang(es) .i18n:not(:lang(es)) { display: none; visibility: hidden; }
   border-right: 1px solid #eee;
   float: left;
   height: calc(100vh - 4rem - 1rem - 1rem);
-  overflow-y: scroll;
+  overflow-y: auto;
   padding: 1rem;
   position: sticky;
   top: calc(1.4rem + 2rem);

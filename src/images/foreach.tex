@@ -10,7 +10,7 @@
 };
 
 \foreach \i in {1,2,i,n} {
-  \node (fa\i) [below=1cm of a\i] {$\texttt{f}(a_\i)$};
+  \node (fa\i) [elem, below=1cm of a\i] {$\texttt{f}(a_\i)$};
   \draw (a\i) [arrow] -- (fa\i);
 }
 
