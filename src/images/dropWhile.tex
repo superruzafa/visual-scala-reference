@@ -26,9 +26,10 @@
   \draw (a\i) -- (pa\i);
 }
 
-\draw (pa1) [iteration] to (pa2);
-\draw (pa2) [iteration, middotted] to (pai);
-\draw (pai) [iteration] to (pai+1);
+\draw ([xshift=-1cm] pa1.south) [iteration] to (pa1.south);
+\draw (pa1.south) [iteration] to (pa2.south);
+\draw (pa2.south) [iteration, middotted] to (pai.south);
+\draw (pai.south) [iteration] to (pai+1.south);
 
 \bracetobrace{ai+1.south west}{an.south east}{bi+1.north west}{bn.north east}
 

@@ -27,6 +27,11 @@
   \draw (a\i) -- (pa\i);
 }
 
+\draw ([xshift=-1cm] pa1.south) [iteration] to (pa1.south);
+\draw (pa1.south) [iteration] to (pa2.south);
+\draw (pa2.south) [iteration, middotted] to (pai.south);
+\draw (pai.south) [iteration] to (pai+1.south);
+
 \bracetobrace{a1.south west}{ai.south east}{b1.north west}{bi.north east}
 
 \input{_footer.tex}
