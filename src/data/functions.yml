@@ -499,8 +499,8 @@
     en: Finds the largest element.
     es: Encuentra el mayor elemento.
   figures:
-  - en: <code>max</code> finds the element with the largest value in the collection.
-    es: <code>max</code> encuentra el elemento con mayor valor en la colección.
+  - en: <code>max</code> finds the first element with the largest value in the collection.
+    es: <code>max</code> encuentra el primer elemento con mayor valor en la colección.
   - en: <code>max</code> throws <code>UnsupportedOperationException</code> on empty collections.
     es: <code>max</code> lanza <code>UnsupportedOperationException</code> en colecciones vacías.
 
@@ -510,8 +510,8 @@
     en: Finds the first element which yields the largest value measured by function <var>f</var>.
     es: Encuentra el primer elemento que arroja el mayor valor medido por la función <var>f</var>.
   figures:
-  - en: <code>maxBy</code> returns the element that, once applied <var>f</var>, yields the largest value.
-    es: <code>maxBy</code> devuelve el elemento que, una vez aplicado <var>f</var> emite el mayor valor.
+  - en: <code>maxBy</code> returns the first element that, once applied <var>f</var>, yields the largest value.
+    es: <code>maxBy</code> devuelve el primer elemento que, una vez aplicado <var>f</var> emite el mayor valor.
   - en: <code>maxBy</code> throws <code>UnsupportedOperationException</code> on empty collections.
     es: <code>maxBy</code> lanza <code>UnsupportedOperationException</code> en colecciones vacías.
 
@@ -521,8 +521,8 @@
     en: Finds the smallest element.
     es: Encuentra el menor elemento.
   figures:
-  - en: <code>min</code> finds the element with the smallest valut in the collection.
-    es: <code>min</code> encuentra el elemento con menor valor en la colección.
+  - en: <code>min</code> finds first the element with the smallest valut in the collection.
+    es: <code>min</code> encuentra primer el elemento con menor valor en la colección.
   - en: <code>min</code> throws <code>UnsupportedOperationException</code> on empty collections.
     es: <code>min</code> lanza <code>UnsupportedOperationException</code> en colecciones vacías.
 
@@ -532,8 +532,8 @@
     en: Finds the first element which yields the smallest value measured by function <var>f</var>.
     es: Encuentra el primer elemento que arroja el menor valor medido por la función <var>f</var>.
   figures:
-  - en: <code>minBy</code> returns the element that, once applied <var>f</var>, yields the smallest value.
-    es: <code>minBy</code> devuelve el elemento que, una vez aplicado <var>f</var> emite el menor valor.
+  - en: <code>minBy</code> returns the first element that, once applied <var>f</var>, yields the smallest value.
+    es: <code>minBy</code> devuelve el primer elemento que, una vez aplicado <var>f</var> emite el menor valor.
   - en: <code>minBy</code> throws <code>UnsupportedOperationException</code> on empty collections.
     es: <code>minBy</code> lanza <code>UnsupportedOperationException</code> en colecciones vacías.
 

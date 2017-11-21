@@ -1,10 +1,7 @@
 \input{_header.tex}
 
 \node (A) [empty] {};
-
-\node (E) [exception, below=3cm of A] {NoSuchElementException};
-
-\draw (A.south west) [bottombrace] -- (A.south east);
-\draw (A) [arrow, from brace] -- (E);
+\node (E) [exception, below=2cm of A] {NoSuchElementException};
+\draw (A) [arrow] -- (E);
 
 \input{_footer.tex}

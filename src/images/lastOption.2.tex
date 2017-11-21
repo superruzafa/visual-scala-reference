@@ -2,8 +2,6 @@
 
 \node (A) [empty] {};
 \node (B) [none, below=2cm of A];
-
-\draw [bottombrace] (A.south west) -- coordinate (b) (A.south east);
-\draw [arrow, from brace] (b) -- (B);
+\draw [arrow] (A) -- (B);
 
 \input{_footer.tex}
