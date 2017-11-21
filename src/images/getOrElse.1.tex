@@ -19,6 +19,6 @@
 \node (B) [elem, right=1cm of vi] {$v_i$};
 
 \draw (x1) [iteration] to (x2);
-\draw (x2) [iteration, middotted] to (xi);
+\draw (x2) [iteration, middotted] to node [rotate=-90] {\falseseq} (xi);
 \draw (vi) [arrow] -- (B);
 \input{_footer.tex}

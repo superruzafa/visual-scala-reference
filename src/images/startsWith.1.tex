@@ -20,6 +20,7 @@
 };
 
 \node [draw, ellipse callout, callout absolute pointer={([xshift=1mm] B.east)}] at ([xshift=1cm] B.east) {$\texttt{that}$};
+\draw (a2.south east) [draw=none] -- node {\trueseq} (bi.north west);
 
 \begin{scope}
   \tikzstyle{every path}=[Latex-Latex]

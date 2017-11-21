@@ -22,7 +22,7 @@
 
 \draw ([xshift=-1cm] pa1.south) [iteration] to (pa1.south);
 \draw (pa1.south) [iteration] to (pa2.south);
-\draw (pa2.south) [iteration, middotted] to (pai.south);
+\draw (pa2.south) [iteration, middotted] to node [below, sloped, pos=.5] {\trueseq} (pai.south);
 \draw (pai.south) [iteration] to (pai+1.south);
 
 \draw ([yshift=-15mm] a1.south west) [bottombrace] -- coordinate(x) ([yshift=-15mm] ai.south east);

@@ -20,7 +20,7 @@
 
 \draw (pai-2.south) [iteration] to (pai-1.south);
 \draw (pai-1.south) [iteration] to (pai.south);
-\draw (pai.south) [iteration, middotted] to (pan.south);
+\draw (pai.south) [iteration, middotted] to node [below, sloped, pos=.5] {\falseseq} (pan.south);
 \draw (pan.south) [fall, arrow] to (B.north);
 
 \toppointer{ai-2.north}{from}

@@ -5,7 +5,6 @@
   \ellipsis                 &
   \node (an-i) {$a_{n-i}$}; &
   \ellipsis                 &
-  \node (an-2) {$a_{n-2}$}; &
   \node (an-1) {$a_{n-1}$}; &
   \node (an)   {$a_n$};     \\
 };
@@ -13,20 +12,18 @@
 \matrix (B) [collection, below=3cm of A, matrix anchor=bn.east] at (an.east) {
   \node (bn-i) {$a_{n-i}$}; &
   \ellipsis                 &
-  \node (bn-2) {$a_{n-2}$}; &
   \node (bn-1) {$a_{n-1}$}; &
   \node (bn)   {$a_n$};     \\
 };
 
 \node [draw, ellipse callout, callout absolute pointer={([xshift=-1mm] B.west)}] at ([xshift=-1cm] B.west) {$\texttt{that}$};
-
+\draw (an-i.south east) [draw=none] -- node {\trueseq} (bn-1.north west);
 \draw ([yshift=5mm] A.north east) [dashed] -- ([yshift=-5mm] B.south east);
 
 \begin{scope}
   \tikzstyle{every path}=[Latex-Latex]
   \tikzstyle{every node}=[arrow label]
   \draw (an-i) -- node (t1) {=? \true} (bn-i);
-  \draw (an-2) -- node (t2) {=? \true} (bn-2);
   \draw (an-1) -- node (t3) {=? \true} (bn-1);
   \draw (an)   -- node (t4) {=? \true} (bn);
 \end{scope}

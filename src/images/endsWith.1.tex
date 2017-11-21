@@ -19,7 +19,7 @@
 };
 
 \node [draw, ellipse callout, callout absolute pointer={([xshift=-1mm] B.west)}] at ([xshift=-1cm] B.west) {$\texttt{that}$};
-
+\draw (an-i.south east) [draw=none] -- node {\trueseq} (bn-2.north west);
 \draw ([yshift=5mm] A.north east) [dashed] -- ([yshift=-5mm] B.south east);
 
 \begin{scope}
