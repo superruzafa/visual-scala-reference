@@ -29,6 +29,8 @@
     \node (bn+m) {$b_{n+m}$}; \\
 };
 
+\node [draw, ellipse callout, callout absolute pointer={([xshift=-1mm] B.west)}] at ([xshift=-1cm] B.west) {$\texttt{that}$};
+
 \foreach \i in {1,2,i,n} {
   \draw [arrow, white border] (a\i) -- (a\i |- z\i.north) -- ([xshift=-0.7em, yshift=-1em] z\i.north);
   \draw [arrow, white border] (b\i) -- (b\i |- z\i.south)  -- ([xshift=+0.7em, yshift=+1em] z\i.south);

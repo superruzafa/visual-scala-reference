@@ -10,7 +10,7 @@
   \node (n)   {$a_n$}; \\
 };
 
-\matrix [collection, below=2cm of A] {
+\matrix (B) [collection, below=2cm of A] {
   \node (b1)   {$a_1$}; &
   \node (b2)   {$a_2$}; &
   \node (b3)   {$a_3$}; &
@@ -19,6 +19,8 @@
   \ellipsis             &
   \node (bn)   {$a_n$}; \\
 };
+
+\node [draw, ellipse callout, callout absolute pointer={([xshift=-1mm] B.west)}] at ([xshift=-1cm] B.west) {that};
 
 \begin{scope}
   \tikzstyle{every path}=[Latex-Latex]
