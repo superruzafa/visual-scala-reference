@@ -267,6 +267,8 @@
     en: Returns the value associated with a key, or a default value if the key is not contained in the map.
     es: Devuelve el valor asociado a una clavo o un valor predeterminado si el mapa no contiene dicha clave.
   figures:
+  - en: <code>getOrElse</code> returns the value associated to <var>key</var> when it exists in the map.
+    es: <code>getOrElse</code> devuelve el valor asociado a <var>key</var> cuando ésta existe en la mapa.
   - en: <code>getOrElse</code> returns <var>default</var> when the map does not contain <var>key</var>.
     es: <code>getOrElse</code> devuelve <var>default</var> cuando el mapa no contiene la clave <var>key</var>.
 

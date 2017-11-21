@@ -9,21 +9,18 @@
     \node (kn)       {$k_n$};     \\
 };
 
-\draw (K.north west) [draw=none] -- coordinate (X) (K.south east);
-
-\node (B) [elem, right=3cm of X] {default};
-
 \foreach \i in {1, 2, i, n} {
   \node (v\i) [elem, right=1cm of k\i] {$v_{\i}$};
   \draw (k\i) [map to] -- (v\i);
   \node (p\i) [predicate, left=1em of k\i, pin={[function result, pin position=190] \false}] {$\textrm{key} = k_{\i}?$};
   \draw (k\i) -- ([xshift=0.5em] p\i.east) coordinate (x\i);
 }
+\node (B) [elem, below=1cm of vn.east] {default};
 
 \draw (x1) [iteration] to (x2);
 \draw (x2) [iteration, middotted] to (xi);
 \draw (xi) [iteration, middotted] to (xn);
 
-\draw (xn) [arrow] .. controls +(-10mm, -25mm) and ([shift={(0, -50mm)}] B) .. (B.south);
+\draw (xn) [arrow] .. controls +(-10mm, -7mm) and +(-20mm, 0mm) .. (B.west);
 
 \input{_footer.tex}
