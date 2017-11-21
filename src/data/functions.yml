@@ -823,8 +823,10 @@
     en: Tests whether this collection contains the given sequence at a given index.
     es: Comprueba si esta colección contiene la secuencia dada en un índice en particular.
   figures:
-  - en: <code>startsWith</code> returns <code>true</code> when <var>that</var> is prefix of the collection.
-    es: <code>startsWith</code> devuelve <code>true</code> cuando <var>that</var> es prefijo de la colección.
+  - en: <code>startsWith</code> returns <code>false</code> when <var>that</var> is not prefix of the collection that starts at <var>offset</var>.
+    es: <code>startsWith</code> devuelve <code>false</code> cuando <var>that</var> not es prefijo de la colección que empieza en <var>offset</var>.
+  - en: <code>startsWith</code> returns <code>true</code> when <var>that</var> is prefix of the collection that starts at <var>offset</var>.
+    es: <code>startsWith</code> devuelve <code>true</code> cuando <var>that</var> es prefijo de la colección que empieza en <var>offset</var>.
 
 - name: sum
   signature: "def sum: A"

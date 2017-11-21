@@ -1417,12 +1417,17 @@
               <p class="function-description i18n" lang="es">Comprueba si esta colección contiene la secuencia dada en un índice en particular.</p>
             <pre class="function-signature"><code class="scala">def startsWith[B](that: GenSeq[B], offset: Int): Boolean</code></pre>
       <section class="function-figure-wrapper">
-                  <figure class="function-figure">
-            <img src="images/startsWith.svg" alt="" />
-                                          <figcaption class="function-figure-caption i18n" lang="en"><code>startsWith</code> returns <code>true</code> when <var>that</var> is prefix of the collection.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>startsWith</code> devuelve <code>true</code> cuando <var>that</var> es prefijo de la colección.</figcaption>
-                                    </figure>
-              </section>
+                              <figure class="function-figure">
+              <img src="images/startsWith.1.svg" alt="" />
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>startsWith</code> returns <code>false</code> when <var>that</var> is not prefix of the collection that starts at <var>offset</var>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>startsWith</code> devuelve <code>false</code> cuando <var>that</var> not es prefijo de la colección que empieza en <var>offset</var>.</figcaption>
+                          </figure>
+                      <figure class="function-figure">
+              <img src="images/startsWith.2.svg" alt="" />
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>startsWith</code> returns <code>true</code> when <var>that</var> is prefix of the collection that starts at <var>offset</var>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>startsWith</code> devuelve <code>true</code> cuando <var>that</var> es prefijo de la colección que empieza en <var>offset</var>.</figcaption>
+                          </figure>
+                        </section>
     </article>
       <article id="sum" class="function-entry">
       <h2 class="function-name">sum</h2>
