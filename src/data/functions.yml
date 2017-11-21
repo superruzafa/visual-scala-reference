@@ -216,6 +216,8 @@
   figures:
   - en: <code>fold</code> applies <code>op</code> to all elements of the collection in a nondeterministic fashion using <var>z</var> as the <var>op</var>'s neutral element.
     es: <code>fold</code> aplica <code>op</code> a todos los element de la colección de forma no determinística utilizando <var>z</var> como elemento neutral de <var>op</var>'s neutral.
+  - en: When the collection is empty <code>fold</code> returns the <var>z</var> parameter.
+    es: Cuando la colección es vacía <code>fold</code> devuelve el parámetro <var>z</var>.
 
 - name: foldLeft
   signature: "def foldLeft[B](z: B)(op: (B, A) ⇒ B): B"

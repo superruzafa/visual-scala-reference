@@ -478,12 +478,17 @@
               <p class="function-description i18n" lang="es">Pliega los elementos de esta colección utilizando un operador binario asociativo.</p>
             <pre class="function-signature"><code class="scala">def fold[A1 >: A](z: A1)(op: (A1, A1) ⇒ A1): A1</code></pre>
       <section class="function-figure-wrapper">
-                  <figure class="function-figure">
-            <img src="images/fold.svg" alt="" />
-                                          <figcaption class="function-figure-caption i18n" lang="en"><code>fold</code> applies <code>op</code> to all elements of the collection in a nondeterministic fashion using <var>z</var> as the <var>op</var>'s neutral element.</figcaption>
+                              <figure class="function-figure">
+              <img src="images/fold.1.svg" alt="" />
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>fold</code> applies <code>op</code> to all elements of the collection in a nondeterministic fashion using <var>z</var> as the <var>op</var>'s neutral element.</figcaption>
                               <figcaption class="function-figure-caption i18n" lang="es"><code>fold</code> aplica <code>op</code> a todos los element de la colección de forma no determinística utilizando <var>z</var> como elemento neutral de <var>op</var>'s neutral.</figcaption>
-                                    </figure>
-              </section>
+                          </figure>
+                      <figure class="function-figure">
+              <img src="images/fold.2.svg" alt="" />
+                              <figcaption class="function-figure-caption i18n" lang="en">When the collection is empty <code>fold</code> returns the <var>z</var> parameter.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es">Cuando la colección es vacía <code>fold</code> devuelve el parámetro <var>z</var>.</figcaption>
+                          </figure>
+                        </section>
     </article>
       <article id="foldLeft" class="function-entry">
       <h2 class="function-name">foldLeft</h2>
