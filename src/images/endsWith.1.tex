@@ -1,0 +1,36 @@
+\input{_header.tex}
+
+\matrix (A) [collection] {
+  \node (a1)   {$a_1$};     &
+  \ellipsis                 &
+  \node (an-i) {$a_{n-i}$}; &
+  \ellipsis                 &
+  \node (an-2) {$a_{n-2}$}; &
+  \node (an-1) {$a_{n-1}$}; &
+  \node (an)   {$a_n$};     \\
+};
+
+\matrix (B) [collection, below=3cm of A, matrix anchor=bn.east] at (an.east) {
+  \node (bn-i) {$a_{n-i}$}; &
+  \ellipsis                 &
+  \node (bn-2) {$a_{n-2}$}; &
+  \node (bn-1) {$b$}; &
+  \node (bn)   {$a_n$};     \\
+};
+
+\draw ([yshift=5mm] A.north east) [dashed] -- ([yshift=-5mm] B.south east);
+
+\begin{scope}
+  \tikzstyle{every path}=[Latex-Latex]
+  \tikzstyle{every node}=[arrow label]
+  \draw (an-i) -- node (t1) {=? \true} (bn-i);
+  \draw (an-2) -- node (t2) {=? \true} (bn-2);
+  \draw (an-1) -- node (t3) {=? \false} (bn-1);
+\end{scope}
+
+\node (B) [elem, right=3cm of t3] {\false};
+\draw [arrow] (t3) -- (B);
+
+\draw (t1.north west) [rounded corners=0.5em] rectangle (t3.south east);
+
+\input{_footer.tex}

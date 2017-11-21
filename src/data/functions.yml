@@ -129,6 +129,8 @@
   figures:
   - en: <code>endsWith</code> returns <code>false</code> when <var>that</var> is not suffix of the collection.
     es: <code>endsWith</code> devuelve <code>false</code> cuando <var>that</var> no es sufijo de la colección.
+  - en: <code>endsWith</code> returns <code>true</code> when <var>that</var> is suffix of the collection.
+    es: <code>endsWith</code> devuelve <code>true</code> cuando <var>that</var> es sufijo de la colección.
 
 - name: exists
   signature: "def exists(p: (A) ⇒ Boolean): Boolean"
