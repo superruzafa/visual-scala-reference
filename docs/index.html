@@ -311,6 +311,7 @@
                   <figure class="function-figure">
             <img src="images/drop.svg" alt="" />
                                           <figcaption class="function-figure-caption i18n" lang="en"><code>drop</code> discards the first <var>n</var> elements.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>drop</code> descarta los primeros <var>n</var> elementos.</figcaption>
                                     </figure>
               </section>
     </article>
@@ -1121,12 +1122,22 @@
               <p class="function-description i18n" lang="es">Reduce los elementos de esta colección utilizando un operador binario asociativo.</p>
             <pre class="function-signature"><code class="scala">def reduce[A1 >: A](op: (A1, A1) ⇒ A1): A1</code></pre>
       <section class="function-figure-wrapper">
-                  <figure class="function-figure">
-            <img src="images/reduce.svg" alt="" />
-                                          <figcaption class="function-figure-caption i18n" lang="en"><code>reduce</code> applies <code>op</code> to all elements of the collection in a nondeterministic fashion.</figcaption>
+                              <figure class="function-figure">
+              <img src="images/reduce.1.svg" alt="" />
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>reduce</code> applies <code>op</code> to all elements of the collection in a nondeterministic fashion.</figcaption>
                               <figcaption class="function-figure-caption i18n" lang="es"><code>reduce</code> aplica <code>op</code> a todos los element de la colección de forma no determinística.</figcaption>
-                                    </figure>
-              </section>
+                          </figure>
+                      <figure class="function-figure">
+              <img src="images/reduce.2.svg" alt="" />
+                              <figcaption class="function-figure-caption i18n" lang="en">When the collection has a single element <code>reduce</code> returns that element.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es">Cuando la colección solo tiene un único elemento <code>reduce</code> devuelve dicho elemento.</figcaption>
+                          </figure>
+                      <figure class="function-figure">
+              <img src="images/reduce.3.svg" alt="" />
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>reduce</code> throws <code>UnsupportedOperationException</code> on empty collections.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>reduce</code> throws <code>UnsupportedOperationException</code> en colecciones vacías.</figcaption>
+                          </figure>
+                        </section>
     </article>
       <article id="reduceLeft" class="function-entry">
       <h2 class="function-name">reduceLeft</h2>

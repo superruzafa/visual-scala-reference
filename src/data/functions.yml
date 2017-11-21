@@ -102,6 +102,7 @@
     es: Selecciona todos los elementos excepto los <var>n</var> primeros.
   figures:
   - en: <code>drop</code> discards the first <var>n</var> elements.
+    es: <code>drop</code> descarta los primeros <var>n</var> elementos.
 
 - name: dropRight
   signature: "def dropRight(n: Int): <em>Collection</em>[A]"
@@ -630,6 +631,10 @@
   figures:
   - en: <code>reduce</code> applies <code>op</code> to all elements of the collection in a nondeterministic fashion.
     es: <code>reduce</code> aplica <code>op</code> a todos los element de la colección de forma no determinística.
+  - en: When the collection has a single element <code>reduce</code> returns that element.
+    es: Cuando la colección solo tiene un único elemento <code>reduce</code> devuelve dicho elemento.
+  - en: <code>reduce</code> throws <code>UnsupportedOperationException</code> on empty collections.
+    es: <code>reduce</code> throws <code>UnsupportedOperationException</code> en colecciones vacías.
 
 - name: reduceLeft
   signature: "def reduceLeft[B >: A](op: (B, A) ⇒ B): B"
