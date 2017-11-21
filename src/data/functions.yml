@@ -714,8 +714,10 @@
     en: Checks if the other collection contains the same elements in the same order as this one.
     es: Comprueba si otra colección contiene los mismos elementos en el mismo orden que esta.
   figures:
+  - en: <code>sameElements</code> returns <var>false</var> when the collection and <var>that</var> does not contain the same elements in the same order.
+    es: <code>sameElements</code> devuelve <var>false</var> cuando esta colección y <var>that</var> no contienen los mismos elementos en el mismo orden.
   - en: <code>sameElements</code> returns <var>true</var> when the collection and <var>that</var> contain the same elements in the same order.
-    es: <code>reverseMap</code> devuelve <var>true</var> cuando esta colección y <var>that</var> contienen los mismos elementos en el mismo orden.
+    es: <code>sameElements</code> devuelve <var>true</var> cuando esta colección y <var>that</var> contienen los mismos elementos en el mismo orden.
 
 - name: scan
   signature: "def scan[B >: A](z: B)(op: (B, B) ⇒ B)"

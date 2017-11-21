@@ -1,0 +1,38 @@
+\input{_header.tex}
+
+\matrix (A) [collection] {
+  \node (a1)   {$a_1$};     &
+  \ellipsis                 &
+  \node (ai)   {$a_i$};     &
+  \node (ai+1) {$a_{i+1}$}; &
+  \ellipsis                 &
+  \node (an) {$a_n$};       \\
+};
+
+\matrix (B) [collection, below=2cm of A] {
+  \node (b1)   {$a_1$};     &
+  \ellipsis;                &
+  \node (bi)   {$a_i$};     &
+  \node (bi+1) {$a_{i+2}$}; &
+  \ellipsis                 &
+  \node (bn) {$a_n$};       \\
+};
+
+\node [draw, ellipse callout, callout absolute pointer={([xshift=-1mm] B.west)}] at ([xshift=-1cm] B.west) {that};
+
+\draw (a1.south east) [draw=none] -- node {\tiny \ldots \true \, \true\, \true \ldots} (bi.north west);
+
+\begin{scope}
+  \tikzstyle{every path}=[Latex-Latex]
+  \tikzstyle{every node}=[arrow label]
+  \foreach \i/\b in {1/\true, i/\true, i+1/\false} {
+    \draw (a\i) -- node (t\i) {=? \b} (b\i);
+  }
+\end{scope}
+
+\node (B) [elem, right=4cm of ti+1] {\false};
+\draw [arrow] (ti+1) -- (B);
+
+\draw (t1.north west) [rounded corners=0.5em] rectangle (ti+1.south east);
+
+\input{_footer.tex}
