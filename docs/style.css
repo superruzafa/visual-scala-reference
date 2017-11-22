@@ -5,82 +5,33 @@
   margin: 0;
   padding: 0; }
 
-.function-description {
-  margin-bottom: 1.2rem; }
-
-.function-entry::before {
-  content: "";
-  display: block;
-  height: 4.2rem;
-  margin-top: -4.2rem;
-  visibility: hidden; }
-  @media (max-width: 550px) {
-    .function-entry::before {
-      height: 6.8rem;
-      margin-top: -6.8rem; } }
-.function-entry + .function-entry {
-  margin-top: 4rem; }
-
-.function-figure {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-bottom: 3em;
-  text-align: center; }
-  .function-figure img {
-    max-width: 100%; }
-
-.function-figure-caption {
-  background: #f6f8fa;
-  border-radius: 8px;
-  font-size: 0.9em;
-  margin: 1.1em auto;
-  max-width: 40ex;
-  padding: 0.5em;
-  text-align: center; }
-
-.function-figure-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: stretch; }
-
-.function-link {
-  font: normal 0.85rem/1.4rem "Inconsolata G", monospace; }
-
-.function-name {
-  font: normal 1.6rem/1.6rem "Inconsolata G", monospace;
-  margin-bottom: 1.8rem; }
-
-.function-signature {
-  background: #f6f8fa;
-  border-radius: 3px;
-  display: block;
-  font-size: 0.9rem;
-  line-height: 1rem;
-  margin-bottom: 1.2rem;
-  overflow-x: auto;
-  padding: 1rem; }
-
 .hljs-keyword {
   color: #7f0054; }
+
+code.literal {
+  color: #000f9b; }
 
 .hljs-type {
   color: #000f9b; }
 
-a,
-a:link,
-a:visited {
-  color: #333;
+a {
   text-decoration: none; }
 
-body {
-  font: normal 16px/1.4rem helvetica, sans-serif; }
+a:link,
+a:visited {
+  color: #333; }
+
+a:hover,
+a:active {
+  color: #000; }
 
 code,
 var {
   font-family: "Inconsolata G", monospace;
   font-style: normal; }
+
+html {
+  font: normal 16px/1.2em helvetica, arial, sans-serif; }
 
 html:lang(en) .i18n:not(:lang(en)) {
   display: none;
@@ -90,76 +41,130 @@ html:lang(es) .i18n:not(:lang(es)) {
   display: none;
   visibility: hidden; }
 
+#function-list {
+  height: 100%;
+  list-style: none;
+  overflow: auto;
+  width: 200px; }
+  #function-list .function-link {
+    line-height: 1.4rem;
+    font-family: "Inconsolata G", monospace;
+    font-size: 0.9em;
+    padding: 0 1rem; }
+    #function-list .function-link a:hover {
+      transform: scale(1.1); }
+    #function-list .function-link:first-child {
+      margin-top: 1rem; }
+    #function-list .function-link:last-child {
+      margin-bottom: 1rem; }
+
 #function-entries {
-  margin-left: calc(1rem + 20ex + 1rem);
+  margin-left: 200px;
   padding: 1rem; }
   @media (max-width: 550px) {
     #function-entries {
       margin-left: 0; } }
-
-#function-list {
-  list-style: none;
-  margin-bottom: 1rem; }
-
-#main-header {
-  background: #c52025;
-  background: linear-gradient(to bottom, #eb2024 0%, #c52025 100%);
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
-  color: #fff;
-  font-size: 1rem;
-  line-height: 1.4rem;
-  overflow: hidden;
-  padding: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 1; }
-  #main-header a:link,
-  #main-header a:visited {
-    color: inherit; }
-
-#main-language-list {
-  font-size: 1em;
-  list-style: none;
-  white-space: nowrap; }
-  @media (max-width: 550px) {
-    #main-language-list {
-      text-align: center; } }
-  #main-language-list li {
-    display: inline;
-    padding: 0 0.2rem; }
-    @media (max-width: 550px) {
-      #main-language-list li {
-        font-size: 0.9rem; } }
+  #function-entries .function-description {
+    margin-bottom: 1rem; }
+  #function-entries .function-entry {
+    margin-bottom: 4rem; }
+    #function-entries .function-entry::before {
+      content: "";
+      display: block;
+      height: 5rem;
+      margin-top: -5rem;
+      visibility: hidden; }
+  #function-entries .function-figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between; }
+    #function-entries .function-figure img {
+      margin-bottom: 2rem;
+      max-width: 100%; }
+  #function-entries .function-figure-caption {
+    font-size: 0.9em;
+    line-height: 1.6em;
+    margin-bottom: 2rem;
+    max-width: 20rem; }
+    #function-entries .function-figure-caption var {
+      background: #f6f8fa;
+      border: 1px solid darker(#f6f8fa, 20%);
+      padding: 1px;
+      border-radius: 4px; }
+  #function-entries .function-figure-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+  #function-entries .function-name {
+    font-family: "Inconsolata G", monospace;
+    font-weight: normal;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem; }
+  #function-entries .function-signature {
+    background: #f6f8fa;
+    border-radius: darker(#f6f8fa, 20%);
+    border-radius: 3px;
+    font-size: 0.9em;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    overflow: scroll;
+    white-space: nowrap; }
 
 #main-sidebar {
   border-right: 1px solid #eee;
   float: left;
-  height: calc(100vh - 4rem - 1rem - 1rem);
-  overflow-y: auto;
-  padding: 1rem;
+  height: calc(100vh - 3rem);
   position: sticky;
-  top: calc(1.4rem + 2rem);
-  width: 20ex; }
+  top: 3rem; }
   @media (max-width: 550px) {
     #main-sidebar {
       display: none; } }
 
+#main-header {
+  background: linear-gradient(to bottom, #eb2024, #c52025);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  padding: 0 1rem;
+  top: 0;
+  z-index: 1; }
+  #main-header a:link,
+  #main-header a:visited {
+    color: #fff; }
+
+#main-languages {
+  line-height: 3rem;
+  margin-left: 200px; }
+  @media (max-width: 550px) {
+    #main-languages {
+      line-height: 2rem;
+      margin-left: 0; } }
+
+@media (max-width: 550px) {
+  #main-language-list {
+    font-size: 0.9em; } }
+#main-language-list .language-link {
+  display: inline; }
+  #main-language-list .language-link + .language-link {
+    margin-left: 1rem; }
+
 #main-title {
   float: left;
-  font-size: 1em;
-  font-weight: 500;
-  margin-right: 1rem;
-  white-space: nowrap; }
+  font-size: 1rem;
+  line-height: 3rem; }
   @media (max-width: 550px) {
     #main-title {
       float: none;
-      text-align: center;
-      margin: 0 0 0.9rem 0; } }
+      line-height: 2rem;
+      text-align: center; } }
 
 #social {
   position: absolute;
   right: 1rem;
-  top: 1rem; }
+  bottom: 0;
+  line-height: 3rem; }
   @media (max-width: 550px) {
     #social {
-      display: none; } }
+      line-height: 2rem; } }
