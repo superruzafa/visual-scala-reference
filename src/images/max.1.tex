@@ -1,0 +1,23 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1) {$a_1$};   &
+  \node (2) {$a_2$};   &
+  \ellipsis            &
+  \node (i) {$a_i$}; &
+  \ellipsis            &
+  \node (n) {$a_n$};   \\
+};
+
+\node (B) [elem, below=3cm of ai] {$a_i$};
+
+\coordinate (x) at (ai.south);
+\node (fai) [predicate, pin={[function result, pin position=240] max}] at (x) {};
+\draw (x) [arrow] -- coordinate (x) (B);
+
+\matrix [matrix of nodes, left delimiter=\{, right of=x, matrix anchor=x1.south west] {
+  \node (x1) {$a_i > a_j,\, j \in [1, i - 1]$}; \\
+  \node {$a_i \geq a_k,\, k \in [i + 1, n]$}; \\
+};
+
+\input{_footer.tex}

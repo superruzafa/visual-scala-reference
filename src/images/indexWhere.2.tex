@@ -1,0 +1,28 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1) {$a_1$};       &
+  \ellipsis                &
+  \node (i-2) {$a_{i-2}$}; &
+  \node (i-1) {$a_{i-1}$}; &
+  \node (i)   {$a_i$};     &
+  \ellipsis                &
+  \node (n) {$a_n$};       \\
+};
+
+\node (B) [elem, below right=3cm and 0 of an.south east] {-1};
+
+\foreach \i in {i-2, i-1, i, n}
+{
+  \node (pa\i) [predicate, below=0.5em of a\i, pin={[function result, pin position=below] \false}] {$\texttt{p}(a_{\i})?$};
+  \draw (a\i) -- (pa\i);
+}
+
+\draw (pai-2.south) [iteration] to (pai-1.south);
+\draw (pai-1.south) [iteration] to (pai.south);
+\draw (pai.south) [iteration, middotted] to node [below, sloped, pos=.5] {\falseseq} (pan.south);
+\draw (pan.south) [fall, arrow] to (B.north);
+
+\toppointer{ai-2.north}{from}
+
+\input{_footer.tex}

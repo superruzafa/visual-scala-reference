@@ -1,0 +1,23 @@
+\input{_header.tex}
+
+\matrix (K) [map keys] {
+    \node (k1)       {$k_1$};     \\
+    \node (k2)       {$k_2$};     \\
+    \vellipsis                    \\
+    \node (kn)       {$k_n$};     \\
+};
+
+\foreach \i in {1, 2, n} {
+  \node (v\i) [elem, right=1cm of k\i] {$v_{\i}$};
+  \draw (k\i) [map to] -- (v\i);
+  \node (p\i) [predicate, left=1em of k\i, pin={[function result, pin position=190] \false}] {$\textrm{key} = k_{\i}?$};
+  \draw (k\i) -- ([xshift=0.5em] p\i.east) coordinate (x\i);
+}
+\node (B) [elem, below=1cm of vn.east] {default};
+
+\draw (x1) [iteration] to (x2);
+\draw (x2) [iteration, middotted] to node [rotate=-90] {\falseseq} (xn);
+
+\draw (xn) [arrow] .. controls +(-10mm, -7mm) and +(-20mm, 0mm) .. (B.west);
+
+\input{_footer.tex}

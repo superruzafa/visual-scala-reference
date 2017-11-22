@@ -12,6 +12,13 @@ $twig = new Twig_Environment($loader, [
 ]);
 
 $functions = Yaml::parse(file_get_contents(__DIR__ . '/data/functions.yml'));
+// foreach ($functions as &$function) {
+//   $figures = glob(sprintf('%s/images/{%2$s,%2$s.[0-9]*}.tex', __DIR__, $function['name']), GLOB_BRACE);
+//   $function['figures'] = array_map(function($f) {
+//     return pathinfo($f, PATHINFO_FILENAME);
+//   }, $figures);
+// }
+// 
 $languages = Yaml::parse(file_get_contents(__DIR__ . '/data/languages.yml'));
 $messages = Yaml::parse(file_get_contents(__DIR__ . '/data/messages.yml'));
 

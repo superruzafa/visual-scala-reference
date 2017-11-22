@@ -1,0 +1,34 @@
+\input{_header.tex}
+
+\matrix (A) [collection] {
+  \node (a1) {$a_1$}; &
+  \node (a2) {$a_2$}; &
+  \ellipsis           &
+  \node (an) {$a_n$};  \\
+};
+
+\matrix (B) [collection, below=2cm of A] {
+  \node (b1) {$a_1$}; &
+  \node (b2) {$a_2$}; &
+  \ellipsis           &
+  \node (bn) {$a_n$}; \\
+};
+
+\node [draw, ellipse callout, callout absolute pointer={([xshift=-1mm] B.west)}] at ([xshift=-1cm] B.west) {that};
+ 
+\draw (a2.south east) [draw=none] -- node {\trueseq} (bn.north west);
+
+\begin{scope}
+  \tikzstyle{every path}=[Latex-Latex]
+  \tikzstyle{every node}=[arrow label]
+  \foreach \i in {1, 2, n} {
+    \draw (a\i) -- node (t\i) {=? \true} (b\i);
+  }
+\end{scope}
+
+\node (B) [elem, right=1cm of tn] {\true};
+\draw [arrow] (tn) -- (B);
+
+\draw (t1.north west) [rounded corners=0.5em] rectangle (tn.south east);
+
+\input{_footer.tex}

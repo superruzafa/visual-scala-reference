@@ -1,7 +1,7 @@
 Visual Scala Reference
 ======================
 
-An awesome guide to the most common Scala collection functions 
+An awesome guide to the most common Scala collection functions
 
 https://superruzafa.github.io/visual-scala-reference
 
@@ -23,7 +23,7 @@ As an example of what you'll find, below are depicted three of the most well kno
     <tr>
       <td><img src="https://raw.githubusercontent.com/superruzafa/visual-scala-reference/master/docs/images/map.png" width="200" /></td>
       <td><img src="https://raw.githubusercontent.com/superruzafa/visual-scala-reference/master/docs/images/filter.png" width="275" /></td>
-      <td><img src="https://raw.githubusercontent.com/superruzafa/visual-scala-reference/master/docs/images/foldLeft.png" width="250" /></td>
+      <td><img src="https://raw.githubusercontent.com/superruzafa/visual-scala-reference/master/docs/images/foldLeft.1.png" width="250" /></td>
     </tr>
   </tbody>
 </table>

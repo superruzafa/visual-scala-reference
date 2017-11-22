@@ -1,0 +1,24 @@
+\input{_header.tex}
+
+\matrix (K) [map keys] {
+    \node (k1)       {$k_1$};     \\
+    \node (k2)       {$k_2$};     \\
+    \vellipsis                    \\
+    \node (ki)       {$k_i$};     \\
+    \vellipsis                    \\
+    \node (kn)       {$k_n$};     \\
+};
+
+\foreach \i/\b in {1/\false, 2/\false, i/\true} {
+  \node (v\i) [elem, right=1cm of k\i] {$v_{\i}$};
+  \draw (k\i) [map to] -- (v\i);
+  \node (p\i) [predicate, left=1em of k\i, pin={[function result, pin position=190] \b}] {$\textrm{key} = k_{\i}?$};
+  \draw (k\i) -- ([xshift=0.5em] p\i.east) coordinate (x\i);
+}
+
+\node (B) [elem, right=1cm of vi] {$v_i$};
+
+\draw (x1) [iteration] to (x2);
+\draw (x2) [iteration, middotted] to node [rotate=-90] {\falseseq} (xi);
+\draw (vi) [arrow] -- (B);
+\input{_footer.tex}

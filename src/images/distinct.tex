@@ -1,14 +1,14 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-  \node {$a_1$}; &
-  \node {$a_2$}; &
-  \node {$a_1$}; &
-  \node {$a_n$}; &
+\matrix (A) [collection] {
+  \node (a1) {$a_1$}; &
+  \node (a2) {$a_2$}; &
+  \node (a3) {$a_1$}; &
+  \node (a4) {$a_n$}; &
   \ellipsis      &
-  \node {$a_2$}; &
-  \node {$a_n$}; &
-  \node {$a_1$}; \\
+  \node (a5) {$a_2$}; &
+  \node (a6) {$a_n$}; &
+  \node (a7) {$a_1$}; \\
 };
 
 \matrix (B) [collection, below=2cm of A] {
@@ -17,6 +17,17 @@
   \ellipsis      &
   \node {$a_n$}; \\
 };
+
+\coordinate (x1) at ([yshift=5mm] a1.north);
+\coordinate (x2) at ([yshift=10mm] a2.north);
+\coordinate (xn) at ([yshift=15mm] a4.north);
+\begin{scope}
+  \tikzstyle{every path}=[-{Rays[red, line join=round]}]
+  \draw (a1) -- (x1) -| (a3);
+  \draw (x1) -| (a7);
+  \draw (a2) [white border] -- (x2) -| (a5);
+  \draw (a4) [white border] -- (xn) -| (a6);
+\end{scope}
 
 \bracetobrace {A.south west}{A.south east}{B.north west}{B.north east}
 

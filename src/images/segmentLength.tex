@@ -20,12 +20,12 @@
   i+j-1/\true/below,
   i+j/\false/below}
 {
-  \node (pa\i) [predicate, below=1mm of a\i, pin={[function result, pin position=\p] \d}] {$\texttt{p}(a_{\i})$};
+  \node (pa\i) [predicate, below=0.5em of a\i, pin={[function result, pin position=\p] \d}] {$\texttt{p}(a_{\i})?$};
   \draw (a\i) -- (pa\i);
 }
 
 \draw (pai.south) [iteration] to (pai+1.south);
-\draw (pai+1.south) [iteration, middotted] to (pai+j-1.south);
+\draw (pai+1.south) [iteration, middotted] to node [below, sloped, pos=.5] {\trueseq} (pai+j-1.south);
 \draw (pai+j-1.south) [iteration] to (pai+j.south);
 
 \draw ([yshift=-15mm] ai.south west) [bottombrace] -- coordinate(x) ([yshift=-15mm] ai+j-1.south east);

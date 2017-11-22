@@ -1,0 +1,39 @@
+\input{_header.tex}
+
+\matrix (A) [collection] {
+  \node (a1)   {$a_1$};     &
+  \node (a2)   {$a_2$};     &
+  \node (a3)   {$a_3$};     &
+  \ellipsis                 &
+  \node (ai)   {$a_i$};     &
+  \ellipsis                 &
+  \node (an)   {$a_n$};     \\
+};
+
+\matrix (B) [collection, below of=A, matrix anchor=b2.west, node distance=3cm] at (a2.west) {
+  \node (b2)   {$a_2$};     &
+  \node (b3)   {$a_3$};     &
+  \ellipsis                 &
+  \node (bi)   {$a_i$};     \\
+};
+
+\node [draw, ellipse callout, callout absolute pointer={([xshift=1mm] B.east)}] at ([xshift=1cm] B.east) {$\texttt{that}$};
+\draw (a3.south east) [draw=none] -- node {\trueseq} (bi.north west);
+
+\begin{scope}
+  \tikzstyle{every path}=[Latex-Latex]
+  \tikzstyle{every node}=[arrow label]
+  \foreach \i in {2,3,i} {
+    \draw (a\i) -- node (t\i) {=? \true} (b\i);
+  }
+\end{scope}
+
+\node (B) [elem, right=4cm of ti] {\true};
+\draw [arrow] (ti) -- (B);
+
+\toppointer{a2.north}{offset}
+\draw ([yshift=5mm] a2.north west) [dashed] -- ([yshift=-5mm] b2.south west);
+
+\draw (t2.north west) [rounded corners=0.5em] rectangle (ti.south east);
+
+\input{_footer.tex}

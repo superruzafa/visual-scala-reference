@@ -12,11 +12,13 @@
   \node (n)   {$a_n$};     \\
 };
 
-\matrix [collection, right=1cm of A] {
+\matrix (B) [collection, right=1cm of A] {
   \node (bi)   {$a_i$};     &
   \node (bi+1) {$a_{i+1}$}; &
   \node (bi+2) {$a_{i+2}$}; \\
 };
+
+\node [draw, ellipse callout, callout absolute pointer={([yshift=1mm] B.north)}] at ([yshift=1cm] B.north) {$\texttt{that}$};
 
 \toppointer{ai+j.north}{end}
 

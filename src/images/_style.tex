@@ -1,6 +1,9 @@
 \newcommand{\true}{\textcolor{green}{\ding{51}}}
 \newcommand{\false}{\textcolor{red}{\ding{55}}}
 
+\newcommand{\trueseq}{\tiny \true \, \true \, \true}
+\newcommand{\falseseq}{\tiny \false \, \false \, \false}
+
 \tikzstyle{elem}=[
   font=\large
 ]
@@ -38,11 +41,34 @@
 ]
 
 \tikzstyle{option}=[
-  cell,
-  line width=0.2mm,
-  double,
-  minimum size=0.9cm,
-  label={right::Option},
+  draw,
+  line width=0.3mm,
+  minimum size=1cm,
+  outer sep=0,
+  fill=white,
+  font=\large
+]
+
+\tikzstyle{some}=[
+  option,
+  rectangle split,
+  rectangle split parts=2,
+  rectangle split draw splits=true
+]
+
+\tikzstyle{none}=[
+  option,
+  node contents={\small None},
+]
+
+\tikzstyle{exception}=[
+  draw,
+  decorate,
+  decoration={
+    zigzag,
+    segment length=2mm,
+    amplitude=0.25mm
+  }
 ]
 
 \tikzstyle{map to}=[Square-Latex]
@@ -119,12 +145,23 @@
   in=90
 ]
 
+\tikzstyle{fall}=[
+  out=0,
+  in=90
+]
+
 \tikzstyle{function result}=[
   pin edge={->, decorate, decoration={snake, amplitude=0.5mm}}
 ]
 
 \tikzstyle{measure}=[
   arrows={Stealth[inset=0pt, angle'=30]-Stealth[inset=0pt, angle'=30]}
+]
+\tikzstyle{direct measure}=[
+  arrows={Stealth[inset=0pt, angle'=30]-}
+]
+\tikzstyle{inverse measure}=[
+  arrows={-Stealth[inset=0pt, angle'=30]}
 ]
 
 \newcommand{\bottommeasure}[4][5mm] {
@@ -134,6 +171,15 @@
     \draw (#3) -- ++(0, -#1) -- +(0, -1.25mm);
     \draw (#4) -- ++(0, -#1) -- +(0, -1.25mm);
   \end{scope}
+}
+
+\newcommand{\rightbottommeasure}[4][5mm] {
+\begin{scope}[line width=0.1mm]
+  \draw (#3) -- ++(0, -#1) -- ++(0, 1.25mm) coordinate(x);
+  \draw (x) [direct measure] -- +(-3mm, 0);
+  \draw (#4) -- ++(0, -#1) -- ++(0, 1.25mm) coordinate(x);
+  \draw (x) [direct measure] -- node [label={[label distance=-1mm]above:#2}] {} +(8mm, 0);
+\end{scope}
 }
 
 \newcommand{\topmeasure}[4][5mm] {
@@ -166,8 +212,4 @@
 
 \newcommand{\toppointer}[2] {
   \draw ([yshift=1mm] #1) [Latex-] -- ([yshift=9mm] #1) node [anchor=south] {#2};
-}
-
-\newcommand{\topinject}[2] {
-  \draw ([yshift=-4mm] #1) [Latex-, white border, draw=black] -- ([yshift=6mm] #1) node [anchor=south] {#2};
 }

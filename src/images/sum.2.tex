@@ -1,0 +1,10 @@
+\input{_header.tex}
+
+\node (A) [empty] {};
+
+\node (E) [elem, below=3cm of A] {0};
+
+\draw (A.south west) [bottombrace] -- (A.south east);
+\draw (A) [arrow, from brace] -- (E);
+
+\input{_footer.tex}

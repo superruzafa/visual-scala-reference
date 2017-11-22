@@ -1,0 +1,20 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1)   {$a_1$};     &
+  \node (2)   {$a_2$};     &
+  \ellipsis                &
+  \node (n-1) {$a_{n-1}$}; & 
+  \node (n)   {$a_n$};     \\
+};
+
+\matrix (B) [collection, below=3cm of A, matrix anchor=bn-1.east] at (an-1.east) {
+  \node (b2)   {$a_2$};     &
+  \ellipsis                 &
+  \node (bn-1) {$a_{n-1}$}; &
+  \node (bn)   {$a_n$};     \\
+};
+
+\bracetobrace {a2.south west}{an.south east}{b2.north west}{bn.north east}
+
+\input{_footer.tex}

@@ -1,0 +1,15 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1)   {$a_1$};     &
+  \node (2)   {$a_2$};     &
+  \ellipsis                &
+  \node (n)   {$a_n$};     \\
+};
+
+\node (B) [some, below=2cm of a1] {\small Some \nodepart{two} \large $a_1$};
+
+\draw [bottombrace] (a1.south west) -- coordinate (b) (a1.south east);
+\draw [arrow, from brace] (b) -- (B);
+
+\input{_footer.tex}

@@ -1,0 +1,11 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1) {$a_1$}; \\
+};
+
+\node (E) [empty, below=2cm of A] {};
+
+\draw (A.south west) [smooth, arrow] to (E);
+
+\input{_footer.tex}

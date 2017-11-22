@@ -1,0 +1,31 @@
+\input{_header.tex}
+
+\matrix (A) [collection, name prefix=a] {
+  \node (1)   {$a_1$};     &
+  \node (2)   {$a_2$};     &
+  \ellipsis                &
+  \node (i-1) {$a_{i-1}$}; &
+  \node (i)   {$a_i$};     &
+  \ellipsis                &
+  \node (n)   {$a_n$};     \\
+};
+
+\node (B) [some, below=3 cm of ai.south] {\small Some \nodepart{two} $b_i$};
+
+\foreach \i/\d/\s/\p in {
+  1/\false/0.5em/below,
+  2/\false/2em/below,
+  i-1/\false/0.5em/below,
+  i/\true/2em/310}
+{
+  \node (pfa\i) [predicate, below=\s of a\i, pin={[function result, pin position=\p] \d}] {$\exists \, \texttt{pf}(a_{\i})?$};
+  \draw (a\i) -- (pfa\i);
+}
+
+\draw ([xshift=-1cm] pfa1.south) [iteration] to (pfa1.south);
+\draw (pfa1.south) [iteration] to (pfa2.south);
+\draw (pfa2.south) [iteration, middotted] to node [below, sloped, pos=.5] {\falseseq} (pfai-1.south);
+\draw (pfai-1.south) [iteration] to (pfai.south);
+\draw (pfai.south) [arrow] -- node [arrow label] {$\texttt{pf}(a_i)$} (B);
+
+\input{_footer.tex}
