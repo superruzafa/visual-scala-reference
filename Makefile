@@ -10,7 +10,10 @@ dev: .dockerimage
 	$(DOCKER) run --rm -v $$PWD:/code -it -w /code --entrypoint bash $(DOCKER_IMAGE)
 
 server: .dockerimage
-	$(DOCKER) run --rm -v $$PWD:/code -it -w /code -p 8080:8080 $(DOCKER_IMAGE) server
+	$(DOCKER) run --rm -v $$PWD:/code -it -w /code -p 8080:8080 $(DOCKER_IMAGE) $@
+
+touch watch: .dockerimage
+	$(DOCKER) run --rm -v $$PWD:/code -it -w /code $(DOCKER_IMAGE) $@
 
 .dockerimage: Dockerfile
 	$(DOCKER) build -t $(DOCKER_IMAGE) .

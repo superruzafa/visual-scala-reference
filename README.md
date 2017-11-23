@@ -54,6 +54,9 @@ you do for the .tex and other files without manually have to rebuild the target 
 
 Example: if you are editing the `src/images/map.tex` file you can watch the changes automatically by browsing this URL: `http://localhost:8080/images/map.svg`
 
+`make touch` sets the modification timestamp for all images to the one from `src/images/_style.tex`. The styles file is a prerequisite for all the images and a change on it, no matter how small, would cause all images to be regenerated. This is a quick fix that prevent this behavior.
+
+`make watch` watches for changes in the `src` subdirectory and launch the build process.
 
 ### Translations
 
