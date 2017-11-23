@@ -8,8 +8,7 @@
   draw,
   line width=0.4mm,
   minimum size=1.3cm,
-  outer sep=0,
-  fill=white,
+  outer sep=0
 ]
 
 \tikzstyle{collection}=[
@@ -75,19 +74,17 @@
 \tikzset{ellipsis/.style={
   loosely dash dot,
   line width=0.15mm,
-  minimum width=#1,
-  node contents=$\ldots$,
-  fill=none
 }}
-\tikzset{vertical ellipsis/.style={
-  ellipsis,
-  node contents=$\vdots$,
-  minimum height=#1,
-}}
-% \tikzset{ellipsis/.default=1.5cm}
-
-\newcommand{\ellipsis}[1][15mm]{ \node [ellipsis=#1]; }
-\newcommand{\vellipsis}[1][15mm]{ \node [vertical ellipsis=#1]; }
+\newcommand{\ellipsis}[1][15mm] {
+  \node (x) [draw=none, minimum width=#1] {$\ldots$};
+  \draw (x.north west) [ellipsis] -- (x.north east);
+  \draw (x.south west) [ellipsis] -- (x.south east);
+}
+\newcommand{\vellipsis}[1][15mm]{
+  \node (x) [draw=none, minimum height=#1] {$\vdots$};
+  \draw (x.north west) [ellipsis] -- (x.south west);
+  \draw (x.north east) [ellipsis] -- (x.south east);
+}
 
 \tikzstyle{tuple comma}=[
   minimum width=2em,

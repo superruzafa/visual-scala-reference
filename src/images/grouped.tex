@@ -2,32 +2,35 @@
 
 \matrix (A) [collection] {
   \node (a1) {$a_1$};   &
-  \node [ellipsis];     &
+  \ellipsis             &
   \node (ai) {$a_{\param{\scriptsize size}}$};   &
   \node (aj) {$a_{\param{\scriptsize size} + 1}$};   &
-  \node [ellipsis];     &
-  \node (ak)   {$a_{2 \cdot \param{\scriptsize size}}$}; &
-  \node (am)   {$a_{2 \cdot \param{\scriptsize size} + 1}$}; &
-  \node [ellipsis];     &
+  \ellipsis             &
+  \node (ak) {$a_{2 \cdot \param{\scriptsize size}}$}; &
+  \node (am) {$a_{2 \cdot \param{\scriptsize size} + 1}$}; &
+  \ellipsis             &
   \node (an) {$a_n$};   \\
 };
 
-\matrix (A1) [collection, below=20mm of a1, matrix anchor=A1a1.north west] at (a1.south west) {
-  \node (A1a1) {$a_1$};    &
-  \node (A1ae) [ellipsis]; &
-  \node (A1as) {$a_{\param{\scriptsize size}}$};    \\
+\node (R) [rotate=-90, single arrow, draw, single arrow tip angle=45, single arrow head extend=1mm, below=1cm of A] {$\quad$};
+
+
+\matrix (A1) [collection, below=30mm of A] {
+  \node (A1a1) {$a_1$}; &
+  \ellipsis &
+  \node (A1as) {$a_{\param{\scriptsize size}}$}; \\
 };
 
 \matrix (A2) [collection, below=15mm of A1, matrix anchor=A2a1.north west] at (A1a1.south west) {
   \node (A2a1) {$a_{\param{\scriptsize size} + 1}$}; &
-  \node (A2ae) [ellipsis];     &
-  \node (A2as) {$a_{2 \cdot \param{\scriptsize size}}$};        \\
+  \ellipsis &
+  \node (A2as) {$a_{2 \cdot \param{\scriptsize size}}$}; \\
 };
 
-\matrix (A3) [collection, below=25mm of A2, matrix anchor=A3a1.north west] at (A2a1.south west) {
-  \node (A3a1) {$a_{2 \cdot \param{\scriptsize size} + 1}$};    &
-  \node (A3ae) [ellipsis]; &
-  \node (A3as) {$a_n$};    \\
+\matrix (A3) [collection, below=20mm of A2, matrix anchor=A3a1.north west] at (A2a1.south west) {
+  \node (A3a1) {$a_{2 \cdot \param{\scriptsize size} + 1}$}; &
+  \ellipsis[8mm] &
+  \node (A3as) {$a_n$}; \\
 };
 
 \topmeasure{\param{size}}{A1.north west}{A1.north east}
@@ -39,8 +42,6 @@
   \draw ([xshift=-1cm] A1a1.west) -- (A1a1.west);
   \draw (A1a1.west) to (A2a1.west);
   \draw (A2a1.west) [middotted] to (A3a1.west);
-  % \draw (in-1n-1.west) to (inn.west);
-  % \draw (inn.west) to (empty.west);
 \end{scope}
 
 \input{_footer.tex}

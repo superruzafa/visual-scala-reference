@@ -18,8 +18,8 @@
   \node (b1) {$b_1$}; \\
 };
 
-\foreach \i/\o/\f in {n/250/70, i/270/90, 2/280/100, 1/290/110} {
-  \draw (a\i.south) [out=\o, in=\f, arrow, white border] to node [arrow label, pos=0.2] {$\param{f}(a_{\i})$} (b\i.north);
+\foreach \i/\o/\f/\p in {n/250/70/0.1, i/270/90/0.2, 2/280/100/0.15, 1/290/110/0.1} {
+  \draw (a\i.south) [out=\o, in=\f, arrow, white border] to node [arrow label, pos=\p] {$\param{f}(a_{\i})$} (b\i.north);
 }
 
 \input{_footer.tex}

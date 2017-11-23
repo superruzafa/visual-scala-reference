@@ -1,27 +1,29 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-    \node (1) {$a_1$};       &
-    \node (2) {$a_2$};       &
-    \node (e1) [ellipsis];   &
-    \node (i) {$a_i$};       &
-    \node (i+1) {$a_{i+1}$}; &
-    \node (e2) [ellipsis];   &
-    \node (n-1) {$a_{n-1}$}; &
-    \node (n) {$a_n$};       \\
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \ellipsis &
+    \node (ai) {$a_i$}; &
+    \node (ai+1) {$a_{i+1}$}; &
+    \ellipsis &
+    \node (an-1) {$a_{n-1}$}; &
+    \node (an) {$a_n$}; \\
 };
+
+\draw [draw=none] (a2) -- coordinate (ae1) (ai);
 
 \node (z) [left=5mm of A] {\param{z}};
 
-\node (f1) [below=15mm of a1.west]   {$\param{seqop}(\param{z}, a_1)$};
-\node (f2) [below=25mm of a2.west]   {$\param{seqop}(z_1, a_2)$};
-\node (f3) [below=15mm of ai+1.west] {$\param{seqop}(a_i, a_{i+1})$};
-\node (f4) [below=15mm of an.west]   {$\param{seqop}(a_{n-1}, a_n)$};
+\node (f1) [predicate, below=15mm of a1.west]   {$\param{seqop}(\param{z}, a_1)$};
+\node (f2) [predicate, below=25mm of a2.west]   {$\param{seqop}(z_1, a_2)$};
+\node (f3) [predicate, below=15mm of ai+1.west] {$\param{seqop}(a_i, a_{i+1})$};
+\node (f4) [predicate, below=15mm of an.west]   {$\param{seqop}(a_{n-1}, a_n)$};
 
-\node (f5) [below=30mm of ae1] {$\param{combop}(z_j, z_k)$};
-\node (f6) [below=50mm of ai+1.west] {$\param{combop}(z_l, z_m)$};
+\node (f5) [predicate, below=37mm of ae1] {$\param{combop}(z_j, z_k)$};
+\node (f6) [predicate, below=50mm of ai+1.west] {$\param{combop}(z_l, z_m)$};
 
-\node (B) [below=10mm of f6] {$b$};
+\node (B) [predicate, below=10mm of f6] {$b$};
 
 \begin{scope}
   \tikzstyle{every path}=[arrow]

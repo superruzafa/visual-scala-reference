@@ -11,14 +11,14 @@
 };
 
 \matrix [column sep=1cm, below=1cm of A] {
-  \node (lt1) [pin={[function result]right:\true}]  {$\param{lt}(a_2, a_n)?$}; &
-  \node (lt2) [pin={[function result]right:\false}] {$\param{lt}(a_n, a_1)?$}; &
-  \node (lt3) [pin={[function result]right:\true}]  {$\param{lt}(a_1, a_i)?$}; \\
+  \node (lt1) [predicate, pin={[function result]right:\true}]  {$\param{lt}(a_2, a_n)?$}; &
+  \node (lt2) [predicate, pin={[function result]right:\false}] {$\param{lt}(a_n, a_1)?$}; &
+  \node (lt3) [predicate, pin={[function result]right:\true}]  {$\param{lt}(a_1, a_i)?$}; \\
 };
 
 \matrix [column sep=1cm, below=3cm of A] {
-  \node (lt4) [pin={[function result]right:\false}] {$\param{lt}(a_2, a_1)?$}; &
-  \node (lt5) [pin={[function result]right:\false}] {$\param{lt}(a_n, a_i)?$}; \\
+  \node (lt4) [predicate, pin={[function result]right:\false}] {$\param{lt}(a_2, a_1)?$}; &
+  \node (lt5) [predicate, pin={[function result]right:\false}] {$\param{lt}(a_n, a_i)?$}; \\
 };
 
 \matrix (B) [collection, below=5cm of A] {

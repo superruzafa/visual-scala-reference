@@ -2,33 +2,33 @@
 
 \matrix (A) [collection] {
   \node (a1) {$a_1$}; &
-  \node [ellipsis];   &
+  \ellipsis &
   \node (ai) {$a_i$}; &
-  \node [ellipsis];   &
+  \ellipsis &
   \node (aj) {$a_j$}; &
-  \node [ellipsis];   &
+  \ellipsis &
   \node (ak) {$a_k$}; &
-  \node [ellipsis=25mm]; &
+  \ellipsis [25mm]; &
   \node (am) {$a_m$}; &
-  \node [ellipsis=8mm];  &
+  \ellipsis [10mm];  &
   \node (an) {$a_n$}; \\
 };
 
 \matrix (A1) [collection, below=20mm of a1, matrix anchor=A1a1.north west] at (a1.south west) {
   \node (A1a1) {$a_1$};    &
-  \node (A1ae) [ellipsis]; &
+  \ellipsis &
   \node (A1as) {$a_i$};    \\
 };
 
 \matrix (A2) [collection, below=20mm of ai, matrix anchor=A2a1.north west] at (aj.south west) {
   \node (A2a1) {$a_j$};    &
-  \node (A2ae) [ellipsis]; &
+  \ellipsis &
   \node (A2as) {$a_k$};    \\
 };
 
 \matrix (A3) [collection, below=20mm of aj, matrix anchor=A3a1.north west] at (am.south west) {
   \node (A3a1) {$a_m$};    &
-  \node (A3ae) [ellipsis, minimum width=8mm]; &
+  \ellipsis[10mm] &
   \node (A3as) {$a_n$};    \\
 };
 

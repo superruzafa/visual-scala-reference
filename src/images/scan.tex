@@ -24,18 +24,18 @@
 \node (z) [above=61mm of bz] {\param{z}};
 
 \matrix [below=16mm of A, column sep=1cm] {
-  \node (op11) {$\param{op}(\textrm{z}, a_1)$}; &
-  \node (op12) {$\param{op}(a_1, a_2)$};        &
+  \node (op11) [predicate] {$\param{op}(\textrm{z}, a_1)$}; &
+  \node (op12) [predicate] {$\param{op}(a_1, a_2)$};        &
   \coordinate (op1s1); &
-  \node (op13) {$\param{op}(\textrm{z}, a_i)$}; &
+  \node (op13) [predicate] {$\param{op}(\textrm{z}, a_i)$}; &
   \coordinate (op1s2); &
-  \node (op14) {$\param{op}(a_{n-1}, a_n)$}; \\
+  \node (op14) [predicate] {$\param{op}(a_{n-1}, a_n)$}; \\
 };
 
 \matrix [below=35mm of A, column sep=1cm] {
-  \node (op21) {$\param{op}(z_1, z_2)$}; &
-  \node (op22) {$\param{op}(z_{i-1}, z_i)$};        &
-  \node (op23) {$\param{op}(z_{n-1}, z_n)$}; \\
+  \node (op21) [predicate] {$\param{op}(z_1, z_2)$}; &
+  \node (op22) [predicate] {$\param{op}(z_{i-1}, z_i)$};        &
+  \node (op23) [predicate] {$\param{op}(z_{n-1}, z_n)$}; \\
 };
 
 \begin{scope}

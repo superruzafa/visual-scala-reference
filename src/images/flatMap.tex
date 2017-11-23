@@ -1,61 +1,56 @@
 \input{_header.tex}
 
-\matrix (B) [collection, name prefix=b] {
-  \node (11) {$b_{1_1}$};     &
-  \node (12) {$b_{1_2}$};     &
-  \node (13) {$b_{1_3}$};     &
-  \node (21) {$b_{2_1}$};     &
-  \node (22) {$b_{2_2}$};     &
-  \ellipsis                   &
-  \node (i1) {$b_{i_1}$};     &
-  \ellipsis                   &
-  \node (n1) {$b_{n_1}$};     &
-  \node (nell) [ellipsis] {}; &
-  \node (nm) {$b_{n_m}$};     \\
+\matrix (B) [collection] {
+  \node (b11) {$b_{1_1}$}; &
+  \node (b12) {$b_{1_2}$}; &
+  \node (b13) {$b_{1_3}$}; &
+  \node (b21) {$b_{2_1}$}; &
+  \node (b22) {$b_{2_2}$}; &
+  \ellipsis &
+  \node (bi1) {$b_{i_1}$}; &
+  \ellipsis &
+  \node (bn1) {$b_{n_1}$}; &
+  \ellipsis &
+  \node (bnm) {$b_{n_m}$}; \\
 };
 
-\matrix (A) [collection, name prefix=a, above of=B, node distance=5.5cm] {
-  \node (1) {$a_1$}; &
-  \node (2) {$a_2$}; &
-  \ellipsis          &
-  \node (i) {$a_i$}; &
-  \ellipsis          &
-  \node (n) {$a_n$}; \\
-};
+\draw [draw=none] (bn1.north east) -- coordinate (bne) (bnm.north west);
 
 \begin{scope}
   \tikzstyle{every node}=[scale=0.8]
-  \matrix (A1) [collection, above of=b12, node distance=2.5cm] at (b12.north) {
+  \matrix (A1) [collection, above=15mm of b12] {
     \node (a11) {$b_{1_1}$}; &
     \node (a12) {$b_{1_2}$}; &
     \node (a13) {$b_{1_3}$}; \\
   };
-  \matrix (A2) [collection, above of=b21, node distance=2.5cm] at (b21.north east) {
+  \matrix (A2) [collection, above=15mm of b21.north east] {
     \node (a21) {$b_{2_1}$}; &
     \node (a22) {$b_{2_2}$}; \\
   };
-  \matrix (Ai) [collection, above of=bi1, node distance=2.5cm] at (bi1.north) {
+  \matrix (Ai) [collection, above=15mm of bi1] {
     \node (ai1) {$b_{i_1}$}; \\
   };
-  \matrix (An) [collection, above of=anell, node distance=2.5cm] at (bnell.north) {
+  \matrix (An) [collection, above=15mm of bne] {
     \node (an1) {$b_{n_1}$};  &
-    \node (anell) [ellipsis]; &
-    \node (anm) {$b_{n_m}$};  \\
+    \ellipsis &
+    \node (anm) {$b_{n_m}$}; \\
   };
 \end{scope}
 
-\begin{scope}[on background layer]
-  \tikzstyle{every path}=[cell]
-  \draw ([shift={(-3mm, 3mm)}] A1.north west) rectangle ([shift={(3mm, -3mm)}] A1.south east);
-  \draw ([shift={(-3mm, 3mm)}] A2.north west) rectangle ([shift={(3mm, -3mm)}] A2.south east);
-  \draw ([shift={(+3mm, 3mm)}] A2.north east) [ellipsis] rectangle node {$\ldots$} ([shift={(-3mm, -3mm)}] Ai.south west);
-  \draw ([shift={(-3mm, 3mm)}] Ai.north west) rectangle coordinate (e1) ([shift={(3mm, -3mm)}] Ai.south east);
-  \draw ([shift={(+3mm, 3mm)}] Ai.north east) [ellipsis] rectangle node {$\ldots$} ([shift={(-3mm, -3mm)}] An.south west);
-  \draw ([shift={(-3mm, 3mm)}] An.north west) rectangle ([shift={(3mm, -3mm)}] An.south east);
-\end{scope}
+\draw [draw=none] (a11.north east) -- coordinate (ax) (anm.north west);
+
+\matrix (A) [collection, above=20mm of ax] {
+  \node (a1) {$a_1$}; &
+  \node (a2) {$a_2$}; &
+  \ellipsis &
+  \node (ai) {$a_i$}; &
+  \ellipsis &
+  \node (an) {$a_n$}; \\
+};
 
 \foreach \i in {1,2,i,n} {
-  \draw [arrow, to brace, smooth] (a\i) to node [arrow label] {$\param{f}(a_\i)$} ([yshift=1mm] A\i.north);
+  \draw (A\i.north west) [topbrace] -- (A\i.north east);
+  \draw [arrow, to brace, smooth] (a\i) to node [arrow label, pos=0.4] {$\param{f}(a_\i)$} (A\i.north);
 }
 
 \foreach \from/\to in {a11/b11, a12/b12, a13/b13, a21/b21, a22/b22, ai1/bi1, an1/bn1, anm/bnm} {

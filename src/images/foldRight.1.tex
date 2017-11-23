@@ -11,19 +11,19 @@
 
 \node (z) [right=1cm of A] {\param{z}};
 
-\node (f1) [below=1cm of an, xshift=0.2em] {$\param{op}(a_n, \param{z})$};
+\node (f1) [predicate, below=1cm of an, xshift=0.2em] {$\param{op}(a_n, \param{z})$};
 \draw (an) [arrow] to (an |- f1.north);
 \draw [arrow, out=270, in=90] (z.south) to (f1.40);
 
-\node (f2) [below=2cm of an-1, xshift=0.3em] {$\param{op}(a_{n-1}, z_1)$};
+\node (f2) [predicate, below=2cm of an-1, xshift=0.3em] {$\param{op}(a_{n-1}, z_1)$};
 \draw (an-1) [arrow] to (an-1 |- f2.north);
 \draw [arrow, out=180, in=90] (f1.west) to (f2.30);
 
-\node (fi) [below=3cm of an-i, xshift=0.3em] {$\param{op}(a_{n-i}, z_i)$};
+\node (fi) [predicate, below=3cm of an-i, xshift=0.3em] {$\param{op}(a_{n-i}, z_i)$};
 \draw (an-i) [arrow] to (an-i |- fi.north);
 \draw [arrow, out=180, in=90, middotted] (f2.west) to (fi.30);
 
-\node (fn) [below=4cm of a1, xshift=1em] {$\param{op}(a_1, z_{n-1})$};
+\node (fn) [predicate, below=4cm of a1, xshift=1em] {$\param{op}(a_1, z_{n-1})$};
 \draw (a1) [arrow] to (a1 |- fn.north);
 \draw [arrow, out=180, in=90, middotted] (fi.west) to (fn.45);
 

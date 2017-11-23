@@ -4,27 +4,27 @@
   \tikzstyle{every node}=[scale=0.7]
 
   \matrix (A) [collection] {
-    \node (a1) {$a_1$};         &
-    \node      [ellipsis=10mm]; &
-    \node (an) {$a_o$};         \\
+    \node (a1) {$a_1$}; &
+    \ellipsis[10mm]; &
+    \node (an) {$a_o$}; \\
   };
 
   \matrix (B) [collection, right=12mm of A] {
-    \node (b1) {$a_p$};         &
-    \node      [ellipsis=10mm]; &
-    \node (bn) {$a_q$};         \\
+    \node (b1) {$a_p$}; &
+    \ellipsis[10mm]; &
+    \node (bn) {$a_q$}; \\
   };
 
   \matrix (C) [collection, right=20mm of B] {
-    \node (c1) {$a_r$};         &
-    \node      [ellipsis=10mm]; &
-    \node (cn) {$a_s$};         \\
+    \node (c1) {$a_r$}; &
+    \ellipsis[10mm]; &
+    \node (cn) {$a_s$}; \\
   };
 
   \matrix (D) [collection, right=12mm of C] {
-    \node (d1) {$a_t$};         &
-    \node      [ellipsis=10mm]; &
-    \node (dn) {$a_u$};         \\
+    \node (d1) {$a_t$}; &
+    \ellipsis[10mm]; &
+    \node (dn) {$a_u$}; \\
   };
 \end{scope}
 
@@ -63,7 +63,7 @@
   \coordinate (Dnse) at ([shift={(+4mm, -4mm)}] D1se);
   \coordinate (Dnne) at ([shift={(+4mm, +4mm)}] D1ne);
 
-  \draw (Bnne) [ellipsis=15mm] rectangle node {$\ldots$} (Cnsw);
+  \draw (Bnne) [loosely dash dot, line width=0.1mm] rectangle node {$\ldots$} (Cnsw);
   
   \draw (Annw) rectangle (Bnse);
   \draw (Cnnw) rectangle (Dnse);
@@ -71,8 +71,8 @@
   \draw (Axnw) [loosely dash dot, line width=0.1mm] rectangle (Bxse);
   \draw (Cxnw) [loosely dash dot, line width=0.1mm] rectangle (Dxse);
 
-  \draw (A1ne) [ellipsis=15mm] rectangle node {$\ldots$} (B1sw);
-  \draw (C1ne) [ellipsis=15mm] rectangle node {$\ldots$} (D1sw);
+  \draw (A1ne) [loosely dash dot, line width=0.1mm] rectangle node {$\ldots$} (B1sw);
+  \draw (C1ne) [loosely dash dot, line width=0.1mm] rectangle node {$\ldots$} (D1sw);
 
   \draw (A1nw) rectangle (A1se);
   \draw (B1nw) rectangle (B1se);
@@ -110,7 +110,7 @@
 \topmeasure{$\subparam{n}{1}$}{z1}{z2}
 
 \begin{scope}
-  \tikzstyle{every node}=[scale=0.8]
+  \tikzstyle{every node}=[scale=0.65]
   \node (n1) [below=1cm of a1] {$\param{f}(0, \ldots, 0, 0)$};
   \draw (n1) [arrow] -- (a1);
   \node (n2) [below=2cm of an] {$\param{f}(0, \ldots, 0, n_m - 1)$};

@@ -1,22 +1,31 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-    \node (1)   {$a_1$};     &
-    \node (2)   {$a_2$};     &
-    \node (3)   {$a_3$};     &
-    \ellipsis                &
-    \node (i)   {$a_i$};     &
-    \node (i+1) {$a_{i+1}$}; &
-    \ellipsis                &
-    \node (n)   {$a_n$};     \\
+\matrix (A) [collection] {
+    \node (a1)   {$a_1$};     &
+    \node (a2)   {$a_2$};     &
+    \node (a3)   {$a_3$};     &
+    \ellipsis                 &
+    \node (ai)   {$a_i$};     &
+    \node (ai+1) {$a_{i+1}$}; &
+    \ellipsis                 &
+    \node (an)   {$a_n$};     \\
 };
 
-\foreach \i/\k in {1/k_1, 2/k_2, 3/k_1, i/k_m, i+1/k_2, n/k_m} {
+\foreach \i/\k in {
+  1/k_1,
+  2/k_2,
+  3/k_1,
+  i/k_m,
+  i+1/k_2,
+  n/k_m}
+{
   \node (fa\i) [predicate, below=0.5em of a\i, pin={[function result, pin position=below] $\k$}] {$\param{f}(a_{\i})$};
   \draw (a\i) -- (fa\i);
 }
 
-\matrix (K) [map keys, below left=3cm and 2cm of A.center] {
+\node (R) [single arrow, draw, single arrow tip angle=45, single arrow head extend=1mm, right=1cm of A] {$\quad$};
+
+\matrix (K) [map keys, right=1cm of R] {
   \node (k1) {$k_1$}; \\
   \node (k2) {$k_2$}; \\
   \vellipsis          \\
@@ -24,23 +33,23 @@
 };
 
 \matrix (K1) [map values, right=1cm of k1.east] {
-  \node                        {$a_1$};    &
-  \node                        {$a_3$};    &
-  \node [draw=none, fill=none] {$\ldots$}; \\
+  \node             {$a_1$};  &
+  \node             {$a_3$};  &
+  \ellipsis[12.5mm]           \\
 };
 
 \matrix (K2) [map values, right=1cm of k2.east] {
-  \node                        {$a_2$};     &
-  \node [draw=none, fill=none] {$\ldots$};  &
-  \node                        {$a_{i+1}$}; &
-  \node [draw=none, fill=none] {$\ldots$};  \\
+  \node             {$a_2$};     &
+  \ellipsis[12.5mm]              &
+  \node             {$a_{i+1}$}; &
+  \ellipsis[12.5mm]              \\
 };
 
 \matrix (Km) [map values, right=1cm of km.east] {
-  \node [draw=none, fill=none] {$\ldots$}; &
-  \node                        {$a_i$};    &
-  \node [draw=none, fill=none] {$\ldots$}; &
-  \node                        {$a_n$};    \\
+  \ellipsis[12.5mm]          &
+  \node             {$a_i$}; &
+  \ellipsis[12.5mm]          &
+  \node             {$a_n$}; \\
 };
 
 \draw (k1) [map to] -- (K1);

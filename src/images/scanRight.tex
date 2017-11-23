@@ -21,10 +21,10 @@
 
 \node (z) [above=61mm of bz] {\param{z}};
 
-\node (f1) [above=4cm of b1] {$\param{op}(a_n, \textrm{z})$};
-\node (f2) [above=3cm of b2] {$\param{op}(a_{n-1}, z_1)$};
-\node (fi) [above=2cm of bi] {$\param{op}(a_i, z_{i-1})$};
-\node (fn) [above=1cm of bn] {$\param{op}(a_n, z_{n-1})$};
+\node (f1) [predicate, above=4cm of b1] {$\param{op}(a_n, \param{z})$};
+\node (f2) [predicate, above=3cm of b2] {$\param{op}(a_{n-1}, z_1)$};
+\node (fi) [predicate, above=2cm of bi] {$\param{op}(a_i, z_{i-1})$};
+\node (fn) [predicate, above=1cm of bn] {$\param{op}(a_n, z_{n-1})$};
 
 \begin{scope}
   \tikzstyle{every path}=[arrow, smooth]
