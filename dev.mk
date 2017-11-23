@@ -17,8 +17,9 @@ DATAFILES := $(wildcard src/data/*)
 VIEWFILES := $(wildcard src/views/*)
 TEXSHAREDFILES := $(wildcard src/images/_*.tex)
 TEXFILES := $(filter-out $(TEXSHAREDFILES),$(wildcard src/images/*))
+PDFFILES := $(patsubst src/%.tex,$(CACHEDIR)/%.pdf,$(TEXFILES))
 PNGFILES := $(addprefix docs/images/,filter.png map.png foldLeft.1.png)
-SVGFILES := $(patsubst src/images/%.tex,docs/images/%.svg,$(TEXFILES))
+SVGFILES := $(patsubst src/%.tex,docs/%.svg,$(TEXFILES))
 CSSFILES := docs/style.css
 HTMLFILES := docs/index.html
 TARGET := $(HTMLFILES) $(CSSFILES) $(PNGFILES) $(SVGFILES)
@@ -26,25 +27,30 @@ TARGET := $(HTMLFILES) $(CSSFILES) $(PNGFILES) $(SVGFILES)
 all: $(TARGET)
 
 docs/%.html: src/build-index.php $(VIEWFILES) $(DATAFILES)
-	$(PHP) src/build-index.php $@
+	@echo [HTML] $(@F)
+	@$(PHP) src/build-index.php $@
 
 docs/%.css: src/%.scss
-	$(SASS) $(SASSFLAGS) $< $@
+	@echo [CSS] $(@F)
+	@$(SASS) $(SASSFLAGS) $< $@
 
 docs/%.png: $(CACHEDIR)/%.pdf
-	mkdir -p $(@D)
-	$(PDF2PNG) $(PDF2PNGFLAGS) $< $@
+	@echo [PNG] $(@F)
+	@mkdir -p $(@D)
+	@$(PDF2PNG) $(PDF2PNGFLAGS) $< $@
 
 docs/%.svg: $(CACHEDIR)/%.pdf
-	mkdir -p $(@D)
-	$(PDF2SVG) $(PDF2SVGFLAGS) $< $@
+	@mkdir -p $(@D)
+	@$(PDF2SVG) $(PDF2SVGFLAGS) $< $@
+	@echo [SVG] $(@F)
 
 $(CACHEDIR)/%.pdf: src/%.tex $(TEXSHAREDFILES)
-	mkdir -p $(@D)
-	pushd $(<D) && \
-	$(TEX2PDF) $(TEX2PDFFLAGS) -output-directory=/tmp -jobname=image $(<F) && \
-	popd
-	mv /tmp/image.pdf $@
+	@echo [PDF] $(@F)
+	@mkdir -p $(@D)
+	@pushd $(<D) > /dev/null && \
+		$(TEX2PDF) $(TEX2PDFFLAGS) -output-directory=/tmp -jobname=$(*F) $(<F) > /tmp/$(*F).out || cat /tmp/$(*F).out && \
+		popd > /dev/null
+	@mv /tmp/$(*F).pdf $@
 
 src/build-index.php: vendor/autoload.php
 
@@ -58,6 +64,12 @@ composer.phar:
 
 server:
 	$(PHP) -S 0.0.0.0:8080 src/dev-server.php
+
+touch:
+	touch --no-create --reference=src/images/_style.tex $(TEXFILES) $(SVGFILES) $(PNGFILES) $(PDFFILES)
+
+watch:
+	while inotifywait --recursive -qq src; do make -f dev.mk; done
 
 .PRECIOUS: $(CACHEDIR)/%.pdf
 .PHONY: server

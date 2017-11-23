@@ -9,10 +9,11 @@ RUN apt-get update && \
       texlive-fonts-extra \
       imagemagick \
       ghostscript \
-      pdf2svg
+      pdf2svg \
+      inotify-tools
       
 EXPOSE 8080
 
 VOLUME /code
 WORKDIR /code
-ENTRYPOINT ["make", "--file", "dev.mk"]
+ENTRYPOINT ["make", "--file", "dev.mk", "--jobs=5"]
