@@ -38,7 +38,7 @@
 \tikzstyle{option}=[
   draw,
   line width=0.3mm,
-  minimum size=1cm,
+  minimum size=1.1cm,
   outer sep=0,
   fill=white,
 ]
@@ -50,9 +50,13 @@
   rectangle split draw splits=true
 ]
 
+\newcommand{\some}[1] {
+  \small \texttt{Some} \nodepart{two} $b_i$
+}
+
 \tikzstyle{none}=[
   option,
-  node contents={\small None},
+  node contents={\small \texttt{None}},
 ]
 
 \tikzstyle{exception}=[
@@ -62,7 +66,8 @@
     zigzag,
     segment length=2mm,
     amplitude=0.25mm
-  }
+  },
+  font=\ttfamily
 ]
 
 \tikzstyle{map to}=[Square-Latex]
