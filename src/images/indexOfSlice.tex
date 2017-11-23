@@ -18,9 +18,8 @@
   \node (bi+2) {$a_{i+2}$}; \\
 };
 
-\node [draw, ellipse callout, callout absolute pointer={([yshift=1mm] B.north)}] at ([yshift=1cm] B.north) {$\param{that}$};
-
 \toppointer{ai-j.north}{\param{from}}
+\topparam{B.north}{\param{that}};
 
 \draw (ai.south west) [bottombrace] -- coordinate (c) (ai+2.south east);
 \draw (bi.south west) [bottombrace] -- coordinate (d) (bi+2.south east);

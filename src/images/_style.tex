@@ -215,3 +215,16 @@
 \newcommand{\subparam}[2] {
   \texttt{#1}_{\texttt{\scriptsize #2}}
 }
+
+\newcommand{\topparam}[2]{
+  \node [arrow box, draw, arrow box arrows={south:2.5mm}, anchor=south] at ([yshift=1mm] #1) {#2};
+}
+\newcommand{\bottomparam}[2]{
+  \node [arrow box, draw, arrow box arrows={north:2.5mm}, anchor=north] at ([yshift=-1mm] #1) {#2};
+}
+\newcommand{\leftparam}[2]{
+  \node [arrow box, draw, arrow box arrows={east:2.5mm}, anchor=east] at ([xshift=-1mm] #1) {#2};
+}
+\newcommand{\rightparam}[2]{
+  \node [arrow box, draw, arrow box arrows={west:2.5mm}, anchor=west] at ([xshift=1mm] #1) {#2};
+}

@@ -16,7 +16,7 @@
   \node (bi+1) {$a_{i+1}$}; \\
 };
 
-\node [draw, ellipse callout, callout absolute pointer={([yshift=1mm] B.north)}] at ([yshift=1cm] B.north) {$\param{that}$};
+\topparam{B.north}{\param{that}}
 
 \draw (ai-1.south west) [bottombrace] -- coordinate (c) (ai+1.south east);
 \draw (bi-1.south west) [bottombrace] -- coordinate (d) (bi+1.south east);
