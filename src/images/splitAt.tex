@@ -19,9 +19,9 @@
   \node (n) {$a_{n}$};     \\
 };
 
-\toppointer{ai.north}{i}
+\toppointer{ai.north}{\param{i}}
 
-\bracetobrace{a1.south west}{ai.south east}{b1.north west}{bi.north east}
+\bracetobrace{a1.south west}{[xshift=-1pt] ai.south east}{b1.north west}{bi.north east}
 \bracetobrace{ai+1.south west}{an.south east}{bi+1.north west}{bn.north east}
 
 \input{_footer.tex}

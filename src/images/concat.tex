@@ -7,11 +7,11 @@
   \node (am) {$a_m$}; \\
 };
 
-\node [draw, ellipse callout, callout absolute pointer={([yshift=1mm] A.north)}] at ([yshift=1cm] A.north) {$\texttt{xss(0)}$};
+\node [draw, ellipse callout, callout absolute pointer={([yshift=1mm] A.north)}] at ([yshift=1cm] A.north) {$\param{xss(0)}$};
 
 \node (E) [right=5mm of A, empty] {};
 
-\node [draw, ellipse callout, callout absolute pointer={([yshift=1mm] E.north)}] at ([yshift=1cm] E.north) {$\texttt{xss(1)}$};
+\node [draw, ellipse callout, callout absolute pointer={([yshift=1mm] E.north)}] at ([yshift=1cm] E.north) {$\param{xss(1)}$};
 
 \matrix (B) [collection, right=5mm of E] {
   \node (b1) {$b_1$};     &
@@ -19,7 +19,7 @@
   \node (bn) {$b_n$}; \\
 };
 
-\node [draw, ellipse callout, callout absolute pointer={([yshift=1mm] B.north)}] at ([yshift=1cm] B.north) {$\texttt{xss(2)}$};
+\node [draw, ellipse callout, callout absolute pointer={([yshift=1mm] B.north)}] at ([yshift=1cm] B.north) {$\param{xss(2)}$};
 
 \node (EL) [right=5mm of B] {$\cdots$}; 
 
@@ -29,7 +29,7 @@
   \node (co) {$c_o$}; \\
 };
 
-\node [draw, ellipse callout, callout absolute pointer={([yshift=1mm] C.north)}] at ([yshift=1cm] C.north) {$\texttt{xss(n-1)}$};
+\node [draw, ellipse callout, callout absolute pointer={([yshift=1mm] C.north)}] at ([yshift=1cm] C.north) {$\param{xss(n-1)}$};
 
 \draw (A.north west) [draw=none] -- coordinate (x) (C.south east);
 

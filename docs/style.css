@@ -88,11 +88,6 @@ html:lang(es) .i18n:not(:lang(es)) {
     line-height: 1.6em;
     margin-bottom: 2rem;
     max-width: 20rem; }
-    #function-entries .function-figure-caption var {
-      background: #f6f8fa;
-      border: 1px solid darker(#f6f8fa, 20%);
-      padding: 1px;
-      border-radius: 4px; }
   #function-entries .function-figure-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -105,7 +100,7 @@ html:lang(es) .i18n:not(:lang(es)) {
     margin-bottom: 1rem; }
   #function-entries .function-signature {
     background: #f6f8fa;
-    border-radius: darker(#f6f8fa, 20%);
+    border-radius: #d5dfe8;
     border-radius: 3px;
     font-size: 0.9em;
     margin-bottom: 1.5rem;

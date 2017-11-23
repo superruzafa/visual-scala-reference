@@ -11,8 +11,8 @@
 };
 
 \foreach \i/\b in {1/\true, 2/\false, i/\true, i+1/\false, n/\true} {
-  \node (v\i) [elem, right=1cm of k\i] {$v_{\i}$};
-  \node (p\i) [predicate, left=0.5em of k\i, pin={[function result, pin position=190] \b}] {$\texttt{p}(k_{\i})?$};
+  \node (v\i) [right=1cm of k\i] {$v_{\i}$};
+  \node (p\i) [predicate, left=0.5em of k\i, pin={[function result, pin position=190] \b}] {$\param{p}(k_{\i})?$};
   \draw (k\i) -- (p\i);
   \draw (k\i) [map to] -- (v\i);
 }
@@ -28,7 +28,7 @@
 };
 
 \foreach \i in {1, i, n} {
-  \node (vf\i) [elem, right=1cm of kf\i] {$v_{\i}$};
+  \node (vf\i) [right=1cm of kf\i] {$v_{\i}$};
   \draw (kf\i) [map to] -- (vf\i);
 }
 

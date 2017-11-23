@@ -20,7 +20,7 @@
 };
 
 \foreach \i in {1,2,i,n} {
-  \node (fa\i) [predicate, below=0.5em of a\i, pin={[function result, pin position=335]$w_{\i}$}] {$\texttt{f}(a_{\i})$};
+  \node (fa\i) [predicate, below=0.5em of a\i, pin={[function result, pin position=335]$w_{\i}$}] {$\param{f}(a_{\i})$};
   \draw (a\i) -- (fa\i);
   \draw (fa\i) [arrow, smooth, white border] to (b\i);
 }

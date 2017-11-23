@@ -22,7 +22,7 @@ $literal-color: #000f9b;
 $type-color: #000f9b;
 
 $code-background-color: #f6f8fa;
-$code-border-color: darker(#f6f8fa, 20%);
+$code-border-color: darken(#f6f8fa, 10%);
 
 * {
   margin: 0;
@@ -140,13 +140,6 @@ html {
     line-height: 1.6em;
     margin-bottom: 2rem;
     max-width: $spacer * 20;
-
-    var {
-      background: $code-background-color;
-      border: 1px solid $code-border-color;
-      padding: 1px;
-      border-radius: 4px;
-    }
   }
   
   .function-figure-wrapper {

@@ -17,7 +17,7 @@
   \node (bi)   {$a_i$};     \\
 };
 
-\node [draw, ellipse callout, callout absolute pointer={([xshift=1mm] B.east)}] at ([xshift=1cm] B.east) {$\texttt{that}$};
+\node [draw, ellipse callout, callout absolute pointer={([xshift=1mm] B.east)}] at ([xshift=1cm] B.east) {$\param{that}$};
 \draw (a3.south east) [draw=none] -- node {\trueseq} (bi.north west);
 
 \begin{scope}
@@ -28,10 +28,10 @@
   }
 \end{scope}
 
-\node (B) [elem, right=4cm of ti] {\true};
+\node (B) [right=4cm of ti] {\true};
 \draw [arrow] (ti) -- (B);
 
-\toppointer{a2.north}{offset}
+\toppointer{a2.north}{\param{offset}}
 \draw ([yshift=5mm] a2.north west) [dashed] -- ([yshift=-5mm] b2.south west);
 
 \draw (t2.north west) [rounded corners=0.5em] rectangle (ti.south east);

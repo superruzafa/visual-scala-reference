@@ -16,7 +16,7 @@
   \node (bn) {$b_n$}; \\
 };
 
-\node [draw, ellipse callout, callout absolute pointer={([yshift=1mm] B.north)}] at ([yshift=1cm] B.north) {$\texttt{that}$};
+\node [draw, ellipse callout, callout absolute pointer={([yshift=1mm] B.north)}] at ([yshift=1cm] B.north) {$\param{that}$};
 
 \matrix (C) [collection, name prefix=c, node distance=4cm, below of=A] {
   \node (a1)   {$a_1$}; &
@@ -28,8 +28,8 @@
   \node (an)   {$a_n$}; \\
 };
 
-\toppointer{a3.north}{from}
-\bottommeasure{replaced}{a3.south west}{an-2.south east}
+\toppointer{a3.north}{\param{from}}
+\bottommeasure{\param{replaced}}{a3.south west}{an-2.south east}
 \bracetobrace{a1.south west}{a2.south east}{ca1.north west}{ca2.north east}
 \bracetobrace{an-1.south west}{an.south east}{can-1.north west}{can.north east}
 \draw (b1.south west) [bottombrace] -- coordinate (x) (bn.south east);

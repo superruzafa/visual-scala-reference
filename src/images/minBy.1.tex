@@ -9,14 +9,14 @@
   \node (n) {$a_n$};   \\
 };
 
-\node (B) [elem, below=3cm of ai] {$a_i$};
+\node (B) [below=3cm of ai] {$a_i$};
 
 \begin{scope}
   \tikzstyle{every node}=[predicate]
-  \node (fa1) [below=0.5em of a1] {$\texttt{f}(a_1)$};
-  \node (fa2) [below=0.5em of a2] {$\texttt{f}(a_2)$};
-  \node (fai) [below=0.5em of ai, pin={[function result, pin position=240] min}] {$\texttt{f}(a_i)$};
-  \node (fan) [below=0.5em of an] {$\texttt{f}(a_n)$};
+  \node (fa1) [below=0.5em of a1] {$\param{f}(a_1)$};
+  \node (fa2) [below=0.5em of a2] {$\param{f}(a_2)$};
+  \node (fai) [below=0.5em of ai, pin={[function result, pin position=240] min}] {$\param{f}(a_i)$};
+  \node (fan) [below=0.5em of an] {$\param{f}(a_n)$};
 \end{scope}
 
 \foreach \i in {1,2,i,n} {
@@ -26,8 +26,8 @@
 \draw (fai.south) [arrow] -- coordinate (x) (B);
 
 \matrix [matrix of nodes, left delimiter=\{, right of=x, matrix anchor=x1.south west] {
-  \node (x1) {$\texttt{f}(a_i) < \texttt{f}(a_j),\, j \in [1, i - 1]$}; \\
-  \node {$\texttt{f}(a_i) \leq \texttt{f}(a_k),\, k \in [i + 1, n]$}; \\
+  \node (x1) {$\param{f}(a_i) < \param{f}(a_j),\, j \in [1, i - 1]$}; \\
+  \node {$\param{f}(a_i) \leq \param{f}(a_k),\, k \in [i + 1, n]$}; \\
 };
 
 \input{_footer.tex}

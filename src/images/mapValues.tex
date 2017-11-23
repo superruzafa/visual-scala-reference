@@ -20,11 +20,11 @@
 };
 
 \foreach \i in {1, 2, i, n} {
-  \node (v\i) [elem, right=1cm of k\i] {$v_{\i}$};
+  \node (v\i) [right=1cm of k\i] {$v_{\i}$};
   \draw (k\i) [map to] -- (v\i);
-  \node (vm\i) [elem, right=1cm of km\i] {$w_{\i}$};
+  \node (vm\i) [right=1cm of km\i] {$w_{\i}$};
   \draw ([xshift=17mm] k\i.north east) [topbrace] -- coordinate (x) ([shift={(17mm, 1pt)}] k\i.south east);
-  \draw (x) [arrow, from brace] -- node [arrow label] {$\texttt{f}(v_{\i})$} (km\i);
+  \draw (x) [arrow, from brace] -- node [arrow label] {$\param{f}(v_{\i})$} (km\i);
   \draw (km\i) [map to] -- (vm\i);
 }
 

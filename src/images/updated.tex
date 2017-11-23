@@ -9,21 +9,21 @@
   \node (n) {$a_n$}; \\
 };
 
-\node (elem) [elem, right=1cm of A] {elem};
+\node (E) [right=1cm of A] {\param{elem}};
 
-\toppointer{ai.north}{index}
+\toppointer{ai.north}{\param{index}}
 
 \matrix (B) [collection, name prefix=b, below of=A, node distance=3cm] {
   \node (1) {$a_1$}; &
   \node (2) {$a_2$}; &
   \ellipsis          &
-  \node (i) {elem}; &
+  \node (i) {\param{elem}}; &
   \ellipsis          &
   \node (n) {$a_n$}; \\
 };
 
 \bracetobrace{a1.south west}{ai.south west}{b1.north west}{bi.north west};
 \bracetobrace{ai.south east}{an.south east}{bi.north east}{bn.north east};
-\draw (elem.south) [arrow, white border, smooth] to (bi.north);
+\draw (E.south) [arrow, white border, smooth] to (bi.north);
 
 \input{_footer.tex}

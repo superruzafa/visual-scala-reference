@@ -4,17 +4,12 @@
 \newcommand{\trueseq}{\tiny \true \, \true \, \true}
 \newcommand{\falseseq}{\tiny \false \, \false \, \false}
 
-\tikzstyle{elem}=[
-  font=\large
-]
-
 \tikzstyle{cell}=[
   draw,
   line width=0.4mm,
   minimum size=1.3cm,
   outer sep=0,
   fill=white,
-  font=\large
 ]
 
 \tikzstyle{collection}=[
@@ -46,7 +41,6 @@
   minimum size=1cm,
   outer sep=0,
   fill=white,
-  font=\large
 ]
 
 \tikzstyle{some}=[
@@ -212,4 +206,12 @@
 
 \newcommand{\toppointer}[2] {
   \draw ([yshift=1mm] #1) [Latex-] -- ([yshift=9mm] #1) node [anchor=south] {#2};
+}
+
+\newcommand{\param}[1] {
+  \texttt{#1}
+}
+
+\newcommand{\subparam}[2] {
+  \texttt{#1}_{\texttt{\scriptsize #2}}
 }

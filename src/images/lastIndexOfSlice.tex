@@ -18,15 +18,15 @@
   \node (bi+2) {$a_{i+2}$}; \\
 };
 
-\node [draw, ellipse callout, callout absolute pointer={([yshift=1mm] B.north)}] at ([yshift=1cm] B.north) {$\texttt{that}$};
+\node [draw, ellipse callout, callout absolute pointer={([yshift=1mm] B.north)}] at ([yshift=1cm] B.north) {$\param{that}$};
 
-\toppointer{ai+j.north}{end}
+\toppointer{ai+j.north}{\param{end}}
 
 \draw (ai.south west) [bottombrace] -- coordinate (c) (ai+2.south east);
 \draw (bi.south west) [bottombrace] -- coordinate (d) (bi+2.south east);
 
 \draw (c) [from brace] -- +(0, -2em) [to brace] -- node (e) [arrow label] {$=?$ \true} ([yshift=-2em] d) -- (d);
-\node (f) [elem, below=1cm of e] {$i$};
+\node (f) [below=1cm of e] {$i$};
 \draw (e) [arrow] -- (f);
 
 \input{_footer.tex}

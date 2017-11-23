@@ -18,7 +18,7 @@
   i-1/\false/0.5em/below,
   i/\true/2em/310}
 {
-  \node (pfa\i) [predicate, below=\s of a\i, pin={[function result, pin position=\p] \d}] {$\exists \, \texttt{pf}(a_{\i})?$};
+  \node (pfa\i) [predicate, below=\s of a\i, pin={[function result, pin position=\p] \d}] {$\exists \, \param{pf}(a_{\i})?$};
   \draw (a\i) -- (pfa\i);
 }
 
@@ -26,6 +26,6 @@
 \draw (pfa1.south) [iteration] to (pfa2.south);
 \draw (pfa2.south) [iteration, middotted] to node [below, sloped, pos=.5] {\falseseq} (pfai-1.south);
 \draw (pfai-1.south) [iteration] to (pfai.south);
-\draw (pfai.south) [arrow] -- node [arrow label] {$\texttt{pf}(a_i)$} (B);
+\draw (pfai.south) [arrow] -- node [arrow label] {$\param{pf}(a_i)$} (B);
 
 \input{_footer.tex}

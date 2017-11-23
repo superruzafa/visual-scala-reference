@@ -9,13 +9,13 @@
     \node (n) {$a_n$}; \\
 };
 
-\node (z) [elem, left=5mm of a1] {z};
-\node (f1) [below=15mm of a2] {$\texttt{op}(\textrm{z}, a_2)$};
-\node (f2) [below=25mm of an] {$\texttt{op}(z_1, a_n)$};
-\node (f3) [below=35mm of a1] {$\texttt{op}(z_2, a_1)$};
-\node (fn) [below=45mm of ai] {$\texttt{op}(z_{n-1}, a_i)$};
+\node (z) [left=5mm of a1] {\param{z}};
+\node (f1) [below=15mm of a2] {$\param{op}(\param{z}, a_2)$};
+\node (f2) [below=25mm of an] {$\param{op}(z_1, a_n)$};
+\node (f3) [below=35mm of a1] {$\param{op}(z_2, a_1)$};
+\node (fn) [below=45mm of ai] {$\param{op}(z_{n-1}, a_i)$};
 
-\node (B) [elem, below=10mm of fn] {$b$};
+\node (B) [below=10mm of fn] {$b$};
 
 \begin{scope}
   \tikzstyle{every path}=[arrow]

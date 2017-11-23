@@ -12,7 +12,7 @@
 };
 
 \foreach \i/\k in {1/k_1, 2/k_2, 3/k_1, i/k_m, i+1/k_2, n/k_m} {
-  \node (fa\i) [predicate, below=0.5em of a\i, pin={[function result, pin position=below] $\k$}] {$\texttt{f}(a_{\i})$};
+  \node (fa\i) [predicate, below=0.5em of a\i, pin={[function result, pin position=below] $\k$}] {$\param{f}(a_{\i})$};
   \draw (a\i) -- (fa\i);
 }
 

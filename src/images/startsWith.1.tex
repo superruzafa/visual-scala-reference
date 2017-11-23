@@ -19,7 +19,7 @@
   \node (bi+2) {$a_{i+2}$}; \\
 };
 
-\node [draw, ellipse callout, callout absolute pointer={([xshift=1mm] B.east)}] at ([xshift=1cm] B.east) {$\texttt{that}$};
+\node [draw, ellipse callout, callout absolute pointer={([xshift=1mm] B.east)}] at ([xshift=1cm] B.east) {$\param{that}$};
 \draw (a2.south east) [draw=none] -- node {\trueseq} (bi.north west);
 
 \begin{scope}
@@ -30,10 +30,10 @@
   \draw (ai+1) -- node (t3) {=? \false} (bi+1);
 \end{scope}
 
-\node (B) [elem, right=5cm of t3] {\false};
+\node (B) [right=5cm of t3] {\false};
 \draw [arrow] (t3) -- (B);
 
-\toppointer{a2.north}{offset}
+\toppointer{a2.north}{\param{offset}}
 \draw ([yshift=5mm] a2.north west) [dashed] -- ([yshift=-5mm] b2.south west);
 
 \draw (t1.north west) [rounded corners=0.5em] rectangle (t3.south east);

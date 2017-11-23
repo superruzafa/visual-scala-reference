@@ -10,14 +10,14 @@
   \node (n) {$a_n$};       \\
 };
 
-\node (B) [elem, below=3cm of ai] {$i$};
+\node (B) [below=3cm of ai] {$i$};
 
 \foreach \i/\d/\s/\p in {
   i-2/\false/0.5em/below,
   i-1/\false/2em/below,
   i/\true/0.5em/310}
 {
-  \node (pa\i) [predicate, align=center, below=\s of a\i, pin={[function result, pin position=\p] \d}] {$a_{\i}$ = elem?};
+  \node (pa\i) [predicate, align=center, below=\s of a\i, pin={[function result, pin position=\p] \d}] {$a_{\i}$ = \param{elem}?};
   \draw (a\i) -- (pa\i);
 }
 
@@ -25,6 +25,6 @@
 \draw (pai-1.south) [iteration] to (pai.south);
 \draw (pai.south) [arrow] -- (B);
 
-\toppointer{ai-2.north}{from}
+\toppointer{ai-2.north}{\param{from}}
 
 \input{_footer.tex}

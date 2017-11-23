@@ -12,15 +12,15 @@
   \node (an)     {$a_n$};       \\
 };
 
-\toppointer{ai.north}{from}
+\toppointer{ai.north}{\param{from}}
 
-\foreach \i/\d/\p in {
-  i/\true/below,
-  i+1/\true/below,
-  i+j-1/\true/below,
-  i+j/\false/below}
+\foreach \i/\b/\d/\p in {
+  i/0.5em/\true/below,
+  i+1/0.5em/\true/below,
+  i+j-1/0.5em/\true/below,
+  i+j/2em/\false/below}
 {
-  \node (pa\i) [predicate, below=0.5em of a\i, pin={[function result, pin position=\p] \d}] {$\texttt{p}(a_{\i})?$};
+  \node (pa\i) [predicate, below=\b of a\i, pin={[function result, pin position=\p] \d}] {$\param{p}(a_{\i})?$};
   \draw (a\i) -- (pa\i);
 }
 
@@ -28,8 +28,8 @@
 \draw (pai+1.south) [iteration, middotted] to node [below, sloped, pos=.5] {\trueseq} (pai+j-1.south);
 \draw (pai+j-1.south) [iteration] to (pai+j.south);
 
-\draw ([yshift=-15mm] ai.south west) [bottombrace] -- coordinate(x) ([yshift=-15mm] ai+j-1.south east);
-\node (elem) [elem, below=15mm of x] {$j$};
-\draw (x) [arrow, from brace] -- (elem);
+\draw ([yshift=-20mm] ai.south west) [bottombrace] -- coordinate(x) ([yshift=-20mm] ai+j-1.south east);
+\node (B) [below=15mm of x] {$j$};
+\draw (x) [arrow, from brace] -- (B);
 
 \input{_footer.tex}

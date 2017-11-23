@@ -4,27 +4,27 @@
   \tikzstyle{every node}=[scale=0.7]
 
   \matrix (A) [collection] {
-      \node (a1) {elem};          &
-      \node      [ellipsis=10mm]; &
-      \node (an) {elem};          \\
+    \node (a1)             {\param{elem}}; &
+    \node [ellipsis=10mm];                 &
+    \node (an)             {\param{elem}}; \\
   };
 
   \matrix (B) [collection, right=12mm of A] {
-      \node (b1) {elem};          &
-      \node      [ellipsis=10mm]; &
-      \node (bn) {elem};          \\
+    \node (b1)             {\param{elem}}; &
+    \node [ellipsis=10mm];                 &
+    \node (bn)             {\param{elem}}; \\
   };
 
   \matrix (C) [collection, right=20mm of B] {
-      \node (c1) {elem};          &
-      \node      [ellipsis=10mm]; &
-      \node (cn) {elem};          \\
+    \node (c1)             {\param{elem}}; &
+    \node [ellipsis=10mm];                 &
+    \node (cn)             {\param{elem}}; \\
   };
 
   \matrix (D) [collection, right=12mm of C] {
-      \node (d1) {elem};          &
-      \node      [ellipsis=10mm]; &
-      \node (dn) {elem};          \\
+    \node (d1)             {\param{elem}}; &
+    \node [ellipsis=10mm];                 &
+    \node (dn)             {\param{elem}}; \\
   };
 \end{scope}
 
@@ -83,30 +83,30 @@
 
 \draw (a1.north west) -- +(0, 5mm) coordinate (x1);
 \draw (an.north east) -- +(0, 5mm) coordinate (x2);
-\topmeasure{$n_m$}{x1}{x2}
+\topmeasure{$\subparam{n}{m}$}{x1}{x2}
 
 \draw (b1.north west) -- +(0, 5mm) coordinate (x3);
 \draw (bn.north east) -- +(0, 5mm) coordinate (x4);
-\topmeasure{$n_m$}{x3}{x4}
+\topmeasure{$\subparam{n}{m}$}{x3}{x4}
 
 \draw (c1.north west) -- +(0, 5mm) coordinate (x5);
 \draw (cn.north east) -- +(0, 5mm) coordinate (x6);
-\topmeasure{$n_m$}{x5}{x6}
+\topmeasure{$\subparam{n}{m}$}{x5}{x6}
 
 \draw (d1.north west) -- +(0, 5mm) coordinate (x7);
 \draw (dn.north east) -- +(0, 5mm) coordinate (x8);
-\topmeasure{$n_m$}{x7}{x8}
+\topmeasure{$\subparam{n}{m}$}{x7}{x8}
 
 \draw (A1nw) -- +(0, 10mm) coordinate (y1);
 \draw (B1ne) -- +(0, 10mm) coordinate (y2);
-\topmeasure{$n_{m-1}$}{y1}{y2}
+\topmeasure{$\subparam{n}{m-1}$}{y1}{y2}
 
 \draw (C1nw) -- +(0, 10mm) coordinate (y3);
 \draw (D1ne) -- +(0, 10mm) coordinate (y4);
-\topmeasure{$n_{m-1}$}{y3}{y4}
+\topmeasure{$\subparam{n}{m-1}$}{y3}{y4}
 
 \draw (Annw) -- +(0, 15mm) coordinate (z1);
 \draw (Dnne) -- +(0, 15mm) coordinate (z2);
-\topmeasure{$n_1$}{z1}{z2}
+\topmeasure{$\subparam{n}{1}$}{z1}{z2}
 
 \input{_footer.tex}

@@ -8,9 +8,9 @@
   \node (aj) {$a_j$}; &
   \node [ellipsis];   &
   \node (ak) {$a_k$}; &
-  \node [ellipsis, minimum width=25mm]; &
+  \node [ellipsis=25mm]; &
   \node (am) {$a_m$}; &
-  \node [ellipsis, minimum width=8mm];  &
+  \node [ellipsis=8mm];  &
   \node (an) {$a_n$}; \\
 };
 
@@ -32,12 +32,12 @@
   \node (A3as) {$a_n$};    \\
 };
 
-\topmeasure{size}{A1.north west}{A1.north east}
-\topmeasure{size}{A2.north west}{A2.north east}
-\topmeasure{$\leq$ size}{A3.north west}{A3.north east}
+\topmeasure{\param{size}}{A1.north west}{A1.north east}
+\topmeasure{\param{size}}{A2.north west}{A2.north east}
+\topmeasure{$\leq$ \param{size}}{A3.north west}{A3.north east}
 
-\toppointer{aj.north}{step}
-\toppointer{am.north}{step}
+\toppointer{aj.north}{\param{step}}
+\toppointer{am.north}{\param{step}}
 
 \draw [iteration, shorten >=1mm, shorten <=1mm] (A1as) -- (A2a1);
 \draw [iteration, shorten >=1mm, shorten <=1mm, middotted] (A2as) -- (A3a1);

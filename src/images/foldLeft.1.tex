@@ -9,25 +9,25 @@
     \node (n) {$a_n$}; \\
 };
 
-\node (z) [elem, left=1cm of A] {z};
+\node (z) [left=1cm of A] {\param{z}};
 
-\node (f1) [below=1cm of a1, xshift=-0.7em] {$\texttt{op}(\textrm{z}, a_1)$};
+\node (f1) [below=1cm of a1, xshift=-0.7em] {$\param{op}(\param{z}, a_1)$};
 \draw (a1) [arrow] to (a1 |- f1.north);
 \draw [arrow, out=270, in=90] (z.south) to (f1.120);
 
-\node (f2) [below=2cm of a2, xshift=-0.9em] {$\texttt{op}(z_1, a_2)$};
+\node (f2) [below=2cm of a2, xshift=-0.9em] {$\param{op}(z_1, a_2)$};
 \draw (a2) [arrow] to (a2 |- f2.north);
 \draw [fall, arrow] (f1.east) to (f2.120);
 
-\node (fi) [below=3cm of ai, xshift=-1.2em] {$\texttt{op}(z_{i-1}, a_i)$};
+\node (fi) [below=3cm of ai, xshift=-1.2em] {$\param{op}(z_{i-1}, a_i)$};
 \draw (ai) [arrow] to (ai |- fi.north);
 \draw [fall, arrow, middotted] (f2.east) to (fi.120);
 
-\node (fn) [below=4cm of an, xshift=-1.5em] {$\texttt{op}(z_{n-1}, a_n)$};
+\node (fn) [below=4cm of an, xshift=-1.5em] {$\param{op}(z_{n-1}, a_n)$};
 \draw (an) [arrow] to (an |- fn.north);
 \draw [fall, arrow, middotted] (fi.east) to (fn.120);
 
-\node (B) [elem, below of=fn, node distance=1.5cm] {$b$};
+\node (B) [below of=fn, node distance=1.5cm] {$b$};
 \draw [arrow] (fn.south) -- (B.north);
 
 \input{_footer.tex}

@@ -10,11 +10,11 @@
   \node (n)   {$a_n$};     \\
 };
 
-\node (f1)   [below=1cm of an.south west]   {$\texttt{op}(a_{n-1}, a_n)$};
-\node (f2)   [below=2cm of an-1.south west] {$\texttt{op}(a_{n-2}, z_1)$};
-\node (fi-1) [below=3cm of an-i.south east] {$\texttt{op}(a_i, z_{n-i+1})$};
-\node (fn-1) [below=4cm of a1.south east]   {$\texttt{op}(a_1, z_{n-1})$};
-\node (b)    [elem, below=1cm of fn-1]      {$b$};
+\node (f1)   [below=1cm of an.south west]   {$\param{op}(a_{n-1}, a_n)$};
+\node (f2)   [below=2cm of an-1.south west] {$\param{op}(a_{n-2}, z_1)$};
+\node (fi-1) [below=3cm of an-i.south east] {$\param{op}(a_i, z_{n-i+1})$};
+\node (fn-1) [below=4cm of a1.south east]   {$\param{op}(a_1, z_{n-1})$};
+\node (b)    [below=1cm of fn-1]      {$b$};
 %
 \begin{scope}
   \tikzstyle{every path}=[arrow]

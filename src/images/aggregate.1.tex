@@ -11,17 +11,17 @@
     \node (n) {$a_n$};       \\
 };
 
-\node (z) [elem, left=5mm of a1] {z};
+\node (z) [left=5mm of A] {\param{z}};
 
-\node (f1) [below=15mm of a1.west]   {$\texttt{seqop}(\textrm{z}, a_1)$};
-\node (f2) [below=25mm of a2.west]   {$\texttt{seqop}(z_1, a_2)$};
-\node (f3) [below=15mm of ai+1.west] {$\texttt{seqop}(a_i, a_{i+1})$};
-\node (f4) [below=15mm of an.west]   {$\texttt{seqop}(a_{n-1}, a_n)$};
+\node (f1) [below=15mm of a1.west]   {$\param{seqop}(\param{z}, a_1)$};
+\node (f2) [below=25mm of a2.west]   {$\param{seqop}(z_1, a_2)$};
+\node (f3) [below=15mm of ai+1.west] {$\param{seqop}(a_i, a_{i+1})$};
+\node (f4) [below=15mm of an.west]   {$\param{seqop}(a_{n-1}, a_n)$};
 
-\node (f5) [below=30mm of ae1] {$\texttt{combop}(z_j, z_k)$};
-\node (f6) [below=50mm of ai+1.west] {$\texttt{combop}(z_l, z_m)$};
+\node (f5) [below=30mm of ae1] {$\param{combop}(z_j, z_k)$};
+\node (f6) [below=50mm of ai+1.west] {$\param{combop}(z_l, z_m)$};
 
-\node (B) [elem, below=10mm of f6] {$b$};
+\node (B) [below=10mm of f6] {$b$};
 
 \begin{scope}
   \tikzstyle{every path}=[arrow]
@@ -43,7 +43,7 @@
   \draw [white border, out=180, in=90, middotted] (f4.west) to (f6.20);
   \draw [white border, out=0, in=90, middotted] (f5.east) to (f6.45);
 
-  \draw (f6) [elem] -- (B);
+  \draw (f6) -- (B);
 \end{scope}
 
 \input{_footer.tex}

@@ -10,7 +10,7 @@
   \node (n)   {$a_n$};     \\
 };
 
-\node (B) [elem, below of=ai, node distance=4cm] {\true};
+\node (B) [below of=ai, node distance=4cm] {\true};
 
 \foreach \i/\d/\s/\p in {
   1/\false/0.5em/below,
@@ -18,7 +18,7 @@
   i-1/\false/0.5em/below,
   i/\true/2em/310}
 {
-  \node (pa\i) [predicate, align=center, below=\s of a\i, pin={[function result, pin position=\p] \d}] {$a_{\i} = \textrm{elem}?$};
+  \node (pa\i) [predicate, align=center, below=\s of a\i, pin={[function result, pin position=\p] \d}] {$a_{\i} = \param{elem}?$};
   \draw (a\i) -- (pa\i);
 }
 

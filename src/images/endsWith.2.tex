@@ -16,7 +16,7 @@
   \node (bn)   {$a_n$};     \\
 };
 
-\node [draw, ellipse callout, callout absolute pointer={([xshift=-1mm] B.west)}] at ([xshift=-1cm] B.west) {$\texttt{that}$};
+\node [draw, ellipse callout, callout absolute pointer={([xshift=-1mm] B.west)}] at ([xshift=-1cm] B.west) {$\param{that}$};
 \draw (an-i.south east) [draw=none] -- node {\trueseq} (bn-1.north west);
 \draw ([yshift=5mm] A.north east) [dashed] -- ([yshift=-5mm] B.south east);
 
@@ -28,7 +28,7 @@
   \draw (an)   -- node (t4) {=? \true} (bn);
 \end{scope}
 
-\node (B) [elem, right=3cm of t3] {\true};
+\node (B) [right=3cm of t3] {\true};
 \draw [arrow] (t4) -- (B);
 
 \draw (t1.north west) [rounded corners=0.5em] rectangle (t4.south east);

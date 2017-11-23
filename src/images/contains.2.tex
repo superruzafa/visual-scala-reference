@@ -7,14 +7,14 @@
   \node (n)   {$a_n$};     \\
 };
 
-\node (B) [elem, below right=3cm and 0cm of an.south east] {\false};
+\node (B) [below right=3cm and 0cm of an.south east] {\false};
 
 \foreach \i/\s in {
   1/0.5em,
   2/2em,
   n/0.5em}
 {
-  \node (pa\i) [predicate, align=center, below=\s of a\i, pin={[function result, pin position=below] \false}] {$a_{\i} = \textrm{elem}?$};
+  \node (pa\i) [predicate, align=center, below=\s of a\i, pin={[function result, pin position=below] \false}] {$a_{\i} = \param{elem}?$};
   \draw (a\i) -- (pa\i);
 }
 

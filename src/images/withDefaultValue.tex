@@ -7,10 +7,10 @@
     \node (kn) {$k_n$}; \\
 };
 
-\node (default) [elem, below=10mm of K] {$v_{def}$};
+\node (default) [below=10mm of K] {$\subparam{v}{def}$};
 
 \foreach \i in {1, 2, n} {
-  \node (v\i) [elem, right=1cm of k\i] {$v_{\i}$};
+  \node (v\i) [right=1cm of k\i] {$v_{\i}$};
   \draw (k\i) [map to] -- (v\i);
 }
 
@@ -26,10 +26,10 @@
 \end{scope}
 
 \foreach \i in {1, 2, n} {
-  \node (vd\i) [elem, right=1cm of kd\i] {$v_{\i}$};
+  \node (vd\i) [right=1cm of kd\i] {$v_{\i}$};
   \draw (kd\i) [map to] -- (vd\i);
 }
-\node (vdd) [elem, right=1cm of kdd] {$v_{def}$};
+\node (vdd) [right=1cm of kdd] {$\subparam{v}{def}$};
 \draw (kdd) [map to] -- (vdd);
 
 \draw ([xshift=20mm] K.north east) [topbrace] -- ([xshift=20mm] K.north east |- default.south);

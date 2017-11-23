@@ -16,9 +16,9 @@
     \node (zi) {$(a_i, b_i)$};       &
     \ellipsis                        &
     \node (zn) {$(a_n, b_n)$};       &
-    \node (zn+1)  [xscale=0.77] {$(a_f, b_{n+1})$}; &
+    \node (zn+1)  [xscale=0.77] {$(\subparam{a}{f}, b_{n+1})$}; &
     \ellipsis                        &
-    \node (zn+m) [xscale=0.73] {$(a_f, b_{n+m})$}; \\
+    \node (zn+m) [xscale=0.73] {$(\subparam{a}{f}, b_{n+m})$}; \\
 };
 
 \matrix (B) [collection, matrix anchor=west, below of=A, node distance=4cm] at (A.west) {
@@ -33,10 +33,10 @@
     \node (bn+m) {$b_{n+m}$}; \\
 };
 
-\node [draw, ellipse callout, callout absolute pointer={([xshift=-1mm] B.west)}] at ([xshift=-1cm] B.west) {$\texttt{that}$};
+\node [draw, ellipse callout, callout absolute pointer={([xshift=-1mm] B.west)}] at ([xshift=-1cm] B.west) {$\param{that}$};
 
-\node (af) [elem, right of=an, node distance=15mm] {$a_f$};
-\node (bf) [elem, right of=bn+m, node distance=15mm] {$b_f$};
+\node (af) [right of=an, node distance=15mm] {$\subparam{a}{f}$};
+\node (bf) [right of=bn+m, node distance=15mm] {$\subparam{b}{f}$};
 
 \foreach \a/\b in {1/1,2/2,i/i,n/n,f/n+1,f/n+m} {
   \draw [arrow, white border] (a\a) -- (z\b.north) -- ([xshift=-0.7em, yshift=-1em] z\b.north);
