@@ -158,10 +158,10 @@
   arrows={-Stealth[inset=0pt, angle'=30]}
 ]
 
-\newcommand{\bottommeasure}[4][5mm] {
+\newcommand{\bottommeasure}[4][7mm] {
   \begin{scope}[line width=0.1mm]
     \coordinate (x) at ([yshift=-#1] #3);
-    \draw (x) [measure] -- node [label={[label distance=-1mm]above:#2}] {} (x -| #4);
+    \draw (x) [measure] -- node [label={[label distance=-2mm]above:#2}] {} (x -| #4);
     \draw (#3) -- ++(0, -#1) -- +(0, -1.25mm);
     \draw (#4) -- ++(0, -#1) -- +(0, -1.25mm);
   \end{scope}
@@ -176,10 +176,10 @@
 \end{scope}
 }
 
-\newcommand{\topmeasure}[4][5mm] {
+\newcommand{\topmeasure}[4][3mm] {
   \begin{scope}[line width=0.1mm]
     \coordinate (x) at ([yshift=#1] #3);
-    \draw (x) [measure] -- node [label={[label distance=-1mm]above:#2}] {} (x -| #4);
+    \draw (x) [measure] -- node [label={[label distance=-2mm]above:#2}] {} (x -| #4);
     \draw (#3) -- ++(0, #1) -- +(0, 1.25mm);
     \draw (#4) -- ++(0, #1) -- +(0, 1.25mm);
   \end{scope}
