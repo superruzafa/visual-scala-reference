@@ -23,9 +23,9 @@
   \draw (a\i) -- (fa\i);
 }
 
-\node (R) [single arrow, draw, single arrow tip angle=45, single arrow head extend=1mm, right=1cm of A] {$\quad$};
+\node (R) [big arrow, xshift=5mm, anchor=west] at (A.east) {};
 
-\matrix (K) [map keys, right=1cm of R] {
+\matrix (K) [map keys, right=5mm of R.east, matrix anchor=k2.west] {
   \node (k1) {$k_1$}; \\
   \node (k2) {$k_2$}; \\
   \vellipsis          \\

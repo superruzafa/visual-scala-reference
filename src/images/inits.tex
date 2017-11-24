@@ -8,7 +8,9 @@
   \node (n)   {$a_n$};     \\
 };
 
-\matrix (I1) [collection, below=1cm of A] {
+\node (R) [big arrow, yshift=-5mm, rotate=-90, anchor=west] at (A.south) {};
+
+\matrix (I1) [collection, below=5mm of R.east] {
   \node (i11)   {$a_1$};     &
   \node (i12)   {$a_2$};     &
   \ellipsis                &

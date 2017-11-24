@@ -9,14 +9,16 @@
   \node (m)   {$a_m$}; \\
 };
 
-\matrix (C1) [collection, below=2cm of A] {
+\node (R) [big arrow, yshift=-5mm, rotate=-90, anchor=west] at (A.south) {};
+
+\matrix (C1) [collection, below=10mm of R.east] {
   \node (c11) {$a_1$}; &
   \node       {$a_2$}; &
   \ellipsis            &
   \node       {$a_n$}; \\
 };
 
-\matrix (C2) [collection, below=15mm of C1] {
+\matrix (C2) [collection, below=10mm of C1] {
   \node (c21) {$a_1$};       &
   \node       {$a_2$};       &
   \ellipsis                  &
@@ -30,7 +32,7 @@
   \node       {$a_m$}; \\
 };
 
-\matrix (C4) [collection, below=15mm of C3] {
+\matrix (C4) [collection, below=10mm of C3] {
   \node (c41) {$a_{m-n+1}$}; &
   \node       {$a_{m-n+2}$}; &
   \ellipsis                  &

@@ -12,22 +12,21 @@
   \node (an) {$a_n$};   \\
 };
 
-\node (R) [rotate=-90, single arrow, draw, single arrow tip angle=45, single arrow head extend=1mm, below=1cm of A] {$\quad$};
+\node (R) [big arrow, yshift=-5mm, rotate=-90, anchor=west] at (A.south) {};
 
-
-\matrix (A1) [collection, below=30mm of A] {
+\matrix (A1) [collection, below=10mm of R.east] {
   \node (A1a1) {$a_1$}; &
   \ellipsis &
   \node (A1as) {$a_{\param{\scriptsize size}}$}; \\
 };
 
-\matrix (A2) [collection, below=15mm of A1, matrix anchor=A2a1.north west] at (A1a1.south west) {
+\matrix (A2) [collection, below=10mm of A1, matrix anchor=A2a1.north west] at (A1a1.south west) {
   \node (A2a1) {$a_{\param{\scriptsize size} + 1}$}; &
   \ellipsis &
   \node (A2as) {$a_{2 \cdot \param{\scriptsize size}}$}; \\
 };
 
-\matrix (A3) [collection, below=20mm of A2, matrix anchor=A3a1.north west] at (A2a1.south west) {
+\matrix (A3) [collection, below=15mm of A2, matrix anchor=A3a1.north west] at (A2a1.south west) {
   \node (A3a1) {$a_{2 \cdot \param{\scriptsize size} + 1}$}; &
   \ellipsis[8mm] &
   \node (A3as) {$a_n$}; \\

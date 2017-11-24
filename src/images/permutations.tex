@@ -8,7 +8,9 @@
   \node (n)   {$a_n$};     \\
 };
 
-\matrix (P1) [collection, below=1cm of A, matrix anchor=p11.north west] at (A.south west) {
+\node (R) [big arrow, yshift=-5mm, rotate=-90, anchor=west] at (A.south) {};
+
+\matrix (P1) [collection, below=5mm of R.east] {
   \node (p11) {$a_1$};     &
   \node       {$a_2$};     &
   \ellipsis                &
@@ -16,7 +18,7 @@
   \node       {$a_n$};     \\
 };
 
-\matrix (P2) [collection, below=5mm of P1, matrix anchor=p21.north west] at (P1.south west) {
+\matrix (P2) [collection, below=5mm of P1] {
   \node (p21) {$a_1$};     &
   \node       {$a_2$};     &
   \ellipsis                &
@@ -24,7 +26,7 @@
   \node       {$a_{n-1}$}; \\
 };
 
-\matrix (PN-1) [collection, below=15mm of P2, matrix anchor=pn-11.north west] at (P2.south west) {
+\matrix (PN-1) [collection, below=10mm of P2] {
   \node (pn-11) {$a_n$};     &
   \node         {$a_{n-1}$}; &
   \ellipsis                  &
@@ -32,7 +34,7 @@
   \node         {$a_2$};     \\
 };
 
-\matrix (PN) [collection, below=5mm of PN-1, matrix anchor=pn1.north west] at (PN-1.south west) {
+\matrix (PN) [collection, below=5mm of PN-1] {
   \node (pn1) {$a_n$};     &
   \node       {$a_{n-1}$}; &
   \ellipsis                &
