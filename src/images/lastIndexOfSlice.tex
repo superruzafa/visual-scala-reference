@@ -1,32 +1,48 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-  \node (1)   {$a_1$};     &
-  \ellipsis                &
-  \node (i)   {$a_i$};     &
-  \node (i+1) {$a_{i+1}$}; &
-  \node (i+2) {$a_{i+2}$}; &
-  \ellipsis                &
-  \node (i+j) {$a_{i+j}$}; &
-  \ellipsis                &
-  \node (n)   {$a_n$};     \\
+\matrix (A) [collection] {
+  \helem{before}  &
+  \elem{a}{i}   &
+  \elem{a}{i+1} &
+  \elem{a}{i+2} &
+  \helem{between} &
+  \elem{a}{i+j-1}   &
+  \elem{a}{i+j}     &
+  \elem{a}{i+j+1}   &
+  \helem{after}   \\
 };
 
-\matrix (B) [collection, right=1cm of A] {
-  \node (bi)   {$a_i$};     &
-  \node (bi+1) {$a_{i+1}$}; &
-  \node (bi+2) {$a_{i+2}$}; \\
+\foreach \f/\t/\r/\a/\p in {
+  % i-j/i-j+1/0mm/\false,
+  % i-j+1/i-j+2/4mm/\false,
+  % i-1/i/0mm/\false,
+  i+j/i+j/4mm/.5/\false,
+  i+j-1/i+j/0mm/.25/\false,
+  i+1/i+2/4mm/.25/\false,
+  i/i+1/0mm/.25/\true}
+{
+  \draw (a\f.north west) [brace, decoration={mirror=false, raise=2mm + \r, aspect=\a}] -- (a\t.north east);
+  \draw ($ (a\f.north west)!\a!(a\t.north east) $) ++(0, 2mm + 2mm + \r) [predicate evaluation edge] -- +(0, 1)
+    node (p\f) [above, predicate evaluation] {$=\param{that}?\, \p$};
+}  
+
+\draw (ai+j.60) [latex-, out=30, in=270] to +(2, 1) node [above] {\param{end}};
+
+\matrix (T) [collection, matrix of math nodes, right=\cellwidth of A] {
+  a_i &
+  a_{i+1} \\
 };
 
-\topparam{B.north}{\param{that}};
+\topparam{T.north}{\param{that}}
 
-\toppointer{ai+j.north}{\param{end}}
+\begin{scope}[iteration, bend right=45]
+  \draw ($ (pi+j.north) + (1, 0) $) to +(-1, 0);
+  \draw (pi+j.north) to (pi+j-1.north);
+  \draw (pi+j-1.north) [middle dots] to (pi+1.north);
+  \draw (pi+1.north) to (pi.north);
+\end{scope}
 
-\draw (ai.south west) [bottombrace] -- coordinate (c) (ai+2.south east);
-\draw (bi.south west) [bottombrace] -- coordinate (d) (bi+2.south east);
-
-\draw (c) [from brace] -- +(0, -2em) [to brace] -- node (e) [arrow label] {$=?$ \true} ([yshift=-2em] d) -- (d);
-\node (f) [below=1cm of e] {$i$};
-\draw (e) [arrow] -- (f);
+\node (B) [below=2\cellheight of ai] {$i$};
+\draw (ai) [arrow] -- (B);
 
 \input{_footer.tex}

@@ -1,29 +1,30 @@
 \input{_header.tex}
 
-\matrix (K) [map keys] {
-    \node (k1)       {$k_1$};     \\
-    \node (k2)       {$k_2$};     \\
-    \vellipsis                    \\
-    \node (ki)       {$k_i$};     \\
-    \vellipsis                    \\
-    \node (kn)       {$k_n$};     \\
+\matrix (K) [map] {
+  \node (k1)       {$k_1$};     \\
+  \node (k2)       {$k_2$};     \\
+  \velem{between} \\
+  \node (ki)       {$k_i$};     \\
+  \velem{between} \\
+  \node (kn)       {$k_n$};     \\
 };
 
-
 \foreach \i in {1, 2, i, n} {
-  \node (v\i) [right=10mm of k\i] {$v_{\i}$};
-  \draw (k\i) [map to] -- (v\i);
-  \node (km\i) [right=40mm of k\i] {$k_{\i}$};
+  \node (v\i) [right=.5\cellwidth of k\i] {$v_\i$};
+  \draw (k\i) [maps to] -- (v\i);
+  \node (kf\i) [right=2\cellwidth of v\i] {$k_\i$};
 }
 
-\draw ([xshift=20mm] K.north east) [topbrace] -- ([xshift=20mm] K.south east);
+\node [big arrow, right=1.5\cellheight - .5\bigarrowwidth of K];
 
 \begin{scope}
-  \tikzstyle{every path}=[arrow, iteration, shorten >=1mm, shorten <=1mm]
-  \draw ([xshift=-1cm] km1.west) -- (km1.west);
-  \draw (km1.west) to (km2.west);
-  \draw (km2.west) [middotted] to (kmi.west);
-  \draw (kmi.west) to (kmn.west);
+  \tikzstyle{every path}=[bend right=45]
+  \draw ($ (kf1.west) - (1, 0) $) [iteration, with next label] -- (kf1.west);
+  \draw (kf1.west) [iteration, with reverse next label] to (kf2.west);
+  \draw (kf2.west) [iteration, middle dots] to (kfi.west);
+  \path (kf2.west) [with reverse next label] to (kfi.west);
+  \draw (kfi.west) [iteration, middle dots] to (kfn.west);
+  \path (kfi.west) [with reverse next label] to (kfn.west);
 \end{scope}
 
 \input{_footer.tex}

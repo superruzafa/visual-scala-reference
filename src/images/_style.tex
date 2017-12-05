@@ -1,45 +1,123 @@
-\newcommand{\true}{\textcolor{green}{\ding{51}}}
-\newcommand{\false}{\textcolor{red}{\ding{55}}}
+\newcommand{\true}{\ifmmode $\textcolor{green}{\ding{51}}$ \else \textcolor{green}{\ding{51}} \fi}
+\newcommand{\false}{\ifmmode $\textcolor{red}{\ding{55}}$ \else \textcolor{red}{\ding{55}} \fi}
 
-\newcommand{\trueseq}{\tiny \true \, \true \, \true}
-\newcommand{\falseseq}{\tiny \false \, \false \, \false}
+\newlength{\cellwidth} \setlength{\cellwidth}{1.3cm}
+\newlength{\cellheight} \setlength{\cellheight}{\cellwidth}
+\newlength{\cellborderwidth} \setlength{\cellborderwidth}{0.4mm}
+\newlength{\elementswidth} \setlength{\elementswidth}{1.4\cellwidth}
 
-\tikzstyle{cell}=[
-  draw,
-  line width=0.4mm,
-  minimum size=1.3cm,
-  outer sep=0
+\tikzstyle{collection element}=[
+  line width=\cellborderwidth,
+  minimum width=\cellwidth,
+  minimum height=\cellheight,
+  outer sep=0,
 ]
 
 \tikzstyle{collection}=[
   inner sep=0,
-  column sep=-0.4mm,
-  row sep=-0.4mm,
-  nodes=cell
+  column sep=-\cellborderwidth,
+  row sep=-\cellborderwidth,
+  text height=1.45ex,
+  text depth=0.5ex,
+  node distance=1mm,
+  nodes={
+    draw,
+    collection element,
+  }
 ]
 
-\tikzstyle{empty}=[
-  draw=gray,
-  minimum height=1.3cm,
-  dashed,
-  line width=0.2mm
-]
-
-\tikzstyle{map keys}=[
-  collection
-]
-
-\tikzstyle{map values}=[
+\newcommand{\smallcolfactor}{.75}
+\tikzstyle{small collection}=[
   collection,
-  nodes={minimum size=1cm}
+  nodes={
+    minimum width=\smallcolfactor\cellwidth,
+    minimum height=\smallcolfactor\cellheight,
+  },
+]
+
+\tikzstyle{empty collection}=[
+  draw=gray,
+  minimum height=\cellheight,
+  dashed,
+  line width=0.2mm,
+  node contents={},
+]
+
+\tikzstyle{elements before}=[
+  decorate,
+  decoration={
+    show path construction,
+    lineto code={
+      \tikzstyle{every path}=[line width=\cellborderwidth]
+      \draw (\tikzinputsegmentfirst) [loosely dotted, dash pattern=on .2mm off 1mm] -- ($ (\tikzinputsegmentfirst)!.85!(\tikzinputsegmentlast) $);
+      \draw ($ (\tikzinputsegmentfirst)!.85!(\tikzinputsegmentlast) $) -- (\tikzinputsegmentlast);
+    }
+  }
+]
+
+\tikzstyle{elements between}=[
+  decorate,
+  decoration={
+    show path construction,
+    lineto code={
+      \draw [line width=\cellborderwidth]
+        (\tikzinputsegmentfirst) -- ($ (\tikzinputsegmentfirst)!.15!(\tikzinputsegmentlast) $)
+        ($ (\tikzinputsegmentfirst)!.85!(\tikzinputsegmentlast) $) -- (\tikzinputsegmentlast);
+      \draw [loosely dotted, dash pattern=on .2mm off 1mm]
+        ($ (\tikzinputsegmentfirst)!.15!(\tikzinputsegmentlast) $) -- ($ (\tikzinputsegmentfirst)!.85!(\tikzinputsegmentlast) $);
+    }
+  }
+]
+
+\tikzstyle{elements after}=[
+  decorate,
+  decoration={
+    show path construction,
+    lineto code={
+      \draw [line width=\cellborderwidth] (\tikzinputsegmentfirst) -- ($ (\tikzinputsegmentfirst)!.15!(\tikzinputsegmentlast) $);
+      \draw [loosely dotted, dash pattern=on .2mm off 1mm] ($ (\tikzinputsegmentfirst)!.15!(\tikzinputsegmentlast) $) -- (\tikzinputsegmentlast);
+    }
+  }
+]
+
+\newcommand{\elem}[3][] {
+  \node (#2#3) [#1] {$#2_{#3}$};
+}
+
+\newcommand{\helem}[2][\elementswidth] {
+  \node (x) [draw=none, minimum width=#1] {};
+  \draw (x.north west) [elements #2] -- (x.north east);
+  \draw (x.south west) [elements #2] -- (x.south east);
+}
+\newcommand{\velem}[2][\elementswidth]{
+  \node (x) [draw=none, minimum height=#1] {};
+  \draw (x.north west) [elements #2] -- (x.south west);
+  \draw (x.north east) [elements #2] -- (x.south east);
+}
+
+\tikzstyle{map}=[
+  collection,
+]
+
+\tikzstyle{maps to}=[
+  decorate,
+  decoration={
+    show path construction,
+    lineto code={
+      \tikzstyle{every path}=[line width=.75\cellborderwidth]
+      \fill (\tikzinputsegmentfirst) [white] circle [radius=2mm];
+      \fill (\tikzinputsegmentfirst) circle [radius=1mm];
+      \draw ($ (\tikzinputsegmentfirst) + (0, 2mm) $) [draw,  line width=\cellborderwidth] arc [start angle=90, end angle=270, radius=2mm];
+      \draw (\tikzinputsegmentfirst) [-Triangle] -- (\tikzinputsegmentlast);
+    }
+  }
 ]
 
 \tikzstyle{option}=[
   draw,
   line width=0.3mm,
   minimum size=1.1cm,
-  outer sep=0,
-  fill=white,
+  outer sep=0
 ]
 
 \tikzstyle{some}=[
@@ -50,13 +128,25 @@
 ]
 
 \newcommand{\some}[1] {
-  \small \texttt{Some} \nodepart{two} $b_i$
+  \small \texttt{Some} \nodepart{two} #1
 }
 
 \tikzstyle{none}=[
   option,
   node contents={\small \texttt{None}},
 ]
+
+\tikzstyle{tuple of collections}=[
+  collection,
+  inner sep=.25\cellheight,
+  nodes={inner sep=0},
+  left delimiter=(,
+  right delimiter=),
+]
+
+\newcommand{\tuplecomma} {
+  \node [draw=none, text height=\cellheight, minimum width=0.7cm, font=\Huge] {\,,\,\,\,};
+}
 
 \tikzstyle{exception}=[
   draw,
@@ -69,145 +159,237 @@
   font=\ttfamily
 ]
 
-\tikzstyle{map to}=[Square-Latex]
-
-\tikzset{ellipsis/.style={
-  loosely dash dot,
-  line width=0.15mm,
-}}
-\newcommand{\ellipsis}[1][15mm] {
-  \node (x) [draw=none, minimum width=#1] {$\ldots$};
-  \draw (x.north west) [ellipsis] -- (x.north east);
-  \draw (x.south west) [ellipsis] -- (x.south east);
-}
-\newcommand{\vellipsis}[1][15mm]{
-  \node (x) [draw=none, minimum height=#1] {$\vdots$};
-  \draw (x.north west) [ellipsis] -- (x.south west);
-  \draw (x.north east) [ellipsis] -- (x.south east);
-}
-
-\tikzstyle{tuple comma}=[
-  minimum width=2em,
-  draw=none,
-  fill=none,
-  column sep=0.3mm,
-  node contents={,}
+% 
+% \tikzstyle{map to}=[
+%   Square-Latex
+% ]
+% 
+% \tikzstyle{tuple comma}=[
+%   minimum width=2em,
+%   draw=none,
+%   column sep=0.3mm,
+%   node contents={,}
+% ]
+% 
+% \newcommand{\tuplecomma}{ \node [tuple comma]; }
+% 
+\tikzstyle{arrow}=[
+  % draw=black,
+  -latex,
 ]
 
-\newcommand{\tuplecomma}{ \node [tuple comma]; }
+\tikzstyle{reverse arrow}=[
+  % draw=black,
+  latex-,
+]
 
-\tikzstyle{arrow}=[draw=black, -latex]
+\tikzstyle{smooth}=[
+  out=270,
+  in=90,
+]
+
+\tikzstyle{smooth arrow}=[
+  smooth,
+  arrow,
+]
 
 \tikzstyle{arrow label}=[
-  font=\small,
-  fill=white!0
+  font=\footnotesize,
+  fill=white,
 ]
 
-\tikzstyle{white border}=[
-  preaction={draw=white, line cap=butt, -, line width=0.5em},
+\tikzset{horizontal bridge/.pic={
+  \fill [white] circle [radius=1mm];
+  \draw +(0, -1mm) -- +(0, 1mm);
+  \draw +(-1mm, 0) arc [start angle=180, end angle=0, radius=1mm];
+}}
+
+\tikzset{vertical bridge/.pic={
+  \fill [white] circle [radius=1mm];
+  \draw +(-1mm, 0) -- +(1mm, 0);
+  \draw +(0, -1mm) arc [start angle=270, end angle=90, radius=1mm];
+}}
+
+\newlength{\bigarrowwidth}
+\setlength{\bigarrowwidth}{5mm}
+\tikzstyle{big arrow}=[
+  draw,
+  line width=0.4mm,
+  single arrow,
+  single arrow tip angle=90,
+  single arrow head extend=1mm,
+  minimum width=\bigarrowwidth,
+  minimum height=\bigarrowwidth,
+  node contents={},
+]
+
+\tikzstyle{erase}=[
+  preaction={
+    draw=white,
+    line cap=butt,
+    -,
+    line width=0.5em,
+  },
   shorten <= 1pt,
-  shorten >= 1pt
+  shorten >= 1pt,
 ]
 
 \tikzstyle{start dots}=[
   decorate,
   decoration={
-    border, angle=90, segment length=2pt, amplitude=\pgflinewidth,
-    pre=curveto, pre length=0, post=curveto, post length=5mm
+    border,
+    angle=90,
+    segment length=2pt,
+    amplitude=\pgflinewidth,
+    pre=curveto,
+    pre length=0,
+    post=curveto,
+    post length=5mm
   }
 ]
 
-\tikzstyle{middotted}=[
+\tikzstyle{middle dots}=[
   decorate,
   decoration={
-    border, angle=90, segment length=2pt, amplitude=\pgflinewidth,
-    pre=curveto, pre length=5mm, post=curveto, post length=5mm
+    border,
+    angle=90,
+    segment length=2pt,
+    amplitude=\pgflinewidth,
+    pre=curveto,
+    post=curveto,
+    pre length=5mm,
+    post length=5mm,
   }
 ]
 
 \tikzstyle{iteration}=[
   arrow,
-  bend right=45,
-  densely dashed,
-  draw=gray!75
+  dashed,
+  gray!75,
 ]
 
-\tikzstyle{predicate}=[
-  font=\small
+\tikzstyle{with next label}=[
+  postaction={
+    decorate=true,
+    decoration={
+      text color=gray!75,
+      text along path,
+      raise=1mm,
+      text={|\ttfamily\scriptsize|next},
+      text align={align=center},
+    }
+  }
 ]
 
-\tikzstyle{smooth}=[
-  out=270,
-  in=90
+\tikzstyle{with reverse next label}=[
+  preaction={
+    decorate,
+    decoration={
+      raise=1mm,
+      reverse path,
+      text color=gray!75,
+      text along path,
+      text={|\ttfamily\scriptsize|next},
+      text align={align=center},
+    }
+  }
 ]
 
-\tikzstyle{fall}=[
-  out=0,
-  in=90
+\tikzstyle{plus step}=[
+  postaction={
+    decorate,
+    decoration={
+      raise=1mm,
+      text along path,
+      text align=center,
+      text={|\ttfamily \scriptsize|+ step}
+    }
+  }
 ]
 
-\tikzstyle{function result}=[
-  pin edge={->, decorate, decoration={snake, amplitude=0.5mm}}
+\tikzstyle{internal operation}=[
+  text=black!75,
+  scale=0.9,
 ]
 
-\tikzstyle{measure}=[
-  arrows={Stealth[inset=0pt, angle'=30]-Stealth[inset=0pt, angle'=30]}
+\tikzstyle{predicate evaluation}=[
+  node distance=.25,
+  text=black!75,
+  scale=0.8,
 ]
-\tikzstyle{direct measure}=[
-  arrows={Stealth[inset=0pt, angle'=30]-}
+
+\tikzstyle{predicate evaluation edge}=[
+  draw=black!50,
+  line width=0.1mm,
+  decorate,
+  decoration={
+    snake,
+    amplitude=.5mm,
+    segment length=2mm,
+  }
 ]
+
 \tikzstyle{inverse measure}=[
-  arrows={-Stealth[inset=0pt, angle'=30]}
+  arrows={Triangle[angle=15:3mm 1]-}
 ]
-
-\newcommand{\bottommeasure}[4][7mm] {
-  \begin{scope}[line width=0.1mm]
-    \coordinate (x) at ([yshift=-#1] #3);
-    \draw (x) [measure] -- node [label={[label distance=-2mm]above:#2}] {} (x -| #4);
-    \draw (#3) -- ++(0, -#1) -- +(0, -1.25mm);
-    \draw (#4) -- ++(0, -#1) -- +(0, -1.25mm);
+\tikzstyle{double measure}=[
+  arrows={Triangle[angle=15:3mm 1]-Triangle[angle=15:3mm 1]}
+]
+% \tikzstyle{inverse measure}=[
+%   arrows={-Stealth[inset=0pt, angle'=30]}
+% ]
+% 
+% 
+% \newcommand{\rightbottommeasure}[4][5mm] {
+% \begin{scope}[line width=0.1mm]
+%   \draw (#3) -- ++(0, -#1) -- ++(0, 1.25mm) coordinate(x);
+%   \draw (x) [direct measure] -- +(-3mm, 0);
+%   \draw (#4) -- ++(0, -#1) -- ++(0, 1.25mm) coordinate(x);
+%   \draw (x) [direct measure] -- node [label={[label distance=-1mm]above:#2}] {} +(8mm, 0);
+% \end{scope}
+% }
+% 
+\newcommand{\measure}[4][1ex] {
+  \begin{scope}
+    \tikzstyle{every path}=[line width=0.1mm]
+    \draw (#3) -- ++(0, #1) +(0, 1.5mm) -- +(0, -1.5mm);
+    \draw (#4) -- ++(0, #1) +(0, 1.5mm) -- +(0, -1.5mm);
+    \draw ($ (#3) + (0, #1) $) [double measure] -- node [above] {#2} ($ (#4) + (0, #1) $);
+  \end{scope}
+}
+\newcommand{\rightmeasure}[4][1ex] {
+  \begin{scope}
+    \tikzstyle{every path}=[line width=0.1mm]
+    \draw (#3) -- ++(0, #1) +(0, 1.5mm) -- +(0, -1.5mm);
+    \draw (#4) -- ++(0, #1) +(0, 1.5mm) -- +(0, -1.5mm);
+    \draw (#3) ++(0, #1) [inverse measure] -- +(-6mm, 0);
+    \draw (#4) ++(0, #1) [inverse measure] -- node [above, pos=.6] {#2} +(12mm, 0);
   \end{scope}
 }
 
-\newcommand{\rightbottommeasure}[4][5mm] {
-\begin{scope}[line width=0.1mm]
-  \draw (#3) -- ++(0, -#1) -- ++(0, 1.25mm) coordinate(x);
-  \draw (x) [direct measure] -- +(-3mm, 0);
-  \draw (#4) -- ++(0, -#1) -- ++(0, 1.25mm) coordinate(x);
-  \draw (x) [direct measure] -- node [label={[label distance=-1mm]above:#2}] {} +(8mm, 0);
-\end{scope}
-}
-
-\newcommand{\topmeasure}[4][3mm] {
-  \begin{scope}[line width=0.1mm]
-    \coordinate (x) at ([yshift=#1] #3);
-    \draw (x) [measure] -- node [label={[label distance=-2mm]above:#2}] {} (x -| #4);
-    \draw (#3) -- ++(0, #1) -- +(0, 1.25mm);
-    \draw (#4) -- ++(0, #1) -- +(0, 1.25mm);
-  \end{scope}
-}
-
-\tikzstyle{bottombrace}=[
-  decorate, decoration={brace, amplitude=1mm, raise=1mm, mirror}
+\tikzstyle{brace}=[
+  decorate,
+  decoration={
+    brace,
+    mirror,
+    raise=2mm,
+    amplitude=2mm,
+  },
+  line width=0.2mm,
 ]
-\tikzstyle{topbrace}=[
-  decorate, decoration={brace, amplitude=1mm, raise=1mm}
-]
-\tikzstyle{from brace}=[shorten <=2mm]
-\tikzstyle{to brace}=[shorten >=2mm]
 
-\newcommand{\bracetobrace}[4] {
-  \coordinate (a) at (#1);
-  \coordinate (b) at (#2);
-  \coordinate (c) at (#3);
-  \coordinate (d) at (#4);
-  \draw [bottombrace] (a) -- coordinate (e) (b);
-  \draw [topbrace] (c) -- coordinate (f) (d);
-  \draw [from brace, to brace, smooth, arrow] (e) to (f);
+\newcommand{\topbrace}[3][lastbracepoint] {
+  \draw ([xshift=0.5mm] #2) [brace, decoration={mirror=false}] -- ([xshift=-0.5mm] #3);
+  \coordinate (#1) at ($ ($ (#2)!.5!(#3) $) + (0, 4mm) $);
 }
 
-\newcommand{\toppointer}[2] {
-  \draw ([yshift=1mm] #1) [Latex-] -- ([yshift=9mm] #1) node [anchor=south] {#2};
+\newcommand{\bottombrace}[3][lastbracepoint] {
+  \draw ([xshift=0.5mm] #2) [brace] -- ([xshift=-0.5mm] #3);
+  \coordinate (#1) at ($ ($ (#2)!.5!(#3) $) - (0, 4mm) $);
+}
+
+\newcommand{\toppointer}[2]{
+  \draw (#1) [latex-] -- ($ (#1) + (0, 1) $) node [above] {#2};
 }
 
 \newcommand{\param}[1] {
@@ -215,9 +397,9 @@
 }
 
 \newcommand{\subparam}[2] {
-  \texttt{#1}_{\texttt{\scriptsize #2}}
+  \texttt{#1}_{\texttt{\scriptsize {#2}}}
 }
-
+ 
 \newcommand{\topparam}[2]{
   \node [arrow box, draw, arrow box arrows={south:2.5mm}, anchor=south] at ([yshift=1mm] #1) {#2};
 }
@@ -230,12 +412,3 @@
 \newcommand{\rightparam}[2]{
   \node [arrow box, draw, arrow box arrows={west:2.5mm}, anchor=west] at ([xshift=1mm] #1) {#2};
 }
-
-\tikzstyle{big arrow}=[
-  draw,
-  single arrow,
-  single arrow tip angle=60,
-  single arrow head extend=1mm,
-  minimum width=5mm,
-  minimum height=10mm
-]

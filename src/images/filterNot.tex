@@ -1,40 +1,41 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-    \node (1)   {$a_1$};     &
-    \node (2)   {$a_2$};     &
-    \node (3)   {$a_3$};     &
-    \ellipsis                &
-    \node (i)   {$a_i$};     &
-    \node (i+1) {$a_{i+1}$}; &
-    \ellipsis                &
-    \node (n-1) {$a_{n-1}$}; &
-    \node (n)   {$a_n$};     \\
+\matrix (A) [collection] {
+  \node (a1)   {$a_1$};     &
+  \node (a2)   {$a_2$};     &
+  \node (a3)   {$a_3$};     &
+  \helem{between}                &
+  \node (ai)   {$a_i$};     &
+  \node (ai+1) {$a_{i+1}$}; &
+  \helem{between}                &
+  \node (an-1) {$a_{n-1}$}; &
+  \node (an)   {$a_n$};     \\
 };
     
-\matrix (B) [collection, name prefix=b, below of=A, node distance=4cm] {
-    \node (2)   {$a_2$};     &
-    \ellipsis                &
-    \node (i+1) {$a_{i+1}$}; &
-    \ellipsis                &
-    \node (n) {$a_n$};       \\
+\matrix (B) [collection, below=2\cellheight of A] {
+  \node (b2)   {$a_2$}; &
+  \helem{between}            &
+  \node (bi+1)   {$a_{i+1}$}; &
+  \helem{between}            &
+  \node (bn) {$a_n$}; \\
 };
     
-\foreach \i/\b/\a in {
-  1/\true/below,
-  2/\false/265,
-  3/\true/below,
-  i/\true/below,
-  i+1/\false/275,
-  n-1/\true/below,
-  n/\false/275}
+\foreach \i/\p/\d in {
+  1/\true/.25,
+  2/\false/1,
+  3/\true/.25,
+  i/\true/.25,
+  i+1/\false/1,
+  n-1/\true/.25,
+  n/\false/1}
 {
-  \node (pa\i) [below=0.5em of a\i, predicate, pin={[function result, pin position=\a] \b}] {$\param{p}(a_{\i})?$};
-  \draw (a\i) -- (pa\i);
+  \path 
+    node (p\i) [predicate evaluation, above=\d of a\i] {$\param{p}(a_{\i})? \, \p$}
+    (a\i) [predicate evaluation edge] -- (p\i);
 }
-    
+
 \foreach \i in {2, i+1, n} {
-  \draw (pa\i) [arrow, smooth] to (b\i);
+  \draw (a\i) [smooth arrow] to (b\i);
 }
 
 \input{_footer.tex}

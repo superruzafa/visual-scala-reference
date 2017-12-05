@@ -1,40 +1,37 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-  \node (1) {$a_1$}; &
-  \node (2) {$a_2$}; &
-  \node (3) {$a_3$}; &
-  \ellipsis          &
-  \node (i) {$a_i$}; &
-  \node (i) {$a_{i+1}$}; &
-  \ellipsis          &
-  \node (n) {$a_n$}; \\
+\matrix (A) [collection] {
+  \node (a1) {$a_1$}; &
+  \node (a2) {$a_2$}; &
+  \helem{between}      &
+  \node (ai) {$a_i$}; &
+  \node (ai+1) {$a_{i+1}$}; &
+  \helem{between}      &
+  \node (an) {$a_n$}; \\
 };
 
-\matrix (A1) [collection, right=1cm of A] {
-  \node (b2) {$a_2$}; &
-  \node (bi) {$a_{i+1}$}; &
-  \node (bn) {$a_{n+1}$}; \\
+\matrix (T) [collection, right=\cellwidth of A] {
+  \node (t2) {$a_2$}; &
+  \node (ti+1) {$a_{i+1}$}; &
+  \node (tn+1) {$a_{n+1}$}; \\
 };
 
-\bottomparam{A1.south}{\param{that}}
+\rightparam{T.east}{\param{that}}
 
-\coordinate (b2a) at ([yshift=5mm] b2.north);
-\coordinate (bia) at ([yshift=10mm] bi.north);
-\draw [white border, -{Rays[red, line join=round]}] (b2.north) -- (b2a) -- (a2 |- b2a) -- (a2.north);
-\draw [white border, -{Rays[red, line join=round]}] (bi.north) -- (bia) -- (ai |- bia) -- (ai.north);
-
-\matrix (B) [collection, name prefix=b, below of=A, node distance=3cm] {
-  \node (1) {$a_1$}; &
-  \node (3) {$a_3$}; &
-  \ellipsis          &
-  \node (i) {$a_i$}; &
-  \ellipsis          &
-  \node (n) {$a_n$}; \\
+\matrix (B) [collection, below=2\cellheight of A] {
+  \node (b1) {$a_1$}; &
+  \helem{between}      &
+  \node (bi) {$a_i$}; &
+  \helem{between}      &
+  \node (bn) {$a_n$}; \\
 };
 
-\bracetobrace{A.south west}{A.south east}{B.north west}{B.north east}
+\draw (a2.north) [name path=p1] -- ++(0, .5) -| (t2);
+\draw (ai+1.north) [name path=p2] -- ++(0, 1) -| (ti+1);
+\path [name intersections={of=p1 and p2, by={a}}] (a) pic {vertical bridge};
 
-
+\foreach \i in {1, i, n} {
+  \draw (a\i) [smooth arrow] to (b\i);
+}
 
 \input{_footer.tex}

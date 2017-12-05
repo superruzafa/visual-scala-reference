@@ -1,55 +1,56 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-  \node (1)   {$a_1$}; &
-  \node (2)   {$a_2$}; &
-  \ellipsis            &
-  \node (2)   {$a_n$}; &
-  \ellipsis            &
-  \node (m)   {$a_m$}; \\
+\matrix (A) [collection] {
+  \node (1) {$a_1$}; &
+  \node (2) {$a_2$}; &
+  \helem{between} &
+  \node (2) {$a_n$}; &
+  \helem{between} &
+  \node (m) {$a_m$}; \\
 };
 
-\node (R) [big arrow, yshift=-5mm, rotate=-90, anchor=west] at (A.south) {};
+\node [big arrow, below=\cellheight - .5\bigarrowwidth of A, anchor=west, rotate=-90];
 
-\matrix (C1) [collection, below=10mm of R.east] {
+\matrix (C1) [collection, below=2\cellheight of A] {
   \node (c11) {$a_1$}; &
-  \node       {$a_2$}; &
-  \ellipsis            &
-  \node       {$a_n$}; \\
+  \node {$a_2$}; &
+  \helem{between} &
+  \node {$a_n$}; \\
 };
 
-\matrix (C2) [collection, below=10mm of C1] {
-  \node (c21) {$a_1$};       &
-  \node       {$a_2$};       &
-  \ellipsis                  &
-  \node       {$a_{n + 1}$}; \\
+\matrix (C2) [collection, below=\cellheight of C1] {
+  \node (c21) {$a_1$}; &
+  \node {$a_2$}; &
+  \helem{between} &
+  \node {$a_{n + 1}$}; \\
 };
 
-\matrix (C3) [collection, below=15mm of C2] {
+\matrix (C3) [collection, below=1.5\cellheight of C2] {
   \node (c31) {$a_1$}; &
-  \node       {$a_2$}; &
-  \ellipsis            &
-  \node       {$a_m$}; \\
+  \node {$a_2$}; &
+  \helem{between} &
+  \node {$a_m$}; \\
 };
 
-\matrix (C4) [collection, below=10mm of C3] {
+\matrix (C4) [collection, below=1.5\cellheight of C3] {
   \node (c41) {$a_{m-n+1}$}; &
-  \node       {$a_{m-n+2}$}; &
-  \ellipsis                  &
-  \node       {$a_m$};       \\
+  \node {$a_{m-n+2}$}; &
+  \helem{between} &
+  \node {$a_m$}; \\
 };
 
-\topmeasure{\param{n}}{C1.north west}{C1.north east}
-\topmeasure{\param{n}}{C2.north west}{C2.north east}
-\topmeasure{\param{n}}{C3.north west}{C3.north east}
-\topmeasure{\param{n}}{C4.north west}{C4.north east}
+\foreach \i in {1, 2, 3, 4} {
+  \measure{\param{n}}{C\i.north west}{C\i.north east}
+}
 
 \begin{scope}
-  \tikzstyle{every path}=[arrow, iteration]
-  \draw ([xshift=-1cm] C1.west) -- (C1.west);
-  \draw (C1.west) to (C2.west);
-  \draw (C2.west) [middotted] to (C3.west);
-  \draw (C3.west) [middotted] to (C4.west);
+  \tikzstyle{every path}=[bend right=45]
+  \draw ($ (C1.west) - (1, 0) $) [iteration, with next label] -- (C1.west);
+  \draw (C1.west) [iteration, with reverse next label] to (C2.west);
+  \draw (C2.west) [iteration, middle dots] to (C3.west);
+  \path (C2.west) [with reverse next label] to (C3.west);
+  \draw (C3.west) [iteration, middle dots] to (C4.west);
+  \path (C3.west) [with reverse next label] to (C4.west);
 \end{scope}
 
 \input{_footer.tex}

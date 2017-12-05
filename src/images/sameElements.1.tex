@@ -2,37 +2,24 @@
 
 \matrix (A) [collection] {
   \node (a1)   {$a_1$};     &
-  \ellipsis                 &
+  \helem{between}                 &
   \node (ai)   {$a_i$};     &
   \node (ai+1) {$a_{i+1}$}; &
-  \ellipsis                 &
+  \helem{between}                 &
   \node (an) {$a_n$};       \\
 };
 
-\matrix (B) [collection, below=2cm of A] {
-  \node (b1)   {$a_1$};     &
-  \ellipsis;                &
-  \node (bi)   {$a_i$};     &
-  \node (bi+1) {$a_{i+2}$}; &
-  \ellipsis                 &
-  \node (bn) {$a_n$};       \\
+\matrix (T) [collection, above=\cellwidth of A] {
+  \node (t1)   {$a_1$};     &
+  \helem{between};                &
+  \node (ti)   {$a_i$};     &
+  \node (ti+1) {$b_{i+1}$}; &
+  \helem{between}                 &
+  \node (tn) {$a_1$};       \\
 };
 
-\leftparam{B.west}{\param{that}};
-
-\draw (a1.south east) [draw=none] -- node {\trueseq} (bi.north west);
-
-\begin{scope}
-  \tikzstyle{every path}=[Latex-Latex]
-  \tikzstyle{every node}=[arrow label]
-  \foreach \i/\b in {1/\true, i/\true, i+1/\false} {
-    \draw (a\i) -- node (t\i) {=? \b} (b\i);
-  }
-\end{scope}
-
-\node (B) [right=4cm of ti+1] {\false};
-\draw [arrow] (ti+1) -- (B);
-
-\draw (t1.north west) [rounded corners=0.5em] rectangle (ti+1.south east);
+\topparam{T.north}{\param{that}}
+\node [big arrow, right=\cellwidth of $ (A.east)!.5!(T.east) $];
+\node [right=2\cellwidth of $ (A.east)!.5!(T.east) $] {$\false$};
 
 \input{_footer.tex}

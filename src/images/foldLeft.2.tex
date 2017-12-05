@@ -1,9 +1,8 @@
 \input{_header.tex}
 
-\node (E) [empty] {};
-\node (z) [left=1cm of E] {\param{z}};
-\draw (z) [draw=none] -- coordinate (x) (E);
-\node (B) [below=3cm of x] {\param{z}};
-\draw (z) [smooth, arrow] to (B);
+\node (E) [empty collection];
+\node (z) [left=\cellwidth of E] {\param{z}};
+\node (B) [below left=2\cellheight and .5\cellwidth of E.south west] {\param{z}};
+\draw (z) [smooth arrow] to (B);
 
 \input{_footer.tex}

@@ -1,29 +1,36 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-  \node (1) {$a_1$}; &
-  \node (2) {$a_2$}; &
-  \ellipsis          &
-  \node (i) {$a_i$}; &
-  \ellipsis          &
-  \node (n) {$a_n$}; \\
+\matrix (A) [collection] {
+  \node (a1) {$a_1$}; &
+  \helem{between}          &
+  \node (ai-1) {$a_{i-1}$}; &
+  \node (ai) {$a_i$}; &
+  \node (ai+1) {$a_{i+1}$}; &
+  \helem{between}          &
+  \node (an) {$a_n$}; \\
 };
 
-\node (E) [right=1cm of A] {\param{elem}};
+\matrix (B) [collection, below=2\cellheight of A] {
+  \node (b1) {$a_1$}; &
+  \helem{between}          &
+  \node (bi-1) {$a_{i-1}$}; &
+  \node (bi) {\param{elem}}; &
+  \node (bi+1) {$a_{i+1}$}; &
+  \helem{between}          &
+  \node (bn) {$a_n$}; \\
+};
 
+\node (E) [right=1 of A] {\param{elem}};
 \toppointer{ai.north}{\param{index}}
 
-\matrix (B) [collection, name prefix=b, below of=A, node distance=3cm] {
-  \node (1) {$a_1$}; &
-  \node (2) {$a_2$}; &
-  \ellipsis          &
-  \node (i) {\param{elem}}; &
-  \ellipsis          &
-  \node (n) {$a_n$}; \\
-};
+\bottombrace[a]{a1.south west}{ai-1.south east}
+\topbrace[b]{b1.north west}{bi-1.north east}
+\draw (a) [arrow] -- (b);
 
-\bracetobrace{a1.south west}{ai.south west}{b1.north west}{bi.north west};
-\bracetobrace{ai.south east}{an.south east}{bi.north east}{bn.north east};
-\draw (E.south) [arrow, white border, smooth] to (bi.north);
+\bottombrace[a]{ai+1.south west}{an.south east}
+\topbrace[b]{bi+1.north west}{bn.north east}
+\draw (a) [arrow] -- (b);
+
+\draw (E.south) [smooth arrow, erase] to (bi.north);
 
 \input{_footer.tex}

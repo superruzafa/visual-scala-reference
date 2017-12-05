@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32.032pt" height="125.717pt" viewBox="0 0 32.032 125.717" version="1.1">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="52.621pt" height="163.314pt" viewBox="0 0 52.621 163.314" version="1.1">
 <defs>
 <g>
 <symbol overflow="visible" id="glyph0-0">
@@ -19,27 +19,22 @@
 </symbol>
 </g>
 <clipPath id="clip1">
-  <path d="M 0 94 L 32 94 L 32 125.71875 L 0 125.71875 Z M 0 94 "/>
-</clipPath>
-<clipPath id="clip2">
-  <path d="M 0 93 L 32.03125 93 L 32.03125 125.71875 L 0 125.71875 Z M 0 93 "/>
+  <path d="M 0 0 L 52.621094 0 L 52.621094 163.3125 L 0 163.3125 Z M 0 0 "/>
 </clipPath>
 </defs>
 <g id="surface1">
-<path style="fill:none;stroke-width:0.56693;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(50%,50%,50%);stroke-opacity:1;stroke-dasharray:2.98883,2.98883;stroke-miterlimit:10;" d="M -3.902719 -18.423812 L 3.901969 -18.423812 L 3.901969 18.423844 L -3.902719 18.423844 Z M -3.902719 -18.423812 " transform="matrix(1,0,0,-1,16.016,18.709)"/>
 <g clip-path="url(#clip1)" clip-rule="nonzero">
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 0.425781 125.292969 L 31.605469 125.292969 L 31.605469 94.113281 L 0.425781 94.113281 Z M 0.425781 125.292969 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 0 163.316406 L 0 0 L 52.621094 0 L 52.621094 163.316406 Z M 0 163.316406 "/>
 </g>
-<g clip-path="url(#clip2)" clip-rule="nonzero">
-<path style="fill:none;stroke-width:0.85039;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -15.590219 -106.583969 L 15.589469 -106.583969 L 15.589469 -75.404281 L -15.590219 -75.404281 Z M -15.590219 -106.583969 " transform="matrix(1,0,0,-1,16.016,18.709)"/>
-</g>
+<path style="fill:none;stroke-width:0.56693;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(50%,50%,50%);stroke-opacity:1;stroke-dasharray:2.98883,2.98883;stroke-miterlimit:10;" d="M -3.900844 -18.426688 L 3.899937 -18.426688 L 3.899937 18.424875 L -3.900844 18.424875 Z M -3.900844 -18.426688 " transform="matrix(1,0,0,-1,26.311,29.003)"/>
+<path style="fill:none;stroke-width:0.85039;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -15.59225 -123.59075 L 15.591344 -123.59075 L 15.591344 -92.411063 L -15.59225 -92.411063 Z M -15.59225 -123.59075 " transform="matrix(1,0,0,-1,26.311,29.003)"/>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-  <use xlink:href="#glyph0-1" x="5.107" y="113.056"/>
-  <use xlink:href="#glyph0-2" x="10.56155" y="113.056"/>
-  <use xlink:href="#glyph0-3" x="16.0161" y="113.056"/>
-  <use xlink:href="#glyph0-4" x="21.47065" y="113.056"/>
+  <use xlink:href="#glyph0-1" x="15.401" y="140.358"/>
+  <use xlink:href="#glyph0-2" x="20.85555" y="140.358"/>
+  <use xlink:href="#glyph0-3" x="26.3101" y="140.358"/>
+  <use xlink:href="#glyph0-4" x="31.76465" y="140.358"/>
 </g>
-<path style="fill:none;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -0.000375 -18.708969 L -0.000375 -71.814437 " transform="matrix(1,0,0,-1,16.016,18.709)"/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 16.015625 94.113281 C 16.214844 93.050781 16.8125 91.320312 17.511719 90.125 L 14.523438 90.125 C 15.21875 91.320312 15.816406 93.050781 16.015625 94.113281 "/>
+<path style="fill:none;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 0.0015 -18.707938 L 0.0015 -88.825125 " transform="matrix(1,0,0,-1,26.311,29.003)"/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 26.3125 121.414062 C 26.511719 120.351562 27.109375 118.625 27.804688 117.429688 L 24.816406 117.429688 C 25.515625 118.625 26.113281 120.351562 26.3125 121.414062 "/>
 </g>
 </svg>

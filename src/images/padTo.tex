@@ -3,28 +3,31 @@
 \matrix (A) [collection] {
   \node (a1) {$a_1$}; &
   \node (a2) {$a_2$}; &
-  \ellipsis            &
+  \helem{between}            &
   \node (an) {$a_n$}; \\
 };
 
-\matrix (B) [collection, below=3cm of A, matrix anchor=b1.west] at (a1.west) {
+\node (E) [right=\cellwidth of A] {\param{elem}};
+
+\matrix (B) [collection, below=2\cellheight of A, matrix anchor=north west] at (A.south west) {
   \node (b1)   {$a_1$};         &
   \node (b2)   {$a_2$};         &
-  \ellipsis                     &
+  \helem{between}                     &
   \node (bn)   {$a_n$};         &
   \node (bn+1) {\param{elem}}; &
   \node (bn+2) {\param{elem}}; &
-  \ellipsis                     &
+  \helem{between}                     &
   \node (blen) {\param{elem}}; \\
 };
 
-\node (E) [above=2cm of bn+2.north east] {\param{elem}};
+\bottombrace[a]{a1.south west}{an.south east}
+\topbrace[b]{b1.north west}{bn.north east}
+\draw (a) [arrow] -- (b);
 
 \foreach \i in {n+1,n+2,len} {
-  \draw (E) [arrow, smooth] to (b\i);
+  \draw (E) [smooth arrow] to (b\i);
 }
 
-\bracetobrace{a1.south west}{an.south east}{b1.north west}{bn.north east}
-\bottommeasure{\param{len}}{b1.south west}{blen.south east}
+\measure[-4ex]{\param{len}}{B.south west}{B.south east}
 
 \input{_footer.tex}

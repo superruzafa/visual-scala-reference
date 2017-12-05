@@ -3,46 +3,47 @@
 \matrix (A) [collection] {
   \node (a1)   {$a_1$};     &
   \node (a2)   {$a_2$};     &
-  \ellipsis                 &
+  \helem{between}                &
   \node (an-1) {$a_{n-1}$}; &
   \node (an)   {$a_n$};     \\
 };
 
-\node (R) [big arrow, yshift=-5mm, rotate=-90, anchor=west] at (A.south) {};
+\node [big arrow, below=\cellheight - .5\bigarrowwidth of A, anchor=west, rotate=-90];
 
-\matrix (I1) [collection, below=5mm of R.east] {
-  \node (i11) {$a_1$};     &
-  \node       {$a_2$};     &
-  \ellipsis                &
-  \node       {$a_{n-1}$}; &
-  \node (i1n) {$a_n$};     \\
+\matrix (I1) [collection, below=2\cellheight of A] {
+  \node (i11)   {$a_1$};     &
+  \node (i12)   {$a_2$};     &
+  \helem{between}                &
+  \node (i1n-1) {$a_{n-1}$}; &
+  \node (i1n)   {$a_n$};     \\
 };
 
-\matrix (I2) [collection, below=5mm of I1, matrix anchor=i2n.north west] at (i1n.south west) {
-  \node (i22) {$a_2$};     &
-  \ellipsis                &
-  \node       {$a_{n-1}$}; &
-  \node (i2n) {$a_n$};     \\
+\matrix (I2) [collection, below=\cellheight of I1, matrix anchor=i2n.north east] at (i1n.south east) {
+  \node (i22)   {$a_2$};     &
+  \helem{between}                &
+  \node (i2n-1) {$a_{n-1}$}; &
+  \node (i2n)   {$a_n$};     \\
 };
 
-\matrix (IN-1) [collection, below=10mm of I2, matrix anchor=in-1n.north west] at (i2n.south west) {
-  \node (in-1n-1) {$a_{n-1}$}; &
-  \node (in-1n)   {$a_n$}; \\
+\matrix (I3) [collection, below=1.5\cellheight of I2, matrix anchor=i3n.north east] at (i2n.south east) {
+  \node (i3n-1) {$a_{n-1}$}; &
+  \node (i3n)   {$a_n$};     \\
 };
 
-\matrix (IN) [collection, below=5mm of IN-1, matrix anchor=inn.north west] at (in-1n.south west) {
-  \node (inn) {$a_n$}; \\
+\matrix (I4) [collection, below=\cellheight of I3, matrix anchor=i4n.north east] at (i3n.south east) {
+  \node (i4n)   {$a_n$};     \\
 };
 
-\node (E) [below=5mm of IN, empty] {};
+\node (I5) [empty collection, below=\cellheight of I4];
 
 \begin{scope}
-  \tikzstyle{every path}=[arrow, iteration]
-  \draw ([xshift=-1cm] i11.west) -- (i11.west);
-  \draw (i11.west) .. controls +(-15mm,-5mm) and +(-15mm,0) .. (i22.west);
-  \draw (i22.west) [middotted] .. controls +(-12.5mm,-5mm) and +(-15mm,0) .. (in-1n-1.west);
-  \draw (in-1n-1.west) .. controls +(-10mm,-5mm) and +(-15mm,0) .. (inn.west);
-  \draw (inn.west) to (E.west);
+  \tikzstyle{every path}=[bend right=60]
+  \draw ($ (I1.west) - (1, 0) $) [iteration, with next label] -- (I1.west);
+  \draw (I1.west) [iteration, with next label] to (I2.west);
+  \draw (I2.west) [iteration, middle dots] to (I3.west);
+  \path (I2.west) [with next label] to (I3.west);
+  \draw (I3.west) [iteration, with next label] to (I4.west);
+  \draw (I4.west) [iteration, with next label] to (I5.west);
 \end{scope}
 
 \input{_footer.tex}

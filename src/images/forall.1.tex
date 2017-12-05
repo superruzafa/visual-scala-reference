@@ -1,31 +1,34 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-  \node (1)   {$a_1$};     &
-  \node (2)   {$a_2$};     &
-  \ellipsis                &
-  \node (i-1) {$a_{i-1}$}; &
-  \node (i)   {$a_i$};     &
-  \ellipsis                &
-  \node (n)   {$a_n$};     \\
+\matrix (A) [collection] {
+  \node (a1) {$a_1$};     &
+  \node (a2) {$a_2$};     &
+  \helem{between} &
+  \node (ai-1) {$a_{i-1}$};     &
+  \node (ai) {$a_i$};     &
+  \helem[.5\elementswidth]{after}                 \\
 };
 
-\node (B) [below=3cm of ai] {\false};
-
-\foreach \i/\d/\p in {
-  1/\true/below,
-  2/\true/below,
-  i-1/\true/below,
-  i/\false/310}
+\foreach \i/\p/\d in {
+  1/\true/.25,
+  2/\true/1,
+  i-1/\true/.25,
+  i/\false/1}
 {
-  \node (pa\i) [predicate, below=0.5em of a\i, pin={[function result, pin position=\p] \d}] {$\param{p}(a_{\i})?$};
-  \draw (a\i) -- (pa\i);
+  \path
+    node (p\i) [predicate evaluation, above=\d of a\i] {$\param{p}(a_{\i})? \, \p$}
+    (a\i) [predicate evaluation edge] -- (p\i);
 }
 
-\draw ([xshift=-1cm] pa1.south) [iteration] to (pa1.south);
-\draw (pa1.south) [iteration] to (pa2.south);
-\draw (pa2.south) [iteration, middotted] to node [below, sloped, pos=.5] {\trueseq} (pai-1.south);
-\draw (pai-1.south) [iteration] to (pai.south);
-\draw (pai.south) [arrow] -- (B);
+\begin{scope}
+  \tikzstyle{every path}=[iteration, bend left=45]
+  \draw ($ (p1.north) + (-1, 0) $) to (p1.north);
+  \draw (p1.north) to (p2.north);
+  \draw (p2.north) [middle dots] to (pi-1.north);
+  \draw (pi-1.north) to (pi.north);
+\end{scope}
+
+\node (B) [below right=2\cellheight and \cellwidth of ai] {\false};
+\draw (pi.north) [arrow] .. controls +(2, 1) and +(0, 1) .. (B.north);
 
 \input{_footer.tex}

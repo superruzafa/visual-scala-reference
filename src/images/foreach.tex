@@ -1,17 +1,18 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-  \node (1) {$a_1$}; &
-  \node (2) {$a_2$}; &
-  \ellipsis          &
-  \node (i) {$a_i$}; &
-  \ellipsis          &
-  \node (n) {$a_n$}; \\
+\matrix (A) [collection] {
+  \node (a1) {$a_1$}; &
+  \node (a2) {$a_2$}; &
+  \helem{between}          &
+  \node (ai) {$a_i$}; &
+  \helem{between}          &
+  \node (an) {$a_n$}; \\
 };
 
 \foreach \i in {1,2,i,n} {
-  \node (fa\i) [below=1cm of a\i] {$\param{f}(a_\i)$};
-  \draw (a\i) [arrow] -- (fa\i);
+  \path
+    node (fa\i) [below=2 of a\i] {$\param{f}(a_\i)$}
+    (a\i) [arrow] -- (fa\i);
 }
 
 \input{_footer.tex}

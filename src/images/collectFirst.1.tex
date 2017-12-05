@@ -1,31 +1,34 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-  \node (1)   {$a_1$};     &
-  \node (2)   {$a_2$};     &
-  \ellipsis                &
-  \node (i-1) {$a_{i-1}$}; &
-  \node (i)   {$a_i$};     &
-  \ellipsis                &
-  \node (n)   {$a_n$};     \\
+\matrix (A) [collection] {
+  \node (a1) {$a_1$}; &
+  \node (a2) {$a_2$}; &
+  \helem{between} &
+  \node (ai-1) {$a_{i-1}$}; &
+  \node (ai) {$a_i$}; &
+  \helem[.5\elementswidth]{after}                 \\
 };
 
-\node (B) [some, below=3 cm of ai.south] {\some{$b_i$}};
-
-\foreach \i/\d/\s/\p in {
-  1/\false/0.5em/below,
-  2/\false/2em/below,
-  i-1/\false/0.5em/below,
-  i/\true/2em/310}
+\foreach \i/\p/\d in {
+  1/\false/.25,
+  2/\false/1,
+  i-1/\false/.25,
+  i/\true/1}
 {
-  \node (pfa\i) [predicate, below=\s of a\i, pin={[function result, pin position=\p] \d}] {$\exists \, \param{pf}(a_{\i})?$};
-  \draw (a\i) -- (pfa\i);
+  \path
+    node (pf\i) [predicate evaluation, above=\d of a\i] {$\exists \, \param{pf}(a_{\i})? \, \p$}
+    (a\i) [predicate evaluation edge] -- (pf\i);
 }
 
-\draw ([xshift=-1cm] pfa1.south) [iteration] to (pfa1.south);
-\draw (pfa1.south) [iteration] to (pfa2.south);
-\draw (pfa2.south) [iteration, middotted] to node [below, sloped, pos=.5] {\falseseq} (pfai-1.south);
-\draw (pfai-1.south) [iteration] to (pfai.south);
-\draw (pfai.south) [arrow] -- node [arrow label] {$\param{pf}(a_i)$} (B);
+\begin{scope}
+  \tikzstyle{every path}=[iteration, bend left=45]
+  \draw ($ (pf1.north) + (-1, 0) $) to (pf1.north);
+  \draw (pf1.north) [bend left=60] to (pf2.north);
+  \draw (pf2.north) [middle dots, bend left=60] to (pfi-1.north);
+  \draw (pfi-1.north) to (pfi.north);
+\end{scope}
+
+\node (B) [some, below=2\cellheight of ai] {\some{$b_i$}};
+\draw (ai) [arrow] -- node [arrow label] {$\param{pf}(a_i)$} (B);
 
 \input{_footer.tex}

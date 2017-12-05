@@ -1416,12 +1416,12 @@
       <h2 class="function-name">splitAt</h2>
               <p class="function-description i18n" lang="en">Splits this collection into two at a given position.</p>
               <p class="function-description i18n" lang="es">Parte esta colección en dos en una posición dada.</p>
-            <pre class="function-signature"><code class="scala">def splitAt(i: Int): (<em>Collection</em>[A], <em>Collection</em>[A])</code></pre>
+            <pre class="function-signature"><code class="scala">def splitAt(index: Int): (<em>Collection</em>[A], <em>Collection</em>[A])</code></pre>
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/splitAt.svg" alt="" />
-                                          <figcaption class="function-figure-caption i18n" lang="en"><code>splitAt</code> selects the elements at or before <var>i</var> on the first component of a tuple and the rest of elements on the second.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>splitAt</code> selecciona los elementos en o antes de <var>i</var> en la primera componente de una tupla y el resto de elementos en la segunda.</figcaption>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>splitAt</code> selects the elements at or before <var>index</var> on the first component of a tuple and the rest of elements on the second.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>splitAt</code> selecciona los elementos en o antes de <var>index</var> en la primera componente de una tupla y el resto de elementos en la segunda.</figcaption>
                                     </figure>
               </section>
     </article>
@@ -1577,7 +1577,7 @@
       <h2 class="function-name">unzip3</h2>
               <p class="function-description i18n" lang="en">Converts this collection of triples into three collections of the first, second, and third element of each triple.</p>
               <p class="function-description i18n" lang="es">Convierte esta colección de ternas en tres colecciones del primer, segundo y tercer elemento de cada terna.</p>
-            <pre class="function-signature"><code class="scala">def unzip3[A1, A2, A3](implicit asTriple: (A) ⇒ (A1, A2, A3)): (<em>Collection</em>[A1], <em>Collection</em>[A2], <em>Collection</em>[A3])</code></pre>
+            <pre class="function-signature"><code class="scala">def unzip3[A, B, C](implicit asTriple: (A) ⇒ (A, B, C)): (<em>Collection</em>[A], <em>Collection</em>[B], <em>Collection</em>[C])</code></pre>
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/unzip3.svg" alt="" />
@@ -1616,12 +1616,12 @@
       <h2 class="function-name">withDefault</h2>
               <p class="function-description i18n" lang="en">The same map with a given default function.</p>
               <p class="function-description i18n" lang="es">El mismo mapa con una función predeterminada dado.</p>
-            <pre class="function-signature"><code class="scala">def withDefault[V1 >: V](f<sub>def</sub>: (K) ⇒ V1): Map[K, V1]</code></pre>
+            <pre class="function-signature"><code class="scala">def withDefault[V1 >: V](f: (K) ⇒ V1): Map[K, V1]</code></pre>
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/withDefault.svg" alt="" />
-                                          <figcaption class="function-figure-caption i18n" lang="en"><code>withDefault</code> uses <var>f<sub>def</sub></var> to generate a value when the map does not contain the requested key.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>withDefault</code> utiliza <var>f<sub>def</sub></var> para generar un valor cuando el mapa no contiene la clave solicitada.</figcaption>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>withDefault</code> uses <var>f</var> to generate a value when the map does not contain the requested key.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>withDefault</code> utiliza <var>f</var> para generar un valor cuando el mapa no contiene la clave solicitada.</figcaption>
                                     </figure>
               </section>
     </article>
@@ -1629,12 +1629,12 @@
       <h2 class="function-name">withDefaultValue</h2>
               <p class="function-description i18n" lang="en">The same map with a given default value.</p>
               <p class="function-description i18n" lang="es">El mismo mapa con un valor predeterminado dado.</p>
-            <pre class="function-signature"><code class="scala">def withDefaultValue[V1 >: V](v<sub>def</sub>: V1): Map[K, V1]</code></pre>
+            <pre class="function-signature"><code class="scala">def withDefaultValue[V1 >: V](v: V1): Map[K, V1]</code></pre>
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/withDefaultValue.svg" alt="" />
-                                          <figcaption class="function-figure-caption i18n" lang="en"><code>withDefaultValue</code> uses <var>v<sub>def</sub></var> as value when the map does not contain the requested key.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>withDefaultValue</code> utiliza <var>v<sub>def</sub></var> como valor cuando el mapa no contiene la clave solicitada.</figcaption>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>withDefaultValue</code> uses <var>v</var> as value when the map does not contain the requested key.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>withDefaultValue</code> utiliza <var>v</var> como valor cuando el mapa no contiene la clave solicitada.</figcaption>
                                     </figure>
               </section>
     </article>

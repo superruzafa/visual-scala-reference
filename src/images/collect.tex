@@ -1,38 +1,40 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-    \node (1)   {$a_1$};     &
-    \node (2)   {$a_2$};     &
-    \ellipsis                &
-    \node (i)   {$a_i$};     &
-    \node (i+1) {$a_{i+1}$}; &
-    \ellipsis                &
-    \node (n-1) {$a_{n-1}$}; &
-    \node (n)   {$a_n$};     \\
+\matrix (A) [collection] {
+  \node (a1) {$a_1$}; &
+  \node (a2) {$a_2$}; &
+  \helem{between} &
+  \node (ai) {$a_i$}; &
+  \node (ai+1) {$a_{i+1}$}; &
+  \helem{between} &
+  \node (an-1) {$a_{n-1}$}; &
+  \node (an) {$a_n$}; \\
 };
 
-\matrix (B) [collection, below=3cm of A] {
-    \node (b2)   {$b_1$}; &
-    \ellipsis             &
-    \node (bi)   {$b_j$}; &
-    \ellipsis             &
-    \node (bn-1) {$b_m$}; \\
+\matrix (B) [collection, below=2\cellheight of A] {
+  \node (b2) {$b_1$}; &
+  \helem{between} &
+  \node (bi) {$b_j$}; &
+  \helem{between} &
+  \node (bn-1) {$b_m$}; \\
 };
 
-\foreach \i/\d/\s/\a in {
-  1/\false/0.5em/below,
-  2/\true/2em/265,
-  i/\true/0.5em/265,
-  i+1/\false/2em/below,
-  n-1/\true/0.5em/235,
-  n/\false/2em/275}
-{
-  \node (pfa\i) [predicate, below=\s of a\i, pin={[function result, pin position=\a] \d}] {$\exists \, \param{pf}(a_{\i})$?};
-  \draw (a\i) -- (pfa\i);
+\begin{scope}
+  \tikzstyle{every node}=[predicate evaluation]
+  \node (pf1)   [above=.25 of a1]   {$\exists \, \param{pf}(a_1)?     \, \false$};
+  \node (pf2)   [above=1 of a2]     {$\exists \, \param{pf}(a_2)?     \, \true$};
+  \node (pfi)   [above=.25 of ai]   {$\exists \, \param{pf}(a_i)?     \, \true$};
+  \node (pfi+1) [above=1 of ai+1]   {$\exists \, \param{pf}(a_{i+1})? \, \false$};
+  \node (pfn-1) [above=.25 of an-1] {$\exists \, \param{pf}(a_{n-1})? \, \true$};
+  \node (pfn)   [above=1 of an]     {$\exists \, \param{pf}(a_n)?     \, \false$};
+\end{scope}
+
+\foreach \i in {1, 2, i, i+1, n-1, n} {
+  \draw (a\i.north) [predicate evaluation edge] -- (pf\i);
 }
 
-\foreach \i in {2,i,n-1} {
-  \draw (pfa\i) [arrow, smooth] to node [arrow label, near end] {$\param{pf}(a_{\i})$} (b\i);
+\foreach \i in {2, i, n-1} {
+  \draw (a\i) [smooth arrow] to node [arrow label] {$\param{pf}(a_{\i})$} (b\i);
 }
 
 \input{_footer.tex}

@@ -2,29 +2,40 @@
 
 \matrix (A) [collection] {
   \node (a2) {$a_2$}; &
-  \ellipsis           &
+  \helem{between}           &
   \node (an) {$a_n$}; &
-  \ellipsis           &
+  \helem{between}           &
   \node (a1) {$a_1$}; &
-  \ellipsis           &
+  \helem{between}           &
   \node (ai) {$a_i$}; \\
 };
 
-\matrix (B) [collection, below=3cm of A] {
+\matrix (B) [collection, below=2\cellheight of A] {
   \node (b1) {$a_1$}; &
   \node (b2) {$a_2$}; &
-  \ellipsis           &
+  \helem{between}           &
   \node (bi) {$a_i$}; &
-  \ellipsis           &
+  \helem{between}           &
   \node (bn) {$a_n$}; \\
 };
 
-\foreach \i in {1,2,i,n} {
-  \node (fa\i) [predicate, below=0.5em of a\i, pin={[function result, pin position=335]$w_{\i}$}] {$\param{f}(a_{\i})$};
-  \draw (a\i) -- (fa\i);
-  \draw (fa\i) [arrow, smooth, white border] to (b\i);
+\foreach \i in {1, 2, i, n} {
+  \path
+    node (f\i) [predicate evaluation, above=.5 of a\i] {$\param{f}(a_{\i})$}
+    (a\i) [predicate evaluation edge] -- (f\i)
+    node (w\i) [predicate evaluation, above=.5 of f\i] {$w_{\i}$}
+    (f\i) [predicate evaluation edge] -- (w\i);
+    
+  \draw (a\i) [erase, smooth arrow] to (b\i);
 }
 
-\node [above right=5mm and 5mm of B] {$w_j \leq w_k \, \forall j < k$};
+
+% \foreach \i in {1,2,i,n} {
+%   \node (fa\i) [predicate, below=0.5em of a\i, pin={[function result, pin position=335]$w_{\i}$}] {$\param{f}(a_{\i})$};
+%   \draw (a\i) -- (fa\i);
+%   \draw (fa\i) [arrow, smooth, white border] to (b\i);
+% }
+% 
+\node [above=2 of A, scale=0.7] {$w_j \leq w_k \, \forall j < k$};
 
 \input{_footer.tex}

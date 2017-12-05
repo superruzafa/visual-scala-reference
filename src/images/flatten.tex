@@ -1,60 +1,57 @@
 \input{_header.tex}
 
-\matrix (B) [collection] {
-  \node (b11) {$b_{1_1}$}; &
-  \node (b12) {$b_{1_2}$}; &
-  \node (b13) {$b_{1_3}$}; &
-  \node (b21) {$b_{2_1}$}; &
-  \node (b22) {$b_{2_2}$}; &
-  \ellipsis &
-  \node (bi1) {$b_{i_1}$}; &
-  \ellipsis &
-  \node (bn1) {$b_{n_1}$}; &
-  \ellipsis &
-  \node (bnm) {$b_{n_m}$}; \\
+\newlength{\cellpadding}
+\setlength{\cellpadding}{2mm}
+\newlength{\elementssep}
+\setlength{\elementssep}{\elementswidth}
+
+\begin{scope}
+  \tikzstyle{minicollection}=[collection, nodes={minimum size=.75\cellwidth}]
+  \matrix (A1) [minicollection, nodes={minimum size=11mm}] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node (a3) {$a_3$}; \\
+  };
+  \matrix (A2) [minicollection, nodes={minimum size=11mm}, right=2\cellpadding of A1] {
+    \node (b1) {$b_1$}; &
+    \node (b2) {$b_2$}; \\
+  };
+  \matrix (Ai) [minicollection, nodes={minimum size=11mm}, right=\elementssep + 2\cellpadding of A2] {
+    \node (i1) {$i_1$}; \\
+  };
+  \matrix (An) [minicollection, nodes={minimum size=11mm}, right=\elementssep + 2\cellpadding of Ai] {
+    \node (n1) {$n_1$}; &
+    \helem{between}[1cm] &
+    \node (nm) {$n_m$}; \\
+  };
+\end{scope}
+
+\foreach \i in {A1, A2, Ai, An} {
+  \draw ($ (\i.north west) + (-\cellpadding, \cellpadding) $) [collection element]
+    rectangle ($ (\i.south east) + (\cellpadding, -\cellpadding) $);
+}
+
+\foreach \i in {A2, Ai} {
+  \draw ($ (\i.north east) + (\cellpadding, \cellpadding) $) [elements between] -- +(\elementssep, 0);
+  \draw ($ (\i.south east) + (\cellpadding, -\cellpadding) $) [elements between] -- +(\elementssep, 0);
+}
+
+\matrix (B) [collection, below=2\cellheight of $ (A1.south west)!.5!(An.south east) $] {
+  \node (za1) {$a_1$}; &
+  \node (za2) {$a_2$}; &
+  \node (za3) {$a_3$}; &
+  \node (zb1) {$b_1$}; &
+  \node (zb2) {$b_2$}; &
+  \helem{between} &
+  \node (zi1) {$i_1$}; &
+  \helem{between} &
+  \node (zn1) {$n_1$}; &
+  \helem{between} &
+  \node (znm) {$n_m$}; \\
 };
-\draw [draw=none] (bn1.north west) -- coordinate (bne) (bnm.north east);
 
-\begin{scope}
-  \matrix (A1) [collection, nodes={minimum size=11mm}, above=2cm of b12] {
-    \node (a11) {$b_{1_1}$}; &
-    \node (a12) {$b_{1_2}$}; &
-    \node (a13) {$b_{1_3}$}; \\
-  };
-  \matrix (A2) [collection, nodes={minimum size=11mm}, above=2cm of b21.north east] {
-    \node (a21) {$b_{2_1}$}; &
-    \node (a22) {$b_{2_2}$}; \\
-  };
-  \matrix (Ai) [collection, nodes={minimum size=11mm}, above=2cm of bi1] {
-    \node (ai1) {$b_{i_1}$}; \\
-  };
-  \matrix (An) [collection, nodes={minimum size=11mm}, above=2cm of bne] {
-    \node (an1) {$b_{n_1}$};  &
-    \ellipsis &
-    \node (anm) {$b_{n_m}$};  \\
-  };
-\end{scope}
-
-\coordinate (p1) at ([shift={(-2mm, 2mm)}] A1.north west);
-\coordinate (p2) at ([shift={(2mm, -2mm)}] A1.south east);
-\coordinate (p3) at ([shift={(2mm, +2mm)}] A2.north east);
-\coordinate (p4) at ([shift={(-2mm, -2mm)}] Ai.south west);
-\coordinate (p5) at ([shift={(2mm, 2mm)}] Ai.north east);
-\coordinate (p6) at ([shift={(-2mm, -2mm)}] An.south west);
-\coordinate (p7) at ([shift={(2mm, 2mm)}] An.north east);
-
-\begin{scope}
-  \tikzstyle{every path}=[cell]
-  \draw (p1) rectangle (p2);
-  \draw (p2) rectangle (p3);
-  \draw (p3) [ellipsis] rectangle node {$\ldots$} (p4);
-  \draw (p4) rectangle (p5);
-  \draw (p5) [ellipsis] rectangle node {$\ldots$} (p6);
-  \draw (p6) rectangle (p7);
-\end{scope}
-
-\foreach \from/\to in {a11/b11, a12/b12, a13/b13, a21/b21, a22/b22, ai1/bi1, an1/bn1, anm/bnm} {
-  \draw ([yshift=0.5em] \from.south) [arrow, smooth, white border] to (\to);
+\foreach \i in {a1, a2, a3, b1, b2, i1, n1, nm} {
+  \draw ($ (\i.south) + (0, 1ex) $) [smooth arrow, erase] to (z\i);
 }
 
 \input{_footer.tex}

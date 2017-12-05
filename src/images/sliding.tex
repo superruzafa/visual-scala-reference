@@ -1,45 +1,60 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1) {$a_1$}; &
-  \ellipsis &
-  \node (ai) {$a_i$}; &
-  \ellipsis &
-  \node (aj) {$a_j$}; &
-  \ellipsis &
-  \node (ak) {$a_k$}; &
-  \ellipsis [25mm]; &
-  \node (am) {$a_m$}; &
-  \ellipsis [10mm];  &
-  \node (an) {$a_n$}; \\
+  \elem{a}{1} &
+  \helem[.5\elementswidth]{between} &
+  \elem{a}{i} &
+  \helem[.75\elementswidth]{between} &
+  \elem{a}{j} &
+  \helem[.5\elementswidth]{between} &
+  \elem{a}{k} &
+  \helem[.75\elementswidth]{between} &
+  \elem{a}{l} &
+  \helem[.3\elementswidth]{between}  &
+  \elem{a}{m} \\
 };
 
-\matrix (A1) [collection, below=20mm of a1, matrix anchor=A1a1.north west] at (a1.south west) {
-  \node (A1a1) {$a_1$};    &
-  \ellipsis &
-  \node (A1as) {$a_i$};    \\
+\measure[-4ex]{\param{size}}{a1.south west}{ai.south east}
+\measure[-4ex]{\param{size}}{aj.south west}{ak.south east}
+\measure[-4ex]{$\leq \param{size}$}{al.south west}{am.south east}
+
+\begin{scope}
+  \tikzstyle{every path}=[bend left=45]
+  \draw (a1.north) [arrow, plus step] to (aj.north);
+  \draw (aj.north) [arrow, middle dots] to (al.north);
+  \path (aj.north) [plus step] to (al.north);
+\end{scope}
+
+\node [big arrow, below=1.5\cellheight - .5\bigarrowwidth of A, anchor=west, rotate=-90];
+
+\matrix (C1) [collection, below=3\cellheight of A] {
+  \node {$a_1$}; &
+  \helem[.5\elementswidth]{between} &
+  \node {$a_i$}; \\
 };
 
-\matrix (A2) [collection, below=20mm of ai, matrix anchor=A2a1.north west] at (aj.south west) {
-  \node (A2a1) {$a_j$};    &
-  \ellipsis &
-  \node (A2as) {$a_k$};    \\
+\matrix (C2) [collection, below=\cellheight of C1] {
+  \node {$a_j$}; &
+  \helem[.5\elementswidth]{between} &
+  \node {$a_k$}; \\
 };
 
-\matrix (A3) [collection, below=20mm of aj, matrix anchor=A3a1.north west] at (am.south west) {
-  \node (A3a1) {$a_m$};    &
-  \ellipsis[10mm] &
-  \node (A3as) {$a_n$};    \\
+\matrix (C3) [collection, below=1.5\cellheight of C2.south west, anchor=north west] {
+  \node {$a_l$}; &
+  \helem[.3\elementswidth]{between} &
+  \node {$a_m$}; \\
 };
 
-\topmeasure{\param{size}}{A1.north west}{A1.north east}
-\topmeasure{\param{size}}{A2.north west}{A2.north east}
-\topmeasure{$\leq$ \param{size}}{A3.north west}{A3.north east}
+\measure{\param{size}}{C1.north west}{C1.north east}
+\measure{\param{size}}{C2.north west}{C2.north east}
+\measure{$\leq \param{size}$}{C3.north west}{C3.north east}
 
-\toppointer{aj.north}{\param{step}}
-\toppointer{am.north}{\param{step}}
-
-\draw [iteration, shorten >=1mm, shorten <=1mm] (A1as) -- (A2a1);
-\draw [iteration, shorten >=1mm, shorten <=1mm, middotted] (A2as) -- (A3a1);
+\begin{scope}
+  \tikzstyle{every path}=[bend right=45]
+  \draw ($ (C1.west) - (1, 0) $) [iteration, with next label] -- (C1.west);
+  \draw (C1.west) [iteration, with reverse next label] to (C2.west);
+  \draw (C2.west) [iteration, middle dots] to (C3.west);
+  \path (C2.west) [with reverse next label] to (C3.west);
+\end{scope}
 
 \input{_footer.tex}

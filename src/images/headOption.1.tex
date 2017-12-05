@@ -1,15 +1,13 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-  \node (1)   {$a_1$};     &
-  \node (2)   {$a_2$};     &
-  \ellipsis                &
-  \node (n)   {$a_n$};     \\
+\matrix (A) [collection] {
+  \node (a1)   {$a_1$};     &
+  \node (a2)   {$a_2$};     &
+  \helem[.5\elementswidth]{after} \\
 };
 
-\node (B) [some, below=2cm of a1] {\some{$a_1$}};
+\node (B) [some, below=2\cellheight of a1] {\some{$a_1$}};
 
-\draw [bottombrace] (a1.south west) -- coordinate (b) (a1.south east);
-\draw [arrow, from brace] (b) -- (B);
+\draw (a1) [arrow] -- (B);
 
 \input{_footer.tex}

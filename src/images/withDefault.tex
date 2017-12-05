@@ -1,37 +1,36 @@
 \input{_header.tex}
 
-\matrix (K) [map keys] {
-    \node (k1) {$k_1$}; \\
-    \node (k2) {$k_2$}; \\
-    \vellipsis          \\
-    \node (kn) {$k_n$}; \\
+\matrix (K) [map] {
+  \node (k1) {$k_1$}; \\
+  \node (k2) {$k_2$}; \\
+  \velem{between} \\
+  \node (kn) {$k_n$}; \\
 };
 
-\node (default) [below=10mm of K] {$\subparam{f}{def}(*)$};
+\node [below=\cellheight of kn.center] {$\param{f}$};
 
-\foreach \i in {1, 2, n} {
-  \node (v\i) [right=1cm of k\i] {$v_{\i}$};
-  \draw (k\i) [map to] -- (v\i);
-}
-
-\matrix (KD) [map keys, right=3cm of K] {
-    \node (kd1) {$k_1$}; \\
-    \node (kd2) {$k_2$}; \\
-    \vellipsis           \\
-    \node (kdn) {$k_n$}; \\
+\matrix (KF) [map, right=3.5\cellwidth, matrix anchor=north west] at (K.north east) {
+  \node (kf1) {$k_1$}; \\
+  \node (kf2) {$k_2$}; \\
+  \velem{between} \\
+  \node (kfn) {$k_n$}; \\
+  \node (kf_) {$k_\_$}; \\
 };
 
-\begin{scope}[on background layer]
-  \node [cell, dash pattern=on 1pt off 2pt, draw opacity=0.5, below=0 of kdn] (kdd) {$*$};
-\end{scope}
+\node [big arrow, left=1.5\cellheight - .5\bigarrowwidth of KF];
 
 \foreach \i in {1, 2, n} {
-  \node (vd\i) [right=1cm of kd\i] {$v_{\i}$};
-  \draw (kd\i) [map to] -- (vd\i);
+  \node (v\i) [right=.5\cellwidth of k\i] {$v_\i$};
+  \draw (k\i) [maps to] -- (v\i);
+  \node (vf\i) [right=.5\cellwidth of kf\i] {$v_\i$};
+  \draw (kf\i) [maps to] -- (vf\i);
 }
-\node (vdd) [right=1cm of kdd] {$\subparam{f}{def}(*)$};
-\draw (kdd) [map to] -- (vdd);
 
-\draw ([xshift=20mm] K.north east) [topbrace] -- ([xshift=20mm] K.north east |- default.south);
+\node (vf_) [right=.5\cellwidth of kf_] {$\param{f}(k_\_)$};
+\draw (kf_) [maps to] -- (vf_);
+
+% \path (vf_) [name path=a] -- +(-10, 0)
+% (K) [name path=b] -- +(0, -5);
+% \path [name intersections={of=a and b, by={x}}] (x) node [anchor=mid] {$\param{f}$};
 
 \input{_footer.tex}

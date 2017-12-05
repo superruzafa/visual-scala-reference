@@ -1,60 +1,81 @@
 \input{_header.tex}
 
-\matrix (B) [collection] {
+\matrix (A) [collection] {
+  \node (a1) {$a_1$}; &
+  \node (a2) {$a_2$}; &
+  \helem{between} &
+  \node (ai) {$a_i$}; &
+  \helem{between} &
+  \node (an) {$a_n$}; \\
+};
+
+\matrix (B) [collection, below=3\cellheight of A] {
   \node (b11) {$b_{1_1}$}; &
   \node (b12) {$b_{1_2}$}; &
   \node (b13) {$b_{1_3}$}; &
   \node (b21) {$b_{2_1}$}; &
   \node (b22) {$b_{2_2}$}; &
-  \ellipsis &
+  \helem{between} &
   \node (bi1) {$b_{i_1}$}; &
-  \ellipsis &
+  \helem{between} &
   \node (bn1) {$b_{n_1}$}; &
-  \ellipsis &
+  \helem{between} &
   \node (bnm) {$b_{n_m}$}; \\
 };
 
-\draw [draw=none] (bn1.north east) -- coordinate (bne) (bnm.north west);
-
 \begin{scope}
-  \tikzstyle{every node}=[scale=0.8]
-  \matrix (A1) [collection, above=15mm of b12] {
-    \node (a11) {$b_{1_1}$}; &
-    \node (a12) {$b_{1_2}$}; &
-    \node (a13) {$b_{1_3}$}; \\
+  \tikzstyle{minicollection}=[collection, nodes={minimum size=.75\cellwidth}]
+  \matrix (A1) [minicollection, above=.9\cellheight of b12] {
+  \node (z11) {$b_{1_1}$}; &
+  \node (z12) {$b_{1_2}$}; &
+  \node (z13) {$b_{1_3}$}; \\
   };
-  \matrix (A2) [collection, above=15mm of b21.north east] {
-    \node (a21) {$b_{2_1}$}; &
-    \node (a22) {$b_{2_2}$}; \\
+  \matrix (A2) [minicollection, above=.9\cellheight of $ (b21.north)!.5!(b22.north) $] {
+  \node (z21) {$b_{2_1}$}; &
+  \node (z22) {$b_{2_2}$}; \\
   };
-  \matrix (Ai) [collection, above=15mm of bi1] {
-    \node (ai1) {$b_{i_1}$}; \\
+  \matrix (Ai) [minicollection, above=.9\cellheight of bi1] {
+  \node (zi1) {$b_{i_1}$}; \\
   };
-  \matrix (An) [collection, above=15mm of bne] {
-    \node (an1) {$b_{n_1}$};  &
-    \ellipsis &
-    \node (anm) {$b_{n_m}$}; \\
+  \matrix (An) [minicollection, above=.9\cellheight of $ (bn1.north)!.5!(bnm.north) $] {
+  \node (zn1) {$b_{n_1}$}; &
+  \helem{between}[1cm] &
+  \node (znm) {$b_{n_m}$}; \\
   };
 \end{scope}
 
-\draw [draw=none] (a11.north east) -- coordinate (ax) (anm.north west);
-
-\matrix (A) [collection, above=20mm of ax] {
-  \node (a1) {$a_1$}; &
-  \node (a2) {$a_2$}; &
-  \ellipsis &
-  \node (ai) {$a_i$}; &
-  \ellipsis &
-  \node (an) {$a_n$}; \\
-};
-
-\foreach \i in {1,2,i,n} {
-  \draw (A\i.north west) [topbrace] -- (A\i.north east);
-  \draw [arrow, to brace, smooth] (a\i) to node [arrow label, pos=0.4] {$\param{f}(a_\i)$} (A\i.north);
+\foreach \i/\a/\b in {
+  1/11/13,
+  2/21/22,
+  i/i1/i1,
+  n/n1/nm}
+{
+  \topbrace{z\a.north west}{z\b.north east}
+  \draw (a\i) [smooth arrow] to node [arrow label] {$\param{f}(a_{\i})$} (lastbracepoint);
 }
 
-\foreach \from/\to in {a11/b11, a12/b12, a13/b13, a21/b21, a22/b22, ai1/bi1, an1/bn1, anm/bnm} {
-  \draw ([yshift=0.5em] \from.south) [arrow, smooth, white border] to (\to);
+\foreach \i in {11, 12, 13, 21, 22, i1, n1, nm} {
+  \draw ($ (z\i.south) + (0, 1ex) $) [smooth arrow, erase] to (b\i);
 }
+
+% \draw [draw=none] (a11.north east) -- coordinate (ax) (anm.north west);
+% 
+% \matrix (A) [collection, above=20mm of ax] {
+%   \node (a1) {$a_1$}; &
+%   \node (a2) {$a_2$}; &
+%   \helem{between} &
+%   \node (ai) {$a_i$}; &
+%   \helem{between} &
+%   \node (an) {$a_n$}; \\
+% };
+% 
+% \foreach \i in {1,2,i,n} {
+%   \draw (A\i.north west) [topbrace] -- (A\i.north east);
+%   \draw [arrow, to brace, smooth] (a\i) to node [arrow label, pos=0.4] {$\param{f}(a_\i)$} (A\i.north);
+% }
+% 
+% \foreach \from/\to in {a11/b11, a12/b12, a13/b13, a21/b21, a22/b22, ai1/bi1, an1/bn1, anm/bnm} {
+%   \draw ([yshift=0.5em] \from.south) [arrow, smooth, white border] to (\to);
+% }
 
 \input{_footer.tex}

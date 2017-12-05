@@ -1,15 +1,17 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-    \node (a1)   {$a_1$};     &
-    \node (a2)   {$a_2$};     &
-    \node (a3)   {$a_3$};     &
-    \ellipsis                 &
-    \node (ai)   {$a_i$};     &
-    \node (ai+1) {$a_{i+1}$}; &
-    \ellipsis                 &
-    \node (an)   {$a_n$};     \\
+  \node (a1)   {$a_1$};     &
+  \node (a2)   {$a_2$};     &
+  \node (a3)   {$a_3$};     &
+  \helem{between}                 &
+  \node (ai)   {$a_i$};     &
+  \node (ai+1) {$a_{i+1}$}; &
+  \helem{between}                 &
+  \node (an)   {$a_n$};     \\
 };
+
+\node [big arrow, below=\cellheight - .5\bigarrowwidth of A, anchor=west, rotate=-90];
 
 \foreach \i/\k in {
   1/k_1,
@@ -19,41 +21,42 @@
   i+1/k_2,
   n/k_m}
 {
-  \node (fa\i) [predicate, below=0.5em of a\i, pin={[function result, pin position=below] $\k$}] {$\param{f}(a_{\i})$};
-  \draw (a\i) -- (fa\i);
+  \path
+    node (f\i) [predicate evaluation, above=.5 of a\i] {$\param{f}(a_{\i})$}
+    (a\i) [predicate evaluation edge] -- (f\i);
+    \path node (fk\i) [predicate evaluation, above=.5 of f\i] {$\k$}
+    (fk\i) [predicate evaluation edge] -- (f\i.north);
 }
 
-\node (R) [big arrow, xshift=5mm, anchor=west] at (A.east) {};
-
-\matrix (K) [map keys, right=5mm of R.east, matrix anchor=k2.west] {
+\matrix (K) [map, below left=2\cellheight and 2 of A.south] {
   \node (k1) {$k_1$}; \\
   \node (k2) {$k_2$}; \\
-  \vellipsis          \\
+  \velem{between}          \\
   \node (km) {$k_m$}; \\
 };
 
-\matrix (K1) [map values, right=1cm of k1.east] {
+\matrix (K1) [small collection, right=1 of k1.east] {
   \node             {$a_1$};  &
   \node             {$a_3$};  &
-  \ellipsis[12.5mm]           \\
+  \helem[\smallcolfactor\elementswidth]{after}           \\
 };
 
-\matrix (K2) [map values, right=1cm of k2.east] {
+\matrix (K2) [small collection, right=1 of k2.east] {
   \node             {$a_2$};     &
-  \ellipsis[12.5mm]              &
+  \helem[\smallcolfactor\elementswidth]{between}              &
   \node             {$a_{i+1}$}; &
-  \ellipsis[12.5mm]              \\
+  \helem[\smallcolfactor\elementswidth]{after}              \\
 };
 
-\matrix (Km) [map values, right=1cm of km.east] {
-  \ellipsis[12.5mm]          &
+\matrix (Km) [small collection, right=1 of km.east] {
+  \helem[\smallcolfactor\elementswidth]{before}              &
   \node             {$a_i$}; &
-  \ellipsis[12.5mm]          &
+  \helem[\smallcolfactor\elementswidth]{between}          &
   \node             {$a_n$}; \\
 };
 
-\draw (k1) [map to] -- (K1);
-\draw (k2) [map to] -- (K2);
-\draw (km) [map to] -- (Km);
+\foreach \i in {1, 2, m} {
+  \draw (k\i) [maps to] -- (K\i);
+}
 
 \input{_footer.tex}

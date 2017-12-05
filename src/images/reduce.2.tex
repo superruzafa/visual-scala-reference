@@ -1,10 +1,10 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-    \node (a1) {$a_1$}; \\
+  \node (a1) {$a_1$}; \\
 };
 
-\node (B) [below=3cm of a1] {$a_1$};
+\node (B) [below=2\cellheight of A] {$a_1$};
 \draw (a1) [arrow] -- (B);
 
 \input{_footer.tex}

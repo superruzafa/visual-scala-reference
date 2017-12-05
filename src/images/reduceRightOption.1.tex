@@ -1,32 +1,41 @@
 \input{_header.tex}
 
-\matrix (a) [collection, name prefix=a] {
-  \node (1) {$a_1$};       &
-  \ellipsis;               &
-  \node (n-i) {$a_{n-i}$};     &
-  \ellipsis;               &
-  \node (n-2) {$a_{n-2}$}; &
-  \node (n-1) {$a_{n-1}$}; &
-  \node (n)   {$a_n$};     \\
+\matrix (A) [collection] {
+  \node (a1) {$a_1$}; &
+  \helem{between};         &
+  \node (an-i) {$a_{n-i}$}; &
+  \helem{between};         &
+  \node (an-2) {$a_{n-2}$}; &
+  \node (an-1) {$a_{n-1}$}; &
+  \node (an) {$a_n$}; \\
 };
 
-\node (f1)   [predicate, below=1cm of an.south west]   {$\param{op}(a_{n-1}, a_n)$};
-\node (f2)   [predicate, below=2cm of an-1.south west] {$\param{op}(a_{n-2}, z_1)$};
-\node (fi-1) [predicate, below=3cm of an-i.south east] {$\param{op}(a_i, z_{n-i+1})$};
-\node (fn-1) [predicate, below=4cm of a1.south east]   {$\param{op}(a_1, z_{n-1})$};
-\node (b)    [some, below=1cm of fn-1]      {\some{$b$}};
+\begin{scope}
+  \tikzstyle{every node}=[internal operation]
+  \node (op1) [below=\cellheight of an] {$\param{op}(a_{n-1}, a_n)$};
+  \node (op2) [below=2\cellheight of an-2] {$\param{op}(a_{n-2}, z_1)$};
+  \node (opi) [below=3\cellheight of an-i] {$\param{op}(a_{n-i}, z_{i-1})$};
+  \node (opn) [below=4\cellheight of a1] {$\param{op}(a_1, z_{n-2})$};
+\end{scope}
+
+\node (zn-1) [some, below left=\cellheight and \cellwidth of opn] {\some{$z_{n-1}$}};
 
 \begin{scope}
-  \tikzstyle{every path}=[arrow]
-  \draw [out=south, in=north] (an) to (f1.30);
-  \draw [out=south, in=north] (an-1) to (f1.120);
-  \draw [out=west, in=north] (f1.west) to (f2.30);
-  \draw [out=south, in=north] (an-2) to (f2.120);
-  \draw [out=west, in=north] (f2.west) to (fi-1.30);
-  \draw [out=south, in=north] (an-i) to (fi-1.120);
-  \draw [out=west, in=north] (fi-1.west) to (fn-1.30);
-  \draw [out=south, in=north] (a1) to (fn-1.120);
-  \draw (fn-1.south) -- (b);
+  \tikzstyle{every path}=[arrow, out=270, in=90]
+
+  \draw (an.south) to (op1.30);
+  \draw (an-1.south) to (op1.100);
+
+  \draw (op1.west) .. controls +(-.5, 0) and +(0, .5) .. (op2.25);
+  \draw (an-2.south) to (op2.100);
+ 
+  \draw (op2.west) [middle dots] .. controls +(-.5, 0) and +(0, 1) .. (opi.30);
+  \draw (an-i.south) to (opi.100);
+
+  \draw (opi.west) [middle dots] .. controls +(-.5, 0) and +(0, 1) .. (opn.30);
+  \draw (a1.south) to (opn.100);
+ 
+  \draw (opn.west) [out=180] to (zn-1);
 \end{scope}
 
 \input{_footer.tex}

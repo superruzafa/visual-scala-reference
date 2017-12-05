@@ -1,37 +1,25 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1)   {$a_1$};     &
-  \ellipsis                 &
-  \node (an-i) {$a_{n-i}$}; &
-  \ellipsis                 &
+  \helem{before}                 &
+  \node (an-2) {$a_{n-2}$}; &
   \node (an-1) {$a_{n-1}$}; &
   \node (an)   {$a_n$};     \\
 };
 
-\matrix (B) [collection, below=3cm of A, matrix anchor=bn.east] at (an.east) {
-  \node (bn-i) {$a_{n-i}$}; &
-  \ellipsis                 &
-  \node (bn-1) {$a_{n-1}$}; &
-  \node (bn)   {$a_n$};     \\
+\matrix (T) [collection, above=2\cellheight of A.north east, matrix anchor=south east] {
+  \node (tn-2) {$a_{n-2}$}; &
+  \node (tn-1) {$a_{n-1}$}; &
+  \node (tn)   {$a_n$};     \\
 };
 
-\leftparam{B.west}{\param{that}};
+\topparam{T.north}{\param{that}};
+ 
+\bottombrace[a]{tn-2.south west}{tn.south east}
+\topbrace[b]{an-2.north west}{an.north east}
+\draw (a) -- node [arrow label] {$=?$} (b);
 
-\draw (an-i.south east) [draw=none] -- node {\trueseq} (bn-1.north west);
-\draw ([yshift=5mm] A.north east) [dashed] -- ([yshift=-5mm] B.south east);
-
-\begin{scope}
-  \tikzstyle{every path}=[Latex-Latex]
-  \tikzstyle{every node}=[arrow label]
-  \draw (an-i) -- node (t1) {=? \true} (bn-i);
-  \draw (an-1) -- node (t3) {=? \true} (bn-1);
-  \draw (an)   -- node (t4) {=? \true} (bn);
-\end{scope}
-
-\node (B) [right=3cm of t3] {\true};
-\draw [arrow] (t4) -- (B);
-
-\draw (t1.north west) [rounded corners=0.5em] rectangle (t4.south east);
+\node [big arrow, right=\cellwidth of $ (A.east)!.5!(T.east) $];
+\node [right=2\cellwidth of $ (A.east)!.5!(T.east) $] {$\true$};
 
 \input{_footer.tex}

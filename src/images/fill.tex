@@ -1,112 +1,67 @@
 \input{_header.tex}
 
+\newlength{\matsep}
+\newlength{\ellsep}
+
+\setlength{\matsep}{.6em}
+\setlength{\ellsep}{13mm}
+
 \begin{scope}
-  \tikzstyle{every node}=[scale=0.7]
+  \tikzstyle{every node}=[scale=0.8]
 
   \matrix (A) [collection] {
     \node (a1) {\param{elem}}; &
-    \ellipsis[10mm] &
+    \helem[\ellsep]{between} &
     \node (an) {\param{elem}}; \\
   };
 
-  \matrix (B) [collection, right=12mm of A] {
+  \matrix (B) [collection, right=2\matsep + \ellsep of A] {
     \node (b1) {\param{elem}}; &
-    \ellipsis[10mm] &
+    \helem[\ellsep]{between} &
     \node (bn) {\param{elem}}; \\
   };
 
-  \matrix (C) [collection, right=20mm of B] {
+  \matrix (C) [collection, right=6\matsep + \ellsep of B] {
     \node (c1) {\param{elem}}; &
-    \ellipsis[10mm] &
+    \helem[\ellsep]{between} &
     \node (cn) {\param{elem}}; \\
   };
 
-  \matrix (D) [collection, right=12mm of C] {
+  \matrix (D) [collection, right=2\matsep + \ellsep of C] {
     \node (d1) {\param{elem}}; &
-    \ellipsis[10mm] &
+    \helem[\ellsep]{between} &
     \node (dn) {\param{elem}}; \\
   };
+
 \end{scope}
 
-\begin{scope}[on background layer]
-  \tikzstyle{every path}=[cell]
-  
-  \coordinate (A1nw) at ([shift={(-2mm, 2mm)}] A.north west);
-  \coordinate (A1ne) at ([shift={(+2mm, 2mm)}] A.north east);
-  \coordinate (A1se) at ([shift={(+2mm, -2mm)}] A.south east);
-  
-  \coordinate (B1nw) at ([shift={(-2mm, 2mm)}] B.north west);
-  \coordinate (B1ne) at ([shift={(+2mm, 2mm)}] B.north east);
-  \coordinate (B1se) at ([shift={(+2mm, -2mm)}] B.south east);
-  \coordinate (B1sw) at ([shift={(-2mm, -2mm)}] B.south west);
+\begin{scope}
+  \tikzstyle{every path}=[collection element]
 
-  \coordinate (C1nw) at ([shift={(-2mm, 2mm)}] C.north west);
-  \coordinate (C1ne) at ([shift={(+2mm, 2mm)}] C.north east);
-  \coordinate (C1se) at ([shift={(+2mm, -2mm)}] C.south east);
-  \coordinate (C1sw) at ([shift={(-2mm, -2mm)}] C.south west);
-
-  \coordinate (D1nw) at ([shift={(-2mm, 2mm)}] D.north west);
-  \coordinate (D1ne) at ([shift={(+2mm, 2mm)}] D.north east);
-  \coordinate (D1se) at ([shift={(+2mm, -2mm)}] D.south east);
-  \coordinate (D1sw) at ([shift={(-2mm, -2mm)}] D.south west);
-  
-  \coordinate (Axnw) at ([shift={(-2mm, 2mm)}] A1nw);
-  \coordinate (Bxse) at ([shift={(+2mm, -2mm)}] B1se);
-  \coordinate (Cxnw) at ([shift={(-2mm, 2mm)}] C1nw);
-  \coordinate (Dxse) at ([shift={(+2mm, -2mm)}] D1se);
-  
-  \coordinate (Annw) at ([shift={(-4mm, 4mm)}] A1nw);
-  \coordinate (Bnse) at ([shift={(+4mm, -4mm)}] B1se);
-  \coordinate (Bnne) at ([shift={(+4mm, +4mm)}] B1ne);
-  \coordinate (Cnnw) at ([shift={(-4mm, 4mm)}] C1nw);
-  \coordinate (Cnsw) at ([shift={(-4mm, -4mm)}] C1sw);
-  \coordinate (Dnse) at ([shift={(+4mm, -4mm)}] D1se);
-  \coordinate (Dnne) at ([shift={(+4mm, +4mm)}] D1ne);
-
-  \draw (Bnne) [loosely dash dot, line width=0.1mm] rectangle node {$\ldots$} (Cnsw);
-  
-  \draw (Annw) rectangle (Bnse);
-  \draw (Cnnw) rectangle (Dnse);
-
-  \draw (Axnw) [loosely dash dot, line width=0.1mm] rectangle (Bxse);
-  \draw (Cxnw) [loosely dash dot, line width=0.1mm] rectangle (Dxse);
-
-  \draw (A1ne) [loosely dash dot, line width=0.1mm] rectangle node {$\ldots$} (B1sw);
-  \draw (C1ne) [loosely dash dot, line width=0.1mm] rectangle node {$\ldots$} (D1sw);
-
-  \draw (A1nw) rectangle (A1se);
-  \draw (B1nw) rectangle (B1se);
-  \draw (C1nw) rectangle (C1se);
-  \draw (D1nw) rectangle (D1se);
-  
+  \foreach \i/\j in {A/B, C/D} {
+    \draw ($ (\i.north west) + (-\matsep, \matsep) $) rectangle ($ (\i.south east) + (\matsep, -\matsep) $);
+    \draw ($ (\j.north west) + (-\matsep, \matsep) $) rectangle ($ (\j.south east) + (\matsep, -\matsep) $);
+    \draw ($ (\i.north west) + (-3\matsep, 3\matsep) $) rectangle ($ (\j.south east) + (3\matsep, -3\matsep) $);
+  }
 \end{scope}
 
-\draw (a1.north west) -- +(0, 5mm) coordinate (x1);
-\draw (an.north east) -- +(0, 5mm) coordinate (x2);
-\topmeasure{$\subparam{n}{m}$}{x1}{x2}
+\foreach \i/\j in {A/B, C/D} {
+  \draw ($ (\i.north east) + (\matsep, \matsep) $) [elements between] -- ($ (\j.north west) + (-\matsep, \matsep) $);
+  \draw ($ (\i.south east) + (\matsep, -\matsep) $) [elements between] -- ($ (\j.south west) + (-\matsep, -\matsep) $);
+  \draw ($ (\i.north west) + (-2\matsep, 2\matsep) $) [dashed] rectangle ($ (\j.south east) + (2\matsep, -2\matsep) $);
+}
 
-\draw (b1.north west) -- +(0, 5mm) coordinate (x3);
-\draw (bn.north east) -- +(0, 5mm) coordinate (x4);
-\topmeasure{$\subparam{n}{m}$}{x3}{x4}
+\draw ($ (B.north east) + (3\matsep, 3\matsep) $) [elements between] -- ($ (C.north west) + (-3\matsep, 3\matsep) $);
+\draw ($ (B.south east) + (3\matsep, -3\matsep) $) [elements between] -- ($ (C.south west) + (-3\matsep, -3\matsep) $);
 
-\draw (c1.north west) -- +(0, 5mm) coordinate (x5);
-\draw (cn.north east) -- +(0, 5mm) coordinate (x6);
-\topmeasure{$\subparam{n}{m}$}{x5}{x6}
+\foreach \i in {A, B, C, D} {
+  \measure[5\matsep] {$\subparam{n}{m}$}{\i.north west}{\i.north east}
+}
 
-\draw (d1.north west) -- +(0, 5mm) coordinate (x7);
-\draw (dn.north east) -- +(0, 5mm) coordinate (x8);
-\topmeasure{$\subparam{n}{m}$}{x7}{x8}  
+\foreach \i/\j in {A/B, C/D} {
+  \measure[7\matsep] {$\subparam{n}{m-1}$}{$ (\i.north west) + (-\matsep, \matsep) $}{$ (\j.north east) + (\matsep, \matsep) $}
+}
 
-\draw (A1nw) -- +(0, 10mm) coordinate (y1);
-\draw (B1ne) -- +(0, 10mm) coordinate (y2);
-\topmeasure{$\subparam{n}{m-1}$}{y1}{y2}
-
-\draw (C1nw) -- +(0, 10mm) coordinate (y3);
-\draw (D1ne) -- +(0, 10mm) coordinate (y4);
-\topmeasure{$\subparam{n}{m-1}$}{y3}{y4}
-
-\draw (Annw) -- +(0, 15mm) coordinate (z1);
-\draw (Dnne) -- +(0, 15mm) coordinate (z2);
-\topmeasure{$\subparam{n}{1}$}{z1}{z2}
+\measure[8\matsep] {$\subparam{n}{1}$}{$ (A.north west) + (-3\matsep, 3\matsep) $}{$ (D.north east) + (3\matsep, 3\matsep) $}
 
 \input{_footer.tex}

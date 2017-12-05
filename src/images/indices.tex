@@ -1,21 +1,21 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-  \node (1) {$a_1$}; &
-  \node (2) {$a_2$}; &
-  \ellipsis          &
-  \node (i) {$a_i$}; &
-  \ellipsis          &
-  \node (n) {$a_n$}; \\
+\matrix (A) [collection] {
+  \node (a1) {$a_1$}; &
+  \node (a2) {$a_2$}; &
+  \helem{between}          &
+  \node (ai) {$a_i$}; &
+  \helem{between}          &
+  \node (an) {$a_n$}; \\
 };
 
-\matrix (B) [collection, name prefix=b, below of=A, node distance=3cm, label=right::Range] {
-  \node (1) {$0$};   &
-  \node (2) {$1$};   &
-  \ellipsis          &
-  \node (i) {$i-1$}; &
-  \ellipsis          &
-  \node (n) {$n-1$}; \\
+\matrix (B) [collection, below=2\cellheight of A] {
+  \node (b1) {$0$};   &
+  \node (b2) {$1$};   &
+  \helem{between}          &
+  \node (bi) {$i-1$}; &
+  \helem{between}          &
+  \node (bn) {$n-1$}; \\
 };
 
 \foreach \i in {1, 2, i, n} {

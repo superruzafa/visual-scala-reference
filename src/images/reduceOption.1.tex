@@ -1,36 +1,47 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-    \node (1) {$a_1$}; &
-    \node (2) {$a_2$}; &
-    \node (3) {$a_3$}; &
-    \ellipsis          &
-    \node (i) {$a_i$}; &
-    \ellipsis          &
-    \node (n) {$a_n$}; \\
+\matrix (A) [collection] {
+  \elem{a}{1} &
+  \elem{a}{2} &
+  \helem{between} &
+  \elem{a}{i-1} &
+  \elem{a}{i} &
+  \helem{between} &
+  \elem{a}{n-1} &
+  \elem{a}{n} \\
 };
 
-\node (f1) [predicate, below=15mm of a2] {$\param{op}(a_2, a_i)$};
-\node (f2) [predicate, below=25mm of an] {$\param{op}(z_1, a_n)$};
-\node (f3) [predicate, below=35mm of a1] {$\param{op}(a_1, z_2)$};
-\node (fn) [predicate, below=45mm of ai] {$\param{op}(z_{n-1}, a_3)$};
-\node (B)  [some, below=1cm of fn] {\some{$b$}};
+\begin{scope}
+  \tikzstyle{every node}=[internal operation]
+  \tikzstyle{every path}=[smooth arrow]
+  \node (op1) [below=\cellheight of $ (a1.south)!.5!(a2.south) $] {$\param{op}(a_1, a_2)$};
+  \node (op2) [below=\cellheight of $ (an-1.south)!.5!(an.south) $] {$\param{op}(a_{n-1}, a_n)$};
+  \node (op3) [below right=\cellheight and 0 of op1] {$\param{op}(z_1, z_2)$};
+  \node (op4) [below left=\cellheight and 0 of op2] {$\param{op}(z_{\frac{n}{2}-1}, z_\frac{n}{2})$};
+  \node (op5) [below=4\cellheight of A] {$\param{op}(z_{n-3}, z_{n-2})$};
+\end{scope}
+
+\node (zn-1) [some, below=\cellheight of op5] {\some{$z_{n-1}$}};
 
 \begin{scope}
   \tikzstyle{every path}=[arrow]
-  \draw [white border, out=270, in=90] (a2.south) to (f1.110);
-  \draw [white border, out=270, in=90] (ai.south) to (f1.45);
-
-  \draw [white border, out=270, in=90] (an.south) to (f2.45);
-  \draw [white border, out=0, in=90] (f1.east) to (f2.120);
-
-  \draw [white border, out=270, in=90] (a1.south) to (f3.120);
-  \draw [white border, out=180, in=60] (f2.west) to (f3.45);
-
-  \draw [white border, out=270, in=90] (a3.south) to (fn.30);
-  \draw [white border, out=0, in=90] (f3.east) [middotted] to (fn.120);
-
-  \draw (fn.south) -- (B.north);
+  \draw (a1) [smooth arrow] to (op1.100);
+  \draw (a2) [smooth arrow] to (op1.35);
+  \draw (ai-1.south) arc [start angle=0, end angle=-55, radius=1cm];
+  \draw (ai.south) arc [start angle=180, end angle=235, radius=1cm];
+  \draw (an-1) [smooth arrow] to (op2.100);
+  \draw (an) [smooth arrow] to (op2.30);
+  
+  \draw (op1.east) .. controls +(.5, 0) and +(0, .5) .. (op3.100);
+  \draw (op2.west) .. controls +(-.5, 0) and +(0, .5) .. (op4.30);
+  
+  \draw (op3.35) [reverse arrow] arc [start angle=180, end angle=125, radius=1cm];
+  \draw (op3.east) .. controls +(.5, 0) and +(0, 1) .. (op5.120);
+  
+  \draw (op4.100) [reverse arrow] arc [start angle=0, end angle=55, radius=1cm];
+  \draw (op4.west) .. controls +(-.5, 0) and +(0, 1) .. (op5.30);
+  
+  \draw (op5) -- (zn-1);
 \end{scope}
 
 \input{_footer.tex}

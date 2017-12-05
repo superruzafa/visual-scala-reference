@@ -821,13 +821,13 @@
     es: <code>span</code> selecciona el mayor prefijo de elementos que satisfacen <var>p</var> en la primera componente de una tupla y el resto de elementos en la segunda.
 
 - name: splitAt
-  signature: "def splitAt(i: Int): (<em>Collection</em>[A], <em>Collection</em>[A])"
+  signature: "def splitAt(index: Int): (<em>Collection</em>[A], <em>Collection</em>[A])"
   description:
     en: Splits this collection into two at a given position.
     es: Parte esta colección en dos en una posición dada.
   figures:
-  - en: <code>splitAt</code> selects the elements at or before <var>i</var> on the first component of a tuple and the rest of elements on the second.
-    es: <code>splitAt</code> selecciona los elementos en o antes de <var>i</var> en la primera componente de una tupla y el resto de elementos en la segunda.
+  - en: <code>splitAt</code> selects the elements at or before <var>index</var> on the first component of a tuple and the rest of elements on the second.
+    es: <code>splitAt</code> selecciona los elementos en o antes de <var>index</var> en la primera componente de una tupla y el resto de elementos en la segunda.
 
 - name: startsWith
   signature: "def startsWith[B](that: GenSeq[B], offset: Int): Boolean"
@@ -925,7 +925,7 @@
     es: <code>unzip</code> selecciona la primera/segunda componente de cada elemento en la colección en la primera/segunda componente de una tupla.
 
 - name: unzip3
-  signature: "def unzip3[A1, A2, A3](implicit asTriple: (A) ⇒ (A1, A2, A3)): (<em>Collection</em>[A1], <em>Collection</em>[A2], <em>Collection</em>[A3])"
+  signature: "def unzip3[A, B, C](implicit asTriple: (A) ⇒ (A, B, C)): (<em>Collection</em>[A], <em>Collection</em>[B], <em>Collection</em>[C])"
   description:
     en: Converts this collection of triples into three collections of the first, second, and third element of each triple.
     es: Convierte esta colección de ternas en tres colecciones del primer, segundo y tercer elemento de cada terna.
@@ -952,22 +952,22 @@
     es: <code>values</code> devuelve un iterador para recorrer los valores de un mapa.
 
 - name: withDefault
-  signature: "def withDefault[V1 >: V](f<sub>def</sub>: (K) ⇒ V1): Map[K, V1]"
+  signature: "def withDefault[V1 >: V](f: (K) ⇒ V1): Map[K, V1]"
   description:
     en: The same map with a given default function.
     es: El mismo mapa con una función predeterminada dado.
   figures:
-  - en: <code>withDefault</code> uses <var>f<sub>def</sub></var> to generate a value when the map does not contain the requested key.
-    es: <code>withDefault</code> utiliza <var>f<sub>def</sub></var> para generar un valor cuando el mapa no contiene la clave solicitada.
+  - en: <code>withDefault</code> uses <var>f</var> to generate a value when the map does not contain the requested key.
+    es: <code>withDefault</code> utiliza <var>f</var> para generar un valor cuando el mapa no contiene la clave solicitada.
 
 - name: withDefaultValue
-  signature: "def withDefaultValue[V1 >: V](v<sub>def</sub>: V1): Map[K, V1]"
+  signature: "def withDefaultValue[V1 >: V](v: V1): Map[K, V1]"
   description:
     en: The same map with a given default value.
     es: El mismo mapa con un valor predeterminado dado.
   figures:
-  - en: <code>withDefaultValue</code> uses <var>v<sub>def</sub></var> as value when the map does not contain the requested key.
-    es: <code>withDefaultValue</code> utiliza <var>v<sub>def</sub></var> como valor cuando el mapa no contiene la clave solicitada.
+  - en: <code>withDefaultValue</code> uses <var>v</var> as value when the map does not contain the requested key.
+    es: <code>withDefaultValue</code> utiliza <var>v</var> como valor cuando el mapa no contiene la clave solicitada.
 
 - name: zip
   signature: "def zip[B](that: GenIterable[B]): <em>Collection</em>[A, B]"

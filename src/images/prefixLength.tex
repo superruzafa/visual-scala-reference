@@ -1,33 +1,37 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-  \node (1) {$a_1$};       &
-  \node (2) {$a_2$};       &
-  \ellipsis                &
-  \node (i) {$a_i$};       &
-  \node (i+1) {$a_{i+1}$}; &
-  \ellipsis                &
-  \node (n) {$a_n$};       \\
+\matrix (A) [collection] {
+  \node (a1) {$a_1$}; &
+  \node (a2) {$a_2$}; &
+  \helem{between} &
+  \node (ai) {$a_i$}; &
+  \node (ai+1) {$a_{i+1}$}; &
+  \helem[.5\elementswidth]{after} \\
 };
 
-\foreach \i/\d/\p in {
-  1/\true/below,
-  2/\true/below,
-  i/\true/below,
-  i+1/\false/below}
+\foreach \i/\p/\d in {
+  1/\true/.25,
+  2/\true/1,
+  i/\true/.25,
+  i+1/\false/1}
 {
-  \node (pa\i) [predicate, below=0.5em of a\i, pin={[function result, pin position=\p] \d}] {$\param{p}(a_{\i})?$};
-  \draw (a\i) -- (pa\i);
+  \path
+    node (p\i) [predicate evaluation, above=\d of a\i] {$\param{p}(a_{\i})? \, \p$}
+    (a\i) [predicate evaluation edge] -- (p\i);
 }
 
-\draw ([xshift=-1cm] pa1.south) [iteration] to (pa1.south);
-\draw (pa1.south) [iteration] to (pa2.south);
-\draw (pa2.south) [iteration, middotted] to node [below, sloped, pos=.5] {\trueseq} (pai.south);
-\draw (pai.south) [iteration] to (pai+1.south);
+\begin{scope}
+  \tikzstyle{every path}=[iteration]
+  \draw ($ (p1.north) + (-1, 0) $) [bend left=45] to (p1.north);
+  \draw (p1.north) [bend left=60] to (p2.north);
+  \draw (p2.north) [middle dots, bend left=60] to (pi.north);
+  \draw (pi.north) [bend left=45] to (pi+1.north);
+\end{scope}
 
-\draw ([yshift=-20mm] a1.south west) [bottombrace] -- coordinate(x) ([yshift=-20mm] ai.south east);
+\coordinate (x) at ($ (a1.south)!.5!(ai.south) $);
+\node (B) [below=2\cellheight of A] at (x) {i};
 
-\node (elem) [below=15mm of x] {$i$};
-\draw (x) [arrow, from brace] -- (elem);
+\measure[-3ex]{}{a1.south west}{ai.south east}
+\draw ($ (x) - (0, 3ex) $) [shorten <=1mm, arrow] -- (B);
 
 \input{_footer.tex}

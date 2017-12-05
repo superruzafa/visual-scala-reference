@@ -1,22 +1,25 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix = a] {
-  \node (1)   {$a_1$};     &
-  \node (2)   {$a_2$};     &
-  \ellipsis                &
-  \node (n)   {$a_n$};     &
-  \node (n+1) {$a_{n+1}$}; &
-  \ellipsis                &
-  \node (n+m) {$a_{n+m}$}; \\
+\matrix (A) [collection] {
+  \node (a1) {$a_1$};   &
+  \node (a2) {$a_2$};   &
+  \helem{between} &
+  \node (an) {$a_n$};   &
+  \node (an+1) {$a_{n+1}$}; &
+  \helem{between} &
+  \node (am) {$a_m$}; \\
 };
 
-\matrix (b) [collection, node distance = 3cm, below of = A, matrix anchor = bn+1.west] at (an+1.west) {
+\measure[-3ex]{\param{n}}{a1.south west}{an.south east}
+
+\matrix (b) [collection, below=2\cellheight of A, matrix anchor=north east] at (A.south east) {
   \node (bn+1) {$a_{n+1}$}; &
-  \ellipsis                 &
-  \node (bn+m) {$a_{n+m}$}; \\
+  \helem{between} &
+  \node (bm) {$a_m$}; \\
 };
 
-\bottommeasure{\param{n}}{a1.south west}{an.south east}
-\bracetobrace {an+1.south west}{an+m.south east}{bn+1.north west}{bn+m.north east}
+\bottombrace[a]{an+1.south west}{am.south east}
+\topbrace[b]{bn+1.north west}{bm.north east}
+\draw (a) [arrow] -- (b);
 
 \input{_footer.tex}
