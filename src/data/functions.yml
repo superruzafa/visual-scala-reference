@@ -427,6 +427,8 @@
   figures:
   - en: <code>lastIndexOf</code> returns the index of the last element, before or at <var>end</var>, that is equal to <var>elem</var>.
     es: <code>lastIndexOf</code> devuelve el índice del último elemento, antes de o en <var>end</var>, que es igual a <var>elem</var>.
+  - en: If the collection does not contain any element at or before <var>end</var> that is equal to <var>elem</var> then <code>lastIndexOf</code> returns -1.
+    es: Si la colección no contiene ningún elemento en o antes de <var>end</var> que es igual a <var>elem</var> entonces <code>lastIndexOf</code> devuelve -1.
 
 - name: lastIndexOfSlice
   signature: "def lastIndexOfSlice[B >: A](that: GenSeq[B], end: Int): Int"
