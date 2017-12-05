@@ -1,0 +1,45 @@
+\input{_header.tex}
+
+\matrix (A) [collection] {
+  \elem{a}{1} &
+  \elem{a}{2} &
+  \helem[.5\elementswidth]{between} &
+  \elem{a}{i} &
+  \elem{a}{i+1} &
+  \helem[.5\elementswidth]{between} &
+  \elem{a}{i+j-1} &
+  \elem{a}{i+j} &
+  \elem{a}{i+j+1} &
+  \helem[.5\elementswidth]{after} \\
+};
+
+\foreach \f/\t/\r/\a/\p in {
+  i+j/i+j/4mm/.5/\false,
+  i+j-1/i+j/0mm/.25/\false,
+  i/i+1/0mm/.25/\false,
+  1/2/0mm/.25/\false}
+{
+  \draw (a\f.north west) [brace, decoration={mirror=false, raise=2mm + \r, aspect=\a}] -- (a\t.north east);
+  \draw ($ (a\f.north west)!\a!(a\t.north east) $) ++(0, 2mm + 2mm + \r) [predicate evaluation edge] -- +(0, 1) node (p\f) [above, predicate evaluation] {$=\param{that}?\, \p$};
+}
+
+\draw (ai+j.60) [latex-, out=30, in=270] to +(2, 1) node [above] {\param{end}};
+
+\matrix (T) [collection, matrix of math nodes, right=\cellwidth of A] {
+  a_i &
+  a_{i+1} \\
+};
+
+\topparam{T.north}{\param{that}}
+
+\begin{scope}[iteration, bend right=45]
+  \draw ($ (pi+j.north) + (1, 0) $) to +(-1, 0);
+  \draw (pi+j.north) to (pi+j-1.north);
+  \draw (pi+j-1.north) [middle dots] to (pi.north);
+  \draw (pi.north) to (p1.north);
+\end{scope}
+
+\node (B) [below left=2\cellheight and \cellwidth of A] {$-1$};
+\draw (p1.north) [arrow] .. controls +(-2, 1) and +(0, 2) .. (B.north);
+
+\input{_footer.tex}

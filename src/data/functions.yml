@@ -438,6 +438,8 @@
   figures:
   - en: <code>lastIndexOfSlice</code> returns the index of the last occurrence at or before <var>end</var> where <var>that</var> can be found as subsequence of the collection.
     es: <code>lastIndexOfSlice</code> devuelve el índice de la última ocurrencia en o antes de <var>end</var> donde <var>that</var> puede ser encontrada como subsecuencia de la colección.
+  - en: If the collection does not contain any subsequence at or before <var>end</var> that is equal to <var>that</var> then <code>lastIndexOfSlice</code> returns -1.
+    es: Si la colección no contiene ninguna subsecuencia en o antes de <var>end</var> que es igual a <var>that</var> entonces <code>lastIndexOfSlice</code> devuelve -1.
 
 - name: lastIndexWhere
   signature: "def lastIndexWhere(p: (A) ⇒ Boolean, end: Int): Int"

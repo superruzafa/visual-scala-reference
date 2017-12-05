@@ -1,15 +1,15 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \helem{before} &
+  \helem[.5\elementswidth]{before} &
   \elem{a}{i} &
   \elem{a}{i+1} &
   \elem{a}{i+2} &
-  \helem{between} &
+  \helem[.5\elementswidth]{between} &
   \elem{a}{i+j-1} &
   \elem{a}{i+j} &
   \elem{a}{i+j+1} &
-  \helem{after} \\
+  \helem[.5\elementswidth]{after} \\
 };
 
 \foreach \f/\t/\r/\a/\p in {
