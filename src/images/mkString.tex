@@ -9,12 +9,10 @@
   \elem{a}{n} \\
 };
 
-\matrix [right=1 of A, left delimiter=\{] {
-  
-ode {\param{start}=``(''}; \\
-  \node (sep) {\param{sep}=``, ''}; \\
-  
-ode {\param{end}=``)''}; \\
+\matrix [right=1 of A, matrix of nodes, left delimiter=\{] {
+  \param{start}=``('' \\
+  \param{sep}=``, '' \\
+  \param{end}=``)'' \\
 };
 
 \node [big arrow, below=\cellheight - .5\bigarrowwidth of A, anchor=west, rotate=-90];
