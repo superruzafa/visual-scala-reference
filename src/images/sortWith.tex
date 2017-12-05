@@ -1,13 +1,13 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a2) {$a_2$}; &
-  \helem{between}           &
-  \node (an) {$a_n$}; &
-  \helem{between}           &
-  \node (a1) {$a_1$}; &
-  \helem{between}           &
-  \node (ai) {$a_i$}; \\
+  \elem{a}{2} &
+  \helem{between} &
+  \elem{a}{n} &
+  \helem{between} &
+  \elem{a}{1} &
+  \helem{between} &
+  \elem{a}{i} \\
 };
 
 \begin{scope}
@@ -39,14 +39,13 @@
 \matrix (B) [collection, below=5cm of A] {
   \node (b1) {$a_1$}; &
   \node (b2) {$a_2$}; &
-  \helem{between}           &
+  \helem{between} &
   \node (bi) {$a_i$}; &
-  \helem{between}           &
+  \helem{between} &
   \node (bn) {$a_n$}; \\
 };
 
 \begin{scope}
-%   \tikzstyle{every path}=[out=270, in=90, arrow, middotted]
   \tikzstyle{every path}=[smooth arrow]
   \draw (a1.south) to (lt2.35);
   \draw (a1.south) to (lt3.110);
@@ -65,7 +64,6 @@
   \draw (an.south) to (lt2.110);
 
   \draw (lt2.270) [erase] to (lt5.105);
-  % \draw (lt4.270) to (b2);
   \draw (lt5.265) [erase] to (bn);
 \end{scope}
 

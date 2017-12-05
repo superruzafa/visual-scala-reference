@@ -2,21 +2,21 @@
 
 \matrix (A) [collection] {
   \node (a1) {$(a_1, b_1, c_1)$}; &
-  \helem{between}                 &
+  \helem{between} &
   \node (an) {$(a_n, b_n, c_n)$}; \\
 };
 
 \matrix [tuple of collections, below=2\cellheight of A] {
-  \node (za1) {$a_1$};  &
-  \helem{between}[8mm]            &
+  \node (za1) {$a_1$}; &
+  \helem{between}[8mm] &
   \node (zan) {$a_n$}; &
-  \tuplecomma          &
+  \tuplecomma &
   \node (zb1) {$b_1$}; &
-  \helem{between}[8mm]            &
+  \helem{between}[8mm] &
   \node (zbn) {$b_n$}; &
-  \tuplecomma          &
-  \node (zc1) {$c_1$};  &
-  \helem{between}[8mm]            &
+  \tuplecomma &
+  \node (zc1) {$c_1$}; &
+  \helem{between}[8mm] &
   \node (zcn) {$c_n$}; \\
 };
 

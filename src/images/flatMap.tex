@@ -1,12 +1,12 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1) {$a_1$}; &
-  \node (a2) {$a_2$}; &
+  \elem{a}{1} &
+  \elem{a}{2} &
   \helem{between} &
-  \node (ai) {$a_i$}; &
+  \elem{a}{i} &
   \helem{between} &
-  \node (an) {$a_n$}; \\
+  \elem{a}{n} \\
 };
 
 \matrix (B) [collection, below=3\cellheight of A] {
@@ -57,25 +57,5 @@
 \foreach \i in {11, 12, 13, 21, 22, i1, n1, nm} {
   \draw ($ (z\i.south) + (0, 1ex) $) [smooth arrow, erase] to (b\i);
 }
-
-% \draw [draw=none] (a11.north east) -- coordinate (ax) (anm.north west);
-% 
-% \matrix (A) [collection, above=20mm of ax] {
-%   \node (a1) {$a_1$}; &
-%   \node (a2) {$a_2$}; &
-%   \helem{between} &
-%   \node (ai) {$a_i$}; &
-%   \helem{between} &
-%   \node (an) {$a_n$}; \\
-% };
-% 
-% \foreach \i in {1,2,i,n} {
-%   \draw (A\i.north west) [topbrace] -- (A\i.north east);
-%   \draw [arrow, to brace, smooth] (a\i) to node [arrow label, pos=0.4] {$\param{f}(a_\i)$} (A\i.north);
-% }
-% 
-% \foreach \from/\to in {a11/b11, a12/b12, a13/b13, a21/b21, a22/b22, ai1/bi1, an1/bn1, anm/bnm} {
-%   \draw ([yshift=0.5em] \from.south) [arrow, smooth, white border] to (\to);
-% }
 
 \input{_footer.tex}

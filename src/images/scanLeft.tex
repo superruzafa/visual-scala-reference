@@ -1,22 +1,22 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1) {$a_1$}; &
-  \node (a2) {$a_2$}; &
-  \helem{between}          &
-  \node (ai) {$a_i$}; &
-  \helem{between}          &
-  \node (an) {$a_n$}; \\
+  \elem{a}{1} &
+  \elem{a}{2} &
+  \helem{between} &
+  \elem{a}{i} &
+  \helem{between} &
+  \elem{a}{n} \\
 };
 
 \matrix (B) [collection, below=5.5\cellheight of A] {
   \node (z0) {\param{z}}; &
-  \node (z1) {$z_1$}; &
-  \node (z2) {$z_2$}; &
-  \helem{between}          &
-  \node (zi) {$z_i$}; &
-  \helem{between}          &
-  \node (zn) {$z_n$}; \\
+  \elem{z}{1} &
+  \elem{z}{2} &
+  \helem{between} &
+  \elem{z}{i} &
+  \helem{between} &
+  \elem{z}{n} \\
 };
 
 \node (z) [left=\cellwidth of A] {\param{z}};

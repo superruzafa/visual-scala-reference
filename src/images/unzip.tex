@@ -2,23 +2,23 @@
 
 \matrix (A) [collection] {
   \node (a1) {$(a_1, b_1)$}; &
-  \helem{between}                 &
+  \helem{between} &
   \node (ai) {$(a_i, b_i)$}; &
-  \helem{between}                 &
+  \helem{between} &
   \node (an) {$(a_n, b_n)$}; \\
 };
 
 \matrix [tuple of collections, below=2\cellheight of A] {
-  \node (za1) {$a_1$};  &
-  \helem{between}[1cm]            &
+  \node (za1) {$a_1$}; &
+  \helem{between}[1cm] &
   \node (zai) {$a_i$}; &
-  \helem{between}[1cm]            &
+  \helem{between}[1cm] &
   \node (zan) {$a_n$}; &
-  \tuplecomma          &
+  \tuplecomma &
   \node (zb1) {$b_1$}; &
-\helem{between}[1cm]            &
+  \helem{between}[1cm] &
   \node (zbi) {$b_i$}; &
-\helem{between}[1cm]            &
+  \helem{between}[1cm] &
   \node (zbn) {$b_n$}; \\
 };
 

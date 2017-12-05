@@ -1,11 +1,11 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1) {$a_1$}; &
-  \node (a2) {$a_2$}; &
+  \elem{a}{1} &
+  \elem{a}{2} &
   \helem{between} &
-  \node (an-1) {$a_{n-1}$}; &
-  \node (an) {$a_n$}; \\
+  \elem{a}{n-1} &
+  \elem{a}{n} \\
 };
 
 \node [big arrow, below=\cellheight - .5\bigarrowwidth of A, anchor=west, rotate=-90];

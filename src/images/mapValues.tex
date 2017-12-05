@@ -1,44 +1,31 @@
 \input{_header.tex}
 
 \matrix (K) [map] {
-  \node (k1)       {$k_1$};     \\
-  \node (k2)       {$k_2$};     \\
+  \elem{k}{1} \\
+  \elem{k}{2} \\
   \velem{between} \\
-  \node (ki)       {$k_i$};     \\
+  \elem{k}{i} \\
   \velem{between} \\
-  \node (kn)       {$k_n$};     \\
+  \elem{k}{n} \\
 };
 
 \matrix (KW) [map, right=3\cellwidth of K] {
-  \node (kw1)       {$k_1$};     \\
-  \node (kw2)       {$k_2$};     \\
+  \node (kw1) {$k_1$}; \\
+  \node (kw2) {$k_2$}; \\
   \velem{between} \\
-  \node (kwi)       {$k_i$};     \\
+  \node (kwi) {$k_i$}; \\
   \velem{between} \\
-  \node (kwn)       {$k_n$};     \\
+  \node (kwn) {$k_n$}; \\
 };
 
 \foreach \i in {1, 2, i, n} {
   \node (v\i) [right=.5\cellwidth of k\i] {$v_\i$};
   \draw (k\i) [maps to] -- (v\i);
-  % \node (kf\i) [right=2\cellwidth of v\i] {$k_\i$};
   
   \node (w\i) [right=.5\cellwidth of kw\i] {$w_\i$};
   \draw (kw\i) [maps to] -- (w\i);
   
   \draw (v\i) [shorten <=.25\cellwidth, shorten >=.25\cellwidth, arrow] -- node [arrow label] {$\param{f}(v_\i)$} (kw\i);
 }
-
-% \node [big arrow, right=1.5\cellheight - .5\bigarrowwidth of K];
-% 
-% \begin{scope}
-%   \tikzstyle{every path}=[bend right=45]
-%   \draw ($ (kf1.west) - (1, 0) $) [iteration, with next label] -- (kf1.west);
-%   \draw (kf1.west) [iteration, with reverse next label] to (kf2.west);
-%   \draw (kf2.west) [iteration, middle dots] to (kfi.west);
-%   \path (kf2.west) [with reverse next label] to (kfi.west);
-%   \draw (kfi.west) [iteration, middle dots] to (kfn.west);
-%   \path (kfi.west) [with reverse next label] to (kfn.west);
-% \end{scope}
 
 \input{_footer.tex}

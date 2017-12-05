@@ -8,21 +8,21 @@
 \begin{scope}
   \tikzstyle{minicollection}=[collection, nodes={minimum size=.75\cellwidth}]
   \matrix (A1) [minicollection, nodes={minimum size=11mm}] {
-    \node (a1) {$a_1$}; &
-    \node (a2) {$a_2$}; &
-    \node (a3) {$a_3$}; \\
+    \elem{a}{1} &
+    \elem{a}{2} &
+    \elem{a}{3} \\
   };
   \matrix (A2) [minicollection, nodes={minimum size=11mm}, right=2\cellpadding of A1] {
-    \node (b1) {$b_1$}; &
-    \node (b2) {$b_2$}; \\
+    \elem{b}{1} &
+    \elem{b}{2} \\
   };
   \matrix (Ai) [minicollection, nodes={minimum size=11mm}, right=\elementssep + 2\cellpadding of A2] {
-    \node (i1) {$i_1$}; \\
+    \elem{i}{1} \\
   };
   \matrix (An) [minicollection, nodes={minimum size=11mm}, right=\elementssep + 2\cellpadding of Ai] {
-    \node (n1) {$n_1$}; &
+    \elem{n}{1} &
     \helem{between}[1cm] &
-    \node (nm) {$n_m$}; \\
+    \elem{n}{m} \\
   };
 \end{scope}
 

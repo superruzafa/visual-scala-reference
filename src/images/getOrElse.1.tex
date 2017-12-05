@@ -1,12 +1,12 @@
 \input{_header.tex}
 
 \matrix (K) [map] {
-  \node (k1)       {$k_1$};     \\
-  \node (k2)       {$k_2$};     \\
-    \velem{between}                    \\
-  \node (ki-1)       {$k_{i-1}$};     \\
-  \node (ki)       {$k_i$};     \\
-    \velem{after}                    \\
+  \elem{k}{1} \\
+  \elem{k}{2} \\
+  \velem{between} \\
+  \elem{k}{i-1} \\
+  \elem{k}{i} \\
+  \velem{after} \\
 };
 
 \foreach \i/\p in {

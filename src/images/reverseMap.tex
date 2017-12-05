@@ -1,19 +1,19 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1) {$a_1$}; &
-  \node (a2) {$a_2$}; &
-  \helem{between}           &
-  \node (ai) {$a_i$}; &
-  \helem{between}           &
-  \node (an) {$a_n$}; \\
+  \elem{a}{1} &
+  \elem{a}{2} &
+  \helem{between} &
+  \elem{a}{i} &
+  \helem{between} &
+  \elem{a}{n} \\
 };
 
 \matrix (B) [collection, below=2\cellheight of A] {
   \node (bn) {$a_n$}; &
-  \helem{between}           &
+  \helem{between} &
   \node (bi) {$a_i$}; &
-  \helem{between}           &
+  \helem{between} &
   \node (b2) {$a_2$}; &
   \node (b1) {$a_1$}; \\
 };

@@ -1,21 +1,21 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1) {$a_1$}; &
-  \helem{between}          &
+  \elem{a}{1} &
+  \helem{between} &
   \node (ai) {$a_{n-i}$}; &
-  \helem{between}          &
-  \node (an-1) {$a_{n-1}$}; &
-  \node (an) {$a_n$}; \\
+  \helem{between} &
+  \elem{a}{n-1} &
+  \elem{a}{n} \\
 };
 
 \matrix (B) [collection, below=5.5\cellheight of A] {
-  \node (zn) {$z_n$}; &
-  \helem{between}          &
-  \node (zi+1) {$z_{i+1}$}; &
-  \helem{between}          &
-  \node (z2) {$z_2$}; &
-  \node (z1) {$z_1$}; &
+  \elem{z}{n} &
+  \helem{between} &
+  \elem{z}{i+1} &
+  \helem{between} &
+  \elem{z}{2} &
+  \elem{z}{1} &
   \node (z0) {\param{z}}; \\
 };
 

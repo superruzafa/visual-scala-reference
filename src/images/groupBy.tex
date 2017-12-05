@@ -1,14 +1,14 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1)   {$a_1$};     &
-  \node (a2)   {$a_2$};     &
-  \node (a3)   {$a_3$};     &
-  \helem{between}                 &
-  \node (ai)   {$a_i$};     &
-  \node (ai+1) {$a_{i+1}$}; &
-  \helem{between}                 &
-  \node (an)   {$a_n$};     \\
+  \elem{a}{1} &
+  \elem{a}{2} &
+  \elem{a}{3} &
+  \helem{between} &
+  \elem{a}{i} &
+  \elem{a}{i+1} &
+  \helem{between} &
+  \elem{a}{n} \\
 };
 
 \node [big arrow, below=\cellheight - .5\bigarrowwidth of A, anchor=west, rotate=-90];
@@ -24,35 +24,36 @@
   \path
     node (f\i) [predicate evaluation, above=.5 of a\i] {$\param{f}(a_{\i})$}
     (a\i) [predicate evaluation edge] -- (f\i);
-    \path node (fk\i) [predicate evaluation, above=.5 of f\i] {$\k$}
+  \path
+    node (fk\i) [predicate evaluation, above=.5 of f\i] {$\k$}
     (fk\i) [predicate evaluation edge] -- (f\i.north);
 }
 
 \matrix (K) [map, below left=2\cellheight and 2 of A.south] {
-  \node (k1) {$k_1$}; \\
-  \node (k2) {$k_2$}; \\
-  \velem{between}          \\
-  \node (km) {$k_m$}; \\
+  \elem{k}{1} \\
+  \elem{k}{2} \\
+  \velem{between} \\
+  \elem{k}{m} \\
 };
 
 \matrix (K1) [small collection, right=1 of k1.east] {
-  \node             {$a_1$};  &
-  \node             {$a_3$};  &
-  \helem[\smallcolfactor\elementswidth]{after}           \\
+  \node {$a_1$}; &
+  \node {$a_3$}; &
+  \helem[\smallcolfactor\elementswidth]{after} \\
 };
 
 \matrix (K2) [small collection, right=1 of k2.east] {
-  \node             {$a_2$};     &
-  \helem[\smallcolfactor\elementswidth]{between}              &
-  \node             {$a_{i+1}$}; &
-  \helem[\smallcolfactor\elementswidth]{after}              \\
+  \node {$a_2$}; &
+  \helem[\smallcolfactor\elementswidth]{between} &
+  \node {$a_{i+1}$}; &
+  \helem[\smallcolfactor\elementswidth]{after} \\
 };
 
 \matrix (Km) [small collection, right=1 of km.east] {
-  \helem[\smallcolfactor\elementswidth]{before}              &
-  \node             {$a_i$}; &
-  \helem[\smallcolfactor\elementswidth]{between}          &
-  \node             {$a_n$}; \\
+  \helem[\smallcolfactor\elementswidth]{before} &
+  \node {$a_i$}; &
+  \helem[\smallcolfactor\elementswidth]{between} &
+  \node {$a_n$}; \\
 };
 
 \foreach \i in {1, 2, m} {

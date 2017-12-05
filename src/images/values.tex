@@ -1,12 +1,12 @@
 \input{_header.tex}
 
 \matrix (K) [map] {
-  \node (k1)       {$k_1$};     \\
-  \node (k2)       {$k_2$};     \\
+  \elem{k}{1} \\
+  \elem{k}{2} \\
   \velem{between} \\
-  \node (ki)       {$k_i$};     \\
+  \elem{k}{i} \\
   \velem{between} \\
-  \node (kn)       {$k_n$};     \\
+  \elem{k}{n} \\
 };
 
 \foreach \i in {1, 2, i, n} {

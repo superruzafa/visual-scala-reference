@@ -1,27 +1,27 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1) {$a_1$}; &
-  \node (a2) {$a_2$}; &
+  \elem{a}{1} &
+  \elem{a}{2} &
   \helem{between} &
-  \node (ai) {$a_i$}; &
-  \node (ai+1) {$a_{i+1}$}; &
+  \elem{a}{i} &
+  \elem{a}{i+1} &
   \helem{between} &
-  \node (an-1) {$a_{n-1}$}; &
-  \node (an) {$a_n$}; \\
+  \elem{a}{n-1} &
+  \elem{a}{n} \\
 };
 
 \node (z) [left=\cellwidth of A] {\param{z}};
 
 \begin{scope}
   \tikzstyle{every node}=[internal operation]
-  \node (f1) [below=1.5 of $(z)!.5!(a1)$]    {$\param{seqop}(\param{z}, a_1)$};
-  \node (f2) [below=2.5 of $(a1)!.5!(a2)$]   {$\param{seqop}(z_1, a_2)$};
+  \node (f1) [below=1.5 of $(z)!.5!(a1)$] {$\param{seqop}(\param{z}, a_1)$};
+  \node (f2) [below=2.5 of $(a1)!.5!(a2)$] {$\param{seqop}(z_1, a_2)$};
   \node (f3) [below=1.5 of $(ai)!.5!(ai+1)$] {$\param{seqop}(a_i, a_{i+1})$};
   \node (f4) [below=2.5 of $(an-1)!.5!(an)$] {$\param{seqop}(a_{n-1}, a_n)$};
 
-  \node (f6) [below=2\cellheight of f3]                  {$\param{combop}(z_l, z_m)$};
-  \node (f5) at ($(f2)!.5!(f6)$)              {$\param{combop}(z_j, z_k)$};
+  \node (f6) [below=2\cellheight of f3] {$\param{combop}(z_l, z_m)$};
+  \node (f5) at ($(f2)!.5!(f6)$) {$\param{combop}(z_j, z_k)$};
 \end{scope}
 
 \node (B) [below=1 of f6] {$z_n$};

@@ -1,21 +1,21 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1)   {$a_1$};     &
-  \helem{between}                 &
-  \node (ai)   {$a_i$};     &
-  \node (ai+1) {$a_{i+1}$}; &
-  \helem{between}                 &
-  \node (an) {$a_n$};       \\
+  \elem{a}{1} &
+  \helem{between} &
+  \elem{a}{i} &
+  \elem{a}{i+1} &
+  \helem{between} &
+  \elem{a}{n} \\
 };
 
 \matrix (T) [collection, above=\cellwidth of A] {
-  \node (t1)   {$a_1$};     &
-  \helem{between};                &
-  \node (ti)   {$a_i$};     &
+  \node (t1) {$a_1$}; &
+  \helem{between}; &
+  \node (ti) {$a_i$}; &
   \node (ti+1) {$a_{i+1}$}; &
-  \helem{between}                 &
-  \node (tn) {$a_1$};       \\
+  \helem{between} &
+  \node (tn) {$a_1$}; \\
 };
 
 \topparam{T.north}{\param{that}}

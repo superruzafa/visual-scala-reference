@@ -1,24 +1,24 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1)   {$a_1$};     &
-  \node (a2)   {$a_2$};     &
-  \helem{between}                  &
-  \node (ai)   {$a_i$};   &
-  \node (ai+1) {$a_{i+1}$};  &
-  \helem{between}                 &
-  \node (an)   {$a_n$};     \\
+  \elem{a}{1} &
+  \elem{a}{2} &
+  \helem{between} &
+  \elem{a}{i} &
+  \elem{a}{i+1} &
+  \helem{between} &
+  \elem{a}{n} \\
 };
 
 \matrix (A) [tuple of collections, below=2\cellheight of A] {
-  \node (b1)   {$a_1$};     &
-  \node (b2)   {$a_2$};     &
-  \helem{between}                &
+  \node (b1) {$a_1$}; &
+  \node (b2) {$a_2$}; &
+  \helem{between} &
   \node (bi) {$a_i$}; &
   \tuplecomma &
-  \node (bi+1)   {$a_{i+1}$};     &
-  \helem{between}                &
-  \node (bn)   {$a_n$};     \\
+  \node (bi+1) {$a_{i+1}$}; &
+  \helem{between} &
+  \node (bn) {$a_n$}; \\
 };
 
 \toppointer{ai.north}{\param{index}}

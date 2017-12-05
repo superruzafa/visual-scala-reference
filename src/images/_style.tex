@@ -159,27 +159,13 @@
   font=\ttfamily
 ]
 
-% 
-% \tikzstyle{map to}=[
-%   Square-Latex
-% ]
-% 
-% \tikzstyle{tuple comma}=[
-%   minimum width=2em,
-%   draw=none,
-%   column sep=0.3mm,
-%   node contents={,}
-% ]
-% 
-% \newcommand{\tuplecomma}{ \node [tuple comma]; }
-% 
 \tikzstyle{arrow}=[
-  % draw=black,
+  draw=black,
   -latex,
 ]
 
 \tikzstyle{reverse arrow}=[
-  % draw=black,
+  draw=black,
   latex-,
 ]
 
@@ -335,20 +321,7 @@
 \tikzstyle{double measure}=[
   arrows={Triangle[angle=15:3mm 1]-Triangle[angle=15:3mm 1]}
 ]
-% \tikzstyle{inverse measure}=[
-%   arrows={-Stealth[inset=0pt, angle'=30]}
-% ]
-% 
-% 
-% \newcommand{\rightbottommeasure}[4][5mm] {
-% \begin{scope}[line width=0.1mm]
-%   \draw (#3) -- ++(0, -#1) -- ++(0, 1.25mm) coordinate(x);
-%   \draw (x) [direct measure] -- +(-3mm, 0);
-%   \draw (#4) -- ++(0, -#1) -- ++(0, 1.25mm) coordinate(x);
-%   \draw (x) [direct measure] -- node [label={[label distance=-1mm]above:#2}] {} +(8mm, 0);
-% \end{scope}
-% }
-% 
+
 \newcommand{\measure}[4][1ex] {
   \begin{scope}
     \tikzstyle{every path}=[line width=0.1mm]

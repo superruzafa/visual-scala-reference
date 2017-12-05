@@ -1,10 +1,10 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1) {$a_1$}; &
-  \node (a2) {$a_2$}; &
+  \elem{a}{1} &
+  \elem{a}{2} &
   \helem{between} &
-  \node (an) {$a_n$}; \\
+  \elem{a}{n} \\
 };
 
 \measure[-3ex]{n}{a1.south west}{an.south east}

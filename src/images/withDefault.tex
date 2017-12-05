@@ -1,10 +1,10 @@
 \input{_header.tex}
 
 \matrix (K) [map] {
-  \node (k1) {$k_1$}; \\
-  \node (k2) {$k_2$}; \\
+  \elem{k}{1} \\
+  \elem{k}{2} \\
   \velem{between} \\
-  \node (kn) {$k_n$}; \\
+  \elem{k}{n} \\
 };
 
 \node [below=\cellheight of kn.center] {$\param{f}$};
@@ -28,9 +28,5 @@
 
 \node (vf_) [right=.5\cellwidth of kf_] {$\param{f}(k_\_)$};
 \draw (kf_) [maps to] -- (vf_);
-
-% \path (vf_) [name path=a] -- +(-10, 0)
-% (K) [name path=b] -- +(0, -5);
-% \path [name intersections={of=a and b, by={x}}] (x) node [anchor=mid] {$\param{f}$};
 
 \input{_footer.tex}

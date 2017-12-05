@@ -1,13 +1,13 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \helem[.5\elementswidth]{before}                 &
-  \node (ai-j) {$a_{i-j}$}; &
-  \node (ai-j+1) {$a_{i-j+1}$}; &
-  \helem{between}                &
-  \node (ai)   {$a_i$};     &
-  \helem{between}                &
-  \node (an) {$a_n$};       \\
+  \helem[.5\elementswidth]{before} &
+  \elem{a}{i-j} &
+  \elem{a}{i-j+1} &
+  \helem{between} &
+  \elem{a}{i} &
+  \helem{between} &
+  \elem{a}{n} \\
 };
 
 \draw (ai-j.120) [latex-, out=90, in=270] to +(-2, 1) node [above] {\param{from}};
@@ -34,39 +34,3 @@
 \draw (pn.north) [arrow] .. controls +(2, 1) and +(0, 2) .. (B.north);
 
 \input{_footer.tex}
-
-% \input{_header.tex}
-% 
-% \matrix (A) [collection] {
-%   \helem[.5\elementswidth]{before}                 &
-%   \node (ai-2) {$a_{i-2}$}; &
-%   \node (ai-1) {$a_{i-1}$}; &
-%   \node (ai)   {$a_i$};     &
-%   \helem{between}                &
-%   \node (an) {$a_n$};       \\
-% };
-% 
-% \draw (ai-2.120) [latex-, out=90, in=270] to +(-2, 1) node [above] {\param{from}};
-% 
-% \foreach \i/\p/\d in {
-%   i-2/\false/1,
-%   i-1/\false/.25,
-%   i/\false/1,
-%   n/\false/.25}
-% {
-%   \path
-%     node (p\i) [predicate evaluation, above=\d of a\i] {$\param{p}(a_{\i})? \, \p$}
-%     (a\i) [predicate evaluation edge] -- (p\i);
-% }
-% 
-% \begin{scope}
-%   \tikzstyle{every path}=[iteration, bend left=60]
-%   \draw (pi-2.north) to (pi-1.north);
-%   \draw (pi-1.north) to (pi.north);
-%   \draw (pi.north) [middle dots] to (pn.north);
-% \end{scope}
-% 
-% \node (B) [below right=2\cellheight and \cellwidth of A] {$-1$};
-% \draw (pn.north) [arrow] .. controls +(2, 1) and +(0, 1) .. (B.north);
-% 
-% \input{_footer.tex}

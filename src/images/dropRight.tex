@@ -1,13 +1,13 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1) {$a_1$}; &
+  \elem{a}{1} &
   \helem{between} &
-  \node (am-n) {$a_{m-n}$}; &
-  \node (am-n+1) {$a_{m-n+1}$}; &
+  \elem{a}{m-n} &
+  \elem{a}{m-n+1} &
   \helem{between} &
-  \node (am-1) {$a_{m-1}$}; &
-  \node (am) {$a_{m}$}; \\
+  \elem{a}{m-1} &
+  \elem{a}{m} \\
 };
 
 \measure[-3ex]{\param{n}}{am-n+1.south west}{am.south east}

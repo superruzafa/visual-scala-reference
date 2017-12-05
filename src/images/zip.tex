@@ -1,32 +1,32 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1) {$a_1$}; &
-  \node (a2) {$a_2$}; &
-  \helem{between}          &
-  \node (ai) {$a_i$}; &
-  \helem{between}          &
-  \node (an) {$a_n$}; \\
+  \elem{a}{1} &
+  \elem{a}{2} &
+  \helem{between} &
+  \elem{a}{i} &
+  \helem{between} &
+  \elem{a}{n} \\
 };
 
 \matrix (Z) [collection, matrix anchor=north west, below=1\cellheight of A] at (A.south west) {
   \node (z1) {$(a_1, b_1)$}; &
   \node (z2) {$(a_2, b_2)$}; &
-  \helem{between}                  &
+  \helem{between} &
   \node (zi) {$(a_i, b_i)$}; &
-  \helem{between}                  &
+  \helem{between} &
   \node (zn) {$(a_n, b_n)$}; \\
 };
 
 \matrix (B) [collection, matrix anchor=north west, below=3\cellheight of A] at (A.south west) {
-  \node (b1) {$b_1$};       &
-  \node (b2) {$b_2$};       &
-  \helem{between}                 &
-  \node (bi) {$b_i$};       &
-  \helem{between}                 &
-  \node (bn) {$b_n$};       &
-  \node (bn+1) {$b_{n+1}$};       &
-  \helem[.5\elementswidth]{after}                 \\
+  \elem{b}{1} &
+  \elem{b}{2} &
+  \helem{between} &
+  \elem{b}{i} &
+  \helem{between} &
+  \elem{b}{n} &
+  \elem{b}{n+1} &
+  \helem[.5\elementswidth]{after} \\
 };
 
 \leftparam{B.west}{\param{that}}

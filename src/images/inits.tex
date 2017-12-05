@@ -1,37 +1,37 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1)   {$a_1$};     &
-  \node (a2)   {$a_2$};     &
-  \helem{between}                &
-  \node (an-1) {$a_{n-1}$}; &
-  \node (an)   {$a_n$};     \\
+  \elem{a}{1} &
+  \elem{a}{2} &
+  \helem{between} &
+  \elem{a}{n-1} &
+  \elem{a}{n} \\
 };
 
 \node [big arrow, below=\cellheight - .5\bigarrowwidth of A, anchor=west, rotate=-90];
 
 \matrix (I1) [collection, below=2\cellheight of A] {
-  \node (i11)   {$a_1$};     &
-  \node (i12)   {$a_2$};     &
-  \helem{between}                &
+  \node (i11) {$a_1$}; &
+  \node (i12) {$a_2$}; &
+  \helem{between} &
   \node (i1n-1) {$a_{n-1}$}; &
-  \node (i1n)   {$a_n$};     \\
+  \node (i1n) {$a_n$}; \\
 };
 
 \matrix (I2) [collection, below=\cellheight of I1, matrix anchor=i21.north west] at (i11.south west) {
-  \node (i21)   {$a_1$};     &
-  \node (i22)   {$a_2$};     &
-  \helem{between}                &
+  \node (i21) {$a_1$}; &
+  \node (i22) {$a_2$}; &
+  \helem{between} &
   \node (i2n-1) {$a_{n-1}$}; \\
 };
 
 \matrix (I3) [collection, below=1.5\cellheight of I2, matrix anchor=i31.north west] at (i21.south west) {
-  \node (i31)   {$a_1$};     &
-  \node (i32)   {$a_2$};     \\
+  \node (i31) {$a_1$}; &
+  \node (i32) {$a_2$}; \\
 };
 
 \matrix (I4) [collection, below=\cellheight of I3, matrix anchor=i41.north west] at (i31.south west) {
-  \node (i41)   {$a_1$};     \\
+  \node (i41) {$a_1$}; \\
 };
 
 \node (I5) [empty collection, below=\cellheight of I4];

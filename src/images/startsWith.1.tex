@@ -1,18 +1,18 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \helem[.5\elementswidth]{before}                 &
-  \node (ai-1)   {$a_{i-1}$};     &
-  \node (ai)     {$a_i$};     &
-  \node (ai+1)   {$a_{i+1}$};     &
-  \node (ai+2) {$a_{i+2}$}; &
-  \helem[.5\elementswidth]{after}                 \\
+  \helem[.5\elementswidth]{before} &
+  \elem{a}{i-1} &
+  \elem{a}{i} &
+  \elem{a}{i+1} &
+  \elem{a}{i+2} &
+  \helem[.5\elementswidth]{after} \\
 };
 
 \matrix (T) [collection, above=2\cellheight of ai.north west, matrix anchor=south west] {
-  \node (ti)   {$a_i$}; &
-  \node (ti+1)   {$a_{i+1}$}; &
-  \node (ti+2)   {$a_{i+2}$}; \\
+  \node (ti) {$a_i$}; &
+  \node (ti+1) {$a_{i+1}$}; &
+  \node (ti+2) {$a_{i+2}$}; \\
 };
 
 \toppointer{ai.north}{\param{offset}}

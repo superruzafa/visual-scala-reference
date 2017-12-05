@@ -1,13 +1,13 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \helem[.5\elementswidth]{before}                 &
-  \node (ai-j) {$a_{i-j}$}; &
-  \node (ai-j+1) {$a_{i-j+1}$}; &
-  \helem{between}                &
-  \node (ai)   {$a_i$};     &
-  \helem{between}                &
-  \node (an) {$a_n$};       \\
+  \helem[.5\elementswidth]{before} &
+  \elem{a}{i-j} &
+  \elem{a}{i-j+1} &
+  \helem{between} &
+  \elem{a}{i} &
+  \helem{between} &
+  \elem{a}{n} \\
 };
 
 \draw (ai-j.120) [latex-, out=90, in=270] to +(-2, 1) node [above] {\param{from}};

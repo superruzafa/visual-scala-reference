@@ -18,9 +18,8 @@
   i/i+1/4mm/\true}
 {
   \draw (a\f.north west) [brace, decoration={mirror=false, raise=2mm + \r, aspect=.25}] -- (a\t.north east);
-  \draw ($ (a\f.north west)!.25!(a\t.north east) $) ++(0, 2mm + 2mm + \r) [predicate evaluation edge] -- +(0, 1)
-    node (p\f) [above, predicate evaluation] {$=\param{that}?\, \p$};
-}  
+  \draw ($ (a\f.north west)!.25!(a\t.north east) $) ++(0, 2mm + 2mm + \r) [predicate evaluation edge] -- +(0, 1) node (p\f) [above, predicate evaluation] {$=\param{that}?\, \p$};
+}
 
 \matrix (T) [collection, matrix of math nodes, right=\cellwidth of A] {
   a_i &

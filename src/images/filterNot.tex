@@ -1,22 +1,22 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1)   {$a_1$};     &
-  \node (a2)   {$a_2$};     &
-  \node (a3)   {$a_3$};     &
-  \helem{between}                &
-  \node (ai)   {$a_i$};     &
-  \node (ai+1) {$a_{i+1}$}; &
-  \helem{between}                &
-  \node (an-1) {$a_{n-1}$}; &
-  \node (an)   {$a_n$};     \\
+  \elem{a}{1} &
+  \elem{a}{2} &
+  \elem{a}{3} &
+  \helem{between} &
+  \elem{a}{i} &
+  \elem{a}{i+1} &
+  \helem{between} &
+  \elem{a}{n-1} &
+  \elem{a}{n} \\
 };
     
 \matrix (B) [collection, below=2\cellheight of A] {
-  \node (b2)   {$a_2$}; &
-  \helem{between}            &
-  \node (bi+1)   {$a_{i+1}$}; &
-  \helem{between}            &
+  \node (b2) {$a_2$}; &
+  \helem{between} &
+  \node (bi+1) {$a_{i+1}$}; &
+  \helem{between} &
   \node (bn) {$a_n$}; \\
 };
     

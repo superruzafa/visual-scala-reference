@@ -1,12 +1,12 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (1) {$a_1$}; &
-  \node (2) {$a_2$}; &
+  \elem{a}{1} &
+  \elem{a}{2} &
   \helem{between} &
-  \node (2) {$a_n$}; &
+  \elem{a}{i} &
   \helem{between} &
-  \node (m) {$a_m$}; \\
+  \elem{a}{n} \\
 };
 
 \node [big arrow, below=\cellheight - .5\bigarrowwidth of A, anchor=west, rotate=-90];

@@ -1,12 +1,12 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1) {$a_1$};     &
-  \node (a2) {$a_2$};     &
+  \elem{a}{1} &
+  \elem{a}{2} &
   \helem{between} &
-  \node (ai-1) {$a_{i-1}$}; &
-  \node (ai) {$a_i$};     &
-  \helem[.5\elementswidth]{after}                 \\
+  \elem{a}{i-1} &
+  \elem{a}{i} &
+  \helem[.5\elementswidth]{after} \\
 };
 
 \foreach \i/\p/\d in {

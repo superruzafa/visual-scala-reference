@@ -1,16 +1,16 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \helem{before}                 &
-  \node (an-2) {$a_{n-2}$}; &
-  \node (an-1) {$a_{n-1}$}; &
-  \node (an)   {$a_n$};     \\
+  \helem{before} &
+  \elem{a}{n-2} &
+  \elem{a}{n-1} &
+  \elem{a}{n} \\
 };
 
 \matrix (T) [collection, above=2\cellheight of A.north east, matrix anchor=south east] {
   \node (tn-2) {$a_{n-2}$}; &
   \node (tn-1) {$b_{n-1}$}; &
-  \node (tn)   {$a_n$};     \\
+  \node (tn) {$a_n$}; \\
 };
 
 \topparam{T.north}{\param{that}};

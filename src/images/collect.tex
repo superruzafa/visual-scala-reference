@@ -1,14 +1,14 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1) {$a_1$}; &
-  \node (a2) {$a_2$}; &
+  \elem{a}{1} &
+  \elem{a}{2} &
   \helem{between} &
-  \node (ai) {$a_i$}; &
-  \node (ai+1) {$a_{i+1}$}; &
+  \elem{a}{i} &
+  \elem{a}{i+1} &
   \helem{between} &
-  \node (an-1) {$a_{n-1}$}; &
-  \node (an) {$a_n$}; \\
+  \elem{a}{n-1} &
+  \elem{a}{n} \\
 };
 
 \matrix (B) [collection, below=2\cellheight of A] {
@@ -19,17 +19,15 @@
   \node (bn-1) {$b_m$}; \\
 };
 
-\begin{scope}
-  \tikzstyle{every node}=[predicate evaluation]
-  \node (pf1)   [above=.25 of a1]   {$\exists \, \param{pf}(a_1)?     \, \false$};
-  \node (pf2)   [above=1 of a2]     {$\exists \, \param{pf}(a_2)?     \, \true$};
-  \node (pfi)   [above=.25 of ai]   {$\exists \, \param{pf}(a_i)?     \, \true$};
-  \node (pfi+1) [above=1 of ai+1]   {$\exists \, \param{pf}(a_{i+1})? \, \false$};
-  \node (pfn-1) [above=.25 of an-1] {$\exists \, \param{pf}(a_{n-1})? \, \true$};
-  \node (pfn)   [above=1 of an]     {$\exists \, \param{pf}(a_n)?     \, \false$};
-\end{scope}
-
-\foreach \i in {1, 2, i, i+1, n-1, n} {
+\foreach \i/\p/\d in {
+  1/\false/.25,
+  2/\true/1,
+  i/\true/.25,
+  i+1/\false/1,
+  n-1/\true/.25,
+  n/\false/1}
+{
+  \node (pf\i) [predicate evaluation, above=\d of a\i] {$\exists \, \param{pf}(a_{\i})? \, \p$};
   \draw (a\i.north) [predicate evaluation edge] -- (pf\i);
 }
 

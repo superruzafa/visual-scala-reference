@@ -1,13 +1,13 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1)   {$a_1$};     &
-  \node (a2)   {$a_2$};     &
-  \helem{between}                  &
-  \node (ai-1) {$a_{i-1}$};  &
-  \node (ai)   {$a_i$};   &
-  \helem{between}                 &
-  \node (an)   {$a_n$};     \\
+  \elem{a}{1} &
+  \elem{a}{2} &
+  \helem{between} &
+  \elem{a}{i-1} &
+  \elem{a}{i} &
+  \helem{between} &
+  \elem{a}{n} \\
 };
 
 \foreach \i/\p/\d in {
@@ -29,14 +29,14 @@
 \end{scope}
  
 \matrix (A) [tuple of collections, below=2\cellheight of A] {
-  \node (b1)   {$a_1$};     &
-  \node (b2)   {$a_2$};     &
-  \helem{between}                &
-  \node (bi-1)   {$a_{i-1}$};     &
+  \node (b1) {$a_1$}; &
+  \node (b2) {$a_2$}; &
+  \helem{between} &
+  \node (bi-1) {$a_{i-1}$}; &
   \tuplecomma &
   \node (bi) {$a_i$}; &
-  \helem{between}                &
-  \node (bn)   {$a_n$};     \\
+  \helem{between} &
+  \node (bn) {$a_n$}; \\
 };
 
 \bottombrace[a]{a1.south west}{ai-1.south east}

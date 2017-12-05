@@ -4,39 +4,39 @@
 \setlength{\paramsdistance}{1em}
 
 \matrix (A) [collection] {
-  \node (a1) {$a_1$}; &
-  \node (a2) {$a_2$}; &
-  \helem{between}           &
-  \node (am) {$a_m$}; \\
+  \elem{a}{1} &
+  \elem{a}{2} &
+  \helem{between} &
+  \elem{a}{m} \\
 };
 
 \node (E) [empty collection, right=\paramsdistance of A];
 
 \matrix (B) [collection, right=\paramsdistance of E] {
-  \node (b1) {$b_1$};     &
-  \helem{between}               &
-  \node (bn) {$b_n$}; \\
+  \elem{b}{1} &
+  \helem{between} &
+  \elem{b}{n} \\
 };
 
 \node (EL) [right=\paramsdistance of B] {$\ldots$}; 
 
 \matrix (C) [collection, right=\paramsdistance of EL] {
-  \node (c1) {$c_1$}; &
-  \helem{between}           &
-  \node (co) {$c_o$}; \\
+  \elem{c}{1} &
+  \helem{between} &
+  \elem{c}{o} \\
 };
 
 \matrix (Z) [collection, below=2\cellheight of $ (A.south west)!.5!(C.south east) $] {
   \node (za1) {$a_1$}; &
   \node (za2) {$a_2$}; &
-  \helem{between}            &
+  \helem{between} &
   \node (zam) {$a_m$}; &
   \node (zb1) {$b_1$}; &
-  \helem{between}            &
+  \helem{between} &
   \node (zbn) {$b_n$}; &
-  \helem{between}            &
+  \helem{between} &
   \node (zc1) {$c_1$}; &
-  \helem{between}            &
+  \helem{between} &
   \node (zco) {$c_o$}; \\
 };
 
@@ -44,7 +44,7 @@
 \topparam{E.north}{\param{xss(1)}}
 \topparam{B.north}{\param{xss(2)}}
 \topparam{C.north}{\param{xss(n-1)}}
-% 
+ 
 \foreach \i in {a1, a2, am, b1, bn, c1, co} {
   \draw ($ (\i.south) + (0, 2ex) $) [smooth arrow, erase] to (z\i);
 }

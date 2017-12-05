@@ -1,17 +1,17 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \helem[.5\elementswidth]{before}                 &
-  \node (am-n)   {$a_{m-n}$};     &
-  \node (am-n+1) {$a_{m-n+1}$}; &
-  \helem{between}                &
-  \node (am-1) {$a_{m-1}$}; &
-  \node (am) {$a_m$}; \\
+  \helem[.5\elementswidth]{before} &
+  \elem{a}{m-n} &
+  \elem{a}{m-n+1} &
+  \helem{between} &
+  \elem{a}{m-1} &
+  \elem{a}{m} \\
 };
 
 \matrix (B) [collection, below=2\cellheight of A, matrix anchor=bm.north west] at (am.south west) {
   \node (bm-n+1) {$a_{m-n+1}$}; &
-  \helem{between}                &
+  \helem{between} &
   \node (bm-1) {$a_{m-1}$}; &
   \node (bm) {$a_m$}; \\
 };

@@ -1,15 +1,15 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1)   {$a_1$};     &
-  \node (a2)   {$a_2$};     &
-  \node (a3)   {$a_3$};     &
-  \helem{between}                &
-  \node (ai-1) {$a_{i-1}$}; &
-  \node (ai)   {$a_i$};     &
-  \helem{between}                &
-  \node (an-1) {$a_{n-1}$}; &
-  \node (an)   {$a_n$};     \\
+  \elem{a}{1} &
+  \elem{a}{2} &
+  \elem{a}{3} &
+  \helem{between} &
+  \elem{a}{i-1} &
+  \elem{a}{i} &
+  \helem{between} &
+  \elem{a}{n-1} &
+  \elem{a}{n} \\
 };
 
 \foreach \i/\p/\d in {
@@ -27,18 +27,18 @@
 }
 
 \matrix [tuple of collections, below=2\cellheight of A] {
-  \node (b1)   {$a_1$};     &
-  \node (b3)   {$a_3$};     &
-  \helem{between}                &
-  \node (bi)   {$a_i$};     &
-  \helem{between}                &
+  \node (b1) {$a_1$}; &
+  \node (b3) {$a_3$}; &
+  \helem{between} &
+  \node (bi) {$a_i$}; &
+  \helem{between} &
   \node (bn-1) {$a_{n-1}$}; &
   \tuplecomma &
-  \node (b2)   {$a_2$};     &
-  \helem{between}                &
+  \node (b2) {$a_2$}; &
+  \helem{between} &
   \node (bi-1) {$a_{i-1}$}; &
-  \helem{between}                &
-  \node (bn)   {$a_n$};     \\
+  \helem{between} &
+  \node (bn) {$a_n$}; \\
 };
 
 \foreach \i in {1, 2, 3, i-1, i, n-1, n} {
