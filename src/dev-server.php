@@ -13,7 +13,7 @@ if ($return != 0) {
   echo '<pre>', implode($output, "\n");
   die;
 }
-
+file_put_contents('php://stdout', implode("\n", $output));
 
 $extension = pathinfo($localPath, PATHINFO_EXTENSION);
 

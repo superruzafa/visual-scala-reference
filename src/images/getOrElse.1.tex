@@ -1,24 +1,36 @@
 \input{_header.tex}
 
-\matrix (K) [map keys] {
-    \node (k1)       {$k_1$};     \\
-    \node (k2)       {$k_2$};     \\
-    \vellipsis                    \\
-    \node (ki)       {$k_i$};     \\
-    \vellipsis                    \\
-    \node (kn)       {$k_n$};     \\
+\matrix (K) [map] {
+  \elem{k}{1} \\
+  \elem{k}{2} \\
+  \velem{between} \\
+  \elem{k}{i-1} \\
+  \elem{k}{i} \\
+  \velem{after} \\
 };
 
-\foreach \i/\b in {1/\false, 2/\false, i/\true} {
-  \node (v\i) [elem, right=1cm of k\i] {$v_{\i}$};
-  \draw (k\i) [map to] -- (v\i);
-  \node (p\i) [predicate, left=1em of k\i, pin={[function result, pin position=190] \b}] {$\textrm{key} = k_{\i}?$};
-  \draw (k\i) -- ([xshift=0.5em] p\i.east) coordinate (x\i);
+\foreach \i/\p in {
+  1/\false,
+  2/\false,
+  i-1/\false,
+  i/\true}
+{
+  \path
+    node (p\i) [predicate evaluation, left=.5 of k\i] {$k_\i = \param{elem}?\,\p$}
+    (k\i) [predicate evaluation edge] -- (p\i);
+  \node (v\i) [right=.5\cellwidth of k\i] {$v_{\i}$};
+  \draw (k\i) [maps to] -- (v\i);
 }
 
-\node (B) [elem, right=1cm of vi] {$v_i$};
+\begin{scope}
+  \tikzstyle{every path}=[iteration, bend right=45]
+  \draw ($ (p1.west) + (0, 1) $) to (p1.west);
+  \draw (p1.west) to (p2.west);
+  \draw (p2.west) [middle dots] to (pi-1.west);
+  \draw (pi-1.west) to (pi.west);
+\end{scope}
 
-\draw (x1) [iteration] to (x2);
-\draw (x2) [iteration, middotted] to node [rotate=-90] {\falseseq} (xi);
+\node (B) [right=\cellwidth of vi] {$v_i$};
 \draw (vi) [arrow] -- (B);
+
 \input{_footer.tex}

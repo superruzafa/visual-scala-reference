@@ -1,34 +1,25 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1) {$a_1$}; &
-  \node (a2) {$a_2$}; &
-  \ellipsis           &
-  \node (an) {$a_n$};  \\
+  \elem{a}{1} &
+  \helem{between} &
+  \elem{a}{i} &
+  \elem{a}{i+1} &
+  \helem{between} &
+  \elem{a}{n} \\
 };
 
-\matrix (B) [collection, below=2cm of A] {
-  \node (b1) {$a_1$}; &
-  \node (b2) {$a_2$}; &
-  \ellipsis           &
-  \node (bn) {$a_n$}; \\
+\matrix (T) [collection, above=\cellwidth of A] {
+  \node (t1) {$a_1$}; &
+  \helem{between}; &
+  \node (ti) {$a_i$}; &
+  \node (ti+1) {$a_{i+1}$}; &
+  \helem{between} &
+  \node (tn) {$a_1$}; \\
 };
 
-\node [draw, ellipse callout, callout absolute pointer={([xshift=-1mm] B.west)}] at ([xshift=-1cm] B.west) {that};
- 
-\draw (a2.south east) [draw=none] -- node {\trueseq} (bn.north west);
-
-\begin{scope}
-  \tikzstyle{every path}=[Latex-Latex]
-  \tikzstyle{every node}=[arrow label]
-  \foreach \i in {1, 2, n} {
-    \draw (a\i) -- node (t\i) {=? \true} (b\i);
-  }
-\end{scope}
-
-\node (B) [elem, right=1cm of tn] {\true};
-\draw [arrow] (tn) -- (B);
-
-\draw (t1.north west) [rounded corners=0.5em] rectangle (tn.south east);
+\topparam{T.north}{\param{that}}
+\node [big arrow, right=\cellwidth of $ (A.east)!.5!(T.east) $];
+\node [right=2\cellwidth of $ (A.east)!.5!(T.east) $] {$\true$};
 
 \input{_footer.tex}

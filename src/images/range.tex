@@ -1,22 +1,25 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-    \node (a1)   {$a_1$};     &
-    \node (a2)   {$a_2$};     &
-    \ellipsis                 &
-    \node (an-1) {$a_{n-1}$}; &
-    \node (an)   {$a_n$};     \\
+  \elem{a}{1} &
+  \elem{a}{2} &
+  \helem{between} &
+  \elem{a}{i} &
+  \helem{between} &
+  \elem{a}{n} \\
 };
 
-\toppointer{a1.north}{start}
+\toppointer{a1.north}{\param{start}}
 
 \begin{scope}
-  \tikzstyle{every path}=[arrow, bend right=45]
-  \draw (a1.south) to node [below] {$+step$} (a2.south);
-  \draw (a2.south) [middotted] to node [below] {$+step$} (an-1.south);
-  \draw (an-1.south) to node [below] {$+step$} (an.south);
+  \tikzstyle{every path}=[bend left=45]
+  \draw (a1.north) [arrow, plus step] to (a2.north);
+  \draw (a2.north) [arrow, middle dots] to (ai.north);
+  \path (a2.north) [plus step] to (ai.north);
+  \draw (ai.north) [arrow, middle dots] to (an.north);
+  \path (ai.north) [plus step] to (an.north);
 \end{scope}
 
-\draw ([yshift=5mm] an.north east) node [label=above:end] {} [dashed] -- ([yshift=-5mm] an.south east);
+\draw ($ (an.north east) + (0, 1) $) node [above] {\param{end}} [dashed] -- ($ (an.south east) - (0, 1) $);
 
 \input{_footer.tex}

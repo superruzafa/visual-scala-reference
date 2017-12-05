@@ -1,25 +1,25 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-  \node (1) {$a_1$}; &
-  \node (2) {$a_2$}; &
-  \ellipsis          &
-  \node (i) {$a_i$}; &
-  \ellipsis          &
-  \node (n) {$a_n$}; \\
+\matrix (A) [collection] {
+  \elem{a}{1} &
+  \elem{a}{2} &
+  \helem{between} &
+  \elem{a}{i} &
+  \helem{between} &
+  \elem{a}{n} \\
 };
 
-\matrix (B) [collection, below=2cm of A] {
+\matrix (B) [collection, below=2\cellheight of A] {
   \node (b1) {$a^{\prime}_1$}; &
   \node (b2) {$a^{\prime}_2$}; &
-  \ellipsis                   &
+  \helem{between} &
   \node (bi) {$a^{\prime}_i$}; &
-  \ellipsis                   &
+  \helem{between} &
   \node (bn) {$a^{\prime}_n$}; \\
 };
 
 \foreach \i in {1, 2, i, n} {
-  \draw (a\i) [arrow] -- node [arrow label] {$\texttt{f}(a_{\i})$} (b\i);
+  \draw (a\i) [arrow] -- node [arrow label] {$\param{f}(a_{\i})$} (b\i);
 }
 
 \input{_footer.tex}

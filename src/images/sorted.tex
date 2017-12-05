@@ -2,25 +2,25 @@
 
 \matrix (A) [collection] {
   \node {$a_2$}; &
-  \ellipsis      &
+  \helem{between} &
   \node {$a_n$}; &
-  \ellipsis      &
+  \helem{between} &
   \node {$a_1$}; &
-  \ellipsis      &
+  \helem{between} &
   \node {$a_i$}; \\
 };
 
-\matrix (B) [collection, below=2cm of A] {
+\matrix (B) [collection, below=2\cellheight of A] {
   \node {$a_1$}; &
   \node {$a_2$}; &
-  \ellipsis      &
+  \helem{between} &
   \node {$a_i$}; &
-  \ellipsis      &
+  \helem{between} &
   \node {$a_n$}; \\
 };
 
-\draw (A.south west) [bottombrace] -- coordinate(c) (A.south east);
-\draw (B.north west) [topbrace] -- coordinate(d) (B.north east);
-\draw (c) [arrow, from brace, to brace] -- node [arrow label] {$a_j \leq a_k \, \forall j < k$} (d);
+\bottombrace[a]{A.south west}{A.south east}
+\topbrace[b]{B.north west}{B.north east}
+\draw (a) [arrow] -- node [arrow label] {$a_j \leq a_k \, \forall j < k$} (b);
 
 \input{_footer.tex}

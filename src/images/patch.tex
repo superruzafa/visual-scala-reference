@@ -1,39 +1,51 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-  \node (1)   {$a_1$};     &
-  \node (2)   {$a_2$};     &
-  \node (3)   {$a_3$};     &
-  \ellipsis                &
-  \node (n-2) {$a_{n-2}$}; &
-  \node (n-1) {$a_{n-1}$}; &
-  \node (n)   {$a_n$};     \\
+\matrix (A) [collection] {
+  \helem[.5\elementswidth]{before} &
+  \elem{a}{i-1} &
+  \elem{a}{i} &
+  \helem{between} &
+  \elem{a}{i+j} &
+  \elem{a}{i+j+1} &
+  \helem[.5\elementswidth]{after} \\
 };
 
-\matrix (B) [collection, node distance=2cm, right of=an, matrix anchor=b1.east] at (an.east) {
-  \node (b1) {$b_1$}; &
-  \ellipsis           &
-  \node (bn) {$b_n$}; \\
+\matrix (T) [collection, right=\cellwidth of A] {
+  \node (t1) {$b_1$}; &
+  \node (t2) {$b_2$}; &
+  \helem{between} &
+  \node (tm) {$b_m$}; \\
 };
 
-\node [draw, ellipse callout, callout absolute pointer={([yshift=1mm] B.north)}] at ([yshift=1cm] B.north) {$\texttt{that}$};
+\rightparam{T.east}{\param{that}};
 
-\matrix (C) [collection, name prefix=c, node distance=4cm, below of=A] {
-  \node (a1)   {$a_1$}; &
-  \node (a2)   {$a_2$}; &
-  \node (b1) {$b_1$};  &
-  \ellipsis            &
-  \node (bn) {$b_n$};  &
-  \node (an-1) {$a_{n-1}$}; &
-  \node (an)   {$a_n$}; \\
+\matrix (B) [collection, below=2\cellheight of A] {
+  \helem[.5\elementswidth]{before} &
+  \node (bai-1) {$a_{i-1}$}; &
+  \node (bt1) {$b_1$}; &
+  \node (bt2) {$b_2$}; &
+  \helem{between} &
+  \node (btm) {$b_m$}; &
+  \node (bai+j+1) {$a_{i+j+1}$}; &
+  \helem[.5\elementswidth]{after} \\
 };
 
-\toppointer{a3.north}{from}
-\bottommeasure{replaced}{a3.south west}{an-2.south east}
-\bracetobrace{a1.south west}{a2.south east}{ca1.north west}{ca2.north east}
-\bracetobrace{an-1.south west}{an.south east}{can-1.north west}{can.north east}
-\draw (b1.south west) [bottombrace] -- coordinate (x) (bn.south east);
-\draw (cb1.north west) [topbrace] -- coordinate (y) (cbn.north east);
-\draw ([yshift=-2mm] x) [white border, arrow, out=240, in=60] to ([yshift=2mm] y);
+\toppointer{ai.north}{\param{from}}
+\measure[-4ex]{\param{replaced}}{ai.south west}{ai+j.south east}
+
+\newlength{\varwidth}
+\setlength{\varwidth}{\cellwidth + .5\elementswidth}
+
+\bottombrace[a]{$ (ai-1.south east) - (\varwidth, 0) $}{ai-1.south east}
+\topbrace[b]{$ (bai-1.north east) - (\varwidth, 0) $}{bai-1.north east}
+\draw (a) [smooth arrow] to (b);
+
+\bottombrace[a]{ai+j+1.south west}{$ (ai+j+1.south west) + (\varwidth, 0) $}
+\topbrace[b]{bai+j+1.north west}{$ (bai+j+1.north west) + (\varwidth, 0) $}
+\draw (a) [smooth arrow] to (b);
+
+\bottombrace[a]{t1.south west}{tm.south east}
+\topbrace[b]{bt1.north west}{btm.north east}
+\draw (a) [arrow, erase] .. controls +(0, -2) and +(0, 2) .. (b);
 
 \input{_footer.tex}

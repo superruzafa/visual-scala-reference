@@ -5,8 +5,8 @@
     en: Aggregates the results of applying an operator to subsequent elements.
     es: Agrega los resultados de aplicar un operador a elementos subsecuentes.
   figures:
-  - en: <code>aggregate</code> applies <var>seqop</var> to adjacent elements and then combines these results with <code>combop</code>.
-    es: <code>aggregate</code> aplica <var>seqop</var> a elementos adyacentes y luego combina estos resultados con <code>combop</code>.
+  - en: <code>aggregate</code> applies <var>seqop</var> to adjacent elements and then combines these results with <var>combop</var>.
+    es: <code>aggregate</code> aplica <var>seqop</var> a elementos adyacentes y luego combina estos resultados con <var>combop</var>.
   - en: <code>aggregate</code> returns <var>z</var> on empty collections.
     es: <code>aggregate</code> devuelve <var>z</var> en colecciones vacías.
 
@@ -16,8 +16,8 @@
     en: Builds a new collection by applying a partial function to all elements of this collection on which the function is defined.
     es: Construye una nueva colección aplicando una función parcial a todos los elementos de esta colección para los que dicha función está definida.
   figures:
-  - en: <code>collect</code> applies <code>pf</code> only to those elements on which <code>pf</code> is defined.
-    es: <code>collect</code> aplica <code>pf</code> sólo a aquellos elementos para los que <code>pf</code> está definida.
+  - en: <code>collect</code> applies <var>pf</var> only to those elements on which <var>pf</var> is defined.
+    es: <code>collect</code> aplica <var>pf</var> sólo a aquellos elementos para los que <var>pf</var> está definida.
 
 - name: collectFirst
   signature: "def collectFirst[B](pf: PartialFunction[A, B]): Option[B]"
@@ -25,10 +25,10 @@
     en: Finds the first element of the collection on which the given partial function is defined, and applies the partial function to it.
     es: Encuentra el primer elemento de la colección para el cual está definida una función parcial, aplicando después dicha función parcial.
   figures:
-  - en: <code>collectFirst</code> wraps with <code>Some</code> the result of applying <code>pf</code> on the first element on which <code>pf</code> is defined.
-    es: <code>collectFirst</code> envuelve con <code>Some</code> el resultado de aplicar <code>pf</code> al primer elemento para el que <code>pf</code> está definida.
-  - en: <code>collectFirst</code> returns <code>None</code> when <code>pf</code> is defined for no element.
-    es: <code>collectFirst</code> devuelve <code>None</code> cuando <code>pf</code> no está definida para ningún elemento.
+  - en: <code>collectFirst</code> wraps with <code>Some</code> the result of applying <var>pf</var> on the first element on which <var>pf</var> is defined.
+    es: <code>collectFirst</code> envuelve con <code>Some</code> el resultado de aplicar <var>pf</var> al primer elemento para el que <var>pf</var> está definida.
+  - en: <code>collectFirst</code> returns <code>None</code> when <var>pf</var> is defined for no element.
+    es: <code>collectFirst</code> devuelve <code>None</code> cuando <var>pf</var> no está definida para ningún elemento.
 
 - name: combinations
   signature: "def combinations(n: Int): Iterator[<em>Collection</em>[A]]"
@@ -54,10 +54,10 @@
     en: Tests whether this collection contains a given value as an element.
     es: Comprueba si esta colección contiene un valor dado en forma de elemento.
   figures:
-  - en: <code>contains</code> returns <code>true</code> when at least one element in the collection is equal to <var>elem</var>.
-    es: <code>contains</code> devuelve <code>true</code> cuando al menos un elemento de la colección es igual a <var>elem</var>.
-  - en: <code>contains</code> returns <code>false</code> when the collection contains no element equal to <var>elem</var>.
-    es: <code>contains</code> devuelve <code>false</code> cuando la colección no contiene ningún elemento igual a <var>elem</var>.
+  - en: <code>contains</code> returns <code class="literal true">true</code> when at least one element in the collection is equal to <var>elem</var>.
+    es: <code>contains</code> devuelve <code class="literal true">true</code> cuando al menos un elemento de la colección es igual a <var>elem</var>.
+  - en: <code>contains</code> returns <code class="literal false">false</code> when the collection contains no element equal to <var>elem</var>.
+    es: <code>contains</code> devuelve <code class="literal false">false</code> cuando la colección no contiene ningún elemento igual a <var>elem</var>.
 
 - name: containsSlice
   signature: "def containsSlice[B](that: GenSeq[B]): Boolean"
@@ -65,8 +65,8 @@
     en: Tests whether this collection contains a given sequence as a slice.
     es: Comprueba si esta colección contiene una secuencia dada en forma de subcolección.
   figures:
-  - en: <code>containsSlice</code> returns <code>true</code> when <var>that</var> can be found at least once as subsequence of the collection.
-    es: <code>containsSlice</code> devuelve <code>true</code> cuando <var>that</var> puede ser encontrada como subsecuencia de la colección al menos una vez.
+  - en: <code>containsSlice</code> returns <code class="literal true">true</code> when <var>that</var> can be found at least once as subsequence of the collection.
+    es: <code>containsSlice</code> devuelve <code class="literal true">true</code> cuando <var>that</var> puede ser encontrada como subsecuencia de la colección al menos una vez.
 
 - name: count
   signature: "def count(p: (A) ⇒ Boolean): Int"
@@ -74,8 +74,8 @@
     en: Counts the number of elements in the collection which satisfy a predicate.
     es: Cuenta el número de elementos en la colección que satisfacen un predicado.
   figures:
-  - en: <code>count</code> counts how many elements satisfy <code>p</code>.
-    es: <code>count</code> cuenta cuántos elementos satisfacen <code>p</code>.
+  - en: <code>count</code> counts how many elements satisfy <var>p</var>.
+    es: <code>count</code> cuenta cuántos elementos satisfacen <var>p</var>.
 
 - name: diff
   signature: "def diff(that: Seq[A]): <em>Collection</em>[A]"
@@ -119,8 +119,8 @@
     en: Drops longest prefix of elements that satisfy a predicate.
     es: Descarta el mayor prefijo de elementos que satisfacen un predicado.
   figures:
-  - en: <code>dropWhile</code> discards elements while they satisfy <code>p</code>.
-    es: <code>dropWhile</code> descarta elementos mientras satisfacen <code>p</code>.
+  - en: <code>dropWhile</code> discards elements while they satisfy <var>p</var>.
+    es: <code>dropWhile</code> descarta elementos mientras satisfacen <var>p</var>.
 
 - name: endsWith
   signature: "def endsWith[B](that: GenSeq[B]): Boolean"
@@ -128,10 +128,10 @@
     en: Tests whether this collection ends with the given sequence.
     es: Comprueba si esta colección termina con una secuencia dada.
   figures:
-  - en: <code>endsWith</code> returns <code>false</code> when <var>that</var> is not suffix of the collection.
-    es: <code>endsWith</code> devuelve <code>false</code> cuando <var>that</var> no es sufijo de la colección.
-  - en: <code>endsWith</code> returns <code>true</code> when <var>that</var> is suffix of the collection.
-    es: <code>endsWith</code> devuelve <code>true</code> cuando <var>that</var> es sufijo de la colección.
+  - en: <code>endsWith</code> returns <code class="literal false">false</code> when <var>that</var> is not suffix of the collection.
+    es: <code>endsWith</code> devuelve <code class="literal false">false</code> cuando <var>that</var> no es sufijo de la colección.
+  - en: <code>endsWith</code> returns <code class="literal true">true</code> when <var>that</var> is suffix of the collection.
+    es: <code>endsWith</code> devuelve <code class="literal true">true</code> cuando <var>that</var> es sufijo de la colección.
 
 - name: exists
   signature: "def exists(p: (A) ⇒ Boolean): Boolean"
@@ -139,10 +139,10 @@
     en: Tests whether a predicate holds for at least one element of this collection.
     es: Comprueba si un predicado es válido para al menos un elemento de esta colección.
   figures:
-  - en: <code>exists</code> returns <code>true</code> when the collection contains at least one element that satisfy <code>p</code>.
-    es: <code>exists</code> devuelve <code>true</code> cuando la colección contiene al menos un elemento que satisface <code>p</code>.
-  - en: <code>exists</code> returns <code>false</code> when no element in the collection satisfies <code>p</code>.
-    es: <code>exists</code> devuelve <code>false</code> cuando ningún elemento en la colección satisface <code>p</code>.
+  - en: <code>exists</code> returns <code class="literal true">true</code> when the collection contains at least one element that satisfy <var>p</var>.
+    es: <code>exists</code> devuelve <code class="literal true">true</code> cuando la colección contiene al menos un elemento que satisface <var>p</var>.
+  - en: <code>exists</code> returns <code class="literal false">false</code> when no element in the collection satisfies <var>p</var>.
+    es: <code>exists</code> devuelve <code class="literal false">false</code> cuando ningún elemento en la colección satisface <var>p</var>.
 
 - name: fill
   signature: "def <em>Collection</em>.fill[A](n<sub>1</sub>: Int, ..., n<sub>m</sub>: Int)(elem: ⇒ A): <em>Collection</em>[... <em>Collection</em>[A] ...]"
@@ -159,8 +159,8 @@
     en: Selects all elements of this traversable collection which satisfy a predicate.
     es: Selecciona todos los elementos de la colección que satisfacen un predicado.
   figures:
-  - en: <code>filter</code> preserves only those elements that satisfy <code>p</code>.
-    es: <code>filter</code> conserva solo aquellos elementos que satisfacen <code>p</code>.
+  - en: <code>filter</code> preserves only those elements that satisfy <var>p</var>.
+    es: <code>filter</code> conserva solo aquellos elementos que satisfacen <var>p</var>.
 
 - name: filterKeys
   signature: "def filterKeys(p: (K) ⇒ Boolean): Map[K, V]"
@@ -168,8 +168,8 @@
     en: Filters this map by retaining only keys satisfying a predicate.
     es: Filtra esta mapa reteniendo solo las claves que satisfacen un predicado.
   figures:
-  - en: <code>filterKeys</code> preserves only those elements whose key satisfies <code>p</code>.
-    es: <code>filterKeys</code> conserva solo aquellos elementos cuya clave satisface <code>p</code>.
+  - en: <code>filterKeys</code> preserves only those elements whose key satisfies <var>p</var>.
+    es: <code>filterKeys</code> conserva solo aquellos elementos cuya clave satisface <var>p</var>.
 
 - name: filterNot
   signature: "def filterNot(p: (A) ⇒ Boolean): <em>Collection</em>[A]"
@@ -177,8 +177,8 @@
     en: Selects all elements of this collection which do not satisfy a predicate.
     es: Selecciona todos los elementos de la colección que no satisfacen un predicado.
   figures:
-  - en: <code>filterNot</code> preserves only those elements that does not satisfy <code>p</code>.
-    es: <code>filterNot</code> conserva solo aquellos elementos que no satisfacen <code>p</code>.
+  - en: <code>filterNot</code> preserves only those elements that does not satisfy <var>p</var>.
+    es: <code>filterNot</code> conserva solo aquellos elementos que no satisfacen <var>p</var>.
 
 - name: find
   signature: "def find(p: (A) ⇒ Boolean): Option[A]"
@@ -186,10 +186,10 @@
     en: Finds the first element of the collection satisfying a predicate, if any.
     es: Encuentra el primer elemento de la colección que satisface un predicado, si es que existe.
   figures:
-  - en: <code>find</code> wraps with <code>Some</code> the first element that satisfies <code>p</code>.
-    es: <code>find</code> envuelve con <code>Some</code> el primer elemento que satisface <code>p</code>.
-  - en: If no element in the collection satisfies <code>p</code> then <code>find</code> returns <code>None</code>.
-    es: Si ningún elemento de la colección satisface <code>p</code> entonces <code>find</code> devuelve <code>None</code>.
+  - en: <code>find</code> wraps with <code>Some</code> the first element that satisfies <var>p</var>.
+    es: <code>find</code> envuelve con <code>Some</code> el primer elemento que satisface <var>p</var>.
+  - en: If no element in the collection satisfies <var>p</var> then <code>find</code> returns <code>None</code>.
+    es: Si ningún elemento de la colección satisface <var>p</var> entonces <code>find</code> devuelve <code>None</code>.
 
 - name: flatMap
   signature: "def flatMap[B](f: (A) ⇒ <em>Collection</em>[B]): <em>Collection</em>[B]"
@@ -197,8 +197,8 @@
     en: Builds a new collection by applying a function to all elements of this collection and using the elements of the resulting collections.
     es: Construye una nueva colección tras aplicar una función a todos los elementos de esta colección. La función devuelve la colección de elementos.
   figures:
-  - en: <code>flapMap</code> applies <code>f</code> to each element and builds a new collection with the resulting subcollections's values.
-    es: <code>flapMap</code> aplica <code>f</code> a cada elemento y construye una nueva colección con los valores de la subcolecciones resultantes.
+  - en: <code>flapMap</code> applies <var>f</var> to each element and builds a new collection with the resulting subcollections's values.
+    es: <code>flapMap</code> aplica <var>f</var> a cada elemento y construye una nueva colección con los valores de la subcolecciones resultantes.
 
 - name: flatten
   signature: "def flatten[B]: <em>Collection</em>[B]"
@@ -215,8 +215,8 @@
     en: Folds the elements of this collection using the specified associative binary operator.
     es: Pliega los elementos de esta colección utilizando un operador binario asociativo.
   figures:
-  - en: <code>fold</code> applies <code>op</code> to all elements of the collection in a nondeterministic fashion using <var>z</var> as the <var>op</var>'s neutral element.
-    es: <code>fold</code> aplica <code>op</code> a todos los element de la colección de forma no determinística utilizando <var>z</var> como elemento neutral de <var>op</var>'s neutral.
+  - en: <code>fold</code> applies <var>op</var> to all elements of the collection in a nondeterministic fashion using <var>z</var> as the <var>op</var>'s neutral element.
+    es: <code>fold</code> aplica <var>op</var> a todos los element de la colección de forma no determinística utilizando <var>z</var> como elemento neutral de <var>op</var>'s neutral.
   - en: When the collection is empty <code>fold</code> returns the <var>z</var> parameter.
     es: Cuando la colección es vacía <code>fold</code> devuelve el parámetro <var>z</var>.
 
@@ -226,8 +226,8 @@
     en: Applies a binary operator to a start value and all elements of this collection, going left to right.
     es: Aplica un operador binario a un valor inicial y a todos los elementos de la colección, yendo de izquierda a derecha.
   figures:
-  - en: <code>foldLeft</code> applies <code>op</code> to all elements of the collection going from left to right and using <var>z</var> in the first <var>op</var> application.
-    es: <code>foldLeft</code> aplica <code>op</code> a todos los element de la colección yendo de izquierda a derecha y utilizando <var>z</var> en la primera aplicación de <var>op</var>.
+  - en: <code>foldLeft</code> applies <var>op</var> to all elements of the collection going from left to right and using <var>z</var> in the first <var>op</var> application.
+    es: <code>foldLeft</code> aplica <var>op</var> a todos los element de la colección yendo de izquierda a derecha y utilizando <var>z</var> en la primera aplicación de <var>op</var>.
   - en: When the collection is empty <code>foldLeft</code> returns the <var>z</var> parameter.
     es: Cuando la colección es vacía <code>foldLeft</code> devuelve el parámetro <var>z</var>.
 
@@ -237,8 +237,8 @@
     en: Applies a binary operator to a start value and all elements of this collection, going right to left.
     es: Aplica un operador binario a un valor inicial y a todos los elementos de la colección, yendo de derecha a izquierda.
   figures:
-  - en: <code>foldRight</code> applies <code>op</code> to all elements of the collection going from right to left and using <var>z</var> in the first <var>op</var> application.
-    es: <code>foldRight</code> aplica <code>op</code> a todos los element de la colección yendo de derecha a izquierda y utilizando <var>z</var> en la primera aplicación de <var>op</var>.
+  - en: <code>foldRight</code> applies <var>op</var> to all elements of the collection going from right to left and using <var>z</var> in the first <var>op</var> application.
+    es: <code>foldRight</code> aplica <var>op</var> a todos los element de la colección yendo de derecha a izquierda y utilizando <var>z</var> en la primera aplicación de <var>op</var>.
   - en: When the collection is empty <code>foldRight</code> returns the <var>z</var> parameter.
     es: Cuando la colección es vacía <code>foldRight</code> devuelve el parámetro <var>z</var>.
 
@@ -248,10 +248,10 @@
     en: Tests whether a predicate holds for all elements of this collection.
     es: Comprueba si un predicado es válido para todos los elementos de esta colección.
   figures:
-  - en: <code>forall</code> returns <code>false</code> when the collection contains at least one element that does not satisfy <code>p</code>.
-    es: <code>forall</code> devuelve <code>false</code> cuando la colección contiene al menos un elemento que no satisface <code>p</code>.
-  - en: <code>forall</code> returns <code>true</code> when all elements in the collection satisfy <code>p</code>.
-    es: <code>forall</code> devuelve <code>true</code> cuando todos los elementos en la colección satisfacen <code>p</code>.
+  - en: <code>forall</code> returns <code class="literal false">false</code> when the collection contains at least one element that does not satisfy <var>p</var>.
+    es: <code>forall</code> devuelve <code class="literal false">false</code> cuando la colección contiene al menos un elemento que no satisface <var>p</var>.
+  - en: <code>forall</code> returns <code class="literal true">true</code> when all elements in the collection satisfy <var>p</var>.
+    es: <code>forall</code> devuelve <code class="literal true">true</code> cuando todos los elementos en la colección satisfacen <var>p</var>.
 
 - name: foreach
   signature: "def foreach(f: (A) ⇒ Unit): Unit"
@@ -259,8 +259,8 @@
     en: Applies a function <var>f</var> to all elements of this collection.
     es: Aplica una función <var>f</var> a todos los elementos de esta colección.
   figures:
-  - en: <code>foreach</code> applies <code>f</code> to each element of the collection.
-    es: <code>foreach</code> aplica <code>f</code> a cada elemento de la colección.
+  - en: <code>foreach</code> applies <var>f</var> to each element of the collection.
+    es: <code>foreach</code> aplica <var>f</var> a cada elemento de la colección.
 
 - name: getOrElse
   signature: "def getOrElse(key: K, default: ⇒ V): V"
@@ -279,8 +279,8 @@
     en: Partitions this collection into a map of collections according to some discriminator function.
     es: Parte esta colección en un mapa de colecciones de acuerdo a una función discriminadora.
   figures:
-  - en: <code>groupBy</code> applies <code>f</code> to each element to find out with which key this element should be grouped.
-    es: <code>groupBy</code> aplica <code>f</code> a cada elemento para saber con qué clave debe de ser agrupado este elemento.
+  - en: <code>groupBy</code> applies <var>f</var> to each element to find out with which key this element should be grouped.
+    es: <code>groupBy</code> aplica <var>f</var> a cada elemento para saber con qué clave debe de ser agrupado este elemento.
 
 - name: grouped
   signature: "def grouped(size: Int): Iterator[<em>Collection</em>[A]]"
@@ -392,10 +392,10 @@
     en: Tests whether this collection is empty.
     es: Comprueba si esta colección está vacía.
   figures:
-  - en: <code>isEmpty</code> returns <code>false</code> when the collection has at least one element.
-    es: <code>isEmpty</code> devuelve <code>false</code> cuando la colección tiene al menos un elemento.
-  - en: <code>isEmpty</code> returns <code>true</code> when the collection has no elements.
-    es: <code>isEmpty</code> devuelve <code>true</code> cuando la colección no tiene elementos.
+  - en: <code>isEmpty</code> returns <code class="literal false">false</code> when the collection has at least one element.
+    es: <code>isEmpty</code> devuelve <code class="literal false">false</code> cuando la colección tiene al menos un elemento.
+  - en: <code>isEmpty</code> returns <code class="literal true">true</code> when the collection has no elements.
+    es: <code>isEmpty</code> devuelve <code class="literal true">true</code> cuando la colección no tiene elementos.
 
 - name: keys
   signature: "def keys: Iterable[K]"
@@ -434,8 +434,8 @@
     en: Finds last index before or at a given end index where this collection contains a given sequence as a slice.
     es: Encuentra el último índice antes de uno en particular donde esta colección contiene una secuencia dada como subcolección.
   figures:
-  - en: <code>lastIndexOfSlice</code> returns the index of the last occurrence at or before <var>from</var> where <var>that</var> can be found as subsequence of the collection.
-    es: <code>lastIndexOfSlice</code> devuelve el índice de la última ocurrencia en o antes de <var>from</var> donde <var>that</var> puede ser encontrada como subsecuencia de la colección.
+  - en: <code>lastIndexOfSlice</code> returns the index of the last occurrence at or before <var>end</var> where <var>that</var> can be found as subsequence of the collection.
+    es: <code>lastIndexOfSlice</code> devuelve el índice de la última ocurrencia en o antes de <var>end</var> donde <var>that</var> puede ser encontrada como subsecuencia de la colección.
 
 - name: lastIndexWhere
   signature: "def lastIndexWhere(p: (A) ⇒ Boolean, end: Int): Int"
@@ -472,8 +472,8 @@
     en: Builds a new collection by applying a function to all elements of this collection.
     es: Construye una nueva colección aplicando una función a todos los elementos de esta colección.
   figures:
-  - en: <code>map</code> applies <code>f</code> to each element in the collection and builds a new collection with the results.
-    es: <code>map</code> aplica <code>f</code> a cada elemento de la colección y construye una nueva colección con los resultados.
+  - en: <code>map</code> applies <var>f</var> to each element in the collection and builds a new collection with the results.
+    es: <code>map</code> aplica <var>f</var> a cada elemento de la colección y construye una nueva colección con los resultados.
 
 - name: mapConserve
   signature: "def mapConserve(f: (A) ⇒ A): <em>Collection</em>[A]"
@@ -481,8 +481,8 @@
     en: Builds a new collection by applying a function to all elements of this collection assuring that the types are preserved.
     es: Construye una nueva colección aplicando una función a todos los elementos de esta colección asegurando que se mantienen los tipos.
   figures:
-  - en: <code>mapConserve</code> applies <code>f</code> to each element in the collection and builds a new collection with the results, while preserving the original types.
-    es: <code>mapConserve</code> aplica <code>f</code> a cada elemento de la colección y construye una nueva colección con los resultados, mientras mantiene el tipo original.
+  - en: <code>mapConserve</code> applies <var>f</var> to each element in the collection and builds a new collection with the results, while preserving the original types.
+    es: <code>mapConserve</code> aplica <var>f</var> a cada elemento de la colección y construye una nueva colección con los resultados, mientras mantiene el tipo original.
 
 - name: mapValues
   signature: "def mapValues[W](f: (V) ⇒ W): Map[K, W]"
@@ -491,8 +491,8 @@
     en: Transforms this map by applying a function to every retrieved value.
     es: Transforma este mapa aplicando una función a cada valor.
   figures:
-  - en: <code>mapValues</code> builds a new map preserving the keys but using the result of apply <code>f</code> to each value.
-    es: <code>mapValues</code> construye un nuevo mapa conservando las claves pero utilizando el resultado de aplicar <code>f</code> a cada valor.
+  - en: <code>mapValues</code> builds a new map preserving the keys but using the result of apply <var>f</var> to each value.
+    es: <code>mapValues</code> construye un nuevo mapa conservando las claves pero utilizando el resultado de aplicar <var>f</var> a cada valor.
 
 - name: max
   signature: "def max: A"
@@ -553,10 +553,10 @@
     en: Tests whether the collection is not empty.
     es: Comprueba si esta colección es no vacía.
   figures:
-  - en: <code>nonEmpty</code> returns <code>true</code> when the collection has at least one element.
-    es: <code>nonEmpty</code> devuelve <code>true</code> cuando la colección tiene al menos un elemento.
-  - en: <code>nonEmpty</code> returns <code>false</code> when the collection has no elements.
-    es: <code>nonEmpty</code> devuelve <code>false</code> cuando la colección no tiene elementos.
+  - en: <code>nonEmpty</code> returns <code class="literal true">true</code> when the collection has at least one element.
+    es: <code>nonEmpty</code> devuelve <code class="literal true">true</code> cuando la colección tiene al menos un elemento.
+  - en: <code>nonEmpty</code> returns <code class="literal false">false</code> when the collection has no elements.
+    es: <code>nonEmpty</code> devuelve <code class="literal false">false</code> cuando la colección no tiene elementos.
 
 - name: padTo
   signature: "def padTo(len: Int, elem: A): <em>Collection</em>[A]"
@@ -564,8 +564,8 @@
     en: A copy of this collection with an element value appended until a given target length is reached.
     es: Una copia de esta colección anexando un mismo valor hasta alcanzar una longitud dada.
   figures:
-  - en: <code>padTo</code> appends so many <var>elem</var> elements to the collection until reach some length.
-    es: <code>padTo</code> añade tantos elementos <var>elem</var> a la colección hasta alcanzar cierta longitud.
+  - en: <code>padTo</code> appends so many <var>elem</var> elements to the collection until it has length <var>len</var>.
+    es: <code>padTo</code> añade tantos elementos <var>elem</var> a la colección hasta que ésta alcance longitud <var>len</var>.
 
 - name: partition
   signature: "def partition(p: (A) ⇒ Boolean): (<em>Collection</em>[A], <em>Collection</em>[A])"
@@ -629,8 +629,8 @@
     en: Reduces the elements of this collection using the specified associative binary operator.
     es: Reduce los elementos de esta colección utilizando un operador binario asociativo.
   figures:
-  - en: <code>reduce</code> applies <code>op</code> to all elements of the collection in a nondeterministic fashion.
-    es: <code>reduce</code> aplica <code>op</code> a todos los element de la colección de forma no determinística.
+  - en: <code>reduce</code> applies <var>op</var> to all elements of the collection in a nondeterministic fashion.
+    es: <code>reduce</code> aplica <var>op</var> a todos los element de la colección de forma no determinística.
   - en: When the collection has a single element <code>reduce</code> returns that element.
     es: Cuando la colección solo tiene un único elemento <code>reduce</code> devuelve dicho elemento.
   - en: <code>reduce</code> throws <code>UnsupportedOperationException</code> on empty collections.
@@ -642,8 +642,8 @@
     en: Applies a binary operator to all elements of this collection, going left to right.
     es: Aplica un operador binario a todos los elementos de esta colección, yendo de izquierda a derecha.
   figures:
-  - en: <code>reduceLeft</code> applies <code>op</code> to successive elements of the collection, going from left to right, starting with the two first elements.
-    es: <code>reduceLeft</code> aplica <code>op</code> a elementos sucesivos de la colección, yendo de izquierda a derecha, empezando con los dos primeros elementos.
+  - en: <code>reduceLeft</code> applies <var>op</var> to successive elements of the collection, going from left to right, starting with the two first elements.
+    es: <code>reduceLeft</code> aplica <var>op</var> a elementos sucesivos de la colección, yendo de izquierda a derecha, empezando con los dos primeros elementos.
   - en: When the collection has a single element <code>reduceLeft</code> returns that element.
     es: Cuando la colección solo tiene un único elemento <code>reduceLeft</code> devuelve dicho elemento.
   - en: <code>reduceLeft</code> throws <code>UnsupportedOperationException</code> on empty collections.
@@ -655,8 +655,8 @@
     en: Optionally applies a binary operator to all elements of this collection, going left to right.
     es: Opcionalmente aplica un operador binario a todos los elementos de esta colección, yendo de izquierda a derecha.
   figures:
-  - en: <code>reduceLeftOption</code> applies <code>op</code> to successive elements of the collection going from left to right, starting with the two first elements and wrapping the final result with <code>Some</code>.
-    es: <code>reduceLeftOption</code> aplica <code>op</code> a elementos sucesivos de la colección yendo de izquierda a derecha, empezando con los dos primeros elementos y envolviendo el resultado final con <code>Some</code>.
+  - en: <code>reduceLeftOption</code> applies <var>op</var> to successive elements of the collection going from left to right, starting with the two first elements and wrapping the final result with <code>Some</code>.
+    es: <code>reduceLeftOption</code> aplica <var>op</var> a elementos sucesivos de la colección yendo de izquierda a derecha, empezando con los dos primeros elementos y envolviendo el resultado final con <code>Some</code>.
   - en: <code>reduceLeftOption</code> returns <code>None</code> on empty collections.
     es: <code>reduceLeftOption</code> devuelve <code>None</code> en colecciones vacías.
 
@@ -666,8 +666,8 @@
     en: Reduces the elements of this collection, if any, using the specified associative binary operator.
     es: Reduce los elementos de esta colección, si lo hubiese, utilizando un operador binario asociativo.
   figures:
-  - en: <code>reduceOption</code> applies <code>op</code> to all elements of the collection in a nondeterministic fashion and wrapping the final result with <code>Some</code>.
-    es: <code>reduceOption</code> aplica <code>op</code> a todos los element de la colección de forma no determinística y envolviendo el resultado final con <code>Some</code>.
+  - en: <code>reduceOption</code> applies <var>op</var> to all elements of the collection in a nondeterministic fashion and wrapping the final result with <code>Some</code>.
+    es: <code>reduceOption</code> aplica <var>op</var> a todos los element de la colección de forma no determinística y envolviendo el resultado final con <code>Some</code>.
   - en: <code>reduceOption</code> returns <code>None</code> on empty collections.
     es: <code>reduceOption</code> devuelve <code>None</code> en colecciones vacías.
 
@@ -677,8 +677,8 @@
     en: Applies a binary operator to all elements of this collection, going right to left.
     es: Aplica un operador binario a todos los elementos de esta colección, yendo de derecha a izquierda.
   figures:
-  - en: <code>reduceRight</code> applies <code>op</code> to successive elements of the collection going from right to left, starting with the two last elements.
-    es: <code>reduceRight</code> aplica <code>op</code> a elementos sucesivos de la colección yendo de derecha a izquierda, empezando con los dos últimos elementos.
+  - en: <code>reduceRight</code> applies <var>op</var> to successive elements of the collection going from right to left, starting with the two last elements.
+    es: <code>reduceRight</code> aplica <var>op</var> a elementos sucesivos de la colección yendo de derecha a izquierda, empezando con los dos últimos elementos.
   - en: When the collection has a single element <code>reduceRight</code> returns that element.
     es: Cuando la colección solo tiene un único elemento <code>reduceRight</code> devuelve dicho elemento.
   - en: <code>reduceRight</code> throws <code>UnsupportedOperationException</code> on empty collections.
@@ -690,8 +690,8 @@
     en: Optionally, applies a binary operator to all elements of this collection, going right to left.
     es: Opcionalmente aplica un operador binario a todos los elementos de esta colección, yendo de derecha a izquierda.
   figures:
-  - en: <code>reduceRightOption</code> applies <code>op</code> to successive elements of the collection going from right to left, starting with the two last elements and wrapping the final result with <code>Some</code>.
-    es: <code>reduceRightOption</code> aplica <code>op</code> a elementos sucesivos de la colección yendo de derecha a izquierda, empezando con los dos últimos elementos y envolviendo el resultado final con <code>Some</code>.
+  - en: <code>reduceRightOption</code> applies <var>op</var> to successive elements of the collection going from right to left, starting with the two last elements and wrapping the final result with <code>Some</code>.
+    es: <code>reduceRightOption</code> aplica <var>op</var> a elementos sucesivos de la colección yendo de derecha a izquierda, empezando con los dos últimos elementos y envolviendo el resultado final con <code>Some</code>.
   - en: <code>reduceRightOption</code> returns <code>None</code> on empty collections.
     es: <code>reduceRightOption</code> devuelve <code>None</code> en colecciones vacías.
 
@@ -719,10 +719,10 @@
     en: Checks if the other collection contains the same elements in the same order as this one.
     es: Comprueba si otra colección contiene los mismos elementos en el mismo orden que esta.
   figures:
-  - en: <code>sameElements</code> returns <var>false</var> when the collection and <var>that</var> does not contain the same elements in the same order.
-    es: <code>sameElements</code> devuelve <var>false</var> cuando esta colección y <var>that</var> no contienen los mismos elementos en el mismo orden.
-  - en: <code>sameElements</code> returns <var>true</var> when the collection and <var>that</var> contain the same elements in the same order.
-    es: <code>sameElements</code> devuelve <var>true</var> cuando esta colección y <var>that</var> contienen los mismos elementos en el mismo orden.
+  - en: <code>sameElements</code> returns <code class="literal false">false</code> when the collection and <var>that</var> does not contain the same elements in the same order.
+    es: <code>sameElements</code> devuelve <code class="literal false">false</code> cuando esta colección y <var>that</var> no contienen los mismos elementos en el mismo orden.
+  - en: <code>sameElements</code> returns <code class="literal true">true</code> when the collection and <var>that</var> contain the same elements in the same order.
+    es: <code>sameElements</code> devuelve <code class="literal true">true</code> cuando esta colección y <var>that</var> contienen los mismos elementos en el mismo orden.
 
 - name: scan
   signature: "def scan[B >: A](z: B)(op: (B, B) ⇒ B)"
@@ -736,8 +736,8 @@
     en: Produces the collection containing cumulative results of applying the operator going left to right.
     es: Produce la colección que contiene los resultados parciales de aplicar el operador, yendo de izquierda a derecha.
   figures:
-  - en: <code>scanLeft</code> applies <code>op</code> to all elements of the collection going from left to right, using <var>z</var> in the first <var>op</var> application and collecting the cumulative results.
-    es: <code>scanLeft</code> aplica <code>op</code> a todos los element de la colección yendo de izquierda a derecha, utilizando <var>z</var> en la primera aplicación de <var>op</var> y recopilando los resultados acumulados.
+  - en: <code>scanLeft</code> applies <var>op</var> to all elements of the collection going from left to right, using <var>z</var> in the first <var>op</var> application and collecting the cumulative results.
+    es: <code>scanLeft</code> aplica <var>op</var> a todos los element de la colección yendo de izquierda a derecha, utilizando <var>z</var> en la primera aplicación de <var>op</var> y recopilando los resultados acumulados.
 
 - name: scanRight
   signature: "def scanRight[B](z: B)(op: (A, B) ⇒ B)"
@@ -745,8 +745,8 @@
     en: Produces the collection containing cumulative results of applying the operator going right to left.
     es: Produce la colección que contiene los resultados parciales de aplicar el operador, yendo de derecha a izquierda.
   figures:
-  - en: <code>scanRight</code> applies <code>op</code> to all elements of the collection going from right to left, using <var>z</var> in the first <var>op</var> application and collecting the cumulative results.
-    es: <code>scanRight</code> aplica <code>op</code> a todos los element de la colección yendo de derecha a izquierda, utilizando <var>z</var> en la primera aplicación de <var>op</var> y recopilando los resultados acumulados.
+  - en: <code>scanRight</code> applies <var>op</var> to all elements of the collection going from right to left, using <var>z</var> in the first <var>op</var> application and collecting the cumulative results.
+    es: <code>scanRight</code> aplica <var>op</var> a todos los element de la colección yendo de derecha a izquierda, utilizando <var>z</var> en la primera aplicación de <var>op</var> y recopilando los resultados acumulados.
 
 - name: segmentLength
   signature: "def segmentLength(p: (A) ⇒ Boolean, from: Int): Int"
@@ -821,13 +821,13 @@
     es: <code>span</code> selecciona el mayor prefijo de elementos que satisfacen <var>p</var> en la primera componente de una tupla y el resto de elementos en la segunda.
 
 - name: splitAt
-  signature: "def splitAt(i: Int): (<em>Collection</em>[A], <em>Collection</em>[A])"
+  signature: "def splitAt(index: Int): (<em>Collection</em>[A], <em>Collection</em>[A])"
   description:
     en: Splits this collection into two at a given position.
     es: Parte esta colección en dos en una posición dada.
   figures:
-  - en: <code>splitAt</code> selects the elements at or before <var>i</var> on the first component of a tuple and the rest of elements on the second.
-    es: <code>splitAt</code> selecciona los elementos en o antes de <var>i</var> en la primera componente de una tupla y el resto de elementos en la segunda.
+  - en: <code>splitAt</code> selects the elements at or before <var>index</var> on the first component of a tuple and the rest of elements on the second.
+    es: <code>splitAt</code> selecciona los elementos en o antes de <var>index</var> en la primera componente de una tupla y el resto de elementos en la segunda.
 
 - name: startsWith
   signature: "def startsWith[B](that: GenSeq[B], offset: Int): Boolean"
@@ -835,10 +835,10 @@
     en: Tests whether this collection contains the given sequence at a given index.
     es: Comprueba si esta colección contiene la secuencia dada en un índice en particular.
   figures:
-  - en: <code>startsWith</code> returns <code>false</code> when <var>that</var> is not prefix of the collection starting at <var>offset</var>.
-    es: <code>startsWith</code> devuelve <code>false</code> cuando <var>that</var> not es prefijo de la colección empezando por <var>offset</var>.
-  - en: <code>startsWith</code> returns <code>true</code> when <var>that</var> is prefix of the collection starting at <var>offset</var>.
-    es: <code>startsWith</code> devuelve <code>true</code> cuando <var>that</var> es prefijo de la colección empezando por <var>offset</var>.
+  - en: <code>startsWith</code> returns <code class="literal false">false</code> when <var>that</var> is not prefix of the collection starting at <var>offset</var>.
+    es: <code>startsWith</code> devuelve <code class="literal false">false</code> cuando <var>that</var> not es prefijo de la colección empezando por <var>offset</var>.
+  - en: <code>startsWith</code> returns <code class="literal true">true</code> when <var>that</var> is prefix of the collection starting at <var>offset</var>.
+    es: <code>startsWith</code> devuelve <code class="literal true">true</code> cuando <var>that</var> es prefijo de la colección empezando por <var>offset</var>.
 
 - name: sum
   signature: "def sum: A"
@@ -906,8 +906,8 @@
     en: Takes longest prefix of elements that satisfy a predicate.
     es: Toma el mayor prefijo de elementos que satisfacen un predicado.
   figures:
-  - en: <code>takeWhile</code> preserves elements while they satisfy <code>p</code>.
-    es: <code>takeWhile</code> conserva elementos mientras satisfacen <code>p</code>.
+  - en: <code>takeWhile</code> preserves elements while they satisfy <var>p</var>.
+    es: <code>takeWhile</code> conserva elementos mientras satisfacen <var>p</var>.
 
 - name: union
   signature: "def union(that: Seq[A]): <em>Collection</em>[A]"
@@ -925,7 +925,7 @@
     es: <code>unzip</code> selecciona la primera/segunda componente de cada elemento en la colección en la primera/segunda componente de una tupla.
 
 - name: unzip3
-  signature: "def unzip3[A1, A2, A3](implicit asTriple: (A) ⇒ (A1, A2, A3)): (<em>Collection</em>[A1], <em>Collection</em>[A2], <em>Collection</em>[A3])"
+  signature: "def unzip3[A, B, C](implicit asTriple: (A) ⇒ (A, B, C)): (<em>Collection</em>[A], <em>Collection</em>[B], <em>Collection</em>[C])"
   description:
     en: Converts this collection of triples into three collections of the first, second, and third element of each triple.
     es: Convierte esta colección de ternas en tres colecciones del primer, segundo y tercer elemento de cada terna.
@@ -952,22 +952,22 @@
     es: <code>values</code> devuelve un iterador para recorrer los valores de un mapa.
 
 - name: withDefault
-  signature: "def withDefault[V1 >: V](f<sub>def</sub>: (K) ⇒ V1): Map[K, V1]"
+  signature: "def withDefault[V1 >: V](f: (K) ⇒ V1): Map[K, V1]"
   description:
     en: The same map with a given default function.
     es: El mismo mapa con una función predeterminada dado.
   figures:
-  - en: <code>withDefault</code> uses <var>f<sub>def</sub></var> to generate a value when the map does not contain the requested key.
-    es: <code>withDefault</code> utiliza <var>f<sub>def</sub></var> para generar un valor cuando el mapa no contiene la clave solicitada.
+  - en: <code>withDefault</code> uses <var>f</var> to generate a value when the map does not contain the requested key.
+    es: <code>withDefault</code> utiliza <var>f</var> para generar un valor cuando el mapa no contiene la clave solicitada.
 
 - name: withDefaultValue
-  signature: "def withDefaultValue[V1 >: V](v<sub>def</sub>: V1): Map[K, V1]"
+  signature: "def withDefaultValue[V1 >: V](v: V1): Map[K, V1]"
   description:
     en: The same map with a given default value.
     es: El mismo mapa con un valor predeterminado dado.
   figures:
-  - en: <code>withDefaultValue</code> uses <var>v<sub>def</sub></var> as value when the map does not contain the requested key.
-    es: <code>withDefaultValue</code> utiliza <var>v<sub>def</sub></var> como valor cuando el mapa no contiene la clave solicitada.
+  - en: <code>withDefaultValue</code> uses <var>v</var> as value when the map does not contain the requested key.
+    es: <code>withDefaultValue</code> utiliza <var>v</var> como valor cuando el mapa no contiene la clave solicitada.
 
 - name: zip
   signature: "def zip[B](that: GenIterable[B]): <em>Collection</em>[A, B]"
@@ -979,7 +979,7 @@
     es: <code>zip</code> combina los i-ésimos elementos de la colección y <var>that</var> como la primera y segunda componente de una tupla, respectivamente.
 
 - name: zipAll
-  signature: "def zipAll[B](that: Iterable[B], thisElem: A, thatElem: B): <em>Collection</em>[(A, B)]"
+  signature: "def zipAll[B](that: Iterable[B], a<sub>f</sub>: A, b<sub>f</sub>: B): <em>Collection</em>[(A, B)]"
   description:
     en:
       Returns the collection formed from this and another one by combining corresponding elements in pairs.

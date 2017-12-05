@@ -1,16 +1,16 @@
 {% extends "layout.twig" %}
 
 {% block content %}
-<aside id="main-sidebar" class="col-sm-4 col-md-3 col-lg-2 d-none d-sm-block">
+<aside id="main-sidebar">
   <ul id="function-list">
     {% for function in functions %}
-      <li class="function-link"><a href="#{{ function.name }}">{{ function.name }}</a></li>
+      <li class="function-link"><a href="#{{ function.name | lower }}">{{ function.name }}</a></li>
     {% endfor %}
   </ul>
 </aside>
-<main id="function-entries" class="col-12 col-sm-8 col-md-9 col-lg-10">
+<main id="function-entries">
   {% for function in functions %}
-    <article id="{{ function.name }}" class="function-entry">
+    <article id="{{ function.name | lower }}" class="function-entry">
       <h2 class="function-name">{{ function.name }}</h2>
       {% for lang, text in function.description %}
         <p class="function-description i18n" lang="{{ lang }}">{{ text | raw }}</p>

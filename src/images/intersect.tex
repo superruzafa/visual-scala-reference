@@ -1,32 +1,40 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-  \node {$a_1$};     &
-  \ellipsis          &
-  \node {$a_{i-1}$}; &
-  \node {$a_i$};     \\
+\matrix (A) [collection] {
+  \elem{a}{1} &
+  \elem{a}{2} &
+  \helem{between} &
+  \elem{a}{i} &
+  \elem{a}{i+1} &
+  \helem{between} &
+  \elem{a}{n} \\
 };
 
-\matrix (B) [collection, right=1cm of A] {
-  \node {$a_i$};     &
-  \node {$a_{i+1}$}; &
-  \ellipsis          &
-  \node {$a_n$};     \\
+\matrix (T) [collection, right=\cellwidth of A] {
+  \node (t1) {$a_1$}; &
+  \node (ti) {$a_i$}; &
+  \node (tn) {$a_n$}; &
+  \node (tn+1) {$a_{n+1}$}; \\
 };
 
-\node [draw, ellipse callout, callout absolute pointer={([yshift=1mm] B.north)}] at ([yshift=1cm] B.north) {$\texttt{that}$};
+\rightparam{T.east}{\param{that}}
 
-\matrix (AiB) [collection, below=3cm of A] {
-  \node {$a_i$}; \\
+\matrix (B) [collection, below=2\cellheight of A] {
+  \node (b1) {$a_1$}; &
+  \node (bi) {$a_i$}; &
+  \node (bn) {$a_n$}; \\
 };
 
-\draw (A.south west) [bottombrace] -- coordinate (c) (A.south east);
-\draw (B.south west) [bottombrace] -- coordinate (d) (B.south east);
-\draw (AiB.north west) [topbrace] -- coordinate (e) (AiB.north east);
+\draw (a1.north) [name path=p1] -- ++(0, .5) -| (t1);
+\draw (ai.north) [name path=pi] -- ++(0, 1) -| (ti);
+\draw (an.north) [name path=pn] -- ++(0, 1.5) -| (tn);
 
-\node (i) [draw, circle, above=1cm of e] {$\cap$};
-\draw (c) [arrow, from brace] to (i);
-\draw (d) [arrow, from brace, rounded corners=1em] |- (i);
-\draw (i) [arrow, to brace] to (e);
+\path [name intersections={of=p1 and pi, by={a}}] (a) pic {vertical bridge};
+\path [name intersections={of=p1 and pn, by={a}}] (a) pic {vertical bridge};
+\path [name intersections={of=pi and pn, by={a}}] (a) pic {vertical bridge};
+
+\foreach \i in {1, i, n} {
+  \draw (a\i) [smooth arrow] to (b\i);
+}
 
 \input{_footer.tex}

@@ -1,46 +1,53 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-  \node (1) {$a_1$};       &
-  \ellipsis;               &
-  \node (i) {$a_i$};       &
-  \ellipsis;               &
-  \node (n-1) {$a_{n-1}$}; &
-  \node (n) {$a_n$};       \\
+\matrix (A) [collection] {
+  \elem{a}{1} &
+  \helem{between} &
+  \node (ai) {$a_{n-i}$}; &
+  \helem{between} &
+  \elem{a}{n-1} &
+  \elem{a}{n} \\
 };
 
-\matrix (B) [collection, matrix anchor=bz.west, below of=A, node distance=7cm] at (an.east) {
-  \node (bn) {$b$};   &
-  \ellipsis;          &
-  \node (bi) {$z_i$}; &
-  \ellipsis;          &
-  \node (b2) {$z_2$}; &
-  \node (b1) {$z_1$}; &
-  \node (bz) {$z$};   \\
+\matrix (B) [collection, below=5.5\cellheight of A] {
+  \elem{z}{n} &
+  \helem{between} &
+  \elem{z}{i+1} &
+  \helem{between} &
+  \elem{z}{2} &
+  \elem{z}{1} &
+  \node (z0) {\param{z}}; \\
 };
 
-\node (z) [elem, above=61mm of bz] {z};
-
-\node (f1) [above=4cm of b1] {$\texttt{op}(a_n, \textrm{z})$};
-\node (f2) [above=3cm of b2] {$\texttt{op}(a_{n-1}, z_1)$};
-\node (fi) [above=2cm of bi] {$\texttt{op}(a_i, z_{i-1})$};
-\node (fn) [above=1cm of bn] {$\texttt{op}(a_n, z_{n-1})$};
+\node (z) [right=\cellwidth of A] {\param{z}};
 
 \begin{scope}
-  \tikzstyle{every path}=[arrow, smooth]
-  \draw (z) edge (bz) edge ([xshift=1em] f1.north);
+  \tikzstyle{every node}=[internal operation, anchor=north]
+  \node (op1) [below right=\cellheight and -.5\cellwidth of an] {$\param{op}(a_n, \param{z})$};
+  \node (op2) [below left=2\cellheight and 0 of an-1, anchor=north] {$\param{op}(a_{n-1}, z_1)$};
+  \node (opi) [below=3\cellheight of ai] {$\param{op}(a_{n-i}, z_i)$};
+  \node (opn) [below=4\cellheight of a1] {$\param{op}(a_1, z_{n-1})$};
+\end{scope}
 
-  \draw (an) to ([xshift=-0.2em] f1.north);
-  \draw (f1) edge (b1) edge ([xshift=1.4em] f2.north);
+\begin{scope}
+  \tikzstyle{every path}=[arrow]
+  \draw (z.south) .. controls +(0, -1) and +(0, 1) .. (op1.35);
+  \draw (z.south) .. controls +(0, -5) and +(0, 5) .. (z0.north); 
+  \draw (an.south) [smooth] to (op1.95);
+   
+  \draw (an-1.south) [smooth] to (op2.95);
+  \draw (op1.west) .. controls +(-.5, 0) and +(0, 1) .. (op2.30); 
+  \draw (op1.west) .. controls +(-.5, 0) and +(0, 1) .. (z1.north); 
+   
+  \draw (ai.south) [smooth] to (opi.95);
+  \draw (op2.west) [middle dots] .. controls +(-.5, 0) and +(0, .5) .. (opi.30); 
+  \draw (op2.west) .. controls +(-.5, 0) and +(0, 1) .. (z2.north); 
 
-  \draw (an-1) to ([xshift=-0.2em] f2.north);
-  \draw (f2) edge (b2) edge [middotted] ([xshift=1em] fi.north);
-
-  \draw (ai) to ([xshift=-0.8em] fi.north);
-  \draw (fi) edge (bi) edge [middotted] ([xshift=1em] fn.north);
-
-  \draw (a1) to ([xshift=-1em] fn.north);
-  \draw (fn) edge (bn);
+  \draw (a1.south) [smooth] to (opn.120);
+  \draw (opi.west) .. controls +(-.5, 0) and +(0, 1) .. (opn.35); 
+  \draw (opi.west) .. controls +(-.5, 0) and +(0, 1) .. (zi+1.north); 
+   
+  \draw (opn) [out=180, in=90, arrow] to (zn); 
 \end{scope}
 
 \input{_footer.tex}

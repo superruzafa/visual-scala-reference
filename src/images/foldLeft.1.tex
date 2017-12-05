@@ -1,33 +1,37 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-    \node (1) {$a_1$}; &
-    \node (2) {$a_2$}; &
-    \ellipsis          &
-    \node (i) {$a_i$}; &
-    \ellipsis          &
-    \node (n) {$a_n$}; \\
+\matrix (A) [collection] {
+  \elem{a}{1} &
+  \elem{a}{2} &
+  \helem{between} &
+  \elem{a}{i} &
+  \helem{between} &
+  \elem{a}{n} \\
 };
 
-\node (z) [elem, left=1cm of A] {z};
+\node (z) [left=\cellwidth of A] {\param{z}};
 
-\node (f1) [below=1cm of a1, xshift=-0.7em] {$\texttt{op}(\textrm{z}, a_1)$};
-\draw (a1) [arrow] to (a1 |- f1.north);
-\draw [arrow, out=270, in=90] (z.south) to (f1.120);
+\begin{scope}
+  \tikzstyle{every node}=[internal operation, anchor=north]
+  \node (op1) [below=\cellheight of a1.south west] {$\param{op}(\param{z}, a_1)$};
+  \node (op2) [below=2\cellheight of a2] {$\param{op}(z_1, a_2)$};
+  \node (opi) [below=3\cellheight of ai] {$\param{op}(z_{i-1}, a_i)$};
+  \node (opn) [below=4\cellheight of an] {$\param{op}(z_{n-1}, a_n)$};
+\end{scope}
 
-\node (f2) [below=2cm of a2, xshift=-0.9em] {$\texttt{op}(z_1, a_2)$};
-\draw (a2) [arrow] to (a2 |- f2.north);
-\draw [fall, arrow] (f1.east) to (f2.120);
+\draw (z.south) [smooth arrow] to (op1.95);
+\draw (a1.south) [smooth arrow] to (op1.45);
 
-\node (fi) [below=3cm of ai, xshift=-1.2em] {$\texttt{op}(z_{i-1}, a_i)$};
-\draw (ai) [arrow] to (ai |- fi.north);
-\draw [fall, arrow, middotted] (f2.east) to (fi.120);
+\draw (op1.east) [arrow] .. controls +(.5, 0) and +(0, 1) .. (op2.95); 
+\draw (a2.south) [smooth arrow] to (op2.35);
 
-\node (fn) [below=4cm of an, xshift=-1.5em] {$\texttt{op}(z_{n-1}, a_n)$};
-\draw (an) [arrow] to (an |- fn.north);
-\draw [fall, arrow, middotted] (fi.east) to (fn.120);
+\draw (op2) [out=0, in=90, arrow, middle dots] to (opi.95); 
+\draw (ai.south) [smooth arrow] to (opi.30);
 
-\node (B) [elem, below of=fn, node distance=1.5cm] {$b$};
-\draw [arrow] (fn.south) -- (B.north);
+\draw (opi) [out=0, in=90, arrow, middle dots] to (opn.95); 
+\draw (an.south) [smooth arrow] to (opn.25);
+
+\node (zn) [below right=\cellheight and \cellwidth of opn] {$z_n$};
+\draw (opn) [out=0, in=90, arrow] to (zn); 
 
 \input{_footer.tex}

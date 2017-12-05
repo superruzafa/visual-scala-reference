@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="38.383pt" height="132.294pt" viewBox="0 0 38.383 132.294" version="1.1">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="58.972pt" height="169.891pt" viewBox="0 0 58.972 169.891" version="1.1">
 <defs>
 <g>
 <symbol overflow="visible" id="glyph0-0">
@@ -16,27 +16,22 @@
 </symbol>
 </g>
 <clipPath id="clip1">
-  <path d="M 0 0 L 38.382812 0 L 38.382812 38 L 0 38 Z M 0 0 "/>
-</clipPath>
-<clipPath id="clip2">
-  <path d="M 15 94 L 23 94 L 23 132.292969 L 15 132.292969 Z M 15 94 "/>
+  <path d="M 0 0 L 58.972656 0 L 58.972656 169.890625 L 0 169.890625 Z M 0 0 "/>
 </clipPath>
 </defs>
 <g id="surface1">
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 0.964844 37.417969 L 37.816406 37.417969 L 37.816406 0.566406 L 0.964844 0.566406 Z M 0.964844 37.417969 "/>
 <g clip-path="url(#clip1)" clip-rule="nonzero">
-<path style="fill:none;stroke-width:1.13385;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -18.426156 -18.425969 L 18.425406 -18.425969 L 18.425406 18.425594 L -18.426156 18.425594 Z M -18.426156 -18.425969 " transform="matrix(1,0,0,-1,19.391,18.992)"/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 0 169.894531 L 0 0 L 58.972656 0 L 58.972656 169.894531 Z M 0 169.894531 "/>
+</g>
+<path style="fill:none;stroke-width:1.13385;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -18.427187 -18.423937 L 18.424375 -18.423937 L 18.424375 18.423719 L -18.427187 18.423719 Z M -18.427187 -18.423937 " transform="matrix(1,0,0,-1,29.685,29.287)"/>
+<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+  <use xlink:href="#glyph0-1" x="24.247" y="31.732"/>
 </g>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-  <use xlink:href="#glyph0-1" x="13.952" y="20.669"/>
+  <use xlink:href="#glyph1-1" x="30.392" y="33.525"/>
 </g>
-<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
-  <use xlink:href="#glyph1-1" x="20.097" y="22.463"/>
-</g>
-<g clip-path="url(#clip2)" clip-rule="nonzero">
-<path style="fill:none;stroke-width:0.56693;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(50%,50%,50%);stroke-opacity:1;stroke-dasharray:2.98883,2.98883;stroke-miterlimit:10;" d="M -3.320688 -113.019719 L 3.319937 -113.019719 L 3.319937 -76.168156 L -3.320688 -76.168156 Z M -3.320688 -113.019719 " transform="matrix(1,0,0,-1,19.391,18.992)"/>
-</g>
-<path style="fill:none;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -19.191781 -19.191594 C -19.191781 -42.47675 -0.000375 -52.597844 -0.000375 -72.297063 " transform="matrix(1,0,0,-1,19.391,18.992)"/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 19.390625 94.878906 C 19.589844 93.816406 20.1875 92.085938 20.886719 90.890625 L 17.898438 90.890625 C 18.59375 92.085938 19.191406 93.816406 19.390625 94.878906 "/>
+<path style="fill:none;stroke-width:0.56693;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(50%,50%,50%);stroke-opacity:1;stroke-dasharray:2.98883,2.98883;stroke-miterlimit:10;" d="M -3.899844 -130.029406 L 3.900938 -130.029406 L 3.900938 -93.177844 L -3.899844 -93.177844 Z M -3.899844 -130.029406 " transform="matrix(1,0,0,-1,29.685,29.287)"/>
+<path style="fill:none;stroke-width:0.3985;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M -19.192812 -19.193469 C -19.192812 -48.974719 -0.00140625 -63.107531 -0.00140625 -89.30675 " transform="matrix(1,0,0,-1,29.685,29.287)"/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 29.683594 122.179688 C 29.882812 121.117188 30.480469 119.390625 31.179688 118.195312 L 28.191406 118.195312 C 28.886719 119.390625 29.484375 121.117188 29.683594 122.179688 "/>
 </g>
 </svg>

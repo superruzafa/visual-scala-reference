@@ -1,35 +1,40 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1)     {$a_1$};       &
-  \ellipsis                     &
-  \node (ai)     {$a_i$};       &
-  \node (ai+1)   {$a_{i+1}$};   &
-  \ellipsis                     &
-  \node (ai+j-1) {$a_{i+j-1}$}; &
-  \node (ai+j)   {$a_{i+j}$};   &
-  \ellipsis                     &
-  \node (an)     {$a_n$};       \\
+  \helem[.5\elementswidth]{before} &
+  \elem{a}{i} &
+  \elem{a}{i+1} &
+  \helem{between} &
+  \elem{a}{i+j-1} &
+  \elem{a}{i+j} &
+  \helem[.5\elementswidth]{after} \\
 };
 
-\toppointer{ai.north}{from}
+\draw (ai.120) [latex-, out=90, in=270] to +(-2, 1) node [above] {\param{from}};
 
-\foreach \i/\d/\p in {
-  i/\true/below,
-  i+1/\true/below,
-  i+j-1/\true/below,
-  i+j/\false/below}
+\foreach \i/\p/\d in {
+  i/\true/1,
+  i+1/\true/.25,
+  i+j-1/\true/.25,
+  i+j/\false/1}
 {
-  \node (pa\i) [predicate, below=0.5em of a\i, pin={[function result, pin position=\p] \d}] {$\texttt{p}(a_{\i})?$};
-  \draw (a\i) -- (pa\i);
+  \path
+    node (p\i) [predicate evaluation, above=\d of a\i] {$\param{p}(a_{\i})? \, \p$}
+    (a\i) [predicate evaluation edge] -- (p\i);
 }
 
-\draw (pai.south) [iteration] to (pai+1.south);
-\draw (pai+1.south) [iteration, middotted] to node [below, sloped, pos=.5] {\trueseq} (pai+j-1.south);
-\draw (pai+j-1.south) [iteration] to (pai+j.south);
+\begin{scope}
+  \tikzstyle{every path}=[iteration]
+  \draw ($ (pi.north) + (-1, 0) $) [bend left=45] to (pi.north);
+  \draw (pi.north) [bend left=60] to (pi+1.north);
+  \draw (pi+1.north) [middle dots, bend left=60] to (pi+j-1.north);
+  \draw (pi+j-1.north) [bend left=45] to (pi+j.north);
+\end{scope}
 
-\draw ([yshift=-15mm] ai.south west) [bottombrace] -- coordinate(x) ([yshift=-15mm] ai+j-1.south east);
-\node (elem) [elem, below=15mm of x] {$j$};
-\draw (x) [arrow, from brace] -- (elem);
+\coordinate (x) at ($ (ai.south)!.5!(ai+j-1.south) $);
+\node (B) [below=2\cellheight of A] at (x) {j};
+
+\measure[-4ex]{}{ai.south west}{ai+j-1.south east}
+\draw ($ (x) - (0, 4ex) $) [shorten <=1mm, arrow] -- (B);
 
 \input{_footer.tex}

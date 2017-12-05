@@ -1,36 +1,36 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-  \node (1)   {$a_1$};     &
-  \node (2)   {$a_2$};     &
-  \ellipsis                &
-  \node (i-1) {$a_{i-1}$}; &
-  \node (i)   {$a_{i}$};   &
-  \node (i+1) {$a_{i+1}$}; &
-  \ellipsis                &
-  \node (n)   {$a_n$};     \\
+\matrix (A) [collection] {
+  \helem[.5\elementswidth]{before} &
+  \elem{a}{i} &
+  \elem{a}{i+1} &
+  \helem{between} &
+  \elem{a}{i+j-1} &
+  \elem{a}{i+j} &
+  \helem[.5\elementswidth]{after} \\
 };
 
-\node (B) [elem, below of=ai, node distance=4cm] {$i$};
+\draw (ai+j.60) [latex-, out=90, in=270] to +(2, 1) node [above] {\param{end}};
 
-\foreach \i/\d/\s/\p in {
-  1/\true/0.5em/below,
-  2/\false/2em/below,
-  i-1/\false/0.5em/below,
-  i/\true/2em/310,
-  i+1/\false/0.5em/310}
+\foreach \i/\p/\d in {
+  i+j/\false/.75,
+  i+j-1/\false/.25,
+  i+1/\false/.25,
+  i/\true/.75}
 {
-  \node (pa\i) [predicate, align=center, below=\s of a\i, pin={[function result, pin position=\p] \d}] {$a_{\i}$ = elem?};
-  \draw (a\i) -- (pa\i);
+  \path
+    node (p\i) [scale=0.8, predicate evaluation, above=\d of a\i] {$\param{elem} = a_{\i}? \, \p$}
+    (a\i) [predicate evaluation edge] -- (p\i);
 }
 
-\draw ([xshift=-1cm] pa1.south) [iteration] to (pa1.south);
-\draw (pa1.south) [iteration] to (pa2.south);
-\draw (pa2.south) [iteration, middotted] to (pai-1.south);
-\draw (pai-1.south) [iteration] to (pai.south);
-\draw (pai.south) [iteration] to (pai+1.south);
-\draw (pai.south) [arrow] -- (B);
+\begin{scope}
+  \tikzstyle{every path}=[iteration, bend right=45]
+  \draw (pi+j.north) to (pi+j-1.north);
+  \draw (pi+j-1.north) [middle dots] to (pi+1.north);
+  \draw (pi+1.north) to (pi.north);
+\end{scope}
 
-\toppointer{ai+1.north}{end}
+\node (B) [below=2\cellheight of ai] {$i$};
+\draw (ai) [arrow] -- (B);
 
 \input{_footer.tex}

@@ -1,23 +1,25 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-  \node (1)     {$a_1$};       &
-  \ellipsis                    &
-  \node (m-n)   {$a_{m-n}$};   &
-  \node (m-n+1) {$a_{m-n+1}$}; &
-  \ellipsis                    &
-  \node (m-1)   {$a_{m-1}$};   &
-  \node (m)     {$a_{m}$};     \\
+\matrix (A) [collection] {
+  \helem[.5\elementswidth]{before} &
+  \elem{a}{m-n} &
+  \elem{a}{m-n+1} &
+  \helem{between} &
+  \elem{a}{m-1} &
+  \elem{a}{m} \\
 };
 
-\matrix (B) [collection, node distance=3cm, below of=A, matrix anchor=bm.east] at (am.east) {
+\matrix (B) [collection, below=2\cellheight of A, matrix anchor=bm.north west] at (am.south west) {
   \node (bm-n+1) {$a_{m-n+1}$}; &
-  \ellipsis                     &
-  \node (bm-1)   {$a_{m-1}$};   &
-  \node (bm)     {$a_{m}$};     \\
+  \helem{between} &
+  \node (bm-1) {$a_{m-1}$}; &
+  \node (bm) {$a_m$}; \\
 };
 
-\topmeasure{n}{am-n+1.north west}{am.north east}
-\bracetobrace {am-n+1.south west}{am.south east}{bm-n+1.north west}{bm.north east}
+\measure{\param{n}}{am-n+1.north west}{am.north east}
+
+\bottombrace[a]{am-n+1.south west}{am.south east}
+\topbrace[b]{bm-n+1.north west}{bm.north east}
+\draw (a) [arrow] -- (b);
 
 \input{_footer.tex}

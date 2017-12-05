@@ -1,21 +1,30 @@
-\documentclass{standalone}
+\documentclass[12pt]{standalone}
 
 \usepackage{tikz}
 \usetikzlibrary{matrix}
+\usetikzlibrary{calc}
 \usetikzlibrary{positioning}
+\usetikzlibrary{intersections}
 \usetikzlibrary{decorations}
 \usetikzlibrary{decorations.pathmorphing}
 \usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{decorations.text}
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{backgrounds}
 \usetikzlibrary{shapes.multipart}
 \usetikzlibrary{shapes.symbols}
-\usetikzlibrary{shapes.callouts}
+\usetikzlibrary{shapes.arrows}
 
+\usepackage{calc}
 \usepackage{inconsolata}
 \usepackage{pifont} % for true and false symbols
 
 \begin{document}
-  \begin{tikzpicture}
+  \begin{tikzpicture}[
+    node distance=0,
+    show background rectangle,
+    loose background,
+    background rectangle/.style={fill=white}
+  ]
 
   \input{_style.tex}

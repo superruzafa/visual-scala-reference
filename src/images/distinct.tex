@@ -1,34 +1,34 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1) {$a_1$}; &
-  \node (a2) {$a_2$}; &
+  \elem{a}{1} &
+  \elem{a}{2} &
   \node (a3) {$a_1$}; &
   \node (a4) {$a_n$}; &
-  \ellipsis      &
+  \helem{between} &
   \node (a5) {$a_2$}; &
   \node (a6) {$a_n$}; &
   \node (a7) {$a_1$}; \\
 };
 
-\matrix (B) [collection, below=2cm of A] {
+\node [big arrow, below=\cellheight - .5\bigarrowwidth of A, anchor=west, rotate=-90];
+
+\matrix (B) [collection, below=2\cellheight of A] {
   \node {$a_1$}; &
   \node {$a_2$}; &
-  \ellipsis      &
+  \helem{between} &
   \node {$a_n$}; \\
 };
 
-\coordinate (x1) at ([yshift=5mm] a1.north);
-\coordinate (x2) at ([yshift=10mm] a2.north);
-\coordinate (xn) at ([yshift=15mm] a4.north);
-\begin{scope}
-  \tikzstyle{every path}=[-{Rays[red, line join=round]}]
-  \draw (a1) -- (x1) -| (a3);
-  \draw (x1) -| (a7);
-  \draw (a2) [white border] -- (x2) -| (a5);
-  \draw (a4) [white border] -- (xn) -| (a6);
-\end{scope}
+\draw (a3.north) -- ++(0, 0.5) coordinate (x);
+\draw [name path=p1] (x) -| (a1);
+\draw [name path=p2] (x) -| (a7);
+\draw [name path=p3] (a2.north) -- ++(0, 1) -| (a5);
+\draw [name path=p4] (a4.north) -- ++(0, 1.5) -| (a6);
 
-\bracetobrace {A.south west}{A.south east}{B.north west}{B.north east}
+\path [name intersections={of=p1 and p3, by={a}}] (a) pic {vertical bridge};
+\path [name intersections={of=p2 and p3, by={a}}] (a) pic {vertical bridge};
+\path [name intersections={of=p2 and p4, by={a, b}}] (a) pic {vertical bridge} (b) pic {vertical bridge};
+\path [name intersections={of=p3 and p4, by={a}}] (a) pic {vertical bridge};
 
 \input{_footer.tex}

@@ -1,46 +1,48 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1) {$a_1$};   &
-  \node [ellipsis];     &
-  \node (ai) {$a_{size}$};   &
-  \node (aj) {$a_{size + 1}$};   &
-  \node [ellipsis];     &
-  \node (ak)   {$a_{2 \cdot size}$}; &
-  \node (am)   {$a_{2 \cdot size + 1}$}; &
-  \node [ellipsis];     &
-  \node (an) {$a_n$};   \\
+  \elem{a}{1} &
+  \helem{between} &
+  \node (a2) {$a_{\param{\scriptsize{size}}}$}; &
+  \node (a2) {$a_{\param{\scriptsize{size}} + 1}$}; &
+  \helem{between} &
+  \node (a2) {$a_{2\cdot\param{\scriptsize{size}}}$}; &
+  \helem{between} &
+  \node (a2) [xscale=.9] {$a_{n\cdot\param{\scriptsize{size}} + 1}$}; &
+  \helem[.5\elementswidth]{between} &
+  \node (a2) [xscale=.8] {$a_{n\cdot\param{\scriptsize{size}} + m}$}; \\
 };
 
-\matrix (A1) [collection, below=20mm of a1, matrix anchor=A1a1.north west] at (a1.south west) {
-  \node (A1a1) {$a_1$};    &
-  \node (A1ae) [ellipsis]; &
-  \node (A1as) {$a_{size}$};    \\
+\node [big arrow, below=\cellheight - .5\bigarrowwidth of A, anchor=west, rotate=-90];
+
+\matrix (C1) [collection, below=2\cellheight of A] {
+  \node {$a_1$}; &
+  \helem{between} &
+  \node {$a_{\param{\scriptsize size}}$}; \\
 };
 
-\matrix (A2) [collection, below=15mm of A1, matrix anchor=A2a1.north west] at (A1a1.south west) {
-  \node (A2a1) {$a_{size + 1}$}; &
-  \node (A2ae) [ellipsis];     &
-  \node (A2as) {$a_{2 \cdot size}$};        \\
+\matrix (C2) [collection, below=\cellheight of C1] {
+  \node (c2) {$a_{\param{\scriptsize size} + 1}$}; &
+  \helem{between} &
+  \node {$a_{2\cdot\param{\scriptsize{size}}}$}; \\
 };
 
-\matrix (A3) [collection, below=25mm of A2, matrix anchor=A3a1.north west] at (A2a1.south west) {
-  \node (A3a1) {$a_{2 \cdot size + 1}$};    &
-  \node (A3ae) [ellipsis]; &
-  \node (A3as) {$a_n$};    \\
+\matrix (C3) [collection, below=1.5\cellheight of C2, matrix anchor=c31.north west] at (c2.south west) {
+  \node (c31) [xscale=.9] {$a_{n\cdot\param{\scriptsize{size}} + 1}$}; &
+  \helem[.5\elementswidth]{between} &
+  \node [xscale=.8] {$a_{n\cdot\param{\scriptsize{size}} + m}$}; \\
 };
 
-\topmeasure{size}{A1.north west}{A1.north east}
-\topmeasure{size}{A2.north west}{A2.north east}
-\topmeasure{$\leq$ size}{A3.north west}{A3.north east}
+\measure{\param{size}}{C1.north west}{C1.north east}
+\measure{\param{size}}{C2.north west}{C2.north east}
+\measure{\param{$\leq$ size}}{C3.north west}{C3.north east}
 
 \begin{scope}
-  \tikzstyle{every path}=[arrow, iteration, shorten >=1mm, shorten <=1mm]
-  \draw ([xshift=-1cm] A1a1.west) -- (A1a1.west);
-  \draw (A1a1.west) to (A2a1.west);
-  \draw (A2a1.west) [middotted] to (A3a1.west);
-  % \draw (in-1n-1.west) to (inn.west);
-  % \draw (inn.west) to (empty.west);
+  \tikzstyle{every path}=[bend right=45]
+  \draw ($ (C1.west) - (1, 0) $) [iteration, with next label] -- (C1.west);
+  \draw (C1.west) [iteration, with reverse next label] to (C2.west);
+  \draw (C2.west) [iteration, middle dots] to (C3.west);
+  \path (C2.west) [with reverse next label] to (C3.west);
 \end{scope}
 
 \input{_footer.tex}

@@ -1,28 +1,41 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-  \node (1)   {$a_1$};     &
-  \ellipsis                &
-  \node (i-1) {$a_{i-1}$}; &
-  \node (i)   {$a_i$};     &
-  \node (i+1) {$a_{i+1}$}; &
-  \ellipsis                &
-  \node (n)   {$a_n$};     \\
+\matrix (A) [collection] {
+  \elem{a}{1} &
+  \elem{a}{2} &
+  \elem{a}{3} &
+  \helem{between} &
+  \elem{a}{i-1} &
+  \elem{a}{i} &
+  \elem{a}{i+1} &
+  \helem{after} \\
 };
 
-\matrix (B) [collection, right=1cm of A] {
-  \node (bi-1) {$a_{i-1}$}; &
-  \node (bi)   {$a_i$};     &
-  \node (bi+1) {$a_{i+1}$}; \\
+\foreach \f/\t/\r/\p in {
+  1/2/0mm/\false,
+  2/3/4mm/\false,
+  i-1/i/0mm/\false,
+  i/i+1/4mm/\true}
+{
+  \draw (a\f.north west) [brace, decoration={mirror=false, raise=2mm + \r, aspect=.25}] -- (a\t.north east);
+  \draw ($ (a\f.north west)!.25!(a\t.north east) $) ++(0, 2mm + 2mm + \r) [predicate evaluation edge] -- +(0, 1) node (p\f) [above, predicate evaluation] {$=\param{that}?\, \p$};
+}
+
+\matrix (T) [collection, matrix of math nodes, right=\cellwidth of A] {
+  a_i &
+  a_{i+1} \\
 };
 
-\node [draw, ellipse callout, callout absolute pointer={([yshift=1mm] B.north)}] at ([yshift=1cm] B.north) {$\texttt{that}$};
+\topparam{T.north}{\param{that}}
 
-\draw (ai-1.south west) [bottombrace] -- coordinate (c) (ai+1.south east);
-\draw (bi-1.south west) [bottombrace] -- coordinate (d) (bi+1.south east);
+\begin{scope}[iteration, bend left=45]
+  \draw ($ (p1.north) + (-1, 0) $) to +(1, 0);
+  \draw (p1.north) to (p2.north);
+  \draw (p2.north) [middle dots] to (pi-1.north);
+  \draw (pi-1.north) to (pi.north);
+\end{scope}
 
-\draw (c) [from brace] -- +(0, -2em) [to brace] -- node (e) [arrow label] {$=?$ \true} ([yshift=-2em] d) -- (d);
-\node (f) [below=1cm of e] {\true};
-\draw (e) [arrow] -- (f);
+\node (B) [below right=2\cellheight and \cellwidth of ai+1] {\true};
+\draw (pi.north) [arrow] .. controls +(3, 1) and +(0, 1) .. (B.north);
 
 \input{_footer.tex}

@@ -1,12 +1,9 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node {$a_1$}; \\
+  \elem{a}{1} \\
 };
-
-\node (B) [elem, below=3cm of A] {$a_1$};
-
-\draw [bottombrace] (A.south west) -- coordinate (b) (A.south east);
-\draw [arrow, from brace] (b) -- (B);
+\node (B) [below=2\cellheight of A] {$a_1$};
+\draw (A) [arrow] -- (B);
 
 \input{_footer.tex}

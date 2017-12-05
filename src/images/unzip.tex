@@ -1,30 +1,30 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-  \node (1) {$(a_1, b_1)$}; &
-  \ellipsis                 &
-  \node (i) {$(a_i, b_i)$}; &
-  \ellipsis                 &
-  \node (n) {$(a_n, b_n)$}; \\
+\matrix (A) [collection] {
+  \node (a1) {$(a_1, b_1)$}; &
+  \helem{between} &
+  \node (ai) {$(a_i, b_i)$}; &
+  \helem{between} &
+  \node (an) {$(a_n, b_n)$}; \\
 };
 
-\matrix [collection, left delimiter=(, right delimiter=), below=3cm of A] {
+\matrix [tuple of collections, below=2\cellheight of A] {
   \node (za1) {$a_1$}; &
-  \ellipsis            &
+  \helem{between}[1cm] &
   \node (zai) {$a_i$}; &
-  \ellipsis            &
+  \helem{between}[1cm] &
   \node (zan) {$a_n$}; &
-  \tuplecomma          &
+  \tuplecomma &
   \node (zb1) {$b_1$}; &
-  \ellipsis            &
+  \helem{between}[1cm] &
   \node (zbi) {$b_i$}; &
-  \ellipsis            &
+  \helem{between}[1cm] &
   \node (zbn) {$b_n$}; \\
 };
 
 \foreach \i in {1,i,n} {
-  \draw ([shift={(-0.7em, 0.7em)}] a\i.south) [arrow, smooth, white border] to (za\i.north);
-  \draw ([shift={(+0.7em, 0.7em)}] a\i.south) [arrow, smooth, white border] to (zb\i.north);
+  \draw ($ (a\i.south) + (-3mm, 2ex) $) [smooth arrow, erase] to (za\i.north);
+  \draw ($ (a\i.south) + (+3mm, 2ex) $) [smooth arrow, erase] to (zb\i.north);
 }
 
 \input{_footer.tex}

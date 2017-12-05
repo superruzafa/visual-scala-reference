@@ -1,41 +1,29 @@
 \input{_header.tex}
 
 \matrix (A) [collection] {
-  \node (a1)   {$a_1$};     &
-  \node (a2)   {$a_2$};     &
-  \ellipsis                 &
-  \node (ai)   {$a_i$};     &
-  \node (ai+1) {$a_{i+1}$}; &
-  \node (ai+2) {$a_{i+2}$}; &
-  \ellipsis                 &
-  \node (an)   {$a_n$};     \\
+  \helem[.5\elementswidth]{before} &
+  \elem{a}{i-1} &
+  \elem{a}{i} &
+  \elem{a}{i+1} &
+  \elem{a}{i+2} &
+  \helem[.5\elementswidth]{after} \\
 };
 
-\matrix (B) [collection, below of=A, matrix anchor=b2.west, node distance=3cm] at (a2.west) {
-  \node (b2)   {$a_2$};     &
-  \ellipsis                 &
-  \node (bi)   {$a_i$};     &
-  \node (bi+1) {$b$};       &
-  \node (bi+2) {$a_{i+2}$}; \\
+\matrix (T) [collection, above=2\cellheight of ai.north west, matrix anchor=south west] {
+  \node (ti) {$a_i$}; &
+  \node (ti+1) {$a_{i+1}$}; &
+  \node (ti+2) {$a_{i+2}$}; \\
 };
 
-\node [draw, ellipse callout, callout absolute pointer={([xshift=1mm] B.east)}] at ([xshift=1cm] B.east) {$\texttt{that}$};
-\draw (a2.south east) [draw=none] -- node {\trueseq} (bi.north west);
+\toppointer{ai.north}{\param{offset}}
 
-\begin{scope}
-  \tikzstyle{every path}=[Latex-Latex]
-  \tikzstyle{every node}=[arrow label]
-  \draw (a2) -- node (t1) {=? \true} (b2);
-  \draw (ai) -- node (t2) {=? \true} (bi);
-  \draw (ai+1) -- node (t3) {=? \false} (bi+1);
-\end{scope}
+\topparam{T.north}{\param{that}};
 
-\node (B) [elem, right=5cm of t3] {\false};
-\draw [arrow] (t3) -- (B);
+\bottombrace[a]{ti.south west}{ti+2.south east}
+\topbrace[b]{ai.north west}{ai+2.north east}
+\draw (a) -- node [arrow label] {$=?$} (b);
 
-\toppointer{a2.north}{offset}
-\draw ([yshift=5mm] a2.north west) [dashed] -- ([yshift=-5mm] b2.south west);
-
-\draw (t1.north west) [rounded corners=0.5em] rectangle (t3.south east);
+\node [big arrow, right=\cellwidth of $ (ai+2.east)!.5!(ti+2.east) $];
+\node [right=2\cellwidth of $ (ai+2.east)!.5!(ti+2.east) $] {$\true$};
 
 \input{_footer.tex}

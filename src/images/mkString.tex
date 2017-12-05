@@ -1,24 +1,24 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-  \node (1) {$a_1$}; &
-  \node (2) {$a_2$}; &
-  \ellipsis          &
-  \node (i) {$a_i$}; &
-  \ellipsis          &
-  \node (n) {$a_n$}; \\
+\matrix (A) [collection] {
+  \elem{a}{1} &
+  \elem{a}{2} &
+  \helem{between} &
+  \elem{a}{i} &
+  \helem{between} &
+  \elem{a}{n} \\
 };
 
-
-\matrix (B) [matrix of nodes, align=left, left delimiter=\{, matrix anchor=sep.west, right of=an] at (an.east) {
-  \node {start=``(''};     \\
-  \node (sep) {sep=``, ''}; \\
-  \node {end=``)''};       \\
+\matrix [right=1 of A, left delimiter=\{] {
+  
+ode {\param{start}=``(''}; \\
+  \node (sep) {\param{sep}=``, ''}; \\
+  
+ode {\param{end}=``)''}; \\
 };
 
-\draw (A.south west) [bottombrace] -- coordinate (x) (A.south west -| B.south east);
+\node [big arrow, below=\cellheight - .5\bigarrowwidth of A, anchor=west, rotate=-90];
 
-\node (B) [elem, below=10mm of x] {``($a_1$, $a_2$, $\ldots$, $a_i$, $\ldots$, $a_n$)''};
-\draw (x) [arrow, from brace] -- (B);
+\node (B) [below=2\cellheight of A] {``($a_1$, $a_2$, $\ldots$, $a_i$, $\ldots$, $a_n$)''};
 
 \input{_footer.tex}

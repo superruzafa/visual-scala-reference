@@ -1,16 +1,19 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-  \node (1)   {$a_1$};     &
-  \node (2)   {$a_2$};     &
-  \ellipsis                &
-  \node (n-1) {$a_{n-1}$}; &
-  \node (n)   {$a_n$};     \\
+\matrix (A) [collection] {
+  \elem{a}{1} &
+  \elem{a}{2} &
+  \helem{between} &
+  \elem{a}{n-1} &
+  \elem{a}{n} \\
 };
 
-\bottommeasure{n}{a1.south west}{an.south east}
+\measure[-3ex]{}{a1.south west}{an.south east}
 
-\node (e) [elem, below=15mm of A] {n};
-\draw [arrow] ([yshift=-7mm] A.south) -- (e);
+\coordinate (x) at ($ (a1.south)!.5!(an.south) $);
+\node (B) [below=2\cellheight of A] at (x) {n};
+
+\measure[-3ex]{n}{a1.south west}{an.south east}
+\draw ($ (x) - (0, 3ex) $) [shorten <=1mm, arrow] -- (B);
 
 \input{_footer.tex}

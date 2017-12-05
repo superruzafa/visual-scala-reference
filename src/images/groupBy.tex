@@ -1,50 +1,63 @@
 \input{_header.tex}
 
-\matrix (A) [collection, name prefix=a] {
-    \node (1)   {$a_1$};     &
-    \node (2)   {$a_2$};     &
-    \node (3)   {$a_3$};     &
-    \ellipsis                &
-    \node (i)   {$a_i$};     &
-    \node (i+1) {$a_{i+1}$}; &
-    \ellipsis                &
-    \node (n)   {$a_n$};     \\
+\matrix (A) [collection] {
+  \elem{a}{1} &
+  \elem{a}{2} &
+  \elem{a}{3} &
+  \helem{between} &
+  \elem{a}{i} &
+  \elem{a}{i+1} &
+  \helem{between} &
+  \elem{a}{n} \\
 };
 
-\foreach \i/\k in {1/k_1, 2/k_2, 3/k_1, i/k_m, i+1/k_2, n/k_m} {
-  \node (fa\i) [predicate, below=0.5em of a\i, pin={[function result, pin position=below] $\k$}] {$\texttt{f}(a_{\i})$};
-  \draw (a\i) -- (fa\i);
+\node [big arrow, below=\cellheight - .5\bigarrowwidth of A, anchor=west, rotate=-90];
+
+\foreach \i/\k in {
+  1/k_1,
+  2/k_2,
+  3/k_1,
+  i/k_m,
+  i+1/k_2,
+  n/k_m}
+{
+  \path
+    node (f\i) [predicate evaluation, above=.5 of a\i] {$\param{f}(a_{\i})$}
+    (a\i) [predicate evaluation edge] -- (f\i);
+  \path
+    node (fk\i) [predicate evaluation, above=.5 of f\i] {$\k$}
+    (fk\i) [predicate evaluation edge] -- (f\i.north);
 }
 
-\matrix (K) [map keys, below left=3cm and 2cm of A.center] {
-  \node (k1) {$k_1$}; \\
-  \node (k2) {$k_2$}; \\
-  \vellipsis          \\
-  \node (km) {$k_m$}; \\
+\matrix (K) [map, below left=2\cellheight and 2 of A.south] {
+  \elem{k}{1} \\
+  \elem{k}{2} \\
+  \velem{between} \\
+  \elem{k}{m} \\
 };
 
-\matrix (K1) [map values, right=1cm of k1.east] {
-  \node                        {$a_1$};    &
-  \node                        {$a_3$};    &
-  \node [draw=none, fill=none] {$\ldots$}; \\
+\matrix (K1) [small collection, right=1 of k1.east] {
+  \node {$a_1$}; &
+  \node {$a_3$}; &
+  \helem[\smallcolfactor\elementswidth]{after} \\
 };
 
-\matrix (K2) [map values, right=1cm of k2.east] {
-  \node                        {$a_2$};     &
-  \node [draw=none, fill=none] {$\ldots$};  &
-  \node                        {$a_{i+1}$}; &
-  \node [draw=none, fill=none] {$\ldots$};  \\
+\matrix (K2) [small collection, right=1 of k2.east] {
+  \node {$a_2$}; &
+  \helem[\smallcolfactor\elementswidth]{between} &
+  \node {$a_{i+1}$}; &
+  \helem[\smallcolfactor\elementswidth]{after} \\
 };
 
-\matrix (Km) [map values, right=1cm of km.east] {
-  \node [draw=none, fill=none] {$\ldots$}; &
-  \node                        {$a_i$};    &
-  \node [draw=none, fill=none] {$\ldots$}; &
-  \node                        {$a_n$};    \\
+\matrix (Km) [small collection, right=1 of km.east] {
+  \helem[\smallcolfactor\elementswidth]{before} &
+  \node {$a_i$}; &
+  \helem[\smallcolfactor\elementswidth]{between} &
+  \node {$a_n$}; \\
 };
 
-\draw (k1) [map to] -- (K1);
-\draw (k2) [map to] -- (K2);
-\draw (km) [map to] -- (Km);
+\foreach \i in {1, 2, m} {
+  \draw (k\i) [maps to] -- (K\i);
+}
 
 \input{_footer.tex}

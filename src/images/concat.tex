@@ -1,60 +1,52 @@
 \input{_header.tex}
 
+\newlength{\paramsdistance}
+\setlength{\paramsdistance}{1em}
+
 \matrix (A) [collection] {
-  \node (a1) {$a_1$}; &
-  \node (a2) {$a_2$}; &
-  \ellipsis           &
-  \node (am) {$a_m$}; \\
+  \elem{a}{1} &
+  \elem{a}{2} &
+  \helem{between} &
+  \elem{a}{m} \\
 };
 
-\node [draw, ellipse callout, callout absolute pointer={([yshift=1mm] A.north)}] at ([yshift=1cm] A.north) {$\texttt{xss(0)}$};
+\node (E) [empty collection, right=\paramsdistance of A];
 
-\node (E) [right=5mm of A, empty] {};
-
-\node [draw, ellipse callout, callout absolute pointer={([yshift=1mm] E.north)}] at ([yshift=1cm] E.north) {$\texttt{xss(1)}$};
-
-\matrix (B) [collection, right=5mm of E] {
-  \node (b1) {$b_1$};     &
-  \ellipsis               &
-  \node (bn) {$b_n$}; \\
+\matrix (B) [collection, right=\paramsdistance of E] {
+  \elem{b}{1} &
+  \helem{between} &
+  \elem{b}{n} \\
 };
 
-\node [draw, ellipse callout, callout absolute pointer={([yshift=1mm] B.north)}] at ([yshift=1cm] B.north) {$\texttt{xss(2)}$};
+\node (EL) [right=\paramsdistance of B] {$\ldots$}; 
 
-\node (EL) [right=5mm of B] {$\cdots$}; 
-
-\matrix (C) [collection, right=5mm of EL] {
-  \node (c1) {$c_1$}; &
-  \ellipsis           &
-  \node (co) {$c_o$}; \\
+\matrix (C) [collection, right=\paramsdistance of EL] {
+  \elem{c}{1} &
+  \helem{between} &
+  \elem{c}{o} \\
 };
 
-\node [draw, ellipse callout, callout absolute pointer={([yshift=1mm] C.north)}] at ([yshift=1cm] C.north) {$\texttt{xss(n-1)}$};
-
-\draw (A.north west) [draw=none] -- coordinate (x) (C.south east);
-
-\matrix (Z) [collection, below=3cm of x] {
+\matrix (Z) [collection, below=2\cellheight of $ (A.south west)!.5!(C.south east) $] {
   \node (za1) {$a_1$}; &
   \node (za2) {$a_2$}; &
-  \ellipsis            &
+  \helem{between} &
   \node (zam) {$a_m$}; &
   \node (zb1) {$b_1$}; &
-  \ellipsis            &
+  \helem{between} &
   \node (zbn) {$b_n$}; &
-  \ellipsis            &
+  \helem{between} &
   \node (zc1) {$c_1$}; &
-  \ellipsis            &
+  \helem{between} &
   \node (zco) {$c_o$}; \\
 };
 
-\foreach \i in {a1,a2,am,b1,bn,c1,co} {
-  \draw ([yshift=4mm] \i.south) [smooth, arrow, white border] to (z\i);
+\topparam{A.north}{\param{xss(0)}}
+\topparam{E.north}{\param{xss(1)}}
+\topparam{B.north}{\param{xss(2)}}
+\topparam{C.north}{\param{xss(n-1)}}
+ 
+\foreach \i in {a1, a2, am, b1, bn, c1, co} {
+  \draw ($ (\i.south) + (0, 2ex) $) [smooth arrow, erase] to (z\i);
 }
-
-% \bracetobrace{A.south west}{A.south east}{z1.north west}{zi.north east}
-% \bracetobrace{C.south west}{C.south east}{[xshift=1pt] zj.north west}{[xshift=-1pt] zj+m.north east}
-% \draw (B) [arrow, smooth, shorten <=2mm, shorten >=2mm] to (zi.north east);
-% \bracetobrace{E.south west}{E.south east}{[xshift=1pt] zk.north west}{zk+n.north east}
-
 
 \input{_footer.tex}
