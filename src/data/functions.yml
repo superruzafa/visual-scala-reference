@@ -10,6 +10,15 @@
   - en: <code>aggregate</code> returns <var>z</var> on empty collections.
     es: <code>aggregate</code> devuelve <var>z</var> en colecciones vacías.
 
+- name: andThen
+  signature: "def andThen(g: (R) ⇒ A): (T1) ⇒ A"
+  description:
+    en: Composes two instances of Function1 in a new Function1, with this function applied first.
+    es: Compone tos instancias de Function1 en una nueva Function1 aplicando esta función primero.
+  figures:
+  - en: 
+    es: 
+
 - name: collect
   signature: "def collect[B](pf: PartialFunction[A, B]): <em>Collection</em>[B]"
   description:
@@ -38,6 +47,15 @@
   figures:
   - en: <code>combinations</code> finds all possible combinations taking <var>n</var> elements at time and provides an iterator to go through them.
     es: <code>combinations</code> encuentra todas las posibles combinaciones tomando <var>n</var> elementos cada vez y proporciona un iterador para recorrerlos.
+
+- name: compose
+  signature: "def compose[A](g: (R) ⇒ A): (T1) ⇒ A"
+  description:
+    en: Composes two instances of Function1 in a new Function1, with this function applied last.
+    es: Compone dos instancias de Function1 en una nueva Function1 aplicando esta función al final.
+  figures:
+  - en: 
+    es: 
 
 - name: concat
   signature: "def <em>Collection</em>.concat(xss: Traversable[A]*): <em>Collection</em>[A]"

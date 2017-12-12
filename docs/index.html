@@ -41,9 +41,11 @@
   <aside id="main-sidebar">
   <ul id="function-list">
           <li class="function-link"><a href="#aggregate">aggregate</a></li>
+          <li class="function-link"><a href="#andthen">andThen</a></li>
           <li class="function-link"><a href="#collect">collect</a></li>
           <li class="function-link"><a href="#collectfirst">collectFirst</a></li>
           <li class="function-link"><a href="#combinations">combinations</a></li>
+          <li class="function-link"><a href="#compose">compose</a></li>
           <li class="function-link"><a href="#concat">concat</a></li>
           <li class="function-link"><a href="#contains">contains</a></li>
           <li class="function-link"><a href="#containsslice">containsSlice</a></li>
@@ -163,6 +165,19 @@
                           </figure>
                         </section>
     </article>
+      <article id="andthen" class="function-entry">
+      <h2 class="function-name">andThen</h2>
+              <p class="function-description i18n" lang="en">Composes two instances of Function1 in a new Function1, with this function applied first.</p>
+              <p class="function-description i18n" lang="es">Compone tos instancias de Function1 en una nueva Function1 aplicando esta función primero.</p>
+            <pre class="function-signature"><code class="scala">def andThen(g: (R) ⇒ A): (T1) ⇒ A</code></pre>
+      <section class="function-figure-wrapper">
+                  <figure class="function-figure">
+            <img src="images/andThen.svg" alt="" />
+                                          <figcaption class="function-figure-caption i18n" lang="en"></figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"></figcaption>
+                                    </figure>
+              </section>
+    </article>
       <article id="collect" class="function-entry">
       <h2 class="function-name">collect</h2>
               <p class="function-description i18n" lang="en">Builds a new collection by applying a partial function to all elements of this collection on which the function is defined.</p>
@@ -204,6 +219,19 @@
             <img src="images/combinations.svg" alt="" />
                                           <figcaption class="function-figure-caption i18n" lang="en"><code>combinations</code> finds all possible combinations taking <var>n</var> elements at time and provides an iterator to go through them.</figcaption>
                               <figcaption class="function-figure-caption i18n" lang="es"><code>combinations</code> encuentra todas las posibles combinaciones tomando <var>n</var> elementos cada vez y proporciona un iterador para recorrerlos.</figcaption>
+                                    </figure>
+              </section>
+    </article>
+      <article id="compose" class="function-entry">
+      <h2 class="function-name">compose</h2>
+              <p class="function-description i18n" lang="en">Composes two instances of Function1 in a new Function1, with this function applied last.</p>
+              <p class="function-description i18n" lang="es">Compone dos instancias de Function1 en una nueva Function1 aplicando esta función al final.</p>
+            <pre class="function-signature"><code class="scala">def compose[A](g: (R) ⇒ A): (T1) ⇒ A</code></pre>
+      <section class="function-figure-wrapper">
+                  <figure class="function-figure">
+            <img src="images/compose.svg" alt="" />
+                                          <figcaption class="function-figure-caption i18n" lang="en"></figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"></figcaption>
                                     </figure>
               </section>
     </article>

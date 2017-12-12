@@ -1,0 +1,15 @@
+\input{_header.tex}
+
+\node (f) [shape=function, collection element, draw, minimum size=1cm] {\param{f}};
+\node (g) [shape=function, collection element, draw, right=\cellwidth of f, minimum size=1cm] {\param{g}};
+
+\coordinate (fxg) at ($(f.south)!.5!(g.south)$);
+
+\node [big arrow, below=\cellheight - .5\bigarrowwidth of fxg, anchor=west, rotate=-90];
+
+\node (gf) [shape=function, collection element, draw, below=2\cellheight of fxg, minimum size=3cm] {};
+
+\node (g2) at (gf) [shape=function, anchor=south, collection element, draw, minimum size=1cm] {\param{g}};
+\node (f2) [shape=function, collection element, draw, below=of g2, minimum size=1cm] {\param{f}};
+
+\input{_footer.tex}
