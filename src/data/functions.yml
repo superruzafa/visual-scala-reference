@@ -86,6 +86,15 @@
   - en: <code>containsSlice</code> returns <code class="literal true">true</code> when <var>that</var> can be found at least once as subsequence of the collection.
     es: <code>containsSlice</code> devuelve <code class="literal true">true</code> cuando <var>that</var> puede ser encontrada como subsecuencia de la colección al menos una vez.
 
+- name: const
+  signature: "def Function.const[T, U](x: T)(y: U): T"
+  description:
+    en: The constant function
+    es: La función constante
+  figures:
+  - en:
+    es:
+
 - name: count
   signature: "def count(p: (A) ⇒ Boolean): Int"
   description:
