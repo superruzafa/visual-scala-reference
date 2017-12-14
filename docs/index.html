@@ -90,6 +90,7 @@
           <li class="function-link"><a href="#lastindexwhere">lastIndexWhere</a></li>
           <li class="function-link"><a href="#lastoption">lastOption</a></li>
           <li class="function-link"><a href="#length">length</a></li>
+          <li class="function-link"><a href="#lift">lift</a></li>
           <li class="function-link"><a href="#map">map</a></li>
           <li class="function-link"><a href="#mapconserve">mapConserve</a></li>
           <li class="function-link"><a href="#mapvalues">mapValues</a></li>
@@ -137,6 +138,7 @@
           <li class="function-link"><a href="#takewhile">takeWhile</a></li>
           <li class="function-link"><a href="#tupled">tupled</a></li>
           <li class="function-link"><a href="#union">union</a></li>
+          <li class="function-link"><a href="#unlift">unlift</a></li>
           <li class="function-link"><a href="#untupled">untupled</a></li>
           <li class="function-link"><a href="#unzip">unzip</a></li>
           <li class="function-link"><a href="#unzip3">unzip3</a></li>
@@ -925,6 +927,24 @@
                                     </figure>
               </section>
     </article>
+      <article id="lift" class="function-entry">
+      <h2 class="function-name">lift</h2>
+              <p class="function-description i18n" lang="en">Turns this partial function into a function that returns an <code>Option</code>.</p>
+              <p class="function-description i18n" lang="es">Convierte esta función parcial en una función que devuelve un <code>Option</code>.</p>
+            <pre class="function-signature"><code class="scala">def lift: (A) ⇒ Option[B])</code></pre>
+      <section class="function-figure-wrapper">
+                              <figure class="function-figure">
+              <img src="images/lift.1.svg" alt="" />
+                              <figcaption class="function-figure-caption i18n" lang="en"></figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"></figcaption>
+                          </figure>
+                      <figure class="function-figure">
+              <img src="images/lift.2.svg" alt="" />
+                              <figcaption class="function-figure-caption i18n" lang="en"></figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"></figcaption>
+                          </figure>
+                        </section>
+    </article>
       <article id="map" class="function-entry">
       <h2 class="function-name">map</h2>
               <p class="function-description i18n" lang="en">Builds a new collection by applying a function to all elements of this collection.</p>
@@ -1631,6 +1651,24 @@
             <img src="images/union.svg" alt="" />
                       </figure>
               </section>
+    </article>
+      <article id="unlift" class="function-entry">
+      <h2 class="function-name">unlift</h2>
+              <p class="function-description i18n" lang="en">Turns a function that returns an <code>Option</code> into a partial function.</p>
+              <p class="function-description i18n" lang="es">Convierte una función que devuelve un <code>Option</code> en una función parcial.</p>
+            <pre class="function-signature"><code class="scala">def Function.unlift[T, R](f: (T) ⇒ Option[R]): PartialFunction[T, R]</code></pre>
+      <section class="function-figure-wrapper">
+                              <figure class="function-figure">
+              <img src="images/unlift.1.svg" alt="" />
+                              <figcaption class="function-figure-caption i18n" lang="en"></figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"></figcaption>
+                          </figure>
+                      <figure class="function-figure">
+              <img src="images/unlift.2.svg" alt="" />
+                              <figcaption class="function-figure-caption i18n" lang="en"></figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"></figcaption>
+                          </figure>
+                        </section>
     </article>
       <article id="untupled" class="function-entry">
       <h2 class="function-name">untupled</h2>

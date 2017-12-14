@@ -1,0 +1,19 @@
+\input{_header.tex}
+
+\node (f) [function] {$f$};
+
+\node (in1) [above=\cellheight of f] {$a_1$};
+\node (out1) [exception, below=\cellheight of f] {MatchError};
+\draw [arrow] (in1) -- (f.in 1);
+\draw [arrow] (f.out 1) -- (out1);
+
+\node (g) [function, right=2\cellwidth of f] {$f^\prime$};
+
+\node (in2) [above=\cellheight of g] {$a_1$};
+\node (out2) [none, below=\cellheight of g];
+\draw [arrow] (in2) -- (g.in 1);
+\draw [arrow] (g.out 1) -- (out2);
+
+\node at ($ (f)!.5!(g) $) [big arrow] {};
+
+\input{_footer.tex}

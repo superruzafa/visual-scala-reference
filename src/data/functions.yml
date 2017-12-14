@@ -499,6 +499,17 @@
   - en: <code>length</code> returns how many elements the collection has.
     es: <code>length</code> devuelve cuántos elementos tiene la colección.
 
+- name: lift
+  signature: "def lift: (A) ⇒ Option[B])"
+  description:
+    en: Turns this partial function into a function that returns an <code>Option</code>.
+    es: Convierte esta función parcial en una función que devuelve un <code>Option</code>.
+  figures:
+  - en:
+    es:
+  - en:
+    es:
+
 - name: map
   signature: "def map[B](f: (A) ⇒ B): <em>Collection</em>[B]"
   description:
@@ -956,6 +967,17 @@
   description:
     en: Produces a new collection which contains all elements of this one and also all elements of a given sequence.
     es: Produce una nueva colección que contiene todos los elementos de esta y los de otra secuencia.
+
+- name: unlift
+  signature: "def Function.unlift[T, R](f: (T) ⇒ Option[R]): PartialFunction[T, R]"
+  description:
+    en: Turns a function that returns an <code>Option</code> into a partial function.
+    es: Convierte una función que devuelve un <code>Option</code> en una función parcial.
+  figures:
+  - en:
+    es:
+  - en:
+    es:
 
 - name: untupled
   signature: "def Function.untupled[A<sub>1</sub>, ..., A<sub>n</sub>, B](f: ((A<sub>1</sub>, ..., A<sub>n</sub>)) ⇒ B): (A<sub>1</sub>, ..., A<sub>n</sub>) ⇒ B"
