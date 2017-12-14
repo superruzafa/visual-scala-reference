@@ -933,11 +933,29 @@
   - en: <code>takeWhile</code> preserves elements while they satisfy <var>p</var>.
     es: <code>takeWhile</code> conserva elementos mientras satisfacen <var>p</var>.
 
+- name: tupled
+  signature: "def Function.tupled[A<sub>1</sub>, ..., A<sub>n</sub>, B](f: (A<sub>1</sub>, ..., A<sub>n</sub>) ⇒ B): ((A<sub>1</sub>, ..., A<sub>n</sub>)) ⇒ B"
+  description:
+    en: Tupling for functions of arity <var>n</var>
+    es: Versión tuplificada de funciones de aridad <var>n</var>
+  figures:
+  - en:
+    es:
+
 - name: union
   signature: "def union(that: Seq[A]): <em>Collection</em>[A]"
   description:
     en: Produces a new collection which contains all elements of this one and also all elements of a given sequence.
     es: Produce una nueva colección que contiene todos los elementos de esta y los de otra secuencia.
+
+- name: untupled
+  signature: "def Function.untupled[A<sub>1</sub>, ..., A<sub>n</sub>, B](f: ((A<sub>1</sub>, ..., A<sub>n</sub>)) ⇒ B): (A<sub>1</sub>, ..., A<sub>n</sub>) ⇒ B"
+  description:
+    en: Un-tupling for functions of arity <var>n</var>
+    es: Versión destuplificada de funciones de aridad <var>n</var>
+  figures:
+  - en:
+    es:
 
 - name: unzip
   signature: "def unzip[A1, A2](implicit asPair: (A) ⇒ (A1, A2)): (<em>Collection</em>[A1], <em>Collection</em>[A2])"

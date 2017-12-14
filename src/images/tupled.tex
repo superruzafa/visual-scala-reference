@@ -1,0 +1,21 @@
+\input{_header.tex}
+
+\node (f) [function, /function/in=4] {\param{f}};
+
+\node [big arrow, below=\cellheight - .5\bigarrowwidth of f.out, anchor=west, rotate=-90];
+
+\foreach \i/\n in {1/1, 2/2, 4/n} {%
+  \node (i\i) [above=1 of f.in \i] {$a_\n$};
+  \draw [arrow] (i\i) -- (f.in \i);
+}
+
+\node (b2) [below=2\cellheight of f.out] {$\Big(a_1,\,a_2,\,\ldots,\,a_n\Big)$};
+\node (g) [function, below=1 of b2, anchor=in, /function/in width=28mm, /function/in funnel width=.025] {$\param{f}^\prime$};
+\bottombrace[b]{b2.south west}{b2.south east}
+\draw [arrow] (b) -- (g.in);
+
+% dirty ... hack
+\fill ($ (f.in 2) + (4mm, -3mm) $) [white] rectangle +(8mm, 4mm);
+\draw [line width=0.4mm, dotted] ($ (f.in 2) + (4mm, -2mm) $) -- +(8mm, 0);
+
+\input{_footer.tex}

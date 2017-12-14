@@ -1,0 +1,26 @@
+\input{_header.tex}
+
+\node (f) [function, /function/in width=28mm, /function/in funnel width=.025] {\param{f}};
+\node (in) [above=1 of f.in] {$\Big( a_1,\,a_2,\,\ldots,\,a_n\Big)$};
+\bottombrace[a]{in.south west}{in.south east}
+\draw [arrow] (a) -- (f.in);
+
+\node [big arrow, below=\cellheight - .5\bigarrowwidth of f.out, anchor=west, rotate=-90];
+
+% \foreach \i/\n in {1/1, 2/2, 4/n} {%
+%   \node (i\i) [above=\cellheight of f.in \i] {$a_\n$};
+%   \draw [arrow] (i\i) -- (f.in \i);
+% }
+% 
+% \node (b2) [below=2\cellheight of f.out] {$( a_1,\,a_2,\,\ldots,\,a_n)$};
+\node (g) [function, below=3\cellheight of f, anchor=in, /function/in=4] {$\param{f}^\prime$};
+\foreach \i/\n in {1/1, 2/2, 4/n} {%
+  \node (b\i) [above=1 of g.in \i] {$a_\n$};
+  \draw [arrow] (b\i) -- (g.in \i);
+}
+ 
+% dirty ... hack
+\fill ($ (g.in 2) + (4mm, -3mm) $) [white] rectangle +(8mm, 4mm);
+\draw [line width=0.4mm, dotted] ($ (g.in 2) + (4mm, -2mm) $) -- +(8mm, 0);
+
+\input{_footer.tex}

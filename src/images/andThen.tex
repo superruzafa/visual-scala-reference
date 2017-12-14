@@ -1,15 +1,18 @@
 \input{_header.tex}
 
-\node (f) [shape=function, collection element, draw, minimum size=1cm] {\param{f}};
-\node (g) [shape=function, collection element, draw, right=\cellwidth of f, minimum size=1cm] {\param{g}};
+\node (f) [function] {\param{f}};
+\node (g) [function, right=\cellwidth of f] {\param{g}};
 
 \coordinate (fxg) at ($(f.south)!.5!(g.south)$);
 
 \node [big arrow, below=\cellheight - .5\bigarrowwidth of fxg, anchor=west, rotate=-90];
 
-\node (fg) [shape=function, collection element, draw, below=2\cellheight of fxg, minimum size=3cm] {};
+\node (fog) [function, below=2\cellheight of fxg, minimum height=4cm, minimum width=2cm] {};
 
-\node (f2) at (fg) [shape=function, anchor=south, collection element, draw, minimum size=1cm] {\param{f}};
-\node (g2) [shape=function, collection element, draw, below=of f2, minimum size=1cm] {\param{g}};
+\node (f2) [function, anchor=out] at (fog) {\param{f}};
+\node (g2) [function, below=of f2.out, anchor=in] {\param{g}};
+
+\draw [arrow] (fog.in 1) -- (f2.in 1);
+\draw [arrow] (g2.out 1) -- (fog.out 1);
 
 \input{_footer.tex}

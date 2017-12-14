@@ -134,7 +134,9 @@
           <li class="function-link"><a href="#take">take</a></li>
           <li class="function-link"><a href="#takeright">takeRight</a></li>
           <li class="function-link"><a href="#takewhile">takeWhile</a></li>
+          <li class="function-link"><a href="#tupled">tupled</a></li>
           <li class="function-link"><a href="#union">union</a></li>
+          <li class="function-link"><a href="#untupled">untupled</a></li>
           <li class="function-link"><a href="#unzip">unzip</a></li>
           <li class="function-link"><a href="#unzip3">unzip3</a></li>
           <li class="function-link"><a href="#updated">updated</a></li>
@@ -1592,6 +1594,19 @@
                                     </figure>
               </section>
     </article>
+      <article id="tupled" class="function-entry">
+      <h2 class="function-name">tupled</h2>
+              <p class="function-description i18n" lang="en">Tupling for functions of arity <var>n</var></p>
+              <p class="function-description i18n" lang="es">Versión tuplificada de funciones de aridad <var>n</var></p>
+            <pre class="function-signature"><code class="scala">def Function.tupled[A<sub>1</sub>, ..., A<sub>n</sub>, B](f: (A<sub>1</sub>, ..., A<sub>n</sub>) ⇒ B): ((A<sub>1</sub>, ..., A<sub>n</sub>)) ⇒ B</code></pre>
+      <section class="function-figure-wrapper">
+                  <figure class="function-figure">
+            <img src="images/tupled.svg" alt="" />
+                                          <figcaption class="function-figure-caption i18n" lang="en"></figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"></figcaption>
+                                    </figure>
+              </section>
+    </article>
       <article id="union" class="function-entry">
       <h2 class="function-name">union</h2>
               <p class="function-description i18n" lang="en">Produces a new collection which contains all elements of this one and also all elements of a given sequence.</p>
@@ -1601,6 +1616,19 @@
                   <figure class="function-figure">
             <img src="images/union.svg" alt="" />
                       </figure>
+              </section>
+    </article>
+      <article id="untupled" class="function-entry">
+      <h2 class="function-name">untupled</h2>
+              <p class="function-description i18n" lang="en">Un-tupling for functions of arity <var>n</var></p>
+              <p class="function-description i18n" lang="es">Versión destuplificada de funciones de aridad <var>n</var></p>
+            <pre class="function-signature"><code class="scala">def Function.untupled[A<sub>1</sub>, ..., A<sub>n</sub>, B](f: ((A<sub>1</sub>, ..., A<sub>n</sub>)) ⇒ B): (A<sub>1</sub>, ..., A<sub>n</sub>) ⇒ B</code></pre>
+      <section class="function-figure-wrapper">
+                  <figure class="function-figure">
+            <img src="images/untupled.svg" alt="" />
+                                          <figcaption class="function-figure-caption i18n" lang="en"></figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"></figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="unzip" class="function-entry">
