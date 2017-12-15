@@ -1,0 +1,29 @@
+\input{_header.tex}
+
+\newlength{\cellpadding}
+\setlength{\cellpadding}{3.5mm}
+
+\begin{scope}
+  \tikzstyle{every node}=[scale=0.8]
+  \node (f1) [function] {$f_1$};
+  \node (f2) [function, right=2\cellpadding of f1] {$f_2$};
+  \node (fn) [function, right=6\cellpadding of f2] {$f_n$};
+\end{scope}
+
+
+\foreach \i in {f1, f2, fn} {
+  \draw ($ (\i.north west) + (-\cellpadding, \cellpadding) $) [collection element]
+    rectangle ($ (\i.south east) + (\cellpadding, -\cellpadding) $);
+}
+
+\draw [elements between] ($ (f2.north east) + (\cellpadding, \cellpadding) $) -- +(4\cellpadding, 0);
+\draw [elements between] ($ (f2.south east) + (\cellpadding, -\cellpadding) $) -- +(4\cellpadding, 0);
+
+\node (g1) [function, below=2.5\cellheight of $ (f1.south)!.5!(fn.south) $, anchor=in] {$f_1$};
+\node (g2) [function, below=of g1.out, anchor=in] {$f_2$};
+\node (g3) [function, below=\cellheight of g2.out, anchor=in] {$f_n$};
+\node at ($ (g2)!.5!(g3) $) [anchor=mid] {$\vdots$};
+
+\node [big arrow, below=\cellheight + \cellpadding - .5\bigarrowwidth of $ (f1.out)!.5!(fn.out) $, anchor=west, rotate=-90];
+
+\input{_footer.tex}

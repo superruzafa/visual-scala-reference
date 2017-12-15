@@ -42,6 +42,7 @@
   <ul id="function-list">
           <li class="function-link"><a href="#aggregate">aggregate</a></li>
           <li class="function-link"><a href="#andthen">andThen</a></li>
+          <li class="function-link"><a href="#chain">chain</a></li>
           <li class="function-link"><a href="#collect">collect</a></li>
           <li class="function-link"><a href="#collectfirst">collectFirst</a></li>
           <li class="function-link"><a href="#combinations">combinations</a></li>
@@ -178,6 +179,19 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/andThen.svg" alt="" />
+                                          <figcaption class="function-figure-caption i18n" lang="en"></figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"></figcaption>
+                                    </figure>
+              </section>
+    </article>
+      <article id="chain" class="function-entry">
+      <h2 class="function-name">chain</h2>
+              <p class="function-description i18n" lang="en">Given a sequence of functions return</p>
+              <p class="function-description i18n" lang="es">Convierte esta función parcial en una función que devuelve un <code>Option</code>.</p>
+            <pre class="function-signature"><code class="scala">def chain(fs: <em>Collection</em>[(A) ⇒ A]): (A) ⇒ A</code></pre>
+      <section class="function-figure-wrapper">
+                  <figure class="function-figure">
+            <img src="images/chain.svg" alt="" />
                                           <figcaption class="function-figure-caption i18n" lang="en"></figcaption>
                               <figcaption class="function-figure-caption i18n" lang="es"></figcaption>
                                     </figure>

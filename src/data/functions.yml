@@ -19,6 +19,15 @@
   - en: 
     es: 
 
+- name: chain
+  signature: "def chain(fs: <em>Collection</em>[(A) ⇒ A]): (A) ⇒ A"
+  description:
+    en: Given a sequence of functions return
+    es: Convierte esta función parcial en una función que devuelve un <code>Option</code>.
+  figures:
+  - en:
+    es:
+
 - name: collect
   signature: "def collect[B](pf: PartialFunction[A, B]): <em>Collection</em>[B]"
   description:
