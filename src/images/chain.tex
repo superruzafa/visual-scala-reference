@@ -19,11 +19,21 @@
 \draw [elements between] ($ (f2.north east) + (\cellpadding, \cellpadding) $) -- +(4\cellpadding, 0);
 \draw [elements between] ($ (f2.south east) + (\cellpadding, -\cellpadding) $) -- +(4\cellpadding, 0);
 
-\node (g1) [function, below=2.5\cellheight of $ (f1.south)!.5!(fn.south) $, anchor=in] {$f_1$};
+\node (g1) [function, below=3\cellheight of $ (f1.south)!.5!(fn.south) $, anchor=in] {$f_1$};
 \node (g2) [function, below=of g1.out, anchor=in] {$f_2$};
-\node (g3) [function, below=\cellheight of g2.out, anchor=in] {$f_n$};
-\node at ($ (g2)!.5!(g3) $) [anchor=mid] {$\vdots$};
+\node (gi) [function, below=of g2.out, anchor=in] {};
+\node (gn) [function, below=of gi.out, anchor=in] {$f_n$};
+
+% dirty hack
+\fill [white] ($ (gi.north west) - (1mm, 1mm) $) rectangle ($ (gi.south east) + (1mm, 1mm) $);
+\draw [elements between]
+  (gi.north west) -- (gi.south west)
+  (gi.north east) -- (gi.south east);
 
 \node [big arrow, below=\cellheight + \cellpadding - .5\bigarrowwidth of $ (f1.out)!.5!(fn.out) $, anchor=west, rotate=-90];
+
+\node (c) at ($ (g1)!.5!(gn) $) [function, minimum width=2cm, minimum height=7.5cm] {};
+\draw [arrow] (c.in 1) -- (g1.in 1);
+\draw [arrow] (gn.out 1) -- (c.out 1);
 
 \input{_footer.tex}
