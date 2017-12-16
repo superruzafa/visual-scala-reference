@@ -113,6 +113,15 @@
   - en: <code>count</code> counts how many elements satisfy <var>p</var>.
     es: <code>count</code> cuenta cuántos elementos satisfacen <var>p</var>.
 
+- name: curried
+  signature: "def curried: (T<sub>1</sub>) ⇒ ... (T<sub>n</sub>) ⇒ R"
+  description:
+    en:
+    es:
+  figures:
+  - en: 
+    es: 
+
 - name: diff
   signature: "def diff(that: Seq[A]): <em>Collection</em>[A]"
   description:
@@ -970,6 +979,12 @@
   figures:
   - en:
     es:
+
+- name: uncurried
+  signature: "def uncurried[A<sub>1</sub>, ..., A<sub>n</sub>, B](f: (A<sub>1</sub>) ⇒ ... ⇒ (A<sub>n</sub>) ⇒ B): (A<sub>1</sub>, ..., A<sub>n</sub>) ⇒ B"
+  description:
+    en: Produces a new collection which contains all elements of this one and also all elements of a given sequence.
+    es: Produce una nueva colección que contiene todos los elementos de esta y los de otra secuencia.
 
 - name: union
   signature: "def union(that: Seq[A]): <em>Collection</em>[A]"

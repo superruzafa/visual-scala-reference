@@ -52,6 +52,7 @@
           <li class="function-link"><a href="#containsslice">containsSlice</a></li>
           <li class="function-link"><a href="#const">const</a></li>
           <li class="function-link"><a href="#count">count</a></li>
+          <li class="function-link"><a href="#curried">curried</a></li>
           <li class="function-link"><a href="#diff">diff</a></li>
           <li class="function-link"><a href="#distinct">distinct</a></li>
           <li class="function-link"><a href="#drop">drop</a></li>
@@ -138,6 +139,7 @@
           <li class="function-link"><a href="#takeright">takeRight</a></li>
           <li class="function-link"><a href="#takewhile">takeWhile</a></li>
           <li class="function-link"><a href="#tupled">tupled</a></li>
+          <li class="function-link"><a href="#uncurried">uncurried</a></li>
           <li class="function-link"><a href="#union">union</a></li>
           <li class="function-link"><a href="#unlift">unlift</a></li>
           <li class="function-link"><a href="#untupled">untupled</a></li>
@@ -321,6 +323,19 @@
             <img src="images/count.svg" alt="" />
                                           <figcaption class="function-figure-caption i18n" lang="en"><code>count</code> counts how many elements satisfy <var>p</var>.</figcaption>
                               <figcaption class="function-figure-caption i18n" lang="es"><code>count</code> cuenta cuántos elementos satisfacen <var>p</var>.</figcaption>
+                                    </figure>
+              </section>
+    </article>
+      <article id="curried" class="function-entry">
+      <h2 class="function-name">curried</h2>
+              <p class="function-description i18n" lang="en"></p>
+              <p class="function-description i18n" lang="es"></p>
+            <pre class="function-signature"><code class="scala">def curried: (T<sub>1</sub>) ⇒ ... (T<sub>n</sub>) ⇒ R</code></pre>
+      <section class="function-figure-wrapper">
+                  <figure class="function-figure">
+            <img src="images/curried.svg" alt="" />
+                                          <figcaption class="function-figure-caption i18n" lang="en"></figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"></figcaption>
                                     </figure>
               </section>
     </article>
@@ -1653,6 +1668,17 @@
                                           <figcaption class="function-figure-caption i18n" lang="en"></figcaption>
                               <figcaption class="function-figure-caption i18n" lang="es"></figcaption>
                                     </figure>
+              </section>
+    </article>
+      <article id="uncurried" class="function-entry">
+      <h2 class="function-name">uncurried</h2>
+              <p class="function-description i18n" lang="en">Produces a new collection which contains all elements of this one and also all elements of a given sequence.</p>
+              <p class="function-description i18n" lang="es">Produce una nueva colección que contiene todos los elementos de esta y los de otra secuencia.</p>
+            <pre class="function-signature"><code class="scala">def uncurried[A<sub>1</sub>, ..., A<sub>n</sub>, B](f: (A<sub>1</sub>) ⇒ ... ⇒ (A<sub>n</sub>) ⇒ B): (A<sub>1</sub>, ..., A<sub>n</sub>) ⇒ B</code></pre>
+      <section class="function-figure-wrapper">
+                  <figure class="function-figure">
+            <img src="images/uncurried.svg" alt="" />
+                      </figure>
               </section>
     </article>
       <article id="union" class="function-entry">
