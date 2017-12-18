@@ -10,6 +10,7 @@
   \node (fn) [function, right=6\cellpadding of f2] {$f_n$};
 \end{scope}
 
+\rightparam{$ (fn.east) + (\cellpadding, 0) $}{\param{fs}}
 
 \foreach \i in {f1, f2, fn} {
   \draw ($ (\i.north west) + (-\cellpadding, \cellpadding) $) [collection element]

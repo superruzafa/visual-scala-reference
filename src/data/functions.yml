@@ -13,16 +13,16 @@
 - name: andThen
   signature: "def andThen(g: (R) ⇒ A): (T1) ⇒ A"
   description:
-    en: Composes two instances of Function1 in a new Function1, with this function applied first.
-    es: Compone tos instancias de Function1 en una nueva Function1 aplicando esta función primero.
+    en: Composes two instances of <code>Function1</code> in a new <code>Function1</code>, with this function applied first.
+    es: Compone dos instancias de <code>Function1</code> en una nueva <code>Function1</code> aplicando esta función primero.
   figures:
-  - en: 
-    es: 
+  - en: <code>andThen</code> creates a function that first applies this function and then <code>g</code> to an input value.
+    es: <code>andThen</code> crea una función que primero aplica esta función y luego <code>g</code> a un valor de entrada.
 
 - name: chain
-  signature: "def chain(fs: <em>Collection</em>[(A) ⇒ A]): (A) ⇒ A"
+  signature: "def Function.chain(fs: <em>Collection</em>[(A) ⇒ A]): (A) ⇒ A"
   description:
-    en: Given a sequence of functions return
+    en: Given a sequence of functions <code>f<sub>1</sub>, ..., f<sub>n</sub></code>, return the function <code>f<sub>1</sub> andThen ... andThen f<sub>n</sub></code>.
     es: Convierte esta función parcial en una función que devuelve un <code>Option</code>.
   figures:
   - en:
@@ -63,8 +63,8 @@
     en: Composes two instances of Function1 in a new Function1, with this function applied last.
     es: Compone dos instancias de Function1 en una nueva Function1 aplicando esta función al final.
   figures:
-  - en: 
-    es: 
+  - en: <code>compose</code> creates a function that first applies <code>g</code> and then this function to an input value.
+    es: <code>compose</code> crea una función que primero aplica <code>g</code> y luego esta función a un valor de entrada.
 
 - name: concat
   signature: "def <em>Collection</em>.concat(xss: Traversable[A]*): <em>Collection</em>[A]"
@@ -98,11 +98,11 @@
 - name: const
   signature: "def Function.const[T, U](x: T)(y: U): T"
   description:
-    en: The constant function
-    es: La función constante
+    en: The constant function.
+    es: La función constante.
   figures:
-  - en:
-    es:
+  - en: <code>const</code> creates a function that takes no parameters and always returns the same value.
+    es: <code>const</code> crea una función que no acepta parámetros y siempre devuelve el mismo valor.
 
 - name: count
   signature: "def count(p: (A) ⇒ Boolean): Int"
@@ -116,11 +116,11 @@
 - name: curried
   signature: "def curried: (T<sub>1</sub>) ⇒ ... (T<sub>n</sub>) ⇒ R"
   description:
-    en:
-    es:
+    en: Creates a curried version of this function.
+    es: Crea una versión currificada de esta función.
   figures:
-  - en: 
-    es: 
+  - en: <code>curried</code> creates a function that accept the first parameter and returns successively other functions that accept the rest of them until all are processed.
+    es: <code>curried</code> crea una función que acepta el primer parámetro y devuelve sucesivamente otras funciones que aceptan el resto de ellos hasta que todos son procesados.
 
 - name: diff
   signature: "def diff(that: Seq[A]): <em>Collection</em>[A]"
@@ -518,15 +518,15 @@
     es: <code>length</code> devuelve cuántos elementos tiene la colección.
 
 - name: lift
-  signature: "def lift: (A) ⇒ Option[B])"
+  signature: "def lift: (A) ⇒ Option[B]"
   description:
     en: Turns this partial function into a function that returns an <code>Option</code>.
     es: Convierte esta función parcial en una función que devuelve un <code>Option</code>.
   figures:
-  - en:
-    es:
-  - en:
-    es:
+  - en: <code>lift</code> creates a function that wraps with <code>Some</code> the value that <code>f</code> originally returned.
+    es: <code>lift</code> crea una función que envuelve con <code>Some</code> el valor que originalmente <code>f</code> devolvía.
+  - en: <code>lift</code> creates a function that return <code>None</code> for those values for which <code>f</code> threw <code>MatchError</code>.
+    es: <code>lift</code> crea una función que devuelve <code>None</code> para aquellos valores para los que <code>f</code> lanzaba <code>MatchError</code>.
 
 - name: map
   signature: "def map[B](f: (A) ⇒ B): <em>Collection</em>[B]"
@@ -977,14 +977,17 @@
     en: Tupling for functions of arity <var>n</var>
     es: Versión tuplificada de funciones de aridad <var>n</var>
   figures:
-  - en:
-    es:
+  - en: <code>tupled</code> creates a function that accepts the same parameters as <code>f</code> did but gathered in a tuple.
+    es: <code>tupled</code> crea una función que acepta los mismos parámetros que <code>f</code> hacía pero reunidos en una tupla.
 
 - name: uncurried
-  signature: "def uncurried[A<sub>1</sub>, ..., A<sub>n</sub>, B](f: (A<sub>1</sub>) ⇒ ... ⇒ (A<sub>n</sub>) ⇒ B): (A<sub>1</sub>, ..., A<sub>n</sub>) ⇒ B"
+  signature: "def Function.uncurried[A<sub>1</sub>, ..., A<sub>n</sub>, B](f: (A<sub>1</sub>) ⇒ ... ⇒ (A<sub>n</sub>) ⇒ B): (A<sub>1</sub>, ..., A<sub>n</sub>) ⇒ B"
   description:
-    en: Produces a new collection which contains all elements of this one and also all elements of a given sequence.
-    es: Produce una nueva colección que contiene todos los elementos de esta y los de otra secuencia.
+    en: Uncurrying for functions of arity <var>n</var>.
+    es: Versión descurrificada de funciones de aridad <var>n</var>
+  figures:
+  - en: <code>uncurried</code> creates a single function that accept all arguments of the curried sequence of functions.
+    es: <code>uncurried</code> crea una única función que acepta todos los argumentos de la secuencia currificada de funciones.
 
 - name: union
   signature: "def union(that: Seq[A]): <em>Collection</em>[A]"
@@ -998,10 +1001,10 @@
     en: Turns a function that returns an <code>Option</code> into a partial function.
     es: Convierte una función que devuelve un <code>Option</code> en una función parcial.
   figures:
-  - en:
-    es:
-  - en:
-    es:
+  - en: <code>unlift</code> creates a partial function that returns the value that <code>f</code> originally wrapped with <code>Some</code>.
+    es: <code>unlift</code> crea una función parcial que devuelve el valor que <code>f</code> originalmente envolvía con <code>Some</code>.
+  - en: <code>unlift</code> creates a partial function that throws <code>MatchError</code> for those values for which <code>f</code> returned <code>None</code>.
+    es: <code>unlift</code> crea una función parcial lanza <code>MatchError</code> para aquellos valores para los que <code>f</code> devolvía <code>None</code>.
 
 - name: untupled
   signature: "def Function.untupled[A<sub>1</sub>, ..., A<sub>n</sub>, B](f: ((A<sub>1</sub>, ..., A<sub>n</sub>)) ⇒ B): (A<sub>1</sub>, ..., A<sub>n</sub>) ⇒ B"
@@ -1009,8 +1012,8 @@
     en: Un-tupling for functions of arity <var>n</var>
     es: Versión destuplificada de funciones de aridad <var>n</var>
   figures:
-  - en:
-    es:
+  - en: <code>untupled</code> creates a function that accepts as parameters the same components of the tuple accepted by <code>f</code>.
+    es: <code>untupled</code> crea una función que acepta como parámetros los mismos componentes de la tupla aceptada por <code>f</code>.
 
 - name: unzip
   signature: "def unzip[A1, A2](implicit asPair: (A) ⇒ (A1, A2)): (<em>Collection</em>[A1], <em>Collection</em>[A2])"

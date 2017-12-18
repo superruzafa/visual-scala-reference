@@ -1,6 +1,6 @@
 \input{_header.tex}
 
-\node (f) [function] {\param{f}};
+\node (f) [function] {$f$};
 \node (g) [function, right=\cellwidth of f] {\param{g}};
 
 \coordinate (fxg) at ($(f.south)!.5!(g.south)$);
@@ -10,7 +10,7 @@
 \node (gof) [function, below=2\cellheight of fxg, minimum height=4cm, minimum width=2cm] {};
 
 \node (g2) [function, anchor=out] at (gof) {\param{g}};
-\node (f2) [function, below=of g2.out, anchor=in] {\param{f}};
+\node (f2) [function, below=of g2.out, anchor=in] {$f$};
 
 \draw [arrow] (gof.in 1) -- (g2.in 1);
 \draw [arrow] (f2.out 1) -- (gof.out 1);

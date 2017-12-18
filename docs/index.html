@@ -175,22 +175,22 @@
     </article>
       <article id="andthen" class="function-entry">
       <h2 class="function-name">andThen</h2>
-              <p class="function-description i18n" lang="en">Composes two instances of Function1 in a new Function1, with this function applied first.</p>
-              <p class="function-description i18n" lang="es">Compone tos instancias de Function1 en una nueva Function1 aplicando esta función primero.</p>
+              <p class="function-description i18n" lang="en">Composes two instances of <code>Function1</code> in a new <code>Function1</code>, with this function applied first.</p>
+              <p class="function-description i18n" lang="es">Compone dos instancias de <code>Function1</code> en una nueva <code>Function1</code> aplicando esta función primero.</p>
             <pre class="function-signature"><code class="scala">def andThen(g: (R) ⇒ A): (T1) ⇒ A</code></pre>
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/andThen.svg" alt="" />
-                                          <figcaption class="function-figure-caption i18n" lang="en"></figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"></figcaption>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>andThen</code> creates a function that first applies this function and then <code>g</code> to an input value.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>andThen</code> crea una función que primero aplica esta función y luego <code>g</code> a un valor de entrada.</figcaption>
                                     </figure>
               </section>
     </article>
       <article id="chain" class="function-entry">
       <h2 class="function-name">chain</h2>
-              <p class="function-description i18n" lang="en">Given a sequence of functions return</p>
+              <p class="function-description i18n" lang="en">Given a sequence of functions <code>f<sub>1</sub>, ..., f<sub>n</sub></code>, return the function <code>f<sub>1</sub> andThen ... andThen f<sub>n</sub></code>.</p>
               <p class="function-description i18n" lang="es">Convierte esta función parcial en una función que devuelve un <code>Option</code>.</p>
-            <pre class="function-signature"><code class="scala">def chain(fs: <em>Collection</em>[(A) ⇒ A]): (A) ⇒ A</code></pre>
+            <pre class="function-signature"><code class="scala">def Function.chain(fs: <em>Collection</em>[(A) ⇒ A]): (A) ⇒ A</code></pre>
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/chain.svg" alt="" />
@@ -251,8 +251,8 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/compose.svg" alt="" />
-                                          <figcaption class="function-figure-caption i18n" lang="en"></figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"></figcaption>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>compose</code> creates a function that first applies <code>g</code> and then this function to an input value.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>compose</code> crea una función que primero aplica <code>g</code> y luego esta función a un valor de entrada.</figcaption>
                                     </figure>
               </section>
     </article>
@@ -302,14 +302,14 @@
     </article>
       <article id="const" class="function-entry">
       <h2 class="function-name">const</h2>
-              <p class="function-description i18n" lang="en">The constant function</p>
-              <p class="function-description i18n" lang="es">La función constante</p>
+              <p class="function-description i18n" lang="en">The constant function.</p>
+              <p class="function-description i18n" lang="es">La función constante.</p>
             <pre class="function-signature"><code class="scala">def Function.const[T, U](x: T)(y: U): T</code></pre>
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/const.svg" alt="" />
-                                          <figcaption class="function-figure-caption i18n" lang="en"></figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"></figcaption>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>const</code> creates a function that takes no parameters and always returns the same value.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>const</code> crea una función que no acepta parámetros y siempre devuelve el mismo valor.</figcaption>
                                     </figure>
               </section>
     </article>
@@ -328,14 +328,14 @@
     </article>
       <article id="curried" class="function-entry">
       <h2 class="function-name">curried</h2>
-              <p class="function-description i18n" lang="en"></p>
-              <p class="function-description i18n" lang="es"></p>
+              <p class="function-description i18n" lang="en">Creates a curried version of this function.</p>
+              <p class="function-description i18n" lang="es">Crea una versión currificada de esta función.</p>
             <pre class="function-signature"><code class="scala">def curried: (T<sub>1</sub>) ⇒ ... (T<sub>n</sub>) ⇒ R</code></pre>
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/curried.svg" alt="" />
-                                          <figcaption class="function-figure-caption i18n" lang="en"></figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"></figcaption>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>curried</code> creates a function that accept the first parameter and returns successively other functions that accept the rest of them until all are processed.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>curried</code> crea una función que acepta el primer parámetro y devuelve sucesivamente otras funciones que aceptan el resto de ellos hasta que todos son procesados.</figcaption>
                                     </figure>
               </section>
     </article>
@@ -960,17 +960,17 @@
       <h2 class="function-name">lift</h2>
               <p class="function-description i18n" lang="en">Turns this partial function into a function that returns an <code>Option</code>.</p>
               <p class="function-description i18n" lang="es">Convierte esta función parcial en una función que devuelve un <code>Option</code>.</p>
-            <pre class="function-signature"><code class="scala">def lift: (A) ⇒ Option[B])</code></pre>
+            <pre class="function-signature"><code class="scala">def lift: (A) ⇒ Option[B]</code></pre>
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/lift.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"></figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"></figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>lift</code> creates a function that wraps with <code>Some</code> the value that <code>f</code> originally returned.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>lift</code> crea una función que envuelve con <code>Some</code> el valor que originalmente <code>f</code> devolvía.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/lift.2.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"></figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"></figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>lift</code> creates a function that return <code>None</code> for those values for which <code>f</code> threw <code>MatchError</code>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>lift</code> crea una función que devuelve <code>None</code> para aquellos valores para los que <code>f</code> lanzaba <code>MatchError</code>.</figcaption>
                           </figure>
                         </section>
     </article>
@@ -1665,20 +1665,22 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/tupled.svg" alt="" />
-                                          <figcaption class="function-figure-caption i18n" lang="en"></figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"></figcaption>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>tupled</code> creates a function that accepts the same parameters as <code>f</code> did but gathered in a tuple.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>tupled</code> crea una función que acepta los mismos parámetros que <code>f</code> hacía pero reunidos en una tupla.</figcaption>
                                     </figure>
               </section>
     </article>
       <article id="uncurried" class="function-entry">
       <h2 class="function-name">uncurried</h2>
-              <p class="function-description i18n" lang="en">Produces a new collection which contains all elements of this one and also all elements of a given sequence.</p>
-              <p class="function-description i18n" lang="es">Produce una nueva colección que contiene todos los elementos de esta y los de otra secuencia.</p>
-            <pre class="function-signature"><code class="scala">def uncurried[A<sub>1</sub>, ..., A<sub>n</sub>, B](f: (A<sub>1</sub>) ⇒ ... ⇒ (A<sub>n</sub>) ⇒ B): (A<sub>1</sub>, ..., A<sub>n</sub>) ⇒ B</code></pre>
+              <p class="function-description i18n" lang="en">Uncurrying for functions of arity <var>n</var>.</p>
+              <p class="function-description i18n" lang="es">Versión descurrificada de funciones de aridad <var>n</var></p>
+            <pre class="function-signature"><code class="scala">def Function.uncurried[A<sub>1</sub>, ..., A<sub>n</sub>, B](f: (A<sub>1</sub>) ⇒ ... ⇒ (A<sub>n</sub>) ⇒ B): (A<sub>1</sub>, ..., A<sub>n</sub>) ⇒ B</code></pre>
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/uncurried.svg" alt="" />
-                      </figure>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>uncurried</code> creates a single function that accept all arguments of the curried sequence of functions.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>uncurried</code> crea una única función que acepta todos los argumentos de la secuencia currificada de funciones.</figcaption>
+                                    </figure>
               </section>
     </article>
       <article id="union" class="function-entry">
@@ -1700,13 +1702,13 @@
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/unlift.1.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"></figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"></figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>unlift</code> creates a partial function that returns the value that <code>f</code> originally wrapped with <code>Some</code>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>unlift</code> crea una función parcial que devuelve el valor que <code>f</code> originalmente envolvía con <code>Some</code>.</figcaption>
                           </figure>
                       <figure class="function-figure">
               <img src="images/unlift.2.svg" alt="" />
-                              <figcaption class="function-figure-caption i18n" lang="en"></figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"></figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>unlift</code> creates a partial function that throws <code>MatchError</code> for those values for which <code>f</code> returned <code>None</code>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>unlift</code> crea una función parcial lanza <code>MatchError</code> para aquellos valores para los que <code>f</code> devolvía <code>None</code>.</figcaption>
                           </figure>
                         </section>
     </article>
@@ -1718,8 +1720,8 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/untupled.svg" alt="" />
-                                          <figcaption class="function-figure-caption i18n" lang="en"></figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"></figcaption>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>untupled</code> creates a function that accepts as parameters the same components of the tuple accepted by <code>f</code>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>untupled</code> crea una función que acepta como parámetros los mismos componentes de la tupla aceptada por <code>f</code>.</figcaption>
                                     </figure>
               </section>
     </article>

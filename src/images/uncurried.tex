@@ -2,7 +2,7 @@
 
 \begin{scope}
   \tikzstyle{every node}=[/function/out width=1cm, /function/out sep=0mm, anchor=in]
-  \node (f1) [function] {$f$};
+  \node (f1) [function] {$\param{f}$};
   \node (f2) [function, below=\cellheight of f1.out] {};
   \node (fn) [function, below=1.5\cellheight of f2.out, /function/out width=4mm] {};
 \end{scope}
@@ -22,7 +22,7 @@
 \node (b) [below=\cellheight of fn.out 1] {$b$};
 \draw [arrow] (fn.out 1) -- (b);
 
-\node (g) [right=2\cellwidth of f1, function, /function/in=4] {};
+\node (g) [right=2\cellwidth of f1, function, /function/in=4] {$\param{f}^{\prime}$};
 \foreach \i/\n in {1/1, 2/2, 4/n} {%
   \node (i\i) [above=1 of g.in \i] {$a_\n$};
   \draw [arrow] (i\i) -- (g.in \i);

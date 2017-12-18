@@ -1,13 +1,13 @@
 \input{_header.tex}
 
-\node (f) [function] {$f$};
+\node (f) [function] {$\param{f}$};
 
 \node (in1) [above=\cellheight of f] {$a_1$};
 \node (out1) [some, below=\cellheight of f] {\some{$b_1$}};
 \draw [arrow] (in1) -- (f.in 1);
 \draw [arrow] (f.out 1) -- (out1);
 
-\node (g) [function, right=2\cellwidth of f] {$f^\prime$};
+\node (g) [function, right=2\cellwidth of f] {$\param{f}^\prime$};
 
 \node (in2) [above=\cellheight of g] {$a_1$};
 \node (out2) [below=\cellheight of g] {$b_1$};
