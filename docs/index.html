@@ -102,6 +102,7 @@
           <li class="function-link"><a href="#minby">minBy</a></li>
           <li class="function-link"><a href="#mkstring">mkString</a></li>
           <li class="function-link"><a href="#nonempty">nonEmpty</a></li>
+          <li class="function-link"><a href="#orelse">orElse</a></li>
           <li class="function-link"><a href="#padto">padTo</a></li>
           <li class="function-link"><a href="#partition">partition</a></li>
           <li class="function-link"><a href="#patch">patch</a></li>
@@ -1115,6 +1116,19 @@
                               <figcaption class="function-figure-caption i18n" lang="es"><code>nonEmpty</code> devuelve <code class="literal false">false</code> cuando la colección no tiene elementos.</figcaption>
                           </figure>
                         </section>
+    </article>
+      <article id="orelse" class="function-entry">
+      <h2 class="function-name">orElse</h2>
+              <p class="function-description i18n" lang="en">Composes this partial function with a fallback partial function which gets applied where this partial function is not defined.</p>
+              <p class="function-description i18n" lang="es">Compone dos instancias de <code>Function1</code> en una nueva <code>Function1</code> aplicando esta función primero.</p>
+            <pre class="function-signature"><code class="scala">def orElse[A1 <: A,  B1 >: B](g: PartialFunction[A1, B1]): PartialFunction[A1, B1]</code></pre>
+      <section class="function-figure-wrapper">
+                  <figure class="function-figure">
+            <img src="images/orElse.svg" alt="" />
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>orElse</code> creates a partial function that applies <var>g</var> only when the function is not defined for the input argument.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>orElse</code> crea una función parcial que aplica <var>g</var> solo cuando la función no está definida para el argumento de entrada.</figcaption>
+                                    </figure>
+              </section>
     </article>
       <article id="padto" class="function-entry">
       <h2 class="function-name">padTo</h2>

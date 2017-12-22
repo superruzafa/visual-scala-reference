@@ -620,6 +620,15 @@
   - en: <code>nonEmpty</code> returns <code class="literal false">false</code> when the collection has no elements.
     es: <code>nonEmpty</code> devuelve <code class="literal false">false</code> cuando la colección no tiene elementos.
 
+- name: orElse
+  signature: "def orElse[A1 <: A,  B1 >: B](g: PartialFunction[A1, B1]): PartialFunction[A1, B1]"
+  description:
+    en: Composes this partial function with a fallback partial function which gets applied where this partial function is not defined.
+    es: Compone dos instancias de <code>Function1</code> en una nueva <code>Function1</code> aplicando esta función primero.
+  figures:
+  - en: <code>orElse</code> creates a partial function that applies <var>g</var> only when the function is not defined for the input argument.
+    es: <code>orElse</code> crea una función parcial que aplica <var>g</var> solo cuando la función no está definida para el argumento de entrada.
+
 - name: padTo
   signature: "def padTo(len: Int, elem: A): <em>Collection</em>[A]"
   description:
