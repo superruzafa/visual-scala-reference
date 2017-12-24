@@ -1,0 +1,32 @@
+\input{_header.tex}
+
+\node (f) [function] {$f$};
+\draw [reverse arrow] (f.in 1) -- +(0, .5) node [above] {$x$};
+\draw [arrow] (f.out 1) -- +(0, -.5) node [below] {$y$};
+
+\node (g) [function, right=\cellwidth of f] {\param{g}};
+\draw [reverse arrow] (g.in 1) -- +(0, .5) node [above] {$x$};
+\draw [arrow] (g.out 1) -- +(0, -.5) node [below] {$y^\prime$};
+
+\coordinate (fxg) at ($(f.south)!.5!(g.south)$);
+ 
+\node (fog) [function, below=3\cellheight of fxg, minimum height=4cm, minimum width=4cm] {};
+
+\node (x) [above=.75 of fog] {$x$};
+\node (y) [below=.75 of fog] {$y$};
+\node (p) [predicate evaluation, below=of fog.north] {$\exists f(x)?$};
+
+\draw [arrow] (x) -- (p);
+
+\node (f2) [function, right=.25\cellwidth of fog.west] {$f$};
+\node (g2) [function, left=.25\cellwidth of fog.east] {\param{g}};
+
+\draw [arrow] (p.west) .. controls +(-.4, 0) and +(0, .4) .. node [above, scale=0.8] {\true} (f2.in 1);
+%\draw [arrow] (p.east) .. controls +(.4, 0) and +(0, .4) .. node [above, scale=0.8] {\false} (g2.in 1);
+
+\draw [arrow] (f2.out 1) .. controls +(0, -1.25) and +(0, 2.75) .. (y);
+%\draw [arrow] (g2.out 1) .. controls +(0, -1.5) and +(0, 3) .. (y);
+
+\node at ($ (fxg)!.5!(fog.north) $) [big arrow, rotate=-90];
+
+\input{_footer.tex}

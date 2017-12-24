@@ -2,7 +2,7 @@
 
 \begin{scope}
   \tikzstyle{every node}=[/function/out width=1cm, /function/out sep=0mm, anchor=in]
-  \node (g1) [function] {$f^{\prime}$};
+  \node (g1) [function] {};
   \node (g2) [function, below=\cellheight of g1.out] {};
   \node (gn) [function, below=1.5\cellheight of g2.out, /function/out width=4mm] {};
 \end{scope}
@@ -10,26 +10,24 @@
 \draw
   ($ (g1.out 1) - (4mm, 0) $) .. controls +(0, -4mm) and +(0, 4mm) .. (g2.north west)
   ($ (g1.out 1) + (4mm, 0) $) .. controls +(0, -4mm) and +(0, 4mm) .. (g2.north east);
-
 \draw [middle dots] ($ (g2.out 1) - (4mm, 0) $) .. controls +(0, -4mm) and +(0, 4mm) .. (gn.north west);
 \draw [middle dots] ($ (g2.out 1) + (4mm, 0) $) .. controls +(0, -4mm) and +(0, 4mm) .. (gn.north east);
 
-\foreach \i in {1, 2, n} {%
-  \node (a\i) [above right=\cellheight and \cellwidth of g\i.in 1] {$a_\i$};
+
+\draw [reverse arrow] (g1.in 1) -- +(0, .5) node [above] {$x_1$};
+\foreach \i in {2, n} {%
+  \node (a\i) [above right=.5 and 1 of g\i.in 1] {$x_\i$};
   \draw [smooth arrow, erase] (a\i.south) to (g\i.in 1);
 }
 
-\node (b) [below=\cellheight of gn.out 1] {$b$};
-\draw [arrow] (gn.out 1) -- (b);
+\draw [arrow] (gn.out 1) -- +(0, -.5) node [below] {$y$};
 
 \node (f) [left=2\cellwidth of g1, function, /function/in=4] {$f$};
 \foreach \i/\n in {1/1, 2/2, 4/n} {%
-  \node (i\i) [above=1 of f.in \i] {$a_\n$};
-  \draw [arrow] (i\i) -- (f.in \i);
+  \draw [reverse arrow] (f.in \i) -- +(0, .5) node [above] {$x_\n$};
 }
 
-\node (b) [below=\cellheight of f.out 1] {$b$};
-\draw [arrow] (f.out 1) -- (b);
+\draw [arrow] (f.out 1) -- +(0, -.5) node [below] {$y$};
 
 % dirty ... hack
 \fill ($ (f.in 2) + (4mm, -3mm) $) [white] rectangle +(8mm, 4mm);

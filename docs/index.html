@@ -178,12 +178,12 @@
       <h2 class="function-name">andThen</h2>
               <p class="function-description i18n" lang="en">Composes two instances of <code>Function1</code> in a new <code>Function1</code>, with this function applied first.</p>
               <p class="function-description i18n" lang="es">Compone dos instancias de <code>Function1</code> en una nueva <code>Function1</code> aplicando esta función primero.</p>
-            <pre class="function-signature"><code class="scala">def andThen(g: (R) ⇒ A): (T1) ⇒ A</code></pre>
+            <pre class="function-signature"><code class="scala">def andThen[Z](g: (Y) ⇒ Z): (X) ⇒ Z</code></pre>
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/andThen.svg" alt="" />
-                                          <figcaption class="function-figure-caption i18n" lang="en"><code>andThen</code> creates a function that first applies this function and then <code>g</code> to an input value.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>andThen</code> crea una función que primero aplica esta función y luego <code>g</code> a un valor de entrada.</figcaption>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>andThen</code> creates a function that internally first applies this and then the <code>g</code> function.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>andThen</code> crea una función que primero aplica ésta y luego la función <code>g</code>.</figcaption>
                                     </figure>
               </section>
     </article>
@@ -191,12 +191,12 @@
       <h2 class="function-name">chain</h2>
               <p class="function-description i18n" lang="en">Given a sequence of functions <code>f<sub>1</sub>, ..., f<sub>n</sub></code>, return the function <code>f<sub>1</sub> andThen ... andThen f<sub>n</sub></code>.</p>
               <p class="function-description i18n" lang="es">Convierte esta función parcial en una función que devuelve un <code>Option</code>.</p>
-            <pre class="function-signature"><code class="scala">def Function.chain(fs: <em>Collection</em>[(A) ⇒ A]): (A) ⇒ A</code></pre>
+            <pre class="function-signature"><code class="scala">def Function.chain(fs: <em>Collection</em>[(X) ⇒ X]): (X) ⇒ X</code></pre>
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/chain.svg" alt="" />
-                                          <figcaption class="function-figure-caption i18n" lang="en"></figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"></figcaption>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>chain</code> creates a function that internally applies in a sequential fashion all the functions from the collection <var>fs</var>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>chain</code> crea una función que internamente aplica de forma secuencial todas las funciones de la colección <var>fs</var>.</figcaption>
                                     </figure>
               </section>
     </article>
@@ -248,12 +248,12 @@
       <h2 class="function-name">compose</h2>
               <p class="function-description i18n" lang="en">Composes two instances of Function1 in a new Function1, with this function applied last.</p>
               <p class="function-description i18n" lang="es">Compone dos instancias de Function1 en una nueva Function1 aplicando esta función al final.</p>
-            <pre class="function-signature"><code class="scala">def compose[A](g: (R) ⇒ A): (T1) ⇒ A</code></pre>
+            <pre class="function-signature"><code class="scala">def compose[Z](g: (Z) ⇒ X): (Z) ⇒ Y</code></pre>
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/compose.svg" alt="" />
-                                          <figcaption class="function-figure-caption i18n" lang="en"><code>compose</code> creates a function that first applies <code>g</code> and then this function to an input value.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>compose</code> crea una función que primero aplica <code>g</code> y luego esta función a un valor de entrada.</figcaption>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>compose</code> creates a function that internally first applies the <code>g</code> function and then this.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>compose</code> crea una función que primero aplica la función <code>g</code> y luego ésta.</figcaption>
                                     </figure>
               </section>
     </article>
@@ -331,12 +331,12 @@
       <h2 class="function-name">curried</h2>
               <p class="function-description i18n" lang="en">Creates a curried version of this function.</p>
               <p class="function-description i18n" lang="es">Crea una versión currificada de esta función.</p>
-            <pre class="function-signature"><code class="scala">def curried: (T<sub>1</sub>) ⇒ ... (T<sub>n</sub>) ⇒ R</code></pre>
+            <pre class="function-signature"><code class="scala">def curried: (X<sub>1</sub>) ⇒ ... (X<sub>n</sub>) ⇒ Y</code></pre>
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/curried.svg" alt="" />
-                                          <figcaption class="function-figure-caption i18n" lang="en"><code>curried</code> creates a function that accept the first parameter and returns successively other functions that accept the rest of them until all are processed.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>curried</code> crea una función que acepta el primer parámetro y devuelve sucesivamente otras funciones que aceptan el resto de ellos hasta que todos son procesados.</figcaption>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>curried</code> creates a sequence of functions with a single parameter.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>curried</code> crea una secuencia de funciones con un único parámetro.</figcaption>
                                     </figure>
               </section>
     </article>
@@ -961,7 +961,7 @@
       <h2 class="function-name">lift</h2>
               <p class="function-description i18n" lang="en">Turns this partial function into a function that returns an <code>Option</code>.</p>
               <p class="function-description i18n" lang="es">Convierte esta función parcial en una función que devuelve un <code>Option</code>.</p>
-            <pre class="function-signature"><code class="scala">def lift: (A) ⇒ Option[B]</code></pre>
+            <pre class="function-signature"><code class="scala">def lift: (X) ⇒ Option[Y]</code></pre>
       <section class="function-figure-wrapper">
                               <figure class="function-figure">
               <img src="images/lift.1.svg" alt="" />
@@ -1121,14 +1121,19 @@
       <h2 class="function-name">orElse</h2>
               <p class="function-description i18n" lang="en">Composes this partial function with a fallback partial function which gets applied where this partial function is not defined.</p>
               <p class="function-description i18n" lang="es">Compone dos instancias de <code>Function1</code> en una nueva <code>Function1</code> aplicando esta función primero.</p>
-            <pre class="function-signature"><code class="scala">def orElse[A1 <: A,  B1 >: B](g: PartialFunction[A1, B1]): PartialFunction[A1, B1]</code></pre>
+            <pre class="function-signature"><code class="scala">def orElse[X<sub>1</sub> &lt;: X,  Y<sub>1</sub> &gt;: Y](g: PartialFunction[X<sub>1</sub>, Y<sub>1</sub>]): PartialFunction[X<sub>1</sub>, Y<sub>1</sub>]</code></pre>
       <section class="function-figure-wrapper">
-                  <figure class="function-figure">
-            <img src="images/orElse.svg" alt="" />
-                                          <figcaption class="function-figure-caption i18n" lang="en"><code>orElse</code> creates a partial function that applies <var>g</var> only when the function is not defined for the input argument.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>orElse</code> crea una función parcial que aplica <var>g</var> solo cuando la función no está definida para el argumento de entrada.</figcaption>
-                                    </figure>
-              </section>
+                              <figure class="function-figure">
+              <img src="images/orElse.1.svg" alt="" />
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>orElse</code> creates a partial function that applies <var>f</var> when it's defined for the argument <var>x</var>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>orElse</code> crea una función parcial que aplica <var>f</var> cuando está definida para el argumento <var>x</var>.</figcaption>
+                          </figure>
+                      <figure class="function-figure">
+              <img src="images/orElse.2.svg" alt="" />
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>orElse</code> creates a partial function that applies <var>g</var> when <var>f</var> is not defined for <var>x</var>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>orElse</code> crea una función parcial que aplica <var>g</var> cuando <var>f</var> no está definida para <var>x</var>.</figcaption>
+                          </figure>
+                        </section>
     </article>
       <article id="padto" class="function-entry">
       <h2 class="function-name">padTo</h2>
@@ -1675,12 +1680,12 @@
       <h2 class="function-name">tupled</h2>
               <p class="function-description i18n" lang="en">Tupling for functions of arity <var>n</var></p>
               <p class="function-description i18n" lang="es">Versión tuplificada de funciones de aridad <var>n</var></p>
-            <pre class="function-signature"><code class="scala">def Function.tupled[A<sub>1</sub>, ..., A<sub>n</sub>, B](f: (A<sub>1</sub>, ..., A<sub>n</sub>) ⇒ B): ((A<sub>1</sub>, ..., A<sub>n</sub>)) ⇒ B</code></pre>
+            <pre class="function-signature"><code class="scala">def Function.tupled[X<sub>1</sub>, ..., X<sub>n</sub>, Y](f: (X<sub>1</sub>, ..., X<sub>n</sub>) ⇒ Y): ((X<sub>1</sub>, ..., X<sub>n</sub>)) ⇒ Y</code></pre>
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/tupled.svg" alt="" />
-                                          <figcaption class="function-figure-caption i18n" lang="en"><code>tupled</code> creates a function that accepts the same parameters as <code>f</code> did but gathered in a tuple.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>tupled</code> crea una función que acepta los mismos parámetros que <code>f</code> hacía pero reunidos en una tupla.</figcaption>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>tupled</code> creates a function that accepts in a single tuple all the arguments that <code>f</code> does.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>tupled</code> crea una función que acepta en una única tupla todos los argumentos que acepta <code>f</code>.</figcaption>
                                     </figure>
               </section>
     </article>
@@ -1692,8 +1697,8 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/uncurried.svg" alt="" />
-                                          <figcaption class="function-figure-caption i18n" lang="en"><code>uncurried</code> creates a single function that accept all arguments of the curried sequence of functions.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>uncurried</code> crea una única función que acepta todos los argumentos de la secuencia currificada de funciones.</figcaption>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>uncurried</code> creates a single function from a sequence of functions with a single parameter.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>uncurried</code> crea una única función a partir de una secuencia de funciones con un único parámetro.</figcaption>
                                     </figure>
               </section>
     </article>
@@ -1734,8 +1739,8 @@
       <section class="function-figure-wrapper">
                   <figure class="function-figure">
             <img src="images/untupled.svg" alt="" />
-                                          <figcaption class="function-figure-caption i18n" lang="en"><code>untupled</code> creates a function that accepts as parameters the same components of the tuple accepted by <code>f</code>.</figcaption>
-                              <figcaption class="function-figure-caption i18n" lang="es"><code>untupled</code> crea una función que acepta como parámetros los mismos componentes de la tupla aceptada por <code>f</code>.</figcaption>
+                                          <figcaption class="function-figure-caption i18n" lang="en"><code>untupled</code> creates a function with the components of the tuple accepted by <code>f</code> as parameters.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>untupled</code> crea una función con los componentes de la tupla aceptada por <code>f</code> como parámetros.</figcaption>
                                     </figure>
               </section>
     </article>

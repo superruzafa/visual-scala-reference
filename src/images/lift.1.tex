@@ -2,17 +2,13 @@
 
 \node (f) [function] {$f$};
 
-\node (in1) [above=\cellheight of f] {$a_1$};
-\node (out1) [below=\cellheight of f] {$b_1$};
-\draw [arrow] (in1) -- (f.in 1);
-\draw [arrow] (f.out 1) -- (out1);
+\draw [reverse arrow] (f.in 1) -- +(0, .5) node [above] {$x$};
+\draw [arrow] (f.out 1) -- +(0, -.5) node [below] {$y$};
 
-\node (g) [function, right=2\cellwidth of f] {$f^\prime$};
+\node (g) [function, right=2\cellwidth of f] {};
 
-\node (in2) [above=\cellheight of g] {$a_1$};
-\node (out2) [some, below=\cellheight of g] {\some{$b_1$}};
-\draw [arrow] (in2) -- (g.in 1);
-\draw [arrow] (g.out 1) -- (out2);
+\draw [reverse arrow] (g.in 1) -- +(0, .5) node [above] {$x$};
+\draw [arrow] (g.out 1) -- +(0, -.5) node [some, below] {\some{$y$}};
 
 \node at ($ (f)!.5!(g) $) [big arrow] {};
 

@@ -11,22 +11,23 @@
     es: <code>aggregate</code> devuelve <var>z</var> en colecciones vacías.
 
 - name: andThen
-  signature: "def andThen(g: (R) ⇒ A): (T1) ⇒ A"
+  appliedTo: <em>Function</em>[X, Y]
+  signature: "def andThen[Z](g: (Y) ⇒ Z): (X) ⇒ Z"
   description:
     en: Composes two instances of <code>Function1</code> in a new <code>Function1</code>, with this function applied first.
     es: Compone dos instancias de <code>Function1</code> en una nueva <code>Function1</code> aplicando esta función primero.
   figures:
-  - en: <code>andThen</code> creates a function that first applies this function and then <code>g</code> to an input value.
-    es: <code>andThen</code> crea una función que primero aplica esta función y luego <code>g</code> a un valor de entrada.
+  - en: <code>andThen</code> creates a function that internally first applies this and then the <code>g</code> function.
+    es: <code>andThen</code> crea una función que primero aplica ésta y luego la función <code>g</code>.
 
 - name: chain
-  signature: "def Function.chain(fs: <em>Collection</em>[(A) ⇒ A]): (A) ⇒ A"
+  signature: "def Function.chain(fs: <em>Collection</em>[(X) ⇒ X]): (X) ⇒ X"
   description:
     en: Given a sequence of functions <code>f<sub>1</sub>, ..., f<sub>n</sub></code>, return the function <code>f<sub>1</sub> andThen ... andThen f<sub>n</sub></code>.
     es: Convierte esta función parcial en una función que devuelve un <code>Option</code>.
   figures:
-  - en:
-    es:
+  - en: <code>chain</code> creates a function that internally applies in a sequential fashion all the functions from the collection <var>fs</var>.
+    es: <code>chain</code> crea una función que internamente aplica de forma secuencial todas las funciones de la colección <var>fs</var>.
 
 - name: collect
   signature: "def collect[B](pf: PartialFunction[A, B]): <em>Collection</em>[B]"
@@ -58,13 +59,14 @@
     es: <code>combinations</code> encuentra todas las posibles combinaciones tomando <var>n</var> elementos cada vez y proporciona un iterador para recorrerlos.
 
 - name: compose
-  signature: "def compose[A](g: (R) ⇒ A): (T1) ⇒ A"
+  appliedTo: <em>Function</em>[X, Y]
+  signature: "def compose[Z](g: (Z) ⇒ X): (Z) ⇒ Y"
   description:
     en: Composes two instances of Function1 in a new Function1, with this function applied last.
     es: Compone dos instancias de Function1 en una nueva Function1 aplicando esta función al final.
   figures:
-  - en: <code>compose</code> creates a function that first applies <code>g</code> and then this function to an input value.
-    es: <code>compose</code> crea una función que primero aplica <code>g</code> y luego esta función a un valor de entrada.
+  - en: <code>compose</code> creates a function that internally first applies the <code>g</code> function and then this.
+    es: <code>compose</code> crea una función que primero aplica la función <code>g</code> y luego ésta.
 
 - name: concat
   signature: "def <em>Collection</em>.concat(xss: Traversable[A]*): <em>Collection</em>[A]"
@@ -114,13 +116,14 @@
     es: <code>count</code> cuenta cuántos elementos satisfacen <var>p</var>.
 
 - name: curried
-  signature: "def curried: (T<sub>1</sub>) ⇒ ... (T<sub>n</sub>) ⇒ R"
+  appliedTo: <em>Function</em>[X<sub>1</sub>, ..., X<sub>n</sub>, Y]
+  signature: "def curried: (X<sub>1</sub>) ⇒ ... (X<sub>n</sub>) ⇒ Y"
   description:
     en: Creates a curried version of this function.
     es: Crea una versión currificada de esta función.
   figures:
-  - en: <code>curried</code> creates a function that accept the first parameter and returns successively other functions that accept the rest of them until all are processed.
-    es: <code>curried</code> crea una función que acepta el primer parámetro y devuelve sucesivamente otras funciones que aceptan el resto de ellos hasta que todos son procesados.
+  - en: <code>curried</code> creates a sequence of functions with a single parameter.
+    es: <code>curried</code> crea una secuencia de funciones con un único parámetro.
 
 - name: diff
   signature: "def diff(that: Seq[A]): <em>Collection</em>[A]"
@@ -518,7 +521,8 @@
     es: <code>length</code> devuelve cuántos elementos tiene la colección.
 
 - name: lift
-  signature: "def lift: (A) ⇒ Option[B]"
+  appliedTo: PartialFunction[X, Y]
+  signature: "def lift: (X) ⇒ Option[Y]"
   description:
     en: Turns this partial function into a function that returns an <code>Option</code>.
     es: Convierte esta función parcial en una función que devuelve un <code>Option</code>.
@@ -621,13 +625,16 @@
     es: <code>nonEmpty</code> devuelve <code class="literal false">false</code> cuando la colección no tiene elementos.
 
 - name: orElse
-  signature: "def orElse[A1 <: A,  B1 >: B](g: PartialFunction[A1, B1]): PartialFunction[A1, B1]"
+  appliedTo: PartialFunction[X, Y]
+  signature: "def orElse[X<sub>1</sub> &lt;: X,  Y<sub>1</sub> &gt;: Y](g: PartialFunction[X<sub>1</sub>, Y<sub>1</sub>]): PartialFunction[X<sub>1</sub>, Y<sub>1</sub>]"
   description:
     en: Composes this partial function with a fallback partial function which gets applied where this partial function is not defined.
     es: Compone dos instancias de <code>Function1</code> en una nueva <code>Function1</code> aplicando esta función primero.
   figures:
-  - en: <code>orElse</code> creates a partial function that applies <var>g</var> only when the function is not defined for the input argument.
-    es: <code>orElse</code> crea una función parcial que aplica <var>g</var> solo cuando la función no está definida para el argumento de entrada.
+  - en: <code>orElse</code> creates a partial function that applies <var>f</var> when it's defined for the argument <var>x</var>.
+    es: <code>orElse</code> crea una función parcial que aplica <var>f</var> cuando está definida para el argumento <var>x</var>.
+  - en: <code>orElse</code> creates a partial function that applies <var>g</var> when <var>f</var> is not defined for <var>x</var>.
+    es: <code>orElse</code> crea una función parcial que aplica <var>g</var> cuando <var>f</var> no está definida para <var>x</var>.
 
 - name: padTo
   signature: "def padTo(len: Int, elem: A): <em>Collection</em>[A]"
@@ -981,13 +988,13 @@
     es: <code>takeWhile</code> conserva elementos mientras satisfacen <var>p</var>.
 
 - name: tupled
-  signature: "def Function.tupled[A<sub>1</sub>, ..., A<sub>n</sub>, B](f: (A<sub>1</sub>, ..., A<sub>n</sub>) ⇒ B): ((A<sub>1</sub>, ..., A<sub>n</sub>)) ⇒ B"
+  signature: "def Function.tupled[X<sub>1</sub>, ..., X<sub>n</sub>, Y](f: (X<sub>1</sub>, ..., X<sub>n</sub>) ⇒ Y): ((X<sub>1</sub>, ..., X<sub>n</sub>)) ⇒ Y"
   description:
     en: Tupling for functions of arity <var>n</var>
     es: Versión tuplificada de funciones de aridad <var>n</var>
   figures:
-  - en: <code>tupled</code> creates a function that accepts the same parameters as <code>f</code> did but gathered in a tuple.
-    es: <code>tupled</code> crea una función que acepta los mismos parámetros que <code>f</code> hacía pero reunidos en una tupla.
+  - en: <code>tupled</code> creates a function that accepts in a single tuple all the arguments that <code>f</code> does.
+    es: <code>tupled</code> crea una función que acepta en una única tupla todos los argumentos que acepta <code>f</code>.
 
 - name: uncurried
   signature: "def Function.uncurried[A<sub>1</sub>, ..., A<sub>n</sub>, B](f: (A<sub>1</sub>) ⇒ ... ⇒ (A<sub>n</sub>) ⇒ B): (A<sub>1</sub>, ..., A<sub>n</sub>) ⇒ B"
@@ -995,8 +1002,8 @@
     en: Uncurrying for functions of arity <var>n</var>.
     es: Versión descurrificada de funciones de aridad <var>n</var>
   figures:
-  - en: <code>uncurried</code> creates a single function that accept all arguments of the curried sequence of functions.
-    es: <code>uncurried</code> crea una única función que acepta todos los argumentos de la secuencia currificada de funciones.
+  - en: <code>uncurried</code> creates a single function from a sequence of functions with a single parameter.
+    es: <code>uncurried</code> crea una única función a partir de una secuencia de funciones con un único parámetro.
 
 - name: union
   signature: "def union(that: Seq[A]): <em>Collection</em>[A]"
@@ -1021,8 +1028,8 @@
     en: Un-tupling for functions of arity <var>n</var>
     es: Versión destuplificada de funciones de aridad <var>n</var>
   figures:
-  - en: <code>untupled</code> creates a function that accepts as parameters the same components of the tuple accepted by <code>f</code>.
-    es: <code>untupled</code> crea una función que acepta como parámetros los mismos componentes de la tupla aceptada por <code>f</code>.
+  - en: <code>untupled</code> creates a function with the components of the tuple accepted by <code>f</code> as parameters.
+    es: <code>untupled</code> crea una función con los componentes de la tupla aceptada por <code>f</code> como parámetros.
 
 - name: unzip
   signature: "def unzip[A1, A2](implicit asPair: (A) ⇒ (A1, A2)): (<em>Collection</em>[A1], <em>Collection</em>[A2])"
