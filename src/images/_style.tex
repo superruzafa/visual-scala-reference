@@ -10,7 +10,7 @@
   line width=\cellborderwidth,
   minimum width=\cellwidth,
   minimum height=\cellheight,
-  outer sep=0,
+  outer sep=0mm,
 ]
 
 \tikzstyle{collection}=[
@@ -148,8 +148,18 @@
   \node [draw=none, text height=\cellheight, minimum width=0.7cm, font=\Huge] {\,,\,\,\,};
 }
 
+\tikzstyle{function}=[
+  draw,
+  shape=function,
+  line width=\cellborderwidth,
+  minimum width=\cellwidth,
+  minimum height=\cellheight,
+  outer sep=0mm,
+]
+
 \tikzstyle{exception}=[
   draw,
+  -,
   decorate,
   decoration={
     zigzag,

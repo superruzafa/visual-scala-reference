@@ -1,0 +1,38 @@
+\input{_header.tex}
+
+\begin{scope}
+  \tikzstyle{every node}=[/function/out width=1cm, /function/out sep=0mm, anchor=in]
+  \node (g1) [function] {};
+  \node (g2) [function, below=\cellheight of g1.out] {};
+  \node (gn) [function, below=1.5\cellheight of g2.out, /function/out width=4mm] {};
+\end{scope}
+
+\draw
+  ($ (g1.out 1) - (4mm, 0) $) .. controls +(0, -4mm) and +(0, 4mm) .. (g2.north west)
+  ($ (g1.out 1) + (4mm, 0) $) .. controls +(0, -4mm) and +(0, 4mm) .. (g2.north east);
+\draw [middle dots] ($ (g2.out 1) - (4mm, 0) $) .. controls +(0, -4mm) and +(0, 4mm) .. (gn.north west);
+\draw [middle dots] ($ (g2.out 1) + (4mm, 0) $) .. controls +(0, -4mm) and +(0, 4mm) .. (gn.north east);
+
+
+\draw [reverse arrow] (g1.in 1) -- +(0, .5) node [above] {$x_1$};
+\foreach \i in {2, n} {%
+  \node (a\i) [above right=.5 and 1 of g\i.in 1] {$x_\i$};
+  \draw [smooth arrow, erase] (a\i.south) to (g\i.in 1);
+}
+
+\draw [arrow] (gn.out 1) -- +(0, -.5) node [below] {$y$};
+
+\node (f) [left=2\cellwidth of g1, function, /function/in=4] {$f$};
+\foreach \i/\n in {1/1, 2/2, 4/n} {%
+  \draw [reverse arrow] (f.in \i) -- +(0, .5) node [above] {$x_\n$};
+}
+
+\draw [arrow] (f.out 1) -- +(0, -.5) node [below] {$y$};
+
+% dirty ... hack
+\fill ($ (f.in 2) + (4mm, -3mm) $) [white] rectangle +(8mm, 4mm);
+\draw [line width=0.4mm, dotted] ($ (f.in 2) + (4mm, -2mm) $) -- +(8mm, 0);
+
+\node [big arrow, right=\cellheight - .5\bigarrowwidth of f];
+
+\input{_footer.tex}

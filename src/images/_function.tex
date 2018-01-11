@@ -1,0 +1,334 @@
+\pgfkeys{
+  /function/.cd,
+  in/.initial=1,
+  out/.initial=1,
+  in width/.initial=4mm,
+  in height/.initial=2mm,
+  in sep/.initial=4mm,
+  in funnel width/.initial=.2,
+  in funnel height/.initial=.5,
+  out width/.initial=4mm,
+  out height/.initial=2mm,
+  out sep/.initial=4mm,
+  out funnel width/.initial=.2,
+  out funnel height/.initial=.5,
+}
+
+\def\argument#1{{%
+  \setlength\pgf@xb{\pgfkeysvalueof{/function/#1 width}}
+  \setlength\pgf@xc{.5\pgf@xb}
+  \setlength\pgf@xc{\pgfkeysvalueof{/function/#1 funnel width}\pgf@xc}
+
+  \setlength\pgf@yb{\pgfkeysvalueof{/function/#1 height}}
+  \setlength\pgf@yc{\pgfkeysvalueof{/function/#1 funnel height}\pgf@yb}
+
+  \pgfpathlineto{\pgfpoint{\pgf@xc}{\z@}}
+  \pgfpathlineto{\pgfpoint{\pgf@xc}{\pgf@yc}}
+  \pgfpathlineto{\pgfqpoint{\z@}{\pgf@yb}}
+
+  \pgfpathlineto{\pgfqpoint{\pgf@xb}{\pgf@yb}}
+  \pgfpathlineto{\pgfpoint{\pgf@xb - \pgf@xc}{\pgf@yc}}
+  \pgfpathlineto{\pgfpoint{\pgf@xb - \pgf@xc}{\z@}}
+  \pgfpathlineto{\pgfqpoint{\pgf@xb}{\z@}}
+}}
+
+\def\firstinarg{
+  \findnortheast
+  \pgfmathsetlength\pgf@xa{(\pgfkeysvalueof{/function/in sep} + \pgfkeysvalueof{/function/in width}) * \pgfkeysvalueof{/function/in}}
+  \setlength\pgf@xa{.5\pgf@xa}
+  \pgf@x=.5\wd\pgfnodeparttextbox
+  \advance\pgf@x by -\pgf@xa
+  \setlength\pgf@xa{\pgfkeysvalueof{/function/in sep}}
+  \advance\pgf@x by .5\pgf@xa
+  \setlength\pgf@xa{\pgfkeysvalueof{/function/in width}}
+  \advance\pgf@x by .5\pgf@xa
+  \setlength\pgf@xa{\pgfkeysvalueof{/function/in height}}
+  \advance\pgf@y by \pgf@xa
+}
+
+\def\firstoutarg{
+  \findsouthwest
+  \pgfmathsetlength\pgf@xa{(\pgfkeysvalueof{/function/out sep} + \pgfkeysvalueof{/function/out width}) * \pgfkeysvalueof{/function/out}}
+  \setlength\pgf@xa{.5\pgf@xa}
+  \pgf@x=.5\wd\pgfnodeparttextbox
+  \advance\pgf@x by -\pgf@xa
+  \setlength\pgf@xa{\pgfkeysvalueof{/function/out sep}}
+  \advance\pgf@x by .5\pgf@xa
+  \setlength\pgf@xa{\pgfkeysvalueof{/function/out width}}
+  \advance\pgf@x by .5\pgf@xa
+  \setlength\pgf@xa{\pgfkeysvalueof{/function/out height}}
+  \advance\pgf@y by -\pgf@xa
+}
+
+\def\nextarg#1#2{
+  \setlength\pgf@xa{\pgfkeysvalueof{/function/#1 sep}}
+  \advance\pgf@x by #2\pgf@xa
+  \setlength\pgf@xa{\pgfkeysvalueof{/function/#1 width}}
+  \advance\pgf@x by #2\pgf@xa
+}
+
+\def\findnortheast{%
+  %
+  % box width
+  %
+  \pgf@x=\the\wd\pgfnodeparttextbox
+  \setlength\pgf@xa{\pgfshapeinnerxsep}%
+  \advance\pgf@x by 2\pgf@xa%
+  %
+  % is width < min width?
+  %
+  \setlength\pgf@xa{\pgfshapeminwidth}%
+  \ifdim\pgf@x<\pgf@xa \pgf@x=\pgf@xa \fi%
+  %
+  % is width < input width
+  %
+  \pgfmathsetlength\pgf@xa{(\pgfkeysvalueof{/function/in sep} + \pgfkeysvalueof{/function/in width}) * \pgfkeysvalueof{/function/in}}
+  \advance\pgf@xa by \pgfkeysvalueof{/function/in sep}
+  \ifdim\pgf@x<\pgf@xa \pgf@x=\pgf@xa \fi%
+  %
+  % is width < output width
+  %
+  \pgfmathsetlength\pgf@xa{(\pgfkeysvalueof{/function/out sep} + \pgfkeysvalueof{/function/out width}) * \pgfkeysvalueof{/function/out}}
+  \advance\pgf@xa by \pgfkeysvalueof{/function/out sep}
+  \ifdim\pgf@x<\pgf@xa \pgf@x=\pgf@xa \fi%
+  %
+  \pgf@x=.5\pgf@x%
+  \advance\pgf@x by.5\wd\pgfnodeparttextbox%
+  \setlength\pgf@xa{\pgfshapeouterxsep}%
+  \advance\pgf@x by-\pgf@xa%
+  %
+  % box height
+  %
+  \pgf@y=\ht\pgfnodeparttextbox%
+  \advance\pgf@y by\dp\pgfnodeparttextbox%
+  \setlength\pgf@yc{\pgfshapeinnerysep}%
+  \advance\pgf@y by 2\pgf@yc%
+  %
+  % is height < min height
+  %
+  \setlength\pgf@yb{\pgfshapeminheight}%
+  \ifdim\pgf@y<\pgf@yb \pgf@y=\pgf@yb \fi%
+  %
+  \pgf@y=.5\pgf@y%
+  \advance\pgf@y by-.5\dp\pgfnodeparttextbox%
+  \advance\pgf@y by.5\ht\pgfnodeparttextbox%
+  \setlength\pgf@ya{\pgfshapeouterysep}%
+  \advance\pgf@y by-\pgf@ya%
+}
+
+\def\findsouthwest{%
+  %
+  % box width
+  %
+  \pgf@x=\the\wd\pgfnodeparttextbox%
+  \setlength\pgf@xa{\pgfshapeinnerxsep}%
+  \advance\pgf@x by 2\pgf@xa%
+  %
+  % is width < min width?
+  %
+  \setlength\pgf@xa{\pgfshapeminwidth}%
+  \ifdim\pgf@x<\pgf@xa \pgf@x=\pgf@xa \fi%
+  %
+  % is width < input width
+  %
+  \pgfmathsetlength\pgf@xa{(\pgfkeysvalueof{/function/in sep} + \pgfkeysvalueof{/function/in width}) * \pgfkeysvalueof{/function/in}}
+  \advance\pgf@xa by \pgfkeysvalueof{/function/in sep}
+  \ifdim\pgf@x<\pgf@xa \pgf@x=\pgf@xa \fi%
+  %
+  % is width < output width
+  %
+  \pgfmathsetlength\pgf@xa{(\pgfkeysvalueof{/function/out sep} + \pgfkeysvalueof{/function/out width}) * \pgfkeysvalueof{/function/out}}
+  \advance\pgf@xa by \pgfkeysvalueof{/function/out sep}
+  \ifdim\pgf@x<\pgf@xa \pgf@x=\pgf@xa \fi%
+  %
+  \pgf@x=-.5\pgf@x%
+  \advance\pgf@x by.5\wd\pgfnodeparttextbox%
+  \setlength\pgf@xa{\pgfshapeouterxsep}%
+  \advance\pgf@x by-\pgf@xa%
+  %
+  % box height
+  %
+  \pgf@y=\ht\pgfnodeparttextbox%
+  \advance\pgf@y by\dp\pgfnodeparttextbox%
+  \setlength\pgf@yc{\pgfshapeinnerysep}%
+  \advance\pgf@y by 2\pgf@yc%
+  %
+  % is height < min height
+  %
+  \setlength\pgf@yb{\pgfshapeminheight}%
+  \ifdim\pgf@y<\pgf@yb \pgf@y=\pgf@yb \fi%
+  %
+  \pgf@y=-.5\pgf@y%
+  \advance\pgf@y by-.5\dp\pgfnodeparttextbox%
+  \advance\pgf@y by.5\ht\pgfnodeparttextbox%
+  \setlength\pgf@ya{\pgfshapeouterysep}%
+  \advance\pgf@y by-\pgf@ya%
+}
+
+\pgfdeclareshape{function}{%
+  \inheritsavedanchors[from=rectangle]
+  \inheritanchor[from=rectangle]{center}
+  \inheritanchor[from=rectangle]{base}
+  \inheritanchor[from=rectangle]{mid}
+  \inheritanchor[from=rectangle]{north}
+  \inheritanchor[from=rectangle]{north east}
+  \inheritanchor[from=rectangle]{east}
+  \inheritanchor[from=rectangle]{south east}
+  \inheritanchor[from=rectangle]{south}
+  \inheritanchor[from=rectangle]{south west}
+  \inheritanchor[from=rectangle]{west}
+  \inheritanchor[from=rectangle]{north west}
+      
+  \savedanchor\northeast{%
+    \findnortheast
+  }
+  \savedanchor\southwest{%
+    \findsouthwest
+  }
+  
+  \savedanchor\inargA{ \firstinarg }
+  \savedanchor\inargB{ \firstinarg \nextarg{in}{1} }
+  \savedanchor\inargC{ \firstinarg \nextarg{in}{2} }
+  \savedanchor\inargD{ \firstinarg \nextarg{in}{3} }
+  \savedanchor\inargE{ \firstinarg \nextarg{in}{4} }
+
+  \savedanchor\outargA{ \firstoutarg }
+  \savedanchor\outargB{ \firstoutarg \nextarg{out}{1} }
+  \savedanchor\outargC{ \firstoutarg \nextarg{out}{2} }
+  
+  \anchor{in 1}{\inargA}
+  \anchor{in 2}{\inargB}
+  \anchor{in 3}{\inargC}
+  \anchor{in 4}{\inargD}
+  \anchor{in 5}{\inargE}
+  \anchor{out 1}{\outargA}
+  \anchor{out 2}{\outargB}
+  \anchor{out 3}{\outargC}
+  
+  \savedanchor\inargs{%
+    \findnortheast
+    \ifthenelse{\pgfkeysvalueof{/function/in}>0}{%
+      \setlength\pgf@xa{\pgfkeysvalueof{/function/in height}}
+      \advance\pgf@y by \pgf@xa
+    }{}
+  }
+  \savedanchor\outargs{%
+    \findsouthwest
+    \ifthenelse{\pgfkeysvalueof{/function/out}>0}{%
+      \setlength\pgf@xa{\pgfkeysvalueof{/function/out height}}
+      \advance\pgf@y by -\pgf@xa
+    }{}
+  }
+  
+  \anchor{in}{%
+    \centerpoint
+    \pgf@xa=\pgf@x
+    \inargs
+    \pgf@x=\pgf@xa
+  }
+  
+  \anchor{out}{%
+    \centerpoint
+    \pgf@xa=\pgf@x
+    \outargs
+    \pgf@x=\pgf@xa
+}
+
+  \savedanchor\centerpoint{%
+    \pgf@x=.5\wd\pgfnodeparttextbox
+    \pgf@y=.5\ht\pgfnodeparttextbox
+  }
+  
+  \backgroundpath{%
+
+    % GRID
+  
+    \ifthenelse{1=0}{%
+      \pgfsetstrokeopacity{0.1}
+      \pgfsetlinewidth{0.1pt}
+      \pgfpathgrid[step={\pgfqpoint{1mm}{1mm}}]
+        {\pgfqpoint{-3cm}{-3cm}}
+        {\pgfqpoint{3cm}{3cm}}
+      \pgfusepath{stroke}
+      
+      \pgfsetstrokeopacity{0.3}
+      \pgfsetlinewidth{0.2pt}
+      \pgfpathgrid[step={\pgfqpoint{1cm}{1cm}}]
+        {\pgfqpoint{-3cm}{-3cm}}
+        {\pgfqpoint{3cm}{3cm}}
+      \pgfusepath{stroke}
+      
+      \pgfpathmoveto{\pgfqpoint{\z@}{-3cm}}
+      \pgfpathlineto{\pgfqpoint{\z@}{3cm}}
+      \pgfusepath{stroke}
+      
+      \pgfpathmoveto{\pgfqpoint{-3cm}{\z@}}
+      \pgfpathlineto{\pgfqpoint{3cm}{\z@}}
+      \pgfusepath{stroke}
+      \pgfsetstrokeopacity{1}
+    }{}
+    
+    % END GRID
+    
+    
+    \southwest \pgf@xa=\pgf@x \pgf@ya=\pgf@y
+    \northeast \pgf@xb=\pgf@x \pgf@yb=\pgf@y
+    
+    \pgfpathmoveto{\pgfqpoint{\pgf@xa}{\pgf@ya}} % south west
+    \pgfpathlineto{\pgfqpoint{\pgf@xa}{\pgf@yb}} % north west
+    
+    % input args
+
+    \ifthenelse{\pgfkeysvalueof{/function/in}>0}{%
+      \pgfmathsetlength\pgf@xc{%
+        .5\wd\pgfnodeparttextbox - ((\pgfkeysvalueof{/function/in sep} + \pgfkeysvalueof{/function/in width}) * \pgfkeysvalueof{/function/in}) / 2
+      }
+      \setlength\@tempdima{\pgfkeysvalueof{/function/in sep}}
+      \foreach \i in {1,...,\pgfkeysvalueof{/function/in}} {%
+        \global\advance\pgf@xc by .5\@tempdima % .5/in sep
+        \pgfpathlineto{\pgfqpoint{\pgf@xc}{\pgf@yb}}
+        
+        \pgftransformshift{\pgfqpoint{\pgf@xc}{\pgf@yb}}
+        \argument{in}
+        \pgftransformshift{\pgfqpoint{-\pgf@xc}{-\pgf@yb}}
+        
+        \global\advance\pgf@xc \pgfkeysvalueof{/function/in width}
+        \pgfpathlineto{\pgfpoint{\pgf@xc}{\pgf@yb}}
+
+        \global\advance\pgf@xc by .5\@tempdima % .5/in sep
+        \pgfpathlineto{\pgfqpoint{\pgf@xc}{\pgf@yb}}
+      }
+    }{}
+
+    \pgfpathlineto{\pgfqpoint{\pgf@xb}{\pgf@yb}} % north east
+    \pgfpathlineto{\pgfqpoint{\pgf@xb}{\pgf@ya}} % south east
+
+    % output args
+
+    \ifthenelse{\pgfkeysvalueof{/function/out}>0}{%
+      \pgfmathsetlength\pgf@xc{%
+        .5\wd\pgfnodeparttextbox + ((\pgfkeysvalueof{/function/out sep} + \pgfkeysvalueof{/function/out width}) * \pgfkeysvalueof{/function/out}) / 2
+      }
+      \setlength\@tempdima{\pgfkeysvalueof{/function/out sep}}
+      \foreach \i in {1,...,\pgfkeysvalueof{/function/out}} {%
+        \global\advance\pgf@xc by -.5\@tempdima
+        \pgfpathlineto{\pgfqpoint{\pgf@xc}{\pgf@ya}}
+        
+        \pgftransformshift{\pgfqpoint{\pgf@xc}{\pgf@ya}}
+        \pgftransformrotate{180}
+        \argument{out}
+        \pgftransformrotate{-180}
+        \pgftransformshift{\pgfqpoint{-\pgf@xc}{-\pgf@ya}}
+        
+        \global\advance\pgf@xc -\pgfkeysvalueof{/function/out width}
+        \pgfpathlineto{\pgfpoint{\pgf@xc}{\pgf@ya}}
+
+        \global\advance\pgf@xc by -.5\@tempdima
+        \pgfpathlineto{\pgfqpoint{\pgf@xc}{\pgf@ya}}
+      }
+    }{}
+
+    \pgfpathclose
+    \pgfusepath{stroke}
+  }
+}

@@ -15,9 +15,16 @@
 \usetikzlibrary{shapes.symbols}
 \usetikzlibrary{shapes.arrows}
 
+\usepackage{ifthen}
 \usepackage{calc}
 \usepackage{inconsolata}
 \usepackage{pifont} % for true and false symbols
+
+\input{_util.tex}
+
+\makeatletter
+\input{_function.tex}
+\makeatother
 
 \begin{document}
   \begin{tikzpicture}[

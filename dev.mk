@@ -66,6 +66,7 @@ server:
 	$(PHP) -S 0.0.0.0:8080 src/dev-server.php
 
 touch:
+	touch src/images/_style.tex
 	touch --no-create --reference=src/images/_style.tex $(TEXFILES) $(SVGFILES) $(PNGFILES) $(PDFFILES)
 
 watch:

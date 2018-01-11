@@ -1,0 +1,47 @@
+\input{_header.tex}
+
+\newlength{\cellpadding}
+\setlength{\cellpadding}{3.5mm}
+
+\begin{scope}
+  \tikzstyle{every node}=[scale=0.8]
+  \node (f1) [function] {$f_1$};
+  \node (f2) [function, right=2\cellpadding of f1] {$f_2$};
+  \node (fn) [function, right=6\cellpadding of f2] {$f_n$};
+\end{scope}
+
+\rightparam{$ (fn.east) + (\cellpadding, 0) $}{\param{fs}}
+
+\foreach \i in {1, 2, n} {
+  \draw ($ (f\i.north west) + (-\cellpadding, \cellpadding) $) [collection element]
+    rectangle ($ (f\i.south east) + (\cellpadding, -\cellpadding) $);
+  \draw [reverse arrow] (f\i.in 1) -- +(0, .5) node [above] {$x_\i$};
+  \draw [arrow] (f\i.out 1) -- +(0, -.5) node [below] {$x_\i^\prime$};
+}
+
+\draw [elements between] ($ (f2.north east) + (\cellpadding, \cellpadding) $) -- +(4\cellpadding, 0);
+\draw [elements between] ($ (f2.south east) + (\cellpadding, -\cellpadding) $) -- +(4\cellpadding, 0);
+
+\coordinate (fs) at ($ (f1.south)!.5!(fn.south) $);
+
+\node (g1) [function, below=4\cellheight of fs, anchor=in] {$f_1$};
+\node (g2) [function, below=of g1.out, anchor=in] {$f_2$};
+\node (gi) [function, below=of g2.out, anchor=in] {};
+\node (gn) [function, below=of gi.out, anchor=in] {$f_n$};
+
+\coordinate (gs) at ($ (g1)!.5!(gn) $);
+
+% dirty hack
+\fill [white] ($ (gi.north west) - (1mm, 1mm) $) rectangle ($ (gi.south east) + (1mm, 1mm) $);
+\draw [elements between]
+  (gi.north west) -- (gi.south west)
+  (gi.north east) -- (gi.south east);
+
+\node at (gs) [function, minimum width=\cellwidth + 2\cellpadding, minimum height=4\cellheight + 16mm + 2\cellpadding] {};
+\draw [reverse arrow] (g1.in 1) -- +(0, 1) node [above] {$x$};
+\draw [arrow] (gn.out 1) -- +(0, -1) node [below] {$x^\prime$};
+
+\node at ($ (fs)!.5!(g1.north) $) [big arrow, rotate=-90];
+
+
+\input{_footer.tex}
