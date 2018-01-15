@@ -72,9 +72,29 @@ html {
   }
 }
 
+#filter-box-form {
+  border-bottom: 1px solid #eee;
+  width: $sidebar-width;
+}
+
+#filter-box {
+  border: none;
+  color: #aaa;
+  line-height: $spacer * 2.8;
+  font-family: $monospace-font;
+  font-size: 0.9em;
+  padding: 0 $spacer;
+  width: calc(100% - 2 * #{$spacer});
+
+  &:focus {
+    outline: none;
+  }
+}
+
 #function-list {
-  height: 100%;
+  height: calc(100vh - 3rem - 2.8rem - 1.4rem - 1px);
   list-style: none;
+  padding: 0.7 * $spacer 0;
   overflow: auto;
   width: $sidebar-width;
   
@@ -86,14 +106,6 @@ html {
     
     a:hover {
       transform: scale(1.1);
-    }
-    
-    &:first-child {
-      margin-top: $spacer;
-    }
-    
-    &:last-child {
-      margin-bottom: $spacer;
     }
   }
 }

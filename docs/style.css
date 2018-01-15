@@ -41,9 +41,25 @@ html:lang(es) .i18n:not(:lang(es)) {
   display: none;
   visibility: hidden; }
 
+#filter-box-form {
+  border-bottom: 1px solid #eee;
+  width: 200px; }
+
+#filter-box {
+  border: none;
+  color: #aaa;
+  line-height: 2.8rem;
+  font-family: "Inconsolata G", monospace;
+  font-size: 0.9em;
+  padding: 0 1rem;
+  width: calc(100% - 2 * 1rem); }
+  #filter-box:focus {
+    outline: none; }
+
 #function-list {
-  height: 100%;
+  height: calc(100vh - 3rem - 2.8rem - 1.4rem - 1px);
   list-style: none;
+  padding: 0.7rem 0;
   overflow: auto;
   width: 200px; }
   #function-list .function-link {
@@ -53,10 +69,6 @@ html:lang(es) .i18n:not(:lang(es)) {
     padding: 0 1rem; }
     #function-list .function-link a:hover {
       transform: scale(1.1); }
-    #function-list .function-link:first-child {
-      margin-top: 1rem; }
-    #function-list .function-link:last-child {
-      margin-bottom: 1rem; }
 
 #function-entries {
   margin-left: 200px;

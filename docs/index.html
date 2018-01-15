@@ -39,120 +39,123 @@
     </nav>
   </header>
   <aside id="main-sidebar">
+  <form id="filter-box-form" action="#">
+    <input id="filter-box" autocomplete="off">
+  </form>
   <ul id="function-list">
-          <li class="function-link"><a href="#aggregate">aggregate</a></li>
-          <li class="function-link"><a href="#andthen">andThen</a></li>
-          <li class="function-link"><a href="#chain">chain</a></li>
-          <li class="function-link"><a href="#collect">collect</a></li>
-          <li class="function-link"><a href="#collectfirst">collectFirst</a></li>
-          <li class="function-link"><a href="#combinations">combinations</a></li>
-          <li class="function-link"><a href="#compose">compose</a></li>
-          <li class="function-link"><a href="#concat">concat</a></li>
-          <li class="function-link"><a href="#contains">contains</a></li>
-          <li class="function-link"><a href="#containsslice">containsSlice</a></li>
-          <li class="function-link"><a href="#const">const</a></li>
-          <li class="function-link"><a href="#count">count</a></li>
-          <li class="function-link"><a href="#curried">curried</a></li>
-          <li class="function-link"><a href="#diff">diff</a></li>
-          <li class="function-link"><a href="#distinct">distinct</a></li>
-          <li class="function-link"><a href="#drop">drop</a></li>
-          <li class="function-link"><a href="#dropright">dropRight</a></li>
-          <li class="function-link"><a href="#dropwhile">dropWhile</a></li>
-          <li class="function-link"><a href="#endswith">endsWith</a></li>
-          <li class="function-link"><a href="#exists">exists</a></li>
-          <li class="function-link"><a href="#fill">fill</a></li>
-          <li class="function-link"><a href="#filter">filter</a></li>
-          <li class="function-link"><a href="#filterkeys">filterKeys</a></li>
-          <li class="function-link"><a href="#filternot">filterNot</a></li>
-          <li class="function-link"><a href="#find">find</a></li>
-          <li class="function-link"><a href="#flatmap">flatMap</a></li>
-          <li class="function-link"><a href="#flatten">flatten</a></li>
-          <li class="function-link"><a href="#fold">fold</a></li>
-          <li class="function-link"><a href="#foldleft">foldLeft</a></li>
-          <li class="function-link"><a href="#foldright">foldRight</a></li>
-          <li class="function-link"><a href="#forall">forall</a></li>
-          <li class="function-link"><a href="#foreach">foreach</a></li>
-          <li class="function-link"><a href="#getorelse">getOrElse</a></li>
-          <li class="function-link"><a href="#groupby">groupBy</a></li>
-          <li class="function-link"><a href="#grouped">grouped</a></li>
-          <li class="function-link"><a href="#head">head</a></li>
-          <li class="function-link"><a href="#headoption">headOption</a></li>
-          <li class="function-link"><a href="#indexof">indexOf</a></li>
-          <li class="function-link"><a href="#indexofslice">indexOfSlice</a></li>
-          <li class="function-link"><a href="#indexwhere">indexWhere</a></li>
-          <li class="function-link"><a href="#indices">indices</a></li>
-          <li class="function-link"><a href="#init">init</a></li>
-          <li class="function-link"><a href="#inits">inits</a></li>
-          <li class="function-link"><a href="#intersect">intersect</a></li>
-          <li class="function-link"><a href="#isempty">isEmpty</a></li>
-          <li class="function-link"><a href="#keys">keys</a></li>
-          <li class="function-link"><a href="#last">last</a></li>
-          <li class="function-link"><a href="#lastindexof">lastIndexOf</a></li>
-          <li class="function-link"><a href="#lastindexofslice">lastIndexOfSlice</a></li>
-          <li class="function-link"><a href="#lastindexwhere">lastIndexWhere</a></li>
-          <li class="function-link"><a href="#lastoption">lastOption</a></li>
-          <li class="function-link"><a href="#length">length</a></li>
-          <li class="function-link"><a href="#lift">lift</a></li>
-          <li class="function-link"><a href="#map">map</a></li>
-          <li class="function-link"><a href="#mapconserve">mapConserve</a></li>
-          <li class="function-link"><a href="#mapvalues">mapValues</a></li>
-          <li class="function-link"><a href="#max">max</a></li>
-          <li class="function-link"><a href="#maxby">maxBy</a></li>
-          <li class="function-link"><a href="#min">min</a></li>
-          <li class="function-link"><a href="#minby">minBy</a></li>
-          <li class="function-link"><a href="#mkstring">mkString</a></li>
-          <li class="function-link"><a href="#nonempty">nonEmpty</a></li>
-          <li class="function-link"><a href="#orelse">orElse</a></li>
-          <li class="function-link"><a href="#padto">padTo</a></li>
-          <li class="function-link"><a href="#partition">partition</a></li>
-          <li class="function-link"><a href="#patch">patch</a></li>
-          <li class="function-link"><a href="#permutations">permutations</a></li>
-          <li class="function-link"><a href="#prefixlength">prefixLength</a></li>
-          <li class="function-link"><a href="#product">product</a></li>
-          <li class="function-link"><a href="#range">range</a></li>
-          <li class="function-link"><a href="#reduce">reduce</a></li>
-          <li class="function-link"><a href="#reduceleft">reduceLeft</a></li>
-          <li class="function-link"><a href="#reduceleftoption">reduceLeftOption</a></li>
-          <li class="function-link"><a href="#reduceoption">reduceOption</a></li>
-          <li class="function-link"><a href="#reduceright">reduceRight</a></li>
-          <li class="function-link"><a href="#reducerightoption">reduceRightOption</a></li>
-          <li class="function-link"><a href="#reverse">reverse</a></li>
-          <li class="function-link"><a href="#reversemap">reverseMap</a></li>
-          <li class="function-link"><a href="#sameelements">sameElements</a></li>
-          <li class="function-link"><a href="#scan">scan</a></li>
-          <li class="function-link"><a href="#scanleft">scanLeft</a></li>
-          <li class="function-link"><a href="#scanright">scanRight</a></li>
-          <li class="function-link"><a href="#segmentlength">segmentLength</a></li>
-          <li class="function-link"><a href="#size">size</a></li>
-          <li class="function-link"><a href="#slice">slice</a></li>
-          <li class="function-link"><a href="#sliding">sliding</a></li>
-          <li class="function-link"><a href="#sortby">sortBy</a></li>
-          <li class="function-link"><a href="#sortwith">sortWith</a></li>
-          <li class="function-link"><a href="#sorted">sorted</a></li>
-          <li class="function-link"><a href="#span">span</a></li>
-          <li class="function-link"><a href="#splitat">splitAt</a></li>
-          <li class="function-link"><a href="#startswith">startsWith</a></li>
-          <li class="function-link"><a href="#sum">sum</a></li>
-          <li class="function-link"><a href="#tabulate">tabulate</a></li>
-          <li class="function-link"><a href="#tail">tail</a></li>
-          <li class="function-link"><a href="#tails">tails</a></li>
-          <li class="function-link"><a href="#take">take</a></li>
-          <li class="function-link"><a href="#takeright">takeRight</a></li>
-          <li class="function-link"><a href="#takewhile">takeWhile</a></li>
-          <li class="function-link"><a href="#tupled">tupled</a></li>
-          <li class="function-link"><a href="#uncurried">uncurried</a></li>
-          <li class="function-link"><a href="#union">union</a></li>
-          <li class="function-link"><a href="#unlift">unlift</a></li>
-          <li class="function-link"><a href="#untupled">untupled</a></li>
-          <li class="function-link"><a href="#unzip">unzip</a></li>
-          <li class="function-link"><a href="#unzip3">unzip3</a></li>
-          <li class="function-link"><a href="#updated">updated</a></li>
-          <li class="function-link"><a href="#values">values</a></li>
-          <li class="function-link"><a href="#withdefault">withDefault</a></li>
-          <li class="function-link"><a href="#withdefaultvalue">withDefaultValue</a></li>
-          <li class="function-link"><a href="#zip">zip</a></li>
-          <li class="function-link"><a href="#zipall">zipAll</a></li>
-          <li class="function-link"><a href="#zipwithindex">zipWithIndex</a></li>
+          <li class="function-link" data-function-name="aggregate"><a href="#aggregate">aggregate</a></li>
+          <li class="function-link" data-function-name="andThen"><a href="#andthen">andThen</a></li>
+          <li class="function-link" data-function-name="chain"><a href="#chain">chain</a></li>
+          <li class="function-link" data-function-name="collect"><a href="#collect">collect</a></li>
+          <li class="function-link" data-function-name="collectFirst"><a href="#collectfirst">collectFirst</a></li>
+          <li class="function-link" data-function-name="combinations"><a href="#combinations">combinations</a></li>
+          <li class="function-link" data-function-name="compose"><a href="#compose">compose</a></li>
+          <li class="function-link" data-function-name="concat"><a href="#concat">concat</a></li>
+          <li class="function-link" data-function-name="contains"><a href="#contains">contains</a></li>
+          <li class="function-link" data-function-name="containsSlice"><a href="#containsslice">containsSlice</a></li>
+          <li class="function-link" data-function-name="const"><a href="#const">const</a></li>
+          <li class="function-link" data-function-name="count"><a href="#count">count</a></li>
+          <li class="function-link" data-function-name="curried"><a href="#curried">curried</a></li>
+          <li class="function-link" data-function-name="diff"><a href="#diff">diff</a></li>
+          <li class="function-link" data-function-name="distinct"><a href="#distinct">distinct</a></li>
+          <li class="function-link" data-function-name="drop"><a href="#drop">drop</a></li>
+          <li class="function-link" data-function-name="dropRight"><a href="#dropright">dropRight</a></li>
+          <li class="function-link" data-function-name="dropWhile"><a href="#dropwhile">dropWhile</a></li>
+          <li class="function-link" data-function-name="endsWith"><a href="#endswith">endsWith</a></li>
+          <li class="function-link" data-function-name="exists"><a href="#exists">exists</a></li>
+          <li class="function-link" data-function-name="fill"><a href="#fill">fill</a></li>
+          <li class="function-link" data-function-name="filter"><a href="#filter">filter</a></li>
+          <li class="function-link" data-function-name="filterKeys"><a href="#filterkeys">filterKeys</a></li>
+          <li class="function-link" data-function-name="filterNot"><a href="#filternot">filterNot</a></li>
+          <li class="function-link" data-function-name="find"><a href="#find">find</a></li>
+          <li class="function-link" data-function-name="flatMap"><a href="#flatmap">flatMap</a></li>
+          <li class="function-link" data-function-name="flatten"><a href="#flatten">flatten</a></li>
+          <li class="function-link" data-function-name="fold"><a href="#fold">fold</a></li>
+          <li class="function-link" data-function-name="foldLeft"><a href="#foldleft">foldLeft</a></li>
+          <li class="function-link" data-function-name="foldRight"><a href="#foldright">foldRight</a></li>
+          <li class="function-link" data-function-name="forall"><a href="#forall">forall</a></li>
+          <li class="function-link" data-function-name="foreach"><a href="#foreach">foreach</a></li>
+          <li class="function-link" data-function-name="getOrElse"><a href="#getorelse">getOrElse</a></li>
+          <li class="function-link" data-function-name="groupBy"><a href="#groupby">groupBy</a></li>
+          <li class="function-link" data-function-name="grouped"><a href="#grouped">grouped</a></li>
+          <li class="function-link" data-function-name="head"><a href="#head">head</a></li>
+          <li class="function-link" data-function-name="headOption"><a href="#headoption">headOption</a></li>
+          <li class="function-link" data-function-name="indexOf"><a href="#indexof">indexOf</a></li>
+          <li class="function-link" data-function-name="indexOfSlice"><a href="#indexofslice">indexOfSlice</a></li>
+          <li class="function-link" data-function-name="indexWhere"><a href="#indexwhere">indexWhere</a></li>
+          <li class="function-link" data-function-name="indices"><a href="#indices">indices</a></li>
+          <li class="function-link" data-function-name="init"><a href="#init">init</a></li>
+          <li class="function-link" data-function-name="inits"><a href="#inits">inits</a></li>
+          <li class="function-link" data-function-name="intersect"><a href="#intersect">intersect</a></li>
+          <li class="function-link" data-function-name="isEmpty"><a href="#isempty">isEmpty</a></li>
+          <li class="function-link" data-function-name="keys"><a href="#keys">keys</a></li>
+          <li class="function-link" data-function-name="last"><a href="#last">last</a></li>
+          <li class="function-link" data-function-name="lastIndexOf"><a href="#lastindexof">lastIndexOf</a></li>
+          <li class="function-link" data-function-name="lastIndexOfSlice"><a href="#lastindexofslice">lastIndexOfSlice</a></li>
+          <li class="function-link" data-function-name="lastIndexWhere"><a href="#lastindexwhere">lastIndexWhere</a></li>
+          <li class="function-link" data-function-name="lastOption"><a href="#lastoption">lastOption</a></li>
+          <li class="function-link" data-function-name="length"><a href="#length">length</a></li>
+          <li class="function-link" data-function-name="lift"><a href="#lift">lift</a></li>
+          <li class="function-link" data-function-name="map"><a href="#map">map</a></li>
+          <li class="function-link" data-function-name="mapConserve"><a href="#mapconserve">mapConserve</a></li>
+          <li class="function-link" data-function-name="mapValues"><a href="#mapvalues">mapValues</a></li>
+          <li class="function-link" data-function-name="max"><a href="#max">max</a></li>
+          <li class="function-link" data-function-name="maxBy"><a href="#maxby">maxBy</a></li>
+          <li class="function-link" data-function-name="min"><a href="#min">min</a></li>
+          <li class="function-link" data-function-name="minBy"><a href="#minby">minBy</a></li>
+          <li class="function-link" data-function-name="mkString"><a href="#mkstring">mkString</a></li>
+          <li class="function-link" data-function-name="nonEmpty"><a href="#nonempty">nonEmpty</a></li>
+          <li class="function-link" data-function-name="orElse"><a href="#orelse">orElse</a></li>
+          <li class="function-link" data-function-name="padTo"><a href="#padto">padTo</a></li>
+          <li class="function-link" data-function-name="partition"><a href="#partition">partition</a></li>
+          <li class="function-link" data-function-name="patch"><a href="#patch">patch</a></li>
+          <li class="function-link" data-function-name="permutations"><a href="#permutations">permutations</a></li>
+          <li class="function-link" data-function-name="prefixLength"><a href="#prefixlength">prefixLength</a></li>
+          <li class="function-link" data-function-name="product"><a href="#product">product</a></li>
+          <li class="function-link" data-function-name="range"><a href="#range">range</a></li>
+          <li class="function-link" data-function-name="reduce"><a href="#reduce">reduce</a></li>
+          <li class="function-link" data-function-name="reduceLeft"><a href="#reduceleft">reduceLeft</a></li>
+          <li class="function-link" data-function-name="reduceLeftOption"><a href="#reduceleftoption">reduceLeftOption</a></li>
+          <li class="function-link" data-function-name="reduceOption"><a href="#reduceoption">reduceOption</a></li>
+          <li class="function-link" data-function-name="reduceRight"><a href="#reduceright">reduceRight</a></li>
+          <li class="function-link" data-function-name="reduceRightOption"><a href="#reducerightoption">reduceRightOption</a></li>
+          <li class="function-link" data-function-name="reverse"><a href="#reverse">reverse</a></li>
+          <li class="function-link" data-function-name="reverseMap"><a href="#reversemap">reverseMap</a></li>
+          <li class="function-link" data-function-name="sameElements"><a href="#sameelements">sameElements</a></li>
+          <li class="function-link" data-function-name="scan"><a href="#scan">scan</a></li>
+          <li class="function-link" data-function-name="scanLeft"><a href="#scanleft">scanLeft</a></li>
+          <li class="function-link" data-function-name="scanRight"><a href="#scanright">scanRight</a></li>
+          <li class="function-link" data-function-name="segmentLength"><a href="#segmentlength">segmentLength</a></li>
+          <li class="function-link" data-function-name="size"><a href="#size">size</a></li>
+          <li class="function-link" data-function-name="slice"><a href="#slice">slice</a></li>
+          <li class="function-link" data-function-name="sliding"><a href="#sliding">sliding</a></li>
+          <li class="function-link" data-function-name="sortBy"><a href="#sortby">sortBy</a></li>
+          <li class="function-link" data-function-name="sortWith"><a href="#sortwith">sortWith</a></li>
+          <li class="function-link" data-function-name="sorted"><a href="#sorted">sorted</a></li>
+          <li class="function-link" data-function-name="span"><a href="#span">span</a></li>
+          <li class="function-link" data-function-name="splitAt"><a href="#splitat">splitAt</a></li>
+          <li class="function-link" data-function-name="startsWith"><a href="#startswith">startsWith</a></li>
+          <li class="function-link" data-function-name="sum"><a href="#sum">sum</a></li>
+          <li class="function-link" data-function-name="tabulate"><a href="#tabulate">tabulate</a></li>
+          <li class="function-link" data-function-name="tail"><a href="#tail">tail</a></li>
+          <li class="function-link" data-function-name="tails"><a href="#tails">tails</a></li>
+          <li class="function-link" data-function-name="take"><a href="#take">take</a></li>
+          <li class="function-link" data-function-name="takeRight"><a href="#takeright">takeRight</a></li>
+          <li class="function-link" data-function-name="takeWhile"><a href="#takewhile">takeWhile</a></li>
+          <li class="function-link" data-function-name="tupled"><a href="#tupled">tupled</a></li>
+          <li class="function-link" data-function-name="uncurried"><a href="#uncurried">uncurried</a></li>
+          <li class="function-link" data-function-name="union"><a href="#union">union</a></li>
+          <li class="function-link" data-function-name="unlift"><a href="#unlift">unlift</a></li>
+          <li class="function-link" data-function-name="untupled"><a href="#untupled">untupled</a></li>
+          <li class="function-link" data-function-name="unzip"><a href="#unzip">unzip</a></li>
+          <li class="function-link" data-function-name="unzip3"><a href="#unzip3">unzip3</a></li>
+          <li class="function-link" data-function-name="updated"><a href="#updated">updated</a></li>
+          <li class="function-link" data-function-name="values"><a href="#values">values</a></li>
+          <li class="function-link" data-function-name="withDefault"><a href="#withdefault">withDefault</a></li>
+          <li class="function-link" data-function-name="withDefaultValue"><a href="#withdefaultvalue">withDefaultValue</a></li>
+          <li class="function-link" data-function-name="zip"><a href="#zip">zip</a></li>
+          <li class="function-link" data-function-name="zipAll"><a href="#zipall">zipAll</a></li>
+          <li class="function-link" data-function-name="zipWithIndex"><a href="#zipwithindex">zipWithIndex</a></li>
       </ul>
 </aside>
 <main id="function-entries">

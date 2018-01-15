@@ -2,9 +2,12 @@
 
 {% block content %}
 <aside id="main-sidebar">
+  <form id="filter-box-form" action="#">
+    <input id="filter-box" autocomplete="off">
+  </form>
   <ul id="function-list">
     {% for function in functions %}
-      <li class="function-link"><a href="#{{ function.name | lower }}">{{ function.name }}</a></li>
+      <li class="function-link" data-function-name="{{ function.name }}"><a href="#{{ function.name | lower }}">{{ function.name }}</a></li>
     {% endfor %}
   </ul>
 </aside>

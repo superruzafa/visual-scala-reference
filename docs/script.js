@@ -23,3 +23,26 @@ function setDefaultGlobalLang() {
 }
 
 setDefaultGlobalLang();
+
+function filterFunctions(filterText) {
+  const allFunctions = document.querySelectorAll('#function-list .function-link');
+  if (filterText == '') {
+    allFunctions.forEach(function(entry) {
+      entry.style.display = '';
+    });
+  } else {
+    const filterRegex = new RegExp(filterText, 'i');
+    allFunctions.forEach(function(entry) {
+      entry.style.display = (filterRegex.test(entry.dataset.functionName))
+        ? '' : 'none';
+    });
+  }
+}
+
+window.addEventListener('load', function() {
+  const filterBox = document.getElementById('filter-box');
+  filterBox.value = '';
+  filterBox.addEventListener('keyup', function(e) {
+    filterFunctions(e.target.value.trim());
+  }, false);
+}, false);
