@@ -30,8 +30,12 @@ RUN apk update && apk add --no-cache \
   poppler-glib \
   texlive \
   texmf-dist-fontsextra \
-  texmf-dist-latexextra
+  texmf-dist-latexextra \
+  php7 \
+  php7-ctype
 
 COPY --from=build /usr/local/bin/pdf2svg /usr/local/bin
 
-CMD ["fcgiwrap", "-f", "-s", "tcp:0.0.0.0:9001"]
+EXPOSE 9000
+
+CMD ["fcgiwrap", "-s", "tcp:0.0.0.0:9000"]

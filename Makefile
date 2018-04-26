@@ -6,8 +6,13 @@ PDF2SVGFLAGS :=
 TEXSHAREDFILES := $(wildcard src/images/_*.tex)
 TEXFILES := $(filter-out $(TEXSHAREDFILES),$(wildcard src/images/*))
 SVGFILES := $(patsubst src/%.tex,docs/%.svg,$(TEXFILES))
+DATAFILES := $(wildcard src/data/*.yml)
+VIEWFILES := $(wildcard src/views/*.twig)
 
 all: $(SVGFILES)
+
+docs/index.html: src/index.php $(VIEWVILES) $(DATAFILES)
+	php src/index.php > $@
 
 docs/%.svg: cache/pdf/%.pdf
 	mkdir -p $(@D)

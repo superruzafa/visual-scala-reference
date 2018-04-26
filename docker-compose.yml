@@ -7,21 +7,13 @@ services:
     ports:
       - 8080:80
 
-  # php-fpm:
-  #   build:
-  #     context: .
-  #     dockerfile: docker/php-fpm/Dockerfile
-  #   volumes:
-  #     - .:/opt/app
-  #     - vendor:/opt/app/vendor
-  #     - cache:/opt/app/cache
-
-  svg-backend:
+  backend:
     build:
       context: .
-      dockerfile: docker/svg-backend/Dockerfile
+      dockerfile: docker/backend/Dockerfile
     volumes:
       - .:/opt/app
+      - vendor:/opt/app/vendor
       - cache:/opt/app/cache
 
 volumes:
