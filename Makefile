@@ -1,22 +1,19 @@
-DOCKER := docker
-DOCKER_IMAGE := superruzafa/visual-scala-reference:dev
+TEX2PDF := pdflatex
+TEX2PDFFLAGS := -halt-on-error -output-format=pdf
+PDF2SVG := pdf2svg
+PDF2SVGFLAGS := 
 
-all: build
+TEXSHAREDFILES := $(wildcard src/images/_*.tex)
+TEXFILES := $(filter-out $(TEXSHAREDFILES),$(wildcard src/images/*))
+SVGFILES := $(patsubst src/%.tex,docs/%.svg,$(TEXFILES))
 
-build: .dockerimage
-	$(DOCKER) run --rm -v $$PWD:/code -w /code $(DOCKER_IMAGE)
+all: $(SVGFILES)
 
-dev: .dockerimage
-	$(DOCKER) run --rm -v $$PWD:/code -it -w /code --entrypoint bash $(DOCKER_IMAGE)
+docs/%.svg: cache/pdf/%.pdf
+	mkdir -p $(@D)
+	$(PDF2SVG) $(PDF2SVGFLAGS) $< $@
 
-server: .dockerimage
-	$(DOCKER) run --rm -v $$PWD:/code -it -w /code -p 8080:8080 $(DOCKER_IMAGE) $@
-
-touch watch: .dockerimage
-	$(DOCKER) run --rm -v $$PWD:/code -it -w /code $(DOCKER_IMAGE) $@
-
-.dockerimage: Dockerfile
-	$(DOCKER) build -t $(DOCKER_IMAGE) .
-	touch $@
-
-.PHONY: all build dev
+cache/pdf/%.pdf: src/%.tex
+	mkdir -p $(@D)
+	cd $(<D) && \
+		$(TEX2PDF) $(TEX2PDFFLAGS) -output-directory=../../$(@D) $(<F)

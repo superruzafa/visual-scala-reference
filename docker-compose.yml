@@ -1,0 +1,29 @@
+version: '3'
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+    ports:
+      - 8080:80
+
+  # php-fpm:
+  #   build:
+  #     context: .
+  #     dockerfile: docker/php-fpm/Dockerfile
+  #   volumes:
+  #     - .:/opt/app
+  #     - vendor:/opt/app/vendor
+  #     - cache:/opt/app/cache
+
+  svg-backend:
+    build:
+      context: .
+      dockerfile: docker/svg-backend/Dockerfile
+    volumes:
+      - .:/opt/app
+      - cache:/opt/app/cache
+
+volumes:
+  vendor:
+  cache:
