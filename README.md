@@ -29,34 +29,11 @@ As an example of what you'll find, below are depicted three of the most well kno
 </table>
 
 
-## How to build from source
+## Development and build
 
-The only thing you must have installed in your computer is [Docker](https://www.docker.com). All the build process is done within a container.
+You need [Docker](https://www.docker.com) installed on your computer. Run `docker-compose up -d` and then browse http://localhost:8080.
 
-Once you have Docker installed you just have to type the following command from your computer:
-
-```
-make
-```
-
-This will create the Docker container and launch the internal `dev.mk` Makefile in order to boot the build process.
-
-Once the build finishes the output files should have been created in the `docs` directory.
-
-
-
-### Other useful Makefile targets
-
-By issuing `make dev` you'll enter the container where the build happens.
-
-`make server` starts a HTTP server listen on the port 8080. You can visualize in real-time the modifications
-you do for the .tex and other files without manually have to rebuild the target files.
-
-Example: if you are editing the `src/images/map.tex` file you can watch the changes automatically by browsing this URL: `http://localhost:8080/images/map.svg`
-
-`make touch` sets the modification timestamp for all images to the one from `src/images/_style.tex`. The styles file is a prerequisite for all the images and a change on it, no matter how small, would cause all images to be regenerated. This is a quick fix that prevent this behavior.
-
-`make watch` watches for changes in the `src` subdirectory and launch the build process.
+The rendered files will be placed in the `docs` directory.
 
 ### Translations
 
