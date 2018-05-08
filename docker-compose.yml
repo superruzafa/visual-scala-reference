@@ -13,9 +13,4 @@ services:
       dockerfile: docker/backend/Dockerfile
     volumes:
       - .:/opt/app
-      - vendor:/opt/app/vendor
-      - cache:/opt/app/cache
-
-volumes:
-  vendor:
-  cache:
+    restart: on-failure

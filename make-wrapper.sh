@@ -1,8 +1,8 @@
 #!/bin/sh
 
-TARGET="docs${REQUEST_URI}"
+TARGET="docs${DOCUMENT_URI}"
 
-output=$(make $TARGET)
+make $TARGET > /dev/stderr
 exit_status=$?
 
 echo ${SERVER_PROTOCOL}
@@ -13,5 +13,4 @@ if [ $exit_status -eq 0 ]; then
 else
   echo "Status: 500 Server error"
   echo
-  echo $output
 fi

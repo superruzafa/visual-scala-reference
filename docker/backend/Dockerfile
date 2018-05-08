@@ -1,12 +1,57 @@
-FROM alpine:edge AS build
+FROM alpine:edge
 
-RUN apk update && apk add --no-cache \
+RUN apk update
+
+
+
+# Install essential packages
+
+RUN apk add --no-cache \
   curl \
   gcc \
   libc-dev \
-  make \
+  make
+
+
+
+# Install tex
+
+RUN apk add --no-cache \
+  texlive \
+  texmf-dist-fontsextra \
+  texmf-dist-latexextra
+
+
+
+# Install PHP
+
+RUN apk add --no-cache \
+  php7 \
+  php7-ctype \
+  php7-json \
+  php7-phar \
+  php7-mbstring \
+  php7-openssl
+
+
+
+# Install sass
+
+RUN apk add \
+  ruby \
+  ruby-dev \
+  ruby-rdoc && \
+  gem install sass
+
+
+
+# Install pdf2svg 
+
+RUN apk add \
   cairo-dev \
-  poppler-dev
+  poppler-dev \
+  cairo \
+  poppler-glib
 
 RUN \
   mkdir -p /usr/local/src && \
@@ -21,21 +66,29 @@ RUN \
 
 
 
-FROM alpine:edge AS runtime
+# Install convert
 
-RUN apk update && apk add --no-cache \
-  fcgiwrap \
-  make \
-  cairo \
-  poppler-glib \
-  texlive \
-  texmf-dist-fontsextra \
-  texmf-dist-latexextra \
-  php7 \
-  php7-ctype
+RUN apk add --no-cache imagemagick
 
-COPY --from=build /usr/local/bin/pdf2svg /usr/local/bin
+
+
+# Install composer
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+
+
+# Install fcgiwrap
+RUN apk add --no-cache fcgiwrap
+
+
+
+RUN mkdir -p /opt/app
+WORKDIR /opt/app
+
+VOLUME /opt/app/cache
+VOLUME /opt/app/vendor
 
 EXPOSE 9000
 
-CMD ["fcgiwrap", "-s", "tcp:0.0.0.0:9000"]
+CMD sh -c 'composer install && fcgiwrap -s tcp:0.0.0.0:9000'
