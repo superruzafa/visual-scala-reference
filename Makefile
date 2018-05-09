@@ -35,7 +35,9 @@ docs/%.png: cache/pdf/%.pdf
 	mkdir -p $(@D)
 	$(PDF2PNG) $(PDF2PNGFLAGS) $< $@
 
-cache/pdf/%.pdf: src/%.tex
+cache/pdf/%.pdf: src/%.tex $(TEXSHAREDFILES)
 	mkdir -p $(@D)
 	cd $(<D) && \
 		$(TEX2PDF) $(TEX2PDFFLAGS) -output-directory=../../$(@D) $(<F)
+
+.PRECIOUS: cache/pdf/%.pdf

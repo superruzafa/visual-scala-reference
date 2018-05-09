@@ -1,35 +1,41 @@
 \pgfkeys{
   /function/.cd,
   in/.initial=1,
-  out/.initial=1,
   in width/.initial=4mm,
   in height/.initial=2mm,
   in sep/.initial=4mm,
-  in funnel width/.initial=.2,
-  in funnel height/.initial=.5,
+  in funnel width/.initial=0.75mm,
+  in funnel height/.initial=0.75mm,
+  out/.initial=1,
   out width/.initial=4mm,
   out height/.initial=2mm,
-  out sep/.initial=4mm,
-  out funnel width/.initial=.2,
-  out funnel height/.initial=.5,
+  out sep/.initial=1mm,
+  out funnel width/.initial=0.75mm,
+  out funnel height/.initial=0.75mm,
 }
 
 \def\argument#1{{%
   \setlength\pgf@xb{\pgfkeysvalueof{/function/#1 width}}
-  \setlength\pgf@xc{.5\pgf@xb}
-  \setlength\pgf@xc{\pgfkeysvalueof{/function/#1 funnel width}\pgf@xc}
+  \setlength\pgf@xc{\pgfkeysvalueof{/function/#1 funnel width}}
 
   \setlength\pgf@yb{\pgfkeysvalueof{/function/#1 height}}
-  \setlength\pgf@yc{\pgfkeysvalueof{/function/#1 funnel height}\pgf@yb}
+  \setlength\pgf@yc{\pgfkeysvalueof{/function/#1 funnel height}}
 
-  \pgfpathlineto{\pgfpoint{\pgf@xc}{\z@}}
-  \pgfpathlineto{\pgfpoint{\pgf@xc}{\pgf@yc}}
+  % \pgfpathlineto{\pgfpoint{\pgf@xc}{23mm}}
+  % \pgfpathlineto{\pgfpoint{\pgf@xc}{\pgf@yc}}
+  % \pgfpathlineto{\pgfqpoint{\z@}{\pgf@yb}}
+
+  % \pgfpathlineto{\pgfqpoint{\pgf@xb}{\pgf@yb}}
+  % \pgfpathlineto{\pgfpoint{\pgf@xb - \pgf@xc}{\pgf@yc}}
+  % \pgfpathlineto{\pgfpoint{\pgf@xb - \pgf@xc}{\z@}}
+  % \pgfpathlineto{\pgfqpoint{\pgf@xb}{\z@}}
+
+  \pgfpathlineto{\pgfqpoint{\pgf@xc}{\z@}}
+  \pgfpathlineto{\pgfqpoint{\pgf@xc}{\pgf@yc}}
   \pgfpathlineto{\pgfqpoint{\z@}{\pgf@yb}}
-
   \pgfpathlineto{\pgfqpoint{\pgf@xb}{\pgf@yb}}
   \pgfpathlineto{\pgfpoint{\pgf@xb - \pgf@xc}{\pgf@yc}}
   \pgfpathlineto{\pgfpoint{\pgf@xb - \pgf@xc}{\z@}}
-  \pgfpathlineto{\pgfqpoint{\pgf@xb}{\z@}}
 }}
 
 \def\firstinarg{
