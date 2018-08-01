@@ -121,6 +121,7 @@
           <li class="function-link" data-function-name="reduceRightOption"><a href="#reducerightoption">reduceRightOption</a></li>
           <li class="function-link" data-function-name="reverse"><a href="#reverse">reverse</a></li>
           <li class="function-link" data-function-name="reverseMap"><a href="#reversemap">reverseMap</a></li>
+          <li class="function-link" data-function-name="runWith"><a href="#runwith">runWith</a></li>
           <li class="function-link" data-function-name="sameElements"><a href="#sameelements">sameElements</a></li>
           <li class="function-link" data-function-name="scan"><a href="#scan">scan</a></li>
           <li class="function-link" data-function-name="scanLeft"><a href="#scanleft">scanLeft</a></li>
@@ -1382,6 +1383,24 @@
                               <figcaption class="function-figure-caption i18n" lang="es"><code>reverseMap</code> devuelve una nueva colección aplicando <var>f</var> a todos los elementos y recopilando los valores en orden inverso.</figcaption>
                                     </figure>
               </section>
+    </article>
+      <article id="runwith" class="function-entry">
+      <h2 class="function-name">runWith</h2>
+              <p class="function-description i18n" lang="en">Composes this partial function with an action function which gets applied to results of this partial function.</p>
+              <p class="function-description i18n" lang="es">Compone esta función parcial con una función de acción a la que se aplica el resultado de esta función parcial.</p>
+            <pre class="function-signature"><code class="scala">def runWith[U](g: (B) ⇒ U): (A) ⇒ Boolean</code></pre>
+      <section class="function-figure-wrapper">
+                              <figure class="function-figure">
+              <img src="images/runWith.1.svg" alt="" />
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>runWith</code> creates a function that applies <var>f</var> then <var>g</var> to an input value only if <var>f</var> is defined for it and returns <code>true</code>.</figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>runWith</code> crea una función que aplica <var>f</var> primero y <var>g</var> después a un valor de entrada solo sí <var>f</var> está definida para el, y devuelve <code>true</code>.</figcaption>
+                          </figure>
+                      <figure class="function-figure">
+              <img src="images/runWith.2.svg" alt="" />
+                              <figcaption class="function-figure-caption i18n" lang="en"><code>runWith</code> creates a function that returns <code>false</code> when an input value is not defined for <var>f</var></figcaption>
+                              <figcaption class="function-figure-caption i18n" lang="es"><code>reverseMap</code> crea una función que devuelve <code>false</code> cuando un valor de entrada no está definido para <var>f</var>.</figcaption>
+                          </figure>
+                        </section>
     </article>
       <article id="sameelements" class="function-entry">
       <h2 class="function-name">sameElements</h2>

@@ -791,6 +791,17 @@
   - en: <code>reverseMap</code> returns a new collection by applying <var>f</var> to all elements and collecting the values in reversed order.
     es: <code>reverseMap</code> devuelve una nueva colección aplicando <var>f</var> a todos los elementos y recopilando los valores en orden inverso.
 
+- name: runWith
+  signature: "def runWith[U](g: (B) ⇒ U): (A) ⇒ Boolean"
+  description:
+    en: Composes this partial function with an action function which gets applied to results of this partial function.
+    es: Compone esta función parcial con una función de acción a la que se aplica el resultado de esta función parcial.
+  figures:
+  - en: <code>runWith</code> creates a function that applies <var>f</var> then <var>g</var> to an input value only if <var>f</var> is defined for it and returns <code>true</code>.
+    es: <code>runWith</code> crea una función que aplica <var>f</var> primero y <var>g</var> después a un valor de entrada solo sí <var>f</var> está definida para el, y devuelve <code>true</code>.
+  - en: <code>runWith</code> creates a function that returns <code>false</code> when an input value is not defined for <var>f</var>
+    es: <code>reverseMap</code> crea una función que devuelve <code>false</code> cuando un valor de entrada no está definido para <var>f</var>.
+
 - name: sameElements
   signature: "def sameElements(that: GenIterable[A]): Boolean"
   description:
