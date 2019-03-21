@@ -1,0 +1,35 @@
+\definecolor{blueprint}{RGB}{11, 97, 171}
+\definecolor{pen}{RGB}{255, 255, 255}
+
+\tikzset{collection element/.style={
+    inner sep=0,
+    outer sep=0,
+    draw=pen,
+    text=pen,
+    line width=\normalpen,
+    minimum width=\masterunit,
+    minimum height=\masterunit,
+}}
+
+\tikzset{collection/.style={
+    inner sep=0,
+    outer sep=-0.5\normalpen,
+    column sep=-\normalpen,
+    row sep=-\normalpen,
+    node distance=0,
+    nodes={
+        collection element
+    }
+}}
+
+\newcommand{\blueprint}{
+    \begin{scope}[on background layer]
+        \coordinate (_a) at ($ (current bounding box.south west) + (-1, -1) $);
+        \coordinate (_b) at ($ (current bounding box.north east) + (1, 1) $);
+        \fill [blueprint] ($ (_a) + (-0.5, -0.5) $) rectangle ($ (_b) + (0.5, 0.5) $);
+        \draw [blueprint!95!white, very thin, step=0.1] (_a) grid (_b);
+        \draw [blueprint!90!white, thin, step=0.5] (_a) grid (_b);
+        \draw [blueprint!80!white, semithick, step=1] (_a) grid (_b);
+        \draw [blueprint!50!white, thick] (_a) rectangle (_b);
+    \end{scope}
+}
