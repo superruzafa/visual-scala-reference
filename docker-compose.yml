@@ -1,16 +1,9 @@
-version: '3'
+version: '3.6'
 services:
-  nginx:
+  site:
+    image: visual-scala-reference
     build:
       context: .
-      dockerfile: docker/nginx/Dockerfile
+      dockerfile: Dockerfile
     ports:
-      - 8080:80
-
-  backend:
-    build:
-      context: .
-      dockerfile: docker/backend/Dockerfile
-    volumes:
-      - .:/opt/app
-    restart: on-failure
+      - '4000:4000'
