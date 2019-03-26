@@ -19,8 +19,8 @@ RUN \
 COPY . /site
 WORKDIR /site
 RUN bundle install
-RUN jekyll build
+RUN bundle exec jekyll build
 
 EXPOSE 4000
 
-CMD ["jekyll", "serve", "--host", "0.0.0.0"]
+CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0"]
