@@ -1,26 +1,64 @@
+\newlength{\defaultpenwidth}
+\setlength{\defaultpenwidth}{0.04\masterunit}
+
 \definecolor{blueprint}{RGB}{11, 97, 171}
-\definecolor{pen}{RGB}{255, 255, 255}
+\definecolor{defaultpencolor}{RGB}{255, 255, 255}
+
+\tikzset{every path/.style={
+    draw=defaultpencolor,
+    line width=\defaultpenwidth,
+}}
+
+\tikzset{every node/.style={
+    text=defaultpencolor
+}}
 
 \tikzset{collection element/.style={
     inner sep=0,
     outer sep=0,
-    draw=pen,
-    text=pen,
-    line width=\normalpen,
+    font=\large,
+    draw,
     minimum width=\masterunit,
     minimum height=\masterunit,
 }}
 
 \tikzset{collection/.style={
     inner sep=0,
-    outer sep=-0.5\normalpen,
-    column sep=-\normalpen,
-    row sep=-\normalpen,
+    outer sep=-0.5\defaultpenwidth,
+    column sep=-\defaultpenwidth,
+    row sep=-0.5\defaultpenwidth,
     node distance=0,
     nodes={
         collection element
     }
 }}
+
+\tikzset{flow/.style={
+    -latex,
+    line width=0.5\defaultpenwidth,
+    fill=defaultpencolor,
+}}
+
+\tikzset{elements between/.style={
+    decorate,
+    decoration={
+        show path construction,
+        lineto code={
+            \draw
+                (\tikzinputsegmentfirst) -- ($ (\tikzinputsegmentfirst)!.10!(\tikzinputsegmentlast) $)
+                ($ (\tikzinputsegmentfirst)!.90!(\tikzinputsegmentlast) $) -- (\tikzinputsegmentlast);
+            \draw [dash pattern=on .1\masterunit off .1\masterunit]
+                ($ (\tikzinputsegmentfirst)!.10!(\tikzinputsegmentlast) $) -- ($ (\tikzinputsegmentfirst)!.90!(\tikzinputsegmentlast) $);
+        }
+    }
+}}
+
+\newcommand{\elementsbetween}{%
+    \node (_eb) [draw=none, minimum width=1.5\masterunit] {};
+    \draw [elements between]
+        (_eb.north west) to (_eb.north east)
+        (_eb.south west) to (_eb.south east);
+}
 
 \newcommand{\blueprint}{
     \begin{scope}[on background layer]

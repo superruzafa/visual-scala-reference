@@ -2,17 +2,28 @@
 ---
 
 \matrix (A) [collection, xshift=0\masterunit, yshift=0.5\masterunit] {
-    \node {$a_1$}; &
-    \node {$a_2$}; &
-    \node {$a_i$}; &
-    \node {$a_n$}; \\
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \elementsbetween &
+    \node (ai) {$a_i$}; &
+    \elementsbetween &
+    \node (an) {$a_n$}; \\
 };
 
 \matrix (B) [collection, below=2 of A] {
-    \node {$b_1$}; &
-    \node {$b_2$}; &
-    \node {$b_i$}; &
-    \node {$b_n$}; \\
+    \node (b1) {$b_1$}; &
+    \node (b2) {$b_2$}; &
+    \elementsbetween &
+    \node (bi) {$b_i$}; &
+    \elementsbetween &
+    \node (bn) {$b_n$}; \\
 };
+
+\foreach \i in {1,2,i,n}{
+    \node (f) at ($ (a\i)!.5!(b\i) $) {$f(a_\i)$};
+    \draw [flow]
+        (a\i) -- (f)
+        (f) -- (b\i);
+}
 
 \blueprint
