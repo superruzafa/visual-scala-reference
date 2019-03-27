@@ -10,27 +10,26 @@
 }}
 
 \tikzset{every node/.style={
-    text=defaultpencolor
+    inner sep=0pt,
+    outer sep=0pt,
+    node distance=0,
+    text=defaultpencolor,
 }}
 
 \tikzset{collection element/.style={
-    inner sep=0,
-    outer sep=0,
-    font=\large,
     draw,
-    minimum width=\masterunit,
+    font=\large,
     minimum height=\masterunit,
+    minimum width=\masterunit,
 }}
 
 \tikzset{collection/.style={
-    inner sep=0,
-    outer sep=-0.5\defaultpenwidth,
     column sep=-\defaultpenwidth,
-    row sep=-0.5\defaultpenwidth,
-    node distance=0,
     nodes={
-        collection element
-    }
+        collection element,
+    },
+    outer sep=-0.5\defaultpenwidth,
+    row sep=-0.5\defaultpenwidth,
 }}
 
 \tikzset{flow/.style={
@@ -59,6 +58,13 @@
         (_eb.north west) to (_eb.north east)
         (_eb.south west) to (_eb.south east);
 }
+
+\tikzset{function/.style={
+    shape=function,
+    inner xsep=0.1\masterunit,
+    inner ysep=0.2\masterunit,
+    line width=0.66\defaultpenwidth,
+}}
 
 \newcommand{\blueprint}{
     \begin{scope}[on background layer]

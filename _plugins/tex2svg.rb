@@ -15,13 +15,17 @@ module Jekyll
     end
 
     def write_tex_file(content)
-      header = IO.read("#{__dir__}/../images/_header.tex")
+      preamble = IO.read("#{__dir__}/../images/_preamble.tex")
+      function = IO.read("#{__dir__}/../images/_function.tex")
       style = IO.read("#{__dir__}/../images/_style.tex")
+      header = IO.read("#{__dir__}/../images/_header.tex")
       footer = IO.read("#{__dir__}/../images/_footer.tex")
       f = Tempfile.new('_tex')
       begin
-        f.write(header)
+        f.write(preamble)
+        f.write(function)
         f.write(style)
+        f.write(header)
         f.write(content)
         f.write(footer)
         f.close()

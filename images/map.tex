@@ -10,7 +10,7 @@
     \node (an) {$a_n$}; \\
 };
 
-\matrix (B) [collection, below=2 of A] {
+\matrix (B) [collection, below=3 of A] {
     \node (b1) {$b_1$}; &
     \node (b2) {$b_2$}; &
     \elementsbetween &
@@ -20,10 +20,9 @@
 };
 
 \foreach \i in {1,2,i,n}{
-    \node (f) at ($ (a\i)!.5!(b\i) $) {$f(a_\i)$};
-    \draw [flow]
-        (a\i) -- (f)
-        (f) -- (b\i);
+    \node (f) [function] at ($ (a\i)!.5!(b\i) $) {$f$};
+    \draw [flow] (a\i) -- (f.in);
+    \draw [flow] (f.out) -- (b\i);
 }
 
 \blueprint
