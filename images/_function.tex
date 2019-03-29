@@ -2,18 +2,18 @@
 
 \pgfkeys{
     /function/.cd,
-    north ports/.initial=1,
-    south ports/.initial=1,
+    north port/.initial=1,
+    south port/.initial=1,
+    east port/.initial=0,
+    west port/.initial=0,
 }
 
 \pgfdeclareshape{function}{%
     \inheritsavedanchors[from=rectangle]
-    \inheritanchor[from=rectangle]{east}
     \inheritanchor[from=rectangle]{north east}
     \inheritanchor[from=rectangle]{north west}
     \inheritanchor[from=rectangle]{south east}
     \inheritanchor[from=rectangle]{south west}
-    \inheritanchor[from=rectangle]{west}
     \savedanchor\southwest{%
         % box width
         \pgf@x=\the\wd\pgfnodeparttextbox
@@ -23,11 +23,11 @@
         % is width < min width?
         \setlength\pgf@xa{\pgfshapeminwidth}
         \ifdim\pgf@x<\pgf@xa \pgf@x=\pgf@xa \fi
-        % is width < north ports width
-        \pgfmathsetlength\pgf@xa{\pgfkeysvalueof{/function/north ports} * 4mm}
+        % is width < north port width
+        \pgfmathsetlength\pgf@xa{\pgfkeysvalueof{/function/north port} * 4mm}
         \ifdim\pgf@x<\pgf@xa \pgf@x=\pgf@xa \fi
-        % is width < south ports width
-        \pgfmathsetlength\pgf@xa{\pgfkeysvalueof{/function/south ports} * 4mm}
+        % is width < south port width
+        \pgfmathsetlength\pgf@xa{\pgfkeysvalueof{/function/south port} * 4mm}
         \ifdim\pgf@x<\pgf@xa \pgf@x=\pgf@xa \fi
         % + outer sep
         \setlength\pgf@xa{\pgfshapeouterxsep}%
@@ -42,6 +42,12 @@
         \advance\pgf@y by 2\pgf@ya%
         % is height < min height?
         \setlength\pgf@ya{\pgfshapeminheight}
+        \ifdim\pgf@y<\pgf@ya \pgf@y=\pgf@ya \fi
+        % is height < east port height
+        \pgfmathsetlength\pgf@ya{\pgfkeysvalueof{/function/east port} * 4mm}
+        \ifdim\pgf@y<\pgf@ya \pgf@y=\pgf@ya \fi
+        % is height < west port height
+        \pgfmathsetlength\pgf@ya{\pgfkeysvalueof{/function/west port} * 4mm}
         \ifdim\pgf@y<\pgf@ya \pgf@y=\pgf@ya \fi
         % + outer sep
         \setlength\pgf@ya{\pgfshapeouterysep}%
@@ -59,11 +65,11 @@
         % is width < min width?
         \setlength\pgf@xa{\pgfshapeminwidth}
         \ifdim\pgf@x<\pgf@xa \pgf@x=\pgf@xa \fi
-        % is width < north ports width
-        \pgfmathsetlength\pgf@xa{\pgfkeysvalueof{/function/north ports} * 4mm}
+        % is width < north port width
+        \pgfmathsetlength\pgf@xa{\pgfkeysvalueof{/function/north port} * 4mm}
         \ifdim\pgf@x<\pgf@xa \pgf@x=\pgf@xa \fi
-        % is width < south ports width
-        \pgfmathsetlength\pgf@xa{\pgfkeysvalueof{/function/south ports} * 4mm}
+        % is width < south port width
+        \pgfmathsetlength\pgf@xa{\pgfkeysvalueof{/function/south port} * 4mm}
         \ifdim\pgf@x<\pgf@xa \pgf@x=\pgf@xa \fi
         % + outer sep
         \setlength\pgf@xa{\pgfshapeouterxsep}%
@@ -71,6 +77,7 @@
         \advance\pgf@x by 2\pgf@xa%
         \pgf@x = .5\pgf@x
         \advance\pgf@x by .5\wd\pgfnodeparttextbox
+        %
         % box height
         \pgf@y=\the\ht\pgfnodeparttextbox
         % + inner sep
@@ -78,6 +85,12 @@
         \advance\pgf@y by 2\pgf@ya%
         % is height < min height?
         \setlength\pgf@ya{\pgfshapeminheight}
+        \ifdim\pgf@y<\pgf@ya \pgf@y=\pgf@ya \fi
+        % is height < east port height
+        \pgfmathsetlength\pgf@ya{\pgfkeysvalueof{/function/east port} * 4mm}
+        \ifdim\pgf@y<\pgf@ya \pgf@y=\pgf@ya \fi
+        % is height < west port height
+        \pgfmathsetlength\pgf@ya{\pgfkeysvalueof{/function/west port} * 4mm}
         \ifdim\pgf@y<\pgf@ya \pgf@y=\pgf@ya \fi
         % + outer sep
         \setlength\pgf@ya{\pgfshapeouterysep}%
@@ -99,18 +112,56 @@
         % is width < min width?
         \setlength\pgf@xa{\pgfshapeminwidth}
         \ifdim\pgf@x<\pgf@xa \pgf@x=\pgf@xa \fi
-        % is width < north ports width
-        \pgfmathsetlength\pgf@xa{\pgfkeysvalueof{/function/north ports} * 4mm}
+        % is width < north port width
+        \pgfmathsetlength\pgf@xa{\pgfkeysvalueof{/function/north port} * 4mm}
         \ifdim\pgf@x<\pgf@xa \pgf@x=\pgf@xa \fi
-        % is width < south ports width
-        \pgfmathsetlength\pgf@xa{\pgfkeysvalueof{/function/south ports} * 4mm}
+        % is width < south port width
+        \pgfmathsetlength\pgf@xa{\pgfkeysvalueof{/function/south port} * 4mm}
         \ifdim\pgf@x<\pgf@xa \pgf@x=\pgf@xa \fi
     }
-    \saveddimen\northportswidth{%
-        \pgfmathsetlength\pgf@x{\pgfkeysvalueof{/function/north ports} * 4mm}
+    \saveddimen\functionheight{%
+        % box height
+        \pgf@x=\the\ht\pgfnodeparttextbox
+        % + inner sep
+        \setlength\pgf@xa{\pgfshapeinnerysep}
+        \advance\pgf@x by 2\pgf@xa%
+        % is height < min height?
+        \setlength\pgf@xa{\pgfshapeminheight}
+        \ifdim\pgf@x<\pgf@xa \pgf@x=\pgf@xa \fi
+        % is height < east port height
+        \pgfmathsetlength\pgf@xa{\pgfkeysvalueof{/function/east port} * 4mm}
+        \ifdim\pgf@x<\pgf@xa \pgf@x=\pgf@xa \fi
+        % is height < west port height
+        \pgfmathsetlength\pgf@xa{\pgfkeysvalueof{/function/west port} * 4mm}
+        \ifdim\pgf@x<\pgf@xa \pgf@x=\pgf@xa \fi
     }
-    \saveddimen\southportswidth{%
-        \pgfmathsetlength\pgf@x{\pgfkeysvalueof{/function/south ports} * 4mm}
+    \saveddimen\northportlength{%
+        \pgfmathsetlength\pgf@x{\pgfkeysvalueof{/function/north port} * 4mm}
+    }
+    \saveddimen\southportlength{%
+        \pgfmathsetlength\pgf@x{\pgfkeysvalueof{/function/south port} * 4mm}
+    }
+    \saveddimen\eastportlength{%
+        \pgfmathsetlength\pgf@x{\pgfkeysvalueof{/function/east port} * 4mm}
+    }
+    \saveddimen\westportlength{%
+        \pgfmathsetlength\pgf@x{\pgfkeysvalueof{/function/west port} * 4mm}
+    }
+    \saveddimen\northportoffset{%
+        \pgf@x=\z@
+        \ifnum\pgfkeysvalueof{/function/north port}>0 \advance\pgf@x by 1.5mm \fi
+    }
+    \saveddimen\southportoffset{%
+        \pgf@x=\z@
+        \ifnum\pgfkeysvalueof{/function/south port}>0 \advance\pgf@x by -1.5mm \fi
+    }
+    \saveddimen\eastportoffset{%
+        \pgf@x=\z@
+        \ifnum\pgfkeysvalueof{/function/east port}>0 \advance\pgf@x by 1.5mm \fi
+    }
+    \saveddimen\westportoffset{%
+        \pgf@x=\z@
+        \ifnum\pgfkeysvalueof{/function/west port}>0 \advance\pgf@x by -1.5mm \fi
     }
     \anchor{center}{%
         \centerpoint
@@ -120,28 +171,40 @@
         \southwest 
         \pgfmathsetlength\pgf@x{(\pgf@x + \@tempdimb) / 2}
         \pgf@y=\@tempdima
-        \advance\pgf@y by 1.5mm
+        \advance\pgf@y by \northportoffset
     }
     \anchor{in}{%
         \northeast \@tempdima=\pgf@x \@tempdimb=\pgf@y
         \southwest 
         \pgfmathsetlength\pgf@x{(\pgf@x + \@tempdima) / 2}
         \pgf@y=\@tempdimb
-        \advance\pgf@y by 1.5mm
+        \advance\pgf@y by \northportoffset
     }
     \anchor{south}{%
-        \southwest \@tempdima=\pgf@y \@tempdimb=\pgf@x
-        \northeast 
+        \northeast \@tempdimb=\pgf@x
+        \southwest \@tempdima=\pgf@y
         \pgfmathsetlength\pgf@x{(\pgf@x + \@tempdimb) / 2}
         \pgf@y=\@tempdima
-        \advance\pgf@y by -1.5mm
+        \advance\pgf@y by \southportoffset
     }
     \anchor{out}{%
         \northeast \@tempdimb=\pgf@x
         \southwest \@tempdima=\pgf@y
         \pgfmathsetlength\pgf@x{(\pgf@x + \@tempdimb) / 2}
         \pgf@y=\@tempdima
-        \advance\pgf@y by -1.5mm
+        \advance\pgf@y by \southportoffset
+    }
+    \anchor{east}{%
+        \southwest \@tempdima=\pgf@y
+        \northeast
+        \pgfmathsetlength\pgf@y{(\pgf@y + \@tempdima) / 2}
+        \advance\pgf@x by \eastportoffset
+    }
+    \anchor{west}{%
+        \northeast \@tempdima=\pgf@y
+        \southwest
+        \pgfmathsetlength\pgf@y{(\pgf@y + \@tempdima) / 2}
+        \advance\pgf@x by \westportoffset
     }
     \backgroundpath{%
         \southwest \pgf@xa=\pgf@x \pgf@ya=\pgf@y
@@ -150,11 +213,11 @@
         \pgf@yc=\pgf@yb
         % north
         \pgfpathmoveto{\pgfqpoint{\pgf@xc}{\pgf@yc}}
-        \pgfmathsetlength\@tempdima{(\functionwidth - \northportswidth)}
+        \ifnum\pgfkeysvalueof{/function/north port}>0
+        \pgfmathsetlength\@tempdima{(\functionwidth - \northportlength)}
         \advance\pgf@xc by .5\@tempdima
-        \advance\pgf@xc by .5\pgflinewidth
         \pgfpathlineto{\pgfqpoint{\pgf@xc}{\pgf@yc}}
-        \foreach \i in {1,...,\pgfkeysvalueof{/function/north ports}}{%
+        \foreach \i in {1,...,\pgfkeysvalueof{/function/north port}}{%
             \pgftransformshift{\pgfqpoint{\pgf@xc}{\pgf@yc}}
             \pgfpathlineto{\pgfqpoint{1mm}{\z@}}
             \pgfpathlineto{\pgfqpoint{1mm}{0.5mm}}
@@ -166,20 +229,41 @@
             \pgfpathlineto{\pgfqpoint{3mm}{\z@}}
             \pgfpathlineto{\pgfqpoint{4mm}{\z@}}
             \pgftransformreset
-            % \pgfpatharc{180}{360}{2mm}
             \global\advance\pgf@xc by 4mm
         }
+        \fi
         % east
-        \pgfpathlineto{\pgfqpoint{\pgf@xb}{\pgf@yb}}
+        \pgf@xc=\pgf@xb
+        \pgf@yc=\pgf@yb
+        \pgfpathlineto{\pgfqpoint{\pgf@xc}{\pgf@yc}}
+        \ifnum\pgfkeysvalueof{/function/east port}>0
+        \pgfmathsetlength\@tempdima{(\functionheight - \eastportlength)}
+        \advance\pgf@yc by -.5\@tempdima
+        \pgfpathlineto{\pgfqpoint{\pgf@xc}{\pgf@yc}}
+        \foreach \i in {1,...,\pgfkeysvalueof{/function/east port}}{%
+            \pgftransformshift{\pgfqpoint{\pgf@xc}{\pgf@yc}}
+            \pgfpathlineto{\pgfqpoint{\z@}{-1mm}}
+            \pgfpathlineto{\pgfqpoint{0.5mm}{-1mm}}
+            \pgfpathlineto{\pgfqpoint{1mm}{-0.5mm}}
+            \pgfpathlineto{\pgfqpoint{1.5mm}{-0.5mm}}
+            \pgfpathlineto{\pgfqpoint{1.5mm}{-3.5mm}}
+            \pgfpathlineto{\pgfqpoint{1mm}{-3.5mm}}
+            \pgfpathlineto{\pgfqpoint{0.5mm}{-3mm}}
+            \pgfpathlineto{\pgfqpoint{\z@}{-3mm}}
+            \pgfpathlineto{\pgfqpoint{\z@}{-4mm}}
+            \pgftransformreset
+            \global\advance\pgf@yc by -4mm
+        }
+        \fi
         % south
         \pgf@xc=\pgf@xb
         \pgf@yc=\pgf@ya
         \pgfpathlineto{\pgfqpoint{\pgf@xc}{\pgf@yc}}
-        \pgfmathsetlength\@tempdima{(\functionwidth - \southportswidth)}
+        \ifnum\pgfkeysvalueof{/function/south port}>0
+        \pgfmathsetlength\@tempdima{(\functionwidth - \southportlength)}
         \advance\pgf@xc by -.5\@tempdima
-        \advance\pgf@xc by -.5\pgflinewidth
         \pgfpathlineto{\pgfqpoint{\pgf@xc}{\pgf@yc}}
-        \foreach \i in {1,...,\pgfkeysvalueof{/function/south ports}}{%
+        \foreach \i in {1,...,\pgfkeysvalueof{/function/south port}}{%
             \pgftransformshift{\pgfqpoint{\pgf@xc}{\pgf@yc}}
             \pgfpathlineto{\pgfqpoint{-1mm}{\z@}}
             \pgfpathlineto{\pgfqpoint{-1mm}{-0.5mm}}
@@ -191,10 +275,32 @@
             \pgfpathlineto{\pgfqpoint{-3mm}{\z@}}
             \pgfpathlineto{\pgfqpoint{-4mm}{\z@}}
             \pgftransformreset
-            % \pgfpatharc{0}{180}{2mm}
             \global\advance\pgf@xc by -4mm
         }
-        \pgfpathlineto{\pgfqpoint{\pgf@xa}{\pgf@ya}}
+        \fi
+        % west
+        \pgf@xc=\pgf@xa
+        \pgf@yc=\pgf@ya
+        \pgfpathlineto{\pgfqpoint{\pgf@xc}{\pgf@yc}}
+        \ifnum\pgfkeysvalueof{/function/west port}>0
+        \pgfmathsetlength\@tempdima{(\functionheight - \westportlength)}
+        \advance\pgf@yc by .5\@tempdima
+        \pgfpathlineto{\pgfqpoint{\pgf@xc}{\pgf@yc}}
+        \foreach \i in {1,...,\pgfkeysvalueof{/function/west port}}{%
+            \pgftransformshift{\pgfqpoint{\pgf@xc}{\pgf@yc}}
+            \pgfpathlineto{\pgfqpoint{\z@}{1mm}}
+            \pgfpathlineto{\pgfqpoint{-0.5mm}{1mm}}
+            \pgfpathlineto{\pgfqpoint{-1mm}{0.5mm}}
+            \pgfpathlineto{\pgfqpoint{-1.5mm}{0.5mm}}
+            \pgfpathlineto{\pgfqpoint{-1.5mm}{3.5mm}}
+            \pgfpathlineto{\pgfqpoint{-1mm}{3.5mm}}
+            \pgfpathlineto{\pgfqpoint{-0.5mm}{3mm}}
+            \pgfpathlineto{\pgfqpoint{\z@}{3mm}}
+            \pgfpathlineto{\pgfqpoint{\z@}{4mm}}
+            \pgftransformreset
+            \global\advance\pgf@yc by 4mm
+        }
+        \fi
         \pgfpathclose
         \pgfusepath{stroke}
     }
