@@ -16,9 +16,15 @@
     text=defaultpencolor,
 }}
 
+\tikzset{element/.style={
+    font=\large,
+    inner sep=0.1\masterunit,
+}}
+
 \tikzset{collection element/.style={
     draw,
-    font=\large,
+    element,
+    inner sep=0,
     minimum height=\masterunit,
     minimum width=\masterunit,
 }}
@@ -33,9 +39,13 @@
 }}
 
 \tikzset{flow/.style={
-    -latex,
+    -{Triangle[fill=white, angle'=30]},
+    line width=0.75\defaultpenwidth,
+}}
+
+\tikzset{subflow/.style={
+    flow,
     line width=0.5\defaultpenwidth,
-    fill=defaultpencolor,
 }}
 
 \tikzset{elements between/.style={
