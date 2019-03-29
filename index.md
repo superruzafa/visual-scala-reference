@@ -4,3 +4,10 @@
 
 layout: home
 ---
+
+
+<ul>
+{% for function in site.functions %}
+  <li><a href="{{ function.permalink }}">{{ function.name }}</a></li>
+{% endfor %}
+</ul>
