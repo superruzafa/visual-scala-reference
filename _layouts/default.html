@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Lato" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    {% include header.html %}
+    <main class="main">
+        <div class="wrapper">
+            {{ content }}
+        </div>
+    </main>
+    {% include footer.html %}
+</body>
+</html>

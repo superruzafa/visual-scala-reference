@@ -1,7 +1,7 @@
 ---
 ---
 
-\matrix (A) [collection, xshift=0\masterunit, yshift=0.5\masterunit] {
+\matrix (A) [collection] {
     \node (a1) {$a_1$}; &
     \node (a2) {$a_2$}; &
     \elementsbetween &
@@ -20,20 +20,7 @@
 };
 
 \foreach \i in {1,2,i,n}{
-    \node (f) [function] at ($ (a\i)!.5!(b\i) $) {$f$};
+    \node (f) [function] at ($ (a\i)!.5!(b\i) $) {$\texttt{f}$};
     \draw [flow] (a\i) -- (f.in);
     \draw [flow] (f.out) -- (b\i);
 }
-
-% \node (_CA) [right=1 of A] {\texttt{Collection}};
-% \node (_CAT) [base right=of _CA] {\texttt{[A]}};
-
-% \node (_CB) [right=1 of B] {\texttt{Collection}};
-% \node (_CBT) [base right=of _CB] {\texttt{[B]}};
-
-% \node [align=center, font=\small, text width=3\masterunit]
-%     at ($ (_CA)!.5!(_CB) $)
-%     {\texttt{map} preserves the type of the container.\par
-%      However, it \textit{may} change the type of the contained elements};
-
-\blueprint{\texttt{map}}

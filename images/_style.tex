@@ -1,8 +1,7 @@
 \newlength{\defaultpenwidth}
 \setlength{\defaultpenwidth}{0.04\masterunit}
 
-\definecolor{blueprint}{RGB}{11, 97, 171}
-\definecolor{defaultpencolor}{RGB}{255, 255, 255}
+\definecolor{defaultpencolor}{RGB}{43, 43, 43}
 
 \tikzset{every path/.style={
     draw=defaultpencolor,
@@ -39,7 +38,7 @@
 }}
 
 \tikzset{flow/.style={
-    -{Triangle[fill=white, angle'=30]},
+    -{Triangle[fill=defaultpencolor, angle'=30]},
     line width=0.75\defaultpenwidth,
 }}
 
@@ -48,7 +47,7 @@
     line width=0.5\defaultpenwidth,
 }}
 
-\tikzset{elements between/.style={
+\tikzset{solid dashed solid/.style={
     decorate,
     decoration={
         show path construction,
@@ -56,15 +55,15 @@
             \draw
                 (\tikzinputsegmentfirst) -- ($ (\tikzinputsegmentfirst)!.10!(\tikzinputsegmentlast) $)
                 ($ (\tikzinputsegmentfirst)!.90!(\tikzinputsegmentlast) $) -- (\tikzinputsegmentlast);
-            \draw [dash pattern=on .1\masterunit off .1\masterunit]
+            \draw [tips=false, dash pattern=on .1\masterunit off .1\masterunit]
                 ($ (\tikzinputsegmentfirst)!.10!(\tikzinputsegmentlast) $) -- ($ (\tikzinputsegmentfirst)!.90!(\tikzinputsegmentlast) $);
         }
-    }
+    },
 }}
 
 \newcommand{\elementsbetween}{%
     \node (_eb) [draw=none, minimum width=1.5\masterunit] {};
-    \draw [elements between]
+    \draw [solid dashed solid]
         (_eb.north west) to (_eb.north east)
         (_eb.south west) to (_eb.south east);
 }
@@ -76,17 +75,10 @@
     line width=.5\defaultpenwidth,
 }}
 
-\newcommand{\blueprint}[1]{
-    \begin{scope}[on background layer]
-        \coordinate (_a) at ($ (current bounding box.south west) + (-1, -1) $);
-        \coordinate (_b) at ($ (current bounding box.north east) + (1, 1) $);
-        \coordinate (_c) at ($ (current bounding box.north west) + (-1, 1) $);
-        \fill [blueprint] ($ (_a) + (-0.5, -0.5) $) rectangle ($ (_b) + (0.5, 1) $);
-        \draw [blueprint!95!white, very thin, step=0.1] (_a) grid (_b);
-        \draw [blueprint!90!white, thin, step=0.5] (_a) grid (_b);
-        \draw [blueprint!80!white, semithick, step=1] (_a) grid (_b);
-        \draw [blueprint!50!white, thick] (_a) rectangle (_b);
-        \node (_d) [text=blueprint, anchor=south east, font=\Large] at (_c) {\texttt{j}};
-        \node [base right=0 of _d, font=\Large] {#1};
-    \end{scope}
+\newcommand{\drawbg}{
+     \begin{scope}[on background layer]
+         \coordinate (_a) at ($ (current bounding box.south west) + (-.5, -.5) $);
+         \coordinate (_b) at ($ (current bounding box.north east) + (.5, .5) $);
+         \fill [white] (_a) rectangle (_b);
+     \end{scope}
 }

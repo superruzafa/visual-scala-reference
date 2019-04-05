@@ -1,5 +1,6 @@
 version: '3.6'
 services:
   site:
+    command: ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0", "--incremental"]
     volumes:
       - .:/site
