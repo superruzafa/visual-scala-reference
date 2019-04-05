@@ -1,0 +1,35 @@
+---
+---
+
+\tikzset{every function node/.style={
+    inner xsep=.1\masterunit,
+    /function/.cd,
+    east port=1,
+    north port=1,
+    south port=0,
+    west port=1,
+}}
+
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \elementsbetween &
+    \node (ai) {$a_i$}; &
+    \elementsbetween &
+    \node (an-1) {$a_{n-1}$}; &
+    \node (an) {$a_n$}; \\
+};
+
+\node (z) [element, right=.5 of A] {\texttt{z}};
+
+\foreach \i in {n,n-1,i,1}{
+    \node (f\i) [function, below=1 of a\i] {\texttt{op}};
+    \draw [flow] (a\i) -- (f\i.north);
+}
+
+\node (b) [element, left=.5 of f1] {$b$};
+
+\draw [flow] (z) |- (fn.east);
+\draw [flow] (fn.west) -- (fn-1.east);
+\draw [solid dashed solid, flow] (fn-1.west) -- (fi.east);
+\draw [solid dashed solid, flow] (fi.west) -- (f1.east);
+\draw [flow] (f1.west) -- (b);

@@ -37,6 +37,21 @@
     row sep=-0.5\defaultpenwidth,
 }}
 
+\tikzset{empty collection/.style={
+    decorate,
+    decoration={
+        amplitude=0.025\masterunit,
+        angle=45,
+        border,
+        segment length=0.05\masterunit,
+    },
+    draw,
+    line width=0.01\masterunit,
+    minimum height=\masterunit,
+    minimum width=0.3\masterunit,
+    node contents={}
+}}
+
 \tikzset{flow/.style={
     -{Triangle[fill=defaultpencolor, angle'=30]},
     line width=0.75\defaultpenwidth,
