@@ -84,14 +84,22 @@ $master-space: 1.2rem;
   }
 }
 
-.main h1 {
-  font-size: 1.5rem;
-  line-height: 1em;
-  margin: 1.2em 0;
-  code {
-    background: none;
-    border: none;
-    padding: 0;
+main {
+  h1 {
+    font-size: 1.5rem;
+    line-height: 1em;
+    margin: 1.2em 0;
+    code {
+      background: none;
+      border: none;
+      padding: 0;
+    }
+  }
+
+  &.home-page {
+    li {
+      display: inline;
+    }
   }
 }
 

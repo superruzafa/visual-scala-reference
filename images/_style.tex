@@ -20,6 +20,11 @@
     inner sep=0.1\masterunit,
 }}
 
+\tikzset{subelement/.style={
+    font=\small,
+    inner sep=0.1\masterunit,
+}}
+
 \tikzset{collection element/.style={
     draw,
     element,
@@ -50,6 +55,21 @@
     minimum height=\masterunit,
     minimum width=0.3\masterunit,
     node contents={}
+}}
+
+\tikzset{tuple of collections/.style={
+    collection,
+    inner sep=.25\masterunit,
+    left delimiter=(,
+    right delimiter=),
+}}
+
+\tikzset{tuple separator/.style={
+    draw=none,
+    minimum width=0,
+    text height=\masterunit,
+    font=\Huge,
+    node contents={\,,\,\,},
 }}
 
 \tikzset{flow/.style={
