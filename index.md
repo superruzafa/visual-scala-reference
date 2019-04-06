@@ -3,8 +3,8 @@ layout: home
 ---
 
 
-<ul>
+<ul class="function-list">
 {% for function in site.functions %}
-  <li><a href="{{ function.permalink }}">{{ function.title }}</a></li>
+  <li class="function-listitem"><a href="{{ function.permalink }}">{{ function.title }}</a></li>
 {% endfor %}
 </ul>

@@ -1,6 +1,6 @@
 ---
 title: foldRight
-layout: default
+layout: function
 permalink: /foldRight
 ---
 

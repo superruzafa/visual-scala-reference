@@ -13,7 +13,7 @@ $gruvbox-purple: #8f3f71;
 $gruvbox-red: #9d0006;
 $gruvbox-yellow: #b57614;
 
-$linkColor: #20c0c5;
+$linkColor: #309fd4;
 
 $master-space: 1.2rem;
 
@@ -46,9 +46,23 @@ $master-space: 1.2rem;
 .header {
   color: #fff;
   background: #c52025;
+  box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+  overflow: auto;
 
-  a:link, a:visited {
-    color: #fff;
+  .logo {
+    background: url(logo.svg) no-repeat center left;
+    float: left;
+    font-size: 1rem;
+    line-height: 60px;
+    padding-right: 276px;
+    text-indent: -1000em;
+    a:link, a:visited {
+      color: #fff;
+    }
+  }
+
+  .wrapper {
+    position: relative;
   }
 }
 
@@ -84,22 +98,33 @@ $master-space: 1.2rem;
   }
 }
 
-main {
-  h1 {
-    font-size: 1.5rem;
-    line-height: 1em;
-    margin: 1.2em 0;
-    code {
-      background: none;
-      border: none;
-      padding: 0;
+.home-page {
+  .function-list {
+    column-count: 4;
+    list-style: none;
+    .function-listitem {
+      font-size: 0.9rem;
+      line-height: 1.5 * $master-space;
     }
   }
+}
 
-  &.home-page {
-    li {
-      display: inline;
-    }
+.searchbox {
+  left: 276px + 20px + 20px;
+  position: absolute;
+  right: 20px;
+
+  .searchbox-input {
+    background: rgba(255, 255, 255, .5);
+    border: none;
+    border-radius: 2px;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: inherit;
+    line-height: 1.2rem;
+    padding: 4px;
+    margin: calc(30px - 4px - 0.6rem) 0;
+    width: 100%
   }
 }
 
@@ -139,6 +164,19 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
+}
+
+main {
+  h1 {
+    font-size: 1.5rem;
+    line-height: 1em;
+    margin: 1.2em 0;
+    code {
+      background: none;
+      border: none;
+      padding: 0;
+    }
+  }
 }
 
 p {

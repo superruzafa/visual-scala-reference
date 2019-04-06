@@ -1,6 +1,6 @@
 ---
 title: map
-layout: default
+layout: function
 permalink: /map
 ---
 
