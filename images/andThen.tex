@@ -1,0 +1,31 @@
+---
+---
+
+\node (f) [function] {$f$};
+\node (g) [function, right=.5 of f] {\texttt{g}};
+
+\node (x) [subelement, above=.5 of f.north] {$x$};
+\node (y) [subelement, below=.5 of f.south] {$y$};
+\draw [subflow] (x) -- (f.north);
+\draw [subflow] (f.south) -- (y);
+
+\node (y') [subelement, above=.5 of g.north] {$y\prime$};
+\node (z) [subelement, below=.5 of g.south] {$z$};
+\draw [subflow] (y') -- (g.north);
+\draw [subflow] (g.south) -- (z);
+
+\node (f2) [function, right=2 of g, anchor=south] {$f$};
+\node (g2) [function, below=of f2, anchor=north] {\texttt{g}};
+\coordinate (n) at ($ (f2)!.5!(g2) $);
+
+\node (gof) [function, minimum height=2.5\masterunit, minimum width=1.3\masterunit] at (f2.south) {};
+
+\node (x') [subelement, above=.5 of gof.north] {$x$};
+\node (z') [subelement, below=.5 of gof.south] {$z$};
+
+\draw [subflow] (x') -- (f2.north);
+\draw [subflow] (g2.south) -- (z');
+
+\coordinate (m) at ($ (g)!.5!(n) + (-.15, 0) $);
+
+\node at (m) [big arrow];

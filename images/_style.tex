@@ -105,9 +105,26 @@
 
 \tikzset{function/.style={
     shape=function,
+    line width=.75\defaultpenwidth,
+    minimum width=.75\masterunit,
+    minimum height=.75\masterunit,
+}}
+
+\tikzset{subfunction/.style={
+    shape=function,
     inner xsep=.15\masterunit,
     inner ysep=.2\masterunit,
     line width=.5\defaultpenwidth,
+}}
+
+\tikzset{big arrow/.style={
+  draw,
+  single arrow,
+  single arrow tip angle=60,
+  single arrow head extend=.02\masterunit,
+  minimum width=.3\masterunit,
+  minimum height=.4\masterunit,
+  node contents={},
 }}
 
 \newcommand{\drawbg}{
