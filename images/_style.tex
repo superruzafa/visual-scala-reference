@@ -72,35 +72,62 @@
     node contents={\,,\,\,},
 }}
 
+\tikzset{flow width/.style={
+    line width=0.75\defaultpenwidth,
+}}
+
 \tikzset{flow/.style={
     -{Triangle[fill=defaultpencolor, angle'=30]},
-    line width=0.75\defaultpenwidth,
+    flow width,
+}}
+
+\tikzset{subflow width/.style={
+    line width=0.5\defaultpenwidth,
 }}
 
 \tikzset{subflow/.style={
     flow,
-    line width=0.5\defaultpenwidth,
+    subflow width,
 }}
 
-\tikzset{solid dashed solid/.style={
-    decorate,
-    decoration={
-        show path construction,
-        lineto code={
-            \draw
-                (\tikzinputsegmentfirst) -- ($ (\tikzinputsegmentfirst)!.10!(\tikzinputsegmentlast) $)
-                ($ (\tikzinputsegmentfirst)!.90!(\tikzinputsegmentlast) $) -- (\tikzinputsegmentlast);
-            \draw [tips=false, dash pattern=on .1\masterunit off .1\masterunit]
-                ($ (\tikzinputsegmentfirst)!.10!(\tikzinputsegmentlast) $) -- ($ (\tikzinputsegmentfirst)!.90!(\tikzinputsegmentlast) $);
-        }
-    },
-}}
+\newcommand{\elementsbefore}{
+    \node (_eb) [draw=none, minimum width=.75\masterunit] {};
+    \coordinate (_eb1) at ($ (_eb.north east) + (-.15, 0) $);
+    \coordinate (_eb2) at ($ (_eb.south east) + (-.15, 0) $);
+    \draw
+        (_eb.north east) -- (_eb1)
+        (_eb.south east) -- (_eb2);
+    \draw [dashed]
+        (_eb1) -- (_eb.north west)
+        (_eb2) -- (_eb.south west);
+}
 
 \newcommand{\elementsbetween}{%
     \node (_eb) [draw=none, minimum width=1.5\masterunit] {};
-    \draw [solid dashed solid]
-        (_eb.north west) to (_eb.north east)
-        (_eb.south west) to (_eb.south east);
+    \coordinate (_ea1) at ($ (_eb.north west) + (.15, 0) $);
+    \coordinate (_eb1) at ($ (_eb.north east) + (-.15, 0) $);
+    \coordinate (_ea2) at ($ (_eb.south west) + (.15, 0) $);
+    \coordinate (_eb2) at ($ (_eb.south east) + (-.15, 0) $);
+    \draw
+        (_eb.north west) -- (_ea1)
+        (_eb1) -- (_eb.north east)
+        (_eb.south west) -- (_ea2)
+        (_eb2) -- (_eb.south east);
+    \draw [dashed]
+        (_ea1) -- (_eb1)
+        (_ea2) -- (_eb2);
+}
+
+\newcommand{\elementsafter}{
+    \node (_ea) [draw=none, minimum width=.75\masterunit] {};
+    \coordinate (_ea1) at ($ (_ea.north west) + (.15, 0) $);
+    \coordinate (_ea2) at ($ (_ea.south west) + (.15, 0) $);
+    \draw
+        (_ea.north west) -- (_ea1)
+        (_ea.south west) -- (_ea2);
+    \draw [dashed]
+        (_ea1) -- (_ea.north east)
+        (_ea2) -- (_ea.south east);
 }
 
 \tikzset{function/.style={
@@ -116,6 +143,52 @@
     inner ysep=.2\masterunit,
     line width=.5\defaultpenwidth,
 }}
+
+\tikzset{normal brace/.style={
+    decorate,
+    decoration={
+        brace,
+        amplitude=.2\masterunit,
+        raise=.2\masterunit,
+    }
+}}
+
+\tikzset{inverse brace/.style={
+    normal brace,
+    decoration={
+        mirror,
+    }
+}}
+
+\newcommand\normalbrace[2]{
+    \draw [normal brace] (#1) -- (#2);
+    \coordinate (bracepoint) at ($ (#1)!.5!(#2) + (0, .4) $);
+}
+
+\newcommand\inversebrace[2]{
+    \draw [line width=\pgflinewidth, inverse brace] (#1) -- (#2);
+    \coordinate (bracepoint) at ($ (#1)!.5!(#2) + (0, -.4) $);
+}
+
+\tikzset{measure width/.style={
+    line width=0.02\masterunit,
+}}
+
+\tikzset{measure/.style={
+    measure width,
+    -{Triangle[angle'=30]},
+}}
+
+\newcommand\topmeasure[3]{
+    \draw [measure width]
+        (#2) -- ++(0, .6)
+        (#3) -- ++(0, .6);
+    \coordinate (_m1) at ($ (#2) + (0, .5) $);
+    \coordinate (_m2) at ($ (#3) + (0, .5) $);
+    \node [outer sep=.1\masterunit] (_mn) at ($ (_m1)!.5!(_m2) $) {#1};
+    \draw [measure] (_mn) -- (_m1);
+    \draw [measure] (_mn) -- (_m2);
+}
 
 \tikzset{big arrow/.style={
   draw,
