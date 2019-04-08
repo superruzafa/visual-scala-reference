@@ -29,7 +29,7 @@
 };
 
 \foreach \i/\r in {1/true,2/false,3/true,i-1/true,i/false,n-1/true,n/false}{
-    \node (f) [function, above=.5 of a\i] {\texttt{p}};
+    \node (f) [subfunction, above=.5 of a\i] {\texttt{p}};
     \node (r) [subelement, above=.5 of f] {\texttt{\r}};
     \draw [subflow] (a\i) -- (f.south);
     \draw [subflow] (f.north) -- (r);

@@ -20,7 +20,7 @@
 };
 
 \foreach \i in {1,2,i,n}{
-    \node (f) [function] at ($ (a\i)!.5!(b\i) $) {$\texttt{f}$};
+    \node (f) [subfunction] at ($ (a\i)!.5!(b\i) $) {$\texttt{f}$};
     \draw [flow] (a\i) -- (f.in);
     \draw [flow] (f.out) -- (b\i);
 }

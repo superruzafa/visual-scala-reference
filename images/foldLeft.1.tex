@@ -22,7 +22,7 @@
 \node (z) [element, left=.5 of A] {\texttt{z}};
 
 \foreach \i in {1,2,i,n}{
-    \node (f\i) [function, below=1 of a\i] {\texttt{op}};
+    \node (f\i) [subfunction, below=1 of a\i] {\texttt{op}};
     \draw [flow] (a\i) -- (f\i.north);
 }
 
