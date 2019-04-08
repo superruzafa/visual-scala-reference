@@ -18,10 +18,10 @@
 \node (g2) [function, below=of f2, anchor=north] {\texttt{g}};
 \coordinate (n) at ($ (f2)!.5!(g2) $);
 
-\node (gof) [function, minimum height=2.5\masterunit, minimum width=1.3\masterunit] at (f2.south) {};
+\node (fog) [function, minimum height=2.5\masterunit, minimum width=1.3\masterunit] at (f2.south) {};
 
-\node (x') [subelement, above=.5 of gof.north] {$x$};
-\node (z') [subelement, below=.5 of gof.south] {$z$};
+\node (x') [subelement, above=.5 of fog.north] {$x$};
+\node (z') [subelement, below=.5 of fog.south] {$z$};
 
 \draw [subflow] (x') -- (f2.north);
 \draw [subflow] (g2.south) -- (z');
