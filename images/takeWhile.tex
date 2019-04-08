@@ -1,0 +1,32 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \elementsbetween &
+    \node (ai) {$a_i$}; &
+    \node (ai+1) {$a_{i+1}$}; &
+    \elementsafter \\
+};
+
+\matrix (B) [collection, below=3 of A.south west, anchor=north west] {
+    \node (b1) {$a_1$}; &
+    \node (b2) {$a_2$}; &
+    \elementsbetween &
+    \node (bi) {$a_i$}; \\
+};
+
+\foreach \i/\r in {1/true,2/true,i/true,i+1/false}{
+    \node (f) [subfunction, above=.5 of a\i] {\texttt{p}};
+    \node (r) [subelement, above=.5 of f] {\texttt{\r}};
+    \draw [subflow] (a\i) -- (f.south);
+    \draw [subflow] (f.north) -- (r);
+}
+
+\begin{scope}[every path/.style={flow width}]
+\inversebrace{a1.south west}{ai.south east}
+\coordinate (s) at (bracepoint);
+\normalbrace{B.north west}{B.north east}
+\end{scope}
+\draw [flow] (s) -- (bracepoint);
