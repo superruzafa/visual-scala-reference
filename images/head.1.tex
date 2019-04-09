@@ -1,0 +1,11 @@
+---
+---
+
+\matrix [collection] {
+    \node (a1) {$a_1$}; &
+    \node {$a_2$}; &
+    \elementsafter \\
+};
+
+\node (b) [element, below=2 of a1] {$a_1$};
+\draw [flow] (a1) -- (b);

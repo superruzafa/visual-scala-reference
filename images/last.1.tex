@@ -1,0 +1,11 @@
+---
+---
+
+\matrix [collection] {
+    \elementsbefore &
+    \node {$a_{n-1}$}; &
+    \node (an) {$a_n$}; \\
+};
+
+\node (b) [element, below=2 of an] {$a_n$};
+\draw [flow] (an) -- (b);

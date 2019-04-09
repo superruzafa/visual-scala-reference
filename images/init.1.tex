@@ -1,0 +1,26 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \elementsbetween &
+    \node (ai) {$a_i$}; &
+    \elementsbetween &
+    \node (an-1) {$a_{n-1}$}; &
+    \node (an) {$a_n$}; \\
+};
+
+\matrix (B) [collection, below=3 of A.south west, anchor=north west] {
+    \node {$a_1$}; &
+    \elementsbetween &
+    \node {$a_i$}; &
+    \elementsbetween &
+    \node {$a_{n-1}$}; \\
+};
+
+\begin{scope}[every path/.style={flow width}]
+\inversebrace{a1.south west}{an-1.south east}
+\coordinate (s) at (bracepoint);
+\normalbrace{B.north west}{B.north east}
+\end{scope}
+\draw [flow] (s) -- (bracepoint);

@@ -72,6 +72,45 @@
     node contents={\,,\,\,},
 }}
 
+\tikzset{option/.style={
+    draw,
+    inner sep=0.1\masterunit
+}}
+
+\tikzset{some/.style={
+    element,
+    option,
+    rectangle split,
+    rectangle split parts=2,
+    rectangle split draw splits=false,
+    node contents=\some{#1}
+}}
+
+\tikzset{none/.style={
+    option,
+    node contents={\none}
+}}
+
+\newcommand\some[1]{
+    \footnotesize{Some} \nodepart{two} #1
+}
+\newcommand\none{
+    \footnotesize{None}
+}
+
+\tikzset{exception/.style={
+    draw,
+    line width=.02\masterunit,
+    decorate,
+    decoration={
+        zigzag,
+        segment length=0.1\masterunit,
+        amplitude=0.0125\masterunit,
+    },
+    inner sep=.1\masterunit,
+    node contents=#1
+}}
+
 \tikzset{flow width/.style={
     line width=0.75\defaultpenwidth,
 }}
