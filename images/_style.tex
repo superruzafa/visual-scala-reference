@@ -5,7 +5,6 @@
 
 \tikzset{every path/.style={
     draw=defaultpencolor,
-    line width=\defaultpenwidth,
 }}
 
 \tikzset{every node/.style={
@@ -25,7 +24,12 @@
     inner sep=0.1\masterunit,
 }}
 
+\tikzset{collection element line width/.style={
+    line width=\defaultpenwidth,
+}}
+
 \tikzset{collection element/.style={
+    collection element line width,
     draw,
     element,
     inner sep=0,
@@ -51,7 +55,7 @@
         segment length=0.05\masterunit,
     },
     draw,
-    line width=0.01\masterunit,
+    line width=.3\defaultpenwidth,
     minimum height=\masterunit,
     minimum width=0.3\masterunit,
     node contents={}
@@ -74,6 +78,7 @@
 
 \tikzset{option/.style={
     draw,
+    line width=0.75\defaultpenwidth,
     inner sep=0.1\masterunit
 }}
 
@@ -129,44 +134,67 @@
     subflow width,
 }}
 
+\tikzset{solid dashed solid/.style={
+    /utils/exec=\csname tikz@options\endcsname,
+    decorate,
+    decoration={
+        show path construction,
+        lineto code={
+            \path [tips=false] coordinate (_a) at ($ (\tikzinputsegmentfirst)!.15!(\tikzinputsegmentlast) $);
+            \path [tips=false] coordinate (_b) at ($ (\tikzinputsegmentfirst)!.85!(\tikzinputsegmentlast) $);
+            \draw [tips=false, solid] (\tikzinputsegmentfirst) -- (_a);
+            \draw [tips=false, dashed] (_a) -- (_b);
+            \draw [solid] (_b) -- (\tikzinputsegmentlast);
+        }
+    },
+}}
+
+\tikzset{solid dashed/.style={
+    /utils/exec=\csname tikz@options\endcsname,
+    decorate,
+    decoration={
+        show path construction,
+        lineto code={
+            \path [tips=false] coordinate (_a) at ($ (\tikzinputsegmentfirst)!.4!(\tikzinputsegmentlast) $);
+            \draw [tips=false, solid] (\tikzinputsegmentfirst) -- (_a);
+            \draw [dashed] (_a) -- (\tikzinputsegmentlast);
+        }
+    },
+}}
+
+\tikzset{dashed solid/.style={
+    /utils/exec=\csname tikz@options\endcsname,
+    decorate,
+    decoration={
+        show path construction,
+        lineto code={
+            \path [tips=false] coordinate (_a) at ($ (\tikzinputsegmentfirst)!.6!(\tikzinputsegmentlast) $);
+            \draw [tips=false, dashed] (\tikzinputsegmentfirst) -- (_a);
+            \draw [solid] (_a) -- (\tikzinputsegmentlast);
+        }
+    },
+}}
+
+
 \newcommand{\elementsbefore}{
-    \node (_eb) [draw=none, minimum width=.75\masterunit] {};
-    \coordinate (_eb1) at ($ (_eb.north east) + (-.15, 0) $);
-    \coordinate (_eb2) at ($ (_eb.south east) + (-.15, 0) $);
-    \draw
-        (_eb.north east) -- (_eb1)
-        (_eb.south east) -- (_eb2);
-    \draw [dashed]
-        (_eb1) -- (_eb.north west)
-        (_eb2) -- (_eb.south west);
+    \node (_e) [draw=none, minimum width=.75\masterunit] {};
+    \draw [collection element line width, dashed solid]
+        (_e.north west) -- (_e.north east)
+        (_e.south west) -- (_e.south east);
 }
 
 \newcommand{\elementsbetween}{%
-    \node (_eb) [draw=none, minimum width=1.5\masterunit] {};
-    \coordinate (_ea1) at ($ (_eb.north west) + (.15, 0) $);
-    \coordinate (_eb1) at ($ (_eb.north east) + (-.15, 0) $);
-    \coordinate (_ea2) at ($ (_eb.south west) + (.15, 0) $);
-    \coordinate (_eb2) at ($ (_eb.south east) + (-.15, 0) $);
-    \draw
-        (_eb.north west) -- (_ea1)
-        (_eb1) -- (_eb.north east)
-        (_eb.south west) -- (_ea2)
-        (_eb2) -- (_eb.south east);
-    \draw [dashed]
-        (_ea1) -- (_eb1)
-        (_ea2) -- (_eb2);
+    \node (_e) [draw=none, minimum width=1.5\masterunit] {};
+    \draw [collection element line width, solid dashed solid]
+        (_e.north west) -- (_e.north east)
+        (_e.south west) -- (_e.south east);
 }
 
 \newcommand{\elementsafter}{
-    \node (_ea) [draw=none, minimum width=.75\masterunit] {};
-    \coordinate (_ea1) at ($ (_ea.north west) + (.15, 0) $);
-    \coordinate (_ea2) at ($ (_ea.south west) + (.15, 0) $);
-    \draw
-        (_ea.north west) -- (_ea1)
-        (_ea.south west) -- (_ea2);
-    \draw [dashed]
-        (_ea1) -- (_ea.north east)
-        (_ea2) -- (_ea.south east);
+    \node (_e) [draw=none, minimum width=.75\masterunit] {};
+    \draw [collection element line width, solid dashed]
+        (_e.north west) -- (_e.north east)
+        (_e.south west) -- (_e.south east);
 }
 
 \tikzset{function/.style={
@@ -231,12 +259,13 @@
 
 \tikzset{big arrow/.style={
   draw,
+  line width=\defaultpenwidth,
+  minimum height=.4\masterunit,
+  minimum width=.3\masterunit,
+  node contents={},
   single arrow,
   single arrow tip angle=60,
   single arrow head extend=.02\masterunit,
-  minimum width=.3\masterunit,
-  minimum height=.4\masterunit,
-  node contents={},
 }}
 
 \newcommand{\drawbg}{

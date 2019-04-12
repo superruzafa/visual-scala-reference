@@ -4,9 +4,9 @@
 \tikzset{every function node/.style={
     inner xsep=.1\masterunit,
     /function/.cd,
+    west port=1,
     north port=2,
     south port=0,
-    west port=1,
 }}
 
 \matrix (A) [collection] {
@@ -18,22 +18,22 @@
     \node (an) {$a_n$}; \\
 };
 
-\node (z) [element, right=.5 of A] {\texttt{z}};
-
-\foreach \i in {n,n-1,i,1}{
+\foreach \i in {n-1,i,1}{
     \node (f\i) [subfunction, below=1 of a\i, anchor=north param 1] {\texttt{op}};
     \draw [flow] (a\i) -- (f\i.north param 1);
 }
 
 \node (b) [element, left=.5 of f1] {$b$};
 
-\draw [flow] (fn.west param 1) -- ($ (fn.east)!.5!(fn-1.west) $) -- ++(0, .75) coordinate (flowy) -| (fn-1.north param 2);
-\draw [flow width] (fn-1.west param 1) -| ++(-.25, .75) coordinate (last);
-\draw [flow width, solid dashed solid] (last) -- (last -| fi.north param 2) coordinate (last);
+\draw [flow width] (fn-1.west param 1) -| ++(-.25, 0.75) coordinate (flowy);
+\draw [flow width, solid dashed solid] (flowy) -- (flowy -| fi.north param 2) coordinate (last);
 \draw [flow] (last) -- (fi.north param 2);
-\draw [flow width] (fi.west param 1) -| ++(-.25, .75) coordinate (last);
+
+\draw [flow width] (fi.west param 1) -| ++(-.25, 0.75) coordinate (last);
 \draw [flow width, solid dashed solid] (last) -- (last -| f1.north param 2) coordinate (last);
 \draw [flow] (last) -- (f1.north param 2);
 
-\draw [flow] (z) -- (z |- flowy) -| (fn.north param 2);
+
+\draw [flow] (an.south) |- (flowy -| fn-1.north param 2) -- (fn-1.north param 2);
+
 \draw [flow] (f1.west param 1) -- (b);
