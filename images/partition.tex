@@ -35,12 +35,6 @@
     \draw [subflow] (f.north) -- (r);
 }
 
-\tikzset{bridge flow/.pic={
-    \fill [white] circle [radius=.09\masterunit];
-    % \draw [flow, -, color=gray, draw opacity=.25] (-.1\masterunit, 0) arc [start angle=180, end angle=360, x radius=.1\masterunit, y radius=.05\masterunit];
-    \draw [flow, -] (-.1\masterunit, 0) arc [start angle=180, end angle=0, radius=.1\masterunit];
-}}
-
 \draw [draw=none, name path=p1] (a1.south)   .. controls +(0, -1) and +(0, 1) .. (b1.north);
 \path [draw=none, name path=p2] (a2.south)   .. controls +(0, -2) and +(0, 1) .. (b2.north);
 \path [draw=none, name path=p3] (a3.south)   .. controls +(0, -1) and +(0, 1) .. (b3.north);

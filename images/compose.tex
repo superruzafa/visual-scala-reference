@@ -9,7 +9,7 @@
 
 \node (g) [function, right=.5 of f] {\texttt{g}};
 \node (z) [subelement, above=.5 of g.north] {$z$};
-\node (x') [subelement, below=.5 of g.south] {$x\prime$};
+\node (x') [subelement, below=.5 of g.south] {$x^\prime$};
 \draw [subflow] (z) -- (g.north);
 \draw [subflow] (g.south) -- (x');
 
@@ -19,7 +19,7 @@
 
 \node (gof) [function, minimum height=2.5\masterunit, minimum width=1.3\masterunit] at (g2.south) {};
 \node (z) [subelement, above=.5 of gof.north] {$z$};
-\node (y') [subelement, below=.5 of gof.south] {$y\prime$};
+\node (y') [subelement, below=.5 of gof.south] {$y^\prime$};
 \draw [subflow] (z) -- (g2.north);
 \draw [subflow] (f2.south) -- (y');
 

@@ -125,6 +125,12 @@
     flow width,
 }}
 
+\tikzset{bridge flow/.pic={
+    \fill [white] circle [radius=.09\masterunit];
+    % \draw [flow, -, color=gray, draw opacity=.25] (-.1\masterunit, 0) arc [start angle=180, end angle=360, x radius=.1\masterunit, y radius=.05\masterunit];
+    \draw [flow, -] (-.1\masterunit, 0) arc [start angle=180, end angle=0, radius=.1\masterunit];
+}}
+
 \tikzset{subflow width/.style={
     line width=0.5\defaultpenwidth,
 }}
@@ -209,6 +215,10 @@
     inner xsep=.15\masterunit,
     inner ysep=.2\masterunit,
     line width=.5\defaultpenwidth,
+}}
+
+\tikzset{partial function/.style={
+    dash pattern=on .3 off .6,
 }}
 
 \tikzset{normal brace/.style={
