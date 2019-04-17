@@ -1,0 +1,71 @@
+---
+---
+
+\tikzset{seqop/.style={
+    subfunction,
+    node contents={\texttt{seqop}},
+    font=\footnotesize,
+    /function/.cd,
+    north port=2,
+    south port=0,
+    /tikz/.cd,
+}}
+
+\tikzset{combop/.style={
+    subfunction,
+    node contents={\texttt{combop}},
+    font=\footnotesize,
+    /function/.cd,
+    north port=2,
+    south port=0,
+    /tikz/.cd,
+}}
+
+\matrix [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \elementsbetween &
+    \node (ai) {$a_i$}; &
+    \node (ai+1) {$a_{i+1}$}; &
+    \elementsbetween &
+    \node (an-1) {$a_{n-1}$}; &
+    \node (an) {$a_n$}; \\
+};
+
+\node (s1) [seqop, /function/east port=1, below=1 of a1.south, anchor=north param 2];
+\node (z1) [subelement, above=.5 of s1.north param 1] {\texttt{z}};
+\draw [flow] (z1) -- (s1.north param 1);
+\draw [flow] (a1) -- (s1.north param 2);
+
+\node (s2) [seqop, /function/east port=1, below=2 of a2.south, anchor=north param 2];
+\draw [flow] (a2) -- (s2.north param 2);
+\draw [flow] (s1.east param 1) .. controls +(.33, 0) and +(0, .33) .. (s2.north param 1);
+
+\node (si) [seqop, /function/west port=1, below=1 of ai.south east];
+\draw [flow] (ai.south) .. controls +(0, -.5) and +(0, .5) .. (si.north param 1);
+\draw [flow] (ai+1.south) .. controls +(0, -.5) and +(0, .5) .. (si.north param 2);
+
+
+\node (sn) [seqop, /function/west port=1, below=1 of an.south, anchor=north param 2];
+\node (z2) [subelement, above=.5 of sn.north param 1] {\texttt{z}};
+\draw [flow] (z2) -- (sn.north param 1);
+\draw [flow] (an) -- (sn.north param 2);
+
+\node (sn-1) [seqop, /function/west port=1, below=2 of an-1.south, anchor=north param 1];
+\draw [flow] (sn.west param 1) .. controls +(-.33, 0) and +(0, .33) .. (sn-1.north param 2);
+\draw [flow] (an-1) -- (sn-1.north param 1);
+
+\coordinate (x) at ($ (s2.east param 1)!.5!(si.west param 1) $);
+\coordinate (x2) at (s2.east param 1 -| x);
+
+\node (c1) at ($ (x2) + (0, -1) $) [combop, /function/east port=1];
+\draw [flow, dashed] (s2.east param 1) .. controls +(.5, 0) and +(0, .5) .. (c1.north param 1);
+\draw [flow, dashed] (si.west param 1) .. controls +(-.75, 0) and +(0, .75) .. (c1.north param 2);
+
+\coordinate (x) at ($ (c1.east param 1)!.5!(sn.west param 1) $);
+\coordinate (x2) at (c1.east param 1 -| x);
+\node (c2) at ($ (x2) + (0, -1) $) [combop, /function/south port=1];
+\draw [flow, dashed] (c1.east param 1) .. controls +(1.5, 0) and +(0, .5) .. (c2.north param 1);
+\draw [flow, dashed] (sn-1.west param 1) .. controls +(-1.5, 0) and +(0, .75) .. (c2.north param 2);
+\node (b) [element, below=.5 of c2.south] {$b$};
+\draw [flow] (c2.south param 1) -- (b);
