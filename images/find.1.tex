@@ -1,0 +1,27 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \elementsbetween &
+    \node (ai) {$a_i$}; &
+    \node (ai+1) {$a_{i+1}$}; &
+    \elementsafter \\
+};
+
+\foreach \i/\r in {1/false,2/false,i/true}{
+    \node (f) [subfunction, above=.5 of a\i] {\texttt{p}};
+    \node (r) [subelement, above=.5 of f] {\texttt{\r}};
+    \draw [subflow] (a\i) -- (f.south);
+    \draw [subflow] (f.north) -- (r);
+}
+
+\node (b) [some={$a_i$}, below=2 of ai];
+\draw [flow] (ai) -- (b);
+
+\begin{scope}[subflow, bend left=45]
+\draw ($ (a1.north) + (-1, 0) $) to (a1.north);
+\draw (a1.north) to (a2.north);
+\draw [dashed] (a2.north) to (ai.north);
+\end{scope}
