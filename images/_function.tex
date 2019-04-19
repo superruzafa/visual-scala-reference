@@ -8,14 +8,22 @@
     west io/.initial=0,
     io width/.initial=3mm,
     io sep/.initial=1mm,
-    north io width/.initial=\expandafter\pgfkeysvalueof{/function/io width},
-    north io sep/.initial=\expandafter\pgfkeysvalueof{/function/io sep},
-    south io width/.initial=\expandafter\pgfkeysvalueof{/function/io width},
-    south io sep/.initial=\expandafter\pgfkeysvalueof{/function/io sep},
-    east io height/.initial=\expandafter\pgfkeysvalueof{/function/io width},
-    east io sep/.initial=\expandafter\pgfkeysvalueof{/function/io sep},
-    west io height/.initial=\expandafter\pgfkeysvalueof{/function/io width},
-    west io sep/.initial=\expandafter\pgfkeysvalueof{/function/io sep},
+    north io width/.initial=3mm,
+    north io sep/.initial=3mm,
+    south io width/.initial=3mm,
+    south io sep/.initial=3mm,
+    east io width/.initial=3mm,
+    east io sep/.initial=3mm,
+    west io width/.initial=3mm,
+    west io sep/.initial=3mm,
+    % north io width/.initial=\expandafter\pgfkeysvalueof{/function/io width},
+    % north io sep/.initial=\expandafter\pgfkeysvalueof{/function/io sep},
+    % south io width/.initial=\expandafter\pgfkeysvalueof{/function/io width},
+    % south io sep/.initial=\expandafter\pgfkeysvalueof{/function/io sep},
+    % east io width/.initial=\expandafter\pgfkeysvalueof{/function/io width},
+    % east io sep/.initial=\expandafter\pgfkeysvalueof{/function/io sep},
+    % west io width/.initial=\expandafter\pgfkeysvalueof{/function/io width},
+    % west io sep/.initial=\expandafter\pgfkeysvalueof{/function/io sep},
 }
 
 \def\port#1{
@@ -68,12 +76,12 @@
         % is height < min height?
         \setlength\pgf@ya{\pgfshapeminheight}
         \ifdim\pgf@y<\pgf@ya \pgf@y=\pgf@ya \fi
-        % is height < east io height
-        \pgfmathsetlength\@tempdima{\pgfkeysvalueof{/function/east io height} + \pgfkeysvalueof{/function/east io sep}}
+        % is height < east io width
+        \pgfmathsetlength\@tempdima{\pgfkeysvalueof{/function/east io width} + \pgfkeysvalueof{/function/east io sep}}
         \pgfmathsetlength\pgf@ya{\pgfkeysvalueof{/function/east io} * \@tempdima}
         \ifdim\pgf@y<\pgf@ya \pgf@y=\pgf@ya \fi
-        % is height < west io height
-        \pgfmathsetlength\@tempdima{\pgfkeysvalueof{/function/west io height} + \pgfkeysvalueof{/function/west io sep}}
+        % is height < west io width
+        \pgfmathsetlength\@tempdima{\pgfkeysvalueof{/function/west io width} + \pgfkeysvalueof{/function/west io sep}}
         \pgfmathsetlength\pgf@ya{\pgfkeysvalueof{/function/west io} * \@tempdima}
         \ifdim\pgf@y<\pgf@ya \pgf@y=\pgf@ya \fi
         % + outer sep
@@ -115,12 +123,12 @@
         % is height < min height?
         \setlength\pgf@ya{\pgfshapeminheight}
         \ifdim\pgf@y<\pgf@ya \pgf@y=\pgf@ya \fi
-        % is height < east io height
-        \pgfmathsetlength\@tempdima{\pgfkeysvalueof{/function/east io height} + \pgfkeysvalueof{/function/east io sep}}
+        % is height < east io width
+        \pgfmathsetlength\@tempdima{\pgfkeysvalueof{/function/east io width} + \pgfkeysvalueof{/function/east io sep}}
         \pgfmathsetlength\pgf@ya{\pgfkeysvalueof{/function/east io} * \@tempdima}
         \ifdim\pgf@y<\pgf@ya \pgf@y=\pgf@ya \fi
-        % is height < west io height
-        \pgfmathsetlength\@tempdima{\pgfkeysvalueof{/function/west io height} + \pgfkeysvalueof{/function/west io sep}}
+        % is height < west io width
+        \pgfmathsetlength\@tempdima{\pgfkeysvalueof{/function/west io width} + \pgfkeysvalueof{/function/west io sep}}
         \pgfmathsetlength\pgf@ya{\pgfkeysvalueof{/function/west io} * \@tempdima}
         \ifdim\pgf@y<\pgf@ya \pgf@y=\pgf@ya \fi
         % + outer sep
@@ -161,12 +169,12 @@
         % is height < min height?
         \setlength\pgf@xa{\pgfshapeminheight}
         \ifdim\pgf@x<\pgf@xa \pgf@x=\pgf@xa \fi
-        % is height < east io height
-        \pgfmathsetlength\@tempdima{\pgfkeysvalueof{/function/east io height} + \pgfkeysvalueof{/function/east io sep}}
+        % is height < east io width
+        \pgfmathsetlength\@tempdima{\pgfkeysvalueof{/function/east io width} + \pgfkeysvalueof{/function/east io sep}}
         \pgfmathsetlength\pgf@xa{\pgfkeysvalueof{/function/east io} * \@tempdima}
         \ifdim\pgf@x<\pgf@xa \pgf@x=\pgf@xa \fi
-        % is height < west io height
-        \pgfmathsetlength\@tempdima{\pgfkeysvalueof{/function/west io height} + \pgfkeysvalueof{/function/west io sep}}
+        % is height < west io width
+        \pgfmathsetlength\@tempdima{\pgfkeysvalueof{/function/west io width} + \pgfkeysvalueof{/function/west io sep}}
         \pgfmathsetlength\pgf@xa{\pgfkeysvalueof{/function/west io} * \@tempdima}
         \ifdim\pgf@x<\pgf@xa \pgf@x=\pgf@xa \fi
     }
@@ -179,11 +187,11 @@
         \pgfmathsetlength\pgf@x{\pgfkeysvalueof{/function/south io} * \@tempdima}
     }
     \saveddimen\eastioswidth{%
-        \pgfmathsetlength\@tempdima{\pgfkeysvalueof{/function/east io height} + \pgfkeysvalueof{/function/east io sep}}
+        \pgfmathsetlength\@tempdima{\pgfkeysvalueof{/function/east io width} + \pgfkeysvalueof{/function/east io sep}}
         \pgfmathsetlength\pgf@x{\pgfkeysvalueof{/function/east io} * \@tempdima}
     }
     \saveddimen\westioswidth{%
-        \pgfmathsetlength\@tempdima{\pgfkeysvalueof{/function/west io height} + \pgfkeysvalueof{/function/west io sep}}
+        \pgfmathsetlength\@tempdima{\pgfkeysvalueof{/function/west io width} + \pgfkeysvalueof{/function/west io sep}}
         \pgfmathsetlength\pgf@x{\pgfkeysvalueof{/function/west io} * \@tempdima}
     }
     \saveddimen\northiosheight{%
@@ -201,6 +209,30 @@
     \saveddimen\westiosheight{%
         \pgf@x=\z@
         \ifnum\pgfkeysvalueof{/function/west io}>0 \advance\pgf@x by -1.5mm \fi
+    }
+    \saveddimen\northiowidth{
+        \pgf@x=\pgfkeysvalueof{/function/north io width}
+    }
+    \saveddimen\southiowidth{
+        \pgf@x=\pgfkeysvalueof{/function/south io width}
+    }
+    \saveddimen\eastiowidth{
+        \pgf@x=\pgfkeysvalueof{/function/east io width}
+    }
+    \saveddimen\westiowidth{
+        \pgf@x=\pgfkeysvalueof{/function/west io width}
+    }
+    \saveddimen\northiosep{
+        \pgf@x=\pgfkeysvalueof{/function/north io sep}
+    }
+    \saveddimen\southiosep{
+        \pgf@x=\pgfkeysvalueof{/function/south io sep}
+    }
+    \saveddimen\eastiosep{
+        \pgf@x=\pgfkeysvalueof{/function/east io sep}
+    }
+    \saveddimen\westiosep{
+        \pgf@x=\pgfkeysvalueof{/function/west io sep}
     }
     \anchor{center}{%
         \centerpoint
@@ -236,8 +268,8 @@
         \southwest \pgf@xa=\pgf@x
         \northeast \pgf@x=\pgf@xa
         \pgfmathsetlength\@tempdima{\functionwidth - \northioswidth}
-        \advance\pgf@x by .5\@tempdima % start of north params
-        \pgfmathsetlength\@tempdima{\pgfkeysvalueof{/function/north io sep} + \pgfkeysvalueof{/function/north io width}}
+        \advance\pgf@x by .5\@tempdima
+        \pgfmathsetlength\@tempdima{\northiosep + \northiowidth}
         \advance\pgf@x by .5\@tempdima
         \advance\pgf@y by \northiosheight
     }
@@ -245,8 +277,8 @@
         \southwest \pgf@xa=\pgf@x
         \northeast \pgf@x=\pgf@xa
         \pgfmathsetlength\@tempdima{\functionwidth - \northioswidth}
-        \advance\pgf@x by .5\@tempdima % start of north params
-        \pgfmathsetlength\@tempdima{\pgfkeysvalueof{/function/north io sep} + \pgfkeysvalueof{/function/north io width}}
+        \advance\pgf@x by .5\@tempdima
+        \pgfmathsetlength\@tempdima{\northiosep + \northiowidth}
         \advance\pgf@x by 1.5\@tempdima
         \advance\pgf@y by \northiosheight
     }
@@ -254,32 +286,32 @@
     \anchor{east io 1}{
         \northeast
         \pgfmathsetlength\@tempdima{\functionheight - \eastioswidth}
-        \advance\pgf@y by -.5\@tempdima % start of north params
-        \pgfmathsetlength\@tempdima{\pgfkeysvalueof{/function/east io sep} + \pgfkeysvalueof{/function/east io height}}
+        \advance\pgf@y by -.5\@tempdima
+        \pgfmathsetlength\@tempdima{\eastiosep + \eastiowidth}
         \advance\pgf@y by -.5\@tempdima
         \advance\pgf@x by \eastiosheight
     }
     \anchor{east io 2}{
         \northeast
         \pgfmathsetlength\@tempdima{\functionheight - \eastioswidth}
-        \advance\pgf@y by -.5\@tempdima % start of north params
-        \pgfmathsetlength\@tempdima{\pgfkeysvalueof{/function/east io sep} + \pgfkeysvalueof{/function/east io height}}
+        \advance\pgf@y by -.5\@tempdima
+        \pgfmathsetlength\@tempdima{\eastiosep + \eastiowidth}
         \advance\pgf@y by -1.5\@tempdima
         \advance\pgf@x by \eastiosheight
     }
     \anchor{south io 1}{
         \southwest
         \pgfmathsetlength\@tempdima{\functionwidth - \southioswidth}
-        \advance\pgf@x by .5\@tempdima % start of north params
-        \pgfmathsetlength\@tempdima{\pgfkeysvalueof{/function/east io sep} + \pgfkeysvalueof{/function/east io height}}
+        \advance\pgf@x by .5\@tempdima
+        \pgfmathsetlength\@tempdima{\southiosep + \southiowidth}
         \advance\pgf@x by .5\@tempdima
         \advance\pgf@y by \southiosheight
     }
     \anchor{south io 2}{
         \southwest
         \pgfmathsetlength\@tempdima{\functionwidth - \southioswidth}
-        \advance\pgf@x by .5\@tempdima % start of north params
-        \pgfmathsetlength\@tempdima{\pgfkeysvalueof{/function/east io sep} + \pgfkeysvalueof{/function/east io height}}
+        \advance\pgf@x by .5\@tempdima
+        \pgfmathsetlength\@tempdima{\southiosep + \southiowidth}
         \advance\pgf@x by 1.5\@tempdima
         \advance\pgf@y by \southiosheight
     }
@@ -287,8 +319,8 @@
         \southwest \pgf@xa=\pgf@x
         \northeast \pgf@x=\pgf@xa
         \pgfmathsetlength\@tempdima{\functionheight - \westioswidth}
-        \advance\pgf@y by -.5\@tempdima % start of north params
-        \pgfmathsetlength\@tempdima{\pgfkeysvalueof{/function/west io sep} + \pgfkeysvalueof{/function/west io height}}
+        \advance\pgf@y by -.5\@tempdima
+        \pgfmathsetlength\@tempdima{\westiosep + \westiowidth}
         \advance\pgf@y by -.5\@tempdima
         \advance\pgf@x by \westiosheight
     }
@@ -296,8 +328,8 @@
         \southwest \pgf@xa=\pgf@x
         \northeast \pgf@x=\pgf@xa
         \pgfmathsetlength\@tempdima{\functionheight - \westioswidth}
-        \advance\pgf@y by -.5\@tempdima % start of north params
-        \pgfmathsetlength\@tempdima{\pgfkeysvalueof{/function/west io sep} + \pgfkeysvalueof{/function/west io height}}
+        \advance\pgf@y by -.5\@tempdima
+        \pgfmathsetlength\@tempdima{\westiosep + \westiowidth}
         \advance\pgf@y by -1.5\@tempdima
         \advance\pgf@x by \westiosheight
     }
@@ -334,9 +366,9 @@
             \advance\pgf@yc by -.5\@tempdima
             \pgftransformshift{\pgfqpoint{\pgf@xc}{\pgf@yc}}
             \pgftransformrotate{-90}
-            \port{\pgfkeysvalueof{/function/east io height}}
+            \port{\pgfkeysvalueof{/function/east io width}}
             \pgftransformreset
-            \global\advance\pgf@yc by -\pgfkeysvalueof{/function/east io height}
+            \global\advance\pgf@yc by -\pgfkeysvalueof{/function/east io width}
             \global\advance\pgf@yc by -.5\@tempdima
         }
         \fi
@@ -370,9 +402,9 @@
             \advance\pgf@yc by .5\@tempdima
             \pgftransformshift{\pgfqpoint{\pgf@xc}{\pgf@yc}}
             \pgftransformrotate{90}
-            \port{\pgfkeysvalueof{/function/west io height}}
+            \port{\pgfkeysvalueof{/function/west io width}}
             \pgftransformreset
-            \global\advance\pgf@yc by \pgfkeysvalueof{/function/west io height}
+            \global\advance\pgf@yc by \pgfkeysvalueof{/function/west io width}
             \global\advance\pgf@yc by .5\@tempdima
         }
         \fi
