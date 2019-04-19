@@ -21,6 +21,6 @@
 
 \foreach \i in {1,2,i,n}{
     \node (f) [subfunction] at ($ (a\i)!.5!(b\i) $) {$\texttt{f}$};
-    \draw [flow] (a\i) -- (f.north param 1);
-    \draw [flow] (f.south param 1) -- (b\i);
+    \draw [flow] (a\i) -- (f.north io 1);
+    \draw [flow] (f.south io 1) -- (b\i);
 }

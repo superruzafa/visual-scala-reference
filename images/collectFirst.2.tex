@@ -10,11 +10,11 @@
 
 \foreach \i in {1,2,n}{
     \node (pf\i) [subfunction, partial function, below=1 of a\i] {\texttt{pf}};
-    \draw [flow] (a\i) -- (pf\i.north param 1);
+    \draw [flow] (a\i) -- (pf\i.north io 1);
 }
 
 % \node (b) [some={$b$}, below=1 of pfi];
-% \draw [flow] (pfi.south param 1) -- (b);
+% \draw [flow] (pfi.south io 1) -- (b);
 
 \begin{scope}[subflow, bend left=45]
 \draw ($ (a1.north) + (-1, 0) $) to (a1.north);

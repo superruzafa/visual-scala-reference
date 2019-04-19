@@ -31,8 +31,8 @@
 \foreach \i/\r in {1/true,2/false,3/true,i-1/true,i/false,n-1/true,n/false}{
     \node (f) [subfunction, above=.5 of a\i] {\texttt{p}};
     \node (r) [subelement, above=.5 of f] {\texttt{\r}};
-    \draw [subflow] (a\i) -- (f.south);
-    \draw [subflow] (f.north) -- (r);
+    \draw [subflow] (a\i) -- (f.south io 1);
+    \draw [subflow] (f.north io 1) -- (r);
 }
 
 \draw [draw=none, name path=p1] (a1.south)   .. controls +(0, -1) and +(0, 1) .. (b1.north);

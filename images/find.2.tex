@@ -11,8 +11,8 @@
 \foreach \i/\r in {1/false,2/false,n/false}{
     \node (f) [subfunction, above=.5 of a\i] {\texttt{p}};
     \node (r) [subelement, above=.5 of f] {\texttt{\r}};
-    \draw [subflow] (a\i) -- (f.south);
-    \draw [subflow] (f.north) -- (r);
+    \draw [subflow] (a\i) -- (f.south io 1);
+    \draw [subflow] (f.north io 1) -- (r);
 }
 
 \begin{scope}[subflow, bend left=45]

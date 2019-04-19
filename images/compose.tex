@@ -4,24 +4,24 @@
 \node (f) [function] {$f$};
 \node (x) [subelement, above=.5 of f.north] {$x$};
 \node (y) [subelement, below=.5 of f.south] {$y$};
-\draw [subflow] (x) -- (f.north);
-\draw [subflow] (f.south) -- (y);
+\draw [subflow] (x) -- (f.north io 1);
+\draw [subflow] (f.south io 1) -- (y);
 
 \node (g) [function, right=.5 of f] {\texttt{g}};
 \node (z) [subelement, above=.5 of g.north] {$z$};
 \node (x') [subelement, below=.5 of g.south] {$x^\prime$};
-\draw [subflow] (z) -- (g.north);
-\draw [subflow] (g.south) -- (x');
+\draw [subflow] (z) -- (g.north io 1);
+\draw [subflow] (g.south io 1) -- (x');
 
 \node (g2) [function, right=2 of g, anchor=south] {\texttt{g}};
 \node (f2) [function, below=of g2, anchor=north] {$f$};
 \coordinate (n) at ($ (f2)!.5!(g2) $);
 
-\node (gof) [function, minimum height=2.5\masterunit, minimum width=1.3\masterunit] at (g2.south) {};
+\node (gof) [function, minimum height=2.5\masterunit, minimum width=1.3\masterunit] at (g2.south io 1) {};
 \node (z) [subelement, above=.5 of gof.north] {$z$};
 \node (y') [subelement, below=.5 of gof.south] {$y^\prime$};
-\draw [subflow] (z) -- (g2.north);
-\draw [subflow] (f2.south) -- (y');
+\draw [subflow] (z) -- (g2.north io 1);
+\draw [subflow] (f2.south io 1) -- (y');
 
 \coordinate (m) at ($ (g)!.5!(n) + (-.15, 0) $);
 
