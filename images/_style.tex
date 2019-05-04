@@ -267,6 +267,28 @@
     \draw [measure] (_mn) -- (_m2);
 }
 
+\newcommand\bottommeasure[3]{
+    \draw [measure width]
+        (#2) -- ++(0, -.6)
+        (#3) -- ++(0, -.6);
+    \coordinate (_m1) at ($ (#2) + (0, -.5) $);
+    \coordinate (_m2) at ($ (#3) + (0, -.5) $);
+    \node [outer sep=.1\masterunit] (_mn) at ($ (_m1)!.5!(_m2) $) {#1};
+    \draw [measure] (_mn) -- (_m1);
+    \draw [measure] (_mn) -- (_m2);
+}
+
+\newcommand\bottomrightmeasure[3]{
+    \draw [measure width]
+        (#2) -- ++(0, -.6)
+        (#3) -- ++(0, -.6);
+    \coordinate (_m1) at ($ (#2) + (0, -.5) $);
+    \coordinate (_m2) at ($ (#3) + (0, -.5) $);
+    \node [outer sep=.1\masterunit, anchor=south west] (_mn) at (_m2) {#1};
+    \draw [measure] ($ (_m1) + (-.5, 0) $) -- (_m1);
+    \draw [measure] (_mn.south east) -- (_m2);
+}
+
 \tikzset{big arrow/.style={
   draw,
   line width=\defaultpenwidth,
