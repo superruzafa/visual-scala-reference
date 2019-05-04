@@ -1,0 +1,18 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \elementsbetween &
+    \node (ai) {$a_i$}; &
+    \elementsbetween &
+    \node (an) {$a_n$}; \\
+};
+
+\foreach \i in {1,2,i,n}{
+    \node (f) [subfunction, below=1 of a\i] {$\texttt{f}$};
+    \node (b) [subelement, below=1 of f] {\texttt{()}};
+    \draw [flow] (a\i) -- (f.north io 1);
+    \draw [flow] (f.south io 1) -- (b);
+}
