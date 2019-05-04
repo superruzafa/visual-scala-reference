@@ -1,0 +1,22 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \elementsbetween &
+    \node (ai) {$a_i$}; &
+    \elementsafter \\
+};
+
+\foreach \i/\e in {1/\neq,2/\neq,i/=}{
+    \node (c\i) [subelement, above=1 of a\i] {$a_\i \e \texttt{a}$};
+    \draw [subflow] (a\i) -- (c\i.south);
+}
+
+\draw [subflow, bend left=45] ($ (a1.north) + (-1, 0) $) to (a1.north);
+\draw [subflow, bend left=45] (a1.north) to (a2.north);
+\draw [subflow, dashed, bend left=45] (a2.north) to (ai.north);
+
+\node (b) [element, below=2 of ai] {\texttt{true}};
+\draw [flow] (ai) -- (b);

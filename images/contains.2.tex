@@ -1,0 +1,22 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \elementsbetween &
+    \node (an) {$a_n$}; \\
+};
+
+\foreach \i in {1,2,n}{
+    \node (c\i) [subelement, above=1 of a\i] {$a_\i \neq \texttt{a}$};
+    \draw [subflow] (a\i) -- (c\i.south);
+}
+
+\draw [subflow, bend left=45] ($ (a1.north) + (-1, 0) $) to (a1.north);
+\draw [subflow, bend left=45] (a1.north) to (a2.north);
+\draw [subflow, dashed, bend left=45] (a2.north) to (an.north);
+
+\node (b) [element, below right=1 and 1 of an] {\texttt{false}};
+\draw [flow] (an.north) .. controls +(1, 1.5) and +(0, 1) .. (b.north);
+
