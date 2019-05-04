@@ -1,0 +1,15 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \elementsbetween &
+    \node (an) {$a_n$}; \\
+};
+
+
+\bottommeasure{$n > 0$}{a1.south west}{an.south east}
+
+\node (b) [element, below=1 of _mn] {\texttt{true}};
+\draw [flow] (_mn) -- (b);
