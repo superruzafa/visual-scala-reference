@@ -1,0 +1,56 @@
+---
+---
+
+\matrix [collection] {
+    \node (k1) {$k_1$}; \\
+    \node (k2) {$k_2$}; \\
+    \velementsbetween \\
+    \node (km) {$k_m$}; \\
+};
+
+\matrix (V1) [subcollection, right=1 of k1] {
+    \node {$a_1$}; &
+    \node {$a_3$}; &
+    \subelementsafter \\
+};
+
+\matrix (V2) [subcollection, right=1 of k2] {
+    \node {$a_2$}; &
+    \subelementsbetween &
+    \node {$a_{i+1}$}; &
+    \subelementsafter \\
+};
+
+\matrix (Vm) [subcollection, right=1 of km] {
+    \subelementsbefore &
+    \node {$a_i$}; &
+    \subelementsbetween &
+    \node {$a_n$}; \\
+};
+
+\foreach \i in {1,2,m}{
+    \draw [key to value] (k\i) to (V\i);
+}
+
+\coordinate (x) at ($ (k2)!.5!(V2.east) $);
+\coordinate (y) at (k1.north -| x);
+
+\matrix (A) [collection, above=2 of y] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node (a3) {$a_3$}; &
+    \elementsbetween &
+    \node (ai) {$a_i$}; &
+    \node (ai+1) {$a_{i+1}$}; &
+    \elementsbetween &
+    \node (an) {$a_n$}; \\
+};
+
+\foreach \i/\r in {1/1,2/2,3/1,i/m,i+1/2,n/m}{
+    \node (f) [subfunction, above=.5 of a\i] {\texttt{f}};
+    \node (r) [subelement, above=.5 of f] {$k_\r$};
+    \draw [subflow] (a\i) -- (f.south io 1);
+    \draw [subflow] (f.north io 1) -- (r);
+}
+
+\node [rotate=-90] at ($ (A.south)!.5!(y) $) [big arrow];
