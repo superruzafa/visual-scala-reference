@@ -1,0 +1,49 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node {$a_1$}; &
+    \elementsbetween &
+    \node {$a_{\small{\texttt{m}}}$}; &
+    \node {$a_{\small{\texttt{m}} + 1}$}; &
+    \elementsbetween &
+    \node {$a_{2 \cdot \small{\texttt{m}}}$}; &
+    \elementsbetween &
+    \node [xscale=0.965] {$a_{n \cdot \small{\texttt{m}} + 1}$}; &
+    \elementsbetween[.9] &
+    \node [xscale=0.965] {$a_{n \cdot \small{\texttt{m}} + p}$}; \\
+};
+
+\matrix (I1) [collection, below=3 of A] {
+    \node {$a_1$}; &
+    \elementsbetween &
+    \node {$a_{\small{\texttt{m}}}$}; \\
+};
+
+\matrix (I2) [collection, below=1 of I1] {
+    \node {$a_{\small{\texttt{m}} + 1}$}; &
+    \elementsbetween &
+    \node {$a_{2 \cdot \small{\texttt{m}}}$}; \\
+};
+
+\matrix (In) [collection, below=1.5 of I2.south west, anchor=north west] {
+    \node [xscale=0.965] {$a_{n \cdot \small{\texttt{m}} + 1}$}; &
+    \elementsbetween[.9] &
+    \node [xscale=0.965] {$a_{n \cdot \small{\texttt{m}} + p}$}; \\
+};
+
+\tikzset{next label/.style={
+    sloped,
+    node contents={\texttt{next}}
+}}
+
+\draw [flow] ($ (I1.west) + (-1, 0) $) -- node [next label, above=0.1] {} (I1);
+\draw [flow, bend right=45] (I1.west) to node [next label, below=0.3, rotate=180] {} (I2.west);
+\draw [flow, dotted, bend right=45] (I2.west) to node [next label, below=0.3, rotate=180] {} (In.west);
+
+\topmeasure{\texttt{m}}{I1.north west}{I1.north east}
+\topmeasure{\texttt{m}}{I2.north west}{I2.north east}
+\topmeasure{$p \leq \texttt{m}$}{In.north west}{In.north east}
+
+\coordinate (x) at ($ (A)!.5!(I1) $);
+\node at (x) [big arrow, rotate=-90] {};

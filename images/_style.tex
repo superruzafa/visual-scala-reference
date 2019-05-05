@@ -204,8 +204,8 @@
         (_e.south west) -- (_e.south east);
 }
 
-\newcommand{\elementsbetween}{
-    \node (_e) [draw=none, minimum width=1.5\masterunit] {};
+\newcommand{\elementsbetween}[1][1.5]{
+    \node (_e) [draw=none, minimum width=#1\masterunit] {};
     \draw [collection element line width, solid dashed solid]
         (_e.north west) -- (_e.north east)
         (_e.south west) -- (_e.south east);
