@@ -1,0 +1,43 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node (k1) {$k_1$}; \\
+    \node (k2) {$k_2$}; \\
+    \velementsbetween \\
+    \node (kn) {$k_n$}; \\
+};
+
+\matrix (B) [collection, right=3 of A.north east, anchor=north west] {
+    \node (l1) {$k_1$}; \\
+    \node (l2) {$k_2$}; \\
+    \velementsbetween \\
+    \node (ln) {$k_n$}; \\
+    \node (l_) {$k_\_$}; \\
+};
+
+\tikzset{fun/.style={
+    subfunction,
+    /function/north io=0,
+    /function/south io=0,
+    /function/west io=1,
+    /function/east io=1,
+}}
+
+\foreach \i in {1,2,n}{
+    \node (vk) [element, right=1 of k\i] {$v_\i$};
+    \draw [key to value] (k\i) to (vk);
+    \node (vl) [element, right=1 of l\i] {$v_\i$};
+    \draw [key to value] (l\i) to (vl);
+}
+
+\node (vl) [subelement, right=1 of l_] {$k\_$};
+\draw [key to value] (l_) to (vl);
+\node (f) [fun, right=.5 of vl] {\texttt{f}};
+\draw [subflow] (vl) -- (f.west io 1);
+\node (vl) [element, right=.5 of f] {$v_\_$};
+\draw [subflow] (f.east io 1) -- (vl);
+
+\coordinate (y) at (vk |- B);
+\coordinate (x) at ($ (y)!.5!(B.west) $);
+\node at (x) [big arrow] {};
