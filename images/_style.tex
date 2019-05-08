@@ -140,6 +140,11 @@
     flow width,
 }}
 
+\tikzset{inverse flow/.style={
+    {Triangle[fill=defaultpencolor, angle'=30]}-,
+    flow width,
+}}
+
 \tikzset{bridge flow/.pic={
     \fill [white] circle [radius=.09\masterunit];
     % \draw [flow, -, color=gray, draw opacity=.25] (-.1\masterunit, 0) arc [start angle=180, end angle=360, x radius=.1\masterunit, y radius=.05\masterunit];
