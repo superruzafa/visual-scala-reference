@@ -1,0 +1,34 @@
+---
+---
+
+\tikzset{op/.style={
+    subfunction,
+    inner xsep=.1\masterunit,
+    /function/.cd,
+    west io=1,
+    north io=2,
+    north io sep=.1\masterunit,
+    south io=0,
+    /tikz/.cd,
+}}
+
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \elementsbetween &
+    \node (an-2) {$a_{n-2}$}; &
+    \node (an-1) {$a_{n-1}$}; &
+    \node (an) {$a_n$}; \\
+};
+
+\foreach \i in {n-1, n-2, 1}{
+    \node (f\i) [op, below=1 of a\i.south, anchor=north io 1] {\texttt{op}};
+    \draw [flow] (a\i) -- (f\i.north io 1);
+}
+
+\draw [flow] (an.south) -- ++(0, -.5) coordinate (rule) -| (fn-1.north io 2);
+\draw [flow] (fn-1.west io 1) -- ++(-.125, 0) coordinate (x) -- (rule -| x) -| (fn-2.north io 2);
+\draw [flow, dashed] (fn-2.west io 1) -- ++(-.125, 0) coordinate (x) -- (rule -| x) -- +(-.5, 0);
+\draw [inverse flow, dashed] (f1.north io 2) coordinate (x) -- (rule -| x) -- +(.5, 0);
+
+\node (b) [some={$b$}, left=1 of f1];
+\draw [flow] (f1.west io 1) -- (b);
