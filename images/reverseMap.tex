@@ -1,0 +1,54 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node {$a_1$}; &
+    \node {$a_2$}; &
+    \elementsbetween &
+    \node {$a_i$}; &
+    \elementsbetween &
+    \node {$a_n$}; \\
+};
+
+\matrix (R) [subcollection, below=2 of A] {
+    \node (an) {$a_n$}; &
+    \subelementsbetween &
+    \node (ai) {$a_i$}; &
+    \subelementsbetween &
+    \node (a2) {$a_2$}; &
+    \node (a1) {$a_1$}; \\
+};
+
+\matrix (B) [collection, below=2 of R] {
+    \node (bn) {$b_n$}; &
+    \elementsbetween &
+    \node (bi) {$b_i$}; &
+    \elementsbetween &
+    \node (b2) {$b_2$}; &
+    \node (b1) {$b_1$}; \\
+};
+
+\foreach \i in {1,2,i,n}{
+    \node (f) [subfunction, anchor=north io 1] at ($ (a\i.south) + (0, -.5) $) {$\texttt{f}$};
+    \draw [subflow] (a\i) -- (f.north io 1);
+    \draw [subflow] (f.south io 1) .. controls +(0, -.5) and +(0, .5) .. (b\i.north);
+}
+
+\coordinate (x) at ($ (A)!.5!(R) $);
+
+\newlength\reverseradius
+\setlength\reverseradius{.2\masterunit}
+\draw [flow] (x) ++ (0:\reverseradius)
+    arc [radius=\reverseradius, start angle=0, end angle=170];
+\draw [flow] (x) ++ (180:\reverseradius)
+    arc [radius=\reverseradius, start angle=180, end angle=350];
+
+\node at (x) [
+  draw,
+  rotate=-90,
+  line width=\defaultpenwidth,
+  minimum height=\masterunit,
+  minimum width=4\reverseradius,
+  single arrow,
+  single arrow tip angle=90,
+  single arrow head extend=.01\masterunit] {};
