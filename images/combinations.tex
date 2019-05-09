@@ -1,0 +1,62 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node {$a_1$}; &
+    \node {$a_2$}; &
+    \elementsbetween &
+    \node {$a_k$}; &
+    \elementsbetween &
+    \node {$a_{k + m}$}; &
+\\ };
+
+\matrix (I1) [collection, below=2 of A] {
+    \node {$a_1$}; &
+    \node {$a_2$}; &
+    \elementsbetween &
+    \node {$a_{k - 1}$}; &
+    \node {$a_k$}; &
+\\ };
+
+\matrix (I2) [collection, below=1 of I1] {
+    \node {$a_1$}; &
+    \node {$a_2$}; &
+    \elementsbetween &
+    \node {$a_{k - 1}$}; &
+    \node {$a_{k + 1}$}; &
+\\ };
+
+\matrix (I3) [collection, below=1.5 of I2] {
+    \node {$a_1$}; &
+    \node {$a_2$}; &
+    \elementsbetween &
+    \node {$a_{k - 1}$}; &
+    \node {$a_{k + m}$}; &
+\\ };
+
+\matrix (I4) [collection, below=1.5 of I3] {
+    \node {$a_{1 + m}$}; &
+    \node {$a_{2 + m}$}; &
+    \elementsbetween &
+    \node {$a_{k + m - 1}$}; &
+    \node {$a_{k + m}$}; &
+\\ };
+
+\tikzset{next label/.style={
+    sloped,
+    node contents={\texttt{next}}
+}}
+
+\draw [flow] ($ (I1.west) + (-1, 0) $) -- node [next label, above=0.1] {} (I1);
+\draw [flow, bend right=45] (I1.west) to node [next label, below=0.3, rotate=180] {} (I2.west);
+\draw [flow, dashed, bend right=45] (I2.west) to node [next label, below=0.3, rotate=180] {} (I3.west);
+\draw [flow, dashed, bend right=45] (I3.west) to node [next label, above=0.1,] {} (I4.west);
+
+\topmeasure{\texttt{k}}{I1.north west}{I1.north east}
+
+\coordinate (x) at ($ (A.south)!.5!(_mn) $);
+\node at (x) [big arrow, rotate=-90] {};
+
+\topmeasure{\texttt{k}}{I2.north west}{I2.north east}
+\topmeasure{\texttt{k}}{I3.north west}{I3.north east}
+\topmeasure{\texttt{k}}{I4.north west}{I4.north east}
