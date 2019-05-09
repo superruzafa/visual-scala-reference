@@ -1,0 +1,24 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \elementsbetween &
+    \node (ai) {$a_i$}; &
+    \elementsafter &
+\\ };
+
+\foreach \i/\r in {1/false,2/false,i/true}{
+    \node (c) [subelement, above=.5 of a\i] {$\texttt{a\,==\,}a_\i $};
+    \node (r) [subelement, above=.5 of c] {\texttt{\r}};
+    \draw [subflow] (a\i) -- (c);
+    \draw [subflow] (c) -- (r);
+}
+
+\draw [inverse flow] (a1.north) arc [start angle=0, end angle=100, x radius=.75, y radius=.5];
+\draw [flow, bend left=45] (a1.north) to (a2.north);
+\draw [flow, dashed, bend left=45] (a2.north) to (ai.north);
+
+\node (b) [element, below=1 of ai] {$i$};
+\draw [flow] (ai) -- (b);
