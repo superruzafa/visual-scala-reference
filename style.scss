@@ -138,6 +138,11 @@ a {
   text-decoration: none;
 }
 
+.function-in-progress {
+  color: #aaa;
+  font-style: italic;
+}
+
 a:link, a:visited {
   color: $linkColor;
 }
