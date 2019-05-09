@@ -203,52 +203,52 @@
 
 
 \newcommand{\elementsbefore}{
-    \node (_e) [draw=none, minimum width=.75\masterunit] {};
+    \node (lastnode) [draw=none, minimum width=.75\masterunit] {};
     \draw [collection element line width, dashed solid]
-        (_e.north west) -- (_e.north east)
-        (_e.south west) -- (_e.south east);
+        (lastnode.north west) -- (lastnode.north east)
+        (lastnode.south west) -- (lastnode.south east);
 }
 
 \newcommand{\elementsbetween}[1][1.5]{
-    \node (_e) [draw=none, minimum width=#1\masterunit] {};
+    \node (lastnode) [draw=none, minimum width=#1\masterunit] {};
     \draw [collection element line width, solid dashed solid]
-        (_e.north west) -- (_e.north east)
-        (_e.south west) -- (_e.south east);
+        (lastnode.north west) -- (lastnode.north east)
+        (lastnode.south west) -- (lastnode.south east);
 }
 
 \newcommand{\elementsafter}{
-    \node (_e) [draw=none, minimum width=.75\masterunit] {};
+    \node (lastnode) [draw=none, minimum width=.75\masterunit] {};
     \draw [collection element line width, solid dashed]
-        (_e.north west) -- (_e.north east)
-        (_e.south west) -- (_e.south east);
+        (lastnode.north west) -- (lastnode.north east)
+        (lastnode.south west) -- (lastnode.south east);
 }
 
 \newcommand{\velementsbetween}{
-    \node (_e) [draw=none, minimum height=1.5\masterunit] {};
+    \node (lastnode) [draw=none, minimum height=1.5\masterunit] {};
     \draw [collection element line width, solid dashed solid]
-        (_e.north west) -- (_e.south west)
-        (_e.north east) -- (_e.south east);
+        (lastnode.north west) -- (lastnode.south west)
+        (lastnode.north east) -- (lastnode.south east);
 }
 
 \newcommand{\subelementsbefore}{
-    \node (_e) [draw=none, minimum width=\masterunit] {};
+    \node (lastnode) [draw=none, minimum width=\masterunit] {};
     \draw [subcollection element line width, dashed solid]
-        (_e.north west) -- (_e.north east)
-        (_e.south west) -- (_e.south east);
+        (lastnode.north west) -- (lastnode.north east)
+        (lastnode.south west) -- (lastnode.south east);
 }
 
 \newcommand{\subelementsbetween}{
-    \node (_e) [draw=none, minimum width=\masterunit] {};
+    \node (lastnode) [draw=none, minimum width=\masterunit] {};
     \draw [subcollection element line width, solid dashed solid]
-        (_e.north west) -- (_e.north east)
-        (_e.south west) -- (_e.south east);
+        (lastnode.north west) -- (lastnode.north east)
+        (lastnode.south west) -- (lastnode.south east);
 }
 
 \newcommand{\subelementsafter}{
-    \node (_e) [draw=none, minimum width=\masterunit] {};
+    \node (lastnode) [draw=none, minimum width=\masterunit] {};
     \draw [subcollection element line width, solid dashed]
-        (_e.north west) -- (_e.north east)
-        (_e.south west) -- (_e.south east);
+        (lastnode.north west) -- (lastnode.north east)
+        (lastnode.south west) -- (lastnode.south east);
 }
 
 \tikzset{key to value/.style={
