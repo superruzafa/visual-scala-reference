@@ -1,0 +1,35 @@
+---
+---
+
+\matrix (A) [collection] {
+    \elementsbefore \coordinate (a1) at (lastnode.south west); &
+    \node (ai) {$a_i$}; &
+    \node (ai+1) {$a_{i + 1}$}; &
+    \elementsafter \coordinate (an) at (lastnode.south east); &
+\\ };
+
+\matrix (B) [tuple of collections, below=2 of A] {
+    \elementsbefore \coordinate (b1) at (lastnode.north west); &
+    \node (bi) {$a_i$}; &
+    \node [tuple separator]; &
+    \node (bi+1) {$a_{i + 1}$}; &
+    \elementsafter \coordinate (bn) at (lastnode.north east); &
+\\ };
+
+\begin{scope}[flow width]
+    \coordinate (a) at ($ (ai.south east) + (-.25\defaultpenwidth, 0) $);
+    \inversebrace{a1.south west}{a}
+    \coordinate (bp) at (bracepoint);
+
+    \coordinate (b) at ($ (bi.north east) + (-.25\defaultpenwidth, 0) $);
+    \normalbrace{b1.north west}{b}
+    \draw [flow] (bp) [out=270, in=90] (bp) to (bracepoint);
+
+    \coordinate (a) at ($ (ai+1.south west) + (.25\defaultpenwidth, 0) $);
+    \inversebrace{a}{an}
+    \coordinate (bp) at (bracepoint);
+
+    \coordinate (b) at ($ (bi+1.north west) + (.25\defaultpenwidth, 0) $);
+    \normalbrace{b}{bn}
+    \draw [flow] [out=270, in=90] (bp) to (bracepoint);
+\end{scope}
