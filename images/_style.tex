@@ -320,28 +320,6 @@
     -{Triangle[angle'=30]},
 }}
 
-\newcommand\topmeasure[3]{
-    \draw [measure width]
-        (#2) -- ++(0, .6)
-        (#3) -- ++(0, .6);
-    \coordinate (_m1) at ($ (#2) + (0, .5) $);
-    \coordinate (_m2) at ($ (#3) + (0, .5) $);
-    \node [outer sep=.1\masterunit] (_mn) at ($ (_m1)!.5!(_m2) $) {#1};
-    \draw [measure] (_mn) -- (_m1);
-    \draw [measure] (_mn) -- (_m2);
-}
-
-\newcommand\bottommeasure[3]{
-    \draw [measure width]
-        (#2) -- ++(0, -.6)
-        (#3) -- ++(0, -.6);
-    \coordinate (_m1) at ($ (#2) + (0, -.5) $);
-    \coordinate (_m2) at ($ (#3) + (0, -.5) $);
-    \node [outer sep=.1\masterunit] (_mn) at ($ (_m1)!.5!(_m2) $) {#1};
-    \draw [measure] (_mn) -- (_m1);
-    \draw [measure] (_mn) -- (_m2);
-}
-
 \newcommand\measure[4][.5]{
     \draw [measure width]
         (#3) -- ++(0, #1) coordinate (last measure left) -- +(0, .1) -- +(0, -.1)

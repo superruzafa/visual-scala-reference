@@ -8,8 +8,7 @@
     \node (an) {$a_n$}; \\
 };
 
+\measure[-.5]{$n > 0$}{a1.south west}{an.south east}
 
-\bottommeasure{$n > 0$}{a1.south west}{an.south east}
-
-\node (b) [element, below=1 of _mn] {\texttt{false}};
-\draw [flow] (_mn) -- (b);
+\node (b) [element, below=1 of last measure] {\texttt{false}};
+\draw [flow] (last measure) -- (b);

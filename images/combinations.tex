@@ -52,11 +52,11 @@
 \draw [flow, dashed, bend right=45] (I2.west) to node [next label, below=0.3, rotate=180] {} (I3.west);
 \draw [flow, dashed, bend right=45] (I3.west) to node [next label, above=0.1,] {} (I4.west);
 
-\topmeasure{\texttt{k}}{I1.north west}{I1.north east}
+\measure{\texttt{k}}{I1.north west}{I1.north east}
 
-\coordinate (x) at ($ (A.south)!.5!(_mn) $);
+\coordinate (x) at ($ (A.south)!.5!(last measure) $);
 \node at (x) [big arrow, rotate=-90] {};
 
-\topmeasure{\texttt{k}}{I2.north west}{I2.north east}
-\topmeasure{\texttt{k}}{I3.north west}{I3.north east}
-\topmeasure{\texttt{k}}{I4.north west}{I4.north east}
+\measure{\texttt{k}}{I2.north west}{I2.north east}
+\measure{\texttt{k}}{I3.north west}{I3.north east}
+\measure{\texttt{k}}{I4.north west}{I4.north east}

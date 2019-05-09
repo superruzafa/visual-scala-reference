@@ -41,9 +41,9 @@
 \draw [flow, bend right=45] (I1.west) to node [next label, below=0.3, rotate=180] {} (I2.west);
 \draw [flow, dotted, bend right=45] (I2.west) to node [next label, below=0.3, rotate=180] {} (In.west);
 
-\topmeasure{\texttt{m}}{I1.north west}{I1.north east}
-\topmeasure{\texttt{m}}{I2.north west}{I2.north east}
-\topmeasure{$p \leq \texttt{m}$}{In.north west}{In.north east}
+\measure{\texttt{m}}{I1.north west}{I1.north east}
+\measure{\texttt{m}}{I2.north west}{I2.north east}
+\measure{$p \leq \texttt{m}$}{In.north west}{In.north east}
 
 \coordinate (x) at ($ (A)!.5!(I1) $);
 \node at (x) [big arrow, rotate=-90] {};

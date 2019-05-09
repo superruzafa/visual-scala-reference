@@ -15,9 +15,9 @@
     \node (a6) {$a_{n \cdot \texttt{s} + k}$}; &
 \\ };
 
-\bottommeasure{\texttt{m}}{a1.south west}{a2.south east}
-\bottommeasure{\texttt{m}}{a3.south west}{a4.south east}
-\bottommeasure{$\leq \texttt{m}$}{a5.south west}{a6.south east}
+\measure[-.5]{\texttt{m}}{a1.south west}{a2.south east}
+\measure[-.5]{\texttt{m}}{a3.south west}{a4.south east}
+\measure[-.5]{$\leq \texttt{m}$}{a5.south west}{a6.south east}
 
 \draw [subflow, bend left=45] ($ (a1.north) + (-1, 0) $) to (a1.north);
 \draw [subflow, bend left=45] (a1.north) to node [above=.1, sloped] {$+\texttt{s}$} (a3.north);
@@ -42,9 +42,9 @@
     \node {$a_{n \cdot \texttt{s} + k}$}; &
 \\ };
 
-\topmeasure{\texttt{m}}{I1.north west}{I1.north east}
-\topmeasure{\texttt{m}}{I2.north west}{I2.north east}
-\topmeasure{$\leq \texttt{m}$}{In.north west}{In.north east}
+\measure{\texttt{m}}{I1.north west}{I1.north east}
+\measure{\texttt{m}}{I2.north west}{I2.north east}
+\measure{$\leq \texttt{m}$}{In.north west}{In.north east}
 
 \tikzset{next label/.style={
     sloped,
