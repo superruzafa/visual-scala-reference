@@ -281,6 +281,17 @@
     line width=.5\defaultpenwidth,
 }}
 
+\tikzset{horizontal subfunction/.style={
+    shape=function,
+    inner xsep=.2\masterunit,
+    inner ysep=.15\masterunit,
+    line width=.5\defaultpenwidth,
+    /function/north io=0,
+    /function/south io=0,
+    /function/east io=1,
+    /function/west io=1,
+}}
+
 \tikzset{partial function/.style={
     dash pattern=on .3 off .6,
 }}
