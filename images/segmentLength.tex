@@ -18,10 +18,10 @@
         node [subelement, above] {\texttt{\r}};
 }
 
-\draw [inverse flow] (aj.north) arc [start angle=0, end angle=100, x radius=.75, y radius=.5];
+\draw [inverse flow] (aj.north) arc [start angle=15, end angle=100, x radius=.75, y radius=.5];
 \draw [flow, bend left=45] (aj.north) to (aj+1.north);
-\draw [flow, dashed] (aj+1.north) arc [start angle=180, end angle=100, x radius=.75, y radius=.5];
-\draw [inverse flow, dashed] (aj+m-1.north) arc [start angle=0, end angle=80, x radius=.75, y radius=.5];
+\draw [flow, dashed] (aj+1.north) arc [start angle=165, end angle=100, x radius=.75, y radius=.5];
+\draw [inverse flow, dashed] (aj+m-1.north) arc [start angle=15, end angle=80, x radius=.75, y radius=.5];
 \draw [flow, bend left=45] (aj+m-1.north) to (aj+m.north);
 
 \measure[-.5]{$m$}{aj.south west}{aj+m-1.south east}

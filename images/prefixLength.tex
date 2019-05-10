@@ -1,0 +1,27 @@
+---
+---
+
+\matrix [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \elementsbetween &
+    \node (ai) {$a_i$}; &
+    \node (ai+1) {$a_{i + 1}$}; &
+    \elementsafter &
+\\ };
+
+\foreach \i/\r in {1/true,2/true,i/true,i+1/false}{
+    \draw [subflow] (a\i.north) -- +(0, .5)
+        node (p) [subfunction, above] {\texttt{p}};
+    \draw [subflow] (p.north io 1) -- +(0, .5)
+        node [subelement, above] {\texttt{\r}};
+}
+
+\draw [inverse flow] (a1.north) arc [start angle=15, end angle=100, x radius=.75, y radius=.5];
+\draw [flow, bend left=45] (a1.north) to (a2.north);
+\draw [flow, dashed] (a2.north) arc [start angle=165, end angle=100, x radius=.75, y radius=.5];
+\draw [inverse flow, dashed] (ai.north) arc [start angle=15, end angle=80, x radius=.75, y radius=.5];
+\draw [flow, bend left=45] (ai.north) to (ai+1.north);
+
+\measure[-.5]{$i$}{a1.south west}{ai.south east}
+\draw [flow] (last measure) -- +(0, -1) node [element, below] {$i$};
