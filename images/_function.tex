@@ -239,7 +239,7 @@
     }
     \anchor{north}{%
         \northeast \@tempdimb=\pgf@x \@tempdima=\pgf@y
-        \southwest 
+        \southwest
         \pgfmathsetlength\pgf@x{(\pgf@x + \@tempdimb) / 2}
         \pgf@y=\@tempdima
         \advance\pgf@y by \northiosheight
@@ -280,6 +280,24 @@
         \advance\pgf@x by .5\@tempdima
         \pgfmathsetlength\@tempdima{\northiosep + \northiowidth}
         \advance\pgf@x by 1.5\@tempdima
+        \advance\pgf@y by \northiosheight
+    }
+    \anchor{north io 3}{
+        \southwest \pgf@xa=\pgf@x
+        \northeast \pgf@x=\pgf@xa
+        \pgfmathsetlength\@tempdima{\functionwidth - \northioswidth}
+        \advance\pgf@x by .5\@tempdima
+        \pgfmathsetlength\@tempdima{\northiosep + \northiowidth}
+        \advance\pgf@x by 2.5\@tempdima
+        \advance\pgf@y by \northiosheight
+    }
+    \anchor{north io 4}{
+        \southwest \pgf@xa=\pgf@x
+        \northeast \pgf@x=\pgf@xa
+        \pgfmathsetlength\@tempdima{\functionwidth - \northioswidth}
+        \advance\pgf@x by .5\@tempdima
+        \pgfmathsetlength\@tempdima{\northiosep + \northiowidth}
+        \advance\pgf@x by 3.5\@tempdima
         \advance\pgf@y by \northiosheight
     }
 

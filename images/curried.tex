@@ -1,0 +1,40 @@
+---
+---
+
+\node (f) [function, /function/north io=4] {$f$};
+\draw [inverse flow] (f.north io 1) -- +(0, .5) node [element, above] {$x_1$};
+\draw [inverse flow] (f.north io 2) -- +(0, .5) node [element, above] {$x_2$};
+\draw [inverse flow] (f.north io 4) -- +(0, .5) node [element, above] {$x_n$};
+\draw [flow] (f.south io 1) -- +(0, -.5) node [element, below] {$y$};
+\fill [white] ($ (f.north io 3) + (-.25, -.25) $) rectangle +(.5, .5);
+\draw [flow width, dashed] ($ (f.north io 3) + (-.25, -1.5mm) $) -- +(.5, 0);
+
+\tikzset{g function/.style={
+    function,
+    /function/.cd/,
+    south io width=.5\masterunit,
+    /tikz/.cd,
+}}
+
+\node (g1) [g function, right=3 of f] {$\lambda_1$};
+\draw [inverse flow] (g1.north io 1) -- +(0, .5) node [element, above] {$x_1$};
+\node (g2) [g function, below=1 of g1] {$\lambda_2$};
+\node (g3) [function, below=1.5 of g2] {$\lambda_n$};
+
+\node (x) [element, above right=.25 and -1.5 of g2.north io 1] {$x_2$};
+\draw [flow] (x) -| (g2.north io 1);
+
+\node (x) [element, above right=.25 and -1.5 of g3.north io 1] {$x_n$};
+\draw [flow] (x) -| (g3.north io 1);
+
+\draw [flow] (g3.south io 1) -- +(0, -.5) node [element, below] {$y$};
+
+\begin{scope}[dashed]
+    \foreach \i/\j in {1/2,2/3}{
+        \draw ($ (g\i.south io 1) + (-.25, 0) $) -- (g\j.north west);
+        \draw ($ (g\i.south io 1) + (.25, 0) $) -- (g\j.north east);
+    }
+\end{scope}
+
+\coordinate (x) at ($ (f.east)!.5!(g1.west) $);
+\node at (x) [big arrow];
