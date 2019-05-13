@@ -1,0 +1,17 @@
+---
+---
+
+\node (f) [function, /function/north io=4] {$f$};
+\draw [inverse flow] (f.north io 1) -- +(0, .5) node [element, above] {$x_1$};
+\draw [inverse flow] (f.north io 2) -- +(0, .5) node [element, above] {$x_2$};
+\draw [inverse flow] (f.north io 4) -- +(0, .5) node [element, above] {$x_n$};
+\draw [flow] (f.south io 1) -- +(0, -.5) node [element, below] {$y$};
+\fill [white] ($ (f.north io 3) + (-.25, -.25) $) rectangle +(.5, .5);
+\draw [flow width, dashed] ($ (f.north io 3) + (-.25, -1.5mm) $) -- +(.5, 0);
+
+\node (g) [function, right=2 of f, /function/north io width=2.5\masterunit] {$\lambda$};
+\draw [inverse flow] (g.north io 1) -- +(0, .5) node [element, above] {$(x_1, x_2, \ldots, x_n)$};
+\draw [flow] (g.south io 1) -- +(0, -.5) node [element, below] {$y$};
+
+\coordinate (x) at ($ (f.east)!.5!(g.west) $);
+\node at (x) [big arrow] {};
