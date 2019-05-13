@@ -1,0 +1,25 @@
+---
+---
+
+\node (f) [function] {$f$};
+\draw [inverse flow] (f.north io 1) -- +(0, .5) node [element, above] {$x$};
+\draw [flow] (f.south io 1) -- +(0, -.5) node [some={$y$}, below];
+
+\tikzset{wrapper/.style={
+    function,
+    minimum height=3\masterunit,
+    minimum width=1.5\masterunit,
+}}
+
+\node (g) [function, right=3 of f] {$f$};
+\draw [flow] (g.south io 1) -- +(0, -.5) node (some) [some={$y$}, below];
+
+\node (h) at (g) [wrapper, yshift=-.75\masterunit] {};
+\draw [inverse flow] (g.north io 1) -- ($ (h.north io 1) + (0, .5) $)
+    node [element, above] {$x$};
+\draw [flow] (some) -- (h.south io 1) -- node [partial] {} +(0, -.5)
+    node [element, below] {$y$};
+
+\coordinate (x) at (h.west |- g.west);
+\coordinate (y) at ($ (f.east)!.5!(x) $);
+\node at (y) [big arrow];
