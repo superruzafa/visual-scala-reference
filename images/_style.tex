@@ -118,8 +118,7 @@
     \footnotesize{None}
 }
 
-\tikzset{exception/.style={
-    draw,
+\tikzset{exception flow/.style={
     line width=.02\masterunit,
     decorate,
     decoration={
@@ -127,8 +126,13 @@
         segment length=0.1\masterunit,
         amplitude=0.0125\masterunit,
     },
+}}
+
+\tikzset{exception/.style={
+    draw,
+    exception flow,
     inner sep=.1\masterunit,
-    node contents=#1
+    node contents=\texttt{#1},
 }}
 
 \tikzset{flow width/.style={
@@ -294,6 +298,14 @@
 
 \tikzset{partial function/.style={
     dash pattern=on .3 off .6,
+}}
+
+\tikzset{partial/.style={
+    strike out,
+    flow width,
+    draw,
+    minimum width=4\defaultpenwidth,
+    minimum height=4\defaultpenwidth,
 }}
 
 \tikzset{normal brace/.style={
