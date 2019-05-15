@@ -10,7 +10,7 @@
 
 \foreach \i in {1,2,n}{
     \node (f) [subfunction, above=.5 of a\i] {\texttt{p}};
-    \node (r) [subelement, above=.5 of f] {\texttt{false}};
+    \node (r) [subelement, above=.5 of f] {\false};
     \draw [subflow] (a\i) -- (f.south io 1);
     \draw [subflow] (f.north io 1) -- (r);
 }

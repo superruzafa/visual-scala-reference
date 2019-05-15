@@ -11,7 +11,7 @@
 \foreach \i in {n,n-1,1}{
     \draw [subflow] (a\i.north) -- +(0, .5)
         node (c) [subfunction, above] {\texttt{p}};
-    \draw [subflow] (c.north) -- +(0, .5) node (r) [subelement, above] {\texttt{false}};
+    \draw [subflow] (c.north) -- +(0, .5) node (r) [subelement, above] {\false};
 }
 
 \draw [inverse flow] (an.north) arc [start angle=160, delta angle=-60, x radius=.75, y radius=.5];

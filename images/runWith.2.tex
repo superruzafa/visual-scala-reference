@@ -22,7 +22,7 @@
 
 \draw [exception flow, ->] (f.east) -- (fh) -- (ex-fh);
 \draw [flow] (ex-fh2) |- (gh) -- (h.south) -- +(0, -.5)
-    node [element, below] {\texttt{false}};
+    node [element, below] {\false};
 
 \node (fa) [function, above left=0 and 3 of f] {$f$};
 \draw [inverse flow] (fa.north io 1) -- +(0, .5)

@@ -10,7 +10,7 @@
 
 \foreach \i/\r in {1,2,n}{
     \node (c) [subelement, above=.5 of a\i] {$\texttt{a\,==\,}a_\i $};
-    \node (r) [subelement, above=.5 of c] {\texttt{false}};
+    \node (r) [subelement, above=.5 of c] {\false};
     \draw [subflow] (a\i) -- (c);
     \draw [subflow] (c) -- (r);
 }

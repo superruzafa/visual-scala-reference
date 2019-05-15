@@ -1,23 +1,6 @@
 ---
 ---
 
-\matrix (A) [collection] {
-    \node (a1) {$a_1$}; &
-    \node (a2) {$a_2$}; &
-    \elementsbetween &
-    \node (an) {$a_n$}; \\
-};
-
-\foreach \i in {1,2,n}{
-    \node (f) [subfunction, above=.5 of a\i] {\texttt{p}};
-    \node (r) [subelement, above=.5 of f] {\texttt{false}};
-    \draw [subflow] (a\i) -- (f.south io 1);
-    \draw [subflow] (f.north io 1) -- (r);
-}
-
-\node (b) [element, below right=1 and 1 of an] {\texttt{false}};
-\draw [flow] (an.north) .. controls +(1, 1) and +(0, 1) .. (b.north);
-
-\draw [subflow, bend left=45] ($ (a1.north) + (-1, 0) $) to (a1.north);
-\draw [subflow, bend left=45] (a1.north) to (a2.north);
-\draw [subflow, dashed, bend left=45] (a2.north) to (an.north);
+\node (A) [empty collection];
+\node (b) [element, below=2 of A] {\false};
+\draw [flow] (A) -- (b);
