@@ -1,0 +1,35 @@
+---
+---
+
+\node (f) [function] {$f$};
+\node (g) [function, right=1 of f] {\texttt{g}};
+
+\coordinate (z) at ($ (f)!.5!(g) $);
+\node (h) at (z) [function, minimum width=3.75\masterunit, minimum height=3\masterunit] {};
+
+\coordinate (x) at ($ (h.north west)!.5!(f.north io 1) $);
+\coordinate (y) at (x -| f.north io 1);
+\coordinate (z) at (y -| h.north io 1);
+\draw [inverse flow] (f.north io 1) -- (y) -- (z) -- (h.north io 1) -- +(0, .5)
+    node (x1) [element, above] {$x$};
+\coordinate (x) at (f.south io 1 |- h.south west);
+\draw [flow] (f.south io 1) -- ($ (f.south io 1)!.5!(x) $) -| (h.south io 1) --
+    node [partial] {} +(0, -.5)
+    node [element, below] {$y$};
+
+\node (f2) [function, above=4 of f] {$f$};
+\draw [inverse flow] (f2.north io 1) -- +(0, .5)
+    node [element, above] {$x$};
+\draw [flow] (f2.south io 1) -- node [partial] {} +(0, -.5)
+    node (y1) [element, below, yshift=-.3\masterunit, anchor=base] {$y$};
+
+\node (g2) [function, above=4 of g] {\texttt{g}};
+\draw [inverse flow] (g2.north io 1) -- +(0, .5)
+    node [element, above] {$x$};
+\draw [flow] (g2.south io 1) -- node [partial] {} +(0, -.5);
+\draw [flow] (g2.south io 1) -- node [partial] {} +(0, -.5)
+    node (y2) [element, below, yshift=-.3\masterunit, anchor=base] {$y^\prime$};
+
+\coordinate (x) at ($ (y1)!.5!(y2) $);
+\coordinate (y) at ($ (x)!.5!(x1) $);
+\node at (y) [big arrow, rotate=-90];
