@@ -2,5 +2,22 @@
 title: endsWith
 layout: function
 permalink: /endsWith
-missing: true
 ---
+
+# `endsWith`
+
+~~~ scala
+trait Collection[A] {
+  def endsWith(as: Collection[A]): Boolean
+}
+~~~
+
+<figure class="diagram">
+  <img src="images/endsWith.1.svg" alt="endsWith function">
+  <!-- <figcaption class="diagram-desc"><code>endsWith</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+</figure>
+
+<figure class="diagram">
+  <img src="images/endsWith.2.svg" alt="endsWith function">
+  <!-- <figcaption class="diagram-desc"><code>endsWith</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+</figure>
