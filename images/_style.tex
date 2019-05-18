@@ -344,6 +344,39 @@
     \coordinate (bracepoint) at ($ (#1)!.5!(#2) + (0, -.4) $);
 }
 
+\tikzset{
+    brace flow/.default=0.2,
+    brace flow/.code={
+        \ifdim #1pt<0pt \tikzset{
+            flow width,
+            decorate,
+            decoration={
+                brace,
+                mirror,
+                amplitude=.2\masterunit,
+                raise=-#1\masterunit,
+            }
+        } \else \tikzset{
+            flow width,
+            decorate,
+            decoration={
+                brace,
+                amplitude=.2\masterunit,
+                raise=#1\masterunit,
+            }
+        } \fi
+    }
+}
+
+\newcommand\braceflow[3][.2]{
+    \draw [brace flow=#1] #2 -- #3;
+    \ifdim #1pt<0pt
+        \coordinate (lastbrace) at ($ #2!.5!#3 + (0, -.2) + (0, #1) $);
+    \else
+        \coordinate (lastbrace) at ($ #2!.5!#3 + (0, .2) + (0, #1) $);
+    \fi
+}
+
 \tikzset{measure width/.style={
     line width=0.02\masterunit,
 }}
