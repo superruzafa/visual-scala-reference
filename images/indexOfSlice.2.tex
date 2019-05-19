@@ -50,6 +50,11 @@
 
 \draw [inverse flow] (eq1.west) -- +(-.5, 0);
 \draw [flow, solid dashed solid] (eq1) -- (eqi);
-\draw [flow, bend right=15] (ai.south) to (eqi.135);
-\node (b) [element, right=2 of B] {$i$};
-\draw [flow, bend left=15] (eqi.315) to (b.north);
+
+\coordinate (x) at ($ (eqi)!.5!(bracei) $);
+
+\node (b) at (ai+m |- B) [element] {$i$};
+\draw [flow] (ai) |- (x) -| (b);
+
+\path (x) pic {bridge flow};
+\draw (x) -- +(0, .125) -- +(0, -.125);
