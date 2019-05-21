@@ -1,0 +1,73 @@
+---
+---
+
+\tikzset{op/.style={
+    subfunction,
+    inner xsep=.1\masterunit,
+    /function/.cd,
+    north io=2,
+    north io sep=.1\masterunit,
+    south io=0,
+    /tikz/.cd,
+}}
+
+\tikzset{opw/.style={
+    op,
+    /function/.cd,
+    west io=1,
+    /tikz/.cd,
+}}
+
+\tikzset{ope/.style={
+    op,
+    /function/.cd,
+    east io=1,
+    /tikz/.cd,
+}}
+
+\tikzset{ops/.style={
+    op,
+    /function/.cd,
+    south io=1,
+    /tikz/.cd,
+}}
+
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node (a3) {$a_3$}; &
+    \node (a4) {$a_4$}; &
+    \elementsbetween &
+    \node (ai) {$a_i$}; &
+    \elementsbetween &
+    \node (an) {$a_n$}; \\
+};
+
+\node (f1) [ope, below=1 of a1.south east] {\texttt{op}};
+\draw [flow] (a1.south) -- ++(0, -.5) -| (f1.north io 1);
+\draw [flow] (a2.south) -- ++(0, -.5) -| (f1.north io 2);
+
+\node (f2) [opw, below=1 of a3.south east] {\texttt{op}};
+\draw [flow] (a3.south) -- ++(0, -.5) -| (f2.north io 1);
+\draw [flow] (a4.south) -- ++(0, -.5) -| (f2.north io 2);
+
+\node (f3) [ope, below=2 of a2.south east] {\texttt{op}};
+\draw [flow] (f1.east io 1) -| (f3.north io 1);
+\draw [flow] (f2.west io 1) -| (f3.north io 2);
+\draw [flow, dashed] (f3.east io 1) -| +(.5, -.5);
+
+\node (f4) [opw, below=1 of an, anchor=north io 2] {\texttt{op}};
+\draw [flow] (an) -- (f4.north io 2);
+\draw [inverse flow, dashed] (f4.north io 1) |- +(-.5, .5);
+\draw [flow, dashed] (f4.west io 1) -| +(-.5, -.5);
+
+\node (f5) [opw, below=1 of ai, anchor=north io 1] {\texttt{op}};
+\draw [flow] (ai) -- (f5.north io 1);
+\draw [inverse flow, dashed] (f5.north io 2) |- +(.5, .5);
+\draw [flow, dashed] (f5.west io 1) -| +(-.5, -.5);
+
+\node (f) [ops, below=4 of A] {\texttt{op}};
+\draw [inverse flow, dashed] (f.north io 1) |- +(-.25, .5);
+\draw [inverse flow, dashed] (f.north io 2) |- +(.25, .5);
+\node (b) [element, some={$a$}, below=.5 of f.south io 1];
+\draw [flow] (f.south io 1) -- (b);
