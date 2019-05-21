@@ -8,7 +8,7 @@ permalink: /fill
 
 ~~~ scala
 object Collection {
-  def fill[A](n₁: Int... nₘ₋₁: Int, nₘ: Int)(a: => A): Boolean
+  def fill[A](n1: Int, n2: Int,... nm: Int)(a: => A): Collection[Collection[...Collection[A]]]
 }
 ~~~
 
