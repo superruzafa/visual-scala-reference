@@ -160,6 +160,14 @@
     \draw [flow, -] (-.1\masterunit, 0) arc [start angle=180, end angle=0, radius=.1\masterunit];
 }}
 
+\tikzset{flow jump/.pic={
+    \begin{scope}[rotate=#1]
+    \fill [white] circle [radius=.09\masterunit];
+    \draw [line cap=rect] (-.1\masterunit, 0) arc [start angle=180, end angle=0, x radius=.1\masterunit, y radius=.075\masterunit];
+    \draw [line cap=rect] (0, .1\masterunit) -- +(0, -.2\masterunit);
+    \end{scope}
+}}
+
 \tikzset{subflow width/.style={
     line width=0.5\defaultpenwidth,
 }}
