@@ -8,12 +8,17 @@ permalink: /range
 
 ~~~ scala
 object Collection {
-  def range[T](i, T, j: T): Collection[T]
-  def range[T](i, T, j: T, s: T): Collection[T]
+  def range[T](start: T, end: T): Collection[T]
+  def range[T](start: T, end: T, step: T): Collection[T]
 }
 ~~~
 
 <figure class="diagram">
-  <img src="images/range.svg" alt="range function">
-  <figcaption class="diagram-desc"><code>range</code> uses <code>p</code> to classify elements into two groups</figcaption>
+  <img src="images/range.1.svg" alt="range function">
+  <!-- <figcaption class="diagram-desc"><code>range</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+</figure>
+
+<figure class="diagram">
+  <img src="images/range.2.svg" alt="range function">
+  <!-- <figcaption class="diagram-desc"><code>range</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
 </figure>
