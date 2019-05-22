@@ -265,6 +265,108 @@
         (lastnode.south west) -- (lastnode.south east);
 }
 
+\tikzset{
+    elements before/.style={
+        /utils/exec=\csname tikz@options\endcsname,
+        alias=this,
+        draw=none,
+        minimum width=#1\masterunit,
+        node contents={},
+        append after command={
+            \pgfextra{
+                \draw[dashed solid] (this.north west) -- (this.north east);
+                \draw[dashed solid] (this.south west) -- (this.south east);
+            }
+        },
+    },
+    elements before/.default=.5,
+}
+
+\tikzset{
+    elements between/.style={
+        /utils/exec=\csname tikz@options\endcsname,
+        alias=this,
+        draw=none,
+        minimum width=#1\masterunit,
+        node contents={},
+        append after command={
+            \pgfextra{
+                \draw[solid dashed solid] (this.north west) -- (this.north east);
+                \draw[solid dashed solid] (this.south west) -- (this.south east);
+            }
+        },
+    },
+    elements between/.default=1.25,
+}
+
+\tikzset{
+    elements after/.style={
+        /utils/exec=\csname tikz@options\endcsname,
+        alias=this,
+        draw=none,
+        minimum width=#1\masterunit,
+        node contents={},
+        append after command={
+            \pgfextra{
+                \draw[solid dashed] (this.north west) -- (this.north east);
+                \draw[solid dashed] (this.south west) -- (this.south east);
+            }
+        },
+    },
+    elements after/.default=.5,
+}
+
+\tikzset{
+    vertical elements before/.style={
+        /utils/exec=\csname tikz@options\endcsname,
+        alias=this,
+        draw=none,
+        minimum height=#1\masterunit,
+        node contents={},
+        append after command={
+            \pgfextra{
+                \draw[dashed solid] (this.north west) -- (this.south west);
+                \draw[dashed solid] (this.north east) -- (this.south east);
+            }
+        },
+    },
+    vertical elements before/.default=.5,
+}
+
+\tikzset{
+    vertical elements between/.style={
+        /utils/exec=\csname tikz@options\endcsname,
+        alias=this,
+        draw=none,
+        minimum height=#1\masterunit,
+        node contents={},
+        append after command={
+            \pgfextra{
+                \draw[solid dashed solid] (this.north west) -- (this.south west);
+                \draw[solid dashed solid] (this.north east) -- (this.south east);
+            }
+        },
+    },
+    vertical elements between/.default=1.25,
+}
+
+\tikzset{
+    vertical elements after/.style={
+        /utils/exec=\csname tikz@options\endcsname,
+        alias=this,
+        draw=none,
+        minimum height=#1\masterunit,
+        node contents={},
+        append after command={
+            \pgfextra{
+                \draw[solid dashed] (this.north west) -- (this.south west);
+                \draw[solid dashed] (this.north east) -- (this.south east);
+            }
+        },
+    },
+    vertical elements after/.default=.5,
+}
+
 \tikzset{key to value/.style={
     collection element line width,
     decorate,
