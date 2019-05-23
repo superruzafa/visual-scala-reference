@@ -1,0 +1,39 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node (a11) {$a_1$}; &
+    \node (a3) {$a_3$}; &
+    \node (a2) {$a_2$}; &
+    \node (a12) {$a_1$}; &
+    \node (a5) {$a_5$}; &
+\\ };
+
+\matrix (A') [collection, right=1 of A] {
+    \node (b1) {$a_2$}; &
+    \node (b2) {$a_4$}; &
+    \node (b3) {$a_1$}; &
+    \node (b4) {$a_2$}; &
+    \node (b5) {$a_1$}; &
+\\ };
+
+\matrix (B) [collection, below=3 of $ (a3)!.5!(a5) $] {
+    \node (c3) {$a_3$}; &
+    \node (c5) {$a_5$}; &
+\\ };
+
+\draw [name path=p1, subflow width] (a11.north) -- +(0, .5) -| (b3);
+\draw [name path=p2, subflow width] (a2.north) -- +(0, 1) -| (b1);
+\draw [name path=p3, subflow width] (a12.north) -- +(0, 1.5) -| (b5);
+
+\newcommand\jumps[2]{
+    \path [subflow width, name intersections={of=#1 and #2, name=i, total=\t}]
+        \foreach \i in {1,...,\t}{ (i-\i) pic {flow jump=90} }
+}
+\jumps{p1}{p2};
+\jumps{p1}{p3};
+\jumps{p2}{p3};
+
+\foreach \i in {3,5}{
+    \draw [flow, out=270, in=90] (a\i) to (c\i);
+}
