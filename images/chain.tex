@@ -1,7 +1,7 @@
 ---
 ---
 
-\tikzset{func collection/.style={
+\tikzset{fun collection/.style={
     collection,
     nodes={
         minimum width=1.25\masterunit,
@@ -9,22 +9,22 @@
     }
 }}
 
-\tikzset{func/.style={
+\tikzset{fun/.style={
     function,
     minimum width=.5\masterunit,
     minimum height=.5\masterunit,
 }}
 
-\matrix (A) [func collection] {
+\matrix (A) [fun collection] {
     \node (ph1) {}; &
     \node (ph2) {}; &
     \elementsbetween &
     \node (phn) {}; &
 \\ };
 
-\node at (ph1) (f1) [func] {$f_1$};
-\node at (ph2) (f2) [func] {$f_2$};
-\node at (phn) (fn) [func] {$f_n$};
+\node at (ph1) (f1) [fun] {$f_1$};
+\node at (ph2) (f2) [fun] {$f_2$};
+\node at (phn) (fn) [fun] {$f_n$};
 
 \foreach \i in {1,2,n}{
     \draw [inverse flow] (f\i.north io 1) -- +(0, .5)
@@ -33,10 +33,10 @@
         node [element, below] {$x^\prime_\i$};
 }
 
-\node (f1) [func, right=2.375 of A] {$f_1$};
-\node (f2) [func, below=of f1] {$f_2$};
-\node (fi) [func, below=of f2, minimum height=1\masterunit] {};
-\node (fn) [func, below=of fi] {$f_n$};
+\node (f1) [fun, right=3 of A] {$f_1$};
+\node (f2) [fun, below=of f1] {$f_2$};
+\node (fi) [fun, below=of f2, minimum height=1\masterunit] {};
+\node (fn) [fun, below=of fi] {$f_n$};
 
 \fill [white] ($ (fi.north west) + (-\defaultpenwidth, -.5\defaultpenwidth) $)
     rectangle ($ (fi.south east) + (\defaultpenwidth, .5\defaultpenwidth) $);
@@ -45,7 +45,7 @@
     (fi.north east) to (fi.south east);
 
 \coordinate (x) at ($ (f1)!.5!(fn) $);
-\node (g) [function, right=2 of A.north east, anchor=north west, minimum height=4\masterunit, minimum width=1.25\masterunit] {};
+\node at (x) (g) [function, minimum height=4\masterunit, minimum width=1.25\masterunit] {};
 
 \draw [inverse flow] (f1.north io 1) -- (g.north io 1) -- +(0, .5)
     node [element, above] {$x$};

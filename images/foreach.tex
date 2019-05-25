@@ -14,5 +14,5 @@
     \node (f) [subfunction, below=1 of a\i] {$\texttt{f}$};
     \node (b) [subelement, below=1 of f] {\texttt{()}};
     \draw [flow] (a\i) -- (f.north io 1);
-    \draw [flow] (f.south io 1) -- (b);
+    \draw [subflow] (f.south io 1) -- (b);
 }

@@ -1,13 +1,13 @@
 ---
 ---
 
-\tikzset{every function node/.style={
+\tikzset{op/.style={
+    subfunction,
     inner xsep=.1\masterunit,
-    /function/.cd,
-    north io=2,
-    north io sep=.1\masterunit,
-    south io=0,
-    west io=1,
+    /function/west io=1,
+    /function/north io=2,
+    /function/north io sep=.1\masterunit,
+    /function/south io=0,
 }}
 
 \matrix (A) [collection] {
@@ -15,26 +15,27 @@
     \elementsbetween &
     \node (ai) {$a_i$}; &
     \elementsbetween &
-    \node (an-1) {$a_{n-1}$}; &
+    \node (an-1) {$a_{n - 1}$}; &
     \node (an) {$a_n$}; \\
 };
 
 \node (z) [element, right=.5 of A] {\texttt{z}};
 
 \foreach \i in {n,n-1,i,1}{
-    \node (f\i) [subfunction, below=1 of a\i, anchor=north io 1] {\texttt{op}};
+    \node (f\i) [op, below=1 of a\i, anchor=north io 1] {\texttt{op}};
     \draw [flow] (a\i) -- (f\i.north io 1);
 }
 
 \node (b) [element, left=.5 of f1] {$b$};
 
-\draw [flow] (fn.west io 1) -- ($ (fn.east)!.5!(fn-1.west) $) -- ++(0, .75) coordinate (flowy) -| (fn-1.north io 2);
-\draw [flow width] (fn-1.west io 1) -| ++(-.25, .75) coordinate (last);
-\draw [flow width, solid dashed solid] (last) -- (last -| fi.north io 2) coordinate (last);
-\draw [flow] (last) -- (fi.north io 2);
-\draw [flow width] (fi.west io 1) -| ++(-.25, .75) coordinate (last);
-\draw [flow width, solid dashed solid] (last) -- (last -| f1.north io 2) coordinate (last);
-\draw [flow] (last) -- (f1.north io 2);
+\coordinate (x) at ($ (fn.north io 2)!.5!(an.south) $);
+\coordinate (rule) at (fn.north io 2 |- x);
 
-\draw [flow] (z) -- (z |- flowy) -| (fn.north io 2);
+\draw [flow] (fn.west io 1) -- ($ (fn.west)!.5!(fn-1.east) $) -- (\currentcoordinate |- rule) -| (fn-1.north io 2);
+\draw [flow, dashed] (fn-1.west io 1) -- ++(-.25, 0) -- (\currentcoordinate |- rule) -- +(-.5, 0);
+\draw [inverse flow, dashed] (fi.north io 2) -- (fi.north io 2 |- rule) -- +(.5, 0);
+\draw [flow, dashed] (fi.west io 1) -- ++(-.25, 0) -- (\currentcoordinate |- rule) -- +(-.5, 0);
+\draw [inverse flow, dashed] (f1.north io 2) -- (f1.north io 2 |- rule) -- +(.5, 0);
+
+\draw [flow] (z) |- (rule) -- (fn.north io 2);
 \draw [flow] (f1.west io 1) -- (b);

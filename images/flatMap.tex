@@ -1,6 +1,11 @@
 ---
 ---
 
+\tikzset{fun/.style={
+    function,
+    /function/south io width=.75\masterunit,
+    /function/south io narrow width=.65\masterunit,
+}}
 \newlength\iowidth
 \setlength\iowidth{.75\masterunit}
 
@@ -40,7 +45,7 @@
 };
 
 \foreach \i in {1,2,n}{
-    \node (f\i) [function, /function/south io width=\iowidth, above=1 of B\i] {\texttt{f}};
+    \node (f\i) [fun, above=1 of B\i] {\texttt{f}};
     \draw [flow, out=270, in=90] (a\i) to (f\i.north io 1);
 
     \begin{scope}[subflow, out=270, in=90]

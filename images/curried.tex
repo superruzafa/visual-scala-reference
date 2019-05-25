@@ -1,20 +1,21 @@
 ---
 ---
 
-\node (f) [function, /function/north io=4] {$f$};
-\draw [inverse flow] (f.north io 1) -- +(0, .5) node [element, above] {$x_1$};
-\draw [inverse flow] (f.north io 2) -- +(0, .5) node [element, above] {$x_2$};
-\draw [inverse flow] (f.north io 4) -- +(0, .5) node [element, above] {$x_n$};
-\draw [flow] (f.south io 1) -- +(0, -.5) node [element, below] {$y$};
-\fill [white] ($ (f.north io 3) + (-.25, -.25) $) rectangle +(.5, .5);
-\draw [flow width, dashed] ($ (f.north io 3) + (-.25, -1.5mm) $) -- +(.5, 0);
-
 \tikzset{g function/.style={
     function,
     /function/.cd/,
     south io width=.5\masterunit,
+    south io narrow width=.333\masterunit,
     /tikz/.cd,
 }}
+
+\node (f) [function, /function/north io=4] {$f$};
+\foreach \i/\j in {1/1,2/2,4/n}{
+    \draw [inverse flow] (f.north io \i) -- +(0, .5) node [element, above] {$x_\j$};
+}
+\draw [flow] (f.south io 1) -- +(0, -.5) node [element, below] {$y$};
+\fill [white] ($ (f.north io 3) + (-.2, -.2) $) rectangle +(.4, .3);
+\draw [flow width, dotted] (f.north west -| f.north io 3) ++(-.2, 0) -- +(.4, 0);
 
 \node (g1) [g function, right=3 of f] {$\lambda_1$};
 \draw [inverse flow] (g1.north io 1) -- +(0, .5) node [element, above] {$x_1$};

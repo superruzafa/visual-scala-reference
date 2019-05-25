@@ -4,32 +4,24 @@
 \tikzset{op/.style={
     subfunction,
     inner xsep=.1\masterunit,
-    /function/.cd,
-    north io=2,
-    north io sep=.1\masterunit,
-    south io=0,
-    /tikz/.cd,
+    /function/north io=2,
+    /function/north io sep=.1\masterunit,
+    /function/south io=0,
 }}
 
 \tikzset{opw/.style={
     op,
-    /function/.cd,
-    west io=1,
-    /tikz/.cd,
+    /function/west io=1,
 }}
 
 \tikzset{ope/.style={
     op,
-    /function/.cd,
-    east io=1,
-    /tikz/.cd,
+    /function/east io=1,
 }}
 
 \tikzset{ops/.style={
     op,
-    /function/.cd,
-    south io=1,
-    /tikz/.cd,
+    /function/south io=1,
 }}
 
 \matrix (A) [collection] {

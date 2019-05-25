@@ -396,6 +396,10 @@
     line width=.75\defaultpenwidth,
     minimum width=.75\masterunit,
     minimum height=.75\masterunit,
+    /function/io width=.3\masterunit,
+    /function/io narrow width=.2\masterunit,
+    /function/io height=.15\masterunit,
+    /function/io sep=.2\masterunit,
 }}
 
 \tikzset{subfunction/.style={
@@ -403,10 +407,14 @@
     inner xsep=.15\masterunit,
     inner ysep=.2\masterunit,
     line width=.5\defaultpenwidth,
+    /function/io width=.2\masterunit,
+    /function/io narrow width=.133\masterunit,
+    /function/io height=.1\masterunit,
+    /function/io sep=.1\masterunit,
 }}
 
 \tikzset{horizontal subfunction/.style={
-    shape=function,
+    subfunction,
     inner xsep=.2\masterunit,
     inner ysep=.15\masterunit,
     line width=.5\defaultpenwidth,
@@ -536,6 +544,10 @@
 
 \newcommand\true{\texttt{true}}
 \newcommand\false{\texttt{false}}
+
+\makeatletter
+\newcommand\currentcoordinate{\the\tikz@lastxsaved,\the\tikz@lastysaved}
+\makeatother
 
 \newcommand{\drawbg}{
      \begin{scope}[on background layer]
