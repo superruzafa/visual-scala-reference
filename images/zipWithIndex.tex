@@ -10,7 +10,7 @@
     \node (an) {$a_n$}; \\
 };
 
-\matrix (C) [collection, below=3 of A, nodes={font=\footnotesize}] {
+\matrix (C) [collection, below=2 of A, nodes={font=\footnotesize}] {
     \node (b1) {$(a_1, 0)$}; &
     \node (b2) {$(a_2, 1)$}; &
     \elementsbetween &
@@ -20,5 +20,5 @@
 };
 
 \foreach \i in {1,2,i,n} {
-    \draw [flow] (a\i) -- (b\i);
+    \draw [flow ->] (a\i) -- (b\i);
 }

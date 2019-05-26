@@ -23,21 +23,20 @@
     \node (bn) {$a_n$}; \\
 };
 
-\begin{scope}[every path/.style={flow width}]
+\begin{scope}[every path/.style={flow}]
 
     \inversebrace{a1.south west}{ai-1.south east}
     \coordinate (x) at (bracepoint);
     \normalbrace{b1.north west}{bi-1.north east}
-    \draw [flow] (x) -- (bracepoint);
+    \draw [flow ->] (x) -- (bracepoint);
 
     \inversebrace{ai+1.south west}{an.south east}
     \coordinate (x) at (bracepoint);
     \normalbrace{bi+1.north west}{bn.north east}
     \path [draw=none, name path=p1] (x) -- (bracepoint);
 
-    \draw [flow, name path=p2] (a.south) .. controls +(0, -2) and +(0, 2) .. (bi.north);
+    \draw [flow ->, name path=p2] (a.south) .. controls +(0, -2) and +(0, 2) .. (bi.north);
     \path [name intersections={of=p1 and p2, by={y}}] (y) pic [rotate=13,yshift=0.2] {bridge flow};
-    % \path [draw=none, flow, name path=p2] (a.south) .. controls +(0, -2) and +(0, 2) .. (bi.north);
-    \draw [flow] (x) -- (bracepoint);
+    \draw [flow ->] (x) -- (bracepoint);
 
 \end{scope}

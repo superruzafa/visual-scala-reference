@@ -47,10 +47,10 @@
 };
 
 \foreach \i/\r in {1/1,2/2,3/1,i/m,i+1/2,n/m}{
-    \node (f) [subfunction, above=.5 of a\i] {\texttt{f}};
-    \node (r) [subelement, above=.5 of f] {$k_\r$};
-    \draw [subflow] (a\i) -- (f.south io 1);
-    \draw [subflow] (f.north io 1) -- (r);
+    \draw [subflow ->] (a\i.north) -- +(0, .5)
+        node (f) [subfunction, above] {\texttt{f}};
+    \draw [subflow ->] (f.north io 1) -- +(0, .5)
+        node [subelement, above] {$k_\r$};
 }
 
 \node [rotate=-90] at ($ (A.south)!.5!(y) $) [big arrow];

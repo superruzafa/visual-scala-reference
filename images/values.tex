@@ -18,10 +18,10 @@
     node contents={\texttt{next}}
 }}
 
-\draw [flow] ($ (v1.west) + (-1, 0) $) -- node [next label, above=0.1] {} (v1);
-\draw [flow, bend right=45] (v1.west) to node [next label, below=0.3, rotate=180] {} (v2.west);
-\draw [flow, dashed] (v2.west) arc [start angle=150, delta angle=30, radius=1];
-\draw [inverse flow, dashed] (vn.west) arc [start angle=210, delta angle=-30, radius=1];
+\draw [flow ->] ($ (v1.west) + (-1, 0) $) -- node [next label, above=0.1] {} (v1);
+\draw [flow ->, bend right=45] (v1.west) to node [next label, below=0.3, rotate=180] {} (v2.west);
+\draw [flow ->, dashed] (v2.west) arc [start angle=150, delta angle=30, radius=1];
+\draw [<- flow, dashed] (vn.west) arc [start angle=210, delta angle=-30, radius=1];
 
 \coordinate (kc) at ($ (k1)!.5!(kn) $);
 \coordinate (vc) at ($ (v1)!.5!(vn) $);

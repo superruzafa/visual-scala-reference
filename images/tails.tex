@@ -40,11 +40,11 @@
     node contents={\texttt{next}}
 }}
 
-\draw [flow] ($ (I1.west) + (-1, 0) $) -- node [next label, above=0.1] {} (I1);
-\draw [flow] (I1.west) .. controls +(-.55, -.55) and +(-1.1, 0) .. node [next label, below=0.1] {} (I2.west);
-\draw [flow, dotted] (I2.west) .. controls +(-1.1, -.55) and +(-2.2, 0) .. node [next label, below=0.1] {} (In1.west);
-\draw [flow] (In1.west) .. controls +(-.55, -.55) and +(-1.5, 0) .. node [next label, below=0.1] {} (In.west);
-\draw [flow] (In.west) .. controls +(-.55, -.55) and +(-1.1, 0) .. node [next label, below=0.1] {} (If.west);
+\draw [flow ->] ($ (I1.west) + (-1, 0) $) -- node [next label, above=0.1] {} (I1);
+\draw [flow ->] (I1.west) .. controls +(-.55, -.55) and +(-1.1, 0) .. node [next label, below=0.1] {} (I2.west);
+\draw [flow ->, dashed] (I2.west) .. controls +(-1.1, -.55) and +(-2.2, 0) .. node [next label, below=0.1] {} (In1.west);
+\draw [flow ->] (In1.west) .. controls +(-.55, -.55) and +(-1.5, 0) .. node [next label, below=0.1] {} (In.west);
+\draw [flow ->] (In.west) .. controls +(-.55, -.55) and +(-1.1, 0) .. node [next label, below=0.1] {} (If.west);
 
 \coordinate (x) at ($ (A)!.5!(I1) $);
 \node at (x) [big arrow, rotate=-90] {};

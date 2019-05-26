@@ -18,9 +18,9 @@
     \node {$a_n$}; \\
 };
 
-\begin{scope}[every path/.style={flow width}]
+\begin{scope}[every path/.style={flow}]
 \inversebrace{a2.south west}{an.south east}
 \coordinate (s) at (bracepoint);
 \normalbrace{B.north west}{B.north east}
 \end{scope}
-\draw [flow] (s) -- (bracepoint);
+\draw [flow ->] (s) -- (bracepoint);

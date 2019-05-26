@@ -1,27 +1,34 @@
 ---
 ---
 
-\tikzset{seqop/.style={
+\tikzset{op/.style={
     subfunction,
+    font=\footnotesize,
+    /function/north io=2,
+    /function/north io sep=.2\masterunit,
+}}
+
+\tikzset{seq op/.style={
+    op,
     node contents={\texttt{seqop}},
-    font=\footnotesize,
-    /function/.cd,
-    north io=2,
-    south io=0,
-    /tikz/.cd,
 }}
 
-\tikzset{combop/.style={
-    subfunction,
+\tikzset{comb op/.style={
+    op,
     node contents={\texttt{combop}},
-    font=\footnotesize,
-    /function/.cd,
-    north io=2,
-    south io=0,
-    /tikz/.cd,
 }}
 
-\matrix [collection] {
+\tikzset{left out/.style={
+    /function/west io=1,
+    /function/south io=0,
+}}
+
+\tikzset{right out/.style={
+    /function/east io=1,
+    /function/south io=0,
+}}
+
+\matrix (A) [collection] {
     \node (a1) {$a_1$}; &
     \node (a2) {$a_2$}; &
     \elementsbetween &
@@ -32,40 +39,50 @@
     \node (an) {$a_n$}; \\
 };
 
-\node (s1) [seqop, /function/east io=1, below=1 of a1.south, anchor=north io 2];
-\node (z1) [subelement, above=.5 of s1.north io 1] {\texttt{z}};
-\draw [flow] (z1) -- (s1.north io 1);
-\draw [flow] (a1) -- (s1.north io 2);
+\node (s1) [seq op, right out, below=1 of a1.south, anchor=north io 2];
+\draw [<- flow] (s1.north io 1) -- +(0, .5)
+    node [element, above] {\texttt{z}};
+\draw [flow ->] (a1) -- (s1.north io 2);
 
-\node (s2) [seqop, /function/east io=1, below=2 of a2.south, anchor=north io 2];
-\draw [flow] (a2) -- (s2.north io 2);
-\draw [flow] (s1.east io 1) .. controls +(.33, 0) and +(0, .33) .. (s2.north io 1);
+\node (s2) [seq op, right out, below=2 of a2.south, anchor=north io 2];
+\draw [flow ->] (a2) -- (s2.north io 2);
+\draw [flow ->] (s1.east io 1) -| (s2.north io 1);
+\draw [flow ->, dashed] (s2.east io 1) -| +(.25, -.5);
 
-\node (si) [seqop, /function/west io=1, below=1 of ai.south east];
-\draw [flow] (ai.south) .. controls +(0, -.5) and +(0, .5) .. (si.north io 1);
-\draw [flow] (ai+1.south) .. controls +(0, -.5) and +(0, .5) .. (si.north io 2);
+\node (si) [seq op, left out, below=1 of ai.south east];
+\coordinate (x) at ($ (si.north io 1)!.5!(ai.south) $);
+\coordinate (rule) at (si.north io 1 |- x);
+\draw [flow ->] (ai) |- (rule) -- (si.north io 1);
+\draw [flow ->] (ai+1) |- (si.north io 2 |- rule) -- (si.north io 2);
+\draw [flow ->, dashed] (si.west io 1) -| +(-.25, -.5);
+
+\node (sn) [seq op, left out, below=1 of an.south, anchor=north io 2];
+\draw [<- flow] (sn.north io 1) -- +(0, .5)
+    node [element, above] {\texttt{z}};
+\draw [flow ->] (an) -- (sn.north io 2);
+
+\node (sn-1) [seq op, left out, below=2 of an-1.south, anchor=north io 1];
+\draw [flow ->] (sn.west io 1)
+    -- ($ (sn.west io 1 -| sn-1.north io 1)!.5!(sn.west io 1) $)
+    |- ($ (sn-1.north io 2)!.5!(sn-1.north io 2 |- sn.south west) $)
+    -- (sn-1.north io 2);
+
+% \draw [flow ->] (sn.west io 1) .. controls +(-.33, 0) and +(0, .33) .. (sn-1.north io 2);
 
 
-\node (sn) [seqop, /function/west io=1, below=1 of an.south, anchor=north io 2];
-\node (z2) [subelement, above=.5 of sn.north io 1] {\texttt{z}};
-\draw [flow] (z2) -- (sn.north io 1);
-\draw [flow] (an) -- (sn.north io 2);
+\draw [flow ->] (an-1) -- (sn-1.north io 1);
+\draw [flow ->, dashed] (sn-1.west io 1) -| +(-.25, -.5);
 
-\node (sn-1) [seqop, /function/west io=1, below=2 of an-1.south, anchor=north io 1];
-\draw [flow] (sn.west io 1) .. controls +(-.33, 0) and +(0, .33) .. (sn-1.north io 2);
-\draw [flow] (an-1) -- (sn-1.north io 1);
+\node (c3) [comb op, below=5 of A];
+\node (c1) [comb op, right out, above left=.5 and 0 of c3];
+\node (c2) [comb op, left out, above right=.5 and 0 of c3];
 
-\coordinate (x) at ($ (s2.east io 1)!.5!(si.west io 1) $);
-\coordinate (x2) at (s2.east io 1 -| x);
+\draw [<- flow, dashed] (c1.north io 1) |- +(-.25, .5);
+\draw [<- flow, dashed] (c1.north io 2) |- +(.25, .5);
+\draw [<- flow, dashed] (c2.north io 1) |- +(-.25, .5);
+\draw [<- flow, dashed] (c2.north io 2) |- +(.25, .5);
+\draw [flow ->] (c1.east io 1) -| (c3.north io 1);
+\draw [flow ->] (c2.west io 1) -| (c3.north io 2);
 
-\node (c1) at ($ (x2) + (0, -1) $) [combop, /function/east io=1];
-\draw [flow, dashed] (s2.east io 1) .. controls +(.5, 0) and +(0, .5) .. (c1.north io 1);
-\draw [flow, dashed] (si.west io 1) .. controls +(-.75, 0) and +(0, .75) .. (c1.north io 2);
-
-\coordinate (x) at ($ (c1.east io 1)!.5!(sn.west io 1) $);
-\coordinate (x2) at (c1.east io 1 -| x);
-\node (c2) at ($ (x2) + (0, -1) $) [combop, /function/south io=1];
-\draw [flow, dashed] (c1.east io 1) .. controls +(1.5, 0) and +(0, .5) .. (c2.north io 1);
-\draw [flow, dashed] (sn-1.west io 1) .. controls +(-1.5, 0) and +(0, .75) .. (c2.north io 2);
-\node (b) [element, below=.5 of c2.south] {$b$};
-\draw [flow] (c2.south io 1) -- (b);
+\draw [flow ->] (c3.south io 1) -- +(0, -.5)
+    node [element, below] {$b$};

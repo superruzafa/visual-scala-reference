@@ -25,7 +25,7 @@
 
 \foreach \i in {1,2,i,n}{
     \node (f\i) [op, below=1 of a\i, anchor=north io 2] {\texttt{op}};
-    \draw [flow] (a\i) -- (f\i.north io 2);
+    \draw [flow ->] (a\i) -- (f\i.north io 2);
 }
 
 \matrix (B) [collection, below=2.5 of A, xshift=-.1\masterunit] {
@@ -40,21 +40,21 @@
 
 \coordinate (rule) at ($ (a1.south)!.5!(f1.north io 2) $);
 
-\draw [flow] (z) -- (z |- rule) -| (f1.north io 1);
+\draw [flow ->] (z) -- (z |- rule) -| (f1.north io 1);
 
 \coordinate (x) at ($ (f1.south)!.5!(b0.north) $);
-\draw [flow] (z) -- (z |- x) -| (b0.north);
+\draw [flow ->] (z) -- (z |- x) -| (b0.north);
 
-\draw [flow] (f1.east io 1) -- (f1.east io 1 -| b1.north) coordinate (x) -- (b1.north);
-\draw [flow] (x) -- (x |- rule) -| (f2.north io 1);
+\draw [flow ->] (f1.east io 1) -- (f1.east io 1 -| b1.north) coordinate (x) -- (b1.north);
+\draw [flow ->] (x) -- (x |- rule) -| (f2.north io 1);
 
-\draw [flow] (f2.east io 1) -- (f2.east io 1 -| b2.north) coordinate (x) -- (b2.north);
-\draw [flow, dashed] (x) -- (x |- rule) -- +(.5, 0);
+\draw [flow ->] (f2.east io 1) -- (f2.east io 1 -| b2.north) coordinate (x) -- (b2.north);
+\draw [flow ->, dashed] (x) -- (x |- rule) -- +(.25, 0);
 
-\draw [inverse flow, dashed] (fi.north io 1) -- (fi.north io 1 |- rule) -- +(-.5, 0);
-\draw [flow] (fi.east io 1) -- (fi.east io 1 -| bi.north) coordinate (x) -- (bi.north);
-\draw [flow, dashed] (x) -- (x |- rule) -- +(.5, 0);
+\draw [<- flow, dashed] (fi.north io 1) -- (fi.north io 1 |- rule) -- +(-.25, 0);
+\draw [flow ->] (fi.east io 1) -- (fi.east io 1 -| bi.north) coordinate (x) -- (bi.north);
+\draw [flow ->, dashed] (x) -- (x |- rule) -- +(.25, 0);
 
-\draw [inverse flow, dashed] (fn.north io 1) -- (fn.north io 1 |- rule) -- +(-.5, 0);
-\draw [flow] (fn.east io 1) -| (bn.north);
+\draw [<- flow, dashed] (fn.north io 1) -- (fn.north io 1 |- rule) -- +(-.25, 0);
+\draw [flow ->] (fn.east io 1) -| (bn.north);
 

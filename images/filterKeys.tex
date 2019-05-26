@@ -22,9 +22,9 @@
 
 \foreach \i/\r in {1/false,2/true,i/true,i+1/false,n-1/true,n/false}{
     \draw [key to value] (k\i.east) to +(1, 0) node [element, right] {$v_{\i}$};
-    \draw [subflow] (k\i.west) -- +(-.5, 0)
+    \draw [subflow ->] (k\i.west) -- +(-.5, 0)
         node (p) [horizontal subfunction, left] {\texttt{p}};
-    \draw [subflow] (p.west io 1) -- +(-.5, 0)
+    \draw [subflow ->] (p.west io 1) -- +(-.5, 0)
         node [subelement, left] {\texttt{\r}};
 }
 
@@ -32,7 +32,7 @@
     \draw [key to value] (l\i.east) to +(1, 0) node [element, right] {$v_{\i}$};
 }
 
-\begin{scope}[flow, out=0, in=180]
+\begin{scope}[flow ->, out=0, in=180]
     \draw ($ (k2.east)!.5!(k2.south east) $) to (l2);
     \draw ($ (ki.east)!.5!(ki.south east) $) to (li);
     \draw ($ (kn-1.east)!.5!(kn-1.north east) $) to (ln-1);

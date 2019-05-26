@@ -46,14 +46,14 @@
 
 \foreach \i in {1,2,n}{
     \node (f\i) [fun, above=1 of B\i] {\texttt{f}};
-    \draw [flow, out=270, in=90] (a\i) to (f\i.north io 1);
+    \draw [flow ->, out=270, in=90] (a\i) to (f\i.north io 1);
 
-    \begin{scope}[subflow, out=270, in=90]
+    \begin{scope}[dashed, out=270, in=90]
         \draw ($ (f\i.south io 1) + (-.5\iowidth, 0) $) to (B\i.north west);
         \draw ($ (f\i.south io 1) + (.5\iowidth, 0) $) to (B\i.north east);
     \end{scope}
 }
 
 \foreach \i in {11,12,13,21,22,n1,nm}{
-    \draw [flow, out=270, in=90] (b\i) to (c\i);
+    \draw [flow ->, out=270, in=90] (b\i) to (c\i);
 }

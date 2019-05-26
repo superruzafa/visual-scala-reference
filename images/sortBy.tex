@@ -21,9 +21,9 @@
 \\ };
 
 \foreach \i in {1,2,i,n}{
-    \draw [subflow] (a\i.north) -- +(0, .5)
+    \draw [subflow ->] (a\i.north) -- +(0, .5)
         node (f) [subfunction, above] {\texttt{f}};
-    \draw [subflow] (f.north io 1) -- +(0, .5)
+    \draw [subflow ->] (f.north io 1) -- +(0, .5)
         node [subelement, above] {$w_\i$};
 }
 

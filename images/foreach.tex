@@ -11,8 +11,8 @@
 };
 
 \foreach \i in {1,2,i,n}{
-    \node (f) [subfunction, below=1 of a\i] {$\texttt{f}$};
-    \node (b) [subelement, below=1 of f] {\texttt{()}};
-    \draw [flow] (a\i) -- (f.north io 1);
-    \draw [subflow] (f.south io 1) -- (b);
+    \draw [flow ->] (a\i.south) -- +(0, -.5)
+        node (f) [subfunction, below] {\texttt{f}};
+    \draw [subflow ->] (f.south io 1) -- +(0, -.5)
+        node [subelement, below] {\texttt{()}};
 }

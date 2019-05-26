@@ -19,9 +19,9 @@
 
 \measure{$i$}{a1.north west}{ai.north east}
 
-\begin{scope}[every path/.style={flow width}]
+\begin{scope}[flow ->]
 \inversebrace{ai+1.south west}{an.south east}
 \coordinate (s) at (bracepoint);
 \normalbrace{B.north west}{B.north east}
 \end{scope}
-\draw [flow] (s) -- (bracepoint);
+\draw [flow ->] (s) -- (bracepoint);

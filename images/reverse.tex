@@ -23,9 +23,9 @@
 
 \newlength\reverseradius
 \setlength\reverseradius{.2\masterunit}
-\draw [flow] (x) ++ (0:\reverseradius)
+\draw [flow ->] (x) ++ (0:\reverseradius)
     arc [radius=\reverseradius, start angle=0, end angle=170];
-\draw [flow] (x) ++ (180:\reverseradius)
+\draw [flow ->] (x) ++ (180:\reverseradius)
     arc [radius=\reverseradius, start angle=180, end angle=350];
 
 \node at (x) [

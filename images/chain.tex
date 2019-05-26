@@ -27,9 +27,9 @@
 \node at (phn) (fn) [fun] {$f_n$};
 
 \foreach \i in {1,2,n}{
-    \draw [inverse flow] (f\i.north io 1) -- +(0, .5)
+    \draw [<- flow] (f\i.north io 1) -- +(0, .5)
         node [element, above] {$x_\i$};
-    \draw [flow] (f\i.south io 1) -- +(0, -.5)
+    \draw [flow ->] (f\i.south io 1) -- +(0, -.5)
         node [element, below] {$x^\prime_\i$};
 }
 
@@ -40,16 +40,16 @@
 
 \fill [white] ($ (fi.north west) + (-\defaultpenwidth, -.5\defaultpenwidth) $)
     rectangle ($ (fi.south east) + (\defaultpenwidth, .5\defaultpenwidth) $);
-\draw [flow width, solid dashed solid]
+\draw [flow, solid dashed solid]
     (fi.north west) to (fi.south west)
     (fi.north east) to (fi.south east);
 
 \coordinate (x) at ($ (f1)!.5!(fn) $);
 \node at (x) (g) [function, minimum height=4\masterunit, minimum width=1.25\masterunit] {};
 
-\draw [inverse flow] (f1.north io 1) -- (g.north io 1) -- +(0, .5)
+\draw [<- flow] (f1.north io 1) -- (g.north io 1) -- +(0, .5)
     node [element, above] {$x$};
-\draw [flow] (fn.south io 1) -- (g.south io 1) -- +(0, -.5)
+\draw [flow ->] (fn.south io 1) -- (g.south io 1) -- +(0, -.5)
     node [element, below] {$x^\prime$};
 
 \coordinate (x) at ($ (g.west)!.5!(A.east) $);

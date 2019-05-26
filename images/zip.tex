@@ -3,7 +3,7 @@
 
 \tikzset{group/.style={
     draw,
-    flow width,
+    flow,
     minimum height=2\masterunit,
     minimum width=3ex,
     rounded corners=0.2\masterunit,
@@ -40,5 +40,5 @@
 
 \foreach \i in {1,2,i,n}{
     \node (g) [group] at ($ (a\i)!.5!(b\i) $) {};
-    \draw (g) [flow] -- (c\i);
+    \draw (g) [flow ->] -- (c\i);
 }

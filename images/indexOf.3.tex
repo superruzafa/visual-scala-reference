@@ -9,15 +9,15 @@
 \\ };
 
 \foreach \i/\r in {1,2,n}{
-    \node (c) [subelement, above=.5 of a\i] {$\texttt{a\,==\,}a_\i $};
-    \node (r) [subelement, above=.5 of c] {\false};
-    \draw [subflow] (a\i) -- (c);
-    \draw [subflow] (c) -- (r);
+    \draw [subflow ->] (a\i.north) -- +(0, .5)
+        node (p) [subelement, above] {$\texttt{a\,==\,}a_\i $};
+    \draw [subflow ->] (p.north) -- +(0, .5)
+        node [subelement, above] {\texttt{\r}};
 }
 
-\draw [inverse flow] (a1.north) arc [start angle=0, end angle=100, x radius=.75, y radius=.5];
-\draw [flow, bend left=45] (a1.north) to (a2.north);
-\draw [flow, dashed, bend left=45] (a2.north) to (an.north);
+\draw [<- flow] (a1.north) arc [start angle=0, end angle=100, x radius=.75, y radius=.5];
+\draw [flow ->, bend left=45] (a1.north) to (a2.north);
+\draw [flow ->, dashed, bend left=45] (a2.north) to (an.north);
 
 \node (b) [element, below right=1 and 1 of an] {-1};
-\draw [flow] (an.north) .. controls +(1.1, 1.1) and +(0, 1) .. (b.north);
+\draw [flow ->] (an.north) .. controls +(1.1, 1.1) and +(0, 1) .. (b.north);

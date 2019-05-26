@@ -21,12 +21,12 @@
 };
 
 \foreach \i/\r in {1/false,2/true,i/true,i+1/false,n-1/true,n/false}{
-    \node (f) [subfunction, above=.5 of a\i] {\texttt{p}};
-    \node (r) [subelement, above=.5 of f] {\texttt{\r}};
-    \draw [subflow] (a\i) -- (f.south io 1);
-    \draw [subflow] (f.north io 1) -- (r);
+    \draw [subflow ->] (a\i.north) -- +(0, .5)
+        node (p) [subfunction, above] {\texttt{p}};
+    \draw [subflow ->] (p.north io 1) -- +(0, .5)
+        node [subelement, above] {\texttt{\r}};
 }
 
 \foreach \i in {2,i,n-1}{
-    \draw [flow, out=270, in=90] (a\i.south) to (b\i.north);
+    \draw [flow ->, out=270, in=90] (a\i.south) to (b\i.north);
 }

@@ -41,7 +41,7 @@
     \node (dn) {$a^n_q$}; &
 \\ };
 
-\matrix [collection, below=3 of P] {
+\matrix [collection, below=2 of P] {
     \node (fa1) {$a^1_1$}; &
     \elementsbetween[.5] &
     \node (fan) {$a^1_n$}; &
@@ -60,6 +60,6 @@
 
 \foreach \i in {a,b,c,d} {
     \foreach \j in {1,n} {
-        \draw [flow] (\i\j) .. controls +(0, -1) and +(0, 1) .. (f\i\j);
+        \draw [flow ->] (\i\j) .. controls +(0, -1) and +(0, 1) .. (f\i\j);
     }
 }

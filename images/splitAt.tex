@@ -16,14 +16,14 @@
     \elementsafter \coordinate (bn) at (lastnode.north east); &
 \\ };
 
-\begin{scope}[flow width]
+\begin{scope}[flow]
     \coordinate (a) at ($ (ai.south east) + (-.25\defaultpenwidth, 0) $);
     \inversebrace{a1.south west}{a}
     \coordinate (bp) at (bracepoint);
 
     \coordinate (b) at ($ (bi.north east) + (-.25\defaultpenwidth, 0) $);
     \normalbrace{b1.north west}{b}
-    \draw [flow] (bp) [out=270, in=90] (bp) to (bracepoint);
+    \draw [flow ->] (bp) [out=270, in=90] (bp) to (bracepoint);
 
     \coordinate (a) at ($ (ai+1.south west) + (.25\defaultpenwidth, 0) $);
     \inversebrace{a}{an}
@@ -31,5 +31,5 @@
 
     \coordinate (b) at ($ (bi+1.north west) + (.25\defaultpenwidth, 0) $);
     \normalbrace{b}{bn}
-    \draw [flow] [out=270, in=90] (bp) to (bracepoint);
+    \draw [flow ->] [out=270, in=90] (bp) to (bracepoint);
 \end{scope}

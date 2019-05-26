@@ -37,7 +37,7 @@
     \node (b12) [minimum width=2\masterunit] {}; &
 \\ };
 
-\draw [flow width, dashed] ($ (B1.north west) + (-.25, .25) $) rectangle ($ (B1.south east) + (.25, -.25) $);
+\draw [flow, dashed] ($ (B1.north west) + (-.25, .25) $) rectangle ($ (B1.south east) + (.25, -.25) $);
 
 \matrix (B2) [collection level 2] at (a2) {
     \node (b21) {}; &
@@ -45,7 +45,7 @@
     \node (b22) [minimum width=2\masterunit] {}; &
 \\ };
 
-\draw [flow width, dashed] ($ (B2.north west) + (-.25, .25) $) rectangle ($ (B2.south east) + (.25, -.25) $);
+\draw [flow, dashed] ($ (B2.north west) + (-.25, .25) $) rectangle ($ (B2.south east) + (.25, -.25) $);
 
 \matrix (C1) [collection level 3] at (b11) {
     \node (c11) {\texttt{a}}; &

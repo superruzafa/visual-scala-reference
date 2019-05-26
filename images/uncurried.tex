@@ -10,17 +10,17 @@
 }}
 
 \node (g1) [g function] {$\lambda_1$};
-\draw [inverse flow] (g1.north io 1) -- +(0, .5) node [element, above] {$x_1$};
+\draw [<- flow] (g1.north io 1) -- +(0, .5) node [element, above] {$x_1$};
 \node (g2) [g function, below=1 of g1] {$\lambda_2$};
 \node (g3) [function, below=1.5 of g2] {$\lambda_n$};
 
 \node (x) [element, above right=.25 and -1.5 of g2.north io 1] {$x_2$};
-\draw [flow] (x) -| (g2.north io 1);
+\draw [flow ->] (x) -| (g2.north io 1);
 
 \node (x) [element, above right=.25 and -1.5 of g3.north io 1] {$x_n$};
-\draw [flow] (x) -| (g3.north io 1);
+\draw [flow ->] (x) -| (g3.north io 1);
 
-\draw [flow] (g3.south io 1) -- +(0, -.5) node [element, below] {$y$};
+\draw [flow ->] (g3.south io 1) -- +(0, -.5) node [element, below] {$y$};
 
 \begin{scope}[dashed]
     \foreach \i/\j in {1/2,2/3}{
@@ -31,12 +31,12 @@
 
 
 \node (f) [function, /function/north io=4, right=3 of g1] {$f$};
-\draw [inverse flow] (f.north io 1) -- +(0, .5) node [element, above] {$x_1$};
-\draw [inverse flow] (f.north io 2) -- +(0, .5) node [element, above] {$x_2$};
-\draw [inverse flow] (f.north io 4) -- +(0, .5) node [element, above] {$x_n$};
-\draw [flow] (f.south io 1) -- +(0, -.5) node [element, below] {$y$};
+\draw [<- flow] (f.north io 1) -- +(0, .5) node [element, above] {$x_1$};
+\draw [<- flow] (f.north io 2) -- +(0, .5) node [element, above] {$x_2$};
+\draw [<- flow] (f.north io 4) -- +(0, .5) node [element, above] {$x_n$};
+\draw [flow ->] (f.south io 1) -- +(0, -.5) node [element, below] {$y$};
 \fill [white] ($ (f.north io 3) + (-.2, -.2) $) rectangle +(.4, .3);
-\draw [flow width, dotted] (f.north west -| f.north io 3) ++(-.2, 0) -- +(.4, 0);
+\draw [flow, dotted] (f.north west -| f.north io 3) ++(-.2, 0) -- +(.4, 0);
 
 \coordinate (x) at ($ (g1.east)!.5!(f.west) $);
 \node at (x) [big arrow];

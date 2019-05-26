@@ -23,22 +23,22 @@
 \coordinate (Bend) at (lastnode.north east);
 
 \foreach \i/\r in {1/true,2/true,i-1/true,i/false}{
-    \node (f) [subfunction, above=.5 of a\i] {\texttt{p}};
-    \node (r) [subelement, above=.5 of f] {\texttt{\r}};
-    \draw [subflow] (a\i) -- (f.south io 1);
-    \draw [subflow] (f.north io 1) -- (r);
+    \draw [subflow ->] (a\i.north) -- +(0, .5)
+        node (p) [subfunction, above] {\texttt{p}};
+    \draw [subflow ->] (p.north io 1) -- +(0, .5)
+        node [subelement, above] {\texttt{\r}};
 }
 
-\begin{scope}[flow width]
+\begin{scope}[flow]
     \coordinate (a) at ($ (ai-1.south east) + (-.5\defaultpenwidth, 0) $);
     \coordinate (b) at ($ (bi-1.north east) + (-.5\defaultpenwidth, 0) $);
     \inversebrace{a1.south west}{a}
     \coordinate (x) at (bracepoint);
     \normalbrace{b1.north west}{b}
-    \draw [flow] (x) [out=270, in=90] (x) to (bracepoint);
+    \draw [flow ->] (x) [out=270, in=90] (x) to (bracepoint);
 
     \inversebrace{ai.south west}{Aend}
     \coordinate (x) at (bracepoint);
     \normalbrace{bi.north west}{Bend}
-    \draw [flow] (x) [out=270, in=90] (x) to (bracepoint);
+    \draw [flow ->] (x) [out=270, in=90] (x) to (bracepoint);
 \end{scope}

@@ -22,16 +22,16 @@
 
 \foreach \i in {1,2,i,i+1,n-1,n}{
     \node (f\i) [subfunction, below=1 of a\i] {\texttt{f}};
-    \draw [flow] (a\i) -- (f\i.north io 1);
+    \draw [flow ->] (a\i) -- (f\i.north io 1);
 }
 \foreach \i in {2,i,n-1}{
-    \draw [flow] (f\i.south io 1) .. controls +(0, -1) and +(0, 1) ..
+    \draw [flow ->] (f\i.south io 1) .. controls +(0, -1) and +(0, 1) ..
         node [partial, very near start] {} (b\i.north);
 }
 
-\draw [exception flow, ->] (f1.west) -- +(-.5, 0)
+\draw [throw ->] (f1.west) -- +(-.5, 0)
     node [exception=MatchError, font=\tiny, left];
-\draw [exception flow, ->] (fi+1.east) -- +(.5, 0)
+\draw [throw ->] (fi+1.east) -- +(.5, 0)
     node [exception=MatchError, font=\tiny, right];
-\draw [exception flow, ->] (fn.east) -- +(.5, 0)
+\draw [throw ->] (fn.east) -- +(.5, 0)
     node [exception=MatchError, font=\tiny, right];

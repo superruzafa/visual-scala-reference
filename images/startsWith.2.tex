@@ -18,14 +18,14 @@
 \\ };
 
 \foreach \i in {j,j+1,j+m}{
-    \draw [subflow width] (a\i) --
+    \draw [subflow] (a\i) --
         node (eq\i) [subelement, draw, circle, minimum size=.6\masterunit, fill=white] {$=$}
         (b\i);
 }
 
-\draw [inverse flow] (eqj.west) -- +(-.5, 0);
-\draw [flow] (eqj) -- (eqj+1);
+\draw [<- flow] (eqj.west) -- +(-.5, 0);
+\draw [flow ->] (eqj) -- (eqj+1);
 \draw [flow, solid dashed solid] (eqj+1) -- (eqj+m);
 
 \node (b) [element, right=1 of B] {\true};
-\draw [flow] (eqj+m.east) .. controls +(1, 0) and +(0, 1) .. (b.north);
+\draw [flow ->] (eqj+m.east) .. controls +(1, 0) and +(0, 1) .. (b.north);

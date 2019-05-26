@@ -30,11 +30,11 @@
     \elementsafter &
 \\ };
 
-\begin{scope}[flow width]
+\begin{scope}[flow]
     \inversebrace{A.south west}{aj-1.south east}
     \coordinate (bp1) at (bracepoint);
     \normalbrace{C.north west}{$ (cj-1.north east) + (-.5\defaultpenwidth, 0) $}
-    \draw [flow] (bp1) .. controls +(0, -1) and +(0, 1) .. (bracepoint);
+    \draw [flow ->] (bp1) .. controls +(0, -1) and +(0, 1) .. (bracepoint);
 
     \inversebrace{b1.south west}{bn.south east}
     \coordinate (bp2) at (bracepoint);
@@ -48,8 +48,8 @@
     \path [draw=none, name path=p1] (bp2) .. controls +(0, -1) and +(0, 1) .. (bp3);
     \path [draw=none, name path=p2] (bp4) .. controls +(0, -1) and +(0, 1) .. (bracepoint);
 
-    \draw [flow] (bp2) .. controls +(0, -1) and +(0, 1) .. (bp3);
+    \draw [flow ->] (bp2) .. controls +(0, -1) and +(0, 1) .. (bp3);
     \path [name intersections={of=p1 and p2, by={a}}] (a) pic [rotate=10, yshift=-.6] {bridge flow};
-    \draw [flow] (bp4) .. controls +(0, -1) and +(0, 1) .. (bracepoint);
+    \draw [flow ->] (bp4) .. controls +(0, -1) and +(0, 1) .. (bracepoint);
 
 \end{scope}

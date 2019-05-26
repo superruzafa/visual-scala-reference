@@ -8,16 +8,16 @@
 }}
 
 \node (f) [tupled function] {$f$};
-\draw [inverse flow] (f.north io 1) -- +(0, .5) node [element, above] {$(x_1, x_2, \ldots, x_n)$};
-\draw [flow] (f.south io 1) -- +(0, -.5) node [element, below] {$y$};
+\draw [<- flow] (f.north io 1) -- +(0, .5) node [element, above] {$(x_1, x_2, \ldots, x_n)$};
+\draw [flow ->] (f.south io 1) -- +(0, -.5) node [element, below] {$y$};
 
 \node (g) [function, /function/north io=4, right=2 of f] {$\lambda$};
-\draw [inverse flow] (g.north io 1) -- +(0, .5) node [element, above] {$x_1$};
-\draw [inverse flow] (g.north io 2) -- +(0, .5) node [element, above] {$x_2$};
-\draw [inverse flow] (g.north io 4) -- +(0, .5) node [element, above] {$x_n$};
-\draw [flow] (g.south io 1) -- +(0, -.5) node [element, below] {$y$};
+\draw [<- flow] (g.north io 1) -- +(0, .5) node [element, above] {$x_1$};
+\draw [<- flow] (g.north io 2) -- +(0, .5) node [element, above] {$x_2$};
+\draw [<- flow] (g.north io 4) -- +(0, .5) node [element, above] {$x_n$};
+\draw [flow ->] (g.south io 1) -- +(0, -.5) node [element, below] {$y$};
 \fill [white] ($ (g.north io 3) + (-.2, -.2) $) rectangle +(.4, .3);
-\draw [flow width, dotted] (g.north west -| g.north io 3) ++(-.2, 0) -- +(.4, 0);
+\draw [flow, dotted] (g.north west -| g.north io 3) ++(-.2, 0) -- +(.4, 0);
 
 \coordinate (x) at ($ (f.east)!.5!(g.west) $);
 \node at (x) [big arrow] {};

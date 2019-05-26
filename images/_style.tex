@@ -118,7 +118,7 @@
     \footnotesize{None}
 }
 
-\tikzset{exception flow/.style={
+\tikzset{exception draw/.style={
     line width=.02\masterunit,
     decorate,
     decoration={
@@ -128,31 +128,57 @@
     },
 }}
 
+\tikzset{throw ->/.style={
+    exception draw,
+    ->,
+}}
+
 \tikzset{exception/.style={
     draw,
-    exception flow,
+    exception draw,
     inner sep=.1\masterunit,
     node contents=\texttt{#1},
     tips=false,
 }}
+
 
 \tikzset{subexception/.style={
     exception={#1},
     font=\footnotesize,
 }}
 
-\tikzset{flow width/.style={
-    line width=0.75\defaultpenwidth,
-}}
+\newlength\flowwidth
+\setlength\flowwidth{.75\defaultpenwidth}
 
 \tikzset{flow/.style={
-    -{Triangle[flex,fill=defaultpencolor, angle'=30]},
-    flow width,
+    line width=\flowwidth,
 }}
 
-\tikzset{inverse flow/.style={
+\tikzset{flow ->/.style={
+    flow,
+    -{Triangle[flex,fill=defaultpencolor, angle'=30]},
+}}
+
+\tikzset{<- flow/.style={
+    flow,
     {Triangle[flex,fill=defaultpencolor, angle'=30]}-,
-    flow width,
+}}
+
+\newlength\subflowwidth
+\setlength\subflowwidth{.5\defaultpenwidth}
+
+\tikzset{subflow/.style={
+    line width=\subflowwidth,
+}}
+
+\tikzset{subflow ->/.style={
+    subflow,
+    -{Triangle[flex,fill=defaultpencolor, angle'=30]},
+}}
+
+\tikzset{<- subflow/.style={
+    subflow,
+    {Triangle[flex,fill=defaultpencolor, angle'=30]}-,
 }}
 
 \tikzset{bridge flow/.pic={
@@ -161,26 +187,12 @@
     \draw [flow, -] (-.1\masterunit, 0) arc [start angle=180, end angle=0, radius=.1\masterunit];
 }}
 
-\tikzset{flow jump/.pic={
+\tikzset{jump/.pic={
     \begin{scope}[rotate=#1]
     \fill [white] circle [radius=.09\masterunit];
     \draw [line cap=rect] (-.1\masterunit, 0) arc [start angle=180, end angle=0, x radius=.1\masterunit, y radius=.075\masterunit];
     \draw [line cap=rect] (0, .1\masterunit) -- +(0, -.2\masterunit);
     \end{scope}
-}}
-
-\tikzset{subflow width/.style={
-    line width=0.5\defaultpenwidth,
-}}
-
-\tikzset{subflow/.style={
-    flow,
-    subflow width,
-}}
-
-\tikzset{inverse subflow/.style={
-    inverse flow,
-    subflow width,
 }}
 
 \tikzset{solid dashed solid/.style={
@@ -426,11 +438,11 @@
 }}
 
 \tikzset{partial/.style={
-    strike out,
-    flow width,
     draw,
-    minimum width=4\defaultpenwidth,
+    flow,
     minimum height=4\defaultpenwidth,
+    minimum width=4\defaultpenwidth,
+    strike out,
 }}
 
 \tikzset{normal brace/.style={
@@ -439,7 +451,8 @@
         brace,
         amplitude=.2\masterunit,
         raise=.2\masterunit,
-    }
+    },
+    tips=false,
 }}
 
 \tikzset{inverse brace/.style={
@@ -463,7 +476,7 @@
     brace flow/.default=0.2,
     brace flow/.code={
         \ifdim #1pt<0pt \tikzset{
-            flow width,
+            flow,
             decorate,
             decoration={
                 brace,
@@ -472,7 +485,7 @@
                 raise=-#1\masterunit,
             }
         } \else \tikzset{
-            flow width,
+            flow,
             decorate,
             decoration={
                 brace,

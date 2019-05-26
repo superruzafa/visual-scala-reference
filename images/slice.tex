@@ -19,11 +19,11 @@
     \node (bj) {$a_j$}; &
 \\ };
 
-\begin{scope}[flow width]
+\begin{scope}[flow]
     \inversebrace{ai+1.south west}{aj.south east}
     \coordinate (x) at (bracepoint);
     \normalbrace{bi+1.north west}{bj.north east}
-    \draw [flow] (x) -- (bracepoint);
+    \draw [flow ->] (x) -- (bracepoint);
 \end{scope}
 
 % \matrix (I1) [collection, below=2 of A] {
@@ -57,7 +57,7 @@
 %     node contents={\texttt{next}}
 % }}
 
-% \draw [flow] ($ (I1.west) + (-1, 0) $) -- node [next label, above=0.1] {} (I1);
+% \draw [flow ->] ($ (I1.west) + (-1, 0) $) -- node [next label, above=0.1] {} (I1);
 % \draw [flow, bend right=45] (I1.west) to node [next label, below=0.3, rotate=180] {} (I2.west);
 % \draw [flow, dotted, bend right=45] (I2.west) to node [next label, below=0.3, rotate=180] {} (In1.west);
 % \draw [flow, bend right=45] (In1.west) to node [next label, below=0.3, rotate=180] {} (In.west);

@@ -37,9 +37,9 @@
     node contents={\texttt{next}}
 }}
 
-\draw [flow] ($ (I1.west) + (-1, 0) $) -- node [next label, above=0.1] {} (I1);
-\draw [flow, bend right=45] (I1.west) to node [next label, below=0.3, rotate=180] {} (I2.west);
-\draw [flow, dotted, bend right=45] (I2.west) to node [next label, below=0.3, rotate=180] {} (In.west);
+\draw [flow ->] ($ (I1.west) + (-1, 0) $) -- node [next label, above=0.1] {} (I1);
+\draw [flow ->, bend right=45] (I1.west) to node [next label, below=0.3, rotate=180] {} (I2.west);
+\draw [flow ->, dotted, bend right=45] (I2.west) to node [next label, below=0.3, rotate=180] {} (In.west);
 
 \measure{\texttt{m}}{I1.north west}{I1.north east}
 \measure{\texttt{m}}{I2.north west}{I2.north east}

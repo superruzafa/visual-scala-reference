@@ -30,17 +30,17 @@
 
 \foreach \i in {1,2,i,n}{
     \node (f) [subfunction, anchor=north io 1] at ($ (a\i.south) + (0, -.5) $) {$\texttt{f}$};
-    \draw [subflow] (a\i) -- (f.north io 1);
-    \draw [subflow] (f.south io 1) .. controls +(0, -.5) and +(0, .5) .. (b\i.north);
+    \draw [subflow ->] (a\i) -- (f.north io 1);
+    \draw [subflow ->] (f.south io 1) .. controls +(0, -.5) and +(0, .5) .. (b\i.north);
 }
 
 \coordinate (x) at ($ (A)!.5!(R) $);
 
 \newlength\reverseradius
 \setlength\reverseradius{.2\masterunit}
-\draw [flow] (x) ++ (0:\reverseradius)
+\draw [flow ->] (x) ++ (0:\reverseradius)
     arc [radius=\reverseradius, start angle=0, end angle=170];
-\draw [flow] (x) ++ (180:\reverseradius)
+\draw [flow ->] (x) ++ (180:\reverseradius)
     arc [radius=\reverseradius, start angle=180, end angle=350];
 
 \node at (x) [

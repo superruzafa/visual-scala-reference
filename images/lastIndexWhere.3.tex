@@ -9,15 +9,15 @@
 \\ };
 
 \foreach \i in {n,n-1,1}{
-    \draw [subflow] (a\i.north) -- +(0, .5)
+    \draw [subflow ->] (a\i.north) -- +(0, .5)
         node (c) [subfunction, above] {\texttt{p}};
-    \draw [subflow] (c.north) -- +(0, .5) node (r) [subelement, above] {\false};
+    \draw [subflow ->] (c.north) -- +(0, .5) node (r) [subelement, above] {\false};
 }
 
-\draw [inverse flow] (an.north) arc [start angle=160, delta angle=-60, x radius=.75, y radius=.5];
-\draw [flow, bend right=45] (an.north) to (an-1.north);
-\draw [flow, dashed] (an-1.north) arc [start angle=15, delta angle=60, x radius=.75, y radius=.5];
-\draw [inverse flow, dashed] (a1.north) arc [start angle=160, delta angle=-60, x radius=.75, y radius=.5];
+\draw [<- flow] (an.north) arc [start angle=160, delta angle=-60, x radius=.75, y radius=.5];
+\draw [flow ->, bend right=45] (an.north) to (an-1.north);
+\draw [flow ->, dashed] (an-1.north) arc [start angle=15, delta angle=60, x radius=.75, y radius=.5];
+\draw [<- flow, dashed] (a1.north) arc [start angle=160, delta angle=-60, x radius=.75, y radius=.5];
 
 \node (b) [element, below left=1 and 1 of a1] {-1};
-\draw [flow] (a1.north) .. controls +(-1.1, 1.1) and +(0, 1) .. (b.north);
+\draw [flow ->] (a1.north) .. controls +(-1.1, 1.1) and +(0, 1) .. (b.north);

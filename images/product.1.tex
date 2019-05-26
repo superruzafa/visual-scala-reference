@@ -8,9 +8,9 @@
     \node (an) {$a_n$}; &
 \\ };
 
-\begin{scope}[flow width]
+\begin{scope}[flow]
 \inversebrace{A.south west}{A.south east}
 \end{scope}
 
 \node (b) [element, below=2 of A] {$a_1 \cdot a_2 \cdot \dots \cdot a_n = \displaystyle\prod_{i=1}^n a_i$};
-\draw [flow] (bracepoint) -- (b);
+\draw [flow ->] (bracepoint) -- (b);
