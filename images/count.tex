@@ -9,8 +9,8 @@
     \node (ai+1) {$a_{i+1}$}; &
     \elementsbetween &
     \node (an-1) {$a_{n-1}$}; &
-    \node (an) {$a_n$}; \\
-};
+    \node (an) {$a_n$}; &
+\\ };
 
 \foreach \i/\r in {1/false,2/true,i/true,i+1/false,n-1/true,n/false}{
     \draw [subflow ->] (a\i.north) -- +(0, .5)

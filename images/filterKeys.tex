@@ -9,16 +9,16 @@
     \node (ki+1) {$k_{i + 1}$}; \\
     \velementsbetween \\
     \node (kn-1) {$k_{n-1}$}; \\
-    \node (kn) {$k_n$}; \\
-};
+    \node (kn) {$k_n$}; &
+\\ };
 
 \matrix (B) [collection, right=3 of A] {
     \node (l2) {$k_2$}; \\
     \velementsbetween \\
     \node (li) {$k_i$}; \\
     \velementsbetween \\
-    \node (ln-1) {$k_{n-1}$}; \\
-};
+    \node (ln-1) {$k_{n-1}$}; &
+\\ };
 
 \foreach \i/\r in {1/false,2/true,i/true,i+1/false,n-1/true,n/false}{
     \draw [key to value] (k\i.east) to +(1, 0) node [element, right] {$v_{\i}$};

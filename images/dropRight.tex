@@ -8,14 +8,14 @@
     \node (an-i+1) {$a_{n-i+1}$ }; &
     \elementsbetween &
     \node (an-1) {$a_{n-1}$ }; &
-    \node (an) {$a_n$}; \\
-};
+    \node (an) {$a_n$}; &
+\\ };
 
 \matrix (B) [collection, below=3 of A.south west, anchor=north west] {
     \node {$a_1$}; &
     \elementsbetween &
-    \node {$a_{n-i}$}; \\
-};
+    \node {$a_{n-i}$}; &
+\\ };
 
 \measure{$i$}{an-i+1.north west}{an.north east}
 

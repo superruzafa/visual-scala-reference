@@ -7,15 +7,15 @@
     \elementsbetween &
     \node (ai) {$a_i$}; &
     \node (ai+1) {$a_{i+1}$}; &
-    \elementsafter \\
-};
+    \elementsafter &
+\\ };
 
 \matrix (B) [collection, below=3 of A.south west, anchor=north west] {
     \node (b1) {$a_1$}; &
     \node (b2) {$a_2$}; &
     \elementsbetween &
-    \node (bi) {$a_i$}; \\
-};
+    \node (bi) {$a_i$}; &
+\\ };
 
 \measure{$i$}{a1.north west}{ai.north east}
 

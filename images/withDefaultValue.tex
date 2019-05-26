@@ -5,16 +5,16 @@
     \node (k1) {$k_1$}; \\
     \node (k2) {$k_2$}; \\
     \velementsbetween \\
-    \node (kn) {$k_n$}; \\
-};
+    \node (kn) {$k_n$}; &
+\\ };
 
 \matrix (B) [collection, right=3 of A.north east, anchor=north west] {
     \node (l1) {$k_1$}; \\
     \node (l2) {$k_2$}; \\
     \velementsbetween \\
     \node (ln) {$k_n$}; \\
-    \node (l_) {$k_\_$}; \\
-};
+    \node (l_) {$k_\_$}; &
+\\ };
 
 \foreach \i in {1,2,n}{
     \node (vk) [element, right=1 of k\i] {$v_\i$};

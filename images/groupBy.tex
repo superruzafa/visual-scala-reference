@@ -5,8 +5,8 @@
     \node (k1) {$k_1$}; \\
     \node (k2) {$k_2$}; \\
     \velementsbetween \\
-    \node (km) {$k_m$}; \\
-};
+    \node (km) {$k_m$}; &
+\\ };
 
 \matrix (V1) [subcollection, right=1 of k1] {
     \node {$a_1$}; &
@@ -25,8 +25,8 @@
     \subelementsbefore &
     \node {$a_i$}; &
     \subelementsbetween &
-    \node {$a_n$}; \\
-};
+    \node {$a_n$}; &
+\\ };
 
 \foreach \i in {1,2,m}{
     \draw [key to value] (k\i) to (V\i);
@@ -43,8 +43,8 @@
     \node (ai) {$a_i$}; &
     \node (ai+1) {$a_{i+1}$}; &
     \elementsbetween &
-    \node (an) {$a_n$}; \\
-};
+    \node (an) {$a_n$}; &
+\\ };
 
 \foreach \i/\r in {1/1,2/2,3/1,i/m,i+1/2,n/m}{
     \draw [subflow ->] (a\i.north) -- +(0, .5)

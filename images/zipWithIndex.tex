@@ -7,8 +7,8 @@
     \elementsbetween &
     \node (ai) {$a_i$}; &
     \elementsbetween &
-    \node (an) {$a_n$}; \\
-};
+    \node (an) {$a_n$}; &
+\\ };
 
 \matrix (C) [collection, below=2 of A, nodes={font=\footnotesize}] {
     \node (b1) {$(a_1, 0)$}; &
@@ -16,8 +16,8 @@
     \elementsbetween &
     \node [xscale=0.845] (bi) {$(a_n, i-1)$}; &
     \elementsbetween &
-    \node [xscale=0.805] (bn) {$(a_n, n-1)$}; \\
-};
+    \node [xscale=0.805] (bn) {$(a_n, n-1)$}; &
+\\ };
 
 \foreach \i in {1,2,i,n} {
     \draw [flow ->] (a\i) -- (b\i);

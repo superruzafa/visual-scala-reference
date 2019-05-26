@@ -8,14 +8,14 @@
     \node (ai) {$a_i$}; &
     \node (ai+1) {$a_{i+1}$}; &
     \elementsbetween &
-    \node (an) {$a_n$}; \\
-};
+    \node (an) {$a_n$}; &
+\\ };
 
 \matrix (B) [collection, below=3 of A.south east, anchor=north east] {
     \node {$a_{i+1}$}; &
     \elementsbetween &
-    \node {$a_n$}; \\
-};
+    \node {$a_n$}; &
+\\ };
 
 \foreach \i/\r in {1/true,2/true,i/true,i+1/false}{
     \draw [subflow ->] (a\i.north) -- +(0, .5)

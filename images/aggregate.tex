@@ -36,8 +36,8 @@
     \node (ai+1) {$a_{i+1}$}; &
     \elementsbetween &
     \node (an-1) {$a_{n-1}$}; &
-    \node (an) {$a_n$}; \\
-};
+    \node (an) {$a_n$}; &
+\\ };
 
 \node (s1) [seq op, right out, below=1 of a1.south, anchor=north io 2];
 \draw [<- flow] (s1.north io 1) -- +(0, .5)
@@ -66,9 +66,6 @@
     -- ($ (sn.west io 1 -| sn-1.north io 1)!.5!(sn.west io 1) $)
     |- ($ (sn-1.north io 2)!.5!(sn-1.north io 2 |- sn.south west) $)
     -- (sn-1.north io 2);
-
-% \draw [flow ->] (sn.west io 1) .. controls +(-.33, 0) and +(0, .33) .. (sn-1.north io 2);
-
 
 \draw [flow ->] (an-1) -- (sn-1.north io 1);
 \draw [flow ->, dashed] (sn-1.west io 1) -| +(-.25, -.5);

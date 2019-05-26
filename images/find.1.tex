@@ -7,8 +7,8 @@
     \elementsbetween &
     \node (ai) {$a_i$}; &
     \node (ai+1) {$a_{i+1}$}; &
-    \elementsafter \\
-};
+    \elementsafter &
+\\ };
 
 \foreach \i/\r in {1/false,2/false,i/true}{
     \draw [subflow ->] (a\i.north) -- +(0, .5)

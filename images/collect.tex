@@ -9,16 +9,16 @@
     \node (ai+1) {$a_{i+1}$}; &
     \elementsbetween &
     \node (an-1) {$a_{n-1}$}; &
-    \node (an) {$a_n$}; \\
-};
+    \node (an) {$a_n$}; &
+\\ };
 
 \matrix [collection, below=3 of A] {
     \node (b2) {$b_1$}; &
     \elementsbetween &
     \node (bi) {$b_j$}; &
     \elementsbetween &
-    \node (bn-1) {$b_m$}; \\
-};
+    \node (bn-1) {$b_m$}; &
+\\ };
 
 \foreach \i in {1,2,i,i+1,n-1,n}{
     \node (f\i) [subfunction, below=1 of a\i] {\texttt{f}};

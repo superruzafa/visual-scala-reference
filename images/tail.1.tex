@@ -7,16 +7,16 @@
     \elementsbetween &
     \node (ai) {$a_i$}; &
     \elementsbetween &
-    \node (an) {$a_n$}; \\
-};
+    \node (an) {$a_n$}; &
+\\ };
 
 \matrix (B) [collection, below=3 of A.south east, anchor=north east] {
     \node {$a_2$}; &
     \elementsbetween &
     \node {$a_i$}; &
     \elementsbetween &
-    \node {$a_n$}; \\
-};
+    \node {$a_n$}; &
+\\ };
 
 \begin{scope}[every path/.style={flow}]
 \inversebrace{a2.south west}{an.south east}

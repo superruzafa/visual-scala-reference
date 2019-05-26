@@ -10,8 +10,8 @@
     \node (ai) {$a_i$}; &
     \elementsbetween &
     \node (an-1) {$a_{n-1}$}; &
-    \node (an) {$a_n$}; \\
-};
+    \node (an) {$a_n$}; &
+\\ };
 
 \matrix [tuple of collections, below=2 of A] {
     \node (b1) {$a_1$}; &
@@ -25,8 +25,8 @@
     \elementsbetween &
     \node (bi) {$a_i$}; &
     \elementsbetween &
-    \node (bn) {$a_n$}; \\
-};
+    \node (bn) {$a_n$}; &
+\\ };
 
 \foreach \i/\r in {1/true,2/false,3/true,i-1/true,i/false,n-1/true,n/false}{
     \node (f) [subfunction, above=.5 of a\i] {\texttt{p}};

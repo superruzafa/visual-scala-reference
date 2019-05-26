@@ -6,32 +6,32 @@
     \node {$a_2$}; &
     \elementsbetween &
     \node {$a_{n - 1}$}; &
-    \node {$a_n$}; \\
-};
+    \node {$a_n$}; &
+\\ };
 
 \matrix (I1) [collection, below=2 of A] {
     \node {$a_1$}; &
     \node {$a_2$}; &
     \elementsbetween &
     \node {$a_{n - 1}$}; &
-    \node {$a_n$}; \\
-};
+    \node {$a_n$}; &
+\\ };
 
 \matrix (I2) [collection, below=.5 of I1.south east, anchor=north east] {
     \node {$a_1$}; &
     \node {$a_2$}; &
     \elementsbetween &
-    \node {$a_{n - 1}$}; \\
-};
+    \node {$a_{n - 1}$}; &
+\\ };
 
 \matrix (In1) [collection, below=1 of I2.south east, anchor=north east] {
     \node {$a_1$}; &
-    \node {$a_2$}; \\
-};
+    \node {$a_2$}; &
+\\ };
 
 \matrix (In) [collection, below=.5 of In1.south east, anchor=north east] {
-    \node {$a_1$}; \\
-};
+    \node {$a_1$}; &
+\\ };
 
 \node (If) [empty collection, below=.5 of In.south east, anchor=north east] {};
 
