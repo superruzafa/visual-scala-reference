@@ -3,15 +3,15 @@
 
 \matrix (A) [collection, nodes={font=\small}] {
     \node (a1) {$a_1$}; &
-    \elementsbetween[.8] &
+    \node [elements between=.8]; &
     \node (a2) {$a_{\texttt{m}}$}; &
-    \elementsbetween[1] &
+    \node [elements between=1]; &
     \node (a3) {$a_{\texttt{s}}$}; &
-    \elementsbetween[.8] &
+    \node [elements between=.8]; &
     \node (a4) {$a_{\texttt{s} + \texttt{m} - 1}$}; &
-    \elementsbetween[1.75] &
+    \node [elements between=1.75]; &
     \node (a5) {$a_{n \cdot \texttt{s}}$}; &
-    \elementsbetween[.5] &
+    \node [elements between=.5]; &
     \node (a6) {$a_{n \cdot \texttt{s} + k}$}; &
 \\ };
 
@@ -19,26 +19,26 @@
 \measure[-.5]{\texttt{m}}{a3.south west}{a4.south east}
 \measure[-.5]{$\leq \texttt{m}$}{a5.south west}{a6.south east}
 
-\draw [subflow, bend left=45] ($ (a1.north) + (-1, 0) $) to (a1.north);
-\draw [subflow, bend left=45] (a1.north) to node [above=.1, sloped] {$+\texttt{s}$} (a3.north);
-\draw [subflow, dashed, bend left=45] (a3.north) to node [above=.1, sloped] {$+n\cdot\texttt{s}$} (a5.north);
+\draw [subflow ->, bend left=45] ($ (a1.north) + (-1, 0) $) to (a1.north);
+\draw [subflow ->, bend left=45] (a1.north) to node [above=.1, sloped] {$+\texttt{s}$} (a3.north);
+\draw [subflow ->, dashed, bend left=45] (a3.north) to node [above=.1, sloped] {$+n\cdot\texttt{s}$} (a5.north);
 
 \matrix (I1) [collection, nodes={font=\small}, below=3 of A] {
     \node {$a_1$}; &
-    \elementsbetween[.8] &
+    \node [elements between=.8]; &
     \node {$a_{\texttt{m}}$}; &
 \\ };
 
 
 \matrix (I2) [collection, nodes={font=\small}, below=1.5 of I1] {
     \node {$a_{\texttt{s}}$}; &
-    \elementsbetween[.8] &
+    \node [elements between=.8]; &
     \node {$a_{\texttt{s} + \texttt{m} - 1}$}; &
 \\ };
 
 \matrix (In) [collection, nodes={font=\small}, below=2 of I2.south west, anchor=north west] {
     \node {$a_{n \cdot \texttt{s}}$}; &
-    \elementsbetween[.5] &
+    \node [elements between=.5]; &
     \node {$a_{n \cdot \texttt{s} + k}$}; &
 \\ };
 
@@ -51,9 +51,9 @@
     node contents={\texttt{next}}
 }}
 
-\draw [flow] ($ (I1.west) + (-1, 0) $) -- node [next label, above=0.1] {} (I1);
-\draw [flow, bend right=45] (I1.west) to node [next label, below=0.3, rotate=180] {} (I2.west);
-\draw [flow, dashed, bend right=45] (I2.west) to node [next label, below=0.3, rotate=180] {} (In.west);
+\draw [flow ->] ($ (I1.west) + (-1, 0) $) -- node [next label, above=0.1] {} (I1);
+\draw [flow ->, bend right=45] (I1.west) to node [next label, below=0.3, rotate=180] {} (I2.west);
+\draw [flow ->, dashed, bend right=45] (I2.west) to node [next label, below=0.3, rotate=180] {} (In.west);
 
 \coordinate (x) at ($ (A)!.5!(I1) $);
 \node at (x) [big arrow, rotate=-90] {};

@@ -2,66 +2,24 @@
 ---
 
 \matrix (A) [collection] {
-    \elementsbefore &
+    \node [elements before]; &
     \node {$a_i$}; &
     \node (ai+1) {$a_{i + 1}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node {$a_{j - 1}$}; &
     \node (aj) {$a_j$}; &
     \node {$a_{j + 1}$}; &
-    \elementsafter &
+    \node [elements after]; &
 \\ };
 
 \matrix (B) [collection, below=3 of A] {
     \node (bi+1) {$a_{i + 1}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node {$a_{j - 1}$}; &
     \node (bj) {$a_j$}; &
 \\ };
 
-\begin{scope}[flow width]
-    \inversebrace{ai+1.south west}{aj.south east}
-    \coordinate (x) at (bracepoint);
-    \normalbrace{bi+1.north west}{bj.north east}
-    \draw [flow] (x) -- (bracepoint);
-\end{scope}
-
-% \matrix (I1) [collection, below=2 of A] {
-%     \node {$a_1$}; &
-%     \node {$a_2$}; &
-%     \elementsbetween &
-%     \node {$a_{n - 1}$}; &
-%     \node {$a_n$}; \\
-% };
-
-% \matrix (I2) [collection, below=.5 of I1.south west, anchor=north west] {
-%     \node {$a_2$}; &
-%     \elementsbetween &
-%     \node {$a_{n - 1}$}; &
-%     \node {$a_n$}; \\
-% };
-
-% \matrix (In1) [collection, below=1 of I2.south west, anchor=north west] {
-%     \node {$a_{n - 1}$}; &
-%     \node {$a_n$}; \\
-% };
-
-% \matrix (In) [collection, below=.5 of In1.south west, anchor=north west] {
-%     \node {$a_n$}; \\
-% };
-
-% \node (If) [empty collection, below=.5 of In.south west, anchor=north west] {};
-
-% \tikzset{next label/.style={
-%     sloped,
-%     node contents={\texttt{next}}
-% }}
-
-% \draw [flow] ($ (I1.west) + (-1, 0) $) -- node [next label, above=0.1] {} (I1);
-% \draw [flow, bend right=45] (I1.west) to node [next label, below=0.3, rotate=180] {} (I2.west);
-% \draw [flow, dotted, bend right=45] (I2.west) to node [next label, below=0.3, rotate=180] {} (In1.west);
-% \draw [flow, bend right=45] (In1.west) to node [next label, below=0.3, rotate=180] {} (In.west);
-% \draw [flow, bend right=45] (In.west) to node [next label, below=0.3, rotate=180] {} (If.west);
-
-% \coordinate (x) at ($ (A)!.5!(I1) $);
-% \node at (x) [big arrow, rotate=-90] {};
+\braceflow[-.2]{(ai+1.south west)}{(aj.south east)}
+\coordinate (x) at (lastbrace);
+\braceflow[.2]{(bi+1.north west)}{(bj.north east)}
+\draw [flow ->] (x) -- (lastbrace);

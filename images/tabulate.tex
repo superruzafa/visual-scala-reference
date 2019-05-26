@@ -40,7 +40,7 @@
 
 \matrix [level 1] {
     \node (a1) {}; &
-    \elementsbetween[.75] &
+    \node [elements between=.75]; &
     \node (a2) {}; &
 \\ };
 
@@ -49,37 +49,37 @@
 
 \matrix at (a1) [level 2] {
     \node (b1) {}; &
-    \elementsbetween[.75] &
+    \node [elements between=.75]; &
     \node (b2) {}; &
 \\ };
 
 \matrix at (a2) [level 2] {
     \node (b3) {}; &
-    \elementsbetween[.75] &
+    \node [elements between=.75]; &
     \node (b4) {}; &
 \\ };
 
 \matrix at (b1) [level 3] {
     \node (c1) {}; &
-    \elementsbetween[.5] &
+    \node [elements between=.5]; &
     \node (c2) {}; &
 \\ };
 
 \matrix at (b2) [level 3] {
     \node (c3) {}; &
-    \elementsbetween[.5] &
+    \node [elements between=.5]; &
     \node (c4) {}; &
 \\ };
 
 \matrix at (b3) [level 3] {
     \node (c5) {}; &
-    \elementsbetween[.5] &
+    \node [elements between=.5]; &
     \node (c6) {}; &
 \\ };
 
 \matrix at (b4) [level 3] {
     \node (c7) {}; &
-    \elementsbetween[.5] &
+    \node [elements between=.5]; &
     \node (c8) {}; &
 \\ };
 
@@ -89,47 +89,47 @@
 }}
 
 \node (f1) [fun, above=1 of c1];
-\draw [inverse subflow] (f1.north io 1) -- +(0, .25) node [input, above] {$0$};
-\draw [inverse subflow] (f1.north io 3) -- +(0, .25) node [input, above] {$0$};
-\draw [inverse subflow] (f1.north io 4) -- +(0, .25) node [input, above] {$0$};
+\draw [<- subflow] (f1.north io 1) -- +(0, .25) node [input, above] {$0$};
+\draw [<- subflow] (f1.north io 3) -- +(0, .25) node [input, above] {$0$};
+\draw [<- subflow] (f1.north io 4) -- +(0, .25) node [input, above] {$0$};
 
 \node (f2) [fun, above=3 of c2];
-\draw [inverse subflow] (f2.north io 1) -- +(0, .25) node [input, above] {$0$};
-\draw [inverse subflow] (f2.north io 3) -- +(0, .25) node [input, above] {$0$};
-\draw [inverse subflow] (f2.north io 4) -- +(0, .75) node [xscale=.6, input, above] {$n_m - 1$};
+\draw [<- subflow] (f2.north io 1) -- +(0, .25) node [input, above] {$0$};
+\draw [<- subflow] (f2.north io 3) -- +(0, .25) node [input, above] {$0$};
+\draw [<- subflow] (f2.north io 4) -- +(0, .75) node [xscale=.6, input, above] {$n_m - 1$};
 
 \node (f3) [fun, above=1 of c3];
-\draw [inverse subflow] (f3.north io 1) -- +(0, .25) node [input, above] {$0$};
-\draw [inverse subflow] (f3.north io 3) -- +(0, .75) node [xscale=.6, input, above] {$n_{m - 1} - 1$};
-\draw [inverse subflow] (f3.north io 4) -- +(0, .25) node [input, above] {$0$};
+\draw [<- subflow] (f3.north io 1) -- +(0, .25) node [input, above] {$0$};
+\draw [<- subflow] (f3.north io 3) -- +(0, .75) node [xscale=.6, input, above] {$n_{m - 1} - 1$};
+\draw [<- subflow] (f3.north io 4) -- +(0, .25) node [input, above] {$0$};
 
 \node (f4) [fun, above=3 of c4];
-\draw [inverse subflow] (f4.north io 1) -- +(0, .25) node [input, above] {$0$};
-\draw [inverse subflow] (f4.north io 3) -- +(0, .75) node [xscale=.6, input, above] {$n_{m - 1} - 1$};
-\draw [inverse subflow] (f4.north io 4) -- +(0, .25) node [xscale=.6, input, above] {$n_m - 1$};
+\draw [<- subflow] (f4.north io 1) -- +(0, .25) node [input, above] {$0$};
+\draw [<- subflow] (f4.north io 3) -- +(0, .75) node [xscale=.6, input, above] {$n_{m - 1} - 1$};
+\draw [<- subflow] (f4.north io 4) -- +(0, .25) node [xscale=.6, input, above] {$n_m - 1$};
 
 \node (f5) [fun, above=1 of c5];
-\draw [inverse subflow] (f5.north io 1) -- +(0, .75) node [input, above] {$n_1 - 1$};
-\draw [inverse subflow] (f5.north io 3) -- +(0, .25) node [input, above] {$0$};
-\draw [inverse subflow] (f5.north io 4) -- +(0, .25) node [input, above] {$0$};
+\draw [<- subflow] (f5.north io 1) -- +(0, .75) node [input, above] {$n_1 - 1$};
+\draw [<- subflow] (f5.north io 3) -- +(0, .25) node [input, above] {$0$};
+\draw [<- subflow] (f5.north io 4) -- +(0, .25) node [input, above] {$0$};
 
 \node (f6) [fun, above=3 of c6];
-\draw [inverse subflow] (f6.north io 1) -- +(0, .75) node [xscale=.6, input, above] {$n_1 - 1$};
-\draw [inverse subflow] (f6.north io 3) -- +(0, .25) node [input, above] {$0$};
-\draw [inverse subflow] (f6.north io 4) -- +(0, .75) node [xscale=.6, input, above] {$n_m - 1$};
+\draw [<- subflow] (f6.north io 1) -- +(0, .75) node [xscale=.6, input, above] {$n_1 - 1$};
+\draw [<- subflow] (f6.north io 3) -- +(0, .25) node [input, above] {$0$};
+\draw [<- subflow] (f6.north io 4) -- +(0, .75) node [xscale=.6, input, above] {$n_m - 1$};
 
 \node (f7) [fun, above=1 of c7];
-\draw [inverse subflow] (f7.north io 1) -- +(0, .25) node [xscale=.6, input, above] {$n_1 - 1$};
-\draw [inverse subflow] (f7.north io 3) -- +(0, .75) node [xscale=.6, input, above] {$n_{m - 1} - 1$};
-\draw [inverse subflow] (f7.north io 4) -- +(0, .25) node [input, above] {$0$};
+\draw [<- subflow] (f7.north io 1) -- +(0, .25) node [xscale=.6, input, above] {$n_1 - 1$};
+\draw [<- subflow] (f7.north io 3) -- +(0, .75) node [xscale=.6, input, above] {$n_{m - 1} - 1$};
+\draw [<- subflow] (f7.north io 4) -- +(0, .25) node [input, above] {$0$};
 
 \node (f8) [fun, above=3 of c8];
-\draw [inverse subflow] (f8.north io 1) -- +(0, .25) node [xscale=.6, input, above] {$n_1 - 1$};
-\draw [inverse subflow] (f8.north io 3) -- +(0, .75) node [xscale=.6, input, above] {$n_{m - 1} - 1$};
-\draw [inverse subflow] (f8.north io 4) -- +(0, .25) node [xscale=.6, input, above] {$n_m - 1$};
+\draw [<- subflow] (f8.north io 1) -- +(0, .25) node [xscale=.6, input, above] {$n_1 - 1$};
+\draw [<- subflow] (f8.north io 3) -- +(0, .75) node [xscale=.6, input, above] {$n_{m - 1} - 1$};
+\draw [<- subflow] (f8.north io 4) -- +(0, .25) node [xscale=.6, input, above] {$n_m - 1$};
 
 \foreach \i in {1,...,8} {
-    \draw [flow] (f\i.south io 1) -- (c\i.center);
+    \draw [flow ->] (f\i.south io 1) -- (c\i.center);
     \draw [draw=none, fill=white] ($ (f\i.north io 2) + (-.13, -.2) $) rectangle +(.27, .27);
     \draw [dotted] ($ (f\i.north io 2) + (-.13, -.115) $) -- +(.3, 0);
 }

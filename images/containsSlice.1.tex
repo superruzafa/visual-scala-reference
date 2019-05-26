@@ -4,19 +4,19 @@
 \matrix (A) [collection] {
     \node (a1) {$a_1$}; &
     \node (a2) {$a_2$}; &
-    \elementsbetween[.5] &
+    \node [elements between=.5]; &
     \node (a1+m) {$a_{1 + m}$}; &
     \node (a2+m) {$a_{2 + m}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (ai) {$a_i$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (ai+m) {$a_{i + m}$}; &
-    \elementsafter &
+    \node [elements after]; &
 \\ };
 
 \matrix (B) [collection, below=3 of A] {
     \node (bi) {$a_i$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (bi+m) {$a_{i + m}$}; &
 \\ };
 
@@ -32,25 +32,24 @@
 
 \foreach \i/\r in {1/\neq,2/\neq,i/=}{
     \node (eq\i) at (brace\i |- rule)
-        [minimum size=.4\masterunit, circle, draw, flow width, fill=white] {$\r$};
+        [minimum size=.4\masterunit, circle, draw, flow, fill=white] {$\r$};
 }
 
 \coordinate (x) at ($ (eq1)!.5!(lastbrace) $);
 \coordinate (rule) at (eq1 |- x);
 
 \foreach \i in {1,2,i}{
-    \draw [flow width] (brace\i) -- (eq\i);
-    \draw [flow width] (eq\i) -- (eq\i |- rule) -| (lastbrace);
+    \draw [flow] (brace\i) -- (eq\i);
+    \draw [flow] (eq\i) -- (eq\i |- rule) -| (lastbrace);
 }
 
-\draw [inverse flow] (eq1.west) -- +(-.5, 0);
-\draw [flow] (eq1) -- (eq2);
-\draw [flow, solid dashed solid] (eq2) -- (eqi);
+\draw [<- flow] (eq1.west) -- +(-.5, 0);
+\draw [flow ->] (eq1) -- (eq2);
+\draw [flow ->, solid dashed solid] (eq2) -- (eqi);
 \node (b) [element, right=2 of B] {\true};
-\draw [flow] (eqi.east) .. controls +(1, 0) and +(0, 1) .. (b.north);
+\draw [flow ->] (eqi.east) .. controls +(1, 0) and +(0, 1) .. (b.north);
 
 \path [draw=none, name path=p1] (brace1) -- +(0, -1);
 \path [draw=none, name path=p2] ($ (a2.south west) + (0, -.8) $) -- +(5, 0);
 
-\path [name intersections={of=p1 and p2, by={a}}] (a) pic [rotate=90] {bridge flow};
-\draw [flow width] ($ (a) + (-.5, 0) $) -- +(1, 0);
+\path [name intersections={of=p1 and p2, by={a}}] (a) pic {jump=90};

@@ -2,54 +2,45 @@
 ---
 
 \matrix (A) [collection] {
-    \elementsbefore &
+    \node [elements before]; &
     \node (aj-1) {$a_{j - 1}$}; &
     \node (aj) {$a_j$}; &
     \node (aj+1) {$a_{j + 1}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (aj+m-1) {$a_{j + m - 1}$}; &
     \node (aj+m) {$a_{j + m}$}; &
-    \elementsafter &
+    \node [elements after]; &
 \\ };
 
 \measure{\texttt{m}}{aj.north west}{aj+m-1.north east}
 
 \matrix (B) [collection, right=1 of A] {
     \node (b1) {$b_1$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (bn) {$b_n$}; &
 \\ };
 
 \matrix (C) [collection, below=3 of A] {
-    \elementsbefore &
+    \node [elements before]; &
     \node (cj-1) {$a_{j - 1}$}; &
     \node (c1) {$b_1$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (cn) {$b_n$}; &
     \node (cj+m) {$a_{j + m}$}; &
-    \elementsafter &
+    \node [elements after]; &
 \\ };
 
-\begin{scope}[flow width]
-    \inversebrace{A.south west}{aj-1.south east}
-    \coordinate (bp1) at (bracepoint);
-    \normalbrace{C.north west}{$ (cj-1.north east) + (-.5\defaultpenwidth, 0) $}
-    \draw [flow] (bp1) .. controls +(0, -1) and +(0, 1) .. (bracepoint);
+\braceflow[-.2]{(A.south west)}{(aj-1.south east)}
+\coordinate (x) at (lastbrace);
+\braceflow[.2]{(C.north west)}{(cj-1.north east)}
+\draw [flow ->, out=270, in=90] (x) to (lastbrace);
 
-    \inversebrace{b1.south west}{bn.south east}
-    \coordinate (bp2) at (bracepoint);
-    \normalbrace{$ (c1.north west) + (.5\defaultpenwidth, 0) $}{$ (cn.north east) + (-.5\defaultpenwidth, 0) $}
-    \coordinate (bp3) at (bracepoint);
+\braceflow[-.2]{(aj+m.south west)}{(A.south east)}
+\coordinate (x) at (lastbrace);
+\braceflow[.2]{(cj+m.north west)}{(C.north east)}
+\draw [flow ->, out=270, in=90] (x) to (lastbrace);
 
-    \inversebrace{aj+m.south west}{A.south east}
-    \coordinate (bp4) at (bracepoint);
-    \normalbrace{$ (cj+m.north west) + (.5\defaultpenwidth, 0) $}{C.north east}
-
-    \path [draw=none, name path=p1] (bp2) .. controls +(0, -1) and +(0, 1) .. (bp3);
-    \path [draw=none, name path=p2] (bp4) .. controls +(0, -1) and +(0, 1) .. (bracepoint);
-
-    \draw [flow] (bp2) .. controls +(0, -1) and +(0, 1) .. (bp3);
-    \path [name intersections={of=p1 and p2, by={a}}] (a) pic [rotate=10, yshift=-.6] {bridge flow};
-    \draw [flow] (bp4) .. controls +(0, -1) and +(0, 1) .. (bracepoint);
-
-\end{scope}
+\braceflow[-.2]{(b1.south west)}{(bn.south east)}
+\coordinate (x) at (lastbrace);
+\braceflow[.2]{($ (c1.north west) + (.5\defaultpenwidth, 0) $)}{($ (cn.north east) + (-.5\defaultpenwidth, 0) $)}
+\draw [flow ->, out=270, in=90] (x) to (lastbrace);

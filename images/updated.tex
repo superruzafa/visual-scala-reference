@@ -3,41 +3,33 @@
 
 \matrix (A) [collection] {
     \node (a1) {$a_1$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (ai-1) {$a_{i - 1}$}; &
     \node (ai) {$a_i$}; &
     \node (ai+1) {$a_{i + 1}$}; &
-    \elementsbetween &
-    \node (an) {$a_n$}; \\
-};
-
-\node (a) [element, right=1 of A] {\texttt{a}};
+    \node [elements between]; &
+    \node (an) {$a_n$}; &
+\\ };
 
 \matrix (B) [collection, below=3 of A] {
     \node (b1) {$a_1$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (bi-1) {$a_{i - 1}$}; &
     \node (bi) {\texttt{a}}; &
     \node (bi+1) {$a_{i + 1}$}; &
-    \elementsbetween &
-    \node (bn) {$a_n$}; \\
-};
+    \node [elements between]; &
+    \node (bn) {$a_n$}; &
+\\ };
 
-\begin{scope}[every path/.style={flow width}]
+\braceflow[-.2]{(a1.south west)}{(ai-1.south east)}
+\coordinate (x) at (lastbrace);
+\braceflow[.2]{(b1.north west)}{(bi-1.north east)}
+\draw [flow ->, out=270, in=90] (x) to (lastbrace);
 
-    \inversebrace{a1.south west}{ai-1.south east}
-    \coordinate (x) at (bracepoint);
-    \normalbrace{b1.north west}{bi-1.north east}
-    \draw [flow] (x) -- (bracepoint);
+\braceflow[-.2]{(ai+1.south west)}{(an.south east)}
+\coordinate (x) at (lastbrace);
+\braceflow[.2]{(bi+1.north west)}{(bn.north east)}
+\draw [flow ->, out=270, in=90] (x) to (lastbrace);
 
-    \inversebrace{ai+1.south west}{an.south east}
-    \coordinate (x) at (bracepoint);
-    \normalbrace{bi+1.north west}{bn.north east}
-    \path [draw=none, name path=p1] (x) -- (bracepoint);
-
-    \draw [flow, name path=p2] (a.south) .. controls +(0, -2) and +(0, 2) .. (bi.north);
-    \path [name intersections={of=p1 and p2, by={y}}] (y) pic [rotate=13,yshift=0.2] {bridge flow};
-    % \path [draw=none, flow, name path=p2] (a.south) .. controls +(0, -2) and +(0, 2) .. (bi.north);
-    \draw [flow] (x) -- (bracepoint);
-
-\end{scope}
+\node (b) at ($ (ai)!.5!(bi) $) [element] {\texttt{a}};
+\draw [flow ->] (b) -- (bi);

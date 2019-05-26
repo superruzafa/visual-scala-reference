@@ -14,9 +14,9 @@
 \draw [dashed] ($ (an.south east) + (.25, -.5) $) -- ($ (an.north east) + (.25, .5) $)
     node [element, above] {\texttt{end}};
 
-\draw [inverse flow] (a1.north) -- +(0, .5) node [element, above] {\texttt{start}};
-\draw [flow, bend left=45] (a1.north) to node [font=\small, sloped, above] {$+\texttt{step}$} (a2.north);
-\draw [flow, dashed] (a2.north) arc [start angle=180, end angle=120, y radius=.5, x radius=1];
-\draw [inverse flow, dashed] (ai.north) arc [start angle=0, end angle=60, y radius=.5, x radius=1];
-\draw [flow, dashed] (ai.north) arc [start angle=180, end angle=120, y radius=.5, x radius=1];
-\draw [inverse flow, dashed] (an.north) arc [start angle=0, end angle=60, y radius=.5, x radius=1];
+\draw [<- flow] (a1.north) -- +(0, .5) node [element, above] {\texttt{start}};
+\draw [flow ->, bend left=45] (a1.north) to node [font=\small, sloped, above] {$+\texttt{step}$} (a2.north);
+\draw [flow ->, dashed] (a2.north) arc [start angle=180, end angle=120, y radius=.5, x radius=1];
+\draw [<- flow, dashed] (ai.north) arc [start angle=0, end angle=60, y radius=.5, x radius=1];
+\draw [flow ->, dashed] (ai.north) arc [start angle=180, end angle=120, y radius=.5, x radius=1];
+\draw [<- flow, dashed] (an.north) arc [start angle=0, end angle=60, y radius=.5, x radius=1];

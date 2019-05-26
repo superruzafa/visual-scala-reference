@@ -3,27 +3,27 @@
 
 \matrix (A) [collection] {
     \node (a2) {$a_2$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (an) {$a_n$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (a1) {$a_1$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (ai) {$a_i$}; &
 \\ };
 
 \matrix (B) [collection, below=2 of A] {
     \node (b1) {$a_1$}; &
     \node (b2) {$a_2$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (bi) {$a_i$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (bn) {$a_n$}; &
 \\ };
 
 \foreach \i in {1,2,i,n}{
-    \draw [subflow] (a\i.north) -- +(0, .5)
+    \draw [subflow ->] (a\i.north) -- +(0, .5)
         node (f) [subfunction, above] {\texttt{f}};
-    \draw [subflow] (f.north io 1) -- +(0, .5)
+    \draw [subflow ->] (f.north io 1) -- +(0, .5)
         node [subelement, above] {$w_\i$};
 }
 

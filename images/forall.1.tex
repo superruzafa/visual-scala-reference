@@ -4,21 +4,21 @@
 \matrix (A) [collection] {
     \node (a1) {$a_1$}; &
     \node (a2) {$a_2$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (ai) {$a_i$}; &
-    \elementsafter \\
-};
+    \node [elements after]; &
+\\ };
 
 \foreach \i/\r in {1/true,2/true,i/false}{
-    \node (f) [subfunction, above=.5 of a\i] {\texttt{p}};
-    \node (r) [subelement, above=.5 of f] {\texttt{\r}};
-    \draw [subflow] (a\i) -- (f.south io 1);
-    \draw [subflow] (f.north io 1) -- (r);
+    \draw [subflow ->] (a\i.north) -- +(0, .5)
+        node (p) [subfunction, above] {\texttt{p}};
+    \draw [subflow ->] (p.north io 1) -- +(0, .5)
+        node [subelement, above] {\texttt{\r}};
 }
 
-\node (b) [element, below=1 of ai] {\false};
-\draw [flow] (ai) -- (b);
+\draw [flow ->] (ai.south) -- +(0, -1)
+    node [element, below] {\false};
 
-\draw [subflow, bend left=45] ($ (a1.north) + (-1, 0) $) to (a1.north);
-\draw [subflow, bend left=45] (a1.north) to (a2.north);
-\draw [subflow, dashed, bend left=45] (a2.north) to (ai.north);
+\draw [subflow ->, bend left=45] ($ (a1.north) + (-1, 0) $) to (a1.north);
+\draw [subflow ->, bend left=45] (a1.north) to (a2.north);
+\draw [subflow ->, dashed, bend left=45] (a2.north) to (ai.north);

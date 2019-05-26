@@ -4,8 +4,8 @@
 \matrix [collection] {
     \node (a1) {$a_1$}; &
     \node {$a_2$}; &
-    \elementsafter \\
-};
+    \node [elements after]; &
+\\ };
 
 \node (b) [some={$a_1$}, below=2 of a1];
-\draw [flow] (a1) -- (b);
+\draw [flow ->] (a1) -- (b);

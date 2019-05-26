@@ -3,7 +3,7 @@
 
 \tikzset{group/.style={
     draw,
-    flow width,
+    flow,
     minimum height=2\masterunit,
     rounded corners=0.2\masterunit,
 }}
@@ -11,19 +11,19 @@
 \matrix (A) [collection] {
     \node (a1) {$a_1$}; &
     \node (a2) {$a_2$}; &
-    \elementsbetween &
-    \node (an) {$a_n$}; \\
-};
+    \node [elements between]; &
+    \node (an) {$a_n$}; &
+\\ };
 
 \matrix (B) [collection, below=.5 of A.south west, anchor=north west] {
     \node (b1) {$b_1$}; &
     \node (b2) {$b_2$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (bn) {$b_n$}; &
     \node (bn+1) {$b_{n+1}$}; &
-    \elementsbetween &
-    \node (bn+m) {$b_{n+m}$}; \\
-};
+    \node [elements between]; &
+    \node (bn+m) {$b_{n+m}$}; &
+\\ };
 
 \node (an+1) [element] at (A -| bn+1) {$a$};
 \node (an+m) [element] at (A -| bn+m) {$a$};
@@ -31,14 +31,14 @@
 \matrix (C) [collection, below=1.5 of B, nodes={font=\small}] {
     \node (c1) {$(a_1, b_1)$}; &
     \node (c2) {$(a_2, b_2)$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (cn) {$(a_n, b_n)$}; &
     \node [xscale=0.915] (cn+1) {$(a, b_{n+1})$}; &
-    \elementsbetween &
-    \node [xscale=0.85] (cn+m) {$(a, b_{n+m})$}; \\
-};
+    \node [elements between]; &
+    \node [xscale=0.85] (cn+m) {$(a, b_{n+m})$}; &
+\\ };
 
 \foreach \i/\w in {1/3ex,2/3ex,n/3ex,n+1/6ex,n+m/6ex}{
     \node (g) [group, minimum width=\w] at ($ (a\i)!.5!(b\i) $) {};
-    \draw (g) [flow] -- (c\i);
+    \draw (g) [flow ->] -- (c\i);
 }

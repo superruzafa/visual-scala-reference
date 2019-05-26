@@ -4,20 +4,20 @@
 \matrix (A) [collection] {
     \node (a1) {$a_1$}; &
     \node (a2) {$a_2$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (an) {$a_n$}; &
 \\ };
 
 \foreach \i in {1,2,n}{
-    \node (f) [subfunction, above=.5 of a\i] {\texttt{p}};
-    \node (r) [subelement, above=.5 of f] {\false};
-    \draw [subflow] (a\i) -- (f.south io 1);
-    \draw [subflow] (f.north io 1) -- (r);
+    \draw [subflow ->] (a\i.north) -- +(0, .5)
+        node (p) [subfunction, above] {\texttt{p}};
+    \draw [subflow ->] (p.north io 1) -- +(0, .5)
+        node [subelement, above] {\false};
 }
 
-\draw [inverse flow] (a1.north) arc [start angle=0, end angle=100, x radius=.75, y radius=.5];
-\draw [flow, bend left=45] (a1.north) to (a2.north);
-\draw [flow, dashed, bend left=45] (a2.north) to (an.north);
+\draw [<- flow] (a1.north) arc [start angle=0, end angle=100, x radius=.75, y radius=.5];
+\draw [flow ->, bend left=45] (a1.north) to (a2.north);
+\draw [flow ->, dashed, bend left=45] (a2.north) to (an.north);
 
 \node (b) [element, below right=1 and 1 of an] {-1};
-\draw [flow] (an.north) .. controls +(1.1, 1.1) and +(0, 1) .. (b.north);
+\draw [flow ->] (an.north) .. controls +(1.1, 1.1) and +(0, 1) .. (b.north);

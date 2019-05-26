@@ -2,26 +2,24 @@
 ---
 
 \matrix (A) [collection] {
-    \elementsbefore &
+    \node [elements before]; &
     \node (an-i) {$a_{n-i}$}; &
     \node (an-i+1) {$a_{n-i+1}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (an-1) {$a_{n-1}$}; &
-    \node (an) {$a_n$}; \\
-};
+    \node (an) {$a_n$}; &
+\\ };
 
-\matrix (B) [collection, below=3 of A.south east, anchor=north east] {
-    \node {$a_{n-i+1}$}; &
-    \elementsbetween &
-    \node {$a_{n-1}$}; &
-    \node {$a_n$}; \\
-};
+\matrix (B) [collection, below=2 of A.south east, anchor=north east] {
+    \node (bn-i+1) {$a_{n-i+1}$}; &
+    \node [elements between]; &
+    \node (bn-1) {$a_{n-1}$}; &
+    \node (bn) {$a_n$}; &
+\\ };
 
 \measure{$i$}{an-i+1.north west}{an.north east}
 
-\begin{scope}[every path/.style={flow width}]
-\inversebrace{an-i+1.south west}{an.south east}
-\coordinate (s) at (bracepoint);
-\normalbrace{B.north west}{B.north east}
-\end{scope}
-\draw [flow] (s) -- (bracepoint);
+\braceflow[-.2]{(an-i+1.south west)}{(an.south east)}
+\coordinate (x) at (lastbrace);
+\braceflow[.2]{(bn-i+1.north west)}{(bn.north east)}
+\draw [flow ->, out=270, in=90] (x) to (lastbrace);

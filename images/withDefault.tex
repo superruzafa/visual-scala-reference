@@ -4,14 +4,14 @@
 \matrix (A) [collection] {
     \node (k1) {$k_1$}; \\
     \node (k2) {$k_2$}; \\
-    \velementsbetween \\
+    \node [vertical elements between]; \\
     \node (kn) {$k_n$}; \\
 };
 
 \matrix (B) [collection, right=3 of A.north east, anchor=north west] {
     \node (l1) {$k_1$}; \\
     \node (l2) {$k_2$}; \\
-    \velementsbetween \\
+    \node [vertical elements between]; \\
     \node (ln) {$k_n$}; \\
     \node (l_) {$k_\_$}; \\
 };
@@ -34,9 +34,9 @@
 \node (vl) [subelement, right=1 of l_] {$k\_$};
 \draw [key to value] (l_) to (vl);
 \node (f) [fun, right=.5 of vl] {\texttt{f}};
-\draw [subflow] (vl) -- (f.west io 1);
+\draw [subflow ->] (vl) -- (f.west io 1);
 \node (vl) [element, right=.5 of f] {$v_\_$};
-\draw [subflow] (f.east io 1) -- (vl);
+\draw [subflow ->] (f.east io 1) -- (vl);
 
 \coordinate (y) at (vk |- B);
 \coordinate (x) at ($ (y)!.5!(B.west) $);

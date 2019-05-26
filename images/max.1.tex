@@ -4,14 +4,14 @@
 \matrix (A) [collection] {
     \node (a1) {$a_1$}; &
     \node (a2) {$a_2$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (ai) {$a_i$}; &
-    \elementsbetween &
-    \node (an) {$a_n$}; \\
-};
+    \node [elements between]; &
+    \node (an) {$a_n$}; &
+\\ };
 
 \node (b) [element, below=2 of ai] {$a_i$};
-\draw [flow] (ai) -- (b);
+\draw [flow ->] (ai) -- (b);
 
 \matrix [matrix of math nodes, nodes={inner ysep=.125\masterunit}, row sep=.125\masterunit, left delimiter=\{, right=.5 of b] {
   a_i > a_j,\, j \in [1, i - 1] \\

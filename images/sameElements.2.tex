@@ -4,28 +4,28 @@
 \matrix (A) [collection] {
     \node (a1) {$a_1$}; &
     \node (a2) {$a_2$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (ai) {$a_i$}; &
-    \elementsafter &
+    \node [elements after]; &
 \\ };
 
 \matrix (B) [collection, below=2 of A] {
     \node (b1) {$a_1$}; &
     \node (b2) {$a_2$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (bi) {$a^\prime_i$}; &
-    \elementsafter &
+    \node [elements after]; &
 \\ };
 
 \foreach \i/\j in {1/=,2/=,i/\neq}{
-    \draw [subflow width] (a\i) --
-        node (eq\i) [comparation, flow width] {$\j$}
+    \draw [subflow] (a\i) --
+        node (eq\i) [comparation, flow] {$\j$}
         (b\i);
 }
 
 \node (b) [element, right=1 of bi] {\false};
 
-\draw [inverse flow] (eq1.west) -- +(-.5, 0);
-\draw [flow] (eq1.east) -- (eq2.west);
+\draw [<- flow] (eq1.west) -- +(-.5, 0);
+\draw [flow ->] (eq1.east) -- (eq2.west);
 \draw [flow, solid dashed solid] (eq2.east) -- (eqi.west);
-\draw [flow] (eqi.east) .. controls +(1, 0) and +(0, 1) .. (b.north);
+\draw [flow ->] (eqi.east) .. controls +(1, 0) and +(0, 1) .. (b.north);

@@ -4,7 +4,7 @@
 \matrix (A) [collection] {
     \node {$a_1$}; &
     \node {$a_2$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node {$a_{n - 1}$}; &
     \node {$a_n$}; &
 \\ };
@@ -12,7 +12,7 @@
 \matrix (I1) [collection, below=2 of A] {
     \node {$a_1$}; &
     \node {$a_2$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node {$a_{n - 1}$}; &
     \node {$a_n$}; &
 \\ };
@@ -20,7 +20,7 @@
 \matrix (I2) [collection, below=.5 of I1] {
     \node {$a_1$}; &
     \node {$a_2$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node {$a_n$}; &
     \node {$a_{n - 1}$}; &
 \\ };
@@ -28,7 +28,7 @@
 \matrix (I3) [collection, below=1 of I2] {
     \node {$a_n$}; &
     \node {$a_{n - 1}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node {$a_1$}; &
     \node {$a_2$}; &
 \\ };
@@ -36,7 +36,7 @@
 \matrix (I4) [collection, below=.5 of I3] {
     \node {$a_n$}; &
     \node {$a_{n - 1}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node {$a_2$}; &
     \node {$a_1$}; &
 \\ };
@@ -46,7 +46,7 @@
     node contents={\texttt{next}}
 }}
 
-\draw [flow] ($ (I1.west) + (-1, 0) $) -- node [next label, above=0.1] {} (I1);
-\draw [flow, bend right=45] (I1.west) to node [next label, below=0.3, rotate=180] {} (I2.west);
-\draw [flow, dashed, bend right=45] (I2.west) to node [next label, below=0.3, rotate=180] {} (I3.west);
-\draw [flow, bend right=45] (I3.west) to node [next label, below=0.3, rotate=180] {} (I4.west);
+\draw [flow ->] ($ (I1.west) + (-1, 0) $) -- node [next label, above=0.1] {} (I1);
+\draw [flow ->, bend right=45] (I1.west) to node [next label, below=0.3, rotate=180] {} (I2.west);
+\draw [flow ->, dashed, bend right=45] (I2.west) to node [next label, below=0.3, rotate=180] {} (I3.west);
+\draw [flow ->, bend right=45] (I3.west) to node [next label, below=0.3, rotate=180] {} (I4.west);

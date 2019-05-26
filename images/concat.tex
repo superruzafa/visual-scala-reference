@@ -3,13 +3,13 @@
 
 \matrix (A1) [subcollection] {
     \node (a11) {$a_{1,1}$}; &
-    \subelementsbetween[.75]; &
+    \node [elements between=.75]; &
     \node (a1m) {$a_{1,m}$}; &
 \\ };
 
 \matrix (A2) [subcollection, right=.5 of A1] {
     \node (a21) {$a_{2,1}$}; &
-    \subelementsbetween[.75]; &
+    \node [elements between=.75]; &
     \node (a2p) {$a_{2,p}$}; &
 \\ };
 
@@ -17,7 +17,7 @@
 
 \matrix (An) [subcollection, right=.5 of A3] {
     \node (an1) {$a_{n,1}$}; &
-    \subelementsbetween[.75]; &
+    \node [elements between=.75]; &
     \node (anq) {$a_{n,q}$}; &
 \\ };
 
@@ -25,24 +25,22 @@
 
 \matrix (B) [collection, below=2 of x]{
     \node (b11) {$a_{1,1}$}; &
-    \elementsbetween[.75]; &
+    \node [elements between=.75]; &
     \node (b1m) {$a_{1,m}$}; &
     \node (b21) {$a_{2,1}$}; &
-    \elementsbetween[.75]; &
+    \node [elements between=.75]; &
     \node (b2p) {$a_{2,p}$}; &
-    \elementsbetween[1]; &
+    \node [elements between]; &
     \node (bn1) {$a_{n,1}$}; &
-    \elementsbetween[.75]; &
+    \node [elements between=.75]; &
     \node (bnq) {$a_{n,q}$}; &
 \\ };
 
-\begin{scope}[flow width]
 \foreach \i/\j in {11/1m, 21/2p,n1/nq}{
-    \inversebrace{a\i.south west}{a\j.south east}
-    \coordinate (x) at (bracepoint);
-    \coordinate (a) at ($ (b\i.north west) + (.5\defaultpenwidth, 0) $);
-    \coordinate (b) at ($ (b\j.north east) + (-.5\defaultpenwidth, 0) $);
-    \normalbrace{a}{b}
-    \draw [flow, out=270, in=90] (x) to (bracepoint);
+    \braceflow[-.2]{(a\i.south west)}{(a\j.south east)}
+    \coordinate (x) at (lastbrace);
+    \braceflow[.2]
+        {($ (b\i.north west) + (.5\defaultpenwidth, 0) $) }
+        {($ (b\j.north east) + (-.5\defaultpenwidth, 0) $) }
+    \draw [flow ->, out=270, in=90] (x) to (lastbrace);
 }
-\end{scope}

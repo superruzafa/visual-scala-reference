@@ -4,11 +4,11 @@
 \node (f) [function] {$f$};
 \node (g) [function, below=1.5 of f] {\texttt{g}};
 \node (y) at ($ (f)!.5!(g) $) [element] {$y$};
-\draw [flow] (f.south io 1) -- node [partial] {} (y);
-\draw [flow] (y) -- (g.north io 1);
+\draw [flow ->] (f.south io 1) -- node [partial] {} (y);
+\draw [flow ->] (y) -- (g.north io 1);
 
 \node (h) at (y) [function, minimum width=2.25\masterunit, minimum height=5\masterunit] {};
-\draw [inverse flow] (f.north io 1) -- (h.north io 1) -- +(0, .5)
+\draw [<- flow] (f.north io 1) -- (h.north io 1) -- +(0, .5)
     node [element, above] {$x$};
 
 \coordinate (he) at (f.east -| h.east);
@@ -18,19 +18,19 @@
 \coordinate (hse) at (h.south east -| g.south);
 \coordinate (gh) at ($ (g.south)!.5!(hse.south) $);
 
-\draw [flow] (y) -- (y-fh) |- (gh) -- (h.south) -- +(0, -.5)
+\draw [flow ->] (y) -- (y-fh) |- (gh) -- (h.south) -- +(0, -.5)
     node [element, below] {\true};
 
 \node (fa) [function, above left=0 and 3 of f] {$f$};
-\draw [inverse flow] (fa.north io 1) -- +(0, .5)
+\draw [<- flow] (fa.north io 1) -- +(0, .5)
     node [element, above] {$x$};
-\draw [flow] (fa.south io 1) -- node [partial] {} +(0, -.5)
+\draw [flow ->] (fa.south io 1) -- node [partial] {} +(0, -.5)
     node [element, below] {$y$};
 
 \node (ga) [function, below left=0 and 3 of g] {\texttt{g}};
-\draw [inverse flow] (ga.north io 1) -- +(0, .5)
+\draw [<- flow] (ga.north io 1) -- +(0, .5)
     node [element, above] {$y^{\prime}$};
-\draw [flow] (ga.south io 1) -- +(0, -.5)
+\draw [flow ->] (ga.south io 1) -- +(0, -.5)
     node [element, below] {$u$};
 
 \coordinate (x) at ($ (fa)!.5!(ga) $);

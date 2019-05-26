@@ -3,17 +3,17 @@
 
 \matrix (A) [collection] {
     \node (a1) {$a_1$}; &
-    \elementsbetween[.5] &
+    \node [elements between=.5]; &
     \node (a1+m) {$a_{1 + m}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (an) {$a_n$}; &
-    \elementsbetween[.5] &
+    \node [elements between=.5]; &
     \node (an+m) {$a_{n + m}$}; &
 \\ };
 
 \matrix (B) [collection, below=3 of A] {
     \node (bi) {$a^\prime_i$}; &
-    \elementsbetween[.5] &
+    \node [elements between=.5]; &
     \node (bi+m) {$a^\prime_{i + m}$}; &
 \\ };
 
@@ -29,18 +29,18 @@
 
 \foreach \i in {1,n}{
     \node (eq\i) at (brace\i |- rule)
-        [minimum size=.4\masterunit, circle, draw, flow width, fill=white] {$\neq$};
+        [minimum size=.4\masterunit, circle, draw, flow, fill=white] {$\neq$};
 }
 
 \coordinate (x) at ($ (eq1)!.5!(lastbrace) $);
 \coordinate (rule) at (eq1 |- x);
 
 \foreach \i in {1,n}{
-    \draw [flow width] (brace\i) -- (eq\i);
-    \draw [flow width] (eq\i) -- (eq\i |- rule) -| (lastbrace);
+    \draw [flow] (brace\i) -- (eq\i);
+    \draw [flow] (eq\i) -- (eq\i |- rule) -| (lastbrace);
 }
 
-\draw [inverse flow] (eqn.east) -- +(.5, 0);
-\draw [flow, solid dashed solid] (eqn) -- (eq1);
+\draw [<- flow] (eqn.east) -- +(.5, 0);
+\draw [flow ->, solid dashed solid] (eqn) -- (eq1);
 \node (b) at (a1 |- B) [element] {$-1$};
-\draw [flow] (eq1.west) -| (b.north);
+\draw [flow ->] (eq1.west) -| (b.north);

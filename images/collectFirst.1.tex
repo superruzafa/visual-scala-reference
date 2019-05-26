@@ -4,20 +4,24 @@
 \matrix (A) [collection] {
     \node (a1) {$a_1$}; &
     \node (a2) {$a_2$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (ai) {$a_i$}; &
-    \node (ai+1) {$a_{i+1}$}; &
-    \elementsafter \\
-};
+    \node [elements after]; &
+\\ };
 
 \foreach \i in {1,2,i}{
-    \node (pf\i) [subfunction, partial function, below=1 of a\i] {\texttt{pf}};
-    \draw [flow] (a\i) -- (pf\i.north io 1);
+    \node (f\i) [subfunction, below=1 of a\i] {\texttt{f}};
+    \draw [flow ->] (a\i) -- (f\i.north io 1);
 }
 
-\node (b) [some={$b$}, below=1 of pfi];
-\draw [flow] (pfi.south io 1) -- (b);
+\node (b) [some={$b$}, below=1 of fi];
+\draw [flow ->] (fi.south io 1) -- (b);
 
-\draw [subflow, bend left=45] ($ (a1.north) + (-1, 0) $) to (a1.north);
-\draw [subflow, bend left=45] (a1.north) to (a2.north);
-\draw [subflow, dashed, bend left=45] (a2.north) to (ai.north);
+\draw [subflow ->, bend left=45] ($ (a1.north) + (-1, 0) $) to (a1.north);
+\draw [subflow ->, bend left=45] (a1.north) to (a2.north);
+\draw [subflow ->, dashed, bend left=45] (a2.north) to (ai.north);
+
+\draw [throw ->] (f1.west) -- +(-.5, 0)
+    node [exception=MatchError, font=\tiny, left];
+\draw [throw ->] (f2.east) -- +(.5, 0)
+    node [exception=MatchError, font=\tiny, right];

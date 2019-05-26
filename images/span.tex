@@ -4,41 +4,35 @@
 \matrix (A) [collection] {
     \node (a1) {$a_1$}; &
     \node (a2) {$a_2$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (ai-1) {$a_{i-1}$}; &
     \node (ai) {$a_i$}; &
-    \elementsafter &
+    \node [elements after] coordinate (an) at (\tikzlastnode.south west); &
 \\ };
-\coordinate (Aend) at (lastnode.south east);
 
 \matrix (B) [tuple of collections, below=2 of A] {
     \node (b1) {$a_1$}; &
     \node (b2) {$a_2$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (bi-1) {$a_{i-1}$}; &
     \node [tuple separator]; &
     \node (bi) {$a_i$}; &
-    \elementsafter &
+    \node [elements after] coordinate (bn) at (\tikzlastnode.north east); &
 \\ };
-\coordinate (Bend) at (lastnode.north east);
 
 \foreach \i/\r in {1/true,2/true,i-1/true,i/false}{
-    \node (f) [subfunction, above=.5 of a\i] {\texttt{p}};
-    \node (r) [subelement, above=.5 of f] {\texttt{\r}};
-    \draw [subflow] (a\i) -- (f.south io 1);
-    \draw [subflow] (f.north io 1) -- (r);
+    \draw [subflow ->] (a\i.north) -- +(0, .5)
+        node (p) [subfunction, above] {\texttt{p}};
+    \draw [subflow ->] (p.north io 1) -- +(0, .5)
+        node [subelement, above] {\texttt{\r}};
 }
 
-\begin{scope}[flow width]
-    \coordinate (a) at ($ (ai-1.south east) + (-.5\defaultpenwidth, 0) $);
-    \coordinate (b) at ($ (bi-1.north east) + (-.5\defaultpenwidth, 0) $);
-    \inversebrace{a1.south west}{a}
-    \coordinate (x) at (bracepoint);
-    \normalbrace{b1.north west}{b}
-    \draw [flow] (x) [out=270, in=90] (x) to (bracepoint);
+\braceflow[-.2]{(a1.south west)}{($ (ai-1.south east) + (-.5\defaultpenwidth, 0) $)}
+\coordinate (x) at (lastbrace);
+\braceflow[.2]{(b1.north west)}{(bi-1.north east)}
+\draw [flow ->, out=270, in=90] (x) to (lastbrace);
 
-    \inversebrace{ai.south west}{Aend}
-    \coordinate (x) at (bracepoint);
-    \normalbrace{bi.north west}{Bend}
-    \draw [flow] (x) [out=270, in=90] (x) to (bracepoint);
-\end{scope}
+\braceflow[-.2]{(ai.south west)}{(A.south east)}
+\coordinate (x) at (lastbrace);
+\braceflow[.2]{(bi.north west)}{(bn.north east)}
+\draw [flow ->, out=270, in=90] (x) to (lastbrace);

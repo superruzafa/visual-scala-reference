@@ -4,16 +4,15 @@
 \matrix (A) [collection] {
     \node (a1) {$a_1$}; &
     \node (a2) {$a_2$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (ai) {$a_i$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (an) {$a_n$}; &
 \\ };
 
-% \begin{scope}[every node/.style={element, inner sep=.0pt, outer sep=.01\masterunit, node distance=.1\masterunit}]
 \foreach \i in {1,2,i,n}{
-    \node (b\i) [element, below=2 of a\i] {$a_\i$};
-    \draw [flow] (a\i) -- (b\i);
+    \node (b\i) [element, below=1 of a\i] {$a_\i$};
+    \draw [flow ->] (a\i) -- (b\i);
 }
 
 
@@ -31,7 +30,7 @@
 \node [base right=.125 of end] {''};
 \end{scope}
 
-\begin{scope}[inverse flow, every node/.style={subelement, below}]
+\begin{scope}[<- flow, every node/.style={subelement, below}]
     \draw (start) -- +(0, -1) node {\texttt{start}};
     \draw (end) -- +(0, -1) node {\texttt{end}};
     \foreach \i in {1,2,3,4,5}{

@@ -29,8 +29,8 @@
 \braceflow[-.2]{(A.south west)}{(A.south east)}
 \coordinate (x) at (lastbrace);
 \braceflow[.2]{(b1.north west)}{(bn.north east)}
-\draw [flow] (x) -- (lastbrace);
+\draw [flow ->] (x) -- (lastbrace);
 
 \foreach \i in {1,2,n}{
-    \draw [flow, out=270, in=90] (a'\i) to node [comparation] {$\cup$} (b'\i);
+    \draw [flow ->, out=270, in=90] (a'\i) to node [comparation] {$\cup$} (b'\i);
 }

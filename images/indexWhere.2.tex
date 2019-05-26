@@ -2,24 +2,24 @@
 ---
 
 \matrix (A) [collection] {
-    \elementsbefore &
+    \node [elements before]; &
     \node (aj) {$a_j$}; &
     \node (aj+1) {$a_{j + 1}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (aj+i) {$a_{j + i}$}; &
-    \elementsafter &
+    \node [elements after]; &
 \\ };
 
 \foreach \i/\r in {j/false,j+1/false,j+i/true}{
-    \node (f) [subfunction, above=.5 of a\i] {\texttt{p}};
-    \node (r) [subelement, above=.5 of f] {\texttt{\r}};
-    \draw [subflow] (a\i) -- (f.south io 1);
-    \draw [subflow] (f.north io 1) -- (r);
+    \draw [subflow ->] (a\i.north) -- +(0, .5)
+        node (p) [subfunction, above] {\texttt{p}};
+    \draw [subflow ->] (p.north io 1) -- +(0, .5)
+        node [subelement, above] {\texttt{\r}};
 }
 
-\draw [inverse flow] (aj.north) arc [start angle=0, end angle=100, x radius=.75, y radius=.5];
-\draw [flow, bend left=45] (aj.north) to (aj+1.north);
-\draw [flow, dashed, bend left=45] (aj+1.north) to (aj+i.north);
+\draw [<- flow] (aj.north) arc [start angle=0, end angle=100, x radius=.75, y radius=.5];
+\draw [flow ->, bend left=45] (aj.north) to (aj+1.north);
+\draw [flow ->, dashed, bend left=45] (aj+1.north) to (aj+i.north);
 
 \node (b) [element, below=1 of aj+i] {$j + i$};
-\draw [flow] (aj+i) -- (b);
+\draw [flow ->] (aj+i) -- (b);

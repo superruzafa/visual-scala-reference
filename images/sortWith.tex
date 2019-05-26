@@ -3,20 +3,20 @@
 
 \matrix (A) [collection] {
     \node (a2) {$a_2$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (an) {$a_n$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (a1) {$a_1$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (ai) {$a_i$}; &
 \\ };
 
 \matrix (B) [collection, below=4.75 of A] {
     \node (b1) {$a_1$}; &
     \node (b2) {$a_2$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (bi) {$a_i$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (bn) {$a_n$}; &
 \\ };
 
@@ -46,9 +46,9 @@
     2/1/false,
     n/i/false
 }{
-    \draw [inverse subflow] (p\i.north io 1) -- +(0, .5) node [subelement, above] {$a_\a$};
-    \draw [inverse subflow] (p\i.north io 2) -- +(0, .5) node [subelement, above] {$a_\b$};
-    \draw [subflow] (p\i.south io 1) -- +(0, -.5) node [subelement, below] {\texttt{\r}};
+    \draw [<- subflow] (p\i.north io 1) -- +(0, .5) node [subelement, above] {$a_\a$};
+    \draw [<- subflow] (p\i.north io 2) -- +(0, .5) node [subelement, above] {$a_\b$};
+    \draw [subflow ->] (p\i.south io 1) -- +(0, -.5) node [subelement, below] {\texttt{\r}};
 }
 
 \node [big arrow, left=1 of p1, rotate=-90] {};

@@ -118,7 +118,7 @@
     \footnotesize{None}
 }
 
-\tikzset{exception flow/.style={
+\tikzset{exception draw/.style={
     line width=.02\masterunit,
     decorate,
     decoration={
@@ -128,30 +128,57 @@
     },
 }}
 
+\tikzset{throw ->/.style={
+    exception draw,
+    ->,
+}}
+
 \tikzset{exception/.style={
     draw,
-    exception flow,
+    exception draw,
     inner sep=.1\masterunit,
     node contents=\texttt{#1},
+    tips=false,
 }}
+
 
 \tikzset{subexception/.style={
     exception={#1},
     font=\footnotesize,
 }}
 
-\tikzset{flow width/.style={
-    line width=0.75\defaultpenwidth,
-}}
+\newlength\flowwidth
+\setlength\flowwidth{.75\defaultpenwidth}
 
 \tikzset{flow/.style={
-    -{Triangle[flex,fill=defaultpencolor, angle'=30]},
-    flow width,
+    line width=\flowwidth,
 }}
 
-\tikzset{inverse flow/.style={
+\tikzset{flow ->/.style={
+    flow,
+    -{Triangle[flex,fill=defaultpencolor, angle'=30]},
+}}
+
+\tikzset{<- flow/.style={
+    flow,
     {Triangle[flex,fill=defaultpencolor, angle'=30]}-,
-    flow width,
+}}
+
+\newlength\subflowwidth
+\setlength\subflowwidth{.5\defaultpenwidth}
+
+\tikzset{subflow/.style={
+    line width=\subflowwidth,
+}}
+
+\tikzset{subflow ->/.style={
+    subflow,
+    -{Triangle[flex,fill=defaultpencolor, angle'=30]},
+}}
+
+\tikzset{<- subflow/.style={
+    subflow,
+    {Triangle[flex,fill=defaultpencolor, angle'=30]}-,
 }}
 
 \tikzset{bridge flow/.pic={
@@ -160,26 +187,12 @@
     \draw [flow, -] (-.1\masterunit, 0) arc [start angle=180, end angle=0, radius=.1\masterunit];
 }}
 
-\tikzset{flow jump/.pic={
+\tikzset{jump/.pic={
     \begin{scope}[rotate=#1]
     \fill [white] circle [radius=.09\masterunit];
     \draw [line cap=rect] (-.1\masterunit, 0) arc [start angle=180, end angle=0, x radius=.1\masterunit, y radius=.075\masterunit];
     \draw [line cap=rect] (0, .1\masterunit) -- +(0, -.2\masterunit);
     \end{scope}
-}}
-
-\tikzset{subflow width/.style={
-    line width=0.5\defaultpenwidth,
-}}
-
-\tikzset{subflow/.style={
-    flow,
-    subflow width,
-}}
-
-\tikzset{inverse subflow/.style={
-    inverse flow,
-    subflow width,
 }}
 
 \tikzset{solid dashed solid/.style={
@@ -223,55 +236,6 @@
     },
 }}
 
-
-\newcommand{\elementsbefore}{
-    \node (lastnode) [draw=none, minimum width=.75\masterunit] {};
-    \draw [collection element line width, dashed solid]
-        (lastnode.north west) -- (lastnode.north east)
-        (lastnode.south west) -- (lastnode.south east);
-}
-
-\newcommand{\elementsbetween}[1][1.5]{
-    \node (lastnode) [draw=none, minimum width=#1\masterunit] {};
-    \draw [collection element line width, solid dashed solid]
-        (lastnode.north west) -- (lastnode.north east)
-        (lastnode.south west) -- (lastnode.south east);
-}
-
-\newcommand{\elementsafter}{
-    \node (lastnode) [draw=none, minimum width=.75\masterunit] {};
-    \draw [collection element line width, solid dashed]
-        (lastnode.north west) -- (lastnode.north east)
-        (lastnode.south west) -- (lastnode.south east);
-}
-
-\newcommand{\velementsbetween}{
-    \node (lastnode) [draw=none, minimum height=1.5\masterunit] {};
-    \draw [collection element line width, solid dashed solid]
-        (lastnode.north west) -- (lastnode.south west)
-        (lastnode.north east) -- (lastnode.south east);
-}
-
-\newcommand{\subelementsbefore}[1][1]{
-    \node (lastnode) [draw=none, minimum width=#1\masterunit] {};
-    \draw [subcollection element line width, dashed solid]
-        (lastnode.north west) -- (lastnode.north east)
-        (lastnode.south west) -- (lastnode.south east);
-}
-
-\newcommand{\subelementsbetween}[1][1]{
-    \node (lastnode) [draw=none, minimum width=#1\masterunit] {};
-    \draw [subcollection element line width, solid dashed solid]
-        (lastnode.north west) -- (lastnode.north east)
-        (lastnode.south west) -- (lastnode.south east);
-}
-
-\newcommand{\subelementsafter}[1][1]{
-    \node (lastnode) [draw=none, minimum width=#1\masterunit] {};
-    \draw [subcollection element line width, solid dashed]
-        (lastnode.north west) -- (lastnode.north east)
-        (lastnode.south west) -- (lastnode.south east);
-}
 
 \tikzset{
     elements before/.style={
@@ -326,53 +290,23 @@
 
 \tikzset{
     vertical elements before/.style={
-        /utils/exec=\csname tikz@options\endcsname,
-        alias=this,
-        draw=none,
-        minimum height=#1\masterunit,
-        node contents={},
-        append after command={
-            \pgfextra{
-                \draw[dashed solid] (this.north west) -- (this.south west);
-                \draw[dashed solid] (this.north east) -- (this.south east);
-            }
-        },
-    },
-    vertical elements before/.default=.5,
+        rotate=90,
+        elements before=#1,
+    }
 }
 
 \tikzset{
     vertical elements between/.style={
-        /utils/exec=\csname tikz@options\endcsname,
-        alias=this,
-        draw=none,
-        minimum height=#1\masterunit,
-        node contents={},
-        append after command={
-            \pgfextra{
-                \draw[solid dashed solid] (this.north west) -- (this.south west);
-                \draw[solid dashed solid] (this.north east) -- (this.south east);
-            }
-        },
-    },
-    vertical elements between/.default=1.25,
+        rotate=90,
+        elements between=#1,
+    }
 }
 
 \tikzset{
     vertical elements after/.style={
-        /utils/exec=\csname tikz@options\endcsname,
-        alias=this,
-        draw=none,
-        minimum height=#1\masterunit,
-        node contents={},
-        append after command={
-            \pgfextra{
-                \draw[solid dashed] (this.north west) -- (this.south west);
-                \draw[solid dashed] (this.north east) -- (this.south east);
-            }
-        },
-    },
-    vertical elements after/.default=.5,
+        rotate=90,
+        elements after=#1,
+    }
 }
 
 \tikzset{key to value/.style={
@@ -396,6 +330,10 @@
     line width=.75\defaultpenwidth,
     minimum width=.75\masterunit,
     minimum height=.75\masterunit,
+    /function/io width=.3\masterunit,
+    /function/io narrow width=.2\masterunit,
+    /function/io height=.15\masterunit,
+    /function/io sep=.2\masterunit,
 }}
 
 \tikzset{subfunction/.style={
@@ -403,10 +341,14 @@
     inner xsep=.15\masterunit,
     inner ysep=.2\masterunit,
     line width=.5\defaultpenwidth,
+    /function/io width=.2\masterunit,
+    /function/io narrow width=.133\masterunit,
+    /function/io height=.1\masterunit,
+    /function/io sep=.1\masterunit,
 }}
 
 \tikzset{horizontal subfunction/.style={
-    shape=function,
+    subfunction,
     inner xsep=.2\masterunit,
     inner ysep=.15\masterunit,
     line width=.5\defaultpenwidth,
@@ -416,49 +358,19 @@
     /function/west io=1,
 }}
 
-\tikzset{partial function/.style={
-    dash pattern=on .3 off .6,
-}}
-
 \tikzset{partial/.style={
-    strike out,
-    flow width,
     draw,
-    minimum width=4\defaultpenwidth,
+    flow,
     minimum height=4\defaultpenwidth,
+    minimum width=4\defaultpenwidth,
+    strike out,
 }}
-
-\tikzset{normal brace/.style={
-    decorate,
-    decoration={
-        brace,
-        amplitude=.2\masterunit,
-        raise=.2\masterunit,
-    }
-}}
-
-\tikzset{inverse brace/.style={
-    normal brace,
-    decoration={
-        mirror,
-    }
-}}
-
-\newcommand\normalbrace[2]{
-    \draw [normal brace] (#1) -- (#2);
-    \coordinate (bracepoint) at ($ (#1)!.5!(#2) + (0, .4) $);
-}
-
-\newcommand\inversebrace[2]{
-    \draw [line width=\pgflinewidth, inverse brace] (#1) -- (#2);
-    \coordinate (bracepoint) at ($ (#1)!.5!(#2) + (0, -.4) $);
-}
 
 \tikzset{
     brace flow/.default=0.2,
     brace flow/.code={
         \ifdim #1pt<0pt \tikzset{
-            flow width,
+            flow,
             decorate,
             decoration={
                 brace,
@@ -467,7 +379,7 @@
                 raise=-#1\masterunit,
             }
         } \else \tikzset{
-            flow width,
+            flow,
             decorate,
             decoration={
                 brace,
@@ -478,6 +390,7 @@
     }
 }
 
+% distance, from, to
 \newcommand\braceflow[3][.2]{
     \draw [brace flow=#1] #2 -- #3;
     \ifdim #1pt<0pt
@@ -536,6 +449,10 @@
 
 \newcommand\true{\texttt{true}}
 \newcommand\false{\texttt{false}}
+
+\makeatletter
+\newcommand\currentcoordinate{\the\tikz@lastxsaved,\the\tikz@lastysaved}
+\makeatother
 
 \newcommand{\drawbg}{
      \begin{scope}[on background layer]

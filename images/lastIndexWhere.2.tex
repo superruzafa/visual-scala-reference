@@ -2,24 +2,24 @@
 ---
 
 \matrix (A) [collection] {
-    \elementsbefore &
+    \node [elements before]; &
     \node (aj-i) {$a_{j - i}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (aj-1) {$a_{j - 1}$}; &
     \node (aj) {$a_j$}; &
-    \elementsafter &
+    \node [elements after]; &
 \\ };
 
 \foreach \i/\r in {j/false,j-1/false,j-i/true}{
-    \draw [subflow] (a\i.north) -- +(0, .5)
+    \draw [subflow ->] (a\i.north) -- +(0, .5)
         node (c) [subfunction, above] {\texttt{p}};
-    \draw [subflow] (c.north) -- +(0, .5) node (r) [subelement, above] {\texttt{\r}};
+    \draw [subflow ->] (c.north) -- +(0, .5) node (r) [subelement, above] {\texttt{\r}};
 }
 
-\draw [inverse flow] (aj.north) arc [start angle=160, delta angle=-60, x radius=.75, y radius=.5];
-\draw [flow, bend right=45] (aj.north) to (aj-1.north);
-\draw [flow, dashed] (aj-1.north) arc [start angle=15, delta angle=60, x radius=.75, y radius=.5];
-\draw [inverse flow, dashed] (aj-i.north) arc [start angle=160, delta angle=-60, x radius=.75, y radius=.5];
+\draw [<- flow] (aj.north) arc [start angle=160, delta angle=-60, x radius=.75, y radius=.5];
+\draw [flow ->, bend right=45] (aj.north) to (aj-1.north);
+\draw [flow ->, dashed] (aj-1.north) arc [start angle=15, delta angle=60, x radius=.75, y radius=.5];
+\draw [<- flow, dashed] (aj-i.north) arc [start angle=160, delta angle=-60, x radius=.75, y radius=.5];
 
-\draw [flow] (aj-i.south) -- +(0, -1)
+\draw [flow ->] (aj-i.south) -- +(0, -1)
     node (b) [element, below] {$j - i$};

@@ -25,20 +25,20 @@
 
 \coordinate (x) at ($ (A)!.33!(B) $);
 \coordinate (rule) at (a1 |- x);
-\draw [name path=p1, flow width] (a1) -- (c1 |- rule);
-\draw [name path=p2, flow] (b2) |- (c1 |- rule) -- (c1);
+\draw [name path=p1, flow] (a1) -- (c1 |- rule);
+\draw [name path=p2, flow ->] (b2) |- (c1 |- rule) -- (c1);
 
 \coordinate (x) at ($ (A)!.5!(B) $);
 \coordinate (rule) at (a1 |- x);
-\draw [name path=p3, flow width] (a2) -- (c2 |- rule);
-\draw [name path=p4, flow] (b1) |- (c2 |- rule) -- (c2);
+\draw [name path=p3, flow] (a2) -- (c2 |- rule);
+\draw [name path=p4, flow ->] (b1) |- (c2 |- rule) -- (c2);
 
 \coordinate (x) at ($ (A)!.66!(B) $);
 \coordinate (rule) at (a1 |- x);
-\draw [name path=p5, flow width] (a4) -- (a4 |- rule);
-\draw [name path=p6, flow] (b5) |- (a4 |- rule) -| (c3);
+\draw [name path=p5, flow] (a4) -- (a4 |- rule);
+\draw [name path=p6, flow ->] (b5) |- (a4 |- rule) -| (c3);
 
-\draw [flow width, name intersections={of=p2 and p3, by={a}}] (a) pic {flow jump=90};
-\draw [flow width, name intersections={of=p2 and p4, by={a}}] (a) pic {flow jump=90};
-\draw [flow width, name intersections={of=p4 and p5, by={a}}] (a) pic {flow jump=90};
-\draw [flow width, name intersections={of=p2 and p5, by={a}}] (a) pic {flow jump=90};
+\draw [flow, name intersections={of=p2 and p3, by={a}}] (a) pic {jump=90};
+\draw [flow, name intersections={of=p2 and p4, by={a}}] (a) pic {jump=90};
+\draw [flow, name intersections={of=p4 and p5, by={a}}] (a) pic {jump=90};
+\draw [flow, name intersections={of=p2 and p5, by={a}}] (a) pic {jump=90};

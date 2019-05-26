@@ -7,35 +7,38 @@
     east io/.initial=0,
     west io/.initial=0,
     io width/.initial=3mm,
+    io narrow width/.initial=1mm,
+    io height/.initial=2mm,
     io sep/.initial=1mm,
-    north io width/.initial=3mm,
-    north io sep/.initial=3mm,
-    south io width/.initial=3mm,
-    south io sep/.initial=3mm,
-    east io width/.initial=3mm,
-    east io sep/.initial=3mm,
-    west io width/.initial=3mm,
-    west io sep/.initial=3mm,
-    % north io width/.initial=\expandafter\pgfkeysvalueof{/function/io width},
-    % north io sep/.initial=\expandafter\pgfkeysvalueof{/function/io sep},
-    % south io width/.initial=\expandafter\pgfkeysvalueof{/function/io width},
-    % south io sep/.initial=\expandafter\pgfkeysvalueof{/function/io sep},
-    % east io width/.initial=\expandafter\pgfkeysvalueof{/function/io width},
-    % east io sep/.initial=\expandafter\pgfkeysvalueof{/function/io sep},
-    % west io width/.initial=\expandafter\pgfkeysvalueof{/function/io width},
-    % west io sep/.initial=\expandafter\pgfkeysvalueof{/function/io sep},
+    north io width/.initial=\expandafter\pgfkeysvalueof{/function/io width},
+    north io narrow width/.initial=\expandafter\pgfkeysvalueof{/function/io narrow width},
+    north io height/.initial=\expandafter\pgfkeysvalueof{/function/io height},
+    north io sep/.initial=\expandafter\pgfkeysvalueof{/function/io sep},
+    south io width/.initial=\expandafter\pgfkeysvalueof{/function/io width},
+    south io narrow width/.initial=\expandafter\pgfkeysvalueof{/function/io narrow width},
+    south io height/.initial=\expandafter\pgfkeysvalueof{/function/io height},
+    south io sep/.initial=\expandafter\pgfkeysvalueof{/function/io sep},
+    east io width/.initial=\expandafter\pgfkeysvalueof{/function/io width},
+    east io narrow width/.initial=\expandafter\pgfkeysvalueof{/function/io narrow width},
+    east io height/.initial=\expandafter\pgfkeysvalueof{/function/io height},
+    east io sep/.initial=\expandafter\pgfkeysvalueof{/function/io sep},
+    west io width/.initial=\expandafter\pgfkeysvalueof{/function/io width},
+    west io narrow width/.initial=\expandafter\pgfkeysvalueof{/function/io narrow width},
+    west io height/.initial=\expandafter\pgfkeysvalueof{/function/io height},
+    west io sep/.initial=\expandafter\pgfkeysvalueof{/function/io sep},
 }
 
-\def\port#1{
+% width, narrow width, height
+\def\parting#1#2#3{
     \pgfpathlineto{\pgfqpoint{\z@}{\z@}}
-    \pgfpathlineto{\pgfqpoint{.5mm}{\z@}}
-    \pgfpathlineto{\pgfqpoint{.5mm}{.5mm}}
-    \pgfpathlineto{\pgfqpoint{\z@}{1mm}}
-    \pgfpathlineto{\pgfqpoint{\z@}{1.5mm}}
-    \pgfpathlineto{\pgfqpoint{#1}{1.5mm}}
-    \pgfpathlineto{\pgfqpoint{#1}{1mm}}
-    \pgfpathlineto{\pgfpoint{#1 - .5mm}{.5mm}}
-    \pgfpathlineto{\pgfpoint{#1 - .5mm}{\z@}}
+    \pgfpathlineto{\pgfpoint{(#1 - #2) / 2}{\z@}}
+    \pgfpathlineto{\pgfpoint{(#1 - #2) / 2}{.33 * #3}}
+    \pgfpathlineto{\pgfpoint{\z@}{.66 * #3}}
+    \pgfpathlineto{\pgfpoint{\z@}{#3}}
+    \pgfpathlineto{\pgfpoint{#1}{#3}}
+    \pgfpathlineto{\pgfpoint{#1}{.66 * #3}}
+    \pgfpathlineto{\pgfpoint{(#1 + #2) / 2}{.33 * #3}}
+    \pgfpathlineto{\pgfpoint{(#1 + #2) / 2}{\z@}}
     \pgfpathlineto{\pgfqpoint{#1}{\z@}}
 }
 
@@ -196,19 +199,19 @@
     }
     \saveddimen\northiosheight{%
         \pgf@x=\z@
-        \ifnum\pgfkeysvalueof{/function/north io}>0 \advance\pgf@x by 1.5mm \fi
+        \ifnum\pgfkeysvalueof{/function/north io}>0 \advance\pgf@x by \pgfkeysvalueof{/function/north io height} \fi
     }
     \saveddimen\southiosheight{%
         \pgf@x=\z@
-        \ifnum\pgfkeysvalueof{/function/south io}>0 \advance\pgf@x by -1.5mm \fi
+        \ifnum\pgfkeysvalueof{/function/south io}>0 \advance\pgf@x by -\pgfkeysvalueof{/function/south io height} \fi
     }
     \saveddimen\eastiosheight{%
         \pgf@x=\z@
-        \ifnum\pgfkeysvalueof{/function/east io}>0 \advance\pgf@x by 1.5mm \fi
+        \ifnum\pgfkeysvalueof{/function/east io}>0 \advance\pgf@x by \pgfkeysvalueof{/function/east io height} \fi
     }
     \saveddimen\westiosheight{%
         \pgf@x=\z@
-        \ifnum\pgfkeysvalueof{/function/west io}>0 \advance\pgf@x by -1.5mm \fi
+        \ifnum\pgfkeysvalueof{/function/west io}>0 \advance\pgf@x by -\pgfkeysvalueof{/function/west io height} \fi
     }
     \saveddimen\northiowidth{
         \pgf@x=\pgfkeysvalueof{/function/north io width}
@@ -366,7 +369,7 @@
         \foreach \i in {1,...,\pgfkeysvalueof{/function/north io}}{%
             \advance\pgf@xc by .5\@tempdima
             \pgftransformshift{\pgfqpoint{\pgf@xc}{\pgf@yc}}
-            \port{\pgfkeysvalueof{/function/north io width}}
+            \parting{\pgfkeysvalueof{/function/north io width}}{\pgfkeysvalueof{/function/north io narrow width}}{\pgfkeysvalueof{/function/north io height}}
             \pgftransformreset
             \global\advance\pgf@xc by \pgfkeysvalueof{/function/north io width}
             \global\advance\pgf@xc by .5\@tempdima
@@ -384,7 +387,7 @@
             \advance\pgf@yc by -.5\@tempdima
             \pgftransformshift{\pgfqpoint{\pgf@xc}{\pgf@yc}}
             \pgftransformrotate{-90}
-            \port{\pgfkeysvalueof{/function/east io width}}
+            \parting{\pgfkeysvalueof{/function/east io width}}{\pgfkeysvalueof{/function/east io narrow width}}{\pgfkeysvalueof{/function/east io height}}
             \pgftransformreset
             \global\advance\pgf@yc by -\pgfkeysvalueof{/function/east io width}
             \global\advance\pgf@yc by -.5\@tempdima
@@ -402,7 +405,7 @@
             \advance\pgf@xc by -.5\@tempdima
             \pgftransformshift{\pgfqpoint{\pgf@xc}{\pgf@yc}}
             \pgftransformscale{-1}
-            \port{\pgfkeysvalueof{/function/south io width}}
+            \parting{\pgfkeysvalueof{/function/south io width}}{\pgfkeysvalueof{/function/south io narrow width}}{\pgfkeysvalueof{/function/south io height}}
             \pgftransformreset
             \global\advance\pgf@xc by -\pgfkeysvalueof{/function/south io width}
             \global\advance\pgf@xc by -.5\@tempdima
@@ -420,7 +423,7 @@
             \advance\pgf@yc by .5\@tempdima
             \pgftransformshift{\pgfqpoint{\pgf@xc}{\pgf@yc}}
             \pgftransformrotate{90}
-            \port{\pgfkeysvalueof{/function/west io width}}
+            \parting{\pgfkeysvalueof{/function/west io width}}{\pgfkeysvalueof{/function/west io narrow width}}{\pgfkeysvalueof{/function/west io height}}
             \pgftransformreset
             \global\advance\pgf@yc by \pgfkeysvalueof{/function/west io width}
             \global\advance\pgf@yc by .5\@tempdima

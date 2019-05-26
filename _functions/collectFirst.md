@@ -8,7 +8,7 @@ permalink: /collectFirst
 
 ~~~ scala
 trait Collection[A] {
-  def collectFirst(pf: PartialFunction[A, B]): Option[B]
+  def collectFirst(f: PartialFunction[A, B]): Option[B]
 }
 ~~~
 

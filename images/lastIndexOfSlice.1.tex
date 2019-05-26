@@ -2,21 +2,21 @@
 ---
 
 \matrix (A) [collection] {
-    \elementsbefore &
+    \node [elements before]; &
     \node (ai) {$a_i$}; &
-    \elementsbetween[.5] &
+    \node [elements between=.5]; &
     \node (ai+m) {$a_{i + m}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (an-1) {$a_{n-1}$}; &
     \node (an) {$a_n$}; &
-    \elementsbetween[.5] &
+    \node [elements between=.5]; &
     \node (an-1+m) {$a_{n - 1 + m}$}; &
     \node (an+m) {$a_{n + m}$}; &
 \\ };
 
 \matrix (B) [collection, below=3 of A] {
     \node (bi) {$a_i$}; &
-    \elementsbetween[.5] &
+    \node [elements between=.5]; &
     \node (bi+m) {$a_{i + m}$}; &
 \\ };
 
@@ -32,25 +32,19 @@
 
 \foreach \i/\r in {n/\neq,n-1/\neq,i/=}{
     \node (eq\i) at (brace\i |- rule)
-        [minimum size=.4\masterunit, circle, draw, flow width, fill=white] {$\r$};
+        [minimum size=.4\masterunit, circle, draw, flow, fill=white] {$\r$};
 }
 
 \coordinate (x) at ($ (eqn)!.5!(lastbrace) $);
 \coordinate (rule) at (eqn |- x);
 
 \foreach \i in {n,n-1,i}{
-    \draw [flow width] (brace\i) -- (eq\i);
-    \draw [flow width] (eq\i) -- (eq\i |- rule) -| (lastbrace);
+    \draw [flow] (brace\i) -- (eq\i);
+    \draw [flow] (eq\i) -- (eq\i |- rule) -| (lastbrace);
 }
 
-% \path [draw=none, name path=p1] (bracen) -- +(0, -1);
-% \path [draw=none, name path=p2] ($ (an-1.south west) + (0, -.8) $) -- +(5, 0);
-
-% \path [name intersections={of=p1 and p2, by={a}}] (a) pic [rotate=90] {bridge flow};
-% \draw [flow width] ($ (a) + (-.5, 0) $) -- +(1, 0);
-
-\draw [inverse flow] (eqn.east) -- +(.5, 0);
-\draw [flow] (eqn) -- (eqn-1);
-\draw [flow, solid dashed solid] (eqn-1) -- (eqi);
+\draw [<- flow] (eqn.east) -- +(.5, 0);
+\draw [flow ->] (eqn) -- (eqn-1);
+\draw [flow ->, solid dashed solid] (eqn-1) -- (eqi);
 \node (b) at (ai |- B) [element] {$i$};
-\draw [flow] (ai) -- (b);
+\draw [flow ->] (ai) -- (b);
