@@ -3,17 +3,17 @@
 
 \matrix (A) [collection] {
     \node (a1) {$a_1$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (an-i) {$a_{n-i}$}; &
     \node (an-i+1) {$a_{n-i+1}$ }; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (an-1) {$a_{n-1}$ }; &
     \node (an) {$a_n$}; &
 \\ };
 
 \matrix (B) [collection, below=2 of A.south west, anchor=north west] {
     \node {$a_1$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node {$a_{n-i}$}; &
 \\ };
 

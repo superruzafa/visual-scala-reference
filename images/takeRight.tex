@@ -2,17 +2,17 @@
 ---
 
 \matrix (A) [collection] {
-    \elementsbefore &
+    \node [elements before]; &
     \node (an-i) {$a_{n-i}$}; &
     \node (an-i+1) {$a_{n-i+1}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (an-1) {$a_{n-1}$}; &
     \node (an) {$a_n$}; &
 \\ };
 
 \matrix (B) [collection, below=2 of A.south east, anchor=north east] {
     \node (bn-i+1) {$a_{n-i+1}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (bn-1) {$a_{n-1}$}; &
     \node (bn) {$a_n$}; &
 \\ };

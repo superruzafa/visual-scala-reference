@@ -3,32 +3,32 @@
 
 \matrix (A) [collection] {
     \node {$a_1$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node {$a_{\small{\texttt{m}}}$}; &
     \node {$a_{\small{\texttt{m}} + 1}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node {$a_{2 \cdot \small{\texttt{m}}}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node [xscale=0.965] {$a_{n \cdot \small{\texttt{m}} + 1}$}; &
-    \elementsbetween[.9] &
+    \node [elements between=.9]; &
     \node [xscale=0.965] {$a_{n \cdot \small{\texttt{m}} + p}$}; &
 \\ };
 
 \matrix (I1) [collection, below=3 of A] {
     \node {$a_1$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node {$a_{\small{\texttt{m}}}$}; &
 \\ };
 
 \matrix (I2) [collection, below=1 of I1] {
     \node {$a_{\small{\texttt{m}} + 1}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node {$a_{2 \cdot \small{\texttt{m}}}$}; &
 \\ };
 
 \matrix (In) [collection, below=1.5 of I2.south west, anchor=north west] {
     \node [xscale=0.965] {$a_{n \cdot \small{\texttt{m}} + 1}$}; &
-    \elementsbetween[.9] &
+    \node [elements between=.9]; &
     \node [xscale=0.965] {$a_{n \cdot \small{\texttt{m}} + p}$}; &
 \\ };
 

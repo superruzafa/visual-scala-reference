@@ -4,19 +4,19 @@
 \matrix (A) [collection] {
     \node (a1) {$a_1$}; &
     \node (a2) {$a_2$}; &
-    \elementsbetween[.5] &
+    \node [elements between=.5]; &
     \node (a1+m) {$a_{1 + m}$}; &
     \node (a2+m) {$a_{2 + m}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (ai) {$a_i$}; &
-    \elementsbetween[.5] &
+    \node [elements between=.5]; &
     \node (ai+m) {$a_{i + m}$}; &
-    \elementsafter &
+    \node [elements after]; &
 \\ };
 
 \matrix (B) [collection, below=3 of A] {
     \node (bi) {$a_i$}; &
-    \elementsbetween[.5] &
+    \node [elements between=.5]; &
     \node (bi+m) {$a_{i + m}$}; &
 \\ };
 

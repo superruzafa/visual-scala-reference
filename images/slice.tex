@@ -2,19 +2,19 @@
 ---
 
 \matrix (A) [collection] {
-    \elementsbefore &
+    \node [elements before]; &
     \node {$a_i$}; &
     \node (ai+1) {$a_{i + 1}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node {$a_{j - 1}$}; &
     \node (aj) {$a_j$}; &
     \node {$a_{j + 1}$}; &
-    \elementsafter &
+    \node [elements after]; &
 \\ };
 
 \matrix (B) [collection, below=3 of A] {
     \node (bi+1) {$a_{i + 1}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node {$a_{j - 1}$}; &
     \node (bj) {$a_j$}; &
 \\ };

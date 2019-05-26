@@ -4,19 +4,19 @@
 \matrix (A) [collection, nodes={font=\footnotesize}] {
     \node (ab1) {$(a_1, a^\prime_1)$}; &
     \node (ab2) {$(a_2, a^\prime_2)$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (abn) {$(a_n, a^\prime_n)$}; &
 \\ };
 
 \matrix (A) [tuple of collections, below=2 of A] {
     \node (a1) {$a_1$}; &
     \node (a2) {$a_2$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (an) {$a_n$}; &
     \node [tuple separator]; &
     \node (b1) {$a^\prime_1$}; &
     \node (b2) {$a^\prime_2$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (bn) {$a^\prime_n$}; &
 \\ };
 

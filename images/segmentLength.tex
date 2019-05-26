@@ -2,13 +2,13 @@
 ---
 
 \matrix [collection] {
-    \elementsbefore; &
+    \node [elements before]; &
     \node (aj) {$a_j$}; &
     \node (aj+1) {$a_{j+1}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (aj+m-1) {$a_{j+m-1}$}; &
     \node (aj+m) {$a_{j+m}$}; &
-    \elementsafter &
+    \node [elements after]; &
 \\ };
 
 \foreach \i/\r in {j/true,j+1/true,j+m-1/true,j+m/false}{

@@ -4,26 +4,26 @@
 \matrix (A) [collection] {
     \node {$a_1$}; &
     \node {$a_2$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node {$a_i$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node {$a_n$}; &
 \\ };
 
 \matrix (R) [subcollection, below=2 of A] {
     \node (an) {$a_n$}; &
-    \subelementsbetween &
+    \node [elements between=.75]; &
     \node (ai) {$a_i$}; &
-    \subelementsbetween &
+    \node [elements between=.75]; &
     \node (a2) {$a_2$}; &
     \node (a1) {$a_1$}; &
 \\ };
 
 \matrix (B) [collection, below=2 of R] {
     \node (bn) {$b_n$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (bi) {$b_i$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (b2) {$b_2$}; &
     \node (b1) {$b_1$}; &
 \\ };

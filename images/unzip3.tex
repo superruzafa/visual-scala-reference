@@ -3,21 +3,21 @@
 
 \matrix (A) [collection, nodes={font=\footnotesize}] {
     \node (abc1) {$(a_1, a^\prime_1, a^{\prime\prime}_1)$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (abcn) {$(a_n, a^\prime_n, a^{\prime\prime}_n)$}; &
 \\ };
 
 \matrix (A) [tuple of collections, below=2 of A] {
     \node (a1) {$a_1$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (an) {$a_n$}; &
     \node [tuple separator]; &
     \node (b1) {$a^\prime_1$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (bn) {$a^\prime_n$}; &
     \node [tuple separator]; &
     \node (c1) {$a^{\prime\prime}_1$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (cn) {$a^{\prime\prime}_n$}; &
 \\ };
 

@@ -4,27 +4,27 @@
 \matrix [collection] {
     \node (k1) {$k_1$}; \\
     \node (k2) {$k_2$}; \\
-    \velementsbetween \\
-    \node (km) {$k_m$}; &
-\\ };
+    \node [vertical elements between]; \\
+    \node (km) {$k_m$}; \\
+};
 
 \matrix (V1) [subcollection, right=1 of k1] {
     \node {$a_1$}; &
     \node {$a_3$}; &
-    \subelementsafter \\
-};
+    \node [elements after]; &
+\\ };
 
 \matrix (V2) [subcollection, right=1 of k2] {
     \node {$a_2$}; &
-    \subelementsbetween &
+    \node [elements between]; &
     \node {$a_{i+1}$}; &
-    \subelementsafter \\
-};
+    \node [elements after]; &
+\\ };
 
 \matrix (Vm) [subcollection, right=1 of km] {
-    \subelementsbefore &
+    \node [elements before]; &
     \node {$a_i$}; &
-    \subelementsbetween &
+    \node [elements between]; &
     \node {$a_n$}; &
 \\ };
 
@@ -39,10 +39,10 @@
     \node (a1) {$a_1$}; &
     \node (a2) {$a_2$}; &
     \node (a3) {$a_3$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (ai) {$a_i$}; &
     \node (ai+1) {$a_{i+1}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (an) {$a_n$}; &
 \\ };
 

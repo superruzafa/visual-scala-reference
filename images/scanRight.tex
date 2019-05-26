@@ -14,9 +14,9 @@
 
 \matrix (A) [collection] {
     \node (a1) {$a_1$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (ai) {$a_{n - i}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (an-1) {$a_{n-1}$}; &
     \node (an) {$a_n$}; &
 \\ };
@@ -30,9 +30,9 @@
 
 \matrix (B) [collection, below=2.5 of A, xshift=.1\masterunit] {
     \node (b1) {$b_n$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (bi) {$b_{i + 1}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (bn-1) {$b_2$}; &
     \node (bn) {$b_1$}; &
     \node (b0) {$z$}; &

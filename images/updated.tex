@@ -3,21 +3,21 @@
 
 \matrix (A) [collection] {
     \node (a1) {$a_1$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (ai-1) {$a_{i - 1}$}; &
     \node (ai) {$a_i$}; &
     \node (ai+1) {$a_{i + 1}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (an) {$a_n$}; &
 \\ };
 
 \matrix (B) [collection, below=3 of A] {
     \node (b1) {$a_1$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (bi-1) {$a_{i - 1}$}; &
     \node (bi) {\texttt{a}}; &
     \node (bi+1) {$a_{i + 1}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (bn) {$a_n$}; &
 \\ };
 

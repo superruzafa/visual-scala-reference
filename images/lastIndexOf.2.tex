@@ -2,12 +2,12 @@
 ---
 
 \matrix (A) [collection] {
-    \elementsbefore &
+    \node [elements before]; &
     \node (aj-i) {$a_{j - i}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (aj-1) {$a_{j - 1}$}; &
     \node (aj) {$a_j$}; &
-    \elementsafter &
+    \node [elements after]; &
 \\ };
 
 \foreach \i/\r in {j/false,j-1/false,j-i/true}{

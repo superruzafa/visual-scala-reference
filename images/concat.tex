@@ -3,13 +3,13 @@
 
 \matrix (A1) [subcollection] {
     \node (a11) {$a_{1,1}$}; &
-    \subelementsbetween[.75]; &
+    \node [elements between=.75]; &
     \node (a1m) {$a_{1,m}$}; &
 \\ };
 
 \matrix (A2) [subcollection, right=.5 of A1] {
     \node (a21) {$a_{2,1}$}; &
-    \subelementsbetween[.75]; &
+    \node [elements between=.75]; &
     \node (a2p) {$a_{2,p}$}; &
 \\ };
 
@@ -17,7 +17,7 @@
 
 \matrix (An) [subcollection, right=.5 of A3] {
     \node (an1) {$a_{n,1}$}; &
-    \subelementsbetween[.75]; &
+    \node [elements between=.75]; &
     \node (anq) {$a_{n,q}$}; &
 \\ };
 
@@ -25,14 +25,14 @@
 
 \matrix (B) [collection, below=2 of x]{
     \node (b11) {$a_{1,1}$}; &
-    \elementsbetween[.75]; &
+    \node [elements between=.75]; &
     \node (b1m) {$a_{1,m}$}; &
     \node (b21) {$a_{2,1}$}; &
-    \elementsbetween[.75]; &
+    \node [elements between=.75]; &
     \node (b2p) {$a_{2,p}$}; &
-    \elementsbetween[1]; &
+    \node [elements between]; &
     \node (bn1) {$a_{n,1}$}; &
-    \elementsbetween[.75]; &
+    \node [elements between=.75]; &
     \node (bnq) {$a_{n,q}$}; &
 \\ };
 

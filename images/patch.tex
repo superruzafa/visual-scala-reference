@@ -2,32 +2,32 @@
 ---
 
 \matrix (A) [collection] {
-    \elementsbefore &
+    \node [elements before]; &
     \node (aj-1) {$a_{j - 1}$}; &
     \node (aj) {$a_j$}; &
     \node (aj+1) {$a_{j + 1}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (aj+m-1) {$a_{j + m - 1}$}; &
     \node (aj+m) {$a_{j + m}$}; &
-    \elementsafter &
+    \node [elements after]; &
 \\ };
 
 \measure{\texttt{m}}{aj.north west}{aj+m-1.north east}
 
 \matrix (B) [collection, right=1 of A] {
     \node (b1) {$b_1$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (bn) {$b_n$}; &
 \\ };
 
 \matrix (C) [collection, below=3 of A] {
-    \elementsbefore &
+    \node [elements before]; &
     \node (cj-1) {$a_{j - 1}$}; &
     \node (c1) {$b_1$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (cn) {$b_n$}; &
     \node (cj+m) {$a_{j + m}$}; &
-    \elementsafter &
+    \node [elements after]; &
 \\ };
 
 \braceflow[-.2]{(A.south west)}{(aj-1.south east)}

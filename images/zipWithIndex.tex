@@ -4,18 +4,18 @@
 \matrix (A) [collection] {
     \node (a1) {$a_1$}; &
     \node (a2) {$a_2$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (ai) {$a_i$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (an) {$a_n$}; &
 \\ };
 
 \matrix (C) [collection, below=2 of A, nodes={font=\footnotesize}] {
     \node (b1) {$(a_1, 0)$}; &
     \node (b2) {$(a_2, 1)$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node [xscale=0.845] (bi) {$(a_n, i-1)$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node [xscale=0.805] (bn) {$(a_n, n-1)$}; &
 \\ };
 

@@ -4,16 +4,16 @@
 \matrix (A) [collection] {
     \node (a1) {$a_1$}; &
     \node (a2) {$a_2$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (ai) {$a_i$}; &
     \node (ai+1) {$a_{i+1}$ }; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (an) {$a_n$}; &
 \\ };
 
 \matrix (B) [collection, below=2 of A.south east, anchor=north east] {
     \node {$a_{i+1}$ }; &
-    \elementsbetween &
+    \node [elements between]; &
     \node {$a_n$}; &
 \\ };
 

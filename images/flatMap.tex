@@ -12,7 +12,7 @@
 \matrix (A) [collection] {
     \node (a1) {$a_1$}; &
     \node (a2) {$a_2$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (an) {$a_n$}; &
 \\ };
 
@@ -22,9 +22,9 @@
     \node (c13) {$b_{1_3}$}; &
     \node (c21) {$b_{2_1}$}; &
     \node (c22) {$b_{2_2}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (cn1) {$b_{n_1}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (cnm) {$b_{n_m}$}; &
 \\ };
 
@@ -40,7 +40,7 @@
 \coordinate (x) at ($ (cn1.north west)!.5!(cnm.north east) $);
 \matrix (Bn) [subcollection, above=1 of x] {
     \node (bn1) {$b_{n_1}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (bnm) {$b_{n_m}$}; &
 \\ };
 

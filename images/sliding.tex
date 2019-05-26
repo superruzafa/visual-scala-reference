@@ -3,15 +3,15 @@
 
 \matrix (A) [collection, nodes={font=\small}] {
     \node (a1) {$a_1$}; &
-    \elementsbetween[.8] &
+    \node [elements between=.8]; &
     \node (a2) {$a_{\texttt{m}}$}; &
-    \elementsbetween[1] &
+    \node [elements between=1]; &
     \node (a3) {$a_{\texttt{s}}$}; &
-    \elementsbetween[.8] &
+    \node [elements between=.8]; &
     \node (a4) {$a_{\texttt{s} + \texttt{m} - 1}$}; &
-    \elementsbetween[1.75] &
+    \node [elements between=1.75]; &
     \node (a5) {$a_{n \cdot \texttt{s}}$}; &
-    \elementsbetween[.5] &
+    \node [elements between=.5]; &
     \node (a6) {$a_{n \cdot \texttt{s} + k}$}; &
 \\ };
 
@@ -25,20 +25,20 @@
 
 \matrix (I1) [collection, nodes={font=\small}, below=3 of A] {
     \node {$a_1$}; &
-    \elementsbetween[.8] &
+    \node [elements between=.8]; &
     \node {$a_{\texttt{m}}$}; &
 \\ };
 
 
 \matrix (I2) [collection, nodes={font=\small}, below=1.5 of I1] {
     \node {$a_{\texttt{s}}$}; &
-    \elementsbetween[.8] &
+    \node [elements between=.8]; &
     \node {$a_{\texttt{s} + \texttt{m} - 1}$}; &
 \\ };
 
 \matrix (In) [collection, nodes={font=\small}, below=2 of I2.south west, anchor=north west] {
     \node {$a_{n \cdot \texttt{s}}$}; &
-    \elementsbetween[.5] &
+    \node [elements between=.5]; &
     \node {$a_{n \cdot \texttt{s} + k}$}; &
 \\ };
 

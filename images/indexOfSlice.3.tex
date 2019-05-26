@@ -4,18 +4,18 @@
 \matrix (A) [collection] {
     \node (a1) {$a_1$}; &
     \node (a2) {$a_2$}; &
-    \elementsbetween[.5] &
+    \node [elements between=.5]; &
     \node (a1+m) {$a_{1 + m}$}; &
     \node (a2+m) {$a_{2 + m}$}; &
-    \elementsbetween &
+    \node [elements between]; &
     \node (an) {$a_n$}; &
-    \elementsbetween[.5] &
+    \node [elements between=.5]; &
     \node (an+m) {$a_{n+m}$}; &
 \\ };
 
 \matrix (B) [collection, below=3 of A] {
     \node (bi) {$a^\prime_i$}; &
-    \elementsbetween[.5] &
+    \node [elements between=.5]; &
     \node (bi+m) {$a^\prime_{i + m}$}; &
 \\ };
 

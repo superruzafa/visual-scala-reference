@@ -2,18 +2,18 @@
 ---
 
 \matrix (A) [collection] {
-    \elementsbefore \coordinate (a1) at (lastnode.south west); &
+    \node [elements before] coordinate (a1) at (\tikzlastnode.south west); &
     \node (ai) {$a_i$}; &
     \node (ai+1) {$a_{i + 1}$}; &
-    \elementsafter \coordinate (an) at (lastnode.south east); &
+    \node [elements after] coordinate (an) at (\tikzlastnode.south east); &
 \\ };
 
 \matrix (B) [tuple of collections, below=2 of A] {
-    \elementsbefore \coordinate (b1) at (lastnode.north west); &
+    \node [elements before] coordinate (b1) at (\tikzlastnode.north west); &
     \node (bi) {$a_i$}; &
     \node [tuple separator]; &
     \node (bi+1) {$a_{i + 1}$}; &
-    \elementsafter \coordinate (bn) at (lastnode.north east); &
+    \node [elements after] coordinate (bn) at (\tikzlastnode.north east); &
 \\ };
 
 \braceflow[-.2]{(a1.south west)}{($ (ai.south east) + (-.5\defaultpenwidth, 0) $)}
