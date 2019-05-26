@@ -5,22 +5,16 @@
     \node (a1) {$a_1$}; &
     \node (a2) {$a_2$}; &
     \elementsbetween &
-    \node (ai) {$a_i$}; &
-    \elementsbetween &
     \node (an) {$a_n$}; &
 \\ };
 
-\matrix (B) [collection, below=3 of A.south east, anchor=north east] {
-    \node {$a_2$}; &
+\matrix (B) [collection, below=2 of a2.south west, anchor=north west] {
+    \node (b2) {$a_2$}; &
     \elementsbetween &
-    \node {$a_i$}; &
-    \elementsbetween &
-    \node {$a_n$}; &
+    \node (bn) {$a_n$}; &
 \\ };
 
-\begin{scope}[every path/.style={flow}]
-\inversebrace{a2.south west}{an.south east}
-\coordinate (s) at (bracepoint);
-\normalbrace{B.north west}{B.north east}
-\end{scope}
-\draw [flow ->] (s) -- (bracepoint);
+\braceflow[-.2]{(a2.south west)}{(an.south east)}
+\coordinate (x) at (lastbrace);
+\braceflow[.2]{(b2.north west)}{(bn.north east)}
+\draw [flow ->, out=270, in=90] (x) to (lastbrace);

@@ -8,9 +8,8 @@
     \node (an) {$a_n$}; &
 \\ };
 
-\begin{scope}[flow]
-\inversebrace{A.south west}{A.south east}
-\end{scope}
+\braceflow[-.2]{(a1.south west)}{(an.south east)}
 
-\node (b) [element, below=2 of A] {$a_1 + a_2 + \dots + a_n = \displaystyle\sum_{i=1}^n a_i$};
-\draw [flow ->] (bracepoint) -- (b);
+\draw [flow ->] (lastbrace) -- +(0, -1)
+    node [element, below]
+    {$a_1 + a_2 + \dots + a_n = \displaystyle\sum_{i=1}^n a_i$};

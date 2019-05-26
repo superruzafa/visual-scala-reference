@@ -36,13 +36,11 @@
     \node (bnq) {$a_{n,q}$}; &
 \\ };
 
-\begin{scope}[flow ->]
 \foreach \i/\j in {11/1m, 21/2p,n1/nq}{
-    \inversebrace{a\i.south west}{a\j.south east}
-    \coordinate (x) at (bracepoint);
-    \coordinate (a) at ($ (b\i.north west) + (.5\defaultpenwidth, 0) $);
-    \coordinate (b) at ($ (b\j.north east) + (-.5\defaultpenwidth, 0) $);
-    \normalbrace{a}{b}
-    \draw [flow, out=270, in=90] (x) to (bracepoint);
+    \braceflow[-.2]{(a\i.south west)}{(a\j.south east)}
+    \coordinate (x) at (lastbrace);
+    \braceflow[.2]
+        {($ (b\i.north west) + (.5\defaultpenwidth, 0) $) }
+        {($ (b\j.north east) + (-.5\defaultpenwidth, 0) $) }
+    \draw [flow ->, out=270, in=90] (x) to (lastbrace);
 }
-\end{scope}

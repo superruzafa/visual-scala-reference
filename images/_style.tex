@@ -445,33 +445,6 @@
     strike out,
 }}
 
-\tikzset{normal brace/.style={
-    decorate,
-    decoration={
-        brace,
-        amplitude=.2\masterunit,
-        raise=.2\masterunit,
-    },
-    tips=false,
-}}
-
-\tikzset{inverse brace/.style={
-    normal brace,
-    decoration={
-        mirror,
-    }
-}}
-
-\newcommand\normalbrace[2]{
-    \draw [normal brace] (#1) -- (#2);
-    \coordinate (bracepoint) at ($ (#1)!.5!(#2) + (0, .4) $);
-}
-
-\newcommand\inversebrace[2]{
-    \draw [line width=\pgflinewidth, inverse brace] (#1) -- (#2);
-    \coordinate (bracepoint) at ($ (#1)!.5!(#2) + (0, -.4) $);
-}
-
 \tikzset{
     brace flow/.default=0.2,
     brace flow/.code={
@@ -496,6 +469,7 @@
     }
 }
 
+% distance, from, to
 \newcommand\braceflow[3][.2]{
     \draw [brace flow=#1] #2 -- #3;
     \ifdim #1pt<0pt
