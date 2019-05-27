@@ -12,7 +12,7 @@ trait Collection[A] {
 }
 ~~~
 
-`drop` creates a collection by discarding the last `i` elements of this collection and keeping the rest.
+`dropRight` creates a collection by discarding the last `i` elements of this collection and keeping the rest.
 
 <figure class="diagram">
   <img src="images/dropRight.svg" alt="dropRight function">

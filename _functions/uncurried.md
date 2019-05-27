@@ -8,9 +8,11 @@ permalink: /uncurried
 
 ~~~ scala
 object Function {
-  def uncurried(f: (X1) => (X2) => ... => (Xn) => Y): (X1, X2,... Xn) => Y
+  def uncurried[X1, ..., Xn, Y](f: (X1) => ... => (Xn) => Y): (X1, ..., Xn) => Y
 }
 ~~~
+
+`uncurried` creates an equivalent anonymous function that accepts at once all the successive parameters accepted by the sequence of high order functions started with the function `f`.
 
 <figure class="diagram">
   <img src="images/uncurried.svg" alt="uncurried function">

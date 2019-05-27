@@ -12,14 +12,7 @@ trait Collection[A] {
 }
 ~~~
 
-`takeRight` creates a new collection containing the last `i` elements of the
-source collection.
-
-This function returns _at most_ as many elements as there are in the original
-collection. So numbers equal or greater than the length of the collection will
-make `takeRight` to return the collection itself.
-
-Numbers equal o lower than 0 will make `takeRight` to return an empty collection.
+`takeRight` creates a collection by keeping the last `i` elements of this collection and discarding the rest.
 
 <figure class="diagram">
   <img src="images/takeRight.svg" alt="takeRight function">

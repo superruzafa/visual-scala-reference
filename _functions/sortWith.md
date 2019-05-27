@@ -8,9 +8,11 @@ permalink: /sortWith
 
 ~~~ scala
 trait Collection[A] {
-  def sortWith(p: (A, A) => Boolean): Collection[A]
+  def sortWith(lt: (A, A) => Boolean): Collection[A]
 }
 ~~~
+
+`sorted` creates a collection with the elements sorted by using a comparison function `lt` which should returns `true` its first argument is less than the second and `false` otherwise.
 
 <figure class="diagram">
   <img src="images/sortWith.svg" alt="sortWith function">

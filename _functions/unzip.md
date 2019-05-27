@@ -7,13 +7,12 @@ permalink: /unzip
 # `unzip`
 
 ~~~ scala
-trait Collection[A] {
-  def unzip[A1, A2]: Collection[(A1, A2)]
+trait Collection[AB] {
+  def unzip(implicit asPair: (AB) => (A, B)): (Collection[A], Collection[B])
 }
 ~~~
 
-`unzip` builds a collection by unpairing each element as a pair in the current
-collection.
+`unzip` creates a `Tuple2` with two collections: the first containing the first component of each pair element and the second containing the rest of the elements.
 
 <figure class="diagram">
   <img src="images/unzip.svg" alt="unzip function">

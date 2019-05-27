@@ -8,9 +8,11 @@ permalink: /tupled
 
 ~~~ scala
 object Function {
-  def tupled(f: (X1, X2, ..., Xn) => Y): ((X1, X2, ..., Xn)) => Y
+  def tupled[X1, ..., Xn, Y](f: (X1, ..., Xn) => Y): ((X1, ..., Xn)) => Y
 }
 ~~~
+
+`tupled` creates an equivalent anonymous function that accepts a n-tuple as a single parameter and whose components correspond to the parameters of this function.
 
 <figure class="diagram">
   <img src="images/tupled.svg" alt="tupled function">

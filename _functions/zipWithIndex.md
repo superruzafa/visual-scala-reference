@@ -12,8 +12,7 @@ trait Collection[A] {
 }
 ~~~
 
-`zipWithIndex` creates a collection by pairing each element with its index
-within the collection.
+`zipWithIndex` creates a collection by pairing each element with its own index.
 
 <figure class="diagram">
   <img src="images/zipWithIndex.svg" alt="zipWithIndex function">

@@ -12,14 +12,7 @@ trait Collection[A] {
 }
 ~~~
 
-`takeWhile` creates a collection containing the largest prefix of elements that
-satisfy a predicate `p`.
-
-This functions _stops_ taking elements as soon as one of them does not satisfy
-`p`, it doesn't matter if later elements satisfy `p` again.
-
-If all elements satisfy `p` then the collection is returned untouched. If the
-first element does not satisfy `p` an empty collection is returned.
+`dropWhile` creates a collection by keeping the longest prefix of elements that satisfy a predicate `p` and discarding the rest.
 
 <figure class="diagram">
   <img src="images/takeWhile.svg" alt="takeWhile function">

@@ -12,8 +12,7 @@ trait Collection[A] {
 }
 ~~~
 
-`zip` builds a collection by pairing each element in the current collection with
-the element occuping the _same position_ in another collection `bs`.
+`zip` creates a collection by pairing each element of this collection with the element occuping the same index in `bs` and discarding unpaired elements.
 
 <figure class="diagram">
   <img src="images/zip.svg" alt="zip function">

@@ -28,15 +28,16 @@
     subfunction,
     /function/north io=2,
     /function/north io sep=.1\masterunit,
+    node contents={\texttt{lt}},
 }}
 
 \matrix [below=2 of A, aaa]{
-    \node (p1) [pred] {\texttt{p}}; &
-    \node (p2) [pred] {\texttt{p}}; &
-    \node (p3) [pred] {\texttt{p}}; &
+    \node (p1) [pred]; &
+    \node (p2) [pred]; &
+    \node (p3) [pred]; &
     \node [minimum height=\masterunit] {\dots}; &
-    \node (p4) [pred] {\texttt{p}}; &
-    \node (p5) [pred] {\texttt{p}}; &
+    \node (p4) [pred]; &
+    \node (p5) [pred]; &
 \\ };
 
 \foreach \a/\b/\r [count=\i] in {
