@@ -14,10 +14,10 @@ trait Collection[A] {
 
 <figure class="diagram">
   <img src="images/reduceOption.1.svg" alt="reduceOption function">
-  <!-- <figcaption class="diagram-desc"><code>reduceOption</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
 <figure class="diagram">
   <img src="images/reduceOption.2.svg" alt="reduceOption function">
-  <!-- <figcaption class="diagram-desc"><code>reduceOption</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

@@ -13,17 +13,23 @@ trait Collection[A] {
 }
 ~~~
 
+`indexOfSlice` returns the index of the first element where another collection `as` can be found as a slice.
+
 <figure class="diagram">
   <img src="images/indexOfSlice.1.svg" alt="indexOfSlice function">
-  <!-- <figcaption class="diagram-desc"><code>indexOfSlice</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
+
+The search can start at a given offset index `j`.
 
 <figure class="diagram">
   <img src="images/indexOfSlice.2.svg" alt="indexOfSlice function">
-  <!-- <figcaption class="diagram-desc"><code>indexOfSlice</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
+
+If `as` cannot be found as a slice in this collection then `-1` is returned.
 
 <figure class="diagram">
   <img src="images/indexOfSlice.3.svg" alt="indexOfSlice function">
-  <!-- <figcaption class="diagram-desc"><code>indexOfSlice</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

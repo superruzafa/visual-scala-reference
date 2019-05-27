@@ -12,7 +12,9 @@ object Collection {
 }
 ~~~
 
+`concat` creates a collection by accepting an arbitrary number of collections and using their elements as elements of the new collection.
+
 <figure class="diagram">
   <img src="images/concat.svg" alt="concat function">
-  <!-- <figcaption class="diagram-desc"><code>concat</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

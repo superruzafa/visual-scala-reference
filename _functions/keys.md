@@ -14,5 +14,5 @@ trait Map[K, V] {
 
 <figure class="diagram">
   <img src="images/keys.svg" alt="keys function">
-  <!-- <figcaption class="diagram-desc"><code>keys</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

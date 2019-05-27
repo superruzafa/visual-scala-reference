@@ -17,5 +17,5 @@ the element occuping the _same position_ in another collection `bs`.
 
 <figure class="diagram">
   <img src="images/zip.svg" alt="zip function">
-  <figcaption class="diagram-desc"><code>zip</code> pairs elements together.</figcaption>
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

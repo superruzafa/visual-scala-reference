@@ -12,7 +12,9 @@ trait Collection[A] {
 }
 ~~~
 
+`sortBy` creates a collection with the elements sorted by the results yielded by `f` after being applied to each element.
+
 <figure class="diagram">
   <img src="images/sortBy.svg" alt="sortBy function">
-  <!-- <figcaption class="diagram-desc"><code>sortBy</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

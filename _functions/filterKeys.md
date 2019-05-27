@@ -12,7 +12,9 @@ trait Map[K, V] {
 }
 ~~~
 
+`filterKeys` creates a `Map` with those key-value pairs whose key satisfy a predicate `p`.
+
 <figure class="diagram">
   <img src="images/filterKeys.svg" alt="filterKeys function">
-  <!-- <figcaption class="diagram-desc"><code>filterKeys</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

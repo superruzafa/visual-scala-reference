@@ -8,16 +8,20 @@ permalink: /minBy
 
 ~~~ scala
 trait Collection[A] {
-  def minBy(f: (A) => B): A
+  def minBy[W](f: (A) => W): A
 }
 ~~~
 
+`minBy` applies `f` to each element and returns the element that yields the smallest value.
+
 <figure class="diagram">
   <img src="images/minBy.1.svg" alt="minBy function">
-  <!-- <figcaption class="diagram-desc"><code>minBy</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
+
+On empty collections `minBy` throws a `UnsupportedOperationException` exception.
 
 <figure class="diagram">
   <img src="images/minBy.2.svg" alt="minBy function">
-  <!-- <figcaption class="diagram-desc"><code>minBy</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

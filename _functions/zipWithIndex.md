@@ -17,6 +17,5 @@ within the collection.
 
 <figure class="diagram">
   <img src="images/zipWithIndex.svg" alt="zipWithIndex function">
-  <figcaption class="diagram-desc"><code>zipWithIndex</code> applies the function
-  <code>g</code> after apply the one it belongs to.</figcaption>
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

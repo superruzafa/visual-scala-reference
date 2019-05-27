@@ -12,7 +12,9 @@ trait Collection[A] {
 }
 ~~~
 
+`inits` computes all possible prefixes of this collection and returns an `Iterator` to iterate them.
+
 <figure class="diagram">
   <img src="images/inits.svg" alt="inits function">
-  <!-- <figcaption class="diagram-desc"><code>inits</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

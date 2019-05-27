@@ -15,15 +15,15 @@ trait Collection[A] {
 
 <figure class="diagram">
   <img src="images/startsWith.1.svg" alt="startsWith function">
-  <!-- <figcaption class="diagram-desc"><code>startsWith</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
 <figure class="diagram">
   <img src="images/startsWith.2.svg" alt="startsWith function">
-  <!-- <figcaption class="diagram-desc"><code>startsWith</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
 <figure class="diagram">
   <img src="images/startsWith.3.svg" alt="startsWith function">
-  <!-- <figcaption class="diagram-desc"><code>startsWith</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

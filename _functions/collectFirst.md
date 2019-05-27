@@ -12,18 +12,16 @@ trait Collection[A] {
 }
 ~~~
 
-`collectFirst` creates a collection by _allowing_ those elements that satisfy a
-predicate `p`, blocking those which not.
-
-This function returns the original collection untouched when all the elements
-satisfy `p`. If no element satisfy `p` then an empty collection is returned.
+`collectFirst` returns the first element in this collection for which a partial function `f` is defined, wrapped with `Some`.
 
 <figure class="diagram">
   <img src="images/collectFirst.1.svg" alt="collectFirst function">
-  <!-- <figcaption class="diagram-desc"><code>collectFirst</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
+
+If the partial function `f` is defined for no element in the collection then `None` is returned.
 
 <figure class="diagram">
   <img src="images/collectFirst.2.svg" alt="collectFirst function">
-  <!-- <figcaption class="diagram-desc"><code>collectFirst</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

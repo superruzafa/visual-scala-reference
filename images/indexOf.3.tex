@@ -10,9 +10,7 @@
 
 \foreach \i/\r in {1,2,n}{
     \draw [subflow ->] (a\i.north) -- +(0, .5)
-        node (p) [subelement, above] {$\texttt{a\,==\,}a_\i $};
-    \draw [subflow ->] (p.north) -- +(0, .5)
-        node [subelement, above] {\texttt{\r}};
+        node [subelement, above] {$\texttt{a}\neq a_{\i}$};
 }
 
 \draw [<- flow] (a1.north) arc [start angle=0, end angle=100, x radius=.75, y radius=.5];

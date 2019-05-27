@@ -12,11 +12,9 @@ trait Collection[A] {
 }
 ~~~
 
-`drop` creates a new collection discarding the first `i` elements of the
-source collection.
+`drop` creates a collection by discarding the first `i` elements of this collection and keeping the rest.
 
 <figure class="diagram">
   <img src="images/drop.svg" alt="drop function">
-  <!-- <figcaption class="diagram-desc"><code>drop</code> applies the function -->
-  <!-- <code>g</code> after apply the one it belongs to.</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

@@ -12,7 +12,9 @@ trait Collection[A] {
 }
 ~~~
 
+`reverse` creates a collection by swapping the order of the elements.
+
 <figure class="diagram">
   <img src="images/reverse.svg" alt="reverse function">
-  <!-- <figcaption class="diagram-desc"><code>reverse</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

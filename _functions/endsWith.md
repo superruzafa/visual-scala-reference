@@ -14,10 +14,10 @@ trait Collection[A] {
 
 <figure class="diagram">
   <img src="images/endsWith.1.svg" alt="endsWith function">
-  <!-- <figcaption class="diagram-desc"><code>endsWith</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
 <figure class="diagram">
   <img src="images/endsWith.2.svg" alt="endsWith function">
-  <!-- <figcaption class="diagram-desc"><code>endsWith</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

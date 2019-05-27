@@ -12,7 +12,9 @@ trait Collection[A] {
 }
 ~~~
 
+`slice` creates a collection with the sequence of elements that start at index `i` until the index `j`.
+
 <figure class="diagram">
   <img src="images/slice.svg" alt="slice function">
-  <!-- <figcaption class="diagram-desc"><code>slice</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

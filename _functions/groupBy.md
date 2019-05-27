@@ -12,7 +12,9 @@ trait Collection[A] {
 }
 ~~~
 
+`groupBy` creates a `Map` that groups together the elements that yields the same key when the function `f` is applied.
+
 <figure class="diagram">
   <img src="images/groupBy.svg" alt="groupBy function">
-  <!-- <figcaption class="diagram-desc"><code>groupBy</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

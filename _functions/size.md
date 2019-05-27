@@ -12,7 +12,9 @@ trait Collection[A] {
 }
 ~~~
 
+`size` returns how many elements this collection has.
+
 <figure class="diagram">
   <img src="images/size.svg" alt="size function">
-  <!-- <figcaption class="diagram-desc"><code>size</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

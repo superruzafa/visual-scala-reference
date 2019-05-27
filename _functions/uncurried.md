@@ -14,5 +14,5 @@ object Function {
 
 <figure class="diagram">
   <img src="images/uncurried.svg" alt="uncurried function">
-  <!-- <figcaption class="diagram-desc"><code>uncurried</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

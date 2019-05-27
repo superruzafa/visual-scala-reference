@@ -12,13 +12,9 @@ trait Collection[A] {
 }
 ~~~
 
-`collect` creates a collection by _allowing_ those elements that satisfy a
-predicate `p`, blocking those which not.
-
-This function returns the original collection untouched when all the elements
-satisfy `p`. If no element satisfy `p` then an empty collection is returned.
+`collect` builds a collection using as elements the result of apply the partial function `f` to those elements for which the `f` is defined and discarding the rest of elements.
 
 <figure class="diagram">
   <img src="images/collect.svg" alt="collect function">
-  <!-- <figcaption class="diagram-desc"><code>collect</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

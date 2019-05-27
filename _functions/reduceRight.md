@@ -8,17 +8,19 @@ permalink: /reduceRight
 
 ~~~ scala
 trait Collection[A] {
-  def reduceRight[B :> A](op: (A, B) ⇒ B): B
+  def reduceRight[B :> A](op: (B, A) ⇒ B): B
 }
 ~~~
 
+`reduceRight` applies a binary operator `op` to each element, going from right to left, and the previous `op` result. The first time `op` is applied it's fed with the two first elements.
+
 <figure class="diagram">
   <img src="images/reduceRight.1.svg" alt="reduceRight function">
-  <figcaption class="diagram-desc"><code>reduceRight</code> "folds" the collection going from left to right</figcaption>
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
 <figure class="diagram">
   <img src="images/reduceRight.2.svg" alt="reduceRight function">
-  <figcaption class="diagram-desc"><code>reduceRight</code> and empty collections</figcaption>
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

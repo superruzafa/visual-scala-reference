@@ -4,9 +4,13 @@
 \tikzset{op/.style={
     subfunction,
     inner xsep=.1\masterunit,
-    /function/west io=1,
     /function/north io=2,
     /function/north io sep=.1\masterunit,
+}}
+
+\tikzset{opr/.style={
+    op,
+    /function/west io=1,
     /function/south io=0,
 }}
 
@@ -19,14 +23,10 @@
     \node (an) {$a_n$}; &
 \\ };
 
-\node (z) [element, right=.5 of A] {\texttt{z}};
-
-\foreach \i in {n,n-1,i,1}{
-    \node (f\i) [op, below=1 of a\i, anchor=north io 1] {\texttt{op}};
+\foreach \i/\op in {n/opr,n-1/opr,i/opr,1/op}{
+    \node (f\i) [\op, below=1 of a\i, anchor=north io 1] {\texttt{op}};
     \draw [flow ->] (a\i) -- (f\i.north io 1);
 }
-
-\node (b) [element, left=.5 of f1] {$b$};
 
 \coordinate (x) at ($ (fn.north io 2)!.5!(an.south) $);
 \coordinate (rule) at (fn.north io 2 |- x);
@@ -37,5 +37,7 @@
 \draw [flow ->, dashed] (fi.west io 1) -- ++(-.25, 0) -- (\currentcoordinate |- rule) -- +(-.5, 0);
 \draw [<- flow, dashed] (f1.north io 2) -- (f1.north io 2 |- rule) -- +(.5, 0);
 
-\draw [flow ->] (z) |- (rule) -- (fn.north io 2);
-\draw [flow ->] (f1.west io 1) -- (b);
+\draw [<- flow] (fn.north io 2) -- +(0, .5)
+    node [element, above] {\texttt{z}};
+\draw [flow ->] (f1.south io 1) -- +(0, -.5)
+    node [element, below] {$b$};

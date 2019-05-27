@@ -14,5 +14,5 @@ trait Collection[A] {
 
 <figure class="diagram">
   <img src="images/splitAt.svg" alt="splitAt function">
-  <!-- <figcaption class="diagram-desc"><code>splitAt</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

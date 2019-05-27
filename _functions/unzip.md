@@ -17,5 +17,5 @@ collection.
 
 <figure class="diagram">
   <img src="images/unzip.svg" alt="unzip function">
-  <figcaption class="diagram-desc"><code>unzip</code> pairs elements together.</figcaption>
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

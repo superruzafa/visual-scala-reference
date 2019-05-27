@@ -14,5 +14,5 @@ object Collection {
 
 <figure class="diagram">
   <img src="images/fill.svg" alt="fill function">
-  <!-- <figcaption class="diagram-desc"><code>fill</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

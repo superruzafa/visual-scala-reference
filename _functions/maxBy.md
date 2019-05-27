@@ -8,16 +8,20 @@ permalink: /maxBy
 
 ~~~ scala
 trait Collection[A] {
-  def maxBy(f: (A) => B): A
+  def maxBy[W](f: (A) => W): A
 }
 ~~~
 
+`maxBy` applies `f` to each element and returns the element that yields the largest value.
+
 <figure class="diagram">
   <img src="images/maxBy.1.svg" alt="maxBy function">
-  <!-- <figcaption class="diagram-desc"><code>maxBy</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
+
+On empty collections `maxBy` throws a `UnsupportedOperationException` exception.
 
 <figure class="diagram">
   <img src="images/maxBy.2.svg" alt="maxBy function">
-  <!-- <figcaption class="diagram-desc"><code>maxBy</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

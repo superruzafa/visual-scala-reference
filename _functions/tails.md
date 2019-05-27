@@ -14,5 +14,5 @@ trait Collection[A] {
 
 <figure class="diagram">
   <img src="images/tails.svg" alt="tails function">
-  <!-- <figcaption class="diagram-desc"><code>tails</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

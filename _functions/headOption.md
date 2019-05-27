@@ -12,17 +12,16 @@ trait Collection[A] {
 }
 ~~~
 
-`headOption` _possibly_ returns the first element in the collection.
-When such element exists, this function returns that element wrapped with `Some`.
+`headOption` returns the first element of this collection wrapped with `Some`.
 
 <figure class="diagram">
   <img src="images/headOption.1.svg" alt="headOption function">
-  <!-- <figcaption class="diagram-desc"><code>headOption</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
-On empty collections - when there is no first element - this function returns `None`.
+On empty collections when there is no first element this function returns `None`.
 
 <figure class="diagram">
   <img src="images/headOption.2.svg" alt="headOption function">
-  <!-- <figcaption class="diagram-desc"><code>headOption</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

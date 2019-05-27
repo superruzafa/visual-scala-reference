@@ -9,10 +9,9 @@
     \node (an) {$a_n$}; &
 \\ };
 
-\foreach \i/\r in {n/false,n-1/false,n-i/true}{
+\foreach \i/\r in {n/\neq,n-1/\neq,n-i/=}{
     \draw [subflow ->] (a\i.north) -- +(0, .5)
-        node (c) [subelement, above] {$\texttt{a\,=\,}a_{\i}$};
-    \draw [subflow ->] (c.north) -- +(0, .5) node (r) [subelement, above] {\texttt{\r}};
+        node (c) [subelement, above] {$\texttt{a}\r a_{\i}$};
 }
 
 \draw [<- flow] (an.north) arc [start angle=160, delta angle=-60, x radius=.75, y radius=.5];

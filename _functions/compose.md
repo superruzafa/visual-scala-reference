@@ -12,15 +12,9 @@ trait Function1[X, Y] {
 }
 ~~~
 
-`compose` creates an anonymous function that wraps the sequential application of
-the function `g` and then the function `compose` _belongs_ to, say `f`.
-
-The input parameter of the anonymous function is passed as input of function
-`g`, the output result used as input of `f` and the output returned as output of
-the anonymous function.
+`compose` creates an anonymous function that accepts a parameter and returns the result of applying the function `g` first and this function later to that parameter.
 
 <figure class="diagram">
   <img src="images/compose.svg" alt="compose function">
-  <figcaption class="diagram-desc"><code>compose</code> applies the function
-  <code>g</code> before apply the one it belongs to.</figcaption>
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

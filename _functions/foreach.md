@@ -12,7 +12,9 @@ trait Collection[A] {
 }
 ~~~
 
+`foreach` applies a function to each element in the collection, discarding the results. This function returns '()' as result.
+
 <figure class="diagram">
   <img src="images/foreach.svg" alt="foreach function">
-  <!-- <figcaption class="diagram-desc"><code>forall</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

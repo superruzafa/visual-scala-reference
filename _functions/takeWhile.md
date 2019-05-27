@@ -23,6 +23,5 @@ first element does not satisfy `p` an empty collection is returned.
 
 <figure class="diagram">
   <img src="images/takeWhile.svg" alt="takeWhile function">
-  <!-- <figcaption class="diagram-desc"><code>takeWhile</code> applies the function -->
-  <!-- <code>g</code> after apply the one it belongs to.</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

@@ -13,17 +13,23 @@ trait Collection[A] {
 }
 ~~~
 
+`indexWhere` returns the index of the first element that satisfy a predicate `p`.
+
 <figure class="diagram">
   <img src="images/indexWhere.1.svg" alt="indexWhere function">
-  <!-- <figcaption class="diagram-desc"><code>indexWhere</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
+
+The search can start at a given offset index `j`.
 
 <figure class="diagram">
   <img src="images/indexWhere.2.svg" alt="indexWhere function">
-  <!-- <figcaption class="diagram-desc"><code>indexWhere</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
+
+If no element satisfy `p` then `-1` is returned.
 
 <figure class="diagram">
   <img src="images/indexWhere.3.svg" alt="indexWhere function">
-  <!-- <figcaption class="diagram-desc"><code>indexWhere</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

@@ -10,10 +10,9 @@
     \node [elements after]; &
 \\ };
 
-\foreach \i/\r in {j/false,j-1/false,j-i/true}{
+\foreach \i/\r in {j/\neq,j-1/\neq,j-i/=}{
     \draw [subflow ->] (a\i.north) -- +(0, .5)
-        node (c) [subelement, above] {$\texttt{a\,=\,}a_{\i}$};
-    \draw [subflow ->] (c.north) -- +(0, .5) node (r) [subelement, above] {\texttt{\r}};
+        node (c) [subelement, above] {$\texttt{a}\r a_{\i}$};
 }
 
 \draw [<- flow] (aj.north) arc [start angle=160, delta angle=-60, x radius=.75, y radius=.5];

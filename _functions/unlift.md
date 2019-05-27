@@ -14,10 +14,10 @@ object Function {
 
 <figure class="diagram">
   <img src="images/unlift.1.svg" alt="unlift function">
-  <!-- <figcaption class="diagram-desc"><code>unlift</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
 <figure class="diagram">
   <img src="images/unlift.2.svg" alt="unlift function">
-  <!-- <figcaption class="diagram-desc"><code>unlift</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

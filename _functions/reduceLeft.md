@@ -12,13 +12,15 @@ trait Collection[A] {
 }
 ~~~
 
+`reduceLeft` applies a binary operator `op` to each element, going from left to right, and the previous `op` result. The first time `op` is applied it's fed with the two first elements.
+
 <figure class="diagram">
   <img src="images/reduceLeft.1.svg" alt="reduceLeft function">
-  <figcaption class="diagram-desc"><code>reduceLeft</code> "folds" the collection going from left to right</figcaption>
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
 <figure class="diagram">
   <img src="images/reduceLeft.2.svg" alt="reduceLeft function">
-  <figcaption class="diagram-desc"><code>reduceLeft</code> and empty collections</figcaption>
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

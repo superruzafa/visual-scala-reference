@@ -12,13 +12,9 @@ trait Collection[A] {
 }
 ~~~
 
-`filterNot` creates a collection by _blocking_ those elements that satisfy
-a predicate `p`, allowing those which not.
-
-This function returns the original collection untouched when none of the elements
-satisfy `p`. If all the elements satisfy `p` then an empty collection is returned.
+`filter` creates a collection with those elements that don't satisfy a predicate `p` and discarding those which do.
 
 <figure class="diagram">
   <img src="images/filterNot.svg" alt="filterNot function">
-  <!-- <figcaption class="diagram-desc"><code>filterNot</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

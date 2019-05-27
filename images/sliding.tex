@@ -6,11 +6,11 @@
     \node [elements between=.8]; &
     \node (a2) {$a_{\texttt{m}}$}; &
     \node [elements between=1]; &
-    \node (a3) {$a_{\texttt{s}}$}; &
+    \node (a3) {$a_{\texttt{s} + 1}$}; &
     \node [elements between=.8]; &
-    \node (a4) {$a_{\texttt{s} + \texttt{m} - 1}$}; &
+    \node (a4) {$a_{\texttt{s} + \texttt{m}}$}; &
     \node [elements between=1.75]; &
-    \node (a5) {$a_{n \cdot \texttt{s}}$}; &
+    \node (a5) {$a_{n \cdot \texttt{s} + 1}$}; &
     \node [elements between=.5]; &
     \node (a6) {$a_{n \cdot \texttt{s} + k}$}; &
 \\ };
@@ -29,15 +29,14 @@
     \node {$a_{\texttt{m}}$}; &
 \\ };
 
-
 \matrix (I2) [collection, nodes={font=\small}, below=1.5 of I1] {
-    \node {$a_{\texttt{s}}$}; &
+    \node {$a_{\texttt{s} + 1}$}; &
     \node [elements between=.8]; &
-    \node {$a_{\texttt{s} + \texttt{m} - 1}$}; &
+    \node {$a_{\texttt{s} + \texttt{m}}$}; &
 \\ };
 
 \matrix (In) [collection, nodes={font=\small}, below=2 of I2.south west, anchor=north west] {
-    \node {$a_{n \cdot \texttt{s}}$}; &
+    \node {$a_{n \cdot \texttt{s} + 1}$}; &
     \node [elements between=.5]; &
     \node {$a_{n \cdot \texttt{s} + k}$}; &
 \\ };

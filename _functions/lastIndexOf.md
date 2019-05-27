@@ -13,17 +13,23 @@ trait Collection[A] {
 }
 ~~~
 
+`lastIndexOf` returns the index of the last element that equals (`==`) a given value `a`.
+
 <figure class="diagram">
   <img src="images/lastIndexOf.1.svg" alt="lastIndexOf function">
-  <!-- <figcaption class="diagram-desc"><code>lastIndexOf</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
+
+The search can start at a given offset index `j`.
 
 <figure class="diagram">
   <img src="images/lastIndexOf.2.svg" alt="lastIndexOf function">
-  <!-- <figcaption class="diagram-desc"><code>lastIndexOf</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
+
+If no element equals `a` then `-1` is returned.
 
 <figure class="diagram">
   <img src="images/lastIndexOf.3.svg" alt="lastIndexOf function">
-  <!-- <figcaption class="diagram-desc"><code>lastIndexOf</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

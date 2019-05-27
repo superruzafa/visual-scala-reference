@@ -14,7 +14,9 @@ trait Collection[A] {
 }
 ~~~
 
+`mkString` builds a `String` by joining the string representation of each element of the collection.
+
 <figure class="diagram">
   <img src="images/mkString.svg" alt="mkString function">
-  <!-- <figcaption class="diagram-desc"><code>mkString</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

@@ -12,7 +12,9 @@ trait Collection[A] {
 }
 ~~~
 
+`prefixLength` returns the length of the largest prefix of elements that satisfy a predicate `p`.
+
 <figure class="diagram">
   <img src="images/prefixLength.svg" alt="prefixLength function">
-  <!-- <figcaption class="diagram-desc"><code>prefixLength</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

@@ -23,6 +23,5 @@ Numbers equal o lower than 0 will make `takeRight` to return an empty collection
 
 <figure class="diagram">
   <img src="images/takeRight.svg" alt="takeRight function">
-  <!-- <figcaption class="diagram-desc"><code>takeRight</code> applies the function -->
-  <!-- <code>g</code> after apply the one it belongs to.</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

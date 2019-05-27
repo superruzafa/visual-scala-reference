@@ -12,12 +12,16 @@ trait Collection[A] {
 }
 ~~~
 
+`min` returns the smallest value in the collection.
+
 <figure class="diagram">
   <img src="images/min.1.svg" alt="min function">
-  <!-- <figcaption class="diagram-desc"><code>min</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
+
+On empty collections `min` throws a `UnsupportedOperationException` exception.
 
 <figure class="diagram">
   <img src="images/min.2.svg" alt="min function">
-  <!-- <figcaption class="diagram-desc"><code>min</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

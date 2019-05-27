@@ -12,16 +12,16 @@ trait Collection[A] {
 }
 ~~~
 
-`init` returns all but the last element in the collection.
+`init` returns all but the last element of this collection.
 
 <figure class="diagram">
   <img src="images/init.1.svg" alt="init function">
-  <!-- <figcaption class="diagram-desc"><code>init</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
-On empty collections, this function throws a <code>UnsupportedOperationException</code>.
+On empty collections, this function throws a `UnsupportedOperationException` exception.
 
 <figure class="diagram">
   <img src="images/init.2.svg" alt="init function">
-  <!-- <figcaption class="diagram-desc"><code>init</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

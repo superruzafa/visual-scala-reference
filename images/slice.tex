@@ -3,23 +3,20 @@
 
 \matrix (A) [collection] {
     \node [elements before]; &
-    \node {$a_i$}; &
-    \node (ai+1) {$a_{i + 1}$}; &
+    \node (ai) {$a_i$}; &
     \node [elements between]; &
-    \node {$a_{j - 1}$}; &
+    \node (aj-1) {$a_{j - 1}$}; &
     \node (aj) {$a_j$}; &
-    \node {$a_{j + 1}$}; &
     \node [elements after]; &
 \\ };
 
-\matrix (B) [collection, below=3 of A] {
-    \node (bi+1) {$a_{i + 1}$}; &
+\matrix (B) [collection, below=2 of ai.south west, anchor=north west] {
+    \node (bi) {$a_i$}; &
     \node [elements between]; &
-    \node {$a_{j - 1}$}; &
-    \node (bj) {$a_j$}; &
+    \node (bj-1) {$a_{j - 1}$}; &
 \\ };
 
-\braceflow[-.2]{(ai+1.south west)}{(aj.south east)}
+\braceflow[-.2]{(ai.south west)}{(aj-1.south east)}
 \coordinate (x) at (lastbrace);
-\braceflow[.2]{(bi+1.north west)}{(bj.north east)}
+\braceflow[.2]{(bi.north west)}{(bj-1.north east)}
 \draw [flow ->] (x) -- (lastbrace);

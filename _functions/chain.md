@@ -12,7 +12,9 @@ object Function {
 }
 ~~~
 
+`chain` creates an anonymous function that accepts a parameter and returns the result of applying sequentially all the functions contained in the collection `fs`.
+
 <figure class="diagram">
   <img src="images/chain.svg" alt="chain function">
-  <!-- <figcaption class="diagram-desc"><code>chain</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

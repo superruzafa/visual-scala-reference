@@ -16,12 +16,12 @@ trait Collection[A] {
 
 <figure class="diagram">
   <img src="images/last.1.svg" alt="last function">
-  <!-- <figcaption class="diagram-desc"><code>last</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
-On empty collections, this function throws a <code>NoSuchElementException</code>.
+On empty collections, this function throws a `NoSuchElementException` exception.
 
 <figure class="diagram">
   <img src="images/last.2.svg" alt="last function">
-  <!-- <figcaption class="diagram-desc"><code>last</code> uses <code>p</code> to classify elements into two groups</figcaption> -->
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
