@@ -7,5 +7,5 @@
     \node (an) {$a_n$}; &
 \\ };
 
-\node (b) [some={$a_n$}, below=2 of an];
-\draw [flow ->] (an) -- (b);
+\draw [flow ->] (an.south) -- +(0, -1)
+    node [some={$a_n$}, below];

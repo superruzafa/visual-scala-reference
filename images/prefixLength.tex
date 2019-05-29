@@ -17,11 +17,11 @@
         node [subelement, above] {\texttt{\r}};
 }
 
-\draw [<- flow] (a1.north) arc [start angle=15, end angle=100, x radius=.75, y radius=.5];
-\draw [flow ->, bend left=45] (a1.north) to (a2.north);
-\draw [flow ->, dashed] (a2.north) arc [start angle=165, end angle=100, x radius=.75, y radius=.5];
-\draw [<- flow, dashed] (ai.north) arc [start angle=15, end angle=80, x radius=.75, y radius=.5];
-\draw [flow ->, bend left=45] (ai.north) to (ai+1.north);
+\draw [<- subflow] (a1.north) arc [<- iterate];
+\draw [subflow ->, iterate ->] (a1.north) to (a2.north);
+\draw [subflow ->, iterate ->, dashed] (a2.north) arc;
+\draw [<- subflow, <- iterate, dashed] (ai.north) arc;
+\draw [subflow ->, iterate ->] (ai.north) to (ai+1.north);
 
 \measure[-.5]{$i$}{a1.south west}{ai.south east}
 \draw [flow ->] (last measure) -- +(0, -1) node [element, below] {$i$};

@@ -25,17 +25,17 @@
     \node (bn+m) {$b_{n+m}$}; &
 \\ };
 
-\node (an+1) [element] at (A -| bn+1) {$a$};
-\node (an+m) [element] at (A -| bn+m) {$a$};
+\node (an+1) [element] at (A -| bn+1) {\texttt{a}};
+\node (an+m) [element] at (A -| bn+m) {\texttt{a}};
 
 \matrix (C) [collection, below=1.5 of B, nodes={font=\small}] {
     \node (c1) {$(a_1, b_1)$}; &
     \node (c2) {$(a_2, b_2)$}; &
     \node [elements between]; &
     \node (cn) {$(a_n, b_n)$}; &
-    \node [xscale=0.915] (cn+1) {$(a, b_{n+1})$}; &
+    \node [xscale=0.915] (cn+1) {$(\texttt{a}, b_{n+1})$}; &
     \node [elements between]; &
-    \node [xscale=0.85] (cn+m) {$(a, b_{n+m})$}; &
+    \node [xscale=0.85] (cn+m) {$(\texttt{a}, b_{n+m})$}; &
 \\ };
 
 \foreach \i/\w in {1/3ex,2/3ex,n/3ex,n+1/6ex,n+m/6ex}{

@@ -15,7 +15,7 @@
     \node (a'n) {$a^\prime_m$}; &
 \\ };
 
-\matrix (B) [collection, below=3 of A.south west, anchor=north west] {
+\matrix (B) [collection, below=2 of A.south west, anchor=north west] {
     \node (b1) {$a_1$}; &
     \node (b2) {$a_2$}; &
     \node [elements between]; &
@@ -32,5 +32,5 @@
 \draw [flow ->] (x) -- (lastbrace);
 
 \foreach \i in {1,2,n}{
-    \draw [flow ->, out=270, in=90] (a'\i) to node [comparation] {$\cup$} (b'\i);
+    \draw [flow ->, out=270, in=90] (a'\i) to node [badge] {$\cup$} (b'\i);
 }

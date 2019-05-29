@@ -2,14 +2,14 @@
 ---
 
 \node (f) [function] {$f$};
-\node (exf) [subexception={MatchError}, font=\footnotesize, below=.25 of f.south];
+\node (exf) [subexception=MatchError, font=\footnotesize, below=.25 of f.south];
 \coordinate (x) at ($ (exf.north west)!.5!(f.west) $);
 \coordinate (y) at (x |- f.west);
 \coordinate (z) at (exf.north west -| y);
 \draw [throw ->] (f.west) -- (y) -- (z);
 
 \node (g) [function, right=1 of f] {\texttt{g}};
-\node (exg) [subexception={MatchError}, font=\footnotesize, below=.25 of g.south];
+\node (exg) [subexception=MatchError, font=\footnotesize, below=.25 of g.south];
 \coordinate (x) at ($ (exg.north west)!.5!(g.west) $);
 \coordinate (y) at (x |- g.west);
 \coordinate (z) at (exg.north west -| y);
@@ -25,7 +25,7 @@
     node (x1) [element, above] {$x$};
 \draw [flow ->] (f.north io 1) +(0, .375) -| (g.north io 1);
 
-\node (ex) [exception={MatchError}, below=.5 of h.south];
+\node (ex) [exception=MatchError, below=.5 of h.south];
 \coordinate (x) at (h.south east |- exg);
 \coordinate (y) at ($ (ex.north)!.5!(h.south) $);
 \draw [throw ->] (exg) -- (x) -- +(.25, 0) |- (y) -- (ex);

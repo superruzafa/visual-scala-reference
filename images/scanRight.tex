@@ -4,12 +4,10 @@
 \tikzset{op/.style={
     subfunction,
     inner xsep=.1\masterunit,
-    /function/.cd,
-    west io=1,
-    north io=2,
-    north io sep=.1\masterunit,
-    south io=0,
-    /tikz/.cd,
+    /function/north io=2,
+    /function/north io sep=.1\masterunit,
+    /function/south io=0,
+    /function/west io=1,
 }}
 
 \matrix (A) [collection] {
@@ -35,7 +33,7 @@
     \node [elements between]; &
     \node (bn-1) {$b_2$}; &
     \node (bn) {$b_1$}; &
-    \node (b0) {$z$}; &
+    \node (b0) {\texttt{z}}; &
 \\ };
 
 \coordinate (rule) at ($ (an.south)!.5!(fn.north io 2) $);

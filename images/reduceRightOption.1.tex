@@ -4,31 +4,38 @@
 \tikzset{op/.style={
     subfunction,
     inner xsep=.1\masterunit,
-    /function/.cd,
-    west io=1,
-    north io=2,
-    north io sep=.1\masterunit,
-    south io=0,
-    /tikz/.cd,
+    node contents={\texttt{op}},
+    /function/north io=2,
+    /function/south io=0,
+    /function/west io=1,
 }}
 
 \matrix (A) [collection] {
     \node (a1) {$a_1$}; &
     \node [elements between]; &
-    \node (an-2) {$a_{n-2}$}; &
-    \node (an-1) {$a_{n-1}$}; &
+    \node (ai) {$a_i$}; &
+    \node [elements between]; &
+    \node (an-2) {$a_{n - 2}$}; &
+    \node (an-1) {$a_{n - 1}$}; &
     \node (an) {$a_n$}; &
 \\ };
 
-\foreach \i in {n-1, n-2, 1}{
-    \node (f\i) [op, below=1 of a\i.south, anchor=north io 1] {\texttt{op}};
-    \draw [flow ->] (a\i) -- (f\i.north io 1);
+\foreach \i in {n-1,n-2,i,1}{
+    \draw [flow ->] (a\i.south) -- +(0, -1)
+        node (f\i) [op, anchor=north io 1];
 }
 
-\draw [flow ->] (an.south) -- ++(0, -.5) coordinate (rule) -| (fn-1.north io 2);
-\draw [flow ->] (fn-1.west io 1) -- ++(-.125, 0) coordinate (x) -- (rule -| x) -| (fn-2.north io 2);
-\draw [flow, dashed] (fn-2.west io 1) -- ++(-.125, 0) coordinate (x) -- (rule -| x) -- +(-.5, 0);
-\draw [<- flow, dashed] (f1.north io 2) coordinate (x) -- (rule -| x) -- +(.5, 0);
+\coordinate (rule) at ($ (f1.north io 1)!.5!(a1.south) $);
+\draw [flow ->] (an) |- (fn-1.north io 2 |- rule) -- (fn-1.north io 2);
 
-\node (b) [some={$b$}, left=1 of f1];
-\draw [flow ->] (f1.west io 1) -- (b);
+\draw [flow ->] (fn-1.west io 1) -- ($ (\currentcoordinate)!.5!(fn-2.east) $)
+    |- (\currentcoordinate |- rule) -| (fn-2.north io 2);
+
+\foreach \i/\j in {n-2/i, i/1}{
+    \draw [flow ->, dashed] (f\i.west io 1) -- ++(-.25, 0)
+        -- (\currentcoordinate |- rule) -- +(-.25, 0);
+    \draw [<- flow, dashed] (f\j.north io 2) -- (\currentcoordinate |- rule) -- +(.25, 0);
+}
+
+\draw [flow ->] (f1.west io 1) -| +(-.25, -1)
+    node [some={$b$}, below];

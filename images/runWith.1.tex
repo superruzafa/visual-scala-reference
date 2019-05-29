@@ -18,7 +18,8 @@
 \coordinate (hse) at (h.south east -| g.south);
 \coordinate (gh) at ($ (g.south)!.5!(hse.south) $);
 
-\draw [flow ->] (y) -- (y-fh) |- (gh) -- (h.south) -- +(0, -.5)
+\draw [flow, dashed] (y) -- (y-fh) |- (gh) -- (h.south);
+\draw [flow ->] (h.south) -- +(0, -.5)
     node [element, below] {\true};
 
 \node (fa) [function, above left=0 and 3 of f] {$f$};

@@ -1,12 +1,13 @@
 ---
 ---
 
-\tikzset{every function node/.style={
+\tikzset{op/.style={
+    subfunction,
     inner xsep=.1\masterunit,
-    /function/.cd,
-    west io=1,
-    north io=2,
-    south io=0,
+    node contents={\texttt{op}},
+    /function/north io=2,
+    /function/south io=0,
+    /function/west io=1,
 }}
 
 \matrix (A) [collection] {
@@ -14,26 +15,27 @@
     \node [elements between]; &
     \node (ai) {$a_i$}; &
     \node [elements between]; &
-    \node (an-1) {$a_{n-1}$}; &
+    \node (an-2) {$a_{n - 2}$}; &
+    \node (an-1) {$a_{n - 1}$}; &
     \node (an) {$a_n$}; &
 \\ };
 
-\foreach \i in {n-1,i,1}{
-    \node (f\i) [subfunction, below=1 of a\i, anchor=north io 1] {\texttt{op}};
-    \draw [flow ->] (a\i) -- (f\i.north io 1);
+\foreach \i in {n-1,n-2,i,1}{
+    \draw [flow ->] (a\i.south) -- +(0, -1)
+        node (f\i) [op, anchor=north io 1];
 }
 
-\node (b) [element, left=.5 of f1] {$b$};
+\coordinate (rule) at ($ (f1.north io 1)!.5!(a1.south) $);
+\draw [flow ->] (an) |- (fn-1.north io 2 |- rule) -- (fn-1.north io 2);
 
-\draw [flow] (fn-1.west io 1) -| ++(-.25, 0.75) coordinate (flowy);
-\draw [flow, solid dashed solid] (flowy) -- (flowy -| fi.north io 2) coordinate (last);
-\draw [flow ->] (last) -- (fi.north io 2);
+\draw [flow ->] (fn-1.west io 1) -- ($ (\currentcoordinate)!.5!(fn-2.east) $)
+    |- (\currentcoordinate |- rule) -| (fn-2.north io 2);
 
-\draw [flow] (fi.west io 1) -| ++(-.25, 0.75) coordinate (last);
-\draw [flow, solid dashed solid] (last) -- (last -| f1.north io 2) coordinate (last);
-\draw [flow ->] (last) -- (f1.north io 2);
+\foreach \i/\j in {n-2/i, i/1}{
+    \draw [flow ->, dashed] (f\i.west io 1) -- ++(-.25, 0)
+        -- (\currentcoordinate |- rule) -- +(-.25, 0);
+    \draw [<- flow, dashed] (f\j.north io 2) -- (\currentcoordinate |- rule) -- +(.25, 0);
+}
 
-
-\draw [flow ->] (an.south) |- (flowy -| fn-1.north io 2) -- (fn-1.north io 2);
-
-\draw [flow ->] (f1.west io 1) -- (b);
+\draw [flow ->] (f1.west io 1) -| +(-.25, -1)
+    node [element, below] {$b$};

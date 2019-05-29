@@ -19,9 +19,11 @@
 \measure[-.5]{\texttt{m}}{a3.south west}{a4.south east}
 \measure[-.5]{$\leq \texttt{m}$}{a5.south west}{a6.south east}
 
-\draw [subflow ->, bend left=45] ($ (a1.north) + (-1, 0) $) to (a1.north);
-\draw [subflow ->, bend left=45] (a1.north) to node [above=.1, sloped] {$+\texttt{s}$} (a3.north);
-\draw [subflow ->, dashed, bend left=45] (a3.north) to node [above=.1, sloped] {$+n\cdot\texttt{s}$} (a5.north);
+\draw [<- subflow] (a1.north) arc [<- iterate];
+\draw [subflow ->, iterate ->] (a1.north) to (a3.north);
+\draw [subflow ->, iterate ->, dashed] (a3.north) arc;
+\draw [<- subflow, <- iterate, dashed] (a5.north) arc;
+% \draw [subflow ->, iterate ->] (aj+m-1.north) to (aj+m.north);
 
 \matrix (I1) [collection, nodes={font=\small}, below=3 of A] {
     \node {$a_1$}; &

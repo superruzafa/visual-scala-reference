@@ -3,7 +3,7 @@
 
 \node (f) [function] {$f$};
 \node (g) [function, below=1.5 of f] {\texttt{g}};
-\node (ex) at ($ (f)!.5!(g) $) [exception={MatchError}];
+\node (ex) at ($ (f)!.5!(g) $) [exception=MatchError];
 % \draw [flow ->] (f.south io 1) -- (y);
 % \draw [flow ->] (y) -- (g.north io 1);
 
@@ -21,7 +21,8 @@
 \coordinate (gh) at ($ (g.south)!.5!(hse.south) $);
 
 \draw [throw ->] (f.east) -- (fh) -- (ex-fh);
-\draw [flow ->] (ex-fh2) |- (gh) -- (h.south) -- +(0, -.5)
+\draw [flow, dashed] (ex-fh2) |- (gh) -- (h.south);
+\draw [flow ->] (h.south) -- +(0, -.5)
     node [element, below] {\false};
 
 \node (fa) [function, above left=0 and 3 of f] {$f$};

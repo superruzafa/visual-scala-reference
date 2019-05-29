@@ -19,13 +19,13 @@
 
 \foreach \i/\j in {1/=,2/=,i/\neq}{
     \draw [subflow] (a\i) --
-        node (eq\i) [comparation, flow] {$\j$}
+        node (eq\i) [badge, flow] {$\j$}
         (b\i);
 }
 
 \node (b) [element, right=1 of bi] {\false};
 
-\draw [<- flow] (eq1.west) -- +(-.5, 0);
-\draw [flow ->] (eq1.east) -- (eq2.west);
-\draw [flow, solid dashed solid] (eq2.east) -- (eqi.west);
-\draw [flow ->] (eqi.east) .. controls +(1, 0) and +(0, 1) .. (b.north);
+\draw [<- subflow] (eq1.west) -- +(-.5, 0);
+\draw [subflow ->] (eq1.east) -- (eq2.west);
+\draw [subflow, solid dashed solid] (eq2.east) -- (eqi.west);
+\draw [subflow ->] (eqi.east) .. controls +(1, 0) and +(0, 1) .. (b.north);

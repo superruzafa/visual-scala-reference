@@ -4,12 +4,10 @@
 \tikzset{op/.style={
     subfunction,
     inner xsep=.1\masterunit,
-    /function/.cd,
-    east io=1,
-    north io=2,
-    north io sep=.1\masterunit,
-    south io=0,
-    /tikz/.cd,
+    /function/north io=2,
+    /function/north io sep=.1\masterunit,
+    /function/south io=0,
+    /function/east io=1,
 }}
 
 \matrix (A) [collection] {
@@ -29,7 +27,7 @@
 }
 
 \matrix (B) [collection, below=2.5 of A, xshift=-.1\masterunit] {
-    \node (b0) {$z$}; &
+    \node (b0) {\texttt{z}}; &
     \node (b1) {$b_1$}; &
     \node (b2) {$b_2$}; &
     \node [elements between]; &
