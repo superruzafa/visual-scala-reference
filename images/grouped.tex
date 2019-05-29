@@ -32,14 +32,10 @@
     \node [xscale=0.965] {$a_{n \cdot \small{\texttt{m}} + p}$}; &
 \\ };
 
-\tikzset{next label/.style={
-    sloped,
-    node contents={\texttt{next}}
-}}
-
-\draw [flow ->] ($ (I1.west) + (-1, 0) $) -- node [next label, above=0.1] {} (I1);
-\draw [flow ->, bend right=45] (I1.west) to node [next label, below=0.3, rotate=180] {} (I2.west);
-\draw [flow ->, dotted, bend right=45] (I2.west) to node [next label, below=0.3, rotate=180] {} (In.west);
+\draw [<- flow, iterate up, next] (I1.west) arc;
+\draw [flow ->, iterate down, next reversed] (I1.west) to (I2.west);
+\draw [flow ->, dashed, iterate down] (I2.west) arc;
+\draw [<- flow, dashed, iterate up, next] (In.west) arc;
 
 \measure{\texttt{m}}{I1.north west}{I1.north east}
 \coordinate (m1) at (last measure);

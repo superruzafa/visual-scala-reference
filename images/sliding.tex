@@ -23,7 +23,6 @@
 \draw [subflow ->, iterate ->] (a1.north) to (a3.north);
 \draw [subflow ->, iterate ->, dashed] (a3.north) arc;
 \draw [<- subflow, <- iterate, dashed] (a5.north) arc;
-% \draw [subflow ->, iterate ->] (aj+m-1.north) to (aj+m.north);
 
 \matrix (I1) [collection, nodes={font=\small}, below=3 of A] {
     \node {$a_1$}; &
@@ -31,14 +30,13 @@
     \node {$a_{\texttt{m}}$}; &
 \\ };
 
-
 \matrix (I2) [collection, nodes={font=\small}, below=1.5 of I1] {
     \node {$a_{\texttt{s}}$}; &
     \node [elements between=.8]; &
     \node {$a_{\texttt{s} + \texttt{m} - 1}$}; &
 \\ };
 
-\matrix (In) [collection, nodes={font=\small}, below=2 of I2.south west, anchor=north west] {
+\matrix (I3) [collection, nodes={font=\small}, below=2 of I2.south west, anchor=north west] {
     \node {$a_{n \cdot \texttt{s}}$}; &
     \node [elements between=.5]; &
     \node {$a_{n \cdot \texttt{s} + k}$}; &
@@ -46,16 +44,12 @@
 
 \measure{\texttt{m}}{I1.north west}{I1.north east}
 \measure{\texttt{m}}{I2.north west}{I2.north east}
-\measure{$\leq \texttt{m}$}{In.north west}{In.north east}
+\measure{$\leq \texttt{m}$}{I3.north west}{I3.north east}
 
-\tikzset{next label/.style={
-    sloped,
-    node contents={\texttt{next}}
-}}
-
-\draw [flow ->] ($ (I1.west) + (-1, 0) $) -- node [next label, above=0.1] {} (I1);
-\draw [flow ->, bend right=45] (I1.west) to node [next label, below=0.3, rotate=180] {} (I2.west);
-\draw [flow ->, dashed, bend right=45] (I2.west) to node [next label, below=0.3, rotate=180] {} (In.west);
+\draw [<- flow, iterate up, next] (I1.west) arc;
+\draw [flow ->, iterate down, next reversed] (I1.west) to (I2.west);
+\draw [flow ->, dashed, iterate down] (I2.west) arc;
+\draw [<- flow, dashed, iterate up, next] (I3.west) arc;
 
 \coordinate (x) at ($ (A)!.5!(I1) $);
 \node at (x) [big arrow, rotate=-90] {};

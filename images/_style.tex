@@ -447,12 +447,62 @@
     x radius=.75,
     y radius=.5
 }}
+
 \tikzset{iterate ->/.style={
     bend left=45,
     delta angle=-60,
     start angle=150,
     x radius=.75,
     y radius=.5
+}}
+
+\tikzset{iterate up/.style={
+    bend left=45,
+    delta angle=-60,
+    start angle=240,
+    x radius=.5,
+    y radius=.75
+}}
+
+\tikzset{iterate down/.style={
+    bend right=45,
+    delta angle=60,
+    start angle=120,
+    x radius=.5,
+    y radius=.75
+}}
+
+\tikzset{next/.style={
+    postaction={
+        decorate,
+        decoration={
+            pre=moveto,
+            pre length=.1\masterunit,
+            raise=.1\masterunit,
+            text along path,
+            text=#1,
+            text align=left,
+        },
+        draw=none,
+        tips=false,
+    }
+}}
+
+\tikzset{next reversed/.style={
+    postaction={
+        decorate,
+        decoration={
+            pre=moveto,
+            pre length=.1\masterunit,
+            raise=.1\masterunit,
+            text along path,
+            text=next,
+            text align=left,
+            reverse path
+        },
+        draw=none,
+        tips=false,
+    }
 }}
 
 \tikzset{badge/.style={
