@@ -61,5 +61,5 @@
 \node (f) [ops, below=4 of A] {\texttt{op}};
 \draw [<- flow, dashed] (f.north io 1) |- +(-.25, .5);
 \draw [<- flow, dashed] (f.north io 2) |- +(.25, .5);
-\node (b) [element, some={$a$}, below=.5 of f.south io 1];
+\node (b) [element, some={$b$}, below=.5 of f.south io 1];
 \draw [flow ->] (f.south io 1) -- (b);

@@ -5,8 +5,6 @@
 \draw [<- flow] (f.north io 1) -- +(0, .5)
     node [element, above] {$x^\prime$};
 \node (ex) [font=\small, exception=MatchError, below=.5 of f.south io 1];
-% \draw [flow ->] (ex) -- ($ (h.south io 1) + (0, -.5) $)
-%     node [none, below];
 
 \coordinate (x) at ($ (f.south io 1)!.5!(ex.north) $);
 \draw [throw ->] (f.west) -- ++(-.25, 0) |- (x) -- (ex);

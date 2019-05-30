@@ -4,8 +4,6 @@
 \node (f) [function] {$f$};
 \node (g) [function, below=1.5 of f] {\texttt{g}};
 \node (ex) at ($ (f)!.5!(g) $) [exception=MatchError];
-% \draw [flow ->] (f.south io 1) -- (y);
-% \draw [flow ->] (y) -- (g.north io 1);
 
 \node (h) at (ex) [function, minimum width=2.25\masterunit, minimum height=5\masterunit] {};
 \draw [<- flow] (f.north io 1) -- (h.north io 1) -- +(0, .5)
@@ -16,7 +14,6 @@
 \coordinate (ex-fh) at (ex.north -| fh);
 \coordinate (ex-fh2) at (ex.south -| fh);
 
-% \coordinate (y-fh) at (y -| fh);
 \coordinate (hse) at (h.south east -| g.south);
 \coordinate (gh) at ($ (g.south)!.5!(hse.south) $);
 

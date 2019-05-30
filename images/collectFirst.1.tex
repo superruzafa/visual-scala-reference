@@ -21,12 +21,9 @@
 \draw [flow ->] (fi.south io 1) -- node [partial] {} +(0, -.5)
     node (b) [element, below] {$b$};
 \draw [flow ->] (b.south) -- +(0, -.5)
-    node[some={$b$}, below];
+    node [some={$b$}, element, below];
 
 \draw [<- subflow] (a1.north) arc [<- iterate];
 \draw [subflow ->, iterate ->] (a1.north) to (a2.north);
 \draw [subflow ->, dashed] (a2.north) arc [iterate ->];
 \draw [<- subflow, dashed] (ai.north) arc [<- iterate];
-% \draw [subflow ->, bend left=45] ($ (a1.north) + (-1, 0) $) to (a1.north);
-% \draw [subflow ->, bend left=45] (a1.north) to (a2.north);
-% \draw [subflow ->, dashed, bend left=45] (a2.north) to (ai.north);

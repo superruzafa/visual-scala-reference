@@ -91,32 +91,22 @@
     node contents={\,,\,\,},
 }}
 
-\tikzset{option/.style={
-    draw,
-    line width=0.75\defaultpenwidth,
-    inner sep=0.1\masterunit
-}}
-
 \tikzset{some/.style={
-    element,
-    option,
+    draw,
+    line width=\defaultpenwidth,
     rectangle split,
     rectangle split parts=2,
     rectangle split draw splits=false,
-    node contents=\some{#1}
+    node contents={\footnotesize{\texttt{Some}} \nodepart{two} #1},
+    minimum size=.75\masterunit,
 }}
 
 \tikzset{none/.style={
-    option,
-    node contents={\none}
+    draw,
+    line width=\defaultpenwidth,
+    node contents={\footnotesize{\texttt{None}}},
+    minimum size=.75\masterunit,
 }}
-
-\newcommand\some[1]{
-    \footnotesize{Some} \nodepart{two} #1
-}
-\newcommand\none{
-    \footnotesize{None}
-}
 
 \tikzset{exception draw/.style={
     line width=.02\masterunit,
