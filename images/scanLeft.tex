@@ -4,6 +4,7 @@
 \tikzset{op/.style={
     subfunction,
     inner xsep=.1\masterunit,
+    node contents={\texttt{op}},
     /function/north io=2,
     /function/north io sep=.1\masterunit,
     /function/south io=0,
@@ -22,8 +23,8 @@
 \node (z) [element, left=.5 of A] {\texttt{z}};
 
 \foreach \i in {1,2,i,n}{
-    \node (f\i) [op, below=1 of a\i, anchor=north io 2] {\texttt{op}};
-    \draw [flow ->] (a\i) -- (f\i.north io 2);
+    \draw [flow ->] (a\i.south) -- +(0, -1)
+        node (f\i) [op, below, anchor=north io 2];
 }
 
 \matrix (B) [collection, below=2.5 of A, xshift=-.1\masterunit] {
@@ -38,21 +39,23 @@
 
 \coordinate (rule) at ($ (a1.south)!.5!(f1.north io 2) $);
 
-\draw [flow ->] (z) -- (z |- rule) -| (f1.north io 1);
+\draw [flow ->] (z) -- (z |- rule) coordinate (x) -| (f1.north io 1);
 
-\coordinate (x) at ($ (f1.south)!.5!(b0.north) $);
-\draw [flow ->] (z) -- (z |- x) -| (b0.north);
+\coordinate (y) at ($ (f1.south)!.5!(b0.north) $);
+\draw [flow ->] (x) -- (z |- y) -| (b0.north);
 
 \draw [flow ->] (f1.east io 1) -- (f1.east io 1 -| b1.north) coordinate (x) -- (b1.north);
 \draw [flow ->] (x) -- (x |- rule) -| (f2.north io 1);
 
 \draw [flow ->] (f2.east io 1) -- (f2.east io 1 -| b2.north) coordinate (x) -- (b2.north);
-\draw [flow ->, dashed] (x) -- (x |- rule) -- +(.25, 0);
+\draw [flow] (x) -- (x |- rule) coordinate (last);
+\draw [flow, solid dashed solid] (last) -- (last -| fi.north io 1) coordinate (last);
+\draw [flow ->] (last) -- (fi.north io 1);
 
-\draw [<- flow, dashed] (fi.north io 1) -- (fi.north io 1 |- rule) -- +(-.25, 0);
 \draw [flow ->] (fi.east io 1) -- (fi.east io 1 -| bi.north) coordinate (x) -- (bi.north);
-\draw [flow ->, dashed] (x) -- (x |- rule) -- +(.25, 0);
+\draw [flow] (x) -- (x |- rule) coordinate (last);
+\draw [flow, solid dashed solid] (last) -- (last -| fn.north io 1) coordinate (last);
+\draw [flow ->] (last) -- (fn.north io 1);
 
-\draw [<- flow, dashed] (fn.north io 1) -- (fn.north io 1 |- rule) -- +(-.25, 0);
 \draw [flow ->] (fn.east io 1) -| (bn.north);
 

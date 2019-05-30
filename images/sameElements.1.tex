@@ -29,6 +29,6 @@
 
 \draw [<- subflow] (eq1.west) -- +(-.5, 0);
 \draw [subflow ->] (eq1.east) -- (eq2.west);
-\draw [subflow, solid dashed solid] (eq2.east) -- (eqi.west);
-\draw [subflow, solid dashed solid] (eqi.east) -- (eqn.west);
+\draw [subflow ->, solid dashed solid] (eq2.east) -- (eqi.west);
+\draw [subflow ->, solid dashed solid] (eqi.east) -- (eqn.west);
 \draw [subflow ->] (eqn.east) .. controls +(1, 0) and +(0, 1) .. (b.north);

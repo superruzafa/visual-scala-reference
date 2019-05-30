@@ -3,7 +3,7 @@
 
 \node (f) [function] {$f$};
 \draw [<- flow] (f.north io 1) -- +(0, .5) node [element, above] {$x$};
-\draw [flow ->] (f.south io 1) -- +(0, -.5) node [some={$y$}, below];
+\draw [flow ->] (f.south io 1) -- +(0, -.5) node [some={$y$}, element, below];
 
 \tikzset{wrapper/.style={
     function,

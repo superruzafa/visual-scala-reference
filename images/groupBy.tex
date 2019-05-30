@@ -8,23 +8,23 @@
     \node (km) {$k_m$}; \\
 };
 
-\matrix (V1) [subcollection, right=1 of k1] {
+\matrix (V1) [subcollection, right=.5 of k1] {
     \node {$a_1$}; &
     \node {$a_3$}; &
     \node [elements after]; &
 \\ };
 
-\matrix (V2) [subcollection, right=1 of k2] {
+\matrix (V2) [subcollection, right=.5 of k2] {
     \node {$a_2$}; &
-    \node [elements between]; &
+    \node [elements between=.5]; &
     \node {$a_{i+1}$}; &
     \node [elements after]; &
 \\ };
 
-\matrix (Vm) [subcollection, right=1 of km] {
+\matrix (Vm) [subcollection, right=.5 of km] {
     \node [elements before]; &
     \node {$a_i$}; &
-    \node [elements between]; &
+    \node [elements between=.5]; &
     \node {$a_n$}; &
 \\ };
 

@@ -1,6 +1,15 @@
 ---
 ---
 
+\tikzset{fun/.style={
+    subfunction,
+    inner xsep=.1\masterunit,
+    inner ysep=0pt,
+    node contents={\texttt{f}},
+    /function/south io=0,
+    /function/west io=1,
+}}
+
 \matrix (A) [collection] {
     \node (k1) {$k_1$}; \\
     \node (k2) {$k_2$}; \\
@@ -16,28 +25,17 @@
     \node (l_) {$k_\_$}; \\
 };
 
-\tikzset{fun/.style={
-    subfunction,
-    /function/north io=0,
-    /function/south io=0,
-    /function/west io=1,
-    /function/east io=1,
-}}
-
 \foreach \i in {1,2,n}{
-    \node (vk) [element, right=1 of k\i] {$v_\i$};
-    \draw [key to value] (k\i) to (vk);
-    \node (vl) [element, right=1 of l\i] {$v_\i$};
-    \draw [key to value] (l\i) to (vl);
+    \draw [key to value] (k\i.east) -- +(.5, 0)
+        node (v) [element, right] {$v_\i$} coordinate (v);
+    \draw [key to value] (l\i.east) -- +(.5, 0)
+        node [element, right] {$v_\i$};
 }
+\draw [key to value] (l_.east) ++(0, .25) -- +(.5, 0)
+    node (v_) [element, right] {$v_\_$};
+\draw [<- subflow] (v_.base) ++(0, -.125) -- +(0, -.2)
+    node (f) [fun, anchor=north];
+\draw [subflow ->] (l_.base) ++(0, -.125) |- (f.west io 1);
 
-\node (vl) [subelement, right=1 of l_] {$k\_$};
-\draw [key to value] (l_) to (vl);
-\node (f) [fun, right=.5 of vl] {\texttt{f}};
-\draw [subflow ->] (vl) -- (f.west io 1);
-\node (vl) [element, right=.5 of f] {$v_\_$};
-\draw [subflow ->] (f.east io 1) -- (vl);
-
-\coordinate (y) at (vk |- B);
-\coordinate (x) at ($ (y)!.5!(B.west) $);
-\node at (x) [big arrow] {};
+\coordinate (x) at ($ (v.east)!.5!(B.west) $);
+\node at (A -| x) [big arrow];

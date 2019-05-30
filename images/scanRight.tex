@@ -4,6 +4,7 @@
 \tikzset{op/.style={
     subfunction,
     inner xsep=.1\masterunit,
+    node contents={\texttt{op}},
     /function/north io=2,
     /function/north io sep=.1\masterunit,
     /function/south io=0,
@@ -22,8 +23,8 @@
 \node (z) [element, right=.5 of A] {\texttt{z}};
 
 \foreach \i in {n,n-1,i,1}{
-    \node (f\i) [op, below=1 of a\i, anchor=north io 1] {\texttt{op}};
-    \draw [flow ->] (a\i) -- (f\i.north io 1);
+    \draw [flow ->] (a\i.south) -- +(0, -1)
+        node (f\i) [op, below, anchor=north io 1];
 }
 
 \matrix (B) [collection, below=2.5 of A, xshift=.1\masterunit] {
@@ -38,21 +39,23 @@
 
 \coordinate (rule) at ($ (an.south)!.5!(fn.north io 2) $);
 
-\draw [flow ->] (z) -- (z |- rule) -| (fn.north io 2);
+\draw [flow ->] (z) -- (z |- rule) coordinate (x) -| (fn.north io 2);
 
-\coordinate (x) at ($ (fn.south)!.5!(b0.north) $);
-\draw [flow ->] (z) -- (z |- x) -| (b0.north);
+\coordinate (y) at ($ (fn.south)!.5!(b0.north) $);
+\draw [flow ->] (x) -- (z |- y) -| (b0.north);
 
 \draw [flow ->] (fn.west io 1) -- (fn.west io 1 -| bn.north) coordinate (x) -- (bn.north);
 \draw [flow ->] (x) -- (x |- rule) -| (fn-1.north io 2);
 
 \draw [flow ->] (fn-1.west io 1) -- (fn-1.west io 1 -| bn-1.north) coordinate (x) -- (bn-1.north);
-\draw [flow ->, dashed] (x) -- (x |- rule) -- +(-.25, 0);
+\draw [flow] (x) -- (x |- rule) coordinate (last);
+\draw [flow, solid dashed solid] (last) -- (last -| fi.north io 2) coordinate (last);
+\draw [flow ->] (last) -- (fi.north io 2);
 
-\draw [<- flow, dashed] (fi.north io 2) -- (fi.north io 2 |- rule) -- +(.25, 0);
 \draw [flow ->] (fi.west io 1) -- (fi.west io 1 -| bi.north) coordinate (x) -- (bi.north);
-\draw [flow ->, dashed] (x) -- (x |- rule) -- +(-.25, 0);
+\draw [flow] (x) -- (x |- rule) coordinate (last);
+\draw [flow, solid dashed solid] (last) -- (last -| f1.north io 2) coordinate (last);
+\draw [flow ->] (last) -- (f1.north io 2);
 
-\draw [<- flow, dashed] (f1.north io 2) -- (f1.north io 2 |- rule) -- +(.25, 0);
 \draw [flow ->] (f1.west io 1) -| (b1.north);
 

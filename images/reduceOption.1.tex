@@ -46,20 +46,27 @@
 \node (f3) [ope, below=2 of a2.south east] {\texttt{op}};
 \draw [flow ->] (f1.east io 1) -| (f3.north io 1);
 \draw [flow ->] (f2.west io 1) -| (f3.north io 2);
-\draw [flow ->, dashed] (f3.east io 1) -| +(.25, -.5);
+\draw [flow] (f3.east io 1) -- +(.25, 0) coordinate (last);
+\draw [flow ->, dashed] (last) -- +(0, -.5);
 
 \node (f4) [opw, below=1 of an, anchor=north io 2] {\texttt{op}};
 \draw [flow ->] (an) -- (f4.north io 2);
-\draw [<- flow, dashed] (f4.north io 1) |- +(-.25, .5);
-\draw [flow ->, dashed] (f4.west io 1) -| +(-.25, -.5);
+\draw [<- flow] (f4.north io 1) -- +(0, .5) coordinate (last);
+\draw [flow, dashed] (last) -- +(-.25, 0);
+\draw [flow] (f4.west io 1) -- +(-.25, 0) coordinate (last);
+\draw [flow ->, dashed] (last) -- +(0, -.5);
 
 \node (f5) [opw, below=1 of ai, anchor=north io 1] {\texttt{op}};
 \draw [flow ->] (ai) -- (f5.north io 1);
-\draw [<- flow, dashed] (f5.north io 2) |- +(.25, .5);
-\draw [flow ->, dashed] (f5.west io 1) -| +(-.25, -.5);
+\draw [<- flow] (f5.north io 2) -- +(0, .5) coordinate (last);
+\draw [flow, dashed] (last) -- +(.25, 0);
+\draw [flow] (f5.west io 1) -- +(-.25, 0) coordinate (last);
+\draw [flow ->, dashed] (last) -- +(0, -.5);
 
 \node (f) [ops, below=4 of A] {\texttt{op}};
-\draw [<- flow, dashed] (f.north io 1) |- +(-.25, .5);
-\draw [<- flow, dashed] (f.north io 2) |- +(.25, .5);
-\node (b) [element, some={$b$}, below=.5 of f.south io 1];
-\draw [flow ->] (f.south io 1) -- (b);
+\draw [<- flow] (f.north io 1) -- +(0, .5) coordinate (last);
+\draw [flow, dashed] (last) -- +(-.25, 0);
+\draw [<- flow] (f.north io 2) -- +(0, .5) coordinate (last);
+\draw [flow, dashed] (last) -- +(.25, 0);
+\draw [flow ->] (f.south io 1) -- +(0, -.5)
+    node [some={$b$}, element, below];

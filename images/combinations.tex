@@ -43,11 +43,11 @@
 \\ };
 
 \draw [<- flow, iterate up, next] (I1.west) arc;
-% \draw [flow ->, iterate down, next reversed] (I1.west) to (I2.west);
-% \draw [flow ->, dashed, iterate down] (I2.west) arc;
-% \draw [<- flow, dashed, iterate up, next] (I3.west) arc;
-% \draw [flow ->, dashed, iterate down] (I3.west) arc;
-% \draw [<- flow, dashed, iterate up, next] (I4.west) arc;
+\draw [flow ->, iterate down, next reversed] (I1.west) to (I2.west);
+\draw [flow ->, dashed, iterate down] (I2.west) arc;
+\draw [<- flow, dashed, iterate up, next] (I3.west) arc;
+\draw [flow ->, dashed, iterate down] (I3.west) arc;
+\draw [<- flow, dashed, iterate up, next] (I4.west) arc;
 
 \measure{\texttt{k}}{I1.north west}{I1.north east}
 
