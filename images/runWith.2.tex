@@ -2,38 +2,35 @@
 ---
 
 \node (f) [function] {$f$};
-\node (g) [function, below=1.5 of f] {\texttt{g}};
-\node (ex) at ($ (f)!.5!(g) $) [exception=MatchError];
+\node (g) [function, right=.5 of f] {\texttt{g}};
+\coordinate (x) at ($ (f)!.5!(g) $);
+\node (rw) at (x) [function, minimum width=2.5\masterunit, minimum height=3\masterunit] {};
 
-\node (h) at (ex) [function, minimum width=2.25\masterunit, minimum height=5\masterunit] {};
-\draw [<- flow] (f.north io 1) -- (h.north io 1) -- +(0, .5)
-    node [element, above] {$x$};
-
-\coordinate (he) at (f.east -| h.east);
-\coordinate (fh) at ($ (f.east)!.5!(he) $);
-\coordinate (ex-fh) at (ex.north -| fh);
-\coordinate (ex-fh2) at (ex.south -| fh);
-
-\coordinate (hse) at (h.south east -| g.south);
-\coordinate (gh) at ($ (g.south)!.5!(hse.south) $);
-
-\draw [throw ->] (f.east) -- (fh) -- (ex-fh);
-\draw [flow, dashed] (ex-fh2) |- (gh) -- (h.south);
-\draw [flow ->] (h.south) -- +(0, -.5)
+\coordinate (y) at ($ (f.south io 1) + (0, -.5) $);
+\node (ex) at (y -| x) [exception=MatchError];
+\draw [throw ->] (f.east) -| (ex);
+\draw [flow, dashed] (ex) -- (rw.south io 1);
+\draw [flow ->] (rw.south io 1) -- +(0, -.5)
     node [element, below] {\false};
-
-\node (fa) [function, above left=0 and 3 of f] {$f$};
-\draw [<- flow] (fa.north io 1) -- +(0, .5)
+\draw [<- flow] (f.north io 1) -- +(0, .5) -| (rw.north io 1) -- +(0, .5)
     node [element, above] {$x$};
-\draw [flow ->] (fa.south io 1) -- node [partial] {} +(0, -.5)
-    node [element, below] {$y$};
 
-\node (ga) [function, below left=0 and 3 of g] {\texttt{g}};
-\draw [<- flow] (ga.north io 1) -- +(0, .5)
-    node [element, above] {$y^{\prime}$};
-\draw [flow ->] (ga.south io 1) -- +(0, -.5)
+\node (g2) [function, left=3 of f] {\texttt{g}};
+\node (f2) [function, left=.5 of g2] {$f$};
+
+\draw [<- flow] (f2.north io 1) -- +(0, .5)
+    node [element, above] {$x$};
+
+\node (ex) [exception=MatchError, below=.5 of f2];
+\draw [throw ->] (f2.west)
+    -- ++(-.25, 0)
+    |- ($ (f2.south io 1)!.5!(ex.north) $)
+    -- (ex.north);
+
+\draw [<- flow] (g2.north io 1) -- +(0, .5)
+    node [element, above] {$y$};
+\draw [flow ->] (g2.south io 1) -- +(0, -.5)
     node [element, below] {$u$};
 
-\coordinate (x) at ($ (fa)!.5!(ga) $);
-\coordinate (y) at ($ (x)!.5!(h.west) $);
-\node at (y) [big arrow];
+\coordinate (x) at ($ (g2.east)!.5!(rw.west) $);
+\node at (g2.west -| x) [big arrow];
