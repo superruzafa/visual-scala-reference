@@ -13,9 +13,10 @@
         node [subelement, above] {$a_\i \neq \texttt{a}$};
 }
 
-\draw [subflow ->, bend left=45] ($ (a1.north) + (-1, 0) $) to (a1.north);
-\draw [subflow ->, bend left=45] (a1.north) to (a2.north);
-\draw [subflow ->, dashed, bend left=45] (a2.north) to (an.north);
+\draw [<- subflow] (a1.north) arc [<- iterate];
+\draw [subflow ->, iterate ->] (a1.north) to (a2.north);
+\draw [subflow ->, iterate ->, dashed] (a2.north) arc;
+\draw [<- subflow, <- iterate, dashed] (an.north) arc;
 
 \node (b) [element, below right=1 and 1 of an] {\false};
 \draw [flow ->] (an.north) .. controls +(1, 1.5) and +(0, 1) .. (b.north);

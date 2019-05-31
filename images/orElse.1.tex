@@ -13,9 +13,11 @@
 \draw [<- flow] (f.north io 1) -- (y) -- (z) -- (h.north io 1) -- +(0, .5)
     node (x1) [element, above] {$x$};
 \coordinate (x) at (f.south io 1 |- h.south west);
-\draw [flow ->] (f.south io 1) -- ($ (f.south io 1)!.5!(x) $) -| (h.south io 1) --
-    node [partial] {} +(0, -.5)
-    node [element, below] {$y$};
+
+\draw [flow ->] (f.south io 1) -- node [partial] {} +(0, -.5)
+    node (fy) [element, below, yshift=.1\masterunit] {$y$};
+\draw [flow ->] (fy) -| (h.south io 1) -- node [partial] {} +(0, -.5)
+    node [element, below, yshift=.1\masterunit] {$y$};
 
 \node (f2) [function, above=4 of f] {$f$};
 \draw [<- flow] (f2.north io 1) -- +(0, .5)

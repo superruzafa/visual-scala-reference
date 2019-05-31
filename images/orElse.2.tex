@@ -2,7 +2,7 @@
 ---
 
 \node (f) [function] {$f$};
-\node (exf) [subexception={MatchError}, font=\footnotesize, below=.15 of f.south];
+\node (exf) [subexception=MatchError, font=\footnotesize, below=.15 of f.south];
 \coordinate (x) at ($ (exf.north west)!.5!(f.west) $);
 \coordinate (y) at (x |- f.west);
 \coordinate (z) at (exf.north west -| y);

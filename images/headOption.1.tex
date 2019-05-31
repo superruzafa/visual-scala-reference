@@ -7,5 +7,5 @@
     \node [elements after]; &
 \\ };
 
-\node (b) [some={$a_1$}, below=2 of a1];
-\draw [flow ->] (a1) -- (b);
+\draw [flow ->] (a1.south) -- +(0, -1)
+    node [some={$a_1$}, element, below];

@@ -8,8 +8,8 @@ permalink: /range
 
 ~~~ scala
 object Collection {
-  def range[T](start: T, end: T): Collection[T]
-  def range[T](start: T, end: T, step: T): Collection[T]
+  def range[A](start: A, end: A): Collection[A]
+  def range[A](start: A, end: A, step: A): Collection[A]
 }
 ~~~
 

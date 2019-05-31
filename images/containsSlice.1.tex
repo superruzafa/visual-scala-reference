@@ -32,7 +32,7 @@
 
 \foreach \i/\r in {1/\neq,2/\neq,i/=}{
     \node (eq\i) at (brace\i |- rule)
-        [minimum size=.4\masterunit, circle, draw, flow, fill=white] {$\r$};
+        [badge, flow] {$\r$};
 }
 
 \coordinate (x) at ($ (eq1)!.5!(lastbrace) $);

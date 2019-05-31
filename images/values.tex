@@ -9,19 +9,15 @@
 };
 
 \foreach \i in {1,2,n}{
-    \draw [key to value] (k\i.east) to +(1, 0) node (v) [element, right] {$v_{\i}$};
+    \draw [key to value] (k\i.east) to +(.5, 0)
+        node (v) [element, right] {$v_{\i}$};
     \node (v\i) [element, right=3 of v] {$v_{\i}$};
 }
 
-\tikzset{next label/.style={
-    sloped,
-    node contents={\texttt{next}}
-}}
-
-\draw [flow ->] ($ (v1.west) + (-1, 0) $) -- node [next label, above=0.1] {} (v1);
-\draw [flow ->, bend right=45] (v1.west) to node [next label, below=0.3, rotate=180] {} (v2.west);
-\draw [flow ->, dashed] (v2.west) arc [start angle=150, delta angle=30, radius=1];
-\draw [<- flow, dashed] (vn.west) arc [start angle=210, delta angle=-30, radius=1];
+\draw [<- flow, iterate up, next] (v1.west) arc;
+\draw [flow ->, iterate down, next reversed] (v1.west) to (v2.west);
+\draw [flow ->, dashed, iterate down] (v2.west) arc;
+\draw [<- flow, dashed, iterate up, next] (vn.west) arc;
 
 \coordinate (kc) at ($ (k1)!.5!(kn) $);
 \coordinate (vc) at ($ (v1)!.5!(vn) $);

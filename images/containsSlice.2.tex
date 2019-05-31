@@ -31,7 +31,7 @@
 
 \foreach \i in {1,2,i}{
     \node (eq\i) at (brace\i |- rule)
-        [minimum size=.4\masterunit, circle, draw, flow, fill=white] {$\neq$};
+        [badge, flow] {$\neq$};
 }
 
 \coordinate (x) at ($ (eq1)!.5!(lastbrace) $);
@@ -52,4 +52,3 @@
 \path [draw=none, name path=p2] ($ (a2.south west) + (0, -.8) $) -- +(5, 0);
 
 \path [name intersections={of=p1 and p2, by={a}}] (a) pic {jump=90};
-% \draw [flow ->] ($ (a) + (-.5, 0) $) -- +(1, 0);

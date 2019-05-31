@@ -17,11 +17,10 @@
         node [subelement, above] {\texttt{\r}};
 }
 
-\node (b) [some={$a_i$}, below=2 of ai];
-\draw [flow ->] (ai) -- (b);
+\draw [flow ->] (ai.south) -- +(0, -1)
+    node [some={$a_i$}, element, below];
 
-\begin{scope}[subflow ->, bend left=45]
-\draw ($ (a1.north) + (-1, 0) $) to (a1.north);
-\draw (a1.north) to (a2.north);
-\draw [dashed] (a2.north) to (ai.north);
-\end{scope}
+\draw [<- subflow] (a1.north) arc [<- iterate];
+\draw [subflow ->, iterate ->] (a1.north) to (a2.north);
+\draw [subflow ->, iterate ->, dashed] (a2.north) arc;
+\draw [<- subflow, <- iterate, dashed] (ai.north) arc;

@@ -10,18 +10,20 @@
 \\ };
 
 \foreach \i in {1,2,i}{
-    \node (f\i) [subfunction, below=1 of a\i] {\texttt{f}};
-    \draw [flow ->] (a\i) -- (f\i.north io 1);
+    \draw [flow ->] (a\i.south) -- +(0, -.5)
+        node (f\i) [subfunction, below] {\texttt{f}};
 }
 
-\node (b) [some={$b$}, below=1 of fi];
-\draw [flow ->] (fi.south io 1) -- (b);
+\draw [throw ->] (f1.west) -| +(-.5, -.75)
+    node [exception=MatchError, font=\tiny, below];
+\draw [throw ->] (f2.east) -| +(.5, -.75)
+    node [exception=MatchError, font=\tiny, below];
+\draw [flow ->] (fi.south io 1) -- node [partial] {} +(0, -.5)
+    node (b) [element, below] {$b$};
+\draw [flow ->] (b.south) -- +(0, -.5)
+    node [some={$b$}, element, below];
 
-\draw [subflow ->, bend left=45] ($ (a1.north) + (-1, 0) $) to (a1.north);
-\draw [subflow ->, bend left=45] (a1.north) to (a2.north);
-\draw [subflow ->, dashed, bend left=45] (a2.north) to (ai.north);
-
-\draw [throw ->] (f1.west) -- +(-.5, 0)
-    node [exception=MatchError, font=\tiny, left];
-\draw [throw ->] (f2.east) -- +(.5, 0)
-    node [exception=MatchError, font=\tiny, right];
+\draw [<- subflow] (a1.north) arc [<- iterate];
+\draw [subflow ->, iterate ->] (a1.north) to (a2.north);
+\draw [subflow ->, dashed] (a2.north) arc [iterate ->];
+\draw [<- subflow, dashed] (ai.north) arc [<- iterate];

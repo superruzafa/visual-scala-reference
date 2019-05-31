@@ -13,10 +13,10 @@
     \draw [subflow ->] (k\i.west) -- +(-.5, 0) node [subelement, left] {$k \neq k_\i $};
 }
 
-\draw [<- flow] (k1.west) arc [start angle=225, end angle=157, radius=1];
-\draw [flow ->, bend right=45] (k1.west) to (k2.west);
-\draw [flow ->, dashed] (k2.west) arc [start angle=135, end angle=180, radius=1];
-\draw [<- flow, dashed] (kn.west) arc [start angle=225, end angle=180, radius=1];
+\draw [<- subflow, iterate up] (k1.west) arc;
+\draw [subflow ->, iterate down] (k1.west) to (k2.west);
+\draw [subflow ->, dashed, iterate down] (k2.west) arc;
+\draw [<- subflow, dashed, iterate up] (kn.west) arc;
 
 \draw [flow ->] (kn.west) arc [start angle=135, end angle=180, x radius=1, y radius=3]
     node [element, below] {\texttt{v}};

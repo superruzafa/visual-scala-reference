@@ -24,6 +24,12 @@
         node [subelement, above] {\texttt{\r}};
 }
 
+\draw [<- subflow] (a1.north) arc [<- iterate];
+\draw [subflow ->, iterate ->] (a1.north) to (a2.north);
+\draw [subflow ->, iterate ->, dashed] (a2.north) arc;
+\draw [<- subflow, <- iterate, dashed] (ai.north) arc;
+\draw [subflow ->, iterate ->] (ai.north) to (ai+1.north);
+
 \braceflow[-.2]{(ai+1.south west)}{(an.south east)}
 \coordinate (x) at (lastbrace);
 \braceflow[.2]{(B.north west)}{(B.north east)}

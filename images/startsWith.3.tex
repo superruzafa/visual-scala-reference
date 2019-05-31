@@ -19,14 +19,13 @@
 
 \foreach \i/\c in {1/=,2/=,i/\neq}{
     \draw [subflow] (a\i) --
-        node (eq\i) [subelement, draw, circle, minimum size=.6\masterunit, fill=white]
-            {$\c$}
+        node (eq\i) [badge, flow] {$\c$}
         (b\i);
 }
 
-\draw [<- flow] (eq1.west) -- +(-.5, 0);
-\draw [flow ->] (eq1) -- (eq2);
-\draw [flow, solid dashed solid] (eq2) -- (eqi);
+\draw [<- subflow] (eq1.west) -- +(-.5, 0);
+\draw [subflow ->] (eq1) -- (eq2);
+\draw [subflow ->, solid dashed solid] (eq2) -- (eqi);
 
 \node (b) [element, right=1 of bi] {\false};
 \draw [flow ->] (eqi.east) .. controls +(1, 0) and +(0, 1) .. (b.north);

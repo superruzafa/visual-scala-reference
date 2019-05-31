@@ -4,9 +4,7 @@
 \node (f) [function] {$f$};
 \draw [<- flow] (f.north io 1) -- +(0, .5)
     node [element, above] {$x^\prime$};
-\node (ex) [font=\small, exception={MatchError}, below=.5 of f.south io 1];
-% \draw [flow ->] (ex) -- ($ (h.south io 1) + (0, -.5) $)
-%     node [none, below];
+\node (ex) [font=\small, exception=MatchError, below=.5 of f.south io 1];
 
 \coordinate (x) at ($ (f.south io 1)!.5!(ex.north) $);
 \draw [throw ->] (f.west) -- ++(-.25, 0) |- (x) -- (ex);
@@ -21,7 +19,7 @@
 \node (h) at (g) [wrapper, yshift=-.375\masterunit] {};
 \draw [<- flow] (g.north io 1) -- ($ (h.north io 1) + (0, .5) $)
     node [element, above] {$x^\prime$};
-\node (ex) [font=\small, exception={MatchError}, below=.5 of g.south io 1];
+\node (ex) [font=\small, exception=MatchError, below=.5 of g.south io 1];
 \draw [flow ->] (ex) -- ($ (h.south io 1) + (0, -.5) $)
     node [none, below];
 

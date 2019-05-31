@@ -73,7 +73,7 @@
     line width=.3\defaultpenwidth,
     minimum height=\masterunit,
     minimum width=0.3\masterunit,
-    node contents={}
+    node contents={},
 }}
 
 \tikzset{tuple of collections/.style={
@@ -91,32 +91,22 @@
     node contents={\,,\,\,},
 }}
 
-\tikzset{option/.style={
-    draw,
-    line width=0.75\defaultpenwidth,
-    inner sep=0.1\masterunit
-}}
-
 \tikzset{some/.style={
-    element,
-    option,
+    draw,
+    line width=\defaultpenwidth,
     rectangle split,
     rectangle split parts=2,
     rectangle split draw splits=false,
-    node contents=\some{#1}
+    node contents={\footnotesize{\texttt{Some}} \nodepart{two} #1},
+    minimum size=.75\masterunit,
 }}
 
 \tikzset{none/.style={
-    option,
-    node contents={\none}
+    draw,
+    line width=\defaultpenwidth,
+    node contents={\footnotesize{\texttt{None}}},
+    minimum size=.75\masterunit,
 }}
-
-\newcommand\some[1]{
-    \footnotesize{Some} \nodepart{two} #1
-}
-\newcommand\none{
-    \footnotesize{None}
-}
 
 \tikzset{exception draw/.style={
     line width=.02\masterunit,
@@ -304,7 +294,7 @@
 
 \tikzset{
     vertical elements after/.style={
-        rotate=90,
+        rotate=-90,
         elements after=#1,
     }
 }
@@ -440,7 +430,72 @@
   single arrow head extend=.02\masterunit,
 }}
 
-\tikzset{comparation/.style={
+\tikzset{<- iterate/.style={
+    bend right=45,
+    start angle=30,
+    delta angle=60,
+    x radius=.75,
+    y radius=.5
+}}
+
+\tikzset{iterate ->/.style={
+    bend left=45,
+    delta angle=-60,
+    start angle=150,
+    x radius=.75,
+    y radius=.5
+}}
+
+\tikzset{iterate up/.style={
+    bend left=45,
+    delta angle=-60,
+    start angle=240,
+    x radius=.5,
+    y radius=.75
+}}
+
+\tikzset{iterate down/.style={
+    bend right=45,
+    delta angle=60,
+    start angle=120,
+    x radius=.5,
+    y radius=.75
+}}
+
+\tikzset{next/.style={
+    postaction={
+        decorate,
+        decoration={
+            pre=moveto,
+            pre length=.1\masterunit,
+            raise=.1\masterunit,
+            text along path,
+            text=next,
+            text align=left,
+        },
+        draw=none,
+        tips=false,
+    }
+}}
+
+\tikzset{next reversed/.style={
+    postaction={
+        decorate,
+        decoration={
+            pre=moveto,
+            pre length=.1\masterunit,
+            raise=.1\masterunit,
+            text along path,
+            text=next,
+            text align=left,
+            reverse path
+        },
+        draw=none,
+        tips=false,
+    }
+}}
+
+\tikzset{badge/.style={
     draw,
     circle,
     fill=white,

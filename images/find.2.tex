@@ -15,11 +15,10 @@
         node [subelement, above] {\false};
 }
 
-\begin{scope}[subflow ->, bend left=45]
-\draw ($ (a1.north) + (-1, 0) $) to (a1.north);
-\draw (a1.north) to (a2.north);
-\draw [dashed] (a2.north) to (an.north);
-\end{scope}
+\draw [<- subflow] (a1.north) arc [<- iterate];
+\draw [subflow ->, iterate ->] (a1.north) to (a2.north);
+\draw [subflow ->, iterate ->, dashed] (a2.north) arc;
+\draw [<- subflow, <- iterate, dashed] (an.north) arc;
 
 \node (b) [none, below right=1 and 1 of A];
 \draw [flow ->] (an.north) .. controls +(1, 1) and +(0, 2) .. (b);

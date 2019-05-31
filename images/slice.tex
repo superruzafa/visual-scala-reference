@@ -3,15 +3,18 @@
 
 \matrix (A) [collection] {
     \node [elements before]; &
+    \node {$a_{i-1}$}; &
     \node (ai) {$a_i$}; &
+    \node {$a_{i + 1}$}; &
     \node [elements between]; &
     \node (aj-1) {$a_{j - 1}$}; &
-    \node (aj) {$a_j$}; &
+    \node {$a_j$}; &
     \node [elements after]; &
 \\ };
 
 \matrix (B) [collection, below=2 of ai.south west, anchor=north west] {
     \node (bi) {$a_i$}; &
+    \node {$a_{i + 1}$}; &
     \node [elements between]; &
     \node (bj-1) {$a_{j - 1}$}; &
 \\ };

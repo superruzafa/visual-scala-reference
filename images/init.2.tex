@@ -2,5 +2,5 @@
 ---
 
 \node (A) [empty collection];
-\node (b) [exception={UnsupportedOperationException}, below=2 of A];
-\draw [throw ->] (A) -- (b);
+\draw [throw ->] (A.south) -- +(0, -1)
+    node [exception=UnsupportedOperationException, below];

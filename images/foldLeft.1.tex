@@ -4,6 +4,7 @@
 \tikzset{op/.style={
     subfunction,
     inner xsep=.1\masterunit,
+    node contents={\texttt{op}},
     /function/north io=2,
     /function/north io sep=.1\masterunit,
 }}
@@ -14,6 +15,11 @@
     /function/south io=0,
 }}
 
+\tikzset{op1/.style={op, /function/east io=1}}
+\tikzset{op2/.style={op, /function/east io=1}}
+\tikzset{opi/.style={op, /function/east io=1}}
+\tikzset{opn/.style={op, /function/south io=1}}
+
 \matrix (A) [collection] {
     \node (a1) {$a_1$}; &
     \node (a2) {$a_2$}; &
@@ -23,21 +29,22 @@
     \node (an) {$a_n$}; &
 \\ };
 
-\foreach \i/\op in {1/opl,2/opl,i/opl,n/op}{
-    \node (f\i) [\op, below=1 of a\i, anchor=north io 2] {\texttt{op}};
-    \draw [flow ->] (a\i) -- (f\i.north io 2);
+\foreach \i in {1,2,i,n}{
+    \draw [flow ->] (a\i.south) -- +(0, -1)
+        node (f\i) [op\i, anchor=north io 2];
 }
 
 \coordinate (x) at ($ (f1.north io 1)!.5!(a1.south) $);
 \coordinate (rule) at (f1.north io 1 |- x);
 
-\draw [flow ->] (f1.east io 1) -- ($ (f1.east)!.5!(f2.west) $) -- (\currentcoordinate |- rule) -| (f2.north io 1);
-\draw [flow ->, dashed] (f2.east io 1) -- ++(.25, 0) -- (\currentcoordinate |- rule) -- +(.5, 0);
-\draw [<- flow, dashed] (fi.north io 1) -- (fi.north io 1 |- rule) -- +(-.5, 0);
-\draw [flow ->, dashed] (fi.east io 1) -- ++(.25, 0) -- (\currentcoordinate |- rule) -- +(.5, 0);
-\draw [<- flow, dashed] (fn.north io 1) -- (fn.north io 1 |- rule) -- +(-.5, 0);
-
 \draw [<- flow] (f1.north io 1) -- +(0, .5)
     node [element, above] {\texttt{z}};
+\draw [flow ->] (f1.east io 1) -- ($ (f1.east)!.5!(f2.west) $) -- (\currentcoordinate |- rule) -| (f2.north io 1);
+\draw [flow] (f2.east io 1) -- ++(.25, 0) -- (\currentcoordinate |- rule) coordinate (last);
+\draw [flow, solid dashed solid] (last) -- (fi.north io 1 |- rule) coordinate (last);
+\draw [flow ->] (last) -- (fi.north io 1);
+\draw [flow] (fi.east io 1) -- ++(.25, 0) -- (\currentcoordinate |- rule) coordinate (last);
+\draw [flow, solid dashed solid] (last) -- (fn.north io 1 |- rule) coordinate (last);
+\draw [flow ->] (last) -- (fn.north io 1);
 \draw [flow ->] (fn.south io 1) -- +(0, -.5)
     node [element, below] {$b$};

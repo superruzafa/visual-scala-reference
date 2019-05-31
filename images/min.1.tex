@@ -10,8 +10,8 @@
     \node (an) {$a_n$}; &
 \\ };
 
-\node (b) [element, below=2 of ai] {$a_i$};
-\draw [flow ->] (ai) -- (b);
+\draw [flow ->] (ai.south) -- +(0, -1)
+    node (b) [element, below=1 of ai] {$a_i$};
 
 \matrix [matrix of math nodes, nodes={inner ysep=.125\masterunit}, row sep=.125\masterunit, left delimiter=\{, right=.5 of b] {
   a_i < a_j,\, j \in [1, i - 1] \\

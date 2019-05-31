@@ -11,12 +11,13 @@
 
 \foreach \i/\r in {1/\neq,2/\neq,i/=}{
     \draw [subflow ->] (a\i.north) -- +(0, .5)
-        node [subelement, above] {$\texttt{a}\r a_\i$};
+        node (p) [subelement, above] {$\texttt{a} \r a_\i $};
 }
 
-\draw [<- flow] (a1.north) arc [start angle=0, end angle=100, x radius=.75, y radius=.5];
-\draw [flow ->, bend left=45] (a1.north) to (a2.north);
-\draw [flow ->, dashed, bend left=45] (a2.north) to (ai.north);
+\draw [<- subflow] (a1.north) arc [<- iterate];
+\draw [subflow ->, iterate ->] (a1.north) to (a2.north);
+\draw [subflow ->, iterate ->, dashed] (a2.north) arc;
+\draw [<- subflow, <- iterate, dashed] (ai.north) arc;
 
 \draw [flow ->] (ai.south) -- +(0, -1)
     node [element, below] {$i$};
