@@ -12,7 +12,7 @@ trait Collection[A] {
 }
 ~~~
 
-`tail` returns all but the first element in the collection.
+`tail` returns all but the first element in this collection.
 
 <figure class="diagram">
   <img src="images/tail.1.svg" alt="tail function">

@@ -12,7 +12,7 @@ trait Collection[A] {
 }
 ~~~
 
-`prefixLength` returns the length of the largest segment of elements starting at `j` that satisfy a predicate `p`.
+`segmentLength` returns the length of the largest segment of elements starting at `j` that satisfy a predicate `p`.
 
 <figure class="diagram">
   <img src="images/segmentLength.svg" alt="segmentLength function">

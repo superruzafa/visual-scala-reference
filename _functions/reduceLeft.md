@@ -8,7 +8,7 @@ permalink: /reduceLeft
 
 ~~~ scala
 trait Collection[A] {
-  def reduceLeft[B :> A](op: (B, A) ⇒ B): B
+  def reduceLeft[B :> A](op: (B, A) => B): B
 }
 ~~~
 

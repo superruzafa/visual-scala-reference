@@ -13,14 +13,14 @@ trait Collection[A] {
 }
 ~~~
 
-`indexOf` returns the index of the first element that equals (`==`) a given value `a`.
+`indexOf` returns the index of the first element that equals (`==`) the value `a`.
 
 <figure class="diagram">
   <img src="images/indexOf.1.svg" alt="indexOf function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
-The search can start at a given offset index `j`.
+The search can start at the given offset `j`.
 
 <figure class="diagram">
   <img src="images/indexOf.2.svg" alt="indexOf function">

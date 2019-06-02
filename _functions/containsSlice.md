@@ -12,14 +12,14 @@ trait Collection[A] {
 }
 ~~~
 
-`containsSlice` checks whether a collection `as` is contained as a slice in this collection, returning `true` if so.
+`containsSlice` checks whether the collection `as` can be found as a slice in this collection, returning `true` if so.
 
 <figure class="diagram">
   <img src="images/containsSlice.1.svg" alt="containsSlice function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
-If the external collection cannot be found as a slice in this collection, it returns `false`.
+If the `as` collection cannot be found as a slice in this collection then it returns `false`.
 
 <figure class="diagram">
   <img src="images/containsSlice.2.svg" alt="containsSlice function">

@@ -12,7 +12,7 @@ trait Collection[A] {
 }
 ~~~
 
-`count` counts how many elements in the collection satisfy the predicate `p`.
+`count` determines how many elements in this collection satisfy the predicate `p`.
 
 <figure class="diagram">
   <img src="images/count.svg" alt="count function">

@@ -13,14 +13,14 @@ trait Collection[A] {
 }
 ~~~
 
-`lastIndexOfSlice` returns the index of the first element where another collection `as` can be found as a slice.
+`lastIndexOfSlice` returns the index of the last element where the collection `as` can be found as a slice.
 
 <figure class="diagram">
   <img src="images/lastIndexOfSlice.1.svg" alt="lastIndexOfSlice function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
-The search can start at a given offset index `j`.
+The search can start at the given offset `j`.
 
 <figure class="diagram">
   <img src="images/lastIndexOfSlice.2.svg" alt="lastIndexOfSlice function">

@@ -12,7 +12,7 @@ trait Collection[A] {
 }
 ~~~
 
-`nonEmpty` returns `true` when the collection has at least one element.
+`nonEmpty` returns `true` when this collection has _at least_ one element.
 
 <figure class="diagram">
   <img src="images/nonEmpty.1.svg" alt="nonEmpty function">

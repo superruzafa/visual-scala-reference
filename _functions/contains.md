@@ -19,7 +19,7 @@ trait Collection[A] {
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
-If no element is equal to that value, `contains` returns `false`.
+If no element is equal to that value then `contains` returns `false`.
 
 <figure class="diagram">
   <img src="images/contains.2.svg" alt="contains function">

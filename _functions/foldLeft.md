@@ -8,11 +8,11 @@ permalink: /foldLeft
 
 ~~~ scala
 trait Collection[A] {
-  def foldLeft[B](z: B)(op: (B, A) ⇒ B): B
+  def foldLeft[B](z: B)(op: (B, A) => B): B
 }
 ~~~
 
-`foldLeft` applies a binary operator `op` to each element, going from left to right, and the previous `op` result. The first time `op` is applied it's fed with the initial value `z`.
+`foldLeft` applies the binary operator `op` to each element, going from left to right, and the previous `op` result. The first time `op` is applied it's fed with the initial value `z`.
 
 <figure class="diagram">
   <img src="images/foldLeft.1.svg" alt="foldLeft function">

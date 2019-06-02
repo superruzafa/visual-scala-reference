@@ -4,8 +4,11 @@
             <span>{{ site.title }}</span>
         </a>
         <div class="searchbox">
-            <input class="searchbox-input" autocomplete="false">
+            <input id="searchbox" class="searchbox-input" autocomplete="false">
         </div>
     </div>
 </header>
-  
+<script>
+  var searchBox = document.getElementById('searchbox');
+  var search = new Search(searchBox);
+</script>

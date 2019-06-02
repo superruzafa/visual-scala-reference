@@ -12,7 +12,7 @@ trait Collection[A] {
 }
 ~~~
 
-`last` returns the last element in the collection.
+`last` returns the last element in this collection.
 
 <figure class="diagram">
   <img src="images/last.1.svg" alt="last function">

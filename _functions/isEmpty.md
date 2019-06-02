@@ -19,7 +19,7 @@ trait Collection[A] {
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
-It only returns `true` when the collection has no elements.
+It only returns `true` on empty collections.
 
 <figure class="diagram">
   <img src="images/isEmpty.2.svg" alt="isEmpty function">

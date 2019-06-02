@@ -12,7 +12,7 @@ trait Collection[A] {
 }
 ~~~
 
-`lastOption` returns the last element of this collection wrapped with `Some`.
+`lastOption` returns the last element of this collection, wrapped with `Some`.
 
 <figure class="diagram">
   <img src="images/lastOption.1.svg" alt="lastOption function">

@@ -3,30 +3,29 @@
 
 \matrix (A) [collection] {
     \node [elements before]; &
-    \node (aj-i) {$a_{j - i}$}; &
+    \node (an-i) {$a_{n - i}$}; &
     \node [elements between]; &
-    \node (aj-1) {$a_{j - 1}$}; &
-    \node (aj) {$a_j$}; &
-    \node [elements after]; &
+    \node (an-1) {$a_{n - 1}$}; &
+    \node (an) {$a_n$}; &
 \\ };
 
-\matrix (B) [collection, below=2 of aj.south east, anchor=north east] {
+\matrix (B) [collection, below=2 of an.south east, anchor=north east] {
     \node [elements before]; &
-    \node (bj-i) {$a^\prime_{j - i}$}; &
+    \node (bn-i) {$a^\prime_{n - i}$}; &
     \node [elements between]; &
-    \node (bj-1) {$a_{j - 1}$}; &
-    \node (bj) {$a_j$}; &
+    \node (bn-1) {$a_{n - 1}$}; &
+    \node (bn) {$a_n$}; &
 \\ };
 
-\foreach \i/\r in {j/=,j-1/=,j-i/\neq}{
+\foreach \i/\r in {n/=,n-1/=,n-i/\neq}{
     \draw [subflow] (a\i) --
         node (eq\i) [badge, flow] {$\r$}
         (b\i);
 }
 
-\draw [<- subflow] (eqj.east) -- +(.5, 0);
-\draw [subflow ->] (eqj) -- (eqj-1);
-\draw [subflow ->, solid dashed solid] (eqj-1) -- (eqj-i);
+\draw [<- subflow] (eqn.east) -- +(.5, 0);
+\draw [subflow ->] (eqn) -- (eqn-1);
+\draw [subflow ->, solid dashed solid] (eqn-1) -- (eqn-i);
 
-\node (b) [element, left=1 of bj-i] {\false};
-\draw [flow ->] (eqj-i.west) .. controls +(-1, 0) and +(0, 1) .. (b.north);
+\node (b) [element, left=1 of bn-i] {\false};
+\draw [flow ->] (eqn-i.west) .. controls +(-1, 0) and +(0, 1) .. (b.north);

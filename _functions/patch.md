@@ -12,7 +12,7 @@ trait Collection[A] {
 }
 ~~~
 
-`patch` creates a collection by replacing `m` elements starting at the index `j` by the collection `bs`.
+`patch` creates a copy of this collection but replaces the `m` elements starting at the index `j` by the collection `bs`.
 
 <figure class="diagram">
   <img src="images/patch.svg" alt="patch function">

@@ -12,14 +12,14 @@ trait Collection[A] {
 }
 ~~~
 
-`sameElements` checks whether this collection has the same elements in the same order than the collection `as`, and returns `true` if so.
+`sameElements` checks whether this collection has the same elements in the same order than the collection `as` and returns `true` if so.
 
 <figure class="diagram">
   <img src="images/sameElements.1.svg" alt="sameElements function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
-This function returns `false` ff at least one element doesn't match its corresponding one in the other collection.
+This function returns `false` if at least one element doesn't match its corresponding in `as`.
 
 <figure class="diagram">
   <img src="images/sameElements.2.svg" alt="sameElements function">

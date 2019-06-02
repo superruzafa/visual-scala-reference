@@ -8,10 +8,12 @@ permalink: /tabulate
 
 ~~~ scala
 object Collection {
-  def tabulate[A](n1: Int, n2: Int,... nm: Int)
-    (f: (Int, Int, ..., Int): => A): Collection[Collection[...Collection[A]]]
+  def tabulate[A](n1: Int, ..., nm: Int)(f: (Int, ..., Int): => A)
+    : Collection[ ... Collection[A] ... ]
 }
 ~~~
+
+`tabulate` creates an n-dimensional collection containing the result of some function `f` applied to a range of integers.
 
 <figure class="diagram">
   <img src="images/tabulate.svg" alt="tabulate function">

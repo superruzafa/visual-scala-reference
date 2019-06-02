@@ -19,7 +19,7 @@ trait Collection[A] {
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
-If no element satisfy `p` then `None` is returned.
+If no element in this collection satisfy `p` then `None` is returned.
 
 <figure class="diagram">
   <img src="images/find.2.svg" alt="find function">

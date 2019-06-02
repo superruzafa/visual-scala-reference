@@ -12,7 +12,7 @@ trait Collection[A] {
 }
 ~~~
 
-`headOption` returns the first element of this collection wrapped with `Some`.
+`headOption` returns the first element of this collection, wrapped with `Some`.
 
 <figure class="diagram">
   <img src="images/headOption.1.svg" alt="headOption function">

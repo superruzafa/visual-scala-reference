@@ -13,14 +13,14 @@ trait Collection[A] {
 }
 ~~~
 
-`indexWhere` returns the index of the first element that satisfy a predicate `p`.
+`indexWhere` returns the index of the first element that satisfy the predicate `p`.
 
 <figure class="diagram">
   <img src="images/indexWhere.1.svg" alt="indexWhere function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
-The search can start at a given offset index `j`.
+The search can start at the given offset `j`.
 
 <figure class="diagram">
   <img src="images/indexWhere.2.svg" alt="indexWhere function">

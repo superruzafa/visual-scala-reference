@@ -7,8 +7,8 @@ permalink: /flatten
 # `flatten`
 
 ~~~ scala
-trait Collection[Collection[A]] {
-  def flatten: Collection[A]
+trait Collection[A] {
+  def flatten[B]: Collection[B]
 }
 ~~~
 
