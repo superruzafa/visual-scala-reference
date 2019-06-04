@@ -45,8 +45,14 @@
     display: none;
     list-style: none;
     margin-top: -16px;
-    padding: 8px;
     position: absolute;
     width: 100%;
+  }
+}
+
+.searchresult {
+  .searchresult__link {
+    display: block;
+    padding: 4px;
   }
 }

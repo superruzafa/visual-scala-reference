@@ -6,21 +6,29 @@ function Search(functions) {
 }
 
 Search.prototype._search = function(query) {
-  const regex = new RegExp(query, 'i');
-  console.log(regex);
-  return this._functions.filter(function(elem) {
-    return elem.name.search(regex) !== -1;
-  });
+  const weights = [
+    { weight: 1000, regex: new RegExp(`^${query}$`, 'i') },
+    { weight: 100,  regex: new RegExp(`^${query}`, 'i') },
+    { weight: 1,    regex: new RegExp(query, 'i') },
+    { weight: 0,    regex: new RegExp('^') }
+  ];
+
+  return this._functions
+    .map(function(f) {
+      const weight = weights.find(w => w.regex.test(f.name)).weight
+      return { function: f, weight };
+    })
+    .filter(r => r.weight > 0)
+    .sort((a, b) => a.weight < b.weight)
+    .map(obj => obj.function)
 }
 
 Search.prototype._inputKeyUp = function(e) {
   this._hideResults();
-  console.clear();
   const query = this._input.value.trim().toLowerCase();
   if (query === "")
     return;
   const results = this._search(query);
-  console.log(results);
   if (results.length > 0) {
     this._clearResults();
     results.forEach(result => this._appendResult(result))
