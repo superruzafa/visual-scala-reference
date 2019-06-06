@@ -37,10 +37,12 @@ Search.prototype._inputKeyUp = function(e) {
 }
 
 Search.prototype._hideResults = function() {
+  this._input.classList.remove('showing-results');
   this._results.style.display = 'none';
 }
 
 Search.prototype._showResults = function() {
+  this._input.classList.add('showing-results');
   this._results.style.display = 'block';
 }
 

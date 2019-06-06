@@ -24,8 +24,16 @@ github_username:  superruzafa
 
 # Build settings
 markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    disable: true
 theme: minima
 plugins:
+
+sass:
+  load_paths:
+    - _sass
+    - /usr/local/bundle/gems/bootstrap-4.3.1/assets/stylesheets
 
 collections:
   functions:

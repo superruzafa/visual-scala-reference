@@ -1,58 +1,142 @@
 ---
 ---
 
-* {
-  margin: 0;
-  padding: 0;
+@import "_bootstrap";
+@import "gruvbox-light";
+
+.diagram {
+  text-align: center;
+  img {
+    max-width: 100%;
+  }
+}
+
+.hljs {
+  display: block;
+  background: $gb-lm-bg0;
+  border-left: 3px solid $gb-lm-bg2;
+  padding: 1rem;
+
+  &.language-scala {
+    .hljs-keyword {
+      color: $gb-lm-light-red;
+    }
+
+    .hljs-class .hljs-title,
+    .hljs-type {
+      color: $gb-lm-light-yellow;
+    }
+
+    .hljs-function .hljs-title {
+      color: $gb-lm-light-green;
+    }
+  }
+}
+
+.logo {
+  span {
+    background: url(logo.svg) no-repeat center center;
+    display: block;
+    height: 64px;
+    margin-bottom: -16px;
+    padding: 16px 0;
+    min-width: 290px;
+    text-indent: -1000em;
+  }
 }
 
 .header {
   background: rgb(220, 50, 47);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-  margin-bottom: 4px;
-  min-height: 64px;
-  position: relative;
-  z-index: 1;
-}
-
-.logo {
-  background: url(logo.svg) no-repeat center center;
-  display: block;
-  height: 64px;
-  float: left;
-  width: 290px;
-  text-indent: -1000em;
+  margin-bottom: calc(4px + 2rem);
 }
 
 .searchbox {
-  margin-left: 290px;
   position: relative;
 
   .searchbox__input {
+    background: #fff;
     border: none;
     border-radius: 4px;
-    display: inline-block;
     line-height: 32px;
-    padding: 0 8px;
+    opacity: .5;
+    padding: 0 1rem;
     margin: 16px 0;
+    transition: opacity .5s ease-out;
     width: 100%;
+
+    &:focus {
+      opacity: 1;
+    }
+
+    &.showing-results {
+      opacity: 1;
+      border-radius: 4px 4px 0 0;
+    }
   }
 
   .searchbox__results {
-    background: white;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    background: #fff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 4px 4px;
     display: none;
     list-style: none;
     margin-top: -16px;
+    max-height: 300px;
+    overflow-y: scroll;
+    padding: 0;
     position: absolute;
     width: 100%;
   }
+
+  .searchresult {
+    .searchresult__link {
+      display: block;
+      padding: .5rem 1rem;
+    }
+  }
 }
 
-.searchresult {
-  .searchresult__link {
-    display: block;
-    padding: 4px;
+.wrapper {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+code {
+  background: #f0f3f3;
+  color: #667b83;
+  font-family: 'IBM Plex Mono', monospace;
+  padding: 0 .5rem;
+}
+
+body {
+  color: #4A5659;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 2rem;
+  margin-bottom: 2rem;
+
+  code {
+    background: none;
+    color: inherit;
+    padding: inherit;
+    margin: inherit;
+  }
+}
+
+html {
+  font-size: 16px;
+  line-height: 1em;
+}
+
+@include media-breakpoint-up(sm) {
+  .logo {
+    float: left;
+  }
+
+  .searchbox {
+    margin-left: 290px;
   }
 }

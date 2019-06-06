@@ -8,16 +8,22 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet">
     <script src="search.js"></script>
-</head>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages/scala.min.js"></script>
+  </head>
 <body>
     {% include header.html %}
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          {{ content }}
-        </div>
+    <div class="container-fluid">
+      <div class="wrapper">
+        {{ content }}
       </div>
     </div>
     {% include footer.html %}
+    <script>
+      hljs.configure({
+        languages: ["scala"]
+      })
+      hljs.initHighlighting();
+    </script>
 </body>
 </html>
