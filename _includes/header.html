@@ -20,7 +20,9 @@
 <script>
   const functions = [
 {%- for f in site.functions -%}
+  {% unless f.missing %}
     { name: "{{ f.title }}", url: "{{ f.permalink }}" },
+  {% endunless %}
 {%- endfor -%}
   ];
   new Search(functions);

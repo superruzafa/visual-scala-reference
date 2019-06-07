@@ -11,6 +11,45 @@
   }
 }
 
+.footer {
+  background: #4A5659;
+  margin-top: 2rem;
+  padding: 1rem;
+
+  a, a:link, a:visited {
+    color: #fff;
+  }
+}
+
+.footer-links {
+  column-count: 2;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.footer-link {
+  line-height: 2rem;
+
+  .with-logo {
+    padding-left: 24px;
+    background-repeat: no-repeat;
+    background-position: left center;
+
+    &.github {
+      background-image: url(assets/github-logo.svg);
+      background-size: 16px;
+    }
+
+    &.scala {
+      background-image: url(assets/scala-logo.svg);
+      background-size: 11px;
+      background-position: 2px center;
+    }
+  }
+}
+
 .hljs {
   display: block;
   background: $gb-lm-bg0;
@@ -29,6 +68,25 @@
 
     .hljs-function .hljs-title {
       color: $gb-lm-light-green;
+    }
+  }
+}
+
+.home-page {
+  .function-list {
+    column-count: 2;
+    column-gap: 2rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .function-item {
+    & + .function-initial {
+      margin-top: 1rem;
+    }
+
+    &.function-initial {
+      border-bottom: 1px solid #e0e0e0;
     }
   }
 }
@@ -132,6 +190,12 @@ html {
 }
 
 @include media-breakpoint-up(sm) {
+  .home-page {
+    .function-list {
+      column-count: 4;
+    }
+  }
+
   .logo {
     float: left;
   }
