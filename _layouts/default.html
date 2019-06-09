@@ -14,15 +14,24 @@
     <link rel="apple-touch-icon" sizes="57x57" href="assets/scala-logo-57x57.png" type="image/png" />
     <link rel="apple-touch-icon" sizes="72x72" href="assets/scala-logo-72x72.png" type="image/png" />
     <link rel="apple-touch-icon" sizes="144x144" href="assets/scala-logo-144x144.png" type="image/png" />
+{% if jekyll.environment == "production" %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-390889-8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-390889-8');
+    </script>
+{% endif %}
   </head>
 <body>
-    {% include header.html %}
+{% include header.html %}
     <div class="wrapper">
       <div class="container-fluid">
         {{ content }}
       </div>
     </div>
-    {% include footer.html %}
+{% include footer.html %}
     <script>
       hljs.configure({
         languages: ["scala"]
