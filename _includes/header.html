@@ -21,7 +21,7 @@
   const functions = [
 {%- for f in site.functions -%}
   {% unless f.missing %}
-    { name: "{{ f.title }}", url: "{{ f.permalink }}" },
+    { name: "{{ f.title }}", url: "{{ f.permalink | relative_url }}" },
   {% endunless %}
 {%- endfor -%}
   ];

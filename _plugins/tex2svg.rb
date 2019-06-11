@@ -60,7 +60,7 @@ module Jekyll
         svgcontent
       rescue Exception => e
         puts e
-        e
+        raise e
       end
     end
   end

@@ -11,7 +11,7 @@ layout: home
   <li class="function-item function-initial">{{ currInitial | upcase }}</li>
   {% endif %}
   <li class="function-item">
-    <a href="{{ function.permalink }}">{{ function.title }}</a>
+    <a href="{{ function.permalink | relative_url }}">{{ function.title }}</a>
   </li>
   {% assign prevInitial = currInitial %}
   {% endunless %}

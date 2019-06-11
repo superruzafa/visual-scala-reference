@@ -1,0 +1,42 @@
+language: ruby
+rvm:
+  - 2.6.2
+
+dist: xenial
+
+env:
+  - JEKYLL_ENV=production
+
+before_install:
+  - sudo apt-get update
+  - >
+    sudo apt-get install -y --no-install-recommends
+    texlive-latex-base
+    texlive-latex-extra
+    libpoppler-glib-dev
+  - >
+    pushd /usr/local/src &&
+    sudo curl -O -L https://github.com/superruzafa/pdf2svg/archive/master.zip &&
+    sudo unzip master.zip &&
+    pushd pdf2svg-master &&
+    sudo ./configure --prefix=/usr/local &&
+    sudo make &&
+    sudo make install &&
+    popd &&
+    popd
+  - gem install bundler
+
+install:
+  - bundle install
+
+script:
+  - bundle exec jekyll build --verbose
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: _site
+  github_token: $GITHUB_TOKEN
+  verbose: true
+  on:
+    branch: master
