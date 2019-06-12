@@ -1,0 +1,65 @@
+---
+---
+
+\tikzset{parent collection/.style={
+    collection,
+    nodes={
+        minimum width=2.25\masterunit
+    }
+}}
+
+\matrix (P) [parent collection] {
+    \node (p1) {}; &
+    \node (p2) {}; &
+    \node [elements between]; &
+    \node (pi) {}; &
+    \node [elements between]; &
+    \node (pn) {}; &
+\\ };
+
+\matrix [subcollection] at (p1) {
+    \node (a1) {$a^1_1$}; &
+    \node [elements between=.5]; &
+    \node (an) {$a^1_n$}; &
+\\ };
+
+\matrix [subcollection] at (p2) {
+    \node (b1) {$a^2_1$}; &
+    \node [elements between=.5]; &
+    \node (bn) {$a^2_m$}; &
+\\ };
+
+\matrix [subcollection] at (pi) {
+    \node (c1) {$a^i_1$}; &
+    \node [elements between=.5]; &
+    \node (cn) {$a^i_p$}; &
+\\ };
+
+\matrix [subcollection] at (pn) {
+    \node (d1) {$a^n_1$}; &
+    \node [elements between=.5]; &
+    \node (dn) {$a^n_q$}; &
+\\ };
+
+\matrix [collection, below=2 of P] {
+    \node (fa1) {$a^1_1$}; &
+    \node [elements between=.5]; &
+    \node (fan) {$a^1_n$}; &
+    \node (fb1) {$a^2_1$}; &
+    \node [elements between=.5]; &
+    \node (fbn) {$a^2_m$}; &
+    \node [elements between]; &
+    \node (fc1) {$a^i_1$}; &
+    \node [elements between=.5]; &
+    \node (fcn) {$a^i_p$}; &
+    \node [elements between]; &
+    \node (fd1) {$a^n_1$}; &
+    \node [elements between=.5]; &
+    \node (fdn) {$a^n_q$}; &
+\\ };
+
+\foreach \i in {a,b,c,d} {
+    \foreach \j in {1,n} {
+        \draw [flow ->] (\i\j) .. controls +(0, -1) and +(0, 1) .. (f\i\j);
+    }
+}

@@ -1,0 +1,61 @@
+---
+---
+
+\tikzset{op/.style={
+    subfunction,
+    inner xsep=.1\masterunit,
+    node contents={\texttt{op}},
+    /function/north io=2,
+    /function/north io sep=.1\masterunit,
+    /function/south io=0,
+    /function/east io=1,
+}}
+
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node [elements between]; &
+    \node (ai) {$a_i$}; &
+    \node [elements between]; &
+    \node (an) {$a_n$}; &
+\\ };
+
+\node (z) [element, left=.5 of A] {\texttt{z}};
+
+\foreach \i in {1,2,i,n}{
+    \draw [flow ->] (a\i.south) -- +(0, -1)
+        node (f\i) [op, below, anchor=north io 2];
+}
+
+\matrix (B) [collection, below=2.5 of A, xshift=-.1\masterunit] {
+    \node (b0) {\texttt{z}}; &
+    \node (b1) {$b_1$}; &
+    \node (b2) {$b_2$}; &
+    \node [elements between]; &
+    \node (bi) {$b_i$}; &
+    \node [elements between]; &
+    \node (bn) {$b_n$}; &
+\\ };
+
+\coordinate (rule) at ($ (a1.south)!.5!(f1.north io 2) $);
+
+\draw [flow ->] (z) -- (z |- rule) coordinate (x) -| (f1.north io 1);
+
+\coordinate (y) at ($ (f1.south)!.5!(b0.north) $);
+\draw [flow ->] (x) -- (z |- y) -| (b0.north);
+
+\draw [flow ->] (f1.east io 1) -- (f1.east io 1 -| b1.north) coordinate (x) -- (b1.north);
+\draw [flow ->] (x) -- (x |- rule) -| (f2.north io 1);
+
+\draw [flow ->] (f2.east io 1) -- (f2.east io 1 -| b2.north) coordinate (x) -- (b2.north);
+\draw [flow] (x) -- (x |- rule) coordinate (last);
+\draw [flow, solid dashed solid] (last) -- (last -| fi.north io 1) coordinate (last);
+\draw [flow ->] (last) -- (fi.north io 1);
+
+\draw [flow ->] (fi.east io 1) -- (fi.east io 1 -| bi.north) coordinate (x) -- (bi.north);
+\draw [flow] (x) -- (x |- rule) coordinate (last);
+\draw [flow, solid dashed solid] (last) -- (last -| fn.north io 1) coordinate (last);
+\draw [flow ->] (last) -- (fn.north io 1);
+
+\draw [flow ->] (fn.east io 1) -| (bn.north);
+

@@ -1,0 +1,62 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node [elements between=.5]; &
+    \node (a1+m) {$a_{1 + m}$}; &
+    \node (a2+m) {$a_{2 + m}$}; &
+    \node [elements between]; &
+    \node (ai) {$a_i$}; &
+    \node [elements between=.5]; &
+    \node (ai+m) {$a_{i + m}$}; &
+    \node [elements after]; &
+\\ };
+
+\matrix (B) [collection, below=3 of A] {
+    \node (bi) {$a_i$}; &
+    \node [elements between=.5]; &
+    \node (bi+m) {$a_{i + m}$}; &
+\\ };
+
+\foreach \i/\j in {1/.2,2/.7,i/.2}{
+    \braceflow[-\j]{(a\i.south west)}{(a\i+m.south east)}
+    \coordinate (brace\i) at (lastbrace);
+}
+
+\braceflow{(bi.north west)}{(bi+m.north east)}
+
+\coordinate (x) at ($ (brace2)!.33!(lastbrace) $);
+\coordinate (rule) at (brace2 |- x);
+
+\foreach \i/\r in {1/\neq,2/\neq,i/=}{
+    \node (eq\i) at (brace\i |- rule)
+        [badge, flow] {$\r$};
+}
+
+\coordinate (x) at ($ (eq1)!.5!(lastbrace) $);
+\coordinate (rule) at (eq1 |- x);
+
+\foreach \i in {1,2,i}{
+    \draw [flow] (brace\i) -- (eq\i);
+    \draw [flow] (eq\i) -- (eq\i |- rule) -| (lastbrace);
+}
+
+\path [draw=none, name path=p1] (brace1) -- +(0, -1);
+\path [draw=none, name path=p2] ($ (a2.south west) + (0, -.8) $) -- +(5, 0);
+
+\path [name intersections={of=p1 and p2, by={a}}] (a) pic [rotate=90] {bridge flow};
+\draw [flow] ($ (a) + (-.5, 0) $) -- +(1, 0);
+
+\draw [<- flow] (eq1.west) -- +(-.5, 0);
+\draw [flow ->] (eq1) -- (eq2);
+\draw [flow ->, solid dashed solid] (eq2) -- (eqi);
+
+\coordinate (x) at ($ (eqi)!.5!(bracei) $);
+
+\node (b) at (ai+m |- B) [element] {$i$};
+\draw [flow ->] (ai) |- (x) -| (b);
+
+\path (x) pic {bridge flow};
+\draw (x) -- +(0, .25) -- +(0, -.25);

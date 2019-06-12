@@ -1,0 +1,26 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node [elements between]; &
+    \node (ai) {$a_i$}; &
+    \node (ai+1) {$a_{i+1}$}; &
+    \node [elements between]; &
+    \node (an-1) {$a_{n-1}$}; &
+    \node (an) {$a_n$}; &
+\\ };
+
+\foreach \i/\r in {1/false,2/true,i/true,i+1/false,n-1/true,n/false}{
+    \draw [subflow ->] (a\i.north) -- +(0, .5)
+        node (p) [subfunction, above] {\texttt{p}};
+    \draw [subflow ->] (p.north io 1) -- +(0, .5)
+        node [subelement, above] {\texttt{\r}};
+}
+
+\node (b) [below=2 of A] {$\displaystyle \sum$};
+
+\foreach \i in {2,i,n-1}{
+    \draw [flow ->, out=270, in=90] (a\i.south) to node [badge, flow] {$+1$} (b.north);
+}

@@ -1,0 +1,29 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node [elements between]; &
+    \node (ai) {$a_i$}; &
+    \node [elements after]; &
+\\ };
+
+\foreach \i in {1,2,i}{
+    \draw [flow ->] (a\i.south) -- +(0, -.5)
+        node (f\i) [subfunction, below] {\texttt{f}};
+}
+
+\draw [throw ->] (f1.west) -| +(-.5, -.75)
+    node [exception=MatchError, font=\tiny, below];
+\draw [throw ->] (f2.east) -| +(.5, -.75)
+    node [exception=MatchError, font=\tiny, below];
+\draw [flow ->] (fi.south io 1) -- node [partial] {} +(0, -.5)
+    node (b) [element, below] {$b$};
+\draw [flow ->] (b.south) -- +(0, -.5)
+    node [some={$b$}, element, below];
+
+\draw [<- subflow] (a1.north) arc [<- iterate];
+\draw [subflow ->, iterate ->] (a1.north) to (a2.north);
+\draw [subflow ->, dashed] (a2.north) arc [iterate ->];
+\draw [<- subflow, dashed] (ai.north) arc [<- iterate];

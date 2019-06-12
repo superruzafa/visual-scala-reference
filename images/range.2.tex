@@ -1,0 +1,22 @@
+---
+---
+
+\matrix (A) [collection, nodes={font=\footnotesize}] {
+    \node (a1) [align=center] {$\texttt{start}$}; &
+    \node (a2) [align=center] {$\texttt{start}$\\$+$\\$\texttt{step}$}; &
+    \node [elements between]; &
+    \node (ai) [align=center] {$\texttt{start}$\\$+$\\$i\cdot \texttt{step}$}; &
+    \node [elements between]; &
+    \node (an) [align=center] {$\texttt{start}$\\$+$\\$n\cdot \texttt{step}$}; &
+\\ };
+
+\draw [collection element line width, dotted] (an.north east) -- ++(1, 0) -- ++(0, -1) -- ++(-1, 0);
+\draw [dashed] ($ (an.south east) + (.25, -.5) $) -- ($ (an.north east) + (.25, .5) $)
+    node [element, above] {\texttt{end}};
+
+\draw [<- subflow] (a1.north) -- +(0, .5) node [element, above] {\texttt{start}};
+\draw [subflow ->, iterate ->] (a1.north) to node [above] {$+\texttt{step}$} (a2.north);
+\draw [subflow ->, iterate ->, dashed] (a2.north) arc;
+\draw [<- subflow, <- iterate, dashed] (ai.north) arc node [above] {$+\texttt{step}$};
+\draw [subflow ->, iterate ->, dashed] (ai.north) arc;
+\draw [<- subflow, <- iterate, dashed] (an.north) arc node [above] {$+\texttt{step}$};

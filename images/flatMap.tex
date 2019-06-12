@@ -1,0 +1,59 @@
+---
+---
+
+\tikzset{fun/.style={
+    function,
+    /function/south io width=.75\masterunit,
+    /function/south io narrow width=.65\masterunit,
+}}
+\newlength\iowidth
+\setlength\iowidth{.75\masterunit}
+
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node [elements between]; &
+    \node (an) {$a_n$}; &
+\\ };
+
+\matrix [collection, below=4.75 of A] {
+    \node (c11) {$b_{1_1}$}; &
+    \node (c12) {$b_{1_2}$}; &
+    \node (c13) {$b_{1_3}$}; &
+    \node (c21) {$b_{2_1}$}; &
+    \node (c22) {$b_{2_2}$}; &
+    \node [elements between]; &
+    \node (cn1) {$b_{n_1}$}; &
+    \node [elements between]; &
+    \node (cnm) {$b_{n_m}$}; &
+\\ };
+
+\matrix (B1) [subcollection, above=1 of c12] {
+    \node (b11) {$b_{1_1}$}; &
+    \node (b12) {$b_{1_2}$}; &
+    \node (b13) {$b_{1_3}$}; &
+\\ };
+\matrix (B2) [subcollection, above=1 of c21.north east] {
+    \node (b21) {$b_{2_1}$}; &
+    \node (b22) {$b_{2_2}$}; &
+\\ };
+\coordinate (x) at ($ (cn1.north west)!.5!(cnm.north east) $);
+\matrix (Bn) [subcollection, above=1 of x] {
+    \node (bn1) {$b_{n_1}$}; &
+    \node [elements between]; &
+    \node (bnm) {$b_{n_m}$}; &
+\\ };
+
+\foreach \i in {1,2,n}{
+    \node (f\i) [fun, above=1 of B\i] {\texttt{f}};
+    \draw [flow ->, out=270, in=90] (a\i) to (f\i.north io 1);
+
+    \begin{scope}[dashed, out=270, in=90]
+        \draw ($ (f\i.south io 1) + (-.5\iowidth, 0) $) to (B\i.north west);
+        \draw ($ (f\i.south io 1) + (.5\iowidth, 0) $) to (B\i.north east);
+    \end{scope}
+}
+
+\foreach \i in {11,12,13,21,22,n1,nm}{
+    \draw [flow ->, out=270, in=90] (b\i) to (c\i);
+}

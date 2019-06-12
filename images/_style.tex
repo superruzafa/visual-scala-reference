@@ -1,0 +1,518 @@
+\newlength{\defaultpenwidth}
+\setlength{\defaultpenwidth}{0.04\masterunit}
+
+\definecolor{defaultpencolor}{RGB}{43, 43, 43}
+
+\tikzset{every path/.style={
+    draw=defaultpencolor,
+}}
+
+\tikzset{every node/.style={
+    inner sep=0pt,
+    outer sep=0pt,
+    node distance=0,
+    text=defaultpencolor,
+}}
+
+\tikzset{element/.style={
+    font=\large,
+    inner sep=0.1\masterunit,
+}}
+
+\tikzset{subelement/.style={
+    font=\small,
+    inner sep=0.1\masterunit,
+}}
+
+\tikzset{collection element line width/.style={
+    line width=\defaultpenwidth,
+}}
+
+\tikzset{subcollection element line width/.style={
+    line width=.75\defaultpenwidth,
+}}
+
+\tikzset{collection element/.style={
+    collection element line width,
+    draw,
+    element,
+    inner sep=0,
+    minimum height=\masterunit,
+    minimum width=\masterunit,
+}}
+
+\tikzset{collection/.style={
+    column sep=-\defaultpenwidth,
+    nodes={
+        collection element,
+    },
+    outer sep=-0.5\defaultpenwidth,
+    row sep=-\defaultpenwidth,
+}}
+
+\tikzset{subcollection/.style={
+    collection,
+    row sep=-0.75\defaultpenwidth,
+    nodes={
+        subcollection element line width,
+        minimum width=.75\masterunit,
+        minimum height=.75\masterunit,
+        font=\small,
+    },
+}}
+
+\tikzset{empty collection/.style={
+    decorate,
+    decoration={
+        amplitude=0.025\masterunit,
+        angle=45,
+        border,
+        segment length=0.05\masterunit,
+    },
+    draw,
+    line width=.3\defaultpenwidth,
+    minimum height=\masterunit,
+    minimum width=0.3\masterunit,
+    node contents={},
+}}
+
+\tikzset{tuple of collections/.style={
+    collection,
+    inner sep=.25\masterunit,
+    left delimiter=(,
+    right delimiter=),
+}}
+
+\tikzset{tuple separator/.style={
+    draw=none,
+    minimum width=0,
+    text height=\masterunit,
+    font=\Huge,
+    node contents={\,,\,\,},
+}}
+
+\tikzset{some/.style={
+    draw,
+    line width=\defaultpenwidth,
+    rectangle split,
+    rectangle split parts=2,
+    rectangle split draw splits=false,
+    node contents={\footnotesize{\texttt{Some}} \nodepart{two} #1},
+    minimum size=.75\masterunit,
+}}
+
+\tikzset{none/.style={
+    draw,
+    line width=\defaultpenwidth,
+    node contents={\footnotesize{\texttt{None}}},
+    minimum size=.75\masterunit,
+}}
+
+\tikzset{exception draw/.style={
+    line width=.02\masterunit,
+    decorate,
+    decoration={
+        zigzag,
+        segment length=0.1\masterunit,
+        amplitude=0.0125\masterunit,
+    },
+}}
+
+\tikzset{throw ->/.style={
+    exception draw,
+    ->,
+}}
+
+\tikzset{exception/.style={
+    draw,
+    exception draw,
+    inner sep=.1\masterunit,
+    node contents=\texttt{#1},
+    tips=false,
+}}
+
+
+\tikzset{subexception/.style={
+    exception={#1},
+    font=\footnotesize,
+}}
+
+\newlength\flowwidth
+\setlength\flowwidth{.75\defaultpenwidth}
+
+\tikzset{flow/.style={
+    line width=\flowwidth,
+}}
+
+\tikzset{flow ->/.style={
+    flow,
+    -{Triangle[flex,fill=defaultpencolor, angle'=30]},
+}}
+
+\tikzset{<- flow/.style={
+    flow,
+    {Triangle[flex,fill=defaultpencolor, angle'=30]}-,
+}}
+
+\newlength\subflowwidth
+\setlength\subflowwidth{.5\defaultpenwidth}
+
+\tikzset{subflow/.style={
+    line width=\subflowwidth,
+}}
+
+\tikzset{subflow ->/.style={
+    subflow,
+    -{Triangle[flex,fill=defaultpencolor, angle'=30]},
+}}
+
+\tikzset{<- subflow/.style={
+    subflow,
+    {Triangle[flex,fill=defaultpencolor, angle'=30]}-,
+}}
+
+\tikzset{bridge flow/.pic={
+    \fill [white] circle [radius=.09\masterunit];
+    % \draw [flow, -, color=gray, draw opacity=.25] (-.1\masterunit, 0) arc [start angle=180, end angle=360, x radius=.1\masterunit, y radius=.05\masterunit];
+    \draw [flow, -] (-.1\masterunit, 0) arc [start angle=180, end angle=0, radius=.1\masterunit];
+}}
+
+\tikzset{jump/.pic={
+    \begin{scope}[rotate=#1]
+    \fill [white] circle [radius=.09\masterunit];
+    \draw [line cap=rect] (-.1\masterunit, 0) arc [start angle=180, end angle=0, x radius=.1\masterunit, y radius=.075\masterunit];
+    \draw [line cap=rect] (0, .1\masterunit) -- +(0, -.2\masterunit);
+    \end{scope}
+}}
+
+\tikzset{solid dashed solid/.style={
+    /utils/exec=\csname tikz@options\endcsname,
+    decorate,
+    decoration={
+        show path construction,
+        lineto code={
+            \path [tips=false] coordinate (_a) at ($ (\tikzinputsegmentfirst)!.15!(\tikzinputsegmentlast) $);
+            \path [tips=false] coordinate (_b) at ($ (\tikzinputsegmentfirst)!.85!(\tikzinputsegmentlast) $);
+            \draw [tips=false, solid] (\tikzinputsegmentfirst) -- (_a);
+            \draw [tips=false, dashed] (_a) -- (_b);
+            \draw [solid] (_b) -- (\tikzinputsegmentlast);
+        }
+    },
+}}
+
+\tikzset{solid dashed/.style={
+    /utils/exec=\csname tikz@options\endcsname,
+    decorate,
+    decoration={
+        show path construction,
+        lineto code={
+            \path [tips=false] coordinate (_a) at ($ (\tikzinputsegmentfirst)!.4!(\tikzinputsegmentlast) $);
+            \draw [tips=false, solid] (\tikzinputsegmentfirst) -- (_a);
+            \draw [dashed] (_a) -- (\tikzinputsegmentlast);
+        }
+    },
+}}
+
+\tikzset{dashed solid/.style={
+    /utils/exec=\csname tikz@options\endcsname,
+    decorate,
+    decoration={
+        show path construction,
+        lineto code={
+            \path [tips=false] coordinate (_a) at ($ (\tikzinputsegmentfirst)!.6!(\tikzinputsegmentlast) $);
+            \draw [tips=false, dashed] (\tikzinputsegmentfirst) -- (_a);
+            \draw [solid] (_a) -- (\tikzinputsegmentlast);
+        }
+    },
+}}
+
+
+\tikzset{
+    elements before/.style={
+        /utils/exec=\csname tikz@options\endcsname,
+        alias=this,
+        draw=none,
+        minimum width=#1\masterunit,
+        node contents={},
+        append after command={
+            \pgfextra{
+                \draw[dashed solid] (this.north west) -- (this.north east);
+                \draw[dashed solid] (this.south west) -- (this.south east);
+            }
+        },
+    },
+    elements before/.default=.5,
+}
+
+\tikzset{
+    elements between/.style={
+        /utils/exec=\csname tikz@options\endcsname,
+        alias=this,
+        draw=none,
+        minimum width=#1\masterunit,
+        node contents={},
+        append after command={
+            \pgfextra{
+                \draw[solid dashed solid] (this.north west) -- (this.north east);
+                \draw[solid dashed solid] (this.south west) -- (this.south east);
+            }
+        },
+    },
+    elements between/.default=1.25,
+}
+
+\tikzset{
+    elements after/.style={
+        /utils/exec=\csname tikz@options\endcsname,
+        alias=this,
+        draw=none,
+        minimum width=#1\masterunit,
+        node contents={},
+        append after command={
+            \pgfextra{
+                \draw[solid dashed] (this.north west) -- (this.north east);
+                \draw[solid dashed] (this.south west) -- (this.south east);
+            }
+        },
+    },
+    elements after/.default=.5,
+}
+
+\tikzset{
+    vertical elements before/.style={
+        rotate=90,
+        elements before=#1,
+    }
+}
+
+\tikzset{
+    vertical elements between/.style={
+        rotate=90,
+        elements between=#1,
+    }
+}
+
+\tikzset{
+    vertical elements after/.style={
+        rotate=-90,
+        elements after=#1,
+    }
+}
+
+\tikzset{key to value/.style={
+    collection element line width,
+    decorate,
+    decoration={
+        show path construction,
+        lineto code={
+            /utils/exec=\csname tikz@options\endcsname,
+            \fill (\tikzinputsegmentfirst) [white] circle [radius=.15\masterunit];
+            \draw ($ (\tikzinputsegmentfirst) + (0, .15\masterunit) $) [draw, line cap=rect] arc [start angle=90, end angle=270, radius=.15\masterunit];
+
+            \fill [defaultpencolor] (\tikzinputsegmentfirst) circle [radius=.05\masterunit];
+            \draw (\tikzinputsegmentfirst) [flow, defaultpencolor, -Triangle] -- (\tikzinputsegmentlast);
+        }
+    }
+}}
+
+\tikzset{function/.style={
+    shape=function,
+    line width=.75\defaultpenwidth,
+    minimum width=.75\masterunit,
+    minimum height=.75\masterunit,
+    /function/io width=.3\masterunit,
+    /function/io narrow width=.2\masterunit,
+    /function/io height=.15\masterunit,
+    /function/io sep=.2\masterunit,
+}}
+
+\tikzset{subfunction/.style={
+    shape=function,
+    inner xsep=.15\masterunit,
+    inner ysep=.2\masterunit,
+    line width=.5\defaultpenwidth,
+    /function/io width=.2\masterunit,
+    /function/io narrow width=.133\masterunit,
+    /function/io height=.1\masterunit,
+    /function/io sep=.1\masterunit,
+}}
+
+\tikzset{horizontal subfunction/.style={
+    subfunction,
+    inner xsep=.2\masterunit,
+    inner ysep=.15\masterunit,
+    line width=.5\defaultpenwidth,
+    /function/north io=0,
+    /function/south io=0,
+    /function/east io=1,
+    /function/west io=1,
+}}
+
+\tikzset{partial/.style={
+    draw,
+    flow,
+    minimum height=4\defaultpenwidth,
+    minimum width=4\defaultpenwidth,
+    strike out,
+}}
+
+\tikzset{
+    brace flow/.default=0.2,
+    brace flow/.code={
+        \ifdim #1pt<0pt \tikzset{
+            flow,
+            decorate,
+            decoration={
+                brace,
+                mirror,
+                amplitude=.2\masterunit,
+                raise=-#1\masterunit,
+            }
+        } \else \tikzset{
+            flow,
+            decorate,
+            decoration={
+                brace,
+                amplitude=.2\masterunit,
+                raise=#1\masterunit,
+            }
+        } \fi
+    }
+}
+
+% distance, from, to
+\newcommand\braceflow[3][.2]{
+    \draw [brace flow=#1] #2 -- #3;
+    \ifdim #1pt<0pt
+        \coordinate (lastbrace) at ($ #2!.5!#3 + (0, -.2) + (0, #1) $);
+    \else
+        \coordinate (lastbrace) at ($ #2!.5!#3 + (0, .2) + (0, #1) $);
+    \fi
+}
+
+\tikzset{measure width/.style={
+    line width=0.02\masterunit,
+}}
+
+\tikzset{measure/.style={
+    measure width,
+    -{Triangle[angle'=30]},
+}}
+
+\newcommand\measure[4][.5]{
+    \draw [measure width]
+        (#3) -- ++(0, #1) coordinate (last measure left) -- +(0, .1) -- +(0, -.1)
+        (#4) -- ++(0, #1) coordinate (last measure right) -- +(0, .1) -- +(0, -.1);
+    \node (last measure) [outer sep=.1\masterunit] at ($ (last measure left)!.5!(last measure right) $) {#2};
+    \draw [measure] (last measure) -- (last measure left);
+    \draw [measure] (last measure) -- (last measure right);
+}
+
+\newcommand\bottomrightmeasure[3]{
+    \draw [measure width]
+        (#2) -- ++(0, -.6)
+        (#3) -- ++(0, -.6);
+    \coordinate (_m1) at ($ (#2) + (0, -.5) $);
+    \coordinate (_m2) at ($ (#3) + (0, -.5) $);
+    \node [outer sep=.1\masterunit, anchor=south west] (_mn) at (_m2) {#1};
+    \draw [measure] ($ (_m1) + (-.5, 0) $) -- (_m1);
+    \draw [measure] (_mn.south east) -- (_m2);
+}
+
+\tikzset{big arrow/.style={
+  draw,
+  line width=\defaultpenwidth,
+  minimum height=.4\masterunit,
+  minimum width=.3\masterunit,
+  node contents={},
+  single arrow,
+  single arrow tip angle=60,
+  single arrow head extend=.02\masterunit,
+}}
+
+\tikzset{<- iterate/.style={
+    bend right=45,
+    start angle=30,
+    delta angle=60,
+    x radius=.75,
+    y radius=.5
+}}
+
+\tikzset{iterate ->/.style={
+    bend left=45,
+    delta angle=-60,
+    start angle=150,
+    x radius=.75,
+    y radius=.5
+}}
+
+\tikzset{iterate up/.style={
+    bend left=45,
+    delta angle=-60,
+    start angle=240,
+    x radius=.5,
+    y radius=.75
+}}
+
+\tikzset{iterate down/.style={
+    bend right=45,
+    delta angle=60,
+    start angle=120,
+    x radius=.5,
+    y radius=.75
+}}
+
+\tikzset{next/.style={
+    postaction={
+        decorate,
+        decoration={
+            pre=moveto,
+            pre length=.1\masterunit,
+            raise=.1\masterunit,
+            text along path,
+            text=next,
+            text align=left,
+        },
+        draw=none,
+        tips=false,
+    }
+}}
+
+\tikzset{next reversed/.style={
+    postaction={
+        decorate,
+        decoration={
+            pre=moveto,
+            pre length=.1\masterunit,
+            raise=.1\masterunit,
+            text along path,
+            text=next,
+            text align=left,
+            reverse path
+        },
+        draw=none,
+        tips=false,
+    }
+}}
+
+\tikzset{badge/.style={
+    draw,
+    circle,
+    fill=white,
+    minimum size=.4\masterunit
+}}
+
+\newcommand\true{\texttt{true}}
+\newcommand\false{\texttt{false}}
+
+\makeatletter
+\newcommand\currentcoordinate{\the\tikz@lastxsaved,\the\tikz@lastysaved}
+\makeatother
+
+\newcommand{\drawbg}{
+     \begin{scope}[on background layer]
+         \coordinate (_a) at ($ (current bounding box.south west) + (-.5, -.5) $);
+         \coordinate (_b) at ($ (current bounding box.north east) + (.5, .5) $);
+         \fill [white] (_a) rectangle (_b);
+     \end{scope}
+}

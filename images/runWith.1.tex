@@ -1,0 +1,32 @@
+---
+---
+
+\node (f) [function] {$f$};
+\node (g) [function, right=.5 of f] {\texttt{g}};
+\coordinate (x) at ($ (f)!.5!(g) $);
+\node (rw) at (x) [function, minimum width=2.5\masterunit, minimum height=3\masterunit] {};
+
+\draw [flow ->] (f.south io 1) -- node [partial] {} +(0, -.5)
+    node (b) [element, below] {$y$};
+
+\draw [flow ->] (b) -- (b -| x) coordinate (y) -- (x |- g.north io 1) -- ++(0, .375) coordinate (b) -| (g.north io 1);
+\draw [<- flow] (f.north io 1) |- ($ (b) + (0, .125) $) -- (rw.north io 1) -- +(0, .5)
+    node [element, above] {$x$};
+\draw [flow, dashed] (y) -- (rw.south io 1);
+\draw [flow ->] (rw.south io 1) -- +(0, -.5)
+    node [element, below] {\true};
+
+\node (g2) [function, left=3 of f] {\texttt{g}};
+\node (f2) [function, left=.5 of g2] {$f$};
+
+\draw [<- flow] (f2.north io 1) -- +(0, .5)
+    node [element, above] {$x$};
+\draw [flow ->] (f2.south io 1) -- node [partial] {} +(0, -.5)
+    node [element, below] {$y$};
+\draw [<- flow] (g2.north io 1) -- +(0, .5)
+    node [element, above] {$y$};
+\draw [flow ->] (g2.south io 1) -- +(0, -.5)
+    node [element, below] {$u$};
+
+\coordinate (x) at ($ (g2.east)!.5!(rw.west) $);
+\node at (g2.west -| x) [big arrow];

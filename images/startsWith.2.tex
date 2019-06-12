@@ -1,0 +1,31 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node [elements before]; &
+    \node (aj) {$a_j$}; &
+    \node (aj+1) {$a_{j + 1}$}; &
+    \node [elements between]; &
+    \node (aj+m) {$a_{j + m}$}; &
+    \node [elements after]; &
+\\ };
+
+\matrix (B) [collection, below=2 of aj.south west, anchor=north west] {
+    \node (bj) {$a_j$}; &
+    \node (bj+1) {$a_{j + 1}$}; &
+    \node [elements between]; &
+    \node (bj+m) {$a_{j + m}$}; &
+\\ };
+
+\foreach \i in {j,j+1,j+m}{
+    \draw [subflow] (a\i) --
+        node (eq\i) [badge, flow] {$=$}
+        (b\i);
+}
+
+\draw [<- subflow] (eqj.west) -- +(-.5, 0);
+\draw [subflow ->] (eqj) -- (eqj+1);
+\draw [subflow ->, solid dashed solid] (eqj+1) -- (eqj+m);
+
+\node (b) [element, right=1 of B] {\true};
+\draw [flow ->] (eqj+m.east) .. controls +(1, 0) and +(0, 1) .. (b.north);

@@ -1,0 +1,31 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node [elements between]; &
+    \node (ai) {$a_i$}; &
+    \node [elements after]; &
+\\ };
+
+\matrix (B) [collection, below=2 of A.south west, anchor=north west] {
+    \node (b1) {$a_1$}; &
+    \node (b2) {$a_2$}; &
+    \node [elements between]; &
+    \node (bi) {$a^\prime_i$}; &
+    \node [elements after]; &
+\\ };
+
+\foreach \i/\c in {1/=,2/=,i/\neq}{
+    \draw [subflow] (a\i) --
+        node (eq\i) [badge, flow] {$\c$}
+        (b\i);
+}
+
+\draw [<- subflow] (eq1.west) -- +(-.5, 0);
+\draw [subflow ->] (eq1) -- (eq2);
+\draw [subflow ->, solid dashed solid] (eq2) -- (eqi);
+
+\node (b) [element, right=1 of bi] {\false};
+\draw [flow ->] (eqi.east) .. controls +(1, 0) and +(0, 1) .. (b.north);

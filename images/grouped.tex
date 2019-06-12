@@ -1,0 +1,46 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node {$a_1$}; &
+    \node [elements between]; &
+    \node {$a_{\small{\texttt{m}}}$}; &
+    \node {$a_{\small{\texttt{m}} + 1}$}; &
+    \node [elements between]; &
+    \node {$a_{2 \cdot \small{\texttt{m}}}$}; &
+    \node [elements between]; &
+    \node [xscale=0.965] {$a_{n \cdot \small{\texttt{m}} + 1}$}; &
+    \node [elements between=.9]; &
+    \node [xscale=0.965] {$a_{n \cdot \small{\texttt{m}} + p}$}; &
+\\ };
+
+\matrix (I1) [collection, below=3 of A] {
+    \node {$a_1$}; &
+    \node [elements between]; &
+    \node {$a_{\small{\texttt{m}}}$}; &
+\\ };
+
+\matrix (I2) [collection, below=1 of I1] {
+    \node {$a_{\small{\texttt{m}} + 1}$}; &
+    \node [elements between]; &
+    \node {$a_{2 \cdot \small{\texttt{m}}}$}; &
+\\ };
+
+\matrix (In) [collection, below=1.5 of I2.south west, anchor=north west] {
+    \node [xscale=0.965] {$a_{n \cdot \small{\texttt{m}} + 1}$}; &
+    \node [elements between=.9]; &
+    \node [xscale=0.965] {$a_{n \cdot \small{\texttt{m}} + p}$}; &
+\\ };
+
+\draw [<- flow, iterate up, next] (I1.west) arc;
+\draw [flow ->, iterate down, next reversed] (I1.west) to (I2.west);
+\draw [flow ->, dashed, iterate down] (I2.west) arc;
+\draw [<- flow, dashed, iterate up, next] (In.west) arc;
+
+\measure{\texttt{m}}{I1.north west}{I1.north east}
+\coordinate (m1) at (last measure);
+\measure{\texttt{m}}{I2.north west}{I2.north east}
+\measure{$p \leq \texttt{m}$}{In.north west}{In.north east}
+
+\coordinate (x) at ($ (A.south)!.5!(m1) $);
+\node at (x) [big arrow, rotate=-90] {};

@@ -1,0 +1,26 @@
+---
+title: reduceLeft
+layout: function
+permalink: /reduceLeft
+---
+
+# `reduceLeft`
+
+~~~ scala
+trait Collection[A] {
+  def reduceLeft[B :> A](op: (B, A) => B): B
+}
+~~~
+
+`reduceLeft` applies a binary operator `op` to each element, going from left to right, and the previous `op` result. The first time `op` is applied it's fed with the two first elements.
+
+<figure class="diagram">
+  <img src="images/reduceLeft.1.svg" alt="reduceLeft function">
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
+</figure>
+
+<figure class="diagram">
+  <img src="images/reduceLeft.2.svg" alt="reduceLeft function">
+  <!-- <figcaption class="diagram-desc"></figcaption> -->
+</figure>
+

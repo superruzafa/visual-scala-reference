@@ -1,0 +1,20 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node [elements between]; &
+    \node (ai) {$a_i$}; &
+    \node [elements between]; &
+    \node (an) {$a_n$}; &
+\\ };
+
+\draw [flow ->] (ai.south) -- +(0, -1)
+    node (b) [element, below=1 of ai] {$a_i$};
+
+\matrix [matrix of math nodes, nodes={inner ysep=.125\masterunit}, row sep=.125\masterunit, left delimiter=\{, right=.5 of b] {
+  a_i < a_j,\, j \in [1, i - 1] \\
+  a_i \leq a_k,\, k \in [i + 1, n] \\
+};
+

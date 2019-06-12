@@ -1,0 +1,18 @@
+title: Visual Scala Reference
+email: superruzafa@gmail.com
+description: >-
+  An awesome guide to the most common Scala collection functions
+baseurl: "/visual-scala-reference"
+url: ""
+github_username:  superruzafa
+
+markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    disable: true
+theme: minima
+plugins:
+
+collections:
+  functions:
+    output: true

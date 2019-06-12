@@ -1,0 +1,56 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node (a3) {$a_3$}; &
+    \node [elements between]; &
+    \node (ai-1) {$a_{i-1}$}; &
+    \node (ai) {$a_i$}; &
+    \node [elements between]; &
+    \node (an-1) {$a_{n-1}$}; &
+    \node (an) {$a_n$}; &
+\\ };
+
+\matrix [tuple of collections, below=2 of A] {
+    \node (b1) {$a_1$}; &
+    \node (b3) {$a_3$}; &
+    \node [elements between]; &
+    \node (bi-1) {$a_{i-1}$}; &
+    \node [elements between]; &
+    \node (bn-1) {$a_{n-1}$}; &
+    \node [tuple separator]; &
+    \node (b2) {$a_2$}; &
+    \node [elements between]; &
+    \node (bi) {$a_i$}; &
+    \node [elements between]; &
+    \node (bn) {$a_n$}; &
+\\ };
+
+\foreach \i/\r in {1/true,2/false,3/true,i-1/true,i/false,n-1/true,n/false}{
+    \node (f) [subfunction, above=.5 of a\i] {\texttt{p}};
+    \node (r) [subelement, above=.5 of f] {\texttt{\r}};
+    \draw [subflow ->] (a\i) -- (f.south io 1);
+    \draw [subflow ->] (f.north io 1) -- (r);
+}
+
+\draw [draw=none, name path=p1] (a1.south)   .. controls +(0, -1) and +(0, 1) .. (b1.north);
+\path [draw=none, name path=p2] (a2.south)   .. controls +(0, -2) and +(0, 1) .. (b2.north);
+\path [draw=none, name path=p3] (a3.south)   .. controls +(0, -1) and +(0, 1) .. (b3.north);
+\draw [draw=none, name path=pi-1] (ai-1.south) .. controls +(0, -1) and +(0, 1) .. (bi-1.north);
+\draw [draw=none, name path=pi] (ai.south)   .. controls +(0, -1) and +(0, 1) .. (bi.north);
+\draw [draw=none, name path=pn-1] (an-1.south) .. controls +(0, -1) and +(0, 1) .. (bn-1.north);
+\draw [draw=none, name path=pn] (an.south)   .. controls +(0, -1) and +(0, 1) .. (bn.north);
+
+\draw [flow ->] (a1.south) .. controls +(0, -1) and +(0, 1) .. (b1.north);
+\draw [flow ->] (an-1.south) .. controls +(0, -1) and +(0, 1) .. (bn-1.north);
+\draw [flow ->] (a3.south) .. controls +(0, -1) and +(0, 1) .. (b3.north);
+\path [name intersections={of=p2 and p3, by={a}}] (a) pic [rotate=30, yshift=-.3] {bridge flow};
+\draw [flow ->] (ai-1.south) .. controls +(0, -1) and +(0, 1) .. (bi-1.north);
+\path [name intersections={of=p2 and pi-1, by={a}}] (a) pic [rotate=25, xshift=-1, yshift=.6] {bridge flow};
+\path [name intersections={of=p2 and pn-1, by={a}}] (a) pic [rotate=30, yshift=1.7] {bridge flow};
+\path [name intersections={of=pi and pn-1, by={a}}] (a) pic [rotate=19] {bridge flow};
+\draw [flow ->] (a2.south) .. controls +(0, -2) and +(0, 1) .. (b2.north);
+\draw [flow ->] (ai.south) .. controls +(0, -1) and +(0, 1) .. (bi.north);
+\draw [flow ->] (an.south) .. controls +(0, -1) and +(0, 1) .. (bn.north);

@@ -1,0 +1,9 @@
+---
+---
+
+\node (A) [empty collection];
+
+\bottomrightmeasure{$n = 0$}{A.south west}{A.south east}
+
+\node (b) [element, below=1 of _mn] {\true};
+\draw [flow ->] (_mn) -- (b);

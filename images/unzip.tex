@@ -1,0 +1,37 @@
+---
+---
+
+\matrix (A) [collection, nodes={font=\footnotesize}] {
+    \node (ab1) {$(a_1, a^\prime_1)$}; &
+    \node (ab2) {$(a_2, a^\prime_2)$}; &
+    \node [elements between]; &
+    \node (abn) {$(a_n, a^\prime_n)$}; &
+\\ };
+
+\matrix (A) [tuple of collections, below=2 of A] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node [elements between]; &
+    \node (an) {$a_n$}; &
+    \node [tuple separator]; &
+    \node (b1) {$a^\prime_1$}; &
+    \node (b2) {$a^\prime_2$}; &
+    \node [elements between]; &
+    \node (bn) {$a^\prime_n$}; &
+\\ };
+
+\path [draw=none, name path=pa1] ($ (ab1.south) + (-.2, 0) $) .. controls +(0, -1.5) and +(0, 1.5) .. (a1);
+\path [draw=none, name path=pb1] ($ (ab1.south) + (+.2, 0) $) .. controls +(0, -1.5) and +(0, 1.5) .. (b1);
+\path [draw=none, name path=pa2] ($ (ab2.south) + (-.2, 0) $) .. controls +(0, -1.5) and +(0, 1.5) .. (a2);
+\path [draw=none, name path=pb2] ($ (ab2.south) + (+.2, 0) $) .. controls +(0, -1.5) and +(0, 1.5) .. (b2);
+\path [draw=none, name path=pan] ($ (abn.south) + (-.2, 0) $) .. controls +(0, -1.5) and +(0, 1.5) .. (an);
+
+\draw [flow ->] ($ (ab1.south) + (-.2, 0) $) .. controls +(0, -1.5) and +(0, 1.5) .. (a1);
+\draw [flow ->] ($ (abn.south) + (-.2, 0) $) .. controls +(0, -1.5) and +(0, 1.5) .. (an);
+\path [name intersections={of=pan and pb1, by={a}}] (a) pic [rotate=22, yshift=.6] {bridge flow};
+\path [name intersections={of=pan and pb2, by={a}}] (a) pic [rotate=22] {bridge flow};
+\draw [flow ->] ($ (ab2.south) + (-.2, 0) $) .. controls +(0, -1.5) and +(0, 1.5) .. (a2);
+\draw [flow ->] ($ (ab2.south) + (+.2, 0) $) .. controls +(0, -1.5) and +(0, 1.5) .. (b2);
+\path [name intersections={of=pb1 and pa2, by={a}}] (a) pic [rotate=47, yshift=-.2] {bridge flow};
+\draw [flow ->] ($ (ab1.south) + (+.2, 0) $) .. controls +(0, -1.5) and +(0, 1.5) .. (b1);
+\draw [flow ->] ($ (abn.south) + (+.2, 0) $) .. controls +(0, -1.5) and +(0, 1.5) .. (bn);

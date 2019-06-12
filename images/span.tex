@@ -1,0 +1,44 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node [elements between]; &
+    \node (ai-1) {$a_{i-1}$}; &
+    \node (ai) {$a_i$}; &
+    \node [elements after] coordinate (an) at (\tikzlastnode.south west); &
+\\ };
+
+\matrix (B) [tuple of collections, below=2 of A] {
+    \node (b1) {$a_1$}; &
+    \node (b2) {$a_2$}; &
+    \node [elements between]; &
+    \node (bi-1) {$a_{i-1}$}; &
+    \node [tuple separator]; &
+    \node (bi) {$a_i$}; &
+    \node [elements after] coordinate (bn) at (\tikzlastnode.north east); &
+\\ };
+
+\foreach \i/\r in {1/true,2/true,i-1/true,i/false}{
+    \draw [subflow ->] (a\i.north) -- +(0, .5)
+        node (p) [subfunction, above] {\texttt{p}};
+    \draw [subflow ->] (p.north io 1) -- +(0, .5)
+        node [subelement, above] {\texttt{\r}};
+}
+
+\draw [<- subflow] (a1.north) arc [<- iterate];
+\draw [subflow ->, iterate ->] (a1.north) to (a2.north);
+\draw [subflow ->, iterate ->, dashed] (a2.north) arc;
+\draw [<- subflow, <- iterate, dashed] (ai-1.north) arc;
+\draw [subflow ->, iterate ->] (ai-1.north) to (ai.north);
+
+\braceflow[-.2]{(a1.south west)}{($ (ai-1.south east) + (-.5\defaultpenwidth, 0) $)}
+\coordinate (x) at (lastbrace);
+\braceflow[.2]{(b1.north west)}{(bi-1.north east)}
+\draw [flow ->, out=270, in=90] (x) to (lastbrace);
+
+\braceflow[-.2]{(ai.south west)}{(A.south east)}
+\coordinate (x) at (lastbrace);
+\braceflow[.2]{(bi.north west)}{(bn.north east)}
+\draw [flow ->, out=270, in=90] (x) to (lastbrace);

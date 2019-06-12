@@ -1,0 +1,11 @@
+---
+---
+
+\matrix [collection] {
+    \node [elements before]; &
+    \node {$a_{n-1}$}; &
+    \node (an) {$a_n$}; &
+\\ };
+
+\draw [flow ->] (an.south) -- +(0, -1)
+    node [element, below] {$a_n$};

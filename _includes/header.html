@@ -1,0 +1,29 @@
+<header class="header">
+  <div class="wrapper">
+    <div class="container-fluid">
+      <a class="logo" href="{{ site.url }}">
+        <span>{{ site.title }}</span>
+      </a>
+      <div class="searchbox">
+        <input id="searchbox-input" class="searchbox__input" autocomplete="false">
+        <ul id="searchbox-results" class="searchbox__results">
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+<template id="search-result">
+  <li class="searchresult">
+    <a class="searchresult__link"></a>
+  </li>
+</template>
+<script>
+  const functions = [
+{%- for f in site.functions -%}
+  {% unless f.missing %}
+    { name: "{{ f.title }}", url: "{{ f.permalink | relative_url }}" },
+  {% endunless %}
+{%- endfor -%}
+  ];
+  new Search(functions);
+</script>
