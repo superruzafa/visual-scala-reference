@@ -4,6 +4,8 @@ An awesome visual guide to some of the most common Scala functions.
 
 https://superruzafa.github.io/visual-scala-reference
 
+[![Build Status](https://travis-ci.org/superruzafa/visual-scala-reference.svg?branch=master)](https://travis-ci.org/superruzafa/visual-scala-reference)
+
 ## Development
 
 This guide uses [Jekyll] as render engine.
