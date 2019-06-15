@@ -1,0 +1,27 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node [elements between]; &
+    \node (ai) {$a_i$}; &
+    \node [elements between=3.5]; &
+    \node (an) {$a_n$}; &
+\\ };
+
+\foreach \i in {1,2,i,n}{
+    \draw [subflow ->] (a\i.north) -- +(0, .5)
+        node (f) [subfunction, above] {\texttt{f}};
+    \draw [subflow ->] (f.north io 1) -- +(0, .5)
+        node (b\i) [subelement, above] {$b_\i$};
+}
+
+\draw [flow ->] (ai.south) -- +(0, -1)
+    node [some=$a_i$, element, below];
+
+\matrix [matrix of math nodes, nodes={inner ysep=.125\masterunit}, row sep=.125\masterunit, left delimiter=\{, right=.5 of bi] {
+  b_i > b_j,\, j \in [1, i - 1] \\
+  b_i \geq b_k,\, k \in [i + 1, n] \\
+};
+
