@@ -1,0 +1,59 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node (a3) {$a_3$}; &
+    \node [elements between]; &
+    \node (an-1) {$a_{n-1}$}; &
+    \node (an) {$a_n$}; \\
+};
+
+\foreach \i/\j in {1/left,2/right,3/left,n-1/left,n/right}{
+    \draw [subflow ->] (a\i.south) -- +(0, -.5)
+        node (f) [subfunction, below] {\texttt{f}};
+    \draw [subflow ->] (f.south io 1) -- +(0, -.5) coordinate (fo\i);
+}
+\node (e1) [either left=$b_1$, below=of fo1];
+\node (e2) [either right=$c_1$, below=of fo2];
+\node (e3) [either left=$b_2$, below=of fo3];
+\node (en-1) [either left=$b_m$, below=of fon-1];
+\node (en) [either right=$c_{n-m}$, below=of fon];
+
+\matrix [tuple of collections, below=4 of A] {
+    \node (b1) {$b_1$}; &
+    \node (b3) {$b_2$}; &
+    \node [elements between]; &
+    \node (bn-1) {$b_m$}; &
+    \node [tuple separator]; &
+    \node (b2) {$c_1$}; &
+    \node [elements between]; &
+    \node (bn) {$c_{n-m}$}; \\
+};
+
+\newlength\rad
+\setlength\rad{.1\masterunit}
+
+\draw [name path=p1, flow ->] (e1.south) -- ++(0, -.25) -- ($ (b1.north) + (0, .25) $) -- (b1.north);
+\draw [name path=p2, flow ->] (e2.south) -- ++(0, -.25) -- ($ (b2.north) + (0, .25) $) -- (b2.north);
+
+\path [name path=p3] (e3.south) -- ++(0, -.25) -- ($ (b3.north) + (0, .25) $) coordinate (b3u) -- (b3.north);
+\path [name path=c, name intersections={of={p3 and p2}, by={i}}] (i) circle [radius=\rad];
+\path [name intersections={of=p3 and c, by={c1, c2}}];
+\draw [flow ->]
+    let \p1=($ (c1) - (c2) $), \n1={atan2(\y1,\x1)}, \n2={180 + \n1} in
+    (e3.south) -- ++(0, -.25) -- (c1)
+    arc [radius=\rad, start angle=\n1, end angle=\n2] -- (b3u) -- (b3.north)
+    ;
+
+\path [name path=pn-1] (en-1.south) -- ++(0, -.25) -- ($ (bn-1.north) + (0, .25) $) coordinate (bn-1u) -- (bn-1.north);
+\path [name path=c, name intersections={of={pn-1 and p2}, by={i}}] (i) circle [radius=\rad];
+\path [name intersections={of=pn-1 and c, by={c1, c2}}];
+\draw [flow ->]
+    let \p1=($ (c1) - (c2) $), \n1={atan2(\y1,\x1)}, \n2={180 + \n1} in
+    (en-1.south) -- ++(0, -.25) -- (c1)
+    arc [radius=\rad, start angle=\n1, end angle=\n2] -- (bn-1u) -- (bn-1.north)
+    ;
+
+\draw [name path=pn, flow ->] (en.south) -- ++(0, -.25) -- ($ (bn.north) + (0, .25) $) -- (bn.north);

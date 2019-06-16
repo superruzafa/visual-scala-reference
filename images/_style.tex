@@ -3,10 +3,6 @@
 
 \definecolor{defaultpencolor}{RGB}{43, 43, 43}
 
-\tikzset{every path/.style={
-    draw=defaultpencolor,
-}}
-
 \tikzset{every node/.style={
     inner sep=0pt,
     outer sep=0pt,
@@ -106,6 +102,28 @@
     line width=\defaultpenwidth,
     node contents={\footnotesize{\texttt{None}}},
     minimum size=.75\masterunit,
+}}
+
+\tikzset{labeled element/.style 2 args={
+    alias=this,
+    append after command={
+        \pgfextra{
+            \node at (this.north) [inner sep=.5ex, font=\footnotesize, anchor=north] {\texttt{#1}};
+            \node at (this.south) [inner sep=.5ex, element, anchor=south] {\texttt{#2}};
+        }
+    },
+    draw,
+    line width=\defaultpenwidth,
+    minimum size=.9\masterunit,
+    node contents={},
+}}
+
+\tikzset{either left/.style={
+    labeled element={Left}{#1}
+}}
+
+\tikzset{either right/.style={
+    labeled element={Right}{#1},
 }}
 
 \tikzset{exception draw/.style={
