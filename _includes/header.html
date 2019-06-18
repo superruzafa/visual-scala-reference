@@ -18,12 +18,5 @@
   </li>
 </template>
 <script>
-  const functions = [
-{%- for f in site.functions -%}
-  {% unless f.missing %}
-    { name: "{{ f.title }}", url: "{{ f.permalink | relative_url }}" },
-  {% endunless %}
-{%- endfor -%}
-  ];
-  new Search(functions);
+  new Search();
 </script>
