@@ -1,0 +1,21 @@
+<title>{% if layout.title %}{{ layout.title | flatify }} | {% endif %}{{ site.title }}</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% if layout.description %}<meta name="description" content="{{ layout.description | flatify }}">{% endif %}
+{% if layout.title %}
+<meta property="og:title" content="{{ layout.title | flatify }}">
+<meta property="og:site_title" content="{{ site.title }}">
+{%- else -%}
+<meta property="og:title" content="{{ site.title }}">
+{%- endif -%}
+{% if layout.description %}
+<meta property="og:description" content="{{ layout.description | flatify }}">
+{%- endif -%}
+{% if layout.image %}
+<meta property="og:image" content="{{ layout.image | flatify }}">
+{%- endif -%}
+{% if layout.type %}
+<meta property="og:type" content="{{ layout.type }}">
+{%- endif -%}
+<meta property="og:url" content="{{ site.url }}{% if page.permalink %}{{ page.permalink | relative_url }}{% else %}{{ site.baseurl }}{% endif %}">
+<meta property="og:site_name" content="{{ site.title }}">

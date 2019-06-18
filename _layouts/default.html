@@ -1,28 +1,13 @@
+---
+---
 <!doctype html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|Lato" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="style.css" rel="stylesheet">
-    <script src="search.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
-    <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/languages/scala.min.js"></script>
-    <link rel="shortcut icon" href="assets/scala-logo-16x16.png" type="image/png" />
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/scala-logo-57x57.png" type="image/png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/scala-logo-72x72.png" type="image/png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/scala-logo-144x144.png" type="image/png" />
-{% if jekyll.environment == "production" %}
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-390889-8"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-390889-8');
-    </script>
-{% endif %}
+    {% include meta.html %}
+    {% include css.html %}
+    {% include js.html %}
+    {% include icons.html %}
+    {% include ga.html %}
   </head>
 <body>
 {% include header.html %}
