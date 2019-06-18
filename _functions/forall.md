@@ -15,7 +15,7 @@ trait Collection[A] {
 `forall` checks whether all elements in this collection satisfy the predicate `p`, returning `false` if `p` doesn't stand for at least one element.
 
 <figure class="diagram">
-  <img src="images/forall.1.svg" alt="forall function">
+  <img src="images/forall.svg" alt="forall function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

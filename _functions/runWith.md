@@ -15,7 +15,7 @@ trait PartialFunction[X, Y] {
 `runWith` creates an anonymous function that applies this partial function and then `g` to an input value, if this partial function is defined for such value, and returns `true`.
 
 <figure class="diagram">
-  <img src="images/runWith.1.svg" alt="runWith function">
+  <img src="images/runWith.svg" alt="runWith function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

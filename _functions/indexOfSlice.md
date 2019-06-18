@@ -16,7 +16,7 @@ trait Collection[A] {
 `indexOfSlice` returns the index of the first element where the collection `as` can be found as a slice.
 
 <figure class="diagram">
-  <img src="images/indexOfSlice.1.svg" alt="indexOfSlice function">
+  <img src="images/indexOfSlice.svg" alt="indexOfSlice function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

@@ -15,7 +15,7 @@ trait Collection[A] {
 `reduceRightOption` applies a binary operator `op` to each element, going from right to left, and the previous `op` result. The first time `op` is applied it's fed with the two first elements. The final result is wrapped with `Some`.
 
 <figure class="diagram">
-  <img src="images/reduceRightOption.1.svg" alt="reduceRightOption function">
+  <img src="images/reduceRightOption.svg" alt="reduceRightOption function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

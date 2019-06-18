@@ -16,7 +16,7 @@ trait Collection[A] {
 `lastIndexWhere` returns the index of the last element that satisfy the predicate `p`.
 
 <figure class="diagram">
-  <img src="images/lastIndexWhere.1.svg" alt="lastIndexWhere function">
+  <img src="images/lastIndexWhere.svg" alt="lastIndexWhere function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

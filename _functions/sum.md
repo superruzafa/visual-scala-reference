@@ -15,7 +15,7 @@ trait Collection[A] {
 `sum` computes the sum of the elements of this collection.
 
 <figure class="diagram">
-  <img src="images/sum.1.svg" alt="sum function">
+  <img src="images/sum.svg" alt="sum function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

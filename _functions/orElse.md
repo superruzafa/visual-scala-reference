@@ -15,7 +15,7 @@ trait PartialFunction[X, Y] {
 `orElse` creates an anonymous partial function that returns the value this partial function does.
 
 <figure class="diagram">
-  <img src="images/orElse.1.svg" alt="orElse function">
+  <img src="images/orElse.svg" alt="orElse function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

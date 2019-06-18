@@ -16,7 +16,7 @@ trait Collection[A] {
 `lastIndexOfSlice` returns the index of the last element where the collection `as` can be found as a slice.
 
 <figure class="diagram">
-  <img src="images/lastIndexOfSlice.1.svg" alt="lastIndexOfSlice function">
+  <img src="images/lastIndexOfSlice.svg" alt="lastIndexOfSlice function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

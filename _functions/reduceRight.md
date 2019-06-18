@@ -15,7 +15,7 @@ trait Collection[A] {
 `reduceRight` applies a binary operator `op` to each element, going from right to left, and the previous `op` result. The first time `op` is applied it's fed with the two first elements.
 
 <figure class="diagram">
-  <img src="images/reduceRight.1.svg" alt="reduceRight function">
+  <img src="images/reduceRight.svg" alt="reduceRight function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

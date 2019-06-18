@@ -15,7 +15,7 @@ trait Collection[A] {
 `head` returns the first element of this collection.
 
 <figure class="diagram">
-  <img src="images/head.1.svg" alt="head function">
+  <img src="images/head.svg" alt="head function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

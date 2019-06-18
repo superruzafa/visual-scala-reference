@@ -15,7 +15,7 @@ trait Collection[A] {
 `sameElements` checks whether this collection has the same elements in the same order than the collection `as` and returns `true` if so.
 
 <figure class="diagram">
-  <img src="images/sameElements.1.svg" alt="sameElements function">
+  <img src="images/sameElements.svg" alt="sameElements function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

@@ -15,7 +15,7 @@ object Function {
 `lift` creates an anonymous function that returns the value wrapped with `Some` returned by this partial function.
 
 <figure class="diagram">
-  <img src="images/unlift.1.svg" alt="unlift function">
+  <img src="images/unlift.svg" alt="unlift function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

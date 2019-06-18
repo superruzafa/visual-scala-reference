@@ -17,7 +17,7 @@ trait Map[K, V] {
 `getOrElse` returns the value associated to the key `k` in this `Map`.
 
 <figure class="diagram">
-  <img src="images/getOrElse_Map.1.svg" alt="getOrElse function">
+  <img src="images/getOrElse_Map.svg" alt="getOrElse function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

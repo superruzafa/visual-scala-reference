@@ -16,7 +16,7 @@ trait Collection[A] {
 `lastIndexOf` returns the index of the last element that equals (`==`) the value `a`.
 
 <figure class="diagram">
-  <img src="images/lastIndexOf.1.svg" alt="lastIndexOf function">
+  <img src="images/lastIndexOf.svg" alt="lastIndexOf function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

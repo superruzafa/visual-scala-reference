@@ -15,7 +15,7 @@ trait Collection[A] {
 `max` returns the largest value in this collection.
 
 <figure class="diagram">
-  <img src="images/max.1.svg" alt="max function">
+  <img src="images/max.svg" alt="max function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

@@ -16,7 +16,7 @@ trait Collection[A] {
 `indexOf` returns the index of the first element that equals (`==`) the value `a`.
 
 <figure class="diagram">
-  <img src="images/indexOf.1.svg" alt="indexOf function">
+  <img src="images/indexOf.svg" alt="indexOf function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

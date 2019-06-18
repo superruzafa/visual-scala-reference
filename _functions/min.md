@@ -15,7 +15,7 @@ trait Collection[A] {
 `min` returns the smallest value in this collection.
 
 <figure class="diagram">
-  <img src="images/min.1.svg" alt="min function">
+  <img src="images/min.svg" alt="min function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

@@ -15,7 +15,7 @@ trait Collection[A] {
 `foldRight` applies the binary operator `op` to each element, going from right to left, and the previous `op` result. The first time `op` is applied it's fed with the initial value `z`.
 
 <figure class="diagram">
-  <img src="images/foldRight.1.svg" alt="foldRight function">
+  <img src="images/foldRight.svg" alt="foldRight function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

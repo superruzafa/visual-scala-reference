@@ -15,7 +15,7 @@ trait Collection[A] {
 `exists` checks whether at least one element in this collection satisfy the predicate `p`, returning `true` if such element exists.
 
 <figure class="diagram">
-  <img src="images/exists.1.svg" alt="exists function">
+  <img src="images/exists.svg" alt="exists function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

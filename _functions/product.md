@@ -15,7 +15,7 @@ trait Collection[A] {
 `product` computes the product of the elements of this collection.
 
 <figure class="diagram">
-  <img src="images/product.1.svg" alt="product function">
+  <img src="images/product.svg" alt="product function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

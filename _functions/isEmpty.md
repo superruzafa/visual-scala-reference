@@ -15,7 +15,7 @@ trait Collection[A] {
 `isEmpty` checks whether this collection has no elements and returns `false` otherwise.
 
 <figure class="diagram">
-  <img src="images/isEmpty.1.svg" alt="isEmpty function">
+  <img src="images/isEmpty.svg" alt="isEmpty function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

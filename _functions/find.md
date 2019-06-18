@@ -15,7 +15,7 @@ trait Collection[A] {
 `find` returns the first element that satisfy a predicate `p`, wrapped with `Some`.
 
 <figure class="diagram">
-  <img src="images/find.1.svg" alt="find function">
+  <img src="images/find.svg" alt="find function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

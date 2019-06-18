@@ -15,7 +15,7 @@ trait Collection[A] {
 `maxBy` applies `f` to each element and returns the element that yields the largest value.
 
 <figure class="diagram">
-  <img src="images/maxBy.1.svg" alt="maxBy function">
+  <img src="images/maxBy.svg" alt="maxBy function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

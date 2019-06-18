@@ -15,7 +15,7 @@ trait Collection[A] {
 `endsWith` checks whether the collection `as` is a suffix of this collection.
 
 <figure class="diagram">
-  <img src="images/endsWith.1.svg" alt="endsWith function">
+  <img src="images/endsWith.svg" alt="endsWith function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

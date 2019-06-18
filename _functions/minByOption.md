@@ -15,7 +15,7 @@ trait Collection[A] {
 `minByOption` applies `f` to each element and returns the element that yields the smallest value wrapped with `Some`.
 
 <figure class="diagram">
-  <img src="images/minByOption.1.svg" alt="minByOption function">
+  <img src="images/minByOption.svg" alt="minByOption function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

@@ -15,7 +15,7 @@ trait Collection[A] {
 `containsSlice` checks whether the collection `as` can be found as a slice in this collection, returning `true` if so.
 
 <figure class="diagram">
-  <img src="images/containsSlice.1.svg" alt="containsSlice function">
+  <img src="images/containsSlice.svg" alt="containsSlice function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

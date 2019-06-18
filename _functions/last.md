@@ -15,7 +15,7 @@ trait Collection[A] {
 `last` returns the last element in this collection.
 
 <figure class="diagram">
-  <img src="images/last.1.svg" alt="last function">
+  <img src="images/last.svg" alt="last function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 

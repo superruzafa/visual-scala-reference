@@ -16,7 +16,7 @@ trait Collection[A] {
 `indexWhere` returns the index of the first element that satisfy the predicate `p`.
 
 <figure class="diagram">
-  <img src="images/indexWhere.1.svg" alt="indexWhere function">
+  <img src="images/indexWhere.svg" alt="indexWhere function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
