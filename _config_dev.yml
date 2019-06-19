@@ -12,6 +12,12 @@ kramdown:
     disable: true
 theme: minima
 plugins:
+exclude:
+  - Dockerfile
+  - docker-compose.yml
+  - docker-compose.override.yml
+keep_files:
+  - images
 
 collections:
   functions:
