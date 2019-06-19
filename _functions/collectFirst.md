@@ -22,6 +22,6 @@ trait Collection[A] {
 If the partial function `f` is not defined for any element in this collection then `None` is returned.
 
 <figure class="diagram">
-  <img src="images/collectFirst-on-empty.svg" alt="collectFirst function">
+  <img src="images/collectFirst.2.svg" alt="collectFirst function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

@@ -18,7 +18,7 @@
 }
 
 \draw [flow ->] (ai.south) -- +(0, -1)
-    node [some={$a_i$}, element, below];
+    node [some, below] {$a_i$};
 
 \draw [<- subflow] (a1.north) arc [<- iterate];
 \draw [subflow ->, iterate ->] (a1.north) to (a2.north);

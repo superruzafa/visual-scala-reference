@@ -20,7 +20,7 @@
 \draw [flow ->] (g.south io 1) -- node [partial] {} +(0, -.5)
     node (y) [element, below] {$y$};
 \draw [flow ->] (y) -- ($ (h.south io 1) + (0, -.5) $)
-    node [some={$y$}, element, below];
+    node [some, below] {$y$};
 
 \coordinate (x) at ($ (f.east)!.5!(h.west) $);
 \node at (f.east -| x) [big arrow];

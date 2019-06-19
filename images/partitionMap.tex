@@ -15,11 +15,11 @@
         node (f) [subfunction, below] {\texttt{f}};
     \draw [subflow ->] (f.south io 1) -- +(0, -.5) coordinate (fo\i);
 }
-\node (e1) [either left=$b_1$, below=of fo1];
-\node (e2) [either right=$c_1$, below=of fo2];
-\node (e3) [either left=$b_2$, below=of fo3];
-\node (en-1) [either left=$b_m$, below=of fon-1];
-\node (en) [either right=$c_{n-m}$, below=of fon];
+\node (e1) [either left, below=of fo1] {$b_1$};
+\node (e2) [either right, below=of fo2] {$c_1$};
+\node (e3) [either left, below=of fo3] {$b_2$};
+\node (en-1) [either left, below=of fon-1] {$b_m$};
+\node (en) [either right, below=of fon] {$c_{n - m}$};
 
 \matrix [tuple of collections, below=4 of A] {
     \node (b1) {$b_1$}; &

@@ -87,43 +87,37 @@
     node contents={\,,\,\,},
 }}
 
-\tikzset{some/.style={
+\tikzset{labeled element/.style={
+    alias=this,
+    append after command={
+        node at (this.north) [inner sep=.1\masterunit, font=\footnotesize, anchor=north] {#1}
+    },
     draw,
+    font=\large,
     line width=\defaultpenwidth,
-    rectangle split,
-    rectangle split parts=2,
-    rectangle split draw splits=false,
-    node contents={\footnotesize{\texttt{Some}} \nodepart{two} #1},
-    minimum size=.75\masterunit,
+    text depth=.2\masterunit,
+    text height=.7\masterunit,
+    minimum width=.9\masterunit,
+}}
+
+\tikzset{some/.style={
+    labeled element={\texttt{Some}}
 }}
 
 \tikzset{none/.style={
     draw,
-    line width=\defaultpenwidth,
-    node contents={\footnotesize{\texttt{None}}},
-    minimum size=.75\masterunit,
-}}
-
-\tikzset{labeled element/.style 2 args={
-    alias=this,
-    append after command={
-        \pgfextra{
-            \node at (this.north) [inner sep=.5ex, font=\footnotesize, anchor=north] {\texttt{#1}};
-            \node at (this.south) [inner sep=.5ex, element, anchor=south] {\texttt{#2}};
-        }
-    },
-    draw,
+    font=\footnotesize,
     line width=\defaultpenwidth,
     minimum size=.9\masterunit,
-    node contents={},
+    node contents={\texttt{None}},
 }}
 
 \tikzset{either left/.style={
-    labeled element={Left}{#1}
+    labeled element={\texttt{Left}}
 }}
 
 \tikzset{either right/.style={
-    labeled element={Right}{#1},
+    labeled element={\texttt{Right}}
 }}
 
 \tikzset{exception draw/.style={

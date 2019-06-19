@@ -21,7 +21,7 @@
 
 \foreach \i in {1,2,n}{
     \draw [flow ->] (f\i.south io 1) -- + (0, -.5)
-        node (s\i) [some={$(a_\i, s_\i)$}, subelement, below];
+        node (s\i) [some, subelement, below] {$(a_\i, s_\i)$};
 }
 \node (sn+1) at (sn -| fn+1) [none];
 \draw [flow ->] (fn+1.south io 1) -- (sn+1);

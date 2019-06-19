@@ -11,7 +11,7 @@
 \\ };
 
 \draw [flow ->] (ai.south) -- +(0, -1)
-    node (b) [some=$a_i$, element, below=1 of ai];
+    node (b) [some, below=1 of ai] {$a_i$};
 
 \matrix [matrix of math nodes, nodes={inner ysep=.125\masterunit}, row sep=.125\masterunit, left delimiter=\{, right=.5 of b] {
   a_i > a_j,\, j \in [1, i - 1] \\
