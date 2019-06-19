@@ -2,7 +2,7 @@ require 'tempfile'
 require 'open3'
 
 module Jekyll
-  class Tex2SvgConverter < Converter
+  class Tex2PdfConverter < Converter
     safe true
     priority :low
 
@@ -11,7 +11,7 @@ module Jekyll
     end
 
     def output_ext(ext)
-      ".svg"
+      ".pdf"
     end
 
     def write_tex_file(content)
@@ -35,15 +35,14 @@ module Jekyll
       end
     end
 
-    def convert_tex_to_svg(texfile)
+    def convert_tex_to_pdf(texfile)
       tmpdir = File.dirname(texfile)
       Dir.chdir(tmpdir) {
-        out, err, st = Open3.capture3("pdflatex #{texfile} 2>&1")
-        raise out unless st.success?
-        out, err, st = Open3.capture3("pdf2svg #{texfile}.pdf #{texfile}.svg 2>&1")
+        pdflatex_flags = "-halt-on-error -output-format=pdf"
+        out, err, st = Open3.capture3("pdflatex #{pdflatex_flags} #{texfile} 2>&1")
         raise out unless st.success?
       }
-      IO.read("#{texfile}.svg")
+      IO.read("#{texfile}.pdf")
     end
 
     def delete_temp_files(basename)
@@ -55,9 +54,9 @@ module Jekyll
     def convert(content)
       begin
         texfile = self.write_tex_file(content)
-        svgcontent = self.convert_tex_to_svg(texfile)
+        pdfcontent = self.convert_tex_to_pdf(texfile)
         self.delete_temp_files(texfile)
-        svgcontent
+        pdfcontent
       rescue Exception => e
         puts e
         raise e

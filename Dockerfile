@@ -3,7 +3,8 @@ FROM ruby:2.6.2
 RUN apt-get update && apt-get install -y --no-install-recommends \
   texlive-latex-base \
   texlive-latex-extra \
-  libpoppler-glib-dev
+  libpoppler-glib-dev \
+  ghostscript
 
 RUN gem install bundler jekyll
 

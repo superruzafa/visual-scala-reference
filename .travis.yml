@@ -14,6 +14,7 @@ before_install:
     texlive-latex-base
     texlive-latex-extra
     libpoppler-glib-dev
+    ghostscript
   - >
     pushd /usr/local/src &&
     sudo curl -O -L https://github.com/superruzafa/pdf2svg/archive/master.zip &&
