@@ -1,19 +1,12 @@
 ---
 ---
 
-function Search() {
+function Search(functions) {
   this._input = document.getElementById('searchbox-input');
   this._results = document.getElementById('searchbox-results');
   this._input.addEventListener('keyup', (e) => this._inputKeyUp(e), false);
+  this._functions = functions;
 }
-
-Search._functions = [
-{%- for f in site.functions -%}
-  {%- unless f.missing -%}
-  { name: "{{ f.title }}", url: "{{ f.permalink | relative_url }}" },
-  {% endunless %}
-{%- endfor -%}
-];
 
 Search.prototype._search = function(query) {
   const weights = [
@@ -23,7 +16,7 @@ Search.prototype._search = function(query) {
     { weight: 0,    regex: new RegExp('^') }
   ];
 
-  return Search._functions
+  return this._functions
     .map(function(f) {
       const weight = weights.find(w => w.regex.test(f.name)).weight
       return { function: f, weight };
