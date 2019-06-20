@@ -1,7 +1,5 @@
 ---
-title: untupled
-layout: function
-permalink: /untupled
+name: untupled
 ---
 
 # `untupled`

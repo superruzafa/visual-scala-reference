@@ -1,7 +1,5 @@
 ---
-title: headOption
-layout: function
-permalink: /headOption
+name: headOption
 ---
 
 # `headOption`

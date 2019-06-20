@@ -1,7 +1,5 @@
 ---
-title: curried
-layout: function
-permalink: /curried
+name: curried
 ---
 
 # `curried`

@@ -1,7 +1,5 @@
 ---
-title: lastOption
-layout: function
-permalink: /lastOption
+name: lastOption
 ---
 
 # `lastOption`

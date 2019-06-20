@@ -1,7 +1,5 @@
 ---
-title: head
-layout: function
-permalink: /head
+name: head
 ---
 
 # `head`

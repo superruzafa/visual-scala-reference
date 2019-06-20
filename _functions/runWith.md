@@ -1,7 +1,5 @@
 ---
-title: runWith
-layout: function
-permalink: /runWith
+name: runWith
 ---
 
 # `runWith`

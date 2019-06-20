@@ -1,7 +1,5 @@
 ---
-title: lastIndexOfSlice
-layout: function
-permalink: /lastIndexOfSlice
+name: lastIndexOfSlice
 ---
 
 # `lastIndexOfSlice`

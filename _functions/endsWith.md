@@ -1,7 +1,5 @@
 ---
-title: endsWith
-layout: function
-permalink: /endsWith
+name: endsWith
 ---
 
 # `endsWith`

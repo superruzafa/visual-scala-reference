@@ -1,7 +1,5 @@
 ---
-title: reverse
-layout: function
-permalink: /reverse
+name: reverse
 ---
 
 # `reverse`

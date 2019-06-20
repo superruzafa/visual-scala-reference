@@ -1,7 +1,5 @@
 ---
-title: takeWhile
-layout: function
-permalink: /takeWhile
+name: takeWhile
 ---
 
 # `takeWhile`

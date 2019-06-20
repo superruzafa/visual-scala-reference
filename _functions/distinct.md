@@ -1,7 +1,5 @@
 ---
-title: distinct
-layout: function
-permalink: /distinct
+name: distinct
 ---
 
 # `distinct`

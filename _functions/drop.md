@@ -1,7 +1,5 @@
 ---
-title: drop
-layout: function
-permalink: /drop
+name: drop
 ---
 
 # `drop`

@@ -1,7 +1,5 @@
 ---
-title: collect
-layout: function
-permalink: /collect
+name: collect
 ---
 
 # `collect`

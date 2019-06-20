@@ -1,7 +1,5 @@
 ---
-title: reduceRightOption
-layout: function
-permalink: /reduceRightOption
+name: reduceRightOption
 ---
 
 # `reduceRightOption`

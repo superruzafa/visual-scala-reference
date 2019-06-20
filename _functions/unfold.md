@@ -1,7 +1,5 @@
 ---
-title: unfold
-layout: function
-permalink: /unfold
+name: unfold
 ---
 
 # `unfold`

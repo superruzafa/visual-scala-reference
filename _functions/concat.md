@@ -1,7 +1,5 @@
 ---
-title: concat
-layout: function
-permalink: /concat
+name: concat
 ---
 
 # `concat`

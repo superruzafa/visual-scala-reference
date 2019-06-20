@@ -1,7 +1,5 @@
 ---
-title: sameElements
-layout: function
-permalink: /sameElements
+name: sameElements
 ---
 
 # `sameElements`

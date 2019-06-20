@@ -1,7 +1,5 @@
 ---
-title: chain
-layout: function
-permalink: /chain
+name: chain
 ---
 
 # `chain`

@@ -1,7 +1,5 @@
 ---
-title: foldLeft
-layout: function
-permalink: /foldLeft
+name: foldLeft
 ---
 
 # `foldLeft`

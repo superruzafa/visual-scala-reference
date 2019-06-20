@@ -1,7 +1,5 @@
 ---
-title: dropWhile
-layout: function
-permalink: /dropWhile
+name: dropWhile
 ---
 
 # `dropWhile`

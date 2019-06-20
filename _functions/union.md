@@ -1,7 +1,5 @@
 ---
-title: union
-layout: function
-permalink: /union
+name: union
 ---
 
 # `union`

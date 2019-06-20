@@ -1,7 +1,5 @@
 ---
-title: sorted
-layout: function
-permalink: /sorted
+name: sorted
 ---
 
 # `sorted`

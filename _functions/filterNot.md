@@ -1,7 +1,5 @@
 ---
-title: filterNot
-layout: function
-permalink: /filterNot
+name: filterNot
 ---
 
 # `filterNot`

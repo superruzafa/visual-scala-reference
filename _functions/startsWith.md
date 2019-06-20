@@ -1,7 +1,5 @@
 ---
-title: startsWith
-layout: function
-permalink: /startsWith
+name: startsWith
 ---
 
 # `startsWith`

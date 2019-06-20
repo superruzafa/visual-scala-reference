@@ -1,7 +1,5 @@
 ---
-title: values
-layout: function
-permalink: /values
+name: values
 ---
 
 # `values`

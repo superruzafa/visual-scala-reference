@@ -1,7 +1,5 @@
 ---
-title: segmentLength
-layout: function
-permalink: /segmentLength
+name: segmentLength
 ---
 
 # `segmentLength`

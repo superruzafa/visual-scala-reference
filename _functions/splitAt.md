@@ -1,7 +1,5 @@
 ---
-title: splitAt
-layout: function
-permalink: /splitAt
+name: splitAt
 ---
 
 # `splitAt`

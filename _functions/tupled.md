@@ -1,7 +1,5 @@
 ---
-title: tupled
-layout: function
-permalink: /tupled
+name: tupled
 ---
 
 # `tupled`

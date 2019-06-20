@@ -1,7 +1,5 @@
 ---
-title: filterKeys
-layout: function
-permalink: /filterKeys
+name: filterKeys
 ---
 
 # `filterKeys`

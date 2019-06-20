@@ -1,7 +1,5 @@
 ---
-title: length
-layout: function
-permalink: /length
+name: length
 ---
 
 # `length`

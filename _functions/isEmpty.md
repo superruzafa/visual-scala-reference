@@ -1,7 +1,5 @@
 ---
-title: isEmpty
-layout: function
-permalink: /isEmpty
+name: isEmpty
 ---
 
 # `isEmpty`

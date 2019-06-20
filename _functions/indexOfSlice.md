@@ -1,7 +1,5 @@
 ---
-title: indexOfSlice
-layout: function
-permalink: /indexOfSlice
+name: indexOfSlice
 ---
 
 # `indexOfSlice`

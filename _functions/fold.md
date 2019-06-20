@@ -1,7 +1,5 @@
 ---
-title: fold
-layout: function
-permalink: /fold
+name: fold
 ---
 
 # `fold`

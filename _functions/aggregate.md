@@ -1,7 +1,5 @@
 ---
-title: aggregate
-layout: function
-permalink: /aggregate
+name: aggregate
 ---
 
 # `aggregate`

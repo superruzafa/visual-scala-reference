@@ -1,7 +1,5 @@
 ---
-title: sum
-layout: function
-permalink: /sum
+name: sum
 ---
 
 # `sum`

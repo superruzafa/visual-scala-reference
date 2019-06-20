@@ -1,6 +1,4 @@
 ---
-title: scan
-layout: function
-permalink: /scan
+name: scan
 missing: true
 ---

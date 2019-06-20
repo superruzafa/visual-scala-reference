@@ -1,7 +1,5 @@
 ---
-title: reduce
-layout: function
-permalink: /reduce
+name: reduce
 ---
 
 # `reduce`

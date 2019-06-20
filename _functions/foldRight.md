@@ -1,7 +1,5 @@
 ---
-title: foldRight
-layout: function
-permalink: /foldRight
+name: foldRight
 ---
 
 # `foldRight`

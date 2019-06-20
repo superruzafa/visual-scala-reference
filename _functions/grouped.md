@@ -1,7 +1,5 @@
 ---
-title: grouped
-layout: function
-permalink: /grouped
+name: grouped
 ---
 
 # `grouped`

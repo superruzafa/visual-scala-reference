@@ -1,7 +1,5 @@
 ---
-title: lastIndexOf
-layout: function
-permalink: /lastIndexOf
+name: lastIndexOf
 ---
 
 # `lastIndexOf`

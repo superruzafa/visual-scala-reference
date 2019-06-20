@@ -1,7 +1,5 @@
 ---
-title: mkString
-layout: function
-permalink: /mkString
+name: mkString
 ---
 
 # `mkString`

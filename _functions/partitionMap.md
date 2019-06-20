@@ -1,7 +1,5 @@
 ---
-title: partitionMap
-layout: function
-permalink: /partitionMap
+name: partitionMap
 ---
 
 # `partitionMap`

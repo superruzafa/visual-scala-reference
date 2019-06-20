@@ -1,7 +1,5 @@
 ---
-title: combinations
-layout: function
-permalink: /combinations
+name: combinations
 ---
 
 # `combinations`

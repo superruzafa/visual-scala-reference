@@ -1,7 +1,5 @@
 ---
-title: minBy
-layout: function
-permalink: /minBy
+name: minBy
 ---
 
 # `minBy`

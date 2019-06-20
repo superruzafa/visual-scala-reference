@@ -1,7 +1,5 @@
 ---
-title: minByOption
-layout: function
-permalink: /minByOption
+name: minByOption
 ---
 
 # `minByOption`

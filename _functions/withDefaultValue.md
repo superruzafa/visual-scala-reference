@@ -1,7 +1,5 @@
 ---
-title: withDefaultValue
-layout: function
-permalink: /withDefaultValue
+name: withDefaultValue
 ---
 
 # `withDefaultValue`

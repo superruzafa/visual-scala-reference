@@ -1,7 +1,5 @@
 ---
-title: containsSlice
-layout: function
-permalink: /containsSlice
+name: containsSlice
 ---
 
 # `containsSlice`

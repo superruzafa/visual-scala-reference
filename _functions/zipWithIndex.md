@@ -1,7 +1,5 @@
 ---
-title: zipWithIndex
-layout: function
-permalink: /zipWithIndex
+name: zipWithIndex
 ---
 
 # `zipWithIndex`

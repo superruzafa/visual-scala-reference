@@ -1,7 +1,5 @@
 ---
-title: indices
-layout: function
-permalink: /indices
+name: indices
 ---
 
 # `indices`

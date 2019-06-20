@@ -1,7 +1,5 @@
 ---
-title: compose
-layout: function
-permalink: /compose
+name: compose
 ---
 
 # `compose`

@@ -1,7 +1,5 @@
 ---
-title: find
-layout: function
-permalink: /find
+name: find
 ---
 
 # `find`

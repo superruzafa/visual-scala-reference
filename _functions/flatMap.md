@@ -1,7 +1,5 @@
 ---
-title: flatMap
-layout: function
-permalink: /flatMap
+name: flatMap
 ---
 
 # `flatMap`

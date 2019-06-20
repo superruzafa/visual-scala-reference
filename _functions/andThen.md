@@ -1,7 +1,5 @@
 ---
-title: andThen
-layout: function
-permalink: /andThen
+name: andThen
 ---
 
 # `andThen`

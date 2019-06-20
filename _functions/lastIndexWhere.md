@@ -1,7 +1,5 @@
 ---
-title: lastIndexWhere
-layout: function
-permalink: /lastIndexWhere
+name: lastIndexWhere
 ---
 
 # `lastIndexWhere`

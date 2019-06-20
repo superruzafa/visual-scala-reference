@@ -22,3 +22,33 @@ keep_files:
 collections:
   functions:
     output: true
+    permalink: /:title
+  es:
+    output: true
+    permalink: /es/:name
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: en
+  - scope:
+      path: ""
+      type: functions
+    values:
+      lang: en
+      layout: function
+  - scope:
+      path: ""
+      type: es
+    values:
+      lang: es
+      layout: function
+
+t:
+  en:
+    home: ""
+    language_name: English
+  es:
+    home: /es
+    language_name: Español

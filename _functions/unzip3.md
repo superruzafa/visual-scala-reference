@@ -1,7 +1,5 @@
 ---
-title: unzip3
-layout: function
-permalink: /unzip3
+name: unzip3
 ---
 
 # `unzip3`

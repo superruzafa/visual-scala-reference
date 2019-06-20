@@ -1,7 +1,5 @@
 ---
-title: range
-layout: function
-permalink: /range
+name: range
 ---
 
 # `range`

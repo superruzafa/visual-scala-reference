@@ -1,7 +1,5 @@
 ---
-title: maxByOption
-layout: function
-permalink: /maxByOption
+name: maxByOption
 ---
 
 # `maxByOption`

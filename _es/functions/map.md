@@ -10,9 +10,9 @@ trait Collection[A] {
 }
 ~~~
 
-`map` creates a collection using as elements the results obtained from applying the function `f` to each element of this collection.
+`map` crea una colección utilizando los resultados obtenidos de aplicar la función `f` a cada elemento de esta colección.
 
 <figure class="diagram">
-  <img src="images/map.svg" alt="map function">
+  <img src="../images/map.svg" alt="map function">
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>

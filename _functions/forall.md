@@ -1,7 +1,5 @@
 ---
-title: forall
-layout: function
-permalink: /forall
+name: forall
 ---
 
 # `forall`

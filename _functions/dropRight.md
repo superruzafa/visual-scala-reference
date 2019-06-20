@@ -1,7 +1,5 @@
 ---
-title: dropRight
-layout: function
-permalink: /dropRight
+name: dropRight
 ---
 
 # `dropRight`

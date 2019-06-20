@@ -1,7 +1,6 @@
 ---
-layout: function
-title: getOrElse (Map)
-permalink: /getOrElse_(Map)
+name: getOrElse (Map)
+normalized_name: getOrElse_Map
 ---
 
 # `getOrElse`

@@ -1,7 +1,5 @@
 ---
-title: unlift
-layout: function
-permalink: /unlift
+name: unlift
 ---
 
 # `unlift`

@@ -1,7 +1,5 @@
 ---
-title: groupBy
-layout: function
-permalink: /groupBy
+name: groupBy
 ---
 
 # `groupBy`

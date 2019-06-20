@@ -1,7 +1,5 @@
 ---
-title: padTo
-layout: function
-permalink: /padTo
+name: padTo
 ---
 
 # `padTo`

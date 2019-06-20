@@ -1,7 +1,5 @@
 ---
-title: indexOf
-layout: function
-permalink: /indexOf
+name: indexOf
 ---
 
 # `indexOf`

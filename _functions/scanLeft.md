@@ -1,7 +1,5 @@
 ---
-title: scanLeft
-layout: function
-permalink: /scanLeft
+name: scanLeft
 ---
 
 # `scanLeft`

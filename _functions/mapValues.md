@@ -1,7 +1,5 @@
 ---
-title: mapValues
-layout: function
-permalink: /mapValues
+name: mapValues
 ---
 
 # `mapValues`

@@ -1,7 +1,5 @@
 ---
-title: permutations
-layout: function
-permalink: /permutations
+name: permutations
 ---
 
 # `permutations`

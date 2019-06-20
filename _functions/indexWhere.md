@@ -1,7 +1,5 @@
 ---
-title: indexWhere
-layout: function
-permalink: /indexWhere
+name: indexWhere
 ---
 
 # `indexWhere`

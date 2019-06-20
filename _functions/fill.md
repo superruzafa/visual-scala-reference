@@ -1,7 +1,5 @@
 ---
-title: fill
-layout: function
-permalink: /fill
+name: fill
 ---
 
 # `fill`

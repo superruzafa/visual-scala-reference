@@ -1,7 +1,5 @@
 ---
-title: sliding
-layout: function
-permalink: /sliding
+name: sliding
 ---
 
 # `sliding`

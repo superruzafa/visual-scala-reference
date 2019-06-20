@@ -1,7 +1,5 @@
 ---
-title: uncurried
-layout: function
-permalink: /uncurried
+name: uncurried
 ---
 
 # `uncurried`

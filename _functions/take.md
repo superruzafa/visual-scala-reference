@@ -1,7 +1,5 @@
 ---
-title: take
-layout: function
-permalink: /take
+name: take
 ---
 
 # `take`

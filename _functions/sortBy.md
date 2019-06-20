@@ -1,7 +1,5 @@
 ---
-title: sortBy
-layout: function
-permalink: /sortBy
+name: sortBy
 ---
 
 # `sortBy`

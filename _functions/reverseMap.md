@@ -1,7 +1,5 @@
 ---
-title: reverseMap
-layout: function
-permalink: /reverseMap
+name: reverseMap
 ---
 
 # `reverseMap`

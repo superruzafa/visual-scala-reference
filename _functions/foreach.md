@@ -1,7 +1,5 @@
 ---
-title: foreach
-layout: function
-permalink: /foreach
+name: foreach
 ---
 
 # `foreach`

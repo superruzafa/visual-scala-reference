@@ -1,6 +1,4 @@
 ---
-title: const
-layout: function
-permalink: /const
+name: const
 missing: true
 ---

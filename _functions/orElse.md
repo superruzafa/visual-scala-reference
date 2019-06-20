@@ -1,7 +1,5 @@
 ---
-title: orElse
-layout: function
-permalink: /orElse
+name: orElse
 ---
 
 # `orElse`

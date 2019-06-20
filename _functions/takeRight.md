@@ -1,7 +1,5 @@
 ---
-title: takeRight
-layout: function
-permalink: /takeRight
+name: takeRight
 ---
 
 # `takeRight`

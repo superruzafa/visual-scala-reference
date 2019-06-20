@@ -1,7 +1,5 @@
 ---
-title: min
-layout: function
-permalink: /min
+name: min
 ---
 
 # `min`

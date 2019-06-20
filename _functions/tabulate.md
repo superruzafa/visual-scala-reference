@@ -1,7 +1,5 @@
 ---
-title: tabulate
-layout: function
-permalink: /tabulate
+name: tabulate
 ---
 
 # `tabulate`

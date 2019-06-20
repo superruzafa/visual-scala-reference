@@ -1,7 +1,5 @@
 ---
-title: unzip
-layout: function
-permalink: /unzip
+name: unzip
 ---
 
 # `unzip`

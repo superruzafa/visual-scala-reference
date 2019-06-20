@@ -1,7 +1,5 @@
 ---
-title: span
-layout: function
-permalink: /span
+name: span
 ---
 
 # `span`

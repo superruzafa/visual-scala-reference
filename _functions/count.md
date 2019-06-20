@@ -1,7 +1,5 @@
 ---
-title: count
-layout: function
-permalink: /count
+name: count
 ---
 
 # `count`

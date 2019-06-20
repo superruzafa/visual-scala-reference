@@ -1,7 +1,5 @@
 ---
-title: zip
-layout: function
-permalink: /zip
+name: zip
 ---
 
 # `zip`

@@ -1,7 +1,5 @@
 ---
-title: mapConserve
-layout: function
-permalink: /mapConserve
+name: mapConserve
 ---
 
 # `mapConserve`

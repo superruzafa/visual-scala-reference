@@ -1,7 +1,5 @@
 ---
-title: last
-layout: function
-permalink: /last
+name: last
 ---
 
 # `last`

@@ -1,7 +1,5 @@
 ---
-title: maxBy
-layout: function
-permalink: /maxBy
+name: maxBy
 ---
 
 # `maxBy`

@@ -1,7 +1,5 @@
 ---
-title: prefixLength
-layout: function
-permalink: /prefixLength
+name: prefixLength
 ---
 
 # `prefixLength`

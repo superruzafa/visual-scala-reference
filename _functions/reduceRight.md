@@ -1,7 +1,5 @@
 ---
-title: reduceRight
-layout: function
-permalink: /reduceRight
+name: reduceRight
 ---
 
 # `reduceRight`

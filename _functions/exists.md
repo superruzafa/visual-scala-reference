@@ -1,7 +1,5 @@
 ---
-title: exists
-layout: function
-permalink: /exists
+name: exists
 ---
 
 # `exists`

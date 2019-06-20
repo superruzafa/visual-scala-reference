@@ -1,7 +1,5 @@
 ---
-title: filter
-layout: function
-permalink: /filter
+name: filter
 ---
 
 # `filter`

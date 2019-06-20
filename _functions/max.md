@@ -1,7 +1,5 @@
 ---
-title: max
-layout: function
-permalink: /max
+name: max
 ---
 
 # `max`

@@ -1,7 +1,5 @@
 ---
-title: product
-layout: function
-permalink: /product
+name: product
 ---
 
 # `product`

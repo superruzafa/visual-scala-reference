@@ -1,7 +1,5 @@
 ---
-title: inits
-layout: function
-permalink: /inits
+name: inits
 ---
 
 # `inits`

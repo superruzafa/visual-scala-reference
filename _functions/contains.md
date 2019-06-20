@@ -1,7 +1,5 @@
 ---
-title: contains
-layout: function
-permalink: /contains
+name: contains
 ---
 
 # `contains`

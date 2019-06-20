@@ -1,7 +1,5 @@
 ---
-title: updated
-layout: function
-permalink: /updated
+name: updated
 ---
 
 # `updated`

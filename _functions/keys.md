@@ -1,7 +1,5 @@
 ---
-title: keys
-layout: function
-permalink: /keys
+name: keys
 ---
 
 # `keys`

@@ -1,7 +1,5 @@
 ---
-title: lift
-layout: function
-permalink: /lift
+name: lift
 ---
 
 # `lift`

@@ -1,7 +1,5 @@
 ---
-title: tails
-layout: function
-permalink: /tails
+name: tails
 ---
 
 # `tails`

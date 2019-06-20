@@ -1,7 +1,5 @@
 ---
-title: partition
-layout: function
-permalink: /partition
+name: partition
 ---
 
 # `partition`

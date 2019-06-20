@@ -1,7 +1,5 @@
 ---
-title: intersect
-layout: function
-permalink: /intersect
+name: intersect
 ---
 
 # `intersect`

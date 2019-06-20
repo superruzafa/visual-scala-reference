@@ -1,10 +1,18 @@
 ---
 layout: default
-title: "{{ page.title }}"
-description: "Graphical representation of the Scala's {{ page.title }} function"
-image: "{{ site.url }}{{ site.baseurl }}/images/{{ page.title }}.png"
+title: "{{ page.name }}"
+description: "Graphical representation of the Scala's {{ page.name }} function"
+image: "{{ site.url }}{{ site.baseurl }}/images/{{ page.normalized_name | default: page.name }}.png"
 type: article
 ---
+
+{% assign all_functions = site.documents | where_exp: 'd', 'd.layout == "function"' %}
+{% assign all_translations = all_functions | where_exp: 'd', 'd.name == page.name' %}
+<ul>
+{% for f in all_translations %}
+    <li><a href="{{ f.url | relative_url }}">{{ site.t[f.lang].language_name }}</a></li>
+{% endfor %}
+</ul>
 
 <main class="function-page">
     {{ content }}

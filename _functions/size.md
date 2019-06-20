@@ -1,7 +1,5 @@
 ---
-title: size
-layout: function
-permalink: /size
+name: size
 ---
 
 # `size`

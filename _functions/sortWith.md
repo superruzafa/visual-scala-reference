@@ -1,7 +1,5 @@
 ---
-title: sortWith
-layout: function
-permalink: /sortWith
+name: sortWith
 ---
 
 # `sortWith`

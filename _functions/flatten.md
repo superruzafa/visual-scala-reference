@@ -1,7 +1,5 @@
 ---
-title: flatten
-layout: function
-permalink: /flatten
+name: flatten
 ---
 
 # `flatten`

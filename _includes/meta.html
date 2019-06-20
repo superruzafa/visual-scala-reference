@@ -16,6 +16,6 @@
 {%- endif -%}
 {% if layout.type %}
 <meta property="og:type" content="{{ layout.type }}">
-{%- endif -%}
-<meta property="og:url" content="{{ site.url }}{% if page.permalink %}{{ page.permalink | relative_url }}{% else %}{{ site.baseurl }}{% endif %}">
+{%- endif %}
+<meta property="og:url" content="{{ site.url }}{{ page.url | relative_url }}">
 <meta property="og:site_name" content="{{ site.title }}">

@@ -1,7 +1,5 @@
 ---
-title: diff
-layout: function
-permalink: /diff
+name: diff
 ---
 
 # `diff`

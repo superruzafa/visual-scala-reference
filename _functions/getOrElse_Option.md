@@ -1,7 +1,6 @@
 ---
-layout: function
-title: getOrElse (Option)
-permalink: /getOrElse_(Option)
+name: getOrElse (Option)
+normalized_name: getOrElse_Option
 ---
 
 # `getOrElse` (`Option`)

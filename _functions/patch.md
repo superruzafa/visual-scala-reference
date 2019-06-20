@@ -1,7 +1,5 @@
 ---
-title: patch
-layout: function
-permalink: /patch
+name: patch
 ---
 
 # `patch`

@@ -1,7 +1,5 @@
 ---
-title: nonEmpty
-layout: function
-permalink: /nonEmpty
+name: nonEmpty
 ---
 
 # `nonEmpty`

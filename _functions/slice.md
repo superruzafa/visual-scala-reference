@@ -1,7 +1,5 @@
 ---
-title: slice
-layout: function
-permalink: /slice
+name: slice
 ---
 
 # `slice`

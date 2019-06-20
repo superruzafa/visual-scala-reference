@@ -1,7 +1,5 @@
 ---
-title: zipAll
-layout: function
-permalink: /zipAll
+name: zipAll
 ---
 
 # `zipAll`
