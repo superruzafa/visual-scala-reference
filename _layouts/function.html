@@ -6,14 +6,7 @@ image: "{{ site.url }}{{ site.baseurl }}/images/{{ page.normalized_name | defaul
 type: article
 ---
 
-{% assign all_functions = site.documents | where_exp: 'd', 'd.layout == "function"' %}
-{% assign all_translations = all_functions | where_exp: 'd', 'd.name == page.name' %}
-<ul>
-{% for f in all_translations %}
-    <li><a href="{{ f.url | relative_url }}">{{ site.t[f.lang].language_name }}</a></li>
-{% endfor %}
-</ul>
-
 <main class="function-page">
     {{ content }}
+    {% include translations.html %}
 </main>
