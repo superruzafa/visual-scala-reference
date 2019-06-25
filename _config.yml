@@ -3,7 +3,7 @@ email: superruzafa@gmail.com
 description: >-
   An awesome guide to the most common Scala collection functions
 baseurl: "/visual-scala-reference"
-url: "https://superruzafa.github.io"
+url: https://superruzafa.github.io
 github_username:  superruzafa
 
 markdown: kramdown
@@ -20,5 +20,38 @@ keep_files:
   - images
 
 collections:
-  functions:
+  en:
     output: true
+    permalink: /:title
+  es:
+    output: true
+    permalink: /:collection/:title
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: en
+  - scope:
+      path: ""
+      type: es
+    values:
+      lang: es
+  - scope:
+      path: "_en/functions"
+    values:
+      layout: function
+      description: "Graphical representation of the Scala's {{ page.name }} function"
+  - scope:
+      path: "_es/functions"
+    values:
+      description: "Representación gráfica de la function {{ page.name }} de Scala"
+      layout: function
+
+t:
+  en:
+    home: ""
+    language_name: English
+  es:
+    home: /es
+    language_name: Español

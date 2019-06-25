@@ -1,24 +1,3 @@
-title: Visual Scala Reference
-email: superruzafa@gmail.com
-description: >-
-  An awesome guide to the most common Scala collection functions
-baseurl: "/visual-scala-reference"
-url: "https://localhost:4000"
-github_username:  superruzafa
-
-markdown: kramdown
-kramdown:
-  syntax_highlighter_opts:
-    disable: true
-theme: minima
-plugins:
-exclude:
-  - Dockerfile
-  - docker-compose.yml
-  - docker-compose.override.yml
-keep_files:
-  - images
-
-collections:
-  functions:
-    output: true
+url: https://localhost:4000
+incremental: true
+host: 0.0.0.0

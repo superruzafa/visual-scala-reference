@@ -1,7 +1,7 @@
 version: '3.6'
 services:
   site:
-    command: ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0", "--config", "_config_dev.yml", "--verbose", "--incremental"]
+    command: ["bundle", "exec", "jekyll", "serve", "--config", "_config.yml,_config_dev.yml", "--verbose"]
     environment:
       - JEKYLL_ENV=development
     volumes:

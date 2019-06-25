@@ -1,7 +1,7 @@
 <header class="header">
   <div class="wrapper">
     <div class="container-fluid">
-      <a class="logo" href="{{ site.baseurl }}/">
+      <a class="logo" href="{{ site.t[page.lang].home | relative_url }}/">
         <span>{{ site.title }}</span>
       </a>
       <div class="searchbox">
@@ -18,5 +18,14 @@
   </li>
 </template>
 <script>
-  new Search();
+    const functions = [
+{%- assign all_functions = site.documents | where: 'layout', 'function' -%}
+{%- assign locale_functions = all_functions | where: 'lang', page.lang -%}
+{%- for f in locale_functions -%}
+  {%- unless f.missing -%}
+  { name: "{{ f.name }}", url: "{{ f.url | relative_url }}" },
+  {%- endunless -%}
+{%- endfor -%}
+    ];
+  new Search(functions);
 </script>

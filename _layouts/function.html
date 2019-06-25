@@ -1,11 +1,12 @@
 ---
 layout: default
-title: "{{ page.title }}"
-description: "Graphical representation of the Scala's {{ page.title }} function"
-image: "{{ site.url }}{{ site.baseurl }}/images/{{ page.title }}.png"
+title: "{{ page.name }}"
+description: "{{ page.description | flatify }}"
+image: "{{ site.url }}{{ site.baseurl }}/images/{{ page.normalized_name | default: page.name }}.png"
 type: article
 ---
 
 <main class="function-page">
     {{ content }}
+    {% include translations.html %}
 </main>

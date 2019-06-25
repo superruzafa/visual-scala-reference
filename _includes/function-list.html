@@ -1,0 +1,17 @@
+{% assign all_functions = site.documents | where: 'layout', 'function' %}
+{% assign localized_functions = all_functions | where: 'lang', page.lang %}
+<ul class="function-list">
+{%- assign prevInitial = "" -%}
+{%- for function in localized_functions -%}
+  {%- unless function.missing -%}
+    {%- assign currInitial = function.title | slice: 0 -%}
+    {%- if currInitial != prevInitial -%}
+  <li class="function-item function-initial">{{ currInitial | upcase }}</li>
+    {%- endif %}
+  <li class="function-item">
+    <a href="{{ function.url | relative_url }}">{{ function.name }}</a>
+  </li>
+    {%- assign prevInitial = currInitial -%}
+  {%- endunless -%}
+{%- endfor -%}
+</ul>

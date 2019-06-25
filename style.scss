@@ -155,6 +155,27 @@
   }
 }
 
+.translation-links {
+  border-top: 1px solid #e0e0e0;
+  font-size: 0.85rem;
+  list-style: none;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  text-align: right;
+}
+
+.translation-link {
+  display: inline;
+
+  & + & {
+    margin-left: 1rem;
+  }
+
+  &.current-lang {
+    font-weight: 600;
+  }
+}
+
 .wrapper {
   margin: 0 auto;
   max-width: 800px;

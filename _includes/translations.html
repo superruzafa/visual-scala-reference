@@ -1,0 +1,7 @@
+{% assign same_docs = site.documents | where_exp: 'd', 'd.layout == page.layout' %}
+{% assign all_translations = same_docs | where_exp: 'd', 'd.name == page.name' %}
+<ul class="translation-links">
+{% for f in all_translations %}
+    <li class="translation-link{% if f.lang == page.lang %} current-lang{% endif %}"><a href="{{ f.url | relative_url }}" hreflang="{{ f.lang }}">{{ site.t[f.lang].language_name }}</a></li>
+{% endfor %}
+</ul>
