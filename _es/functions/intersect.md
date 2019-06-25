@@ -4,11 +4,7 @@ name: intersect
 
 # `intersect`
 
-~~~ scala
-trait Collection[A] {
-  def intersect(as: Collection[A]): Collection[A]
-}
-~~~
+@include [signatures/intersect.md]
 
 `intersect` computa la intersección multiconjunto entre esta colección y la colección `as`.
 

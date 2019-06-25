@@ -4,11 +4,7 @@ name: takeRight
 
 # `takeRight`
 
-~~~ scala
-trait Collection[A] {
-  def takeRight(i: Int): Collection[A]
-}
-~~~
+@include [signatures/takeRight.md]
 
 `takeRight` crea una colección manteniendo los últimos `i` elementos de esta colección, descartando el resto.
 

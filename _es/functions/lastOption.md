@@ -4,11 +4,7 @@ name: lastOption
 
 # `lastOption`
 
-~~~ scala
-trait Collection[A] {
-  def lastOption: Option[A]
-}
-~~~
+@include [signatures/lastOption.md]
 
 `lastOption` devuelve el último elemento de esta colección, envuelto con `Some`.
 

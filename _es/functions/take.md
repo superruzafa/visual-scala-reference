@@ -4,11 +4,7 @@ name: take
 
 # `take`
 
-~~~ scala
-trait Collection[A] {
-  def take(i: Int): Collection[A]
-}
-~~~
+@include [signatures/take.md]
 
 `take` crea una colección manteniendo los primeros `i` elementos de esta colección, descartando el resto.
 

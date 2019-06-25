@@ -4,12 +4,7 @@ name: lastIndexWhere
 
 # `lastIndexWhere`
 
-~~~ scala
-trait Collection[A] {
-  def lastIndexWhere(p: (A) => Boolean): Int
-  def lastIndexWhere(p: (A) => Boolean: j: Int): Int
-}
-~~~
+@include [signatures/lastIndexWhere.md]
 
 `lastIndexWhere` returns the index of the last element that satisfy the predicate `p`.
 

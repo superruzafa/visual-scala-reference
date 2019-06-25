@@ -4,11 +4,7 @@ name: sortWith
 
 # `sortWith`
 
-~~~ scala
-trait Collection[A] {
-  def sortWith(lt: (A, A) => Boolean): Collection[A]
-}
-~~~
+@include [signatures/sortWith.md]
 
 `sorted` creates a collection with the elements sorted by using a comparison function `lt` which should returns `true` when its first argument is less than the second and `false` otherwise.
 

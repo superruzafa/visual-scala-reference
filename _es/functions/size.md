@@ -4,11 +4,7 @@ name: size
 
 # `size`
 
-~~~ scala
-trait Collection[A] {
-  def size: Int
-}
-~~~
+@include [signatures/size.md]
 
 `size` devuelve cuántos elementos tiene esta colección.
 

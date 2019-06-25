@@ -4,11 +4,7 @@ name: concat
 
 # `concat`
 
-~~~ scala
-object Collection {
-  def concat[A](as: Collection[A]*): Collection[A]
-}
-~~~
+@include [signatures/concat.md]
 
 `concat` accepts any arbitrary number of collections and uses their elements to create a single collection.
 

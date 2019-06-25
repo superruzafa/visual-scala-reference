@@ -4,11 +4,7 @@ name: permutations
 
 # `permutations`
 
-~~~ scala
-trait Collection[A] {
-  def permutations: Iterator[Collection[A]]
-}
-~~~
+@include [signatures/permutations.md]
 
 `permutations` computa todas las posibles permutaciones de esta colección y devuelve un `Iterator` para iterarlas.
 

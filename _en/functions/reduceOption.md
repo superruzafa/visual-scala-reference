@@ -4,11 +4,7 @@ name: reduceOption
 
 # `reduceOption`
 
-~~~ scala
-trait Collection[A] {
-  def reduceOption(op: (A, A) => A): Option[A]
-}
-~~~
+@include [signatures/reduceOption.md]
 
 `reduceOption` applies the binary operator `op` to pairs of elements in this collection until the final result is calculated and returned wrapped with `Some`.
 

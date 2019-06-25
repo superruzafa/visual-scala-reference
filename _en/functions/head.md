@@ -4,11 +4,7 @@ name: head
 
 # `head`
 
-~~~ scala
-trait Collection[A] {
-  def head: A
-}
-~~~
+@include [signatures/head.md]
 
 `head` returns the first element of this collection.
 

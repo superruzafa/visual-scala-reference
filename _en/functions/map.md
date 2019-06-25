@@ -4,11 +4,7 @@ name: map
 
 # `map`
 
-~~~ scala
-trait Collection[A] {
-  def map[B](f: A => B): Collection[B]
-}
-~~~
+@include [signatures/map.md]
 
 `map` creates a collection using as elements the results obtained from applying the function `f` to each element of this collection.
 

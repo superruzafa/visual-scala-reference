@@ -4,11 +4,7 @@ name: takeWhile
 
 # `takeWhile`
 
-~~~ scala
-trait Collection[A] {
-  def takeWhile(p: (A) => Boolean): Collection[A]
-}
-~~~
+@include [signatures/takeWhile.md]
 
 `takeWhile` crea una colección manteniendo el prefijo de mayor longitud de elementos que satisfacen el predicado `p`, descartando el resto.
 

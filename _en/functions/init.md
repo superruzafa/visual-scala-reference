@@ -4,11 +4,7 @@ name: init
 
 # `init`
 
-~~~ scala
-trait Collection[A] {
-  def init: Collection[A]
-}
-~~~
+@include [signatures/init.md]
 
 `init` returns all but the last element of this collection.
 

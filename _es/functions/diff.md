@@ -4,11 +4,7 @@ name: diff
 
 # `diff`
 
-~~~ scala
-trait Collection[A] {
-  def diff(as: Collection[A]): Collection[A]
-}
-~~~
+@include [signatures/diff.md]
 
 `diff` computa la diferencia multiconjunto entre esta colección y la colección `as`.
 

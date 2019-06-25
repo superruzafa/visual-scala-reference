@@ -4,12 +4,7 @@ name: indexWhere
 
 # `indexWhere`
 
-~~~ scala
-trait Collection[A] {
-  def indexWhere(p: (A) => Boolean): Int
-  def indexWhere(p: (A) => Boolean: j: Int): Int
-}
-~~~
+@include [signatures/indexWhere.md]
 
 `indexWhere` devuelve el índice del primer elemento que satisface el predicado `p`.
 

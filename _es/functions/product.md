@@ -4,11 +4,7 @@ name: product
 
 # `product`
 
-~~~ scala
-trait Collection[A] {
-  def product: A
-}
-~~~
+@include [signatures/product.md]
 
 `product` computa el producto de los elementos de esta colección.
 

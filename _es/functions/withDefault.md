@@ -4,11 +4,7 @@ name: withDefault
 
 # `withDefault`
 
-~~~ scala
-trait Map[K, V] {
-  def withDefault(f: (K) => V): Map[K, V]
-}
-~~~
+@include [signatures/withDefault.md]
 
 `withDefault` crea un `Map` con los mismos pares clave-valor de este `Map` pero proporcionando un valor calculado en base a aquellas claves no encontradas.
 

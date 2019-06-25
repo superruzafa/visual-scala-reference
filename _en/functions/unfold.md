@@ -4,11 +4,7 @@ name: unfold
 
 # `unfold`
 
-~~~ scala
-object Collection {
-  def unfold[A, S](s: S)(f: (S) => Option[(A, S)]): Collection[A]
-}
-~~~
+@include [signatures/unfold.md]
 
 `unfold` creates a collection by taking each pair of values returned by the function `f` both to get the current element and calculate the next, as long as the function returns them wrapped with `Some`.
 

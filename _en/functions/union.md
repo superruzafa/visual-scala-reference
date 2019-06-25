@@ -4,11 +4,7 @@ name: union
 
 # `union`
 
-~~~ scala
-trait Collection[A] {
-  def union(as: Collection[A]): Collection[A]
-}
-~~~
+@include [signatures/union.md]
 
 `union` computes the multiset union between this and the `as` collection.
 

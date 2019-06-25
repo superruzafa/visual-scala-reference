@@ -4,11 +4,7 @@ name: maxBy
 
 # `maxBy`
 
-~~~ scala
-trait Collection[A] {
-  def maxBy[W](f: (A) => W): A
-}
-~~~
+@include [signatures/maxBy.md]
 
 `maxBy` applies `f` to each element and returns the element that yields the largest value.
 

@@ -4,12 +4,7 @@ name: lastIndexOf
 
 # `lastIndexOf`
 
-~~~ scala
-trait Collection[A] {
-  def lastIndexOf(a: A): Int
-  def lastIndexOf(a: A, j: Int): Int
-}
-~~~
+@include [signatures/lastIndexOf.md]
 
 `lastIndexOf` devuelve el índice del último elemento que es igual (`==`) al valor `a`.
 

@@ -4,11 +4,7 @@ name: groupBy
 
 # `groupBy`
 
-~~~ scala
-trait Collection[A] {
-  def groupBy[K](f: (A) => K): Map[K, Collection[A]]
-}
-~~~
+@include [signatures/groupBy.md]
 
 `groupBy` crea un `Map` agrupando los elementos bajo la clave que emiten cuando se les es aplicada la función `f`.
 

@@ -4,11 +4,7 @@ name: isEmpty
 
 # `isEmpty`
 
-~~~ scala
-trait Collection[A] {
-  def isEmpty: Boolean
-}
-~~~
+@include [signatures/isEmpty.md]
 
 `isEmpty` comprueba si esta colección no tiene elementos y devuelve `false` en otro caso.
 

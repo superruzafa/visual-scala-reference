@@ -4,11 +4,7 @@ name: exists
 
 # `exists`
 
-~~~ scala
-trait Collection[A] {
-  def exists(p: (A) => Boolean): Boolean
-}
-~~~
+@include [signatures/exists.md]
 
 `exists` checks whether at least one element in this collection satisfy the predicate `p`, returning `true` if such element exists.
 

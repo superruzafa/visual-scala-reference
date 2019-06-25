@@ -4,11 +4,7 @@ name: reduce
 
 # `reduce`
 
-~~~ scala
-trait Collection[A] {
-  def reduce(op: (A, A) => A): A
-}
-~~~
+@include [signatures/reduce.md]
 
 `reduce` aplica el operador binario `op` a pares de elementos de esta colección hasta que el resultado final es calculado.
 

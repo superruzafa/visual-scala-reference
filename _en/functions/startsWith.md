@@ -4,12 +4,7 @@ name: startsWith
 
 # `startsWith`
 
-~~~ scala
-trait Collection[A] {
-  def startsWith(as: Collection[A]): Boolean
-  def startsWith(as: Collection[A], j: Int): Boolean
-}
-~~~
+@include [signatures/startsWith.md]
 
 `startsWith` checks whether the collection `as` is a prefix of this collection, returning `true` if so.
 

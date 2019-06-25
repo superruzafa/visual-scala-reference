@@ -4,12 +4,7 @@ name: range
 
 # `range`
 
-~~~ scala
-object Collection {
-  def range[A](start: A, end: A): Collection[A]
-  def range[A](start: A, end: A, step: A): Collection[A]
-}
-~~~
+@include [signatures/range.md]
 
 `range` crea una colección utilizando como elementos la secuencia de valores que empieza por `start` y termina antes de alcanzar `end`.
 

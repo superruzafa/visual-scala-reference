@@ -4,11 +4,7 @@ name: dropRight
 
 # `dropRight`
 
-~~~ scala
-trait Collection[A] {
-  def dropRight(i: Int): Collection[A]
-}
-~~~
+@include [signatures/dropRight.md]
 
 `dropRight` crea una colección descartando los últimos `i` elementos de esta colección, manteniendo el resto.
 

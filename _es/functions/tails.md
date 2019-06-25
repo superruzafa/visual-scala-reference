@@ -4,11 +4,7 @@ name: tails
 
 # `tails`
 
-~~~ scala
-trait Collection[A] {
-  def tails: Iterator[Collection[A]]
-}
-~~~
+@include [signatures/tails.md]
 
 `tails` computa todos los posibles sufijos de esta colección y devuelve un `Iterator` para iterarlos.
 

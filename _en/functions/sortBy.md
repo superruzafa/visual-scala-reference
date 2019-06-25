@@ -4,11 +4,7 @@ name: sortBy
 
 # `sortBy`
 
-~~~ scala
-trait Collection[A] {
-  def sortBy[W](f: (A) => W): Collection[A]
-}
-~~~
+@include [signatures/sortBy.md]
 
 `sortBy` creates a collection with the elements sorted by the results yielded by `f` after being applied to each element.
 

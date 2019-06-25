@@ -4,11 +4,7 @@ name: aggregate
 
 # `aggregate`
 
-~~~ scala
-trait Collection[A] {
-  def aggregate[B](z: => B)(seqop: (B, A) => B, combop: (B, B) => B): B
-}
-~~~
+@include [signatures/aggregate.md]
 
 `aggregate` applies the binary operator `seqop` to chunks of elements and then combines the intermediate results using the binary operator `combop`. The value `z` is the _zero_ element for the type `B` and may be used multiple times.
 

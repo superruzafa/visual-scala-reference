@@ -4,11 +4,7 @@ name: partition
 
 # `partition`
 
-~~~ scala
-trait Collection[A] {
-  def partition(p: (A) => Boolean): (Collection[A], Collection[A])
-}
-~~~
+@include [signatures/partition.md]
 
 `partition` creates two collections: one containing those elements that satisfy the predicate `p` and those which don't, and returns them in a `Tuple2`.
 

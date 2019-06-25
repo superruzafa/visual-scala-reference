@@ -4,11 +4,7 @@ name: combinations
 
 # `combinations`
 
-~~~ scala
-trait Collection[A] {
-  def combinations(k: Int): Iterator[Collection[A]]
-}
-~~~
+@include [signatures/combinations.md]
 
 `combinations` computes all the possible combinations of this collection's elements taking `k` elements at a time and returns an `Iterator` to iterate them.
 

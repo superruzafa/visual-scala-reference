@@ -4,11 +4,7 @@ name: unzip3
 
 # `unzip3`
 
-~~~ scala
-trait Collection[ABC] {
-  def unzip3[A, B, C]: (Collection[A], Collection[B], Collection[C])
-}
-~~~
+@include [signatures/unzip.md]
 
 `unzip3` creates a `Tuple3` with three collections: the first containing the first component of each tripled element, the second containing the second component and the third containing the rest.
 

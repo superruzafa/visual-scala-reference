@@ -4,11 +4,7 @@ name: nonEmpty
 
 # `nonEmpty`
 
-~~~ scala
-trait Collection[A] {
-  def nonEmpty: Boolean
-}
-~~~
+@include [signatures/nonEmpty.md]
 
 `nonEmpty` returns `true` when this collection has _at least_ one element.
 

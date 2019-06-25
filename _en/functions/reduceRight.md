@@ -4,11 +4,7 @@ name: reduceRight
 
 # `reduceRight`
 
-~~~ scala
-trait Collection[A] {
-  def reduceRight[B :> A](op: (B, A) => B): B
-}
-~~~
+@include [signatures/reduceRight.md]
 
 `reduceRight` applies the binary operator `op` to each element, going from right to left, and the previous `op` result.
 The first time `op` is applied it's fed with the last two elements.

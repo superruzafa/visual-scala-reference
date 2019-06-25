@@ -4,11 +4,7 @@ name: sliding
 
 # `sliding`
 
-~~~ scala
-trait Collection[A] {
-  def sliding(sz: Int, st: Int): Iterator[Collection[A]]
-}
-~~~
+@include [signatures/sliding.md]
 
 `sliding` computa todas las subcolecciones de `m` elementos que empiezan cada `s` elementos y devuelve un `Iterator` para iterarlas.
 

@@ -4,11 +4,7 @@ name: segmentLength
 
 # `segmentLength`
 
-~~~ scala
-trait Collection[A] {
-  def segmentLength(p: (A) => Boolean, j: Int): Int
-}
-~~~
+@include [signatures/segmentLength.md]
 
 `segmentLength` devuelve la longitud el mayor segmento de elementos empezando en `j`  que satisfacen el predicado `p`.
 

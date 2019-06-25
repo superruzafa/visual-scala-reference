@@ -4,11 +4,7 @@ name: zipWithIndex
 
 # `zipWithIndex`
 
-~~~ scala
-trait Collection[A] {
-  def zipWithIndex: Collection[(A, Int)]
-}
-~~~
+@include [signatures/zipWithIndex.md]
 
 `zipWithIndex` creates a collection by pairing each element with its own index.
 

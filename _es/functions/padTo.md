@@ -4,11 +4,7 @@ name: padTo
 
 # `padTo`
 
-~~~ scala
-trait Collection[A] {
-  def padTo(m: Int, a: A): Collection[A]
-}
-~~~
+@include [signatures/padTo.md]
 
 `padTo` crea una copia de esta colección y la rellena a la derecha con el valor `a` hasta alcanzar cierta longitud `m`.
 

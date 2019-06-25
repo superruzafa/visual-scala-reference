@@ -4,11 +4,7 @@ name: max
 
 # `max`
 
-~~~ scala
-trait Collection[A] {
-  def max: A
-}
-~~~
+@include [signatures/max.md]
 
 `max` returns the largest value in this collection.
 

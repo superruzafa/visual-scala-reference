@@ -4,11 +4,7 @@ name: slice
 
 # `slice`
 
-~~~ scala
-trait Collection[A] {
-  def slice(i: Int, j: Int): Collection[A]
-}
-~~~
+@include [signatures/slice.md]
 
 `slice` crea una colección con la secuencia de elementos comprendida entre el índice `i` hasta el índice `j`.
 

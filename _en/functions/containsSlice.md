@@ -4,11 +4,7 @@ name: containsSlice
 
 # `containsSlice`
 
-~~~ scala
-trait Collection[A] {
-  def containsSlice(as: Collection[A]): Boolean
-}
-~~~
+@include [signatures/containsSlice.md]
 
 `containsSlice` checks whether the collection `as` can be found as a slice in this collection, returning `true` if so.
 

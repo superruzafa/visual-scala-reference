@@ -4,11 +4,7 @@ name: contains
 
 # `contains`
 
-~~~ scala
-trait Collection[A] {
-  def contains(a: A): Boolean
-}
-~~~
+@include [signatures/contains.md]
 
 `contains` checks whether a given value `a` equals (`==`) _at least_ one element in this collection, returning `true` if so.
 

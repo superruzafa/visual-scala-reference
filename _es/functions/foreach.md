@@ -4,11 +4,7 @@ name: foreach
 
 # `foreach`
 
-~~~ scala
-trait Collection[A] {
-  def foreach(f: (A) => Unit): Unit
-}
-~~~
+@include [signatures/foreach.md]
 
 `foreach` aplica la función `f` a cada elemento de esta colección, descartando cualquier resultado.
 Esta función devuelve `()`.

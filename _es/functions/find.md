@@ -4,11 +4,7 @@ name: find
 
 # `find`
 
-~~~ scala
-trait Collection[A] {
-  def find(p: (A) => Boolean): Option[A]
-}
-~~~
+@include [signatures/find.md]
 
 `find` devuelve el primer elemento que satisface el predicado `p`, envuelto con `Some`.
 

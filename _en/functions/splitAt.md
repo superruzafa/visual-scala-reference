@@ -4,11 +4,7 @@ name: splitAt
 
 # `splitAt`
 
-~~~ scala
-trait Collection[A] {
-  def splitAt(i: Int): (Collection[A], Collection[A])
-}
-~~~
+@include [signatures/splitAt.md]
 
 `splitAt` creates a `Tuple2` with two collections: the first containing all the elements whose index is less or equal than `i` and the other with the rest of elements.
 

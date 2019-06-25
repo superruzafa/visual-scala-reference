@@ -4,11 +4,7 @@ name: values
 
 # `values`
 
-~~~ scala
-trait Map[K, V] {
-  def values: Iterable[V]
-}
-~~~
+@include [signatures/values.md]
 
 `values` crea un `Iterator` para iterar los valores de este `Map`.
 

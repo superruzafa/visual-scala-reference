@@ -4,12 +4,7 @@ name: tabulate
 
 # `tabulate`
 
-~~~ scala
-object Collection {
-  def tabulate[A](n1: Int, ..., nm: Int)(f: (Int, ..., Int): => A)
-    : Collection[ ... Collection[A] ... ]
-}
-~~~
+@include [signatures/tabulate.md]
 
 `tabulate` creates an n-dimensional collection containing the result of the function `f` applied to a range of integers.
 

@@ -4,11 +4,7 @@ name: filterNot
 
 # `filterNot`
 
-~~~ scala
-trait Collection[A] {
-  def filterNot(p: (A) => Boolean): Collection[A]
-}
-~~~
+@include [signatures/filterNot.md]
 
 `filter` creates a collection with those elements that do not satisfy the predicate `p` and discarding the rest.
 

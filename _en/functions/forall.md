@@ -4,11 +4,7 @@ name: forall
 
 # `forall`
 
-~~~ scala
-trait Collection[A] {
-  def forall(p: (A) => Boolean): Boolean
-}
-~~~
+@include [signatures/forall.md]
 
 `forall` checks whether all elements in this collection satisfy the predicate `p`, returning `false` if `p` doesn't stand for at least one element.
 

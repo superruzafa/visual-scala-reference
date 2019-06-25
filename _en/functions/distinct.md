@@ -4,11 +4,7 @@ name: distinct
 
 # `distinct`
 
-~~~ scala
-trait Collection[A] {
-  def distinct: Collection[A]
-}
-~~~
+@include [signatures/distinct.md]
 
 `distinct` creates a copy of this collection without duplicated elements.
 

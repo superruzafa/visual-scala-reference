@@ -4,11 +4,7 @@ name: chain
 
 # `chain`
 
-~~~ scala
-object Function {
-  def chain[X](fs: Collection[(X) => X]): (X) => X
-}
-~~~
+@include [signatures/chain.md]
 
 `chain` creates an anonymous function that accepts a value and returns the result of sequentially applying all the functions contained in the collection `fs`.
 

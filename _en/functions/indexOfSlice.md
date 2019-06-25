@@ -4,12 +4,7 @@ name: indexOfSlice
 
 # `indexOfSlice`
 
-~~~ scala
-trait Collection[A] {
-  def indexOfSlice(as: Collection[A]): Int
-  def indexOfSlice(as: Collection[A], j: Int): Int
-}
-~~~
+@include [signatures/indexOfSlice.md]
 
 `indexOfSlice` returns the index of the first element where the collection `as` can be found as a slice.
 

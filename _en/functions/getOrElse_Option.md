@@ -7,11 +7,7 @@ normalized_name: getOrElse_Option
 
 For the `Map`'s `getOrElse` function go [here](./getOrElse_(Map)).
 
-~~~ scala
-trait Option[A] {
-  def getOrElse[B >: A](b: => B): B
-}
-~~~
+@include [signatures/getOrElse_Option.md]
 
 `getOrElse` returns the wrapped value when this `Option` is `Some`.
 

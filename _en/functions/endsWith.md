@@ -4,11 +4,7 @@ name: endsWith
 
 # `endsWith`
 
-~~~ scala
-trait Collection[A] {
-  def endsWith(as: Collection[A]): Boolean
-}
-~~~
+@include [signatures/endsWith.md]
 
 `endsWith` checks whether the collection `as` is a suffix of this collection, returning `true` if so.
 

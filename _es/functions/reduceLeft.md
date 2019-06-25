@@ -4,11 +4,7 @@ name: reduceLeft
 
 # `reduceLeft`
 
-~~~ scala
-trait Collection[A] {
-  def reduceLeft[B :> A](op: (B, A) => B): B
-}
-~~~
+@include [signatures/reduceLeft.md]
 
 `reduceLeft` aplica, de izquierda a derecha, el operador binario `op` a cada elemento y al resultado del anterior `op`.
 La primera vez que `op` es aplicado es alimentado con los dos primeros elementos.

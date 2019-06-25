@@ -4,11 +4,7 @@ name: mapValues
 
 # `mapValues`
 
-~~~ scala
-trait Map[K, V] {
-  def mapValues[W](f: (V) => W): Map[K, W]
-}
-~~~
+@include [signatures/mapValues.md]
 
 `mapValues` creates a `Map` with the same keys from this `Map` but transforming each key's value using the function `f`.
 

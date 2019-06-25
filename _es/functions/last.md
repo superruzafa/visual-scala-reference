@@ -4,11 +4,7 @@ name: last
 
 # `last`
 
-~~~ scala
-trait Collection[A] {
-  def last: A
-}
-~~~
+@include [signatures/last.md]
 
 `last` devuelve el último elemento de esta colección.
 

@@ -4,11 +4,7 @@ name: orElse
 
 # `orElse`
 
-~~~ scala
-trait PartialFunction[X, Y] {
-  def orElse(g: PartialFunction[X, Y]): PartialFunction[X, Y]
-}
-~~~
+@include [signatures/orElse.md]
 
 `orElse` crea una función parcial anónima que devuelve el valor devuelto por esta función parcial.
 

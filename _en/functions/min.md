@@ -4,11 +4,7 @@ name: min
 
 # `min`
 
-~~~ scala
-trait Collection[A] {
-  def min: A
-}
-~~~
+@include [signatures/min.md]
 
 `min` returns the smallest value in this collection.
 

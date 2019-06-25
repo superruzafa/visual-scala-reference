@@ -4,11 +4,7 @@ name: zip
 
 # `zip`
 
-~~~ scala
-trait Collection[A] {
-  def zip[B](bs: Collection[B]): Collection[(A, B)]
-}
-~~~
+@include [signatures/zip.md]
 
 `zip` crea una colección emparejando cada elemento de esta colección con el elemento que ocupa el mismo índice en `bs`, descartando aquellos elementos que no tengan pareja.
 

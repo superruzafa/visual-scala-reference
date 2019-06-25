@@ -4,11 +4,7 @@ name: sorted
 
 # `sorted`
 
-~~~ scala
-trait Collection[A] {
-  def sorted: Collection[A]
-}
-~~~
+@include [signatures/sorted.md]
 
 `sorted` crea una colección con los elementos ordenados.
 

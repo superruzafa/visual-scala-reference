@@ -4,11 +4,7 @@ name: zip
 
 # `zip`
 
-~~~ scala
-trait Collection[A] {
-  def zip[B](bs: Collection[B]): Collection[(A, B)]
-}
-~~~
+@include [signatures/zip.md]
 
 `zip` creates a collection by pairing each element of this collection with the element occuping the same index in `bs` and discarding unpaired elements.
 

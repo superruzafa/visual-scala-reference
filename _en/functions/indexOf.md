@@ -4,12 +4,7 @@ name: indexOf
 
 # `indexOf`
 
-~~~ scala
-trait Collection[A] {
-  def indexOf(a: A): Int
-  def indexOf(a: A, j: Int): Int
-}
-~~~
+@include [signatures/indexOf.md]
 
 `indexOf` returns the index of the first element that equals (`==`) the value `a`.
 

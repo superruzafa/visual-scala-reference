@@ -4,11 +4,7 @@ name: fill
 
 # `fill`
 
-~~~ scala
-object Collection {
-  def fill[A](n1: Int, ..., nm: Int)(a: => A): Collection[ ... Collection[A] ... ]
-}
-~~~
+@include [signatures/fill.md]
 
 `fill` crea una colección n-dimensional conteniendo el resultado de cierta computación `a`.
 

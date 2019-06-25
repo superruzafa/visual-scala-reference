@@ -4,11 +4,7 @@ name: headOption
 
 # `headOption`
 
-~~~ scala
-trait Collection[A] {
-  def headOption: Option[A]
-}
-~~~
+@include [signatures/headOption.md]
 
 `headOption` devuelve el primer elemento de esta colección, envuelto con `Some`.
 

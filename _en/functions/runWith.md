@@ -4,11 +4,7 @@ name: runWith
 
 # `runWith`
 
-~~~ scala
-trait PartialFunction[X, Y] {
-  def runWith[U](g: (Y) => U): (X) => Boolean
-}
-~~~
+@include [signatures/runWith.md]
 
 `runWith` creates an anonymous function that applies this partial function and then `g` to an input value, if this partial function is defined for such value, and returns `true`.
 

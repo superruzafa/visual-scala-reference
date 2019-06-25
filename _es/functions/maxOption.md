@@ -4,11 +4,7 @@ name: maxOption
 
 # `maxOption`
 
-~~~ scala
-trait Collection[A] {
-  def maxOption: Option[A]
-}
-~~~
+@include [signatures/maxOption.md]
 
 `maxOption` devuelve el mayor valor de esta colección, envuelto con `Some`.
 

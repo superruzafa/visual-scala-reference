@@ -4,11 +4,7 @@ name: count
 
 # `count`
 
-~~~ scala
-trait Collection[A] {
-  def count(p: (A) => Boolean): Int
-}
-~~~
+@include [signatures/count.md]
 
 `count` determines how many elements in this collection satisfy the predicate `p`.
 

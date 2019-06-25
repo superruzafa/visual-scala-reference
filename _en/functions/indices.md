@@ -4,11 +4,7 @@ name: indices
 
 # `indices`
 
-~~~ scala
-trait Collection[A] {
-  def indices: Range
-}
-~~~
+@include [signatures/indices.md]
 
 `indices` creates a `Range` with the indices used by this collection.
 

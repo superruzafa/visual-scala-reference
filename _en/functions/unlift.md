@@ -4,11 +4,7 @@ name: unlift
 
 # `unlift`
 
-~~~ scala
-object Function {
-  def unlift[X, Y](f: (X) => Option[Y]): PartialFunction[X, Y]
-}
-~~~
+@include [signatures/unlift.md]
 
 `unlift` creates an anonymous function that returns the value wrapped with `Some` returned by this partial function.
 

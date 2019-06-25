@@ -4,12 +4,7 @@ name: lastIndexOfSlice
 
 # `lastIndexOfSlice`
 
-~~~ scala
-trait Collection[A] {
-  def lastIndexOfSlice(as: Collection[A]): Int
-  def lastIndexOfSlice(as: Collection[A], j: Int): Int
-}
-~~~
+@include [signatures/lastIndexOfSlice.md]
 
 `lastIndexOfSlice` devuelve el índice del último elemento donde la colección `as` puede ser encontrada como subcolección.
 

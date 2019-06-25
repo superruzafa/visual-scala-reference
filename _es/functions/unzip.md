@@ -4,11 +4,7 @@ name: unzip
 
 # `unzip`
 
-~~~ scala
-trait Collection[AB] {
-  def unzip[A, B]: (Collection[A], Collection[B])
-}
-~~~
+@include [signatures/unzip.md]
 
 `unzip` crea una `Tuple2` con dos colecciones: la primera conteniendo el primer componente de cada pareja de elementos y la segunda conteniendo los restantes.
 

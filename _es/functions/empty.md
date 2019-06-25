@@ -4,11 +4,7 @@ name: empty
 
 # `empty`
 
-~~~ scala
-object Collection {
-  def empty[A]: Collection[A]
-}
-~~~
+@include [signatures/empty.md]
 
 `empty` crea una colección para contener elementos de tipo `A` pero sin ningún elemento.
 

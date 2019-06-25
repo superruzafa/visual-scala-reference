@@ -4,11 +4,7 @@ name: reverse
 
 # `reverse`
 
-~~~ scala
-trait Collection[A] {
-  def reverse: Collection[A]
-}
-~~~
+@include [signatures/reverse.md]
 
 `reverse` crea una colección invirtiendo el orden de los elementos.
 

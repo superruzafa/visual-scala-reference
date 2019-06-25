@@ -4,11 +4,7 @@ name: maxByOption
 
 # `maxByOption`
 
-~~~ scala
-trait Collection[A] {
-  def maxByOption[W](f: (A) => W): A
-}
-~~~
+@include [signatures/maxByOption.md]
 
 `maxByOption` aplica `f` a cada elemento y devuelve el elemento que emitió el mayor valor envuelto con `Some`.
 

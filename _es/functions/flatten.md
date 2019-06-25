@@ -4,11 +4,7 @@ name: flatten
 
 # `flatten`
 
-~~~ scala
-trait Collection[A] {
-  def flatten[B]: Collection[B]
-}
-~~~
+@include [signatures/flatten.md]
 
 `flatten` crea una colección utilizando los elementos de las subcolecciones de esta colección.
 

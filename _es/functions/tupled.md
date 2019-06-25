@@ -4,11 +4,7 @@ name: tupled
 
 # `tupled`
 
-~~~ scala
-object Function {
-  def tupled[X1, ..., Xn, Y](f: (X1, ..., Xn) => Y): ((X1, ..., Xn)) => Y
-}
-~~~
+@include [signatures/tupled.md]
 
 `tupled` crea una función anónima equivalente que acepta una n-tupla como único parámetro y cuyos componentes corresponden a los parámetros de esta función.
 

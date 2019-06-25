@@ -4,11 +4,7 @@ name: partitionMap
 
 # `partitionMap`
 
-~~~ scala
-trait Collection[A] {
-  def partitionMap[B, C](f: (A) => Either[B, C]): (Collection[B], Collection[C])
-}
-~~~
+@include [signatures/partitionMap.md]
 
 `partitionMap` creates two collections by applying the function `f` to each element in the collection and classifying the transformed values depending on whether they were wrapped with `Left` or `Right`.
 

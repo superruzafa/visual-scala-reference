@@ -4,11 +4,7 @@ name: filterKeys
 
 # `filterKeys`
 
-~~~ scala
-trait Map[K, V] {
-  def filterKeys(p: (K) => Boolean): Map[K, V]
-}
-~~~
+@include [signatures/filterKeys.md]
 
 `filterKeys` creates a `Map` with those key-value pairs whose key satisfy the predicate `p` and discarding the rest.
 

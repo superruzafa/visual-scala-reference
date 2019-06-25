@@ -4,11 +4,7 @@ name: inits
 
 # `inits`
 
-~~~ scala
-trait Collection[A] {
-  def inits: Iterator[Collection[A]]
-}
-~~~
+@include [signatures/inits.md]
 
 `inits` computa todos los posibles prefijos de esta colección y devuelve un `Iterator` para iterarlos.
 

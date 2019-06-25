@@ -4,11 +4,7 @@ name: patch
 
 # `patch`
 
-~~~ scala
-trait Collection[A] {
-  def patch(j: Int, bs: Collection[A], m: Int): Collection[A]
-}
-~~~
+@include [signatures/patch.md]
 
 `patch` crea una copia de esta colección pero reemplaza los `m` elementos empezando en el índice `j` por la colección `bs`.
 

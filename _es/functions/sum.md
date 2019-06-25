@@ -4,11 +4,7 @@ name: sum
 
 # `sum`
 
-~~~ scala
-trait Collection[A] {
-  def sum: A
-}
-~~~
+@include [signatures/sum.md]
 
 `sum` computa la suma de los elementos de esta colección.
 

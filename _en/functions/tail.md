@@ -4,11 +4,7 @@ name: tail
 
 # `tail`
 
-~~~ scala
-trait Collection[A] {
-  def tail: Collection[A]
-}
-~~~
+@include [signatures/tail.md]
 
 `tail` returns all but the first element in this collection.
 

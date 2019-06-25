@@ -4,11 +4,7 @@ name: find
 
 # `find`
 
-~~~ scala
-trait Collection[A] {
-  def find(p: (A) => Boolean): Option[A]
-}
-~~~
+@include [signatures/find.md]
 
 `find` returns the first element that satisfy the predicate `p`, wrapped with `Some`.
 

@@ -4,11 +4,7 @@ name: filter
 
 # `filter`
 
-~~~ scala
-trait Collection[A] {
-  def filter(p: (A) => Boolean): Collection[A]
-}
-~~~
+@include [signatures/filter.md]
 
 `filter` creates a collection with those elements that satisfy the predicate `p` and discarding the rest.
 

@@ -4,11 +4,7 @@ name: reduceRightOption
 
 # `reduceRightOption`
 
-~~~ scala
-trait Collection[A] {
-  def reduceRightOption[B :> A](f: (B, A) => B): Option[B]
-}
-~~~
+@include [signatures/reduceRightOption.md]
 
 `reduceRightOption` applies the binary operator `op` to each element, going from right to left, and the previous `op` result.
 The first time `op` is applied it's fed with the last two elements.

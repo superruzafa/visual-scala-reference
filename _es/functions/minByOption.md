@@ -4,11 +4,7 @@ name: minByOption
 
 # `minByOption`
 
-~~~ scala
-trait Collection[A] {
-  def minByOption[W](f: (A) => W): A
-}
-~~~
+@include [signatures/minByOption.md]
 
 `maxByOption` aplica `f` a cada elemento y devuelve el elemento que emitió el menor valor envuelto con `Some`.
 

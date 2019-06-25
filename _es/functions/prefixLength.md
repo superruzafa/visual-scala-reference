@@ -4,11 +4,7 @@ name: prefixLength
 
 # `prefixLength`
 
-~~~ scala
-trait Collection[A] {
-  def prefixLength(p: (A) => Boolean): Int
-}
-~~~
+@include [signatures/prefixLength.md]
 
 `prefixLength` devuelve la longitud del mayor prefijo de elementos que satisfacen el predicado `p`.
 

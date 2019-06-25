@@ -4,11 +4,7 @@ name: lift
 
 # `lift`
 
-~~~ scala
-trait PartialFunction[X, Y] {
-  def lift: (X) => Option[Y]
-}
-~~~
+@include [signatures/lift.md]
 
 `lift` crea una función anónima que envuelve con `Some` el valor devuelto por esta función parcial si está definida para el valor de entrada dado.
 

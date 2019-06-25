@@ -7,11 +7,7 @@ normalized_name: getOrElse_Map
 
 Para la función `getOrElse` de `Option` ir [aquí](./getOrElse_(Option)).
 
-~~~ scala
-trait Map[K, V] {
-  def getOrElse(k: K, v: => V): V
-}
-~~~
+@include [signatures/getOrElse_Map.md]
 
 `getOrElse` devuelve el valor asociado a la clave `k` en este `Map`.
 

@@ -4,11 +4,7 @@ name: updated
 
 # `updated`
 
-~~~ scala
-trait Collection[A] {
-  def updated(i: Int, a: A): Collection[A]
-}
-~~~
+@include [signatures/updated.md]
 
 `updated` crea una colección copiando todos los elementos de esta colección pero reemplazando el `i`-ésimo elemento por el valor `a`.
 

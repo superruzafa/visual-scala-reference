@@ -4,11 +4,7 @@ name: minOption
 
 # `minOption`
 
-~~~ scala
-trait Collection[A] {
-  def minOption: Option[A]
-}
-~~~
+@include [signatures/minOption.md]
 
 `maxOption` devuelve el menor valor de esta colección, envuelto con `Some`.
 

@@ -4,11 +4,7 @@ name: sameElements
 
 # `sameElements`
 
-~~~ scala
-trait Collection[A] {
-  def sameElements(as: Collection[A]): Boolean
-}
-~~~
+@include [signatures/sameElements.md]
 
 `sameElements` comprueba si esta colección tiene los mismos elementos en el mismo orden que la colección `as`, y devuelve `true` en ese caso.
 

@@ -4,11 +4,7 @@ name: foldRight
 
 # `foldRight`
 
-~~~ scala
-trait Collection[A] {
-  def foldRight[B](z: B)(op: (B, A) => B): B
-}
-~~~
+@include [signatures/foldRight.md]
 
 `foldRight` applies the binary operator `op` to each element, going from right to left, and the previous `op` result. The first time `op` is applied it's fed with the initial value `z`.
 

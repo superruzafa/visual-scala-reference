@@ -4,11 +4,7 @@ name: mapConserve
 
 # `mapConserve`
 
-~~~ scala
-trait List[A] {
-  def mapConserve(f: (A) => A): List[A]
-}
-~~~
+@include [signatures/mapConserve.md]
 
 `mapConserve` crea una `List` utilizando los resultados obtenidos de aplicar la función `f` a cada elemento de esta colección y además preservando su tipo parametrizado.
 

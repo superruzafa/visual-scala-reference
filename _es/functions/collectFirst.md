@@ -4,11 +4,7 @@ name: collectFirst
 
 # `collectFirst`
 
-~~~ scala
-trait Collection[A] {
-  def collectFirst[B](f: PartialFunction[A, B]): Option[B]
-}
-~~~
+@include [signatures/collectFirst.md]
 
 `collectFirst` aplica la función parcial `f` al primer elemento de esta colección para el cual `f` está definida y devuelve su resultado envuelto con `Some`.
 
