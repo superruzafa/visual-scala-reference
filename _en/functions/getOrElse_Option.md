@@ -5,7 +5,7 @@ normalized_name: getOrElse_Option
 
 # `getOrElse` (`Option`)
 
-For the `Map`'s `getOrElse` function go [here](./getOrElse_(Map)).
+For the `Map`'s `getOrElse` function go [here](./getOrElse_Map).
 
 @include [signatures/getOrElse_Option.md]
 
