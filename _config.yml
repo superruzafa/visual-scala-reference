@@ -41,9 +41,11 @@ defaults:
       path: "_en/functions"
     values:
       layout: function
+      description: "Graphical representation of the Scala's {{ page.name }} function"
   - scope:
       path: "_es/functions"
     values:
+      description: "Representación gráfica de la function {{ page.name }} de Scala"
       layout: function
 
 t:

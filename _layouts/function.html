@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "{{ page.name }}"
-description: "Graphical representation of the Scala's {{ page.name }} function"
+description: "{{ page.description | flatify }}"
 image: "{{ site.url }}{{ site.baseurl }}/images/{{ page.normalized_name | default: page.name }}.png"
 type: article
 ---
