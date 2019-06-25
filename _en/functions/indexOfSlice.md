@@ -25,7 +25,7 @@ The search can start at the given offset `j`.
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
-If `as` cannot be found as a slice in this collection then `-1` is returned.
+If `as` cannot be found as a slice in this collection then this function returns `-1`.
 
 <figure class="diagram">
   <img src="images/indexOfSlice.3.svg" alt="indexOfSlice function">

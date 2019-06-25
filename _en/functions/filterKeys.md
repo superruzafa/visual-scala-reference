@@ -10,7 +10,7 @@ trait Map[K, V] {
 }
 ~~~
 
-`filterKeys` creates a `Map` with those key-value pairs whose key satisfy a predicate `p` and discarding the rest.
+`filterKeys` creates a `Map` with those key-value pairs whose key satisfy the predicate `p` and discarding the rest.
 
 <figure class="diagram">
   <img src="images/filterKeys.svg" alt="filterKeys function">

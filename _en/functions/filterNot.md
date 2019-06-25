@@ -10,7 +10,7 @@ trait Collection[A] {
 }
 ~~~
 
-`filter` creates a collection with those elements that do not satisfy a predicate `p` and discarding the rest.
+`filter` creates a collection with those elements that do not satisfy the predicate `p` and discarding the rest.
 
 <figure class="diagram">
   <img src="images/filterNot.svg" alt="filterNot function">

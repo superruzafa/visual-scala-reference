@@ -25,7 +25,7 @@ The search can start at the given offset `j`.
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
-If no element satisfy `p` then `-1` is returned.
+If no element satisfy `p` then this function returns `-1`.
 
 <figure class="diagram">
   <img src="images/indexWhere.3.svg" alt="indexWhere function">

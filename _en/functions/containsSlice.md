@@ -17,7 +17,7 @@ trait Collection[A] {
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
-If the `as` collection cannot be found as a slice in this collection then it returns `false`.
+If the collection `as`cannot be found as a slice in this collection then this function returns `false`.
 
 <figure class="diagram">
   <img src="images/containsSlice.2.svg" alt="containsSlice function">

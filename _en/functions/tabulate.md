@@ -11,7 +11,7 @@ object Collection {
 }
 ~~~
 
-`tabulate` creates an n-dimensional collection containing the result of some function `f` applied to a range of integers.
+`tabulate` creates an n-dimensional collection containing the result of the function `f` applied to a range of integers.
 
 <figure class="diagram">
   <img src="images/tabulate.svg" alt="tabulate function">

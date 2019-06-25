@@ -10,7 +10,7 @@ object Function {
 }
 ~~~
 
-`lift` creates an anonymous function that returns the value wrapped with `Some` returned by this partial function.
+`unlift` creates an anonymous function that returns the value wrapped with `Some` returned by this partial function.
 
 <figure class="diagram">
   <img src="images/unlift.svg" alt="unlift function">

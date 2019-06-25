@@ -10,7 +10,7 @@ trait Collection[A] {
 }
 ~~~
 
-`span` creates a `Tuple2` with two collections: one containing the longest prefix of elements that satisfy a predicate `p` and the other containing the rest of the elements.
+`span` creates a `Tuple2` with two collections: one containing the longest prefix of elements that satisfy the predicate `p` and the other containing the rest of the elements.
 
 <figure class="diagram">
   <img src="images/span.svg" alt="span function">

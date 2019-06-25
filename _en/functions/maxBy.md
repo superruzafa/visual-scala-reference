@@ -17,7 +17,7 @@ trait Collection[A] {
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
-On empty collections `maxBy` throws a `UnsupportedOperationException` exception.
+On empty collections this function throws a `UnsupportedOperationException` exception.
 
 <figure class="diagram">
   <img src="images/maxBy.2.svg" alt="maxBy function">

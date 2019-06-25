@@ -20,7 +20,7 @@ trait Map[K, V] {
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
-If this `Map` doesn't contain the key `k` then the result of the default computation `v` is returned.
+If this `Map` doesn't contain the key `k` then this funcion returns the result of the computation `v`.
 
 <figure class="diagram">
   <img src="images/getOrElse_Map.2.svg" alt="getOrElse function">

@@ -25,7 +25,7 @@ The search can start at the given offset `j`.
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
-If no element equals `a` then `-1` is returned.
+If no element equals `a` then this function returns `-1`.
 
 <figure class="diagram">
   <img src="images/lastIndexOf.3.svg" alt="lastIndexOf function">

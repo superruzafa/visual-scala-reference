@@ -17,7 +17,7 @@ trait Collection[A] {
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
-On empty collections, this function return `false`.
+On empty collections this function return `false`.
 
 <figure class="diagram">
   <img src="images/nonEmpty.2.svg" alt="nonEmpty function">

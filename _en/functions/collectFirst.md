@@ -10,7 +10,7 @@ trait Collection[A] {
 }
 ~~~
 
-`collectFirst` returns the first element in this collection for which the partial function `f` is defined, wrapped with `Some`.
+`collectFirst` applies the partial function `f` to the first element in this collection for which `f` is defined and returns its result wrapped with `Some`.
 
 <figure class="diagram">
   <img src="images/collectFirst.svg" alt="collectFirst function">

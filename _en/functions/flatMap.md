@@ -10,7 +10,7 @@ trait Collection[A] {
 }
 ~~~
 
-`flatMap` creates a collection by applying the function `f` to each element and using the resulting elements as elements of the new collection.
+`flatMap` creates a collection by applying the function `f` to each element and using the resulting subelements as elements of the new collection.
 
 <figure class="diagram">
   <img src="images/flatMap.svg" alt="flatMap function">

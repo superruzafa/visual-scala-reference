@@ -17,7 +17,7 @@ trait Collection[A] {
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
-On empty collections, there is no element which doesn't satisfy `p`, hence `true` is returned.
+On empty collections there is no element which doesn't satisfy `p`, hence this function returns `true`.
 
 <figure class="diagram">
   <img src="images/forall.2.svg" alt="forall function">

@@ -10,7 +10,7 @@ trait Collection[A] {
 }
 ~~~
 
-`reduceOption` applies a binary operator `op` to pairs of elements in this collection until the final result is calculated, wrapped with `Some`.
+`reduceOption` applies the binary operator `op` to pairs of elements in this collection until the final result is calculated and returned wrapped with `Some`.
 
 <figure class="diagram">
   <img src="images/reduceOption.svg" alt="reduceOption function">

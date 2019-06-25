@@ -17,7 +17,7 @@ trait Collection[A] {
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
-On empty collections `maxByOption` returns None.
+On empty collections this function returns `None`.
 
 <figure class="diagram">
   <img src="images/maxByOption.2.svg" alt="maxByOption function">

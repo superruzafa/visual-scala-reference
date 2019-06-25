@@ -11,7 +11,7 @@ object Collection {
 }
 ~~~
 
-`range` creates a collection using as elements the sequence of values that starts with `starts` and stops before reaching `end`.
+`range` creates a collection using as elements the sequence of values that starts with `start` and stops before reaching `end`.
 
 <figure class="diagram">
   <img src="images/range.svg" alt="range function">

@@ -17,7 +17,7 @@ trait Collection[A] {
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
-On empty collections, the predicate `p` cannot be satisfied at least once so `false` is returned.
+On empty collections the predicate `p` cannot be satisfied at least once, hence this function returns `false`.
 
 <figure class="diagram">
   <img src="images/exists.2.svg" alt="exists function">

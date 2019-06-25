@@ -17,7 +17,7 @@ trait Collection[A] {
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
-On empty collections, this function throws a `UnsupportedOperationException` exception.
+On empty collections this function throws a `UnsupportedOperationException` exception.
 
 <figure class="diagram">
   <img src="images/init.2.svg" alt="init function">

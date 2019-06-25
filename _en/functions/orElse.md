@@ -17,7 +17,7 @@ trait PartialFunction[X, Y] {
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
-For those input values for which this partial function is not defined, the anonymous functions returns the value returned by `g`.
+For those input values for which this partial function is not defined, the anonymous partial function returns the value returned by `g`.
 
 <figure class="diagram">
   <img src="images/orElse.2.svg" alt="orElse function">

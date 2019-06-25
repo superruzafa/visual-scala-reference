@@ -10,7 +10,7 @@ trait Collection[A] {
 }
 ~~~
 
-`grouped` splits this collection in smaller collections of, as much, `m` elements and returns an `Iterator` to iterate them.
+`grouped` splits this collection in smaller subcollections of, as much, `m` elements and returns an `Iterator` to iterate them.
 
 <figure class="diagram">
   <img src="images/grouped.svg" alt="grouped function">

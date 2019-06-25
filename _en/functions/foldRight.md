@@ -17,7 +17,7 @@ trait Collection[A] {
   <!-- <figcaption class="diagram-desc"></figcaption> -->
 </figure>
 
-On empty collections, `foldRight` doesn't apply `op` and the initial value `z` is directly returned.
+On empty collections this function doesn't apply `op` and the initial value `z` is directly returned.
 
 <figure class="diagram">
   <img src="images/foldRight.2.svg" alt="foldRight function">
