@@ -72,22 +72,21 @@
   }
 }
 
-.home-page {
-  .function-list {
-    column-count: 2;
-    column-gap: 2rem;
-    padding: 0;
-    list-style: none;
+.function-list {
+  column-count: 2;
+  column-gap: 2rem;
+  margin: 2rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.function-item {
+  & + .function-initial {
+    margin-top: 1rem;
   }
 
-  .function-item {
-    & + .function-initial {
-      margin-top: 1rem;
-    }
-
-    &.function-initial {
-      border-bottom: 1px solid #e0e0e0;
-    }
+  &.function-initial {
+    border-bottom: 1px solid #e0e0e0;
   }
 }
 
