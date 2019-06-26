@@ -1,0 +1,22 @@
+---
+---
+
+\tikzset{f function/.style={
+    function,
+    /function/south io width=.5\masterunit,
+    /function/south io narrow width=.333\masterunit,
+}}
+
+\node (f) [f function, font=\footnotesize] {\texttt{const}};
+\draw [<- flow] (f.north io 1) -- +(0, .5)
+    node [element, above] {\texttt{x}};
+\node (g) [function, below=1 of f] {$\lambda$};
+\draw [flow ->] (g.south io 1) -- +(0, -.5)
+    node [element, below] {\texttt{x}};
+\draw [<- flow, in=270, out=90] (g.north io 1) to +(1, .5)
+    node [element, above] {\texttt{y}};
+
+\begin{scope}[dashed]
+\draw ($ (f.south io 1) + (-.25, 0) $) -- (g.north west);
+\draw ($ (f.south io 1) + (.25, 0) $) -- (g.north east);
+\end{scope}
