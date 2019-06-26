@@ -1,10 +1,8 @@
 title: Visual Scala Reference
-email: superruzafa@gmail.com
-description: >-
-  An awesome guide to the most common Scala collection functions
-baseurl: "/visual-scala-reference"
 url: https://superruzafa.github.io
-github_username:  superruzafa
+baseurl: /visual-scala-reference
+destination: ./_site/visual-scala-reference
+host: 0.0.0.0
 
 markdown: kramdown
 kramdown:

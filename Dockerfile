@@ -24,7 +24,10 @@ RUN bundle install
 RUN bundle exec jekyll build
 
 ENV JEKYLL_ENV=
+ENV LANG=C.UTF-8
+ENV LANGUAGE=C.UTF-8
+ENV LC_ALL=C.UTF-8
 
 EXPOSE 4000
 
-CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0"]
+CMD ["bundle", "exec", "jekyll", "serve"]
