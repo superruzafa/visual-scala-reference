@@ -7,11 +7,11 @@
     /function/north io narrow width=2.3\masterunit
 }}
 
-\node (f) [tupled function] {$f$};
+\node (f) [tupled function] {\texttt{f}};
 \draw [<- flow] (f.north io 1) -- +(0, .5) node [element, above] {$(x_1, x_2, \ldots, x_n)$};
 \draw [flow ->] (f.south io 1) -- +(0, -.5) node [element, below] {$y$};
 
-\node (g) [function, /function/north io=4, right=2 of f] {$\lambda$};
+\node (g) [function, /function/north io=4, right=3 of f] {$\lambda$};
 \draw [<- flow] (g.north io 1) -- +(0, .5) node [element, above] {$x_1$};
 \draw [<- flow] (g.north io 2) -- +(0, .5) node [element, above] {$x_2$};
 \draw [<- flow] (g.north io 4) -- +(0, .5) node [element, above] {$x_n$};
@@ -20,4 +20,6 @@
 \draw [flow, dotted] (g.north west -| g.north io 3) ++(-.2, 0) -- +(.4, 0);
 
 \coordinate (x) at ($ (f.east)!.5!(g.west) $);
-\node at (x) [big arrow] {};
+\node (t) at (x) [object function] {\texttt{untupled}};
+\draw [flow ->] (f.east) -- (t.west);
+\draw [flow ->] (t.east) -- (g.west);

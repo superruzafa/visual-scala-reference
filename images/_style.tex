@@ -143,7 +143,6 @@
     tips=false,
 }}
 
-
 \tikzset{subexception/.style={
     exception={#1},
     font=\footnotesize,
@@ -354,6 +353,16 @@
     inner xsep=.2\masterunit,
     inner ysep=.15\masterunit,
     line width=.5\defaultpenwidth,
+    /function/north io=0,
+    /function/south io=0,
+    /function/east io=1,
+    /function/west io=1,
+}}
+
+\tikzset{object function/.style={
+    function,
+    /function/io width=.5\masterunit,
+    /function/io narrow width=.333\masterunit,
     /function/north io=0,
     /function/south io=0,
     /function/east io=1,

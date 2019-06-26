@@ -7,7 +7,7 @@
     /function/south io narrow width=.333\masterunit,
 }}
 
-\node (f) [function, /function/north io=4] {$f$};
+\node (f) [function, /function/north io=4] {$\lambda$};
 \foreach \i/\j in {1/1,2/2,4/n}{
     \draw [<- flow] (f.north io \i) -- +(0, .5) node [element, above] {$x_\j$};
 }
@@ -15,7 +15,7 @@
 \fill [white] ($ (f.north io 3) + (-.2, -.2) $) rectangle +(.4, .3);
 \draw [flow, dotted] (f.north west -| f.north io 3) ++(-.2, 0) -- +(.4, 0);
 
-\node (g1) [g function, left=3 of f] {$\lambda_1$};
+\node (g1) [g function, left=3 of f] {\texttt{f}};
 \draw [<- flow] (g1.north io 1) -- +(0, .5) node [element, above] {$x_1$};
 \node (g2) [g function, below=.5 of g1] {$\lambda_2$};
 \node (g3) [function, below=1.25 of g2] {$\lambda_n$};
@@ -40,4 +40,6 @@
 \end{scope}
 
 \coordinate (x) at ($ (f.west)!.5!(g1.east) $);
-\node at (x) [big arrow];
+\node (u) at (x) [object function] {\texttt{uncurried}};
+\draw [flow ->] (g1.east) -- (u.west);
+\draw [flow ->] (u.east) -- (f.west);

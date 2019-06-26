@@ -51,4 +51,7 @@
 \draw [flow ->] (fn.south io 1) -- (g.south io 1) -- +(0, -.5)
     node [element, below] {$x^\prime$};
 
-\node at ($ (fhn)!.5!(f1) $) [big arrow];
+\coordinate (x) at ($ (fhn)!.5!(f1) $);
+\node (c) at (x) [object function] {\texttt{chain}};
+\draw [flow ->] (A.east) -- (c.west);
+\draw [flow ->] (c.east) -- (g.west |- f1.west);
