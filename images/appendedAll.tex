@@ -1,0 +1,37 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node [elements between]; &
+    \node (an) {$a_n$}; \\
+};
+
+\matrix (B) [collection, right=1 of A] {
+    \node (b1) {$b_1$}; &
+    \node (b2) {$b_2$}; &
+    \node [elements between]; &
+    \node (bm) {$b_m$}; \\
+};
+
+\matrix (C) [collection, below=2 of a1.south west, anchor=north west] {
+    \node (c1) {$a_1$}; &
+    \node (c2) {$a_2$}; &
+    \node [elements between]; &
+    \node (cn) {$a_n$}; &
+    \node (cn+1) {$b_1$}; &
+    \node (cn+2) {$b_2$}; &
+    \node [elements between]; &
+    \node (cn+m) {$b_m$}; \\
+};
+
+\braceflow[-.2]{(A.south west)}{(A.south east)}
+\coordinate (x) at (lastbrace);
+\braceflow[.2]{(c1.north west)}{($ (cn.north east) + (-\pgflinewidth, 0) $)}
+\draw [flow ->] (x) -- (lastbrace);
+
+\braceflow[-.2]{(B.south west)}{(B.south east)}
+\coordinate (x) at (lastbrace);
+\braceflow[.2]{($ (cn+1.north west) + (\pgflinewidth, 0) $)}{(cn+m.north east)}
+\draw [flow ->, out=270, in=90] (x) to (lastbrace);
