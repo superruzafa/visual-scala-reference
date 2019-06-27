@@ -8,14 +8,8 @@ name: min
 
 `min` devuelve el menor valor de esta colección.
 
-<figure class="diagram">
-  <img src="../images/min.svg" alt="min function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/min.svg" desc="min function"]
 
 En colecciones vacías esta función lanza una excepción `UnsupportedOperationException`.
 
-<figure class="diagram">
-  <img src="../images/min.2.svg" alt="min function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/min.2.svg" desc="min function"]

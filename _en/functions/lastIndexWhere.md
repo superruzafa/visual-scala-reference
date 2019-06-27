@@ -8,21 +8,12 @@ name: lastIndexWhere
 
 `lastIndexWhere` returns the index of the last element that satisfy the predicate `p`.
 
-<figure class="diagram">
-  <img src="images/lastIndexWhere.svg" alt="lastIndexWhere function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/lastIndexWhere.svg" desc="lastIndexWhere function"]
 
 The search can start at the given offset `j`.
 
-<figure class="diagram">
-  <img src="images/lastIndexWhere.2.svg" alt="lastIndexWhere function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/lastIndexWhere.2.svg" desc="lastIndexWhere function"]
 
 If no element satisfy `p` then this function returns `-1`.
 
-<figure class="diagram">
-  <img src="images/lastIndexWhere.3.svg" alt="lastIndexWhere function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/lastIndexWhere.3.svg" desc="lastIndexWhere function"]

@@ -8,15 +8,9 @@ name: unlift
 
 `unlift` creates an anonymous function that returns the value wrapped with `Some` returned by this partial function.
 
-<figure class="diagram">
-  <img src="images/unlift.svg" alt="unlift function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/unlift.svg" desc="unlift function"]
 
 If this function returns `None` then the anonymous function will throw a `MatchError` exception.
 
-<figure class="diagram">
-  <img src="images/unlift.2.svg" alt="unlift function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/unlift.2.svg" desc="unlift function"]
 

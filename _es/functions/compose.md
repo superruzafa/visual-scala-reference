@@ -8,7 +8,4 @@ name: compose
 
 `compose` crea una función anónima que acepta un valor y devuelve el resultado de aplicar la función `g` primero y luego esta función a dicho valor.
 
-<figure class="diagram">
-  <img src="../images/compose.svg" alt="compose function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/compose.svg" desc="compose function"]

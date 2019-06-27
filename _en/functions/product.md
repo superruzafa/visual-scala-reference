@@ -8,14 +8,8 @@ name: product
 
 `product` computes the product of the elements of this collection.
 
-<figure class="diagram">
-  <img src="images/product.svg" alt="product function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/product.svg" desc="product function"]
 
 On empty collections this function returns the identity element for the `A` type's product operation.
 
-<figure class="diagram">
-  <img src="images/product.2.svg" alt="product function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/product.2.svg" desc="product function"]

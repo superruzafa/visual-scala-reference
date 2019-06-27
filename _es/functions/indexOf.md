@@ -8,21 +8,12 @@ name: indexOf
 
 `indexOf` devuelve el índice del primer elemento que es igual (`==`) al valor `a`.
 
-<figure class="diagram">
-  <img src="../images/indexOf.svg" alt="indexOf function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/indexOf.svg" desc="indexOf function"]
 
 La búsqueda puede empezar en un desplazamiento `j`.
 
-<figure class="diagram">
-  <img src="../images/indexOf.2.svg" alt="indexOf function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/indexOf.2.svg" desc="indexOf function"]
 
 Si ningún elemento es igual a `a` entonces esta función devuelve `-1`.
 
-<figure class="diagram">
-  <img src="../images/indexOf.3.svg" alt="indexOf function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/indexOf.3.svg" desc="indexOf function"]

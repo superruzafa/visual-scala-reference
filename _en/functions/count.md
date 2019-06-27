@@ -8,7 +8,4 @@ name: count
 
 `count` determines how many elements in this collection satisfy the predicate `p`.
 
-<figure class="diagram">
-  <img src="images/count.svg" alt="count function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/count.svg" desc="count function"]

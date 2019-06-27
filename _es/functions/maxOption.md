@@ -8,14 +8,8 @@ name: maxOption
 
 `maxOption` devuelve el mayor valor de esta colección, envuelto con `Some`.
 
-<figure class="diagram">
-  <img src="../images/maxOption.svg" alt="maxOption function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/maxOption.svg" desc="maxOption function"]
 
 En colecciones vacías esta función devuelve `None`.
 
-<figure class="diagram">
-  <img src="../images/maxOption.2.svg" alt="maxOption function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/maxOption.2.svg" desc="maxOption function"]

@@ -8,14 +8,8 @@ name: isEmpty
 
 `isEmpty` checks whether this collection has no elements and returns `false` otherwise.
 
-<figure class="diagram">
-  <img src="images/isEmpty.svg" alt="isEmpty function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/isEmpty.svg" desc="isEmpty function"]
 
 It only returns `true` on empty collections.
 
-<figure class="diagram">
-  <img src="images/isEmpty.2.svg" alt="isEmpty function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/isEmpty.2.svg" desc="isEmpty function"]

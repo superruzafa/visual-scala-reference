@@ -8,7 +8,4 @@ name: tabulate
 
 `tabulate` creates an n-dimensional collection containing the result of the function `f` applied to a range of integers.
 
-<figure class="diagram">
-  <img src="images/tabulate.svg" alt="tabulate function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/tabulate.svg" desc="tabulate function"]

@@ -8,7 +8,4 @@ name: dropRight
 
 `dropRight` crea una colección descartando los últimos `i` elementos de esta colección, manteniendo el resto.
 
-<figure class="diagram">
-  <img src="../images/dropRight.svg" alt="dropRight function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/dropRight.svg" desc="dropRight function"]

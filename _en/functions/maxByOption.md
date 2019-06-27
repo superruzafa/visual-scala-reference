@@ -8,14 +8,8 @@ name: maxByOption
 
 `maxByOption` applies `f` to each element and returns the element that yields the largest value wrapped with `Some`.
 
-<figure class="diagram">
-  <img src="images/maxByOption.svg" alt="maxByOption function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/maxByOption.svg" desc="maxByOption function"]
 
 On empty collections this function returns `None`.
 
-<figure class="diagram">
-  <img src="images/maxByOption.2.svg" alt="maxByOption function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/maxByOption.2.svg" desc="maxByOption function"]

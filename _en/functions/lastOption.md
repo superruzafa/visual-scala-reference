@@ -8,14 +8,8 @@ name: lastOption
 
 `lastOption` returns the last element of this collection, wrapped with `Some`.
 
-<figure class="diagram">
-  <img src="images/lastOption.svg" alt="lastOption function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/lastOption.svg" desc="lastOption function"]
 
 On empty collections when there is no last element this function returns `None`.
 
-<figure class="diagram">
-  <img src="images/lastOption.2.svg" alt="lastOption function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/lastOption.2.svg" desc="lastOption function"]

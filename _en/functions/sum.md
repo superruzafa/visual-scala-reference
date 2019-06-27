@@ -8,14 +8,8 @@ name: sum
 
 `sum` computes the sum of the elements of this collection.
 
-<figure class="diagram">
-  <img src="images/sum.svg" alt="sum function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/sum.svg" desc="sum function"]
 
 On empty collections this function returns the identity element for the sum operation of the type `A`.
 
-<figure class="diagram">
-  <img src="images/sum.2.svg" alt="sum function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/sum.2.svg" desc="sum function"]

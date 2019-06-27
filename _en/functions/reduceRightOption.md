@@ -10,14 +10,8 @@ name: reduceRightOption
 The first time `op` is applied it's fed with the last two elements.
 The final result is wrapped with `Some`.
 
-<figure class="diagram">
-  <img src="images/reduceRightOption.svg" alt="reduceRightOption function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/reduceRightOption.svg" desc="reduceRightOption function"]
 
 On empty collections this function returns `None`.
 
-<figure class="diagram">
-  <img src="images/reduceRightOption.2.svg" alt="reduceRightOption function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/reduceRightOption.2.svg" desc="reduceRightOption function"]

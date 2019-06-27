@@ -8,7 +8,4 @@ name: reverse
 
 `reverse` creates a collection by reversing the order of the elements.
 
-<figure class="diagram">
-  <img src="images/reverse.svg" alt="reverse function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/reverse.svg" desc="reverse function"]

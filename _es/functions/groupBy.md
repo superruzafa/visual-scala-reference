@@ -8,7 +8,4 @@ name: groupBy
 
 `groupBy` crea un `Map` agrupando los elementos bajo la clave que emiten cuando se les es aplicada la función `f`.
 
-<figure class="diagram">
-  <img src="../images/groupBy.svg" alt="groupBy function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/groupBy.svg" desc="groupBy function"]

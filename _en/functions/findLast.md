@@ -8,14 +8,8 @@ name: findLast
 
 `findLast` returns the last element that satisfy the predicate `p`, wrapped with `Some`.
 
-<figure class="diagram">
-  <img src="images/findLast.svg" alt="findLast function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/findLast.svg" desc="findLast function"]
 
 If no element in this collection satisfy `p` then this function returns `None`.
 
-<figure class="diagram">
-  <img src="images/findLast.2.svg" alt="findLast function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/findLast.2.svg" desc="findLast function"]

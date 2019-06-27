@@ -8,7 +8,4 @@ name: union
 
 `union` computes the multiset union between this and the `as` collection.
 
-<figure class="diagram">
-  <img src="images/union.svg" alt="union function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/union.svg" desc="union function"]

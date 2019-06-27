@@ -8,7 +8,4 @@ name: prefixLength
 
 `prefixLength` devuelve la longitud del mayor prefijo de elementos que satisfacen el predicado `p`.
 
-<figure class="diagram">
-  <img src="../images/prefixLength.svg" alt="prefixLength function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/prefixLength.svg" desc="prefixLength function"]

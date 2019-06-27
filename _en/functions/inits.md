@@ -8,7 +8,4 @@ name: inits
 
 `inits` computes all possible prefixes of this collection and returns an `Iterator` to iterate them.
 
-<figure class="diagram">
-  <img src="images/inits.svg" alt="inits function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/inits.svg" desc="inits function"]

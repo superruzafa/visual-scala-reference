@@ -12,7 +12,4 @@ It stops building the collection as soon as `f` returns `None`.
 
 The first time the function `f` is applied it's fed with the initial value `s`.
 
-<figure class="diagram">
-  <img src="images/unfold.svg" alt="unfold function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/unfold.svg" desc="unfold function"]

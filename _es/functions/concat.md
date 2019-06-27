@@ -8,7 +8,4 @@ name: concat
 
 `concat` acepta un número indeterminado de colecciones y utiliza sus elementos para crear una única colección.
 
-<figure class="diagram">
-  <img src="../images/concat.svg" alt="concat function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/concat.svg" desc="concat function"]

@@ -8,7 +8,4 @@ name: prependedAll
 
 `prependedAll` crea una copia de esta colección añadiendo la colección `bs` al principio.
 
-<figure class="diagram">
-  <img src="../images/prependedAll.svg" alt="prependedAll function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/prependedAll.svg" desc="prependedAll function"]

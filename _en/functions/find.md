@@ -8,14 +8,8 @@ name: find
 
 `find` returns the first element that satisfy the predicate `p`, wrapped with `Some`.
 
-<figure class="diagram">
-  <img src="images/find.svg" alt="find function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/find.svg" desc="find function"]
 
 If no element in this collection satisfy `p` then this function returns `None`.
 
-<figure class="diagram">
-  <img src="images/find.2.svg" alt="find function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/find.2.svg" desc="find function"]

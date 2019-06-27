@@ -8,7 +8,4 @@ name: map
 
 `map` creates a collection using as elements the results obtained from applying the function `f` to each element of this collection.
 
-<figure class="diagram">
-  <img src="images/map.svg" alt="map function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/map.svg" desc="map function"]

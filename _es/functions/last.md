@@ -8,14 +8,8 @@ name: last
 
 `last` devuelve el último elemento de esta colección.
 
-<figure class="diagram">
-  <img src="../images/last.svg" alt="last function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/last.svg" desc="last function"]
 
 En colecciones vacías esta función lanza una excepción `NoSuchElementException`.
 
-<figure class="diagram">
-  <img src="../images/last.2.svg" alt="last function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/last.2.svg" desc="last function"]

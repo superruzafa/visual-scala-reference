@@ -8,21 +8,12 @@ name: lastIndexWhere
 
 `lastIndexWhere` devuelve el índice del último elemento que satisface el predicado `p`.
 
-<figure class="diagram">
-  <img src="../images/lastIndexWhere.svg" alt="lastIndexWhere function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/lastIndexWhere.svg" desc="lastIndexWhere function"]
 
 La búsqueda puede empezar en un desplazamiento `j`.
 
-<figure class="diagram">
-  <img src="../images/lastIndexWhere.2.svg" alt="lastIndexWhere function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/lastIndexWhere.2.svg" desc="lastIndexWhere function"]
 
 Si ningún elemento satisface `p` entonces esta función devuelve `-1`.
 
-<figure class="diagram">
-  <img src="../images/lastIndexWhere.3.svg" alt="lastIndexWhere function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/lastIndexWhere.3.svg" desc="lastIndexWhere function"]

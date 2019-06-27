@@ -8,7 +8,4 @@ name: filterKeys
 
 `filterKeys` crea un `Map` con aquellos pares clave-valor cuya clave satisface el predicado `p`, descartando el resto.
 
-<figure class="diagram">
-  <img src="../images/filterKeys.svg" alt="filterKeys function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/filterKeys.svg" desc="filterKeys function"]

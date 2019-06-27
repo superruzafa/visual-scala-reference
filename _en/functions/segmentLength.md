@@ -8,7 +8,4 @@ name: segmentLength
 
 `segmentLength` returns the length of the largest segment of elements starting at `j` that satisfy the predicate `p`.
 
-<figure class="diagram">
-  <img src="images/segmentLength.svg" alt="segmentLength function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/segmentLength.svg" desc="segmentLength function"]

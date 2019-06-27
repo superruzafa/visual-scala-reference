@@ -8,14 +8,8 @@ name: minOption
 
 `maxOption` returns the smallest value in this collection wrapped with `Some`.
 
-<figure class="diagram">
-  <img src="images/minOption.svg" alt="minOption function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/minOption.svg" desc="minOption function"]
 
 On empty collections `minOption` returns `None`.
 
-<figure class="diagram">
-  <img src="images/minOption.2.svg" alt="minOption function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/minOption.2.svg" desc="minOption function"]

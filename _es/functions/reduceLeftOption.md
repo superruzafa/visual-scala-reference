@@ -10,14 +10,8 @@ name: reduceLeftOption
 La primera vez que `op` es aplicado es alimentado con los dos primeros elementos.
 El resultado final es envuelto con `Some`.
 
-<figure class="diagram">
-  <img src="../images/reduceLeftOption.svg" alt="reduceLeftOption function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/reduceLeftOption.svg" desc="reduceLeftOption function"]
 
 En colecciones vacías esta función devuelve `None`.
 
-<figure class="diagram">
-  <img src="../images/reduceLeftOption.2.svg" alt="reduceLeftOption function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/reduceLeftOption.2.svg" desc="reduceLeftOption function"]

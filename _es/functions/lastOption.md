@@ -8,14 +8,8 @@ name: lastOption
 
 `lastOption` devuelve el último elemento de esta colección, envuelto con `Some`.
 
-<figure class="diagram">
-  <img src="../images/lastOption.svg" alt="lastOption function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/lastOption.svg" desc="lastOption function"]
 
 En colecciones vacías donde no hay último elemento esta colección devuelve `None`.
 
-<figure class="diagram">
-  <img src="../images/lastOption.2.svg" alt="lastOption function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/lastOption.2.svg" desc="lastOption function"]

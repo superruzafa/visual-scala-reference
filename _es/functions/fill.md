@@ -8,7 +8,4 @@ name: fill
 
 `fill` crea una colección n-dimensional conteniendo el resultado de cierta computación `a`.
 
-<figure class="diagram">
-  <img src="../images/fill.svg" alt="fill function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/fill.svg" desc="fill function"]

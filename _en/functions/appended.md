@@ -8,7 +8,4 @@ name: appended
 
 `appended` creates a copy of this collection by adding the element `b` at the end.
 
-<figure class="diagram">
-  <img src="images/appended.svg" alt="appended function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/appended.svg" desc="appended function"]

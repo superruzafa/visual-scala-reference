@@ -8,7 +8,4 @@ name: sorted
 
 `sorted` crea una colección con los elementos ordenados.
 
-<figure class="diagram">
-  <img src="../images/sorted.svg" alt="sorted function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/sorted.svg" desc="sorted function"]

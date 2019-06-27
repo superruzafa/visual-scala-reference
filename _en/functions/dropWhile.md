@@ -8,7 +8,4 @@ name: dropWhile
 
 `dropWhile` creates a collection by discarding the longest prefix of elements that satisfy a predicate `p` and keeping the rest.
 
-<figure class="diagram">
-  <img src="images/dropWhile.svg" alt="dropWhile function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/dropWhile.svg" desc="dropWhile function"]

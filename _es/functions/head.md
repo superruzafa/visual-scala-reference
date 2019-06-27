@@ -8,14 +8,8 @@ name: head
 
 `head` devuelve el primer elemento de esta colección.
 
-<figure class="diagram">
-  <img src="../images/head.svg" alt="head function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/head.svg" desc="head function"]
 
 En colecciones vacías esta colección lanza una excepción `NoSuchElementException`.
 
-<figure class="diagram">
-  <img src="../images/head.2.svg" alt="head function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/head.2.svg" desc="head function"]

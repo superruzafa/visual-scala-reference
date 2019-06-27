@@ -8,7 +8,4 @@ name: diff
 
 `diff` computes the multiset difference between this and the `as` collection.
 
-<figure class="diagram">
-  <img src="images/diff.svg" alt="diff function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/diff.svg" desc="diff function"]

@@ -8,7 +8,4 @@ name: indices
 
 `indices` creates a `Range` with the indices used by this collection.
 
-<figure class="diagram">
-  <img src="images/indices.svg" alt="indices function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/indices.svg" desc="indices function"]

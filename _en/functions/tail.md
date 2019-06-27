@@ -8,14 +8,8 @@ name: tail
 
 `tail` returns all but the first element in this collection.
 
-<figure class="diagram">
-  <img src="images/tail.svg" alt="tail function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/tail.svg" desc="tail function"]
 
 On empty collections this function throws a `NoSuchElementException` exception.
 
-<figure class="diagram">
-  <img src="images/tail.2.svg" alt="tail function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/tail.2.svg" desc="tail function"]

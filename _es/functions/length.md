@@ -8,7 +8,4 @@ name: length
 
 `length` devuelve cuántos elementos tiene esta colección.
 
-<figure class="diagram">
-  <img src="../images/length.svg" alt="length function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/length.svg" desc="length function"]

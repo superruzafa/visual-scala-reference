@@ -8,21 +8,12 @@ name: startsWith
 
 `startsWith` checks whether the collection `as` is a prefix of this collection, returning `true` if so.
 
-<figure class="diagram">
-  <img src="images/startsWith.svg" alt="startsWith function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/startsWith.svg" desc="startsWith function"]
 
 The search can start at the given offset `j`.
 
-<figure class="diagram">
-  <img src="images/startsWith.2.svg" alt="startsWith function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/startsWith.2.svg" desc="startsWith function"]
 
 If `as` is not a prefix of this collection then `false` is returned.
 
-<figure class="diagram">
-  <img src="images/startsWith.3.svg" alt="startsWith function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/startsWith.3.svg" desc="startsWith function"]

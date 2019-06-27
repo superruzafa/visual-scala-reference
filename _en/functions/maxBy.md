@@ -8,14 +8,8 @@ name: maxBy
 
 `maxBy` applies `f` to each element and returns the element that yields the largest value.
 
-<figure class="diagram">
-  <img src="images/maxBy.svg" alt="maxBy function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/maxBy.svg" desc="maxBy function"]
 
 On empty collections this function throws a `UnsupportedOperationException` exception.
 
-<figure class="diagram">
-  <img src="images/maxBy.2.svg" alt="maxBy function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/maxBy.2.svg" desc="maxBy function"]

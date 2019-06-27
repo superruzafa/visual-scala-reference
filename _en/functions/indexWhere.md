@@ -8,21 +8,12 @@ name: indexWhere
 
 `indexWhere` returns the index of the first element that satisfy the predicate `p`.
 
-<figure class="diagram">
-  <img src="images/indexWhere.svg" alt="indexWhere function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/indexWhere.svg" desc="indexWhere function"]
 
 The search can start at the given offset `j`.
 
-<figure class="diagram">
-  <img src="images/indexWhere.2.svg" alt="indexWhere function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/indexWhere.2.svg" desc="indexWhere function"]
 
 If no element satisfy `p` then this function returns `-1`.
 
-<figure class="diagram">
-  <img src="images/indexWhere.3.svg" alt="indexWhere function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/indexWhere.3.svg" desc="indexWhere function"]

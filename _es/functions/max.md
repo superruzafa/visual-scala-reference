@@ -8,14 +8,8 @@ name: max
 
 `max` devuelve el mayor valor de esta colección.
 
-<figure class="diagram">
-  <img src="../images/max.svg" alt="max function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/max.svg" desc="max function"]
 
 En colecciones vacías esta función lanza una excepción `UnsupportedOperationException`.
 
-<figure class="diagram">
-  <img src="../images/max.2.svg" alt="max function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/max.2.svg" desc="max function"]

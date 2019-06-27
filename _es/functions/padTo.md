@@ -8,7 +8,4 @@ name: padTo
 
 `padTo` crea una copia de esta colección y la rellena a la derecha con el valor `a` hasta alcanzar cierta longitud `m`.
 
-<figure class="diagram">
-  <img src="../images/padTo.svg" alt="padTo function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="../images/padTo.svg" desc="padTo function"]

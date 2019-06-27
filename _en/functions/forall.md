@@ -8,14 +8,8 @@ name: forall
 
 `forall` checks whether all elements in this collection satisfy the predicate `p`, returning `false` if `p` doesn't stand for at least one element.
 
-<figure class="diagram">
-  <img src="images/forall.svg" alt="forall function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/forall.svg" desc="forall function"]
 
 On empty collections there is no element which doesn't satisfy `p`, hence this function returns `true`.
 
-<figure class="diagram">
-  <img src="images/forall.2.svg" alt="forall function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/forall.2.svg" desc="forall function"]

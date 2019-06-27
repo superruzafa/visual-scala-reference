@@ -11,15 +11,9 @@ For the `Option`'s `getOrElse` function go [here](./getOrElse_Option).
 
 `getOrElse` returns the value associated to the key `k` in this `Map`.
 
-<figure class="diagram">
-  <img src="images/getOrElse_Map.svg" alt="getOrElse function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/getOrElse_Map.svg" desc="getOrElse function"]
 
 If this `Map` doesn't contain the key `k` then this funcion returns the result of the computation `v`.
 
-<figure class="diagram">
-  <img src="images/getOrElse_Map.2.svg" alt="getOrElse function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/getOrElse_Map.2.svg" desc="getOrElse function"]
 

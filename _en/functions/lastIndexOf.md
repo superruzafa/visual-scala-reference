@@ -8,21 +8,12 @@ name: lastIndexOf
 
 `lastIndexOf` returns the index of the last element that equals (`==`) the value `a`.
 
-<figure class="diagram">
-  <img src="images/lastIndexOf.svg" alt="lastIndexOf function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/lastIndexOf.svg" desc="lastIndexOf function"]
 
 The search can start at the given offset `j`.
 
-<figure class="diagram">
-  <img src="images/lastIndexOf.2.svg" alt="lastIndexOf function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/lastIndexOf.2.svg" desc="lastIndexOf function"]
 
 If no element equals `a` then this function returns `-1`.
 
-<figure class="diagram">
-  <img src="images/lastIndexOf.3.svg" alt="lastIndexOf function">
-  <!-- <figcaption class="diagram-desc"></figcaption> -->
-</figure>
+@include [figure.html source="images/lastIndexOf.3.svg" desc="lastIndexOf function"]
