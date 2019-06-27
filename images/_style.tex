@@ -305,7 +305,7 @@
 
 \tikzset{
     vertical elements after/.style={
-        rotate=-90,
+        rotate=90,
         elements after=#1,
     }
 }
@@ -324,6 +324,32 @@
             \draw (\tikzinputsegmentfirst) [flow, defaultpencolor, -Triangle] -- (\tikzinputsegmentlast);
         }
     }
+}}
+
+\newlength\mapflowwidth
+\setlength\mapflowwidth{\defaultpenwidth}
+
+\tikzset{map from/.style={
+    collection element line width,
+    decorate,
+    decoration={
+        show path construction,
+        lineto code={
+            /utils/exec=\csname tikz@options\endcsname,
+            \fill (\tikzinputsegmentfirst) [white] circle [radius=.15\masterunit];
+            \draw ($ (\tikzinputsegmentfirst) + (0, .15\masterunit) $) [draw, line cap=rect] arc [start angle=90, end angle=270, radius=.15\masterunit];
+            \fill [defaultpencolor] (\tikzinputsegmentfirst) circle [radius=.05\masterunit];
+        }
+    }
+}}
+
+\tikzset{map to/.style={
+    line width=\mapflowwidth,
+}}
+
+\tikzset{map to ->/.style={
+    map to,
+    -{Triangle[angle'=60, length=5]},
 }}
 
 \tikzset{function/.style={
