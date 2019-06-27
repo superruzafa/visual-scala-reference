@@ -8,4 +8,4 @@ name: length
 
 `length` returns how many elements this collection has.
 
-@include [figure.html source="images/length.svg" desc="length function"]
+@include [figure.html source="images/length.svg" desc="Diagram of the function length"]

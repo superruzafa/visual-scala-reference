@@ -12,4 +12,4 @@ Deja de construir la colección tan pronto como `f` devuelva `None`.
 
 La primera vez que `f` es aplicada es alimentada con el valor inicial `s`.
 
-@include [figure.html source="../images/unfold.svg" desc="unfold function"]
+@include [figure.html source="../images/unfold.svg" desc="Diagrama de la función unfold"]

@@ -9,4 +9,4 @@ name: appendedAll
 `appendedAll` creates a copy of this collection by adding the collection `bs` at
 the end.
 
-@include [figure.html source="images/appendedAll.svg" desc="appendedAll function"]
+@include [figure.html source="images/appendedAll.svg" desc="Diagram of the function appendedAll"]

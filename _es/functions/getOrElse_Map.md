@@ -11,9 +11,9 @@ Para la función `getOrElse` de `Option` ir [aquí](./getOrElse_Option).
 
 `getOrElse` devuelve el valor asociado a la clave `k` en este `Map`.
 
-@include [figure.html source="../images/getOrElse_Map.svg" desc="getOrElse function"]
+@include [figure.html source="../images/getOrElse_Map.svg" desc="Diagrama de la función getOrElse"]
 
 Si este `Map` no contiene la clave `k` entonces esta función devuelve el resultado de la computación `v`.
 
-@include [figure.html source="../images/getOrElse_Map.2.svg" desc="getOrElse function"]
+@include [figure.html source="../images/getOrElse_Map.2.svg" desc="Diagrama de la función getOrElse"]
 

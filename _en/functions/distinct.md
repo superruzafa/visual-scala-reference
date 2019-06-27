@@ -8,4 +8,4 @@ name: distinct
 
 `distinct` creates a copy of this collection without duplicated elements.
 
-@include [figure.html source="images/distinct.svg" desc="distinct function"]
+@include [figure.html source="images/distinct.svg" desc="Diagram of the function distinct"]

@@ -8,4 +8,4 @@ name: reverse
 
 `reverse` creates a collection by reversing the order of the elements.
 
-@include [figure.html source="images/reverse.svg" desc="reverse function"]
+@include [figure.html source="images/reverse.svg" desc="Diagram of the function reverse"]

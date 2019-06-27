@@ -11,9 +11,9 @@ Para la función `getOrElse` de `Map` ir [aquí](./getOrElse_Map).
 
 `getOrElse` devuelve el valor envuelto cuando este `Option` es `Some`.
 
-@include [figure.html source="../images/getOrElse_Option.svg" desc="getOrElse function"]
+@include [figure.html source="../images/getOrElse_Option.svg" desc="Diagrama de la función getOrElse"]
 
 Cuando este `Option` es `None` esta función devuelve el valor predeterminado `b`.
 
-@include [figure.html source="../images/getOrElse_Option.2.svg" desc="getOrElse function"]
+@include [figure.html source="../images/getOrElse_Option.2.svg" desc="Diagrama de la función getOrElse"]
 
