@@ -9,10 +9,10 @@
     \node (an) {$a_n$}; \\
 };
 
-\foreach \i/\r in {n/false,n-1/false,n-i/true}{
+\foreach \i/\r in {n/\false,n-1/\false,n-i/\true}{
     \draw [subflow ->] (a\i.north) -- +(0, .5)
         node (c) [subfunction, above] {\texttt{p}};
-    \draw [subflow ->] (c.north) -- +(0, .5) node (r) [subelement, above] {\texttt{\r}};
+    \draw [subflow ->] (c.north) -- +(0, .5) node (r) [subelement, above] {\r};
 }
 
 \draw [<- subflow, iterate ->] (an.north) arc;

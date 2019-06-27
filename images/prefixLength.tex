@@ -10,11 +10,11 @@
     \node [elements after]; \\
 };
 
-\foreach \i/\r in {1/true,2/true,i/true,i+1/false}{
+\foreach \i/\r in {1/\true,2/\true,i/\true,i+1/\false}{
     \draw [subflow ->] (a\i.north) -- +(0, .5)
         node (p) [subfunction, above] {\texttt{p}};
     \draw [subflow ->] (p.north io 1) -- +(0, .5)
-        node [subelement, above] {\texttt{\r}};
+        node [subelement, above] {\r};
 }
 
 \draw [<- subflow] (a1.north) arc [<- iterate];

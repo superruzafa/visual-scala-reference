@@ -23,7 +23,7 @@
     \node [elements after]; \\
 };
 
-\foreach \i/\s in {1/\true,2/\true,i/\false} {
+\foreach \i/\r in {1/\true,2/\true,i/\false} {
     \node (p) [subpredicate 2, below=.5 of b\i];
     \draw [subflow ->] (b\i.south -| p.north io 2) -- (p.north io 2);
     \coordinate (xn) at (b\i.north -| p.north io 1);
@@ -32,7 +32,7 @@
     \draw [subflow, densely dotted, opacity=.25] (xn) -- (xs);
     \draw [subflow ->] (xs) -- (p.north io 1);
     \draw [subflow ->] (p.south io 1) -- +(0, -.5)
-        node [subelement, below] {\s};
+        node [subelement, below] {\r};
 }
 
 \draw [<- subflow] (a1.north) arc [<- iterate];

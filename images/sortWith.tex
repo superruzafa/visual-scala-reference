@@ -41,15 +41,15 @@
 };
 
 \foreach \a/\b/\r [count=\i] in {
-    2/n/true,
-    n/1/false,
-    1/i/true,
-    2/1/false,
-    n/i/false
+    2/n/\true,
+    n/1/\false,
+    1/i/\true,
+    2/1/\false,
+    n/i/\false
 }{
     \draw [<- subflow] (p\i.north io 1) -- +(0, .5) node [subelement, above] {$a_\a$};
     \draw [<- subflow] (p\i.north io 2) -- +(0, .5) node [subelement, above] {$a_\b$};
-    \draw [subflow ->] (p\i.south io 1) -- +(0, -.5) node [subelement, below] {\texttt{\r}};
+    \draw [subflow ->] (p\i.south io 1) -- +(0, -.5) node [subelement, below] {\r};
 }
 
 \node [big arrow, left=1 of p1, rotate=-90] {};

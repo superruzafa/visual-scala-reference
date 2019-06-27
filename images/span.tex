@@ -20,11 +20,11 @@
     \node [elements after] coordinate (bn) at (\tikzlastnode.north east); \\
 };
 
-\foreach \i/\r in {1/true,2/true,i-1/true,i/false}{
+\foreach \i/\r in {1/\true,2/\true,i-1/\true,i/\false}{
     \draw [subflow ->] (a\i.north) -- +(0, .5)
         node (p) [subfunction, above] {\texttt{p}};
     \draw [subflow ->] (p.north io 1) -- +(0, .5)
-        node [subelement, above] {\texttt{\r}};
+        node [subelement, above] {\r};
 }
 
 \draw [<- subflow] (a1.north) arc [<- iterate];
