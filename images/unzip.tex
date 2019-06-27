@@ -5,8 +5,8 @@
     \node (ab1) {$(a_1, a^\prime_1)$}; &
     \node (ab2) {$(a_2, a^\prime_2)$}; &
     \node [elements between]; &
-    \node (abn) {$(a_n, a^\prime_n)$}; &
-\\ };
+    \node (abn) {$(a_n, a^\prime_n)$}; \\
+};
 
 \matrix (A) [tuple of collections, below=2 of A] {
     \node (a1) {$a_1$}; &
@@ -17,8 +17,8 @@
     \node (b1) {$a^\prime_1$}; &
     \node (b2) {$a^\prime_2$}; &
     \node [elements between]; &
-    \node (bn) {$a^\prime_n$}; &
-\\ };
+    \node (bn) {$a^\prime_n$}; \\
+};
 
 \path [draw=none, name path=pa1] ($ (ab1.south) + (-.2, 0) $) .. controls +(0, -1.5) and +(0, 1.5) .. (a1);
 \path [draw=none, name path=pb1] ($ (ab1.south) + (+.2, 0) $) .. controls +(0, -1.5) and +(0, 1.5) .. (b1);

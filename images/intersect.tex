@@ -6,22 +6,22 @@
     \node (a2) {$a_2$}; &
     \node (a3) {$a_3$}; &
     \node (a4) {$a_1$}; &
-    \node (a5) {$a_4$}; &
-\\ };
+    \node (a5) {$a_4$}; \\
+};
 
 \matrix (A') [collection, right=1 of A] {
     \node (b1) {$a_2$}; &
     \node (b2) {$a_1$}; &
     \node (b3) {$a_5$}; &
     \node (b4) {$a_2$}; &
-    \node (b5) {$a_1$}; &
-\\ };
+    \node (b5) {$a_1$}; \\
+};
 
 \matrix (B) [collection, below=3 of A.south west, anchor=north west] {
     \node (c1) {$a_1$}; &
     \node (c2) {$a_2$}; &
-    \node (c3) {$a_1$}; &
-\\ };
+    \node (c3) {$a_1$}; \\
+};
 
 \coordinate (x) at ($ (A)!.33!(B) $);
 \coordinate (rule) at (a1 |- x);

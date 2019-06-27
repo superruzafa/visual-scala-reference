@@ -7,8 +7,8 @@
     \node [elements between]; &
     \node {$a_i$}; &
     \node [elements between]; &
-    \node {$a_n$}; &
-\\ };
+    \node {$a_n$}; \\
+};
 
 \matrix (R) [subcollection, below=2 of A] {
     \node (an) {$a_n$}; &
@@ -16,8 +16,8 @@
     \node (ai) {$a_i$}; &
     \node [elements between=.75]; &
     \node (a2) {$a_2$}; &
-    \node (a1) {$a_1$}; &
-\\ };
+    \node (a1) {$a_1$}; \\
+};
 
 \matrix (B) [collection, below=2 of R] {
     \node (bn) {$b_n$}; &
@@ -25,8 +25,8 @@
     \node (bi) {$b_i$}; &
     \node [elements between]; &
     \node (b2) {$b_2$}; &
-    \node (b1) {$b_1$}; &
-\\ };
+    \node (b1) {$b_1$}; \\
+};
 
 \foreach \i in {1,2,i,n}{
     \node (f) [subfunction, anchor=north io 1] at ($ (a\i.south) + (0, -.5) $) {$\texttt{f}$};

@@ -6,21 +6,21 @@
     \node (a3) {$a_3$}; &
     \node (a2) {$a_2$}; &
     \node (a12) {$a_1$}; &
-    \node (a5) {$a_5$}; &
-\\ };
+    \node (a5) {$a_5$}; \\
+};
 
 \matrix (A') [collection, right=1 of A] {
     \node (b1) {$a_2$}; &
     \node (b2) {$a_4$}; &
     \node (b3) {$a_1$}; &
     \node (b4) {$a_2$}; &
-    \node (b5) {$a_1$}; &
-\\ };
+    \node (b5) {$a_1$}; \\
+};
 
 \matrix (B) [collection, below=3 of $ (a3)!.5!(a5) $] {
     \node (c3) {$a_3$}; &
-    \node (c5) {$a_5$}; &
-\\ };
+    \node (c5) {$a_5$}; \\
+};
 
 \draw [name path=p1, subflow] (a11.north) -- +(0, .5) -| (b3);
 \draw [name path=p2, subflow] (a2.north) -- +(0, 1) -| (b1);

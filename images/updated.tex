@@ -8,8 +8,8 @@
     \node (ai) {$a_i$}; &
     \node (ai+1) {$a_{i + 1}$}; &
     \node [elements between]; &
-    \node (an) {$a_n$}; &
-\\ };
+    \node (an) {$a_n$}; \\
+};
 
 \matrix (B) [collection, below=2 of A] {
     \node (b1) {$a_1$}; &
@@ -18,8 +18,8 @@
     \node (bi) {\texttt{a}}; &
     \node (bi+1) {$a_{i + 1}$}; &
     \node [elements between]; &
-    \node (bn) {$a_n$}; &
-\\ };
+    \node (bn) {$a_n$}; \\
+};
 
 \braceflow[-.2]{(a1.south west)}{(ai-1.south east)}
 \coordinate (x) at (lastbrace);

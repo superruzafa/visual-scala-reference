@@ -8,14 +8,14 @@
     \node (an-i+1) {$a_{n-i+1}$ }; &
     \node [elements between]; &
     \node (an-1) {$a_{n-1}$ }; &
-    \node (an) {$a_n$}; &
-\\ };
+    \node (an) {$a_n$}; \\
+};
 
 \matrix (B) [collection, below=2 of $ (a1.south)!.5!(an-i.south) $] {
     \node {$a_1$}; &
     \node [elements between]; &
-    \node {$a_{n-i}$}; &
-\\ };
+    \node {$a_{n-i}$}; \\
+};
 
 \measure{$i$}{an-i+1.north west}{an.north east}
 

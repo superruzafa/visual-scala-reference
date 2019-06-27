@@ -9,16 +9,16 @@
     \node (ai+1) {$a_{i+1}$}; &
     \node [elements between]; &
     \node (an-1) {$a_{n-1}$}; &
-    \node (an) {$a_n$}; &
-\\ };
+    \node (an) {$a_n$}; \\
+};
 
 \matrix [collection, below=2.5 of A] {
     \node (b2) {$b_1$}; &
     \node [elements between]; &
     \node (bi) {$b_j$}; &
     \node [elements between]; &
-    \node (bn-1) {$b_m$}; &
-\\ };
+    \node (bn-1) {$b_m$}; \\
+};
 
 \foreach \i in {1,2,i,i+1,n-1,n}{
     \draw [flow ->] (a\i.south) -- +(0, -.5)

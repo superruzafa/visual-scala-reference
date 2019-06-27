@@ -8,8 +8,8 @@
     \node [elements between]; &
     \node (a1) {$a_1$}; &
     \node [elements between]; &
-    \node (ai) {$a_i$}; &
-\\ };
+    \node (ai) {$a_i$}; \\
+};
 
 \matrix (B) [collection, below=4.75 of A] {
     \node (b1) {$a_1$}; &
@@ -17,8 +17,8 @@
     \node [elements between]; &
     \node (bi) {$a_i$}; &
     \node [elements between]; &
-    \node (bn) {$a_n$}; &
-\\ };
+    \node (bn) {$a_n$}; \\
+};
 
 \tikzset{aaa/.style={
     column sep=.25\masterunit,
@@ -37,8 +37,8 @@
     \node (p3) [pred]; &
     \node [minimum height=\masterunit] {\dots}; &
     \node (p4) [pred]; &
-    \node (p5) [pred]; &
-\\ };
+    \node (p5) [pred]; \\
+};
 
 \foreach \a/\b/\r [count=\i] in {
     2/n/true,

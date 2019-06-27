@@ -22,15 +22,15 @@
     \node (k1) {$k_1$}; \\
     \node (k2) {$k_2$}; \\
     \node [vertical elements between]; \\
-    \node (kn) {$k_n$}; &
-\\ };
+    \node (kn) {$k_n$}; \\
+};
 
 \matrix (B) [collection, right=3 of A, nodes={anchor=base}] {
     \node (l1) {$k_1$}; \\
     \node (l2) {$k_2$}; \\
     \node [vertical elements between]; \\
-    \node (ln) {$k_n$}; &
-\\ };
+    \node (ln) {$k_n$}; \\
+};
 
 \foreach \i in {1,2,n}{
     \draw [key to value] (k\i.east) ++ (0, -.25) -- +(.5, 0)

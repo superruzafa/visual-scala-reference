@@ -4,8 +4,8 @@
 \matrix (A) [collection, nodes={font=\footnotesize}] {
     \node (abc1) {$(a_1, a^\prime_1, a^{\prime\prime}_1)$}; &
     \node [elements between]; &
-    \node (abcn) {$(a_n, a^\prime_n, a^{\prime\prime}_n)$}; &
-\\ };
+    \node (abcn) {$(a_n, a^\prime_n, a^{\prime\prime}_n)$}; \\
+};
 
 \matrix (A) [tuple of collections, below=2 of A] {
     \node (a1) {$a_1$}; &
@@ -18,8 +18,8 @@
     \node [tuple separator]; &
     \node (c1) {$a^{\prime\prime}_1$}; &
     \node [elements between]; &
-    \node (cn) {$a^{\prime\prime}_n$}; &
-\\ };
+    \node (cn) {$a^{\prime\prime}_n$}; \\
+};
 
 \path [draw=none, name path=pa1] ($ (abc1.south) + (-.3, 0) $) .. controls +(0, -1.5) and +(0, 1.5) .. (a1);
 \path [draw=none, name path=pb1] (abc1.south) .. controls +(0, -1.5) and +(0, 1.5) .. (b1);

@@ -9,15 +9,15 @@
     \node [elements between]; &
     \node (aj-1) {$a_{j - 1}$}; &
     \node {$a_j$}; &
-    \node [elements after]; &
-\\ };
+    \node [elements after]; \\
+};
 
 \matrix (B) [collection, below=2 of ai.south west, anchor=north west] {
     \node (bi) {$a_i$}; &
     \node {$a_{i + 1}$}; &
     \node [elements between]; &
-    \node (bj-1) {$a_{j - 1}$}; &
-\\ };
+    \node (bj-1) {$a_{j - 1}$}; \\
+};
 
 \braceflow[-.2]{(ai.south west)}{(aj-1.south east)}
 \coordinate (x) at (lastbrace);

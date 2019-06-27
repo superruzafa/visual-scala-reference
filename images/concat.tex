@@ -4,22 +4,22 @@
 \matrix (A1) [subcollection] {
     \node (a11) {$a_{1,1}$}; &
     \node [elements between=.75]; &
-    \node (a1m) {$a_{1,m}$}; &
-\\ };
+    \node (a1m) {$a_{1,m}$}; \\
+};
 
 \matrix (A2) [subcollection, right=.5 of A1] {
     \node (a21) {$a_{2,1}$}; &
     \node [elements between=.75]; &
-    \node (a2p) {$a_{2,p}$}; &
-\\ };
+    \node (a2p) {$a_{2,p}$}; \\
+};
 
 \node (A3) [right=.5 of A2] {\ldots};
 
 \matrix (An) [subcollection, right=.5 of A3] {
     \node (an1) {$a_{n,1}$}; &
     \node [elements between=.75]; &
-    \node (anq) {$a_{n,q}$}; &
-\\ };
+    \node (anq) {$a_{n,q}$}; \\
+};
 
 \coordinate (x) at ($ (A1.west)!.5!(An.east) $);
 
@@ -33,8 +33,8 @@
     \node [elements between]; &
     \node (bn1) {$a_{n,1}$}; &
     \node [elements between=.75]; &
-    \node (bnq) {$a_{n,q}$}; &
-\\ };
+    \node (bnq) {$a_{n,q}$}; \\
+};
 
 \foreach \i/\j in {11/1m, 21/2p,n1/nq}{
     \braceflow[-.2]{(a\i.south west)}{(a\j.south east)}

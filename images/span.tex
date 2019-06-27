@@ -7,8 +7,8 @@
     \node [elements between]; &
     \node (ai-1) {$a_{i-1}$}; &
     \node (ai) {$a_i$}; &
-    \node [elements after] coordinate (an) at (\tikzlastnode.south west); &
-\\ };
+    \node [elements after] coordinate (an) at (\tikzlastnode.south west); \\
+};
 
 \matrix (B) [tuple of collections, below=2 of A] {
     \node (b1) {$a_1$}; &
@@ -17,8 +17,8 @@
     \node (bi-1) {$a_{i-1}$}; &
     \node [tuple separator]; &
     \node (bi) {$a_i$}; &
-    \node [elements after] coordinate (bn) at (\tikzlastnode.north east); &
-\\ };
+    \node [elements after] coordinate (bn) at (\tikzlastnode.north east); \\
+};
 
 \foreach \i/\r in {1/true,2/true,i-1/true,i/false}{
     \draw [subflow ->] (a\i.north) -- +(0, .5)

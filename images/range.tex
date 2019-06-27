@@ -7,8 +7,8 @@
     \node [elements between]; &
     \node (ai) [align=center] {$\texttt{start}$\\$+$\\$i\cdot 1_A$}; &
     \node [elements between]; &
-    \node (an) [align=center] {$\texttt{start}$\\$+$\\$n\cdot 1_A$}; &
-\\ };
+    \node (an) [align=center] {$\texttt{start}$\\$+$\\$n\cdot 1_A$}; \\
+};
 
 \draw [collection element line width, dotted] (an.north east) -- ++(1, 0) -- ++(0, -1) -- ++(-1, 0);
 \draw [dashed] ($ (an.south east) + (.25, -.5) $) -- ($ (an.north east) + (.25, .5) $)

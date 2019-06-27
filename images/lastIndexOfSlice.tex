@@ -11,14 +11,14 @@
     \node (an) {$a_n$}; &
     \node [elements between=.5]; &
     \node (an-1+m) {$a_{n - 1 + m}$}; &
-    \node (an+m) {$a_{n + m}$}; &
-\\ };
+    \node (an+m) {$a_{n + m}$}; \\
+};
 
 \matrix (B) [collection, below=3 of A] {
     \node (bi) {$a_i$}; &
     \node [elements between=.5]; &
-    \node (bi+m) {$a_{i + m}$}; &
-\\ };
+    \node (bi+m) {$a_{i + m}$}; \\
+};
 
 \foreach \i/\j in {n/.2,n-1/.7,i/.2}{
     \braceflow[-\j]{(a\i.south west)}{(a\i+m.south east)}

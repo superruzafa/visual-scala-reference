@@ -6,16 +6,16 @@
     \node (an-i) {$a_{n - i}$}; &
     \node [elements between]; &
     \node (an-1) {$a_{n - 1}$}; &
-    \node (an) {$a_n$}; &
-\\ };
+    \node (an) {$a_n$}; \\
+};
 
 \matrix (B) [collection, below=2 of A.south east, anchor=north east] {
     \node [elements before]; &
     \node (bn-i) {$a^\prime_{n - i}$}; &
     \node [elements between]; &
     \node (bn-1) {$a_{n - 1}$}; &
-    \node (bn) {$a_n$}; &
-\\ };
+    \node (bn) {$a_n$}; \\
+};
 
 \foreach \i/\r in {n/=,n-1/=,n-i/\neq}{
     \draw [subflow] (a\i) --

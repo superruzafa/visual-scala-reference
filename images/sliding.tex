@@ -12,8 +12,8 @@
     \node [elements between=1.75]; &
     \node (a5) {$a_{n \cdot \texttt{s} + 1}$}; &
     \node [elements between=.5]; &
-    \node (a6) {$a_{n \cdot \texttt{s} + k}$}; &
-\\ };
+    \node (a6) {$a_{n \cdot \texttt{s} + k}$}; \\
+};
 
 \measure[-.5]{\texttt{m}}{a1.south west}{a2.south east}
 \measure[-.5]{\texttt{m}}{a3.south west}{a4.south east}
@@ -27,20 +27,20 @@
 \matrix (I1) [collection, nodes={font=\small}, below=3 of A] {
     \node {$a_1$}; &
     \node [elements between=.8]; &
-    \node {$a_{\texttt{m}}$}; &
-\\ };
+    \node {$a_{\texttt{m}}$}; \\
+};
 
 \matrix (I2) [collection, nodes={font=\small}, below=1.5 of I1] {
     \node {$a_{\texttt{s} + 1}$}; &
     \node [elements between=.8]; &
-    \node {$a_{\texttt{s} + \texttt{m}}$}; &
-\\ };
+    \node {$a_{\texttt{s} + \texttt{m}}$}; \\
+};
 
 \matrix (I3) [collection, nodes={font=\small}, below=2 of I2.south west, anchor=north west] {
     \node {$a_{n \cdot \texttt{s}}$}; &
     \node [elements between=.5]; &
-    \node {$a_{n \cdot \texttt{s} + k}$}; &
-\\ };
+    \node {$a_{n \cdot \texttt{s} + k}$}; \\
+};
 
 \measure{\texttt{m}}{I1.north west}{I1.north east}
 \measure{\texttt{m}}{I2.north west}{I2.north east}

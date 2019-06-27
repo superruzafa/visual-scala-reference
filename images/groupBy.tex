@@ -11,22 +11,22 @@
 \matrix (V1) [subcollection, right=.5 of k1] {
     \node {$a_1$}; &
     \node {$a_3$}; &
-    \node [elements after]; &
-\\ };
+    \node [elements after]; \\
+};
 
 \matrix (V2) [subcollection, right=.5 of k2] {
     \node {$a_2$}; &
     \node [elements between=.5]; &
     \node {$a_{i+1}$}; &
-    \node [elements after]; &
-\\ };
+    \node [elements after]; \\
+};
 
 \matrix (Vm) [subcollection, right=.5 of km] {
     \node [elements before]; &
     \node {$a_i$}; &
     \node [elements between=.5]; &
-    \node {$a_n$}; &
-\\ };
+    \node {$a_n$}; \\
+};
 
 \foreach \i in {1,2,m}{
     \draw [key to value] (k\i) to (V\i);
@@ -43,8 +43,8 @@
     \node (ai) {$a_i$}; &
     \node (ai+1) {$a_{i+1}$}; &
     \node [elements between]; &
-    \node (an) {$a_n$}; &
-\\ };
+    \node (an) {$a_n$}; \\
+};
 
 \foreach \i/\r in {1/1,2/2,3/1,i/m,i+1/2,n/m}{
     \draw [subflow ->] (a\i.north) -- +(0, .5)

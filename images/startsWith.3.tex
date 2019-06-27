@@ -6,16 +6,16 @@
     \node (a2) {$a_2$}; &
     \node [elements between]; &
     \node (ai) {$a_i$}; &
-    \node [elements after]; &
-\\ };
+    \node [elements after]; \\
+};
 
 \matrix (B) [collection, below=2 of A.south west, anchor=north west] {
     \node (b1) {$a_1$}; &
     \node (b2) {$a_2$}; &
     \node [elements between]; &
     \node (bi) {$a^\prime_i$}; &
-    \node [elements after]; &
-\\ };
+    \node [elements after]; \\
+};
 
 \foreach \i/\c in {1/=,2/=,i/\neq}{
     \draw [subflow] (a\i) --

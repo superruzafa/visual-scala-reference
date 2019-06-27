@@ -9,16 +9,16 @@
     \node [elements between]; &
     \node (aj+m-1) {$a_{j + m - 1}$}; &
     \node (aj+m) {$a_{j + m}$}; &
-    \node [elements after]; &
-\\ };
+    \node [elements after]; \\
+};
 
 \measure{\texttt{m}}{aj.north west}{aj+m-1.north east}
 
 \matrix (B) [collection, right=1 of A] {
     \node (b1) {$b_1$}; &
     \node [elements between]; &
-    \node (bn) {$b_n$}; &
-\\ };
+    \node (bn) {$b_n$}; \\
+};
 
 \matrix (C) [collection, below=3 of A] {
     \node [elements before]; &
@@ -27,8 +27,8 @@
     \node [elements between]; &
     \node (cn) {$b_n$}; &
     \node (cj+m) {$a_{j + m}$}; &
-    \node [elements after]; &
-\\ };
+    \node [elements after]; \\
+};
 
 \braceflow[-.2]{(A.south west)}{(aj-1.south east)}
 \coordinate (x) at (lastbrace);

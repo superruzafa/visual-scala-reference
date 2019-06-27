@@ -7,15 +7,15 @@
     \node (aj+1) {$a_{j + 1}$}; &
     \node [elements between]; &
     \node (aj+m) {$a_{j + m}$}; &
-    \node [elements after]; &
-\\ };
+    \node [elements after]; \\
+};
 
 \matrix (B) [collection, below=2 of aj.south west, anchor=north west] {
     \node (bj) {$a_j$}; &
     \node (bj+1) {$a_{j + 1}$}; &
     \node [elements between]; &
-    \node (bj+m) {$a_{j + m}$}; &
-\\ };
+    \node (bj+m) {$a_{j + m}$}; \\
+};
 
 \foreach \i in {j,j+1,j+m}{
     \draw [subflow] (a\i) --

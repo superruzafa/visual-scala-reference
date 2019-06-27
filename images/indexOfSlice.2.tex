@@ -10,14 +10,14 @@
     \node (ai) {$a_i$}; &
     \node [elements between=.5]; &
     \node (ai+m) {$a_{i + m}$}; &
-    \node [elements after]; &
-\\ };
+    \node [elements after]; \\
+};
 
 \matrix (B) [collection, below=3 of A] {
     \node (bi) {$a_i$}; &
     \node [elements between=.5]; &
-    \node (bi+m) {$a_{i + m}$}; &
-\\ };
+    \node (bi+m) {$a_{i + m}$}; \\
+};
 
 \foreach \i/\j in {1,i}{
     \braceflow[-.2]{(a\i.south west)}{(a\i+m.south east)}

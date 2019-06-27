@@ -7,8 +7,8 @@
     \node [elements between]; &
     \node (aj-1) {$a_{j - 1}$}; &
     \node (aj) {$a_j$}; &
-    \node [elements after]; &
-\\ };
+    \node [elements after]; \\
+};
 
 \foreach \i/\r in {j/\neq,j-1/\neq,j-i/=}{
     \draw [subflow ->] (a\i.north) -- +(0, .5)

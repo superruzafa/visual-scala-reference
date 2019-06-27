@@ -6,8 +6,8 @@
     \node (an-i) {$a_{n - i}$}; &
     \node [elements between]; &
     \node (an-1) {$a_{n - 1}$}; &
-    \node (an) {$a_n$}; &
-\\ };
+    \node (an) {$a_n$}; \\
+};
 
 \foreach \i/\r in {n/false,n-1/false,n-i/true}{
     \draw [subflow ->] (a\i.north) -- +(0, .5)
