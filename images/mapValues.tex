@@ -33,9 +33,9 @@
 };
 
 \foreach \i in {1,2,n}{
-    \draw [key to value] (k\i.east) ++ (0, -.25) -- +(.5, 0)
+    \draw [map ->] (k\i.east) ++ (0, -.25) -- +(.5, 0)
         node (v\i) [element, right] {$v_\i$} coordinate (x);
-    \draw [key to value] (l\i.east) ++ (0, -.25) -- +(.5, 0)
+    \draw [map ->] (l\i.east) ++ (0, -.25) -- +(.5, 0)
         node (w\i) [element, right] {$w_\i$};
     \coordinate (x) at ($ (v\i.east)!.5!(l\i.west) $);
     \node (f) at ($ (x) + (0, .375) $) [fun];

@@ -9,8 +9,10 @@
 \\ };
 
 \foreach \i/\j in {1,2,n}{
-    \draw [key to value] (k\i.east) to +(.5, 0) node [element, right] {$v_\i$};
-    \draw [subflow ->] (k\i.west) -- +(-.5, 0) node [subelement, left] {$k \neq k_\i $};
+    \draw [map ->] (k\i.east) -- +(.5, 0)
+        node [element, right] {$v_\i$};
+    \draw [subflow ->] (k\i.west) -- +(-.5, 0)
+        node [subelement, left] {$k \neq k_\i $};
 }
 
 \draw [<- subflow, iterate up] (k1.west) arc;

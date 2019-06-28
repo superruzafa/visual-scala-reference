@@ -291,64 +291,53 @@
 
 \tikzset{
     vertical elements before/.style={
-        rotate=90,
+        rotate=-90,
+        anchor=center,
         elements before=#1,
     }
 }
 
 \tikzset{
     vertical elements between/.style={
-        rotate=90,
+        rotate=-90,
+        anchor=center,
         elements between=#1,
     }
 }
 
 \tikzset{
     vertical elements after/.style={
-        rotate=90,
+        rotate=-90,
+        anchor=center,
         elements after=#1,
     }
 }
 
-\tikzset{key to value/.style={
-    collection element line width,
-    decorate,
+\newlength\maptolinewidth
+\setlength\maptolinewidth{\defaultpenwidth}
+
+\tikzset{map/.style={
     decoration={
-        show path construction,
-        lineto code={
-            /utils/exec=\csname tikz@options\endcsname,
-            \fill (\tikzinputsegmentfirst) [white] circle [radius=.15\masterunit];
-            \draw ($ (\tikzinputsegmentfirst) + (0, .15\masterunit) $) [draw, line cap=rect] arc [start angle=90, end angle=270, radius=.15\masterunit];
-
-            \fill [defaultpencolor] (\tikzinputsegmentfirst) circle [radius=.05\masterunit];
-            \draw (\tikzinputsegmentfirst) [flow, defaultpencolor, -Triangle] -- (\tikzinputsegmentlast);
+        markings,
+        mark=at position 0pt with {
+            \fill [white]
+                (.5\pgflinewidth, .1\masterunit)
+                -- (0, .1\masterunit)
+                arc [start angle=90, end angle=270, radius=.1\masterunit]
+                -- ++ (.5\pgflinewidth, 0)
+                -- cycle;
+            \fill (0, 0) circle [radius=.05\masterunit];
+            \draw [collection element line width, line cap=rect, tips=false]
+                (0, .1\masterunit)
+                arc [start angle=90, end angle=270, radius=.1\masterunit];
         }
-    }
+    },
+    line width=\maptolinewidth,
+    preaction={decorate},
 }}
 
-\newlength\mapflowwidth
-\setlength\mapflowwidth{\defaultpenwidth}
-
-\tikzset{map from/.style={
-    collection element line width,
-    decorate,
-    decoration={
-        show path construction,
-        lineto code={
-            /utils/exec=\csname tikz@options\endcsname,
-            \fill (\tikzinputsegmentfirst) [white] circle [radius=.15\masterunit];
-            \draw ($ (\tikzinputsegmentfirst) + (0, .15\masterunit) $) [draw, line cap=rect] arc [start angle=90, end angle=270, radius=.15\masterunit];
-            \fill [defaultpencolor] (\tikzinputsegmentfirst) circle [radius=.05\masterunit];
-        }
-    }
-}}
-
-\tikzset{map to/.style={
-    line width=\mapflowwidth,
-}}
-
-\tikzset{map to ->/.style={
-    map to,
+\tikzset{map ->/.style={
+    map,
     -{Triangle[angle'=60, length=5]},
 }}
 

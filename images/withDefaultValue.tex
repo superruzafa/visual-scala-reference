@@ -8,7 +8,7 @@
     \node (kn) {$k_n$}; \\
 };
 
-\matrix (B) [collection, right=3 of A.north east, anchor=north west] {
+\matrix (B) [collection, right=3.5 of A.north east, anchor=north] {
     \node (l1) {$k_1$}; \\
     \node (l2) {$k_2$}; \\
     \node [vertical elements between]; \\
@@ -17,12 +17,12 @@
 };
 
 \foreach \i in {1,2,n}{
-    \draw [key to value] (k\i.east) -- +(.5, 0)
+    \draw [map ->] (k\i.east) -- +(.5, 0)
         node [element, right] {$v_\i$} coordinate (v);
-    \draw [key to value] (l\i.east) -- +(.5, 0)
+    \draw [map ->] (l\i.east) -- +(.5, 0)
         node [element, right] {$v_\i$};
 }
-\draw [key to value] (l_.east) -- +(.5, 0)
+\draw [map ->] (l_.east) -- +(.5, 0)
     node [element, right] {\texttt{v}};
 
 \coordinate (x) at ($ (v.east)!.5!(B.west) $);

@@ -64,9 +64,11 @@
 \coordinate (rule2) at ($ (B.east)!.67!(KA1.west) $);
 
 \foreach \i in {1,2,m}{
-    \draw [map from] (k\i.east);
-    \draw [map to ->]
-        (k\i.east) -- ++(.25, 0) -- ($ (KB\i.west) + (-.25, 0) $) -- (KB\i);
+    \draw [map ->]
+        (k\i.east)
+        -- ++(.25, 0)
+        -- ($ (KB\i.west) + (-.25, 0) $)
+        -- (KB\i);
 }
 
 \matrix (A) [collection, above=2 of current bounding box.north] {

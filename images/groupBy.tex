@@ -29,7 +29,7 @@
 };
 
 \foreach \i in {1,2,m}{
-    \draw [key to value] (k\i) to (V\i);
+    \draw [map ->] (k\i) -- (V\i);
 }
 
 \coordinate (x) at ($ (k2)!.5!(V2.east) $);

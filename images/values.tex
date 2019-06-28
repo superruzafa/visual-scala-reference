@@ -9,7 +9,7 @@
 };
 
 \foreach \i in {1,2,n}{
-    \draw [key to value] (k\i.east) to +(.5, 0)
+    \draw [map ->] (k\i.east) -- +(.5, 0)
         node (v) [element, right] {$v_{\i}$};
     \node (v\i) [element, right=3 of v] {$v_{\i}$};
 }

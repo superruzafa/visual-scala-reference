@@ -2,6 +2,7 @@
 ---
 
 \matrix (K) [collection] {
+    \node [vertical elements before]; \\
     \node (k1) {$k_1$}; \\
     \node (k2) {$k_2$}; \\
     \node [vertical elements between]; \\
@@ -10,8 +11,10 @@
 \\ };
 
 \foreach \i/\j in {1/\neq,2/\neq,i/=}{
-    \draw [key to value] (k\i.east) to +(.5, 0) node [element, right] {$v_\i$};
-    \draw [subflow ->] (k\i.west) -- +(-.5, 0) node [subelement, left] {$k \j k_\i $};
+    \draw [map ->] (k\i.east) -- +(.5, 0)
+        node [element, right] {$v_\i$};
+    \draw [subflow ->] (k\i.west) -- +(-.5, 0)
+        node [subelement, left] {$k \j k_\i $};
 }
 
 \draw [<- subflow, iterate up] (k1.west) arc;
