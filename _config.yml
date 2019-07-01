@@ -29,27 +29,19 @@ defaults:
   - scope:
       path: ""
     values:
+      home: ""
       lang: en
   - scope:
       path: ""
       type: es
     values:
+      home: "/es"
       lang: es
   - scope:
       path: "_en/functions"
     values:
       layout: function
-      description: "Graphical representation of the Scala's {{ page.name }} function"
   - scope:
       path: "_es/functions"
     values:
-      description: "Representación gráfica de la function {{ page.name }} de Scala"
       layout: function
-
-t:
-  en:
-    home: ""
-    language_name: English
-  es:
-    home: /es
-    language_name: Español

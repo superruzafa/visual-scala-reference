@@ -1,0 +1,9 @@
+name: English
+home:
+  title: "{{ site.title }}"
+  description: Graphical representation of Scala functions.
+  keywords: "scala functions, scala explained easy, learn scala, functional programming, scala visual, scala graphical"
+functions:
+  title: "{{ page.name }} - {{ site.title }}"
+  description: "Scala {{ page.name }} function. Graphical representation of the Scala's {{ page.name }} function"
+  keywords: "{{ page.name }} function, scala {{ page.name }} function"

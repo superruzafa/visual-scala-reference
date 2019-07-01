@@ -1,7 +1,8 @@
 ---
 layout: default
-title: "{{ page.name }}"
-description: "{{ page.description | flatify }}"
+title: "{{ site.data[page.lang].functions.title | flatify }}"
+description: "{{ site.data[page.lang].functions.description | flatify }}"
+keywords: "{{ site.data[page.lang].functions.keywords | flatify }}"
 image: "{{ site.url }}{{ site.baseurl }}/images/{{ page.normalized_name | default: page.name }}.png"
 type: article
 ---
