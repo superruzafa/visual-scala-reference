@@ -5,6 +5,8 @@ normalized_name: isDefinedAt_Seq
 
 # `isDefinedAt`
 
+Para la función `isDefinedAt` de `Map` ir [aquí](./isDefinedAt_Map).
+
 @include [signatures/isDefinedAt_Seq.md]
 
 `isDefinedAt` comprueba si un `Seq` contiene algún elemento en un índice `i` dado, devolviendo `true` en ese caso.

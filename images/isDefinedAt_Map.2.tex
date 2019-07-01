@@ -1,0 +1,25 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node (k1) {$k_1$}; \\
+    \node (k2) {$k_2$}; \\
+    \node [vertical elements between]; \\
+    \node (kn) {$k_n$}; \\
+};
+
+\foreach \i in {1,2,n}{
+    \draw [map ->] (k\i) -- +(1, 0)
+        node [element, right] {$v_\i$};
+    \draw [subflow ->] (k\i.west) -- +(-.5, 0)
+        node [subelement, left] {$k_\i \neq \texttt{k}$};
+}
+
+\draw [<- subflow] (k1.west) arc [iterate up];
+\draw [subflow ->, iterate down] (k1.west) to (k2.west);
+\draw [subflow ->, iterate down, dashed] (k2.west) arc;
+\draw [<- subflow, iterate up, dashed] (kn.west) arc;
+
+\draw [flow ->, bend right=45]
+    (kn.west) .. controls +(-.275, -.275) and +(0, .55) .. +(-.5, -1.5)
+    node [element, below] {\false};
