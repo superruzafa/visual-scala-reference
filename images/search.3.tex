@@ -1,0 +1,24 @@
+---
+---
+
+\matrix (A) [collection] {
+    \node [elements before]; &
+    \node (ai) {$a_i$}; &
+    \node (ai+1) {$a_{i + 1}$}; &
+    \node [elements between]; &
+    \node (aj-1) {$a_{j - 1}$}; &
+    \node [elements after]; \\
+};
+
+\foreach \i in {i,i+1,j-1}{
+    \draw [subflow ->] (a\i.north) -- +(0, .5)
+        node [subelement, above] {$a_{\i} \neq \texttt{e}$};
+}
+
+\draw [<- subflow, <- iterate] (ai.north) arc;
+\draw [subflow ->, iterate ->] (ai.north) to (ai+1.north);
+\draw [subflow ->, iterate ->, dashed] (ai+1.north) arc;
+\draw [<- subflow, <- iterate, dashed] (aj-1.north) arc;
+
+\node (b) [labeled element={\texttt{InsertionPoint}}, minimum width=2\masterunit, below right=1 and 1 of A] {$j$};
+\draw [flow ->] (aj-1.north) .. controls +(1, 1) and +(0, 2) .. (b);
