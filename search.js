@@ -117,7 +117,13 @@ Search.prototype._selectResultItem = function(diff) {
     this._getSelectedResultItem().classList.remove('selected-item');
   }
   this._selected_item_index += diff;
-  this._getSelectedResultItem().classList.add('selected-item');
+  const selectedItem = this._getSelectedResultItem();
+  if (selectedItem != null) {
+    const topPos = selectedItem.offsetTop - 100;
+    selectedItem.classList.add('selected-item');
+    // Scroll inside search results.
+    selectedItem.parentNode.parentNode.scrollTop = topPos;
+  }
 }
 
 Search.prototype._hideResults = function() {
