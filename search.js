@@ -30,6 +30,30 @@ Search.prototype._search = function(query) {
 
 Search.prototype._inputKeyUp = function(e) {
   switch (e.key) {
+    case "Enter":
+    case "Escape":
+    case "ArrowUp":
+    case "ArrowDown":
+    case "Tab":
+    case "Shift":
+      // ignore
+      break;
+    default:
+      this._hideResults();
+      const query = this._input.value.trim().toLowerCase();
+      if (query === "")
+        return;
+      const results = this._search(query);
+      if (results.length > 0) {
+        this._clearResults();
+        results.forEach(result => this._appendResult(result))
+        this._showResults();
+      }
+  }
+}
+
+Search.prototype._inputKeyDown = function(e) {
+  switch (e.key) {
     case "Enter": // Open the selected item
       const link = this._getSelectedResultItem();
       if (link != null) {
@@ -54,27 +78,6 @@ Search.prototype._inputKeyUp = function(e) {
       } else {
         this._move_down();
       }
-      break;
-    case "Shift": // Shift only.
-      // do nothing
-      break;
-    default:
-      this._hideResults();
-      const query = this._input.value.trim().toLowerCase();
-      if (query === "")
-        return;
-      const results = this._search(query);
-      if (results.length > 0) {
-        this._clearResults();
-        results.forEach(result => this._appendResult(result))
-        this._showResults();
-      }
-  }
-}
-
-Search.prototype._inputKeyDown = function(e) {
-  switch (e.key) {
-    case "Tab":
       // Do not trigger browser's default tab (move to focusable item)
       e.preventDefault();
       break;
