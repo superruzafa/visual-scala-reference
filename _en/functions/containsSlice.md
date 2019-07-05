@@ -10,6 +10,6 @@ name: containsSlice
 
 @include [figure.html source="images/containsSlice.svg" desc="Diagram of the function containsSlice"]
 
-If the collection `as`cannot be found as a slice in this collection then this function returns `false`.
+If the collection `as` cannot be found as a slice in this collection then this function returns `false`.
 
 @include [figure.html source="images/containsSlice.2.svg" desc="Diagram of the function containsSlice"]
