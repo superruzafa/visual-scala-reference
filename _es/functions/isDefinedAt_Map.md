@@ -9,7 +9,7 @@ For the `Seq`'s `isDefinedAt` function go [here](./isDefinedAt_Seq).
 
 @include [signatures/isDefinedAt_Map.md]
 
-`isDefinedAt` comprueba si un `Map` contiene algún elemento con clave `k` dada, devolviendo `true` en ese caso.
+`isDefinedAt` comprueba si este `Map` contiene algún elemento cuya clave es `k`, devolviendo `true` en ese caso.
 
 @include [figure.html source="../images/isDefinedAt_Map.svg" desc="Diagrama de la función isDefinedAt"]
 
