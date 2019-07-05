@@ -55,6 +55,9 @@ Search.prototype._inputKeyUp = function(e) {
         this._move_down();
       }
       break;
+    case "Shift": // Shift only.
+      // do nothing
+      break;
     default:
       this._hideResults();
       const query = this._input.value.trim().toLowerCase();
