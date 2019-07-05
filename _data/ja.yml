@@ -1,0 +1,9 @@
+name: 日本語
+home:
+  title: "{{ site.title }}"
+  description: Scala 関数の図解
+  keywords: "scala 関数, scala をわかりやすく説明, scala を学ぶ, 関数プログラミング, 視覚的 scala, scala 図解"
+functions:
+  title: "{{ page.name }} - {{ site.title }}"
+  description: "Scala {{ page.name }} 関数. Scala　の {{ page.name }} 関数の図解"
+  keywords: "{{ page.name }} 関数, scala {{ page.name }} 関数"
