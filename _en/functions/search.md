@@ -6,7 +6,7 @@ name: search
 
 @include [signatures/search.md]
 
-`search` searches the first element in the collection which equals (`==`) the element `e` and returns
+`search` searches the first element in this collection which equals (`==`) the element `e` and returns
 a `Found` containing the index where it was found.
 
 @include [figure.html source="images/search.svg" desc="Diagram of the function search"]
