@@ -24,8 +24,8 @@ Search.prototype._search = function(query) {
       return { function: f, weight };
     })
     .filter(r => r.weight > 0)
-    .sort((a, b) => a.weight < b.weight)
-    .map(obj => obj.function)
+    .sort((a, b) => b.weight - a.weight)
+    .map(obj => obj.function);
 }
 
 Search.prototype._inputKeyUp = function(e) {
