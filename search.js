@@ -10,11 +10,20 @@ function Search(functions) {
   this._functions = functions;
 }
 
+Search.normalize = function(text) {
+  return text.trim().toLowerCase();
+};
+
 Search.prototype._search = function(query) {
+  const normalizedQuery = Search.normalize(query);
+  if (normalizedQuery === '') {
+    return [];
+  }
+
   const weights = [
-    { weight: 1000, regex: new RegExp(`^${query}$`, 'i') },
-    { weight: 100,  regex: new RegExp(`^${query}`, 'i') },
-    { weight: 1,    regex: new RegExp(query, 'i') },
+    { weight: 1000, regex: new RegExp(`^${normalizedQuery}$`, 'i') },
+    { weight: 100,  regex: new RegExp(`^${normalizedQuery}`, 'i') },
+    { weight: 1,    regex: new RegExp(normalizedQuery, 'i') },
     { weight: 0,    regex: new RegExp('^') }
   ];
 
@@ -40,10 +49,7 @@ Search.prototype._inputKeyUp = function(e) {
       break;
     default:
       this._hideResults();
-      const query = this._input.value.trim().toLowerCase();
-      if (query === "")
-        return;
-      const results = this._search(query);
+      const results = this._search(this._input.value);
       if (results.length > 0) {
         this._clearResults();
         results.forEach(result => this._appendResult(result))
@@ -55,9 +61,26 @@ Search.prototype._inputKeyUp = function(e) {
 Search.prototype._inputKeyDown = function(e) {
   switch (e.key) {
     case "Enter": // Open the selected item
-      const link = this._getSelectedResultItem();
-      if (link != null) {
-        location.href = link.href;
+      const selectedItem = this._getSelectedResultItem();
+      if (selectedItem) {
+        location.href = selectedItem.href;
+        return;
+      }
+
+      const results = this._search(this._input.value);
+      if (results.length === 0) {
+        return;
+      }
+
+      const firstResult = results[0];
+      const normalizedQuery = Search.normalize(this._input.value);
+      const normalizedFirstResultName = Search.normalize(firstResult.name);
+
+      if (
+        results.length === 1 ||
+        normalizedQuery === normalizedFirstResultName
+      ) {
+        location.href = firstResult.url;
       }
       break;
     case "Escape": // Closes the search
