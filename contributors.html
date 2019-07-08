@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<main>
+    <h1>Contributors</h1>
+
+    <ul>
+{% for c in site.data.contributors %}
+        <li>
+            <strong><a href="https://github.com/{{ c.github_username }}">{{ c.name }}</a></strong>
+            <ul>
+    {% for contribution in c.contributions %}
+                <li>{{ contribution }}</li>
+    {% endfor %}
+            </ul>
+        </li>
+{% endfor %}
+    </ul>
+</main>

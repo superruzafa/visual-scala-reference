@@ -12,41 +12,28 @@
 }
 
 .footer {
-  background: #4A5659;
+  color: #fff;
+  background: #34506e;
   margin-top: 2rem;
-  padding: 1rem;
+  padding: 2rem;
 
   a, a:link, a:visited {
     color: #fff;
   }
-}
 
-.footer-links {
-  column-count: 2;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
+  .section-title {
+    font-weight: normal;
+    font-size: 1.1rem;
+    line-height: 2rem;
+    text-transform: uppercase;
+  }
 
-.footer-link {
-  line-height: 2rem;
-
-  .with-logo {
-    padding-left: 24px;
-    background-repeat: no-repeat;
-    background-position: left center;
-
-    &.github {
-      background-image: url(assets/github-logo.svg);
-      background-size: 16px;
-    }
-
-    &.scala {
-      background-image: url(assets/scala-logo.svg);
-      background-size: 11px;
-      background-position: 2px center;
-    }
+  .section-links {
+    font-size: .9rem;
+    line-height: 2rem;
+    list-style: none;
+    padding: 0;
+    white-space: nowrap;
   }
 }
 
