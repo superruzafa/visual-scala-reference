@@ -23,6 +23,9 @@ collections:
   es:
     output: true
     permalink: /:collection/:title
+  ja:
+    output: true
+    permalink: /:collection/:title
 
 defaults:
   - scope:
@@ -37,10 +40,20 @@ defaults:
       home: "/es"
       lang: es
   - scope:
+      path: ""
+      type: ja
+    values:
+      home: "/ja"
+      lang: ja
+  - scope:
       path: "_en/functions"
     values:
       layout: function
   - scope:
       path: "_es/functions"
+    values:
+      layout: function
+  - scope:
+      path: "_ja/functions"
     values:
       layout: function
