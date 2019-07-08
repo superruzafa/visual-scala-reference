@@ -6,7 +6,7 @@ name: findLast
 
 @include [signatures/findLast.md]
 
-`find` は、述語 `p` を満たす最後の要素を `Some` に包んで返します。
+`findLast` は、述語 `p` を満たす最後の要素を `Some` に包んで返します。
 
 @include [figure.html source="../images/findLast.svg" desc="関数 findLast の図"]
 
