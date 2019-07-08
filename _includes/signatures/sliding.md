@@ -1,5 +1,5 @@
 ~~~ scala
 trait Collection[A] {
-  def sliding(sz: Int, st: Int): Iterator[Collection[A]]
+  def sliding(m: Int, s: Int): Iterator[Collection[A]]
 }
 ~~~
