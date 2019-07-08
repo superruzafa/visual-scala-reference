@@ -15,3 +15,8 @@ On empty collections this function doesn't apply `op` and the initial value `z` 
 
 @include [figure.html source="images/foldLeft.2.svg" desc="Diagram of the function foldLeft"]
 
+## Try it yourself
+
+```scala:fiddle
+@include [examples/foldLeft.scala]
+```

@@ -12,3 +12,6 @@ indent_size = 4
 
 [*.tex]
 indent_size = 4
+
+[_includes/examples/*.scala]
+insert_final_newline = false

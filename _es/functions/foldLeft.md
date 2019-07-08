@@ -15,3 +15,8 @@ En colecciones vacías, esta función ni siquiera aplica `op` y el valor inicial
 
 @include [figure.html source="../images/foldLeft.2.svg" desc="Diagrama de la función foldLeft"]
 
+## Pruébalo tú mismo
+
+```scala:fiddle
+@include [examples/foldLeft.scala]
+```
