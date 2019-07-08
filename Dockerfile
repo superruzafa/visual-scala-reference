@@ -18,15 +18,19 @@ RUN \
   make && \
   make install
 
-COPY . /site
+RUN mkdir /site
 WORKDIR /site
+COPY Gemfile* /site/
 RUN bundle install
-RUN bundle exec jekyll build
 
-ENV JEKYLL_ENV=
-ENV LANG=C.UTF-8
-ENV LANGUAGE=C.UTF-8
-ENV LC_ALL=C.UTF-8
+ENV \
+  JEKYLL_ENV= \
+  LANG=C.UTF-8 \
+  LANGUAGE=C.UTF-8 \
+  LC_ALL=C.UTF-8
+
+COPY . /site
+RUN bundle exec jekyll build --verbose
 
 EXPOSE 4000
 
