@@ -1,5 +1,5 @@
 ~~~ scala
 trait List[A] {
-  def mapConserve(f: (A) => A): List[A]
+  def mapConserve[B >: A](f: (A) => B): List[B]
 }
 ~~~

@@ -482,6 +482,20 @@
     y radius=.5
 }}
 
+\tikzset{<- iterate mirror/.style={
+    <- iterate,
+    bend left=45,
+    start angle=-30,
+    delta angle=-60,
+}}
+
+\tikzset{iterate mirror ->/.style={
+    iterate ->,
+    bend right=45,
+    start angle=-150,
+    delta angle=60,
+}}
+
 \tikzset{iterate up/.style={
     bend left=45,
     delta angle=-60,
