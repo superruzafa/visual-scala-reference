@@ -1,4 +1,5 @@
 name: 日本語
+english_name: Japanese
 home:
   title: "{{ site.title }}"
   description: Scala 関数の図解

@@ -13,6 +13,10 @@
 {% include header.html %}
     <div class="wrapper">
       <div class="container-fluid">
+{% if page.translated == false %}
+    {% assign english_lang_name = site.data[page.lang].english_name %}
+        <p class="untranslated-message">This page has not been yet translated to {{ english_lang_name | downcase }}.</p>
+{% endif %}
         {{ content }}
       </div>
     </div>

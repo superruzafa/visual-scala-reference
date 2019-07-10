@@ -1,4 +1,5 @@
 name: English
+english_name: English
 home:
   title: "{{ site.title }}"
   description: Graphical representation of Scala functions.

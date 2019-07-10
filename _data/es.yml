@@ -1,4 +1,5 @@
 name: Español
+english_name: Spanish
 home:
   title: "{{ site.title }}"
   description: Representación gráfica de las funciones de Scala.
