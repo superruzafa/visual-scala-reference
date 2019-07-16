@@ -1,0 +1,32 @@
+---
+---
+
+\matrix (P) [collection, nodes={minimum width=3\masterunit}] {
+    \node (pa) {}; &
+    \node [elements between=1]; &
+    \node (pi) {}; &
+    \node [elements after]; \\
+};
+
+\matrix (PA) at (pa) [subcollection] {
+    \node {$a_1$}; &
+    \node {$a_2$}; &
+    \node [elements between=.5]; &
+    \node {$a_n$}; \\
+};
+
+\matrix (PI) at (pi) [subcollection] {
+    \node {$i_1$}; &
+    \node {$i_2$}; &
+    \node [elements between=.5]; &
+    \node {$i_m$}; \\
+};
+
+\measure{$n$}{PA.north west}{PA.north east}
+\coordinate (x) at (last measure);
+\measure{$m$}{PI.north west}{PI.north east}
+\coordinate (x) at ($ (x)!.5!(last measure) $);
+\node at (x) [font=\small] {$n \neq m$};
+
+\draw [throw ->] (P) -- +(0, -2)
+    node [exception=IllegalArgumentException, below];
