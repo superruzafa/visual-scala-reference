@@ -8,4 +8,4 @@ name: empty
 
 `empty` creates a collection to contain elements of type `A` but without any element.
 
-@include [figure.html source="images/empty.svg" desc="Diagram of the function empty"]
+@include [figure.html source="images/empty.svg" desc="Diagram of the empty function"]

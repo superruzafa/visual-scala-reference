@@ -10,4 +10,4 @@ name: untupled
 corresponding to each component of the n-tuple accepted by the function `f` as a
 single parameter.
 
-@include [figure.html source="images/untupled.svg" desc="Diagram of the function untupled"]
+@include [figure.html source="images/untupled.svg" desc="Diagram of the untupled function"]

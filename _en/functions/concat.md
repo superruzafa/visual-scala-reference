@@ -8,4 +8,4 @@ name: concat
 
 `concat` accepts any arbitrary number of collections and uses their elements to create a single collection.
 
-@include [figure.html source="images/concat.svg" desc="Diagram of the function concat"]
+@include [figure.html source="images/concat.svg" desc="Diagram of the concat function"]

@@ -8,4 +8,4 @@ name: splitAt
 
 `splitAt` creates a `Tuple2` with two collections: the first containing all the elements whose index is less or equal than `i` and the other with the rest of elements.
 
-@include [figure.html source="images/splitAt.svg" desc="Diagram of the function splitAt"]
+@include [figure.html source="images/splitAt.svg" desc="Diagram of the splitAt function"]
