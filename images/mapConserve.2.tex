@@ -15,26 +15,27 @@
     \draw [flow ->] (a\i) -- (f.north io 1);
     \draw [flow ->] (f.south io 1) -- +(0, -.5)
         node (b\i) [element, below] {$b_\i$};
+}
+
+\foreach \i/\eq in {1/eq,2/eq,i/\cancel{eq}}{
     \draw [subflow ->] (b\i.south) -- +(0, -.5)
-        node (eq) [subelement, below] {$a_\i\,\texttt{eq}\,b_\i$};
+        node (eq) [subelement, below] {$a_\i\,\texttt{\eq}\,b_\i$};
 }
 
 \draw [<- subflow] (b1.south) arc [<- iterate mirror];
 \draw [subflow ->, iterate mirror ->] (b1.south) to (b2.south);
 \draw [subflow ->, iterate mirror ->, dashed] (b2.south) arc;
 \draw [<- subflow, <- iterate mirror, dashed] (bi.south) arc;
-\draw [subflow ->, iterate mirror ->, dashed] (bi.south) arc;
-\draw [<- subflow, <- iterate mirror, dashed] (bn.south) arc;
 
 \coordinate (x) at (eq.base -| A);
 
 \matrix (B) [collection, below=2 of x] {
-    \node {$a_1$}; &
-    \node {$a_2$}; &
+    \node {$b_1$}; &
+    \node {$b_2$}; &
     \node [elements between]; &
-    \node {$a_i$}; &
+    \node {$b_i$}; &
     \node [elements between]; &
-    \node {$a_n$}; \\
+    \node {$b_n$}; \\
 };
 
 \coordinate (y) at ($ (x)!.5!(B.north) $);
