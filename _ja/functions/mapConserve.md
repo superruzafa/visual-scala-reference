@@ -1,20 +1,15 @@
 ---
 name: mapConserve
-translated: false
 ---
 
 # `mapConserve`
 
 @include [signatures/mapConserve.md]
 
-`mapConserve` applies the function `f` to each element of this `List` and
-returns it untouched if every transformed element is equal (in terms of `eq`)
-to the element it was retrieved from.
+`mapConserve` は、関数 `f` をこの `List` の各要素に適用し、もし変換されたすべての要素が元の要素と等しい（`eq` で）場合、元のリストをそのまま返します。
 
 @include [figure.html source="../images/mapConserve.svg" desc="Diagram of the mapConserve function"]
 
-If at least one transformed element is not equal (in terms of `eq`) to its source
-element then this function creates a new `List` built from the transformed
-results.
+もしひとつでも変換された要素がソース要素と等しくない（`eq` で）場合、この関数は変換結果から作られた新しい `List` を作成します。
 
 @include [figure.html source="../images/mapConserve.2.svg" desc="Diagram of the mapConserve function"]

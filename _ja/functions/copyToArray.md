@@ -1,25 +1,23 @@
 ---
 name: copyToArray
-translated: false
 ---
 
 # `copyToArray`
 
 @include [signatures/copyToArray.md]
 
-`copyToArray` copies elements from this collection to an `Array` and returns
-how many elements were copied.
+`copyToArray` は、このコレクションの要素を `Array` にコピーし、何個の要素がコピーされたかを返します。
 
 @include [figure.html source="../images/copyToArray.svg" desc="Diagram of the copyToArray function"]
 
-The copy can be placed in the target `Array` at a given offset `i`.
+コピーは、ターゲット `Array` の指定したオフセット `i` 番目から行えます。
 
 @include [figure.html source="../images/copyToArray.2.svg" desc="Diagram of the copyToArray function"]
 
-Also the copy can be restricted to, as much, the first `l` elements.
+またコピーは最初の `l` 要素までに制限できます。
 
 @include [figure.html source="../images/copyToArray.3.svg" desc="Diagram of the copyToArray function"]
 
-In any case, those elements exceeding the bounds of the `Array` will be discarded.
+どのような場合でも、`Array` の境界を超えた要素は捨てられます。
 
 @include [figure.html source="../images/copyToArray.4.svg" desc="Diagram of the copyToArray function"]
