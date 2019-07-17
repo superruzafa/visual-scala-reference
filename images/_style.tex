@@ -160,6 +160,16 @@
     -{Triangle[flex,fill=defaultpencolor, angle'=30]},
 }}
 
+\tikzset{flow left ->/.style={
+    flow,
+    -{Triangle[flex,left,fill=defaultpencolor, angle'=30]},
+}}
+
+\tikzset{flow right ->/.style={
+    flow,
+    -{Triangle[flex,right,fill=defaultpencolor, angle'=30]},
+}}
+
 \tikzset{<- flow/.style={
     flow,
     {Triangle[flex,fill=defaultpencolor, angle'=30]}-,
@@ -175,6 +185,16 @@
 \tikzset{subflow ->/.style={
     subflow,
     -{Triangle[flex,fill=defaultpencolor, angle'=30]},
+}}
+
+\tikzset{subflow left ->/.style={
+    subflow,
+    -{Triangle[flex,left,fill=defaultpencolor, angle'=30]},
+}}
+
+\tikzset{subflow right ->/.style={
+    subflow,
+    -{Triangle[flex,right,fill=defaultpencolor, angle'=30]},
 }}
 
 \tikzset{<- subflow/.style={
