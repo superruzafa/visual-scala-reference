@@ -1,18 +1,15 @@
 ---
 name: transpose
-translated: false
 ---
 
 # `transpose`
 
 @include [signatures/transpose.md]
 
-`transpose` takes this collection of *m* x *n* elements and creates a new
-collection of *n* x *m* elements.
+`transpose` は、**m** x **n** 要素あるこのコレクションから新しい **n** x **m** 要素のコレクションを作成します。
 
-@include [figure.html source="../images/transpose.svg" desc="Diagram of the transpose function"]
+@include [figure.html source="../images/transpose.svg" desc="関数 transpose の図"]
 
-If not all the subcollections have the same size then this function throws an
-`IllegalArgumentException` exception.
+もしすべての下位コレクションが同じサイズでなければ、この関数は `IllegalArgumentException` 例外を発生させます。
 
-@include [figure.html source="../images/transpose.2.svg" desc="Diagram of the transpose function"]
+@include [figure.html source="../images/transpose.2.svg" desc="関数 transpose の図"]
