@@ -1,4 +1,4 @@
-FROM alpine AS build
+FROM alpine:3.8 AS build
 
 ARG NGINX_VERSION="1.14.0"
 
@@ -23,7 +23,7 @@ RUN \
 
 
 
-FROM alpine AS runtime
+FROM alpine:3.8 AS runtime
 
 RUN apk update && apk add --no-cache pcre
 
