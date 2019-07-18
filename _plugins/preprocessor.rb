@@ -8,6 +8,7 @@ module Jekyll
       @site = site
       site.collections.each do |key, value|
         value.docs.each do |doc|
+          doc.data['normalized_name'] = doc.data['normalized_name'] || doc.data['name']
           doc.content.gsub!(/@include\s*\[([^\]]+)\s*\]/){ |m| "{% include #{$1} %}" }
         end
       end
