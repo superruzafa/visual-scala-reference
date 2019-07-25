@@ -1,5 +1,5 @@
 ~~~ scala
 trait Seq[A] {
-  def distinctBy[B](f: (A) => B): Seq[A]
+  def distinctBy[K](f: (A) => K): Seq[A]
 }
 ~~~
