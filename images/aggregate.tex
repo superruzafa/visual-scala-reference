@@ -33,7 +33,6 @@
     \node (a2) {$a_2$}; &
     \node [elements between]; &
     \node (ai) {$a_i$}; &
-    \node (ai+1) {$a_{i+1}$}; &
     \node [elements between]; &
     \node (an-1) {$a_{n-1}$}; &
     \node (an) {$a_n$}; \\
@@ -50,11 +49,12 @@
 \draw [flow] (s2.east io 1) -- +(.25, 0) coordinate (last);
 \draw [flow ->, dashed] (last) -- +(0, -.5);
 
-\node (si) [seq op, left out, below=1 of ai.south east];
+\node (si) [seq op, left out, below=1 of ai.south, anchor=north io 2];
+\draw [flow ->] (ai) -- (si.north io 2);
 \coordinate (x) at ($ (si.north io 1)!.5!(ai.south) $);
 \coordinate (rule) at (si.north io 1 |- x);
-\draw [flow ->] (ai) |- (rule) -- (si.north io 1);
-\draw [flow ->] (ai+1) |- (si.north io 2 |- rule) -- (si.north io 2);
+\draw [<- flow] (si.north io 1) |- (rule);
+\draw [flow, dashed] (rule) -- +(-.25, 0);
 \draw [flow] (si.west io 1) -- +(-.25, 0) coordinate (last);
 \draw [flow ->, dashed] (last) -- +(0, -.5);
 
