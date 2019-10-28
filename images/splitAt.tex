@@ -3,25 +3,25 @@
 
 \matrix (A) [collection] {
     \node [elements before] coordinate (a1) at (\tikzlastnode.south west); &
+    \node (ai-1) {$a_{i - 1}$}; &
     \node (ai) {$a_i$}; &
-    \node (ai+1) {$a_{i + 1}$}; &
     \node [elements after] coordinate (an) at (\tikzlastnode.south east); \\
 };
 
 \matrix (B) [tuple of collections, below=2 of A] {
     \node [elements before] coordinate (b1) at (\tikzlastnode.north west); &
-    \node (bi) {$a_i$}; &
+    \node (bi-1) {$a_{i - 1}$}; &
     \node [tuple separator]; &
-    \node (bi+1) {$a_{i + 1}$}; &
+    \node (bi) {$a_i$}; &
     \node [elements after] coordinate (bn) at (\tikzlastnode.north east); \\
 };
 
-\braceflow[-.2]{(a1.south west)}{($ (ai.south east) + (-.5\defaultpenwidth, 0) $)}
+\braceflow[-.2]{(a1.south west)}{($ (ai-1.south east) + (-.5\defaultpenwidth, 0) $)}
 \coordinate (x) at (lastbrace);
-\braceflow[.2]{(b1.north west)}{($ (bi.north east) + (-.5\defaultpenwidth, 0) $)}
+\braceflow[.2]{(b1.north west)}{($ (bi-1.north east) + (-.5\defaultpenwidth, 0) $)}
 \draw [flow ->, out=270, in=90] (x) to (lastbrace);
 
-\braceflow[-.2]{(ai+1.south west)}{($ (an.south east) + (-.5\defaultpenwidth, 0) $)}
+\braceflow[-.2]{(ai.south west)}{($ (an.south east) + (-.5\defaultpenwidth, 0) $)}
 \coordinate (x) at (lastbrace);
-\braceflow[.2]{(bi+1.north west)}{($ (bn.north east) + (-.5\defaultpenwidth, 0) $)}
+\braceflow[.2]{(bi.north west)}{($ (bn.north east) + (-.5\defaultpenwidth, 0) $)}
 \draw [flow ->, out=270, in=90] (x) to (lastbrace);
