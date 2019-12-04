@@ -6,7 +6,7 @@ name: minOption
 
 @include [signatures/minOption.md]
 
-`maxOption` devuelve el menor valor de esta colección, envuelto con `Some`.
+`minOption` devuelve el menor valor de esta colección, envuelto con `Some`.
 
 @include [figure.html source="../images/minOption.svg" desc="Diagrama de la función minOption"]
 

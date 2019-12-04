@@ -6,7 +6,7 @@ name: minBy
 
 @include [signatures/minBy.md]
 
-`maxBy` aplica `f` a cada elemento y devuelve el elemento que emitió el menor valor.
+`minBy` aplica `f` a cada elemento y devuelve el elemento que emitió el menor valor.
 
 @include [figure.html source="../images/minBy.svg" desc="Diagrama de la función minBy"]
 

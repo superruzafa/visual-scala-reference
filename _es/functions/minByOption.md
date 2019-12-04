@@ -6,7 +6,7 @@ name: minByOption
 
 @include [signatures/minByOption.md]
 
-`maxByOption` aplica `f` a cada elemento y devuelve el elemento que emitió el menor valor envuelto con `Some`.
+`minByOption` aplica `f` a cada elemento y devuelve el elemento que emitió el menor valor envuelto con `Some`.
 
 @include [figure.html source="../images/minByOption.svg" desc="Diagrama de la función minByOption"]
 
