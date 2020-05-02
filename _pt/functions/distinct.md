@@ -6,6 +6,6 @@ name: distinct
 
 @include [signatures/distinct.md]
 
-`distinct` Crie uma cópia desta coleção sem itens duplicados.
+`distinct` cria uma cópia desta coleção sem itens duplicados.
 
 @include [figure.html source="../images/distinct.svg" desc="Diagrama de funções distinct"]

@@ -6,7 +6,7 @@ name: sameElements
 
 @include [signatures/sameElements.md]
 
-`sameElements` Verifique se esta coleção tem os mesmos elementos na mesma ordem que a coleção `as`, e retorna `true` nesse caso.
+`sameElements` Verifica se a coleção tem os mesmos elementos na mesma ordem que a coleção `as`, e retorna `true` nesse caso.
 
 @include [figure.html source="../images/sameElements.svg" desc="Diagrama de funções sameElements"]
 

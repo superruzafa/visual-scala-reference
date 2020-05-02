@@ -10,7 +10,7 @@ name: lastIndexOf
 
 @include [figure.html source="../images/lastIndexOf.svg" desc="Diagrama de funções lastIndexOf"]
 
-A pesquisa pode começar em um pergaminho `j`.
+A pesquisa pode começar com um deslocamento de índice `j`.
 
 @include [figure.html source="../images/lastIndexOf.2.svg" desc="Diagrama de funções lastIndexOf"]
 

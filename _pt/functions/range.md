@@ -6,7 +6,7 @@ name: range
 
 @include [signatures/range.md]
 
-`range` crie uma coleção usando a sequência de valores que começa com `start` e termina antes de atingir `end`.
+`range` cria uma coleção usando a sequência de valores que começa com `start` e termina antes de atingir `end`.
 
 @include [figure.html source="../images/range.svg" desc="Diagrama de funções range"]
 

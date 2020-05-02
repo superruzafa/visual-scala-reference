@@ -11,7 +11,7 @@ itens foram copiados.
 
 @include [figure.html source="../images/copyToArray.svg" desc="Diagrama da função copyToArray"]
 
-A cópia pode ser colocada em um deslocamento de `i` da matriz de destino.
+A cópia pode ser colocada com um deslocamento de `i` da matriz de destino.
 
 @include [figure.html source="../images/copyToArray.2.svg" desc="Diagrama da função copyToArray"]
 

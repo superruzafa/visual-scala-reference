@@ -10,7 +10,7 @@ name: lastIndexWhere
 
 @include [figure.html source="../images/lastIndexWhere.svg" desc="Diagrama de funções lastIndexWhere"]
 
-A pesquisa pode começar em um pergaminho `j`.
+A pesquisa pode começar com um deslocamento de índice `j`.
 
 @include [figure.html source="../images/lastIndexWhere.2.svg" desc="Diagrama de funções lastIndexWhere"]
 

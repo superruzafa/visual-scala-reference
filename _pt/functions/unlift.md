@@ -7,7 +7,7 @@ name: unlift
 @include [signatures/unlift.md]
 
 `unlift` cria uma função parcial anônima que retorna o valor extraído de
-`Some` retornado pela função` f`.
+`Some` retornado pela função `f`.
 
 @include [figure.html source="../images/unlift.svg" desc="Diagrama de funções unlift"]
 

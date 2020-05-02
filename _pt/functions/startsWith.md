@@ -10,7 +10,7 @@ name: startsWith
 
 @include [figure.html source="../images/startsWith.svg" desc="Diagrama de funções startsWith"]
 
-A pesquisa pode começar em um pergaminho `j`.
+A pesquisa pode começar com um deslocamento de índice `j`.
 
 @include [figure.html source="../images/startsWith.2.svg" desc="Diagrama de funções startsWith"]
 

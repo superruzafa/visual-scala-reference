@@ -6,7 +6,7 @@ name: product
 
 @include [signatures/product.md]
 
-`product` calcule o produto dos itens nesta coleção.
+`product` calcula o produto dos itens nesta coleção.
 
 @include [figure.html source="../images/product.svg" desc="Diagrama de funções product"]
 

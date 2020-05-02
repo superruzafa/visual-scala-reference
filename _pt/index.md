@@ -1,6 +1,6 @@
 ---
 layout: home
-permalink: /es/
+permalink: /pt/
 ---
 
 Esta guía recopila algunas de las funciones más comunes del lenguaje de

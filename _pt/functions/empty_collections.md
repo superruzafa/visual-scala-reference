@@ -1,11 +1,11 @@
 ---
-name: empty (colecciones)
+name: empty (collections)
 normalized_name: empty_collections
 ---
 
 # `empty`
 
-Para função `empty` de `PartialFunction` veja [aquí](./empty_PartialFunction).
+Para função `empty` de `PartialFunction` veja [aqui](./empty_PartialFunction).
 
 @include [signatures/empty_collections.md]
 

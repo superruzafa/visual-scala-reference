@@ -6,7 +6,7 @@ name: mapConserve
 
 @include [signatures/mapConserve.md]
 
-`mapConserve` aplique a função `f` a cada elemento da `List` e o
+`mapConserve` aplica a função `f` a cada elemento da `List` e o
 retorna intacto se cada elemento transformado for igual
 (em termos de `eq`) para o elemento a partir do qual foram obtidos.
 

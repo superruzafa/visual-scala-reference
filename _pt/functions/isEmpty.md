@@ -6,7 +6,7 @@ name: isEmpty
 
 @include [signatures/isEmpty.md]
 
-`isEmpty` verifique se esta coleção não possui elementos e retorna `false` caso contrário.
+`isEmpty` verifica se esta coleção não possui elementos e retorna `false` caso contrário.
 
 @include [figure.html source="../images/isEmpty.svg" desc="Diagrama de funções isEmpty"]
 

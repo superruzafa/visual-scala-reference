@@ -6,7 +6,7 @@ name: maxBy
 
 @include [signatures/maxBy.md]
 
-`maxBy` aplica `f` para cada elemento e retorna o elemento que emitiu o valor mais alto.
+`maxBy` aplica `f` para cada elemento e retorna o elemento que emitiu o maior valor.
 
 @include [figure.html source="../images/maxBy.svg" desc="Diagrama de funções maxBy"]
 

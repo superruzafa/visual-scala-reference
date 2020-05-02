@@ -6,7 +6,7 @@ name: runWith
 
 @include [signatures/runWith.md]
 
-`runWith` crie uma função anônima que aplique essa função parcial e, em seguida, `g` a um valor de entrada, se essa função parcial estiver definida para esse valor, e retorne `true`.
+`runWith` cria uma função anônima que aplique essa função parcial e, em seguida, `g` a um valor de entrada, se essa função parcial estiver definida para esse valor, e retorne `true`.
 
 @include [figure.html source="../images/runWith.svg" desc="Diagrama de funções runWith"]
 

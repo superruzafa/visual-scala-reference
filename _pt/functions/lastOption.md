@@ -10,6 +10,6 @@ name: lastOption
 
 @include [figure.html source="../images/lastOption.svg" desc="Diagrama de funções lastOption"]
 
-Em coleções vazias em que não há último elemento, essa coleção retorna `None`.
+Em coleções vazias em que não há último elemento, retorna `None`.
 
 @include [figure.html source="../images/lastOption.2.svg" desc="Diagrama de funções lastOption"]

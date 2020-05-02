@@ -6,7 +6,7 @@ name: reduce
 
 @include [signatures/reduce.md]
 
-`reduce` aplique o operador binário `op` aos pares de elementos nesta coleção até que o resultado final seja calculado.
+`reduce` aplica o operador binário `op` aos pares de elementos nesta coleção até que o resultado final seja calculado.
 
 @include [figure.html source="../images/reduce.svg" desc="Diagrama de funções reduce"]
 

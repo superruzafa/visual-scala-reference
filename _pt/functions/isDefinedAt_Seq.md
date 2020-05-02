@@ -5,7 +5,7 @@ normalized_name: isDefinedAt_Seq
 
 # `isDefinedAt`
 
-Para função `isDefinedAt` de `Map` ver [aquí](./isDefinedAt_Map).
+Para função `isDefinedAt` de `Map` ver [aqui](./isDefinedAt_Map).
 
 @include [signatures/isDefinedAt_Seq.md]
 

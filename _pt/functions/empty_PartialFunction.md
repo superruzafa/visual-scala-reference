@@ -5,7 +5,7 @@ normalized_name: empty_PartialFunction
 
 # `empty`
 
-Para função `empty` para coleções, veja [aquí](./empty_collections).
+Para função `empty` para coleções, veja [aqui](./empty_collections).
 
 @include [signatures/empty_PartialFunction.md]
 

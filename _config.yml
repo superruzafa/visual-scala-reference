@@ -26,6 +26,9 @@ collections:
   ja:
     output: true
     permalink: /:collection/:title
+  pt:
+    output: true
+    permalink: /:collection/:title
 
 defaults:
   - scope:
@@ -46,6 +49,12 @@ defaults:
       home: "/ja"
       lang: ja
   - scope:
+      path: ""
+      type: pt
+    values:
+      home: "/pt"
+      lang: pt
+  - scope:
       path: "_en/functions"
     values:
       layout: function
@@ -55,5 +64,9 @@ defaults:
       layout: function
   - scope:
       path: "_ja/functions"
+    values:
+      layout: function
+  - scope:
+      path: "_pt/functions"
     values:
       layout: function

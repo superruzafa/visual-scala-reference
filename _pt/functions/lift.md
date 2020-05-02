@@ -8,7 +8,7 @@ name: lift
 
 `lift` cria uma função anônima que agrupa com `Some` o valor retornado por essa função parcial, se definido para o valor de entrada especificado.
 
-cria uma função anônima que agrupa com `Some` o valor retornado por essa função parcial se ela estiver definida para o valor de entrada especificado.
+Cria uma função anônima que agrupa com `Some` o valor retornado por essa função parcial se ela estiver definida para o valor de entrada especificado.
 
 @include [figure.html source="../images/lift.svg" desc="Diagrama de funções lift"]
 

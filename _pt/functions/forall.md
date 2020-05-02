@@ -10,6 +10,6 @@ name: forall
 
 @include [figure.html source="../images/forall.svg" desc="Diagrama de funções forall"]
 
-Em coleções vazias, não há elemento que não satisfaça `p`, portanto, essa função retorna` true`.
+Em coleções vazias, não há elemento que não satisfaça `p`, portanto, essa função retorna `true`.
 
 @include [figure.html source="../images/forall.2.svg" desc="Diagrama de funções forall"]

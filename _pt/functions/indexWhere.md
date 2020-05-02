@@ -10,7 +10,7 @@ name: indexWhere
 
 @include [figure.html source="../images/indexWhere.svg" desc="Diagrama de funções indexWhere"]
 
-A pesquisa pode começar em um pergaminho `j`.
+A pesquisa pode começar com um deslocamento de índice `j`.
 
 @include [figure.html source="../images/indexWhere.2.svg" desc="Diagrama de funções indexWhere"]
 

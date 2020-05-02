@@ -6,8 +6,8 @@ name: isTraversableAgain
 
 @include [signatures/isTraversableAgain.md]
 
-`isTraversableAgain` Verifique se esta coleção pode ser percorrida repetidamente a partir do
-start e retorna `true` nesse caso.
+`isTraversableAgain` verifica se esta coleção pode ser percorrida repetidamente a partir do
+`start` e retorna `true` nesse caso.
 
 @include [figure.html source="../images/isTraversableAgain.svg" desc="Diagrama de funções isTraversableAgain"]
 
