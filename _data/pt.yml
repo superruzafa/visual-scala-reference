@@ -1,0 +1,10 @@
+name: Português
+english_name: Portuguese
+home:
+  title: "{{ site.title }}"
+  description: Representação gráfica de funções Scala.
+  keywords: "funções scala, scala fácil explicado, aprender scala, programação funcional, visual scala, gráfico scala"
+functions:
+  title: "{{ page.name }} - {{ site.title }}"
+  description: "Função {{ page.name }} de Scala. Representação gráfica da função {{ page.name }} de Scala"
+  keywords: "Função {{ page.name }}, Função {{ page.name }} de scala"
