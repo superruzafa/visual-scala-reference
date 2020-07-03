@@ -11,9 +11,9 @@ Para função `getOrElse` de `Map` ir [aquí](./getOrElse_Map).
 
 `getOrElse` retorna o valor agrupado quando esta `Opção` é `Some`.
 
-@include [figure.html source="../images/getOrElse_Option.svg" desc="Diagrama de funções getOrElse"]
+{{< figure src="images/functions/getOrElse_Option.svg" >}}
 
 Quando esta `Opção` é `None`, esta função retorna o valor padrão `b`.
 
-@include [figure.html source="../images/getOrElse_Option.2.svg" desc="Diagrama de funções getOrElse"]
+{{< figure src="images/functions/getOrElse_Option.2.svg" >}}
 

@@ -11,4 +11,4 @@ Para função `empty` de `PartialFunction` veja [aqui](./empty_PartialFunction).
 
 `empty` cria uma coleção para conter elementos do tipo `A`, mas sem nenhum elemento.
 
-@include [figure.html source="../images/empty_collections.svg" desc="Diagrama de funções empty"]
+{{< figure src="images/functions/empty_collections.svg" >}}

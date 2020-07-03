@@ -8,4 +8,4 @@ title: const
 
 `const` acepta el valor `x` y crea una función anónima que devuelve dicho valor `x` ante cualquier valor de entrada `y`.
 
-@include [figure.html source="../images/const.svg" desc="Diagrama de la función const"]
+{{< figure src="images/functions/const.svg" >}}

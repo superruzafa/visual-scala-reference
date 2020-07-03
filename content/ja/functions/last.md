@@ -8,8 +8,8 @@ title: last
 
 `last` は、このコレクションの最後の要素を返します。
 
-@include [figure.html source="../images/last.svg" desc="関数 last の図"]
+{{< figure src="images/functions/last.svg" >}}
 
 空のコレクションでは、この関数は `NoSuchElementException` を発生させます。
 
-@include [figure.html source="../images/last.2.svg" desc="関数 last の図"]
+{{< figure src="images/functions/last.2.svg" >}}

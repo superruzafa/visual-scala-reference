@@ -8,4 +8,4 @@ title: union
 
 `union` calcula a união multiset entre esta coleção e a coleção` as`.
 
-@include [figure.html source="../images/union.svg" desc="Diagrama de funções union"]
+{{< figure src="images/functions/union.svg" >}}

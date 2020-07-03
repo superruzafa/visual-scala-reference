@@ -9,10 +9,10 @@ title: unlift
 `unlift` crea una función parcial anónima que devuelve el valor extraido de
 `Some` devuelto por la función `f`.
 
-@include [figure.html source="../images/unlift.svg" desc="Diagrama de la función unlift"]
+{{< figure src="images/functions/unlift.svg" >}}
 
 Si `f` devuelve `None` entonces la función anónima lanzará una
 excepción `MatchError`.
 
-@include [figure.html source="../images/unlift.2.svg" desc="Diagrama de la función unlift"]
+{{< figure src="images/functions/unlift.2.svg" >}}
 

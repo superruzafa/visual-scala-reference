@@ -8,4 +8,4 @@ title: size
 
 `size` returns how many elements this collection has.
 
-@include [figure.html source="images/size.svg" desc="Diagram of the size function"]
+{{< figure src="images/functions/size.svg" >}}

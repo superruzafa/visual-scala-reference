@@ -8,4 +8,4 @@ title: grouped
 
 `grouped` splits this collection in smaller subcollections of, as much, `m` elements and returns an `Iterator` to iterate them.
 
-@include [figure.html source="images/grouped.svg" desc="Diagram of the grouped function"]
+{{< figure src="images/functions/grouped.svg" >}}

@@ -12,4 +12,4 @@ It stops building the collection as soon as `f` returns `None`.
 
 The first time the function `f` is applied it's fed with the initial value `s`.
 
-@include [figure.html source="images/unfold.svg" desc="Diagram of the unfold function"]
+{{< figure src="images/functions/unfold.svg" >}}

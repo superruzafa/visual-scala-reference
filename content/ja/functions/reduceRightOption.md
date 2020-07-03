@@ -10,8 +10,8 @@ title: reduceRightOption
 最初に `op` が適用されるときは、最初の2つの要素が入力されます。
 最終的な結果は `Some` に包まれます。
 
-@include [figure.html source="../images/reduceRightOption.svg" desc="関数 reduceRightOption の図: 空でない場合"]
+{{< figure src="images/functions/reduceRightOption.svg" >}}
 
 空のコレクションでは、この関数は `None` を返します。
 
-@include [figure.html source="../images/reduceRightOption.2.svg" desc="関数 reduceRightOption の図: 空の場合"]
+{{< figure src="images/functions/reduceRightOption.2.svg" >}}

@@ -1,1 +1,4 @@
-{{ .Content }}
+{{ define "main" }}
+    {{ .Content }}
+    {{ partial "translations.html" . }}
+{{ end }}

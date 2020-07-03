@@ -8,4 +8,4 @@ title: indices
 
 `indices` creates a `Range` with the indices used by this collection.
 
-@include [figure.html source="images/indices.svg" desc="Diagram of the indices function"]
+{{< figure src="images/functions/indices.svg" >}}

@@ -8,8 +8,8 @@ title: collectFirst
 
 `collectFirst` aplica la función parcial `f` al primer elemento de esta colección para el cual `f` está definida y devuelve su resultado envuelto con `Some`.
 
-@include [figure.html source="../images/collectFirst.svg" desc="Diagrama de la función collectFirst"]
+{{< figure src="images/functions/collectFirst.svg" >}}
 
 Si la función parcial `f` no está definida para ningún elemento de esta colección entonces se devuelve `None`.
 
-@include [figure.html source="../images/collectFirst.2.svg" desc="Diagrama de la función collectFirst"]
+{{< figure src="images/functions/collectFirst.2.svg" >}}

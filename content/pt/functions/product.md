@@ -8,8 +8,8 @@ title: product
 
 `product` calcula o produto dos itens nesta coleção.
 
-@include [figure.html source="../images/product.svg" desc="Diagrama de funções product"]
+{{< figure src="images/functions/product.svg" >}}
 
 Nas coleções vazias, essa função retorna o elemento neutro para a operação do produto do tipo `A`.
 
-@include [figure.html source="../images/product.2.svg" desc="Diagrama de funções product"]
+{{< figure src="images/functions/product.2.svg" >}}

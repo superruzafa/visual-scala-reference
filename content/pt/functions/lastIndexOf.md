@@ -8,12 +8,12 @@ title: lastIndexOf
 
 `lastIndexOf` retorna o índice do último elemento que é igual (`==`) ao valor `a`.
 
-@include [figure.html source="../images/lastIndexOf.svg" desc="Diagrama de funções lastIndexOf"]
+{{< figure src="images/functions/lastIndexOf.svg" >}}
 
 A pesquisa pode começar com um deslocamento de índice `j`.
 
-@include [figure.html source="../images/lastIndexOf.2.svg" desc="Diagrama de funções lastIndexOf"]
+{{< figure src="images/functions/lastIndexOf.2.svg" >}}
 
 Se nenhum elemento for igual `a`, então esta função retornará `-1`.
 
-@include [figure.html source="../images/lastIndexOf.3.svg" desc="Diagrama de funções lastIndexOf"]
+{{< figure src="images/functions/lastIndexOf.3.svg" >}}

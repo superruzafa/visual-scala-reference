@@ -12,4 +12,4 @@ Pare de criar a coleção assim que `f` retornar `None`.
 
 A primeira vez que `f` é aplicado, ele é alimentado com o valor inicial `s`.
 
-@include [figure.html source="../images/unfold.svg" desc="Diagrama de funções unfold"]
+{{< figure src="images/functions/unfold.svg" >}}

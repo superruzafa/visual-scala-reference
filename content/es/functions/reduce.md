@@ -8,8 +8,8 @@ title: reduce
 
 `reduce` aplica el operador binario `op` a pares de elementos de esta colección hasta que el resultado final es calculado.
 
-@include [figure.html source="../images/reduce.svg" desc="Diagrama de la función reduce"]
+{{< figure src="images/functions/reduce.svg" >}}
 
 En colecciones vacías esta función lanza una excepción `UnsupportedOperationException`.
 
-@include [figure.html source="../images/reduce.2.svg" desc="Diagrama de la función reduceLeft"]
+{{< figure src="images/functions/reduce.2.svg" >}}

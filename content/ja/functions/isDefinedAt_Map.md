@@ -11,8 +11,8 @@ normalized_name: isDefinedAt_Map
 
 `isDefinedAt` は、`Map` が指定されたキー `k` に値を持っているかどうかを調べ、もしそうであれば `true` を返します。
 
-@include [figure.html source="../images/isDefinedAt_Map.svg" desc="関数 isDefinedAt の図"]
+{{< figure src="images/functions/isDefinedAt_Map.svg" >}}
 
 キー `k` に要素が定義されていないときは、この関数は `false` を返します。
 
-@include [figure.html source="../images/isDefinedAt_Map.2.svg" desc="関数 isDefinedAt の図"]
+{{< figure src="images/functions/isDefinedAt_Map.2.svg" >}}

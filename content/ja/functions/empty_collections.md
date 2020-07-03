@@ -11,4 +11,4 @@ normalized_name: empty_collections
 
 `empty` は、型 `A` の要素を含めるコレクションを要素なしで作成します。
 
-@include [figure.html source="../images/empty_collections.svg" desc="関数 empty の図"]
+{{< figure src="images/functions/empty_collections.svg" >}}

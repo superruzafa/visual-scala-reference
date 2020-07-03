@@ -10,8 +10,8 @@ title: reduceRightOption
 A primeira vez que `op` é aplicada, ela é alimentada com os dois últimos elementos.
 O resultado final é envolvido com `Some`.
 
-@include [figure.html source="../images/reduceRightOption.svg" desc="Diagrama de funções reduceRightOption"]
+{{< figure src="images/functions/reduceRightOption.svg" >}}
 
 Em coleções vazias, essa função retorna `None`.
 
-@include [figure.html source="../images/reduceRightOption.2.svg" desc="Diagrama de funções reduceRightOption"]
+{{< figure src="images/functions/reduceRightOption.2.svg" >}}

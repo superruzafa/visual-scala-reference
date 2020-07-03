@@ -10,4 +10,4 @@ title: mkString
 
 Opcionalmente, `sep` pode ser usado como _cola_ das partes, enquanto `start`/`end` podem ser usados ​​como textos de início / fim, respectivamente.
 
-@include [figure.html source="../images/mkString.svg" desc="Diagrama de funções mkString"]
+{{< figure src="images/functions/mkString.svg" >}}

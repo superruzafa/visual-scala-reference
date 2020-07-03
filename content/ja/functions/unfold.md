@@ -13,4 +13,4 @@ title: unfold
 
 関数 `f` が始めて適用されるとき、初期状態 `s` が入力されます。
 
-@include [figure.html source="../images/unfold.svg" desc="関数 unfold の図"]
+{{< figure src="images/functions/unfold.svg" >}}

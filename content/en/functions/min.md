@@ -8,8 +8,8 @@ title: min
 
 `min` returns the smallest value in this collection.
 
-@include [figure.html source="images/min.svg" desc="Diagram of the min function"]
+{{< figure src="images/functions/min.svg" >}}
 
 On empty collections `min` throws a `UnsupportedOperationException` exception.
 
-@include [figure.html source="images/min.2.svg" desc="Diagram of the min function"]
+{{< figure src="images/functions/min.2.svg" >}}

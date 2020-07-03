@@ -1,7 +1,8 @@
-
-xxxxxxxxxxxx
-
-
-
-
-{{ .Content }}
+<html>
+    <head>
+        <title>{{ block "title" . }}{{ .Title }}{{ end }}</title>
+    </head>
+    <body>
+        {{ block "main" . }}{{ .Content }}{{ end }}
+    </body>
+</html>

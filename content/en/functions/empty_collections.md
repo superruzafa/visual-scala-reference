@@ -11,4 +11,4 @@ For the `PartialFunction`'s `empty` function go [here](./empty_PartialFunction).
 
 `empty` creates a collection to contain elements of type `A` but without any element.
 
-@include [figure.html source="images/empty_collections.svg" desc="Diagram of the empty function"]
+{{< figure src="images/functions/empty_collections.svg" >}}

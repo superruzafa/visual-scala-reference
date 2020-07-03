@@ -8,8 +8,8 @@ title: minByOption
 
 `minByOption` aplica `f` a cada elemento y devuelve el elemento que emitió el menor valor envuelto con `Some`.
 
-@include [figure.html source="../images/minByOption.svg" desc="Diagrama de la función minByOption"]
+{{< figure src="images/functions/minByOption.svg" >}}
 
 En colecciones vacías esta functión devuelve `None`.
 
-@include [figure.html source="../images/minByOption.2.svg" desc="Diagrama de la función minByOption"]
+{{< figure src="images/functions/minByOption.2.svg" >}}

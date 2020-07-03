@@ -8,8 +8,8 @@ title: isEmpty
 
 `isEmpty` は、このコレクションが一つの要素も含まないかを調べ、そうでなければ `false` を返します。
 
-@include [figure.html source="../images/isEmpty.svg" desc="関数 isEmpty の図"]
+{{< figure src="images/functions/isEmpty.svg" >}}
 
 空のコレクションの場合のみ `true` を返します。
 
-@include [figure.html source="../images/isEmpty.2.svg" desc="関数 isEmpty の図"]
+{{< figure src="images/functions/isEmpty.2.svg" >}}

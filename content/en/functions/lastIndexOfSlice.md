@@ -8,12 +8,12 @@ title: lastIndexOfSlice
 
 `lastIndexOfSlice` returns the index of the last element where the collection `as` can be found as a slice.
 
-@include [figure.html source="images/lastIndexOfSlice.svg" desc="Diagram of the lastIndexOfSlice function"]
+{{< figure src="images/functions/lastIndexOfSlice.svg" >}}
 
 The search can start at the given offset `j`.
 
-@include [figure.html source="images/lastIndexOfSlice.2.svg" desc="Diagram of the lastIndexOfSlice function"]
+{{< figure src="images/functions/lastIndexOfSlice.2.svg" >}}
 
 If `as` cannot be found as a slice in this collection then this function returns `-1`.
 
-@include [figure.html source="images/lastIndexOfSlice.3.svg" desc="Diagram of the lastIndexOfSlice function"]
+{{< figure src="images/functions/lastIndexOfSlice.3.svg" >}}

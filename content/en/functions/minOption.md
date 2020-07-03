@@ -8,8 +8,8 @@ title: minOption
 
 `minOption` returns the smallest value in this collection wrapped with `Some`.
 
-@include [figure.html source="images/minOption.svg" desc="Diagram of the minOption function"]
+{{< figure src="images/functions/minOption.svg" >}}
 
 On empty collections `minOption` returns `None`.
 
-@include [figure.html source="images/minOption.2.svg" desc="Diagram of the minOption function"]
+{{< figure src="images/functions/minOption.2.svg" >}}

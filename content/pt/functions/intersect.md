@@ -8,4 +8,4 @@ title: intersect
 
 `intersect` calcula a interseção multiset entre esta coleção e a coleção `as`.
 
-@include [figure.html source="../images/intersect.svg" desc="Diagrama de funções intersect"]
+{{< figure src="images/functions/intersect.svg" >}}

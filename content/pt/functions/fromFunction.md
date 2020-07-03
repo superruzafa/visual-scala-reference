@@ -8,4 +8,4 @@ title: fromFunction
 
 `fromFunction` cria uma função parcial anônima a partir de uma função total.
 
-@include [figure.html source="../images/fromFunction.svg" desc="Diagrama de funções fromFunction"]
+{{< figure src="images/functions/fromFunction.svg" >}}

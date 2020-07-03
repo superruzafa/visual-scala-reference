@@ -8,4 +8,4 @@ title: size
 
 `size` retorna quantos itens esta coleção possui.
 
-@include [figure.html source="../images/size.svg" desc="Diagrama de funções size"]
+{{< figure src="images/functions/size.svg" >}}

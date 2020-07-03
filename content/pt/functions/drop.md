@@ -8,4 +8,4 @@ title: drop
 
 `drop` cria uma coleção descartando os primeiros elementos `i` desta coleção, mantendo o restante.
 
-@include [figure.html source="../images/drop.svg" desc="Diagrama de funções drop"]
+{{< figure src="images/functions/drop.svg" >}}

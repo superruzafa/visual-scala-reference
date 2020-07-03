@@ -8,4 +8,4 @@ title: distinct
 
 `distinct` cria uma cópia desta coleção sem itens duplicados.
 
-@include [figure.html source="../images/distinct.svg" desc="Diagrama de funções distinct"]
+{{< figure src="images/functions/distinct.svg" >}}

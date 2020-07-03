@@ -10,9 +10,9 @@ title: condOpt
 acepta la función parcial `pf`, la aplica sobre `x` y devuelve el valor devuelto
 por `pf` envolviéndolo con `Some`.
 
-@include [figure.html source="../images/condOpt.svg" desc="Diagrama de la función condOpt"]
+{{< figure src="images/functions/condOpt.svg" >}}
 
 Si `pf` no está definida para el valor de entrada `x` entonces la función
 anónima devuelve `None`.
 
-@include [figure.html source="../images/condOpt.2.svg" desc="Diagrama de la función condOpt"]
+{{< figure src="images/functions/condOpt.2.svg" >}}

@@ -8,4 +8,4 @@ title: flatten
 
 `flatten` crea una colección utilizando los elementos de las subcolecciones de esta colección.
 
-@include [figure.html source="../images/flatten.svg" desc="Diagrama de la función flatten"]
+{{< figure src="images/functions/flatten.svg" >}}

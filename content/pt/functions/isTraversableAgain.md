@@ -9,8 +9,8 @@ title: isTraversableAgain
 `isTraversableAgain` verifica se esta coleção pode ser percorrida repetidamente a partir do
 `start` e retorna `true` nesse caso.
 
-@include [figure.html source="../images/isTraversableAgain.svg" desc="Diagrama de funções isTraversableAgain"]
+{{< figure src="images/functions/isTraversableAgain.svg" >}}
 
 Se a coleção não puder ser percorrida várias vezes, essa função retornará `false`.
 
-@include [figure.html source="../images/isTraversableAgain.2.svg" desc="Diagrama de funções isTraversableAgain"]
+{{< figure src="images/functions/isTraversableAgain.2.svg" >}}

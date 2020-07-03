@@ -8,8 +8,8 @@ title: containsSlice
 
 `containsSlice` comprueba si la colección `as` se halla como subcolección de esta colección, devolviendo `true` en ese caso.
 
-@include [figure.html source="../images/containsSlice.svg" desc="Diagrama de la función containsSlice"]
+{{< figure src="images/functions/containsSlice.svg" >}}
 
 Si la colección `as` no puede ser encontrada como subcolección de esta colección entonces esta función devuelve `false`.
 
-@include [figure.html source="../images/containsSlice.2.svg" desc="Diagrama de la función containsSlice"]
+{{< figure src="images/functions/containsSlice.2.svg" >}}

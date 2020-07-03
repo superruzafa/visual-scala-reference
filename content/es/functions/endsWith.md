@@ -8,8 +8,8 @@ title: endsWith
 
 `endsWith` comprueba si la colección `as` es un sufijo de esta colección, devolviendo `true` en ese caso.
 
-@include [figure.html source="../images/endsWith.svg" desc="Diagrama de la función endsWith"]
+{{< figure src="images/functions/endsWith.svg" >}}
 
 Si `as` no es un sufijo de esta colección entonces esta función devuelve `false`.
 
-@include [figure.html source="../images/endsWith.2.svg" desc="Diagrama de la función endsWith"]
+{{< figure src="images/functions/endsWith.2.svg" >}}

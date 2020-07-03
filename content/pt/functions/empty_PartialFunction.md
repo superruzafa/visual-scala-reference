@@ -11,4 +11,4 @@ Para função `empty` para coleções, veja [aqui](./empty_collections).
 
 `empty` cria uma função parcial anônima que não está definida para nenhum valor.
 
-@include [figure.html source="../images/empty_PartialFunction.svg" desc="Diagrama de funções empty"]
+{{< figure src="images/functions/empty_PartialFunction.svg" >}}

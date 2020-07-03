@@ -12,4 +12,4 @@ For the collections' `empty` function go [here](./empty_collections).
 `empty` creates an anonymous partial function which is not defined for any
 value.
 
-@include [figure.html source="images/empty_PartialFunction.svg" desc="Diagram of the empty function"]
+{{< figure src="images/functions/empty_PartialFunction.svg" >}}

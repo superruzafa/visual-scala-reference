@@ -8,4 +8,4 @@ title: values
 
 `values` creates an `Iterator` to iterate this `Map`'s values.
 
-@include [figure.html source="images/values.svg" desc="Diagram of the values function"]
+{{< figure src="images/functions/values.svg" >}}
