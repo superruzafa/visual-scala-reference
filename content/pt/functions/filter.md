@@ -1,0 +1,11 @@
+---
+title: filter
+---
+
+# `filter`
+
+{{< signature filter >}}
+
+`filter` cria uma coleção com os elementos que satisfazem o predicado `p`, descartando o restante.
+
+@include [figure.html source="../images/filter.svg" desc="Diagrama de funções filter"]

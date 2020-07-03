@@ -1,0 +1,23 @@
+baseURL = "http://superruzafa.github.io/visual-scala-reference"
+languageCode = "en"
+title = "Visual Scala Reference"
+
+[languages]
+  [languages.en]
+    contentDir = "content/en"
+    languageName = "English"
+
+  [languages.es]
+    contentDir = "content/es"
+    languageName = "Español"
+
+  [languages.ja]
+    contentDir = "content/ja"
+    languageName = "日本語"
+
+  [languages.pt]
+    contentDir = "content/pt"
+    languageName = "Português"
+
+[permalinks]
+functions = "/:title"

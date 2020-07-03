@@ -1,0 +1,7 @@
+{{ $function := index .Params 0 }}
+
+{{ range $.Site.Data.functions }}
+    {{ if eq $function .name }}
+        {{ .signature }}
+    {{ end }}
+{{ end }}
