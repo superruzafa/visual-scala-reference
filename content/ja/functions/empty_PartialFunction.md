@@ -1,12 +1,12 @@
 ---
 title: empty (PartialFunction)
-normalized_name: empty_PartialFunction
+slug: empty_PartialFunction
 translated: false
 ---
 
 # `empty`
 
-For the collections' `empty` function go [here](./empty_collections).
+For the collections' `empty` function go [here](../empty_collections).
 
 {{< signature empty_PartialFunction >}}
 

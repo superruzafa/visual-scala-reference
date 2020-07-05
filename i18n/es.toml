@@ -1,0 +1,11 @@
+[home_description]
+other = "Representación gráfica de las funciones de Scala."
+
+[home_keywords]
+other = "funciones de scala, scala explicado fácil, aprender scala, programación funcional, scala visual, scala gráfico"
+
+[function_description]
+other = "Función {{ .Title }} de Scala. Representación gráfica de la function {{ .Title }} de Scala"
+
+[function_keywords]
+other = "función {{ .Title }}, función {{ .Title }} de scala"

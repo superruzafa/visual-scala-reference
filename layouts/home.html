@@ -1,3 +1,27 @@
-{{ range $.Site.RegularPages }}
-    <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+{{ define "title" }}{{ $.Site.Title }}{{ end }}
+{{ define "meta_description" }}{{ i18n "home_description" }}{{ end }}
+{{ define "meta_keywords" }}{{ i18n "home_keywords" }}{{ end }}
+
+{{ define "main" }}
+
+{{ .Content }}
+
+{{ $scratch := newScratch }}
+{{ $scratch.Set "last_initial" "" }}
+<ul class="function-list">
+    {{ range where $.Site.RegularPages "Section" "functions" }}
+        {{ $curr_initial := slicestr .Title 0 1 }}
+        {{ $last_initial := $scratch.Get "last_initial" }}
+        {{ if ne $curr_initial $last_initial }}
+        <li class="function-item function-initial">{{ upper $curr_initial }}</li>
+        {{ end}}
+        {{ $scratch.Set "last_initial" $curr_initial }}
+    <li class="function-item"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+    {{ end }}
+</ul>
+
+{{ partial "translations.html" . }}
+
 {{ end }}
+
+

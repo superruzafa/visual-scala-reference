@@ -1,11 +1,11 @@
 ---
 title: empty (コレクション)
-normalized_name: empty_collections
+slug: empty_collections
 ---
 
 # `empty`
 
-`PartialFunction` の `empty` 関数については、[こちら](./empty_PartialFunction)。
+`PartialFunction` の `empty` 関数については、[こちら](../empty_PartialFunction)。
 
 {{< signature empty_collections >}}
 

@@ -1,11 +1,11 @@
 ---
 title: getOrElse (Option)
-normalized_name: getOrElse_Option
+slug: getOrElse_Option
 ---
 
-# `getOrElse` (`Option`)
+# `getOrElse`
 
-For the `Map`'s `getOrElse` function go [here](./getOrElse_Map).
+For the `Map`'s `getOrElse` function go [here](../getOrElse_Map).
 
 {{< signature getOrElse_Option >}}
 

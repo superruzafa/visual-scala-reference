@@ -1,11 +1,11 @@
 ---
 title: isDefinedAt (Map)
-normalized_name: isDefinedAt_Map
+slug: isDefinedAt_Map
 ---
 
 # `isDefinedAt`
 
-For the `Seq`'s `isDefinedAt` function go [here](./isDefinedAt_Seq).
+Para la función `isDefinedAt` de `Seq` ir [aquí](../isDefinedAt_Seq).
 
 {{< signature isDefinedAt_Map >}}
 

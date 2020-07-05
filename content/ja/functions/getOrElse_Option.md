@@ -1,11 +1,11 @@
 ---
 title: getOrElse (Option)
-normalized_name: getOrElse_Option
+slug: getOrElse_Option
 ---
 
-# `getOrElse` (`Option`)
+# `getOrElse`
 
-`Map` の `getOrElse` 関数については、[こちら](./getOrElse_Map)。
+`Map` の `getOrElse` 関数については、[こちら](../getOrElse_Map)。
 
 {{< signature getOrElse_Option >}}
 

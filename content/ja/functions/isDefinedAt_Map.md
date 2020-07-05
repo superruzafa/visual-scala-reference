@@ -1,11 +1,11 @@
 ---
 title: isDefinedAt (Map)
-normalized_name: isDefinedAt_Map
+slug: isDefinedAt_Map
 ---
 
 # `isDefinedAt`
 
-`Seq` の `isDefinedAt` 関数については、[こちら](./isDefinedAt_Seq)。
+`Seq` の `isDefinedAt` 関数については、[こちら](../isDefinedAt_Seq)。
 
 {{< signature isDefinedAt_Map >}}
 

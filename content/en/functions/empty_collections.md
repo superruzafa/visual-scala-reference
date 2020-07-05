@@ -1,11 +1,11 @@
 ---
 title: empty (collections)
-normalized_name: empty_collections
+slug: empty_collections
 ---
 
 # `empty`
 
-For the `PartialFunction`'s `empty` function go [here](./empty_PartialFunction).
+For the `PartialFunction`'s `empty` function go [here](../empty_PartialFunction).
 
 {{< signature empty_collections >}}
 
