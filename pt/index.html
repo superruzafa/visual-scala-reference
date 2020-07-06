@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+	<meta name="generator" content="Hugo 0.71.1" />
+        
+        <title>Visual Scala Reference</title>
+        <meta name="description" content="Representação gráfica de funções Scala.">
+        <meta name="keywords" content="funções scala, scala fácil explicado, aprender scala, programação funcional, visual scala, gráfico scala">
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#dc322f">
+        <meta property="og:title" content="">
+        <meta property="og:site_name" content="Visual Scala Reference">
+        <meta property="og:url" content="https://superruzafa.github.io/visual-scala-reference/pt/">
+        <meta name="robots" content="all">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        
+        
+        <link rel="stylesheet" href="https://superruzafa.github.io/visual-scala-reference/scss/main.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="https://superruzafa.github.io/visual-scala-reference//scripts/search.js"></script>
+
+        
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-390889-8"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-390889-8');
+</script>
+
+
+        <link rel="shortcut icon" href="https://superruzafa.github.io/visual-scala-reference//images/scala-logo-16x16.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="https://superruzafa.github.io/visual-scala-reference//images/scala-logo-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="https://superruzafa.github.io/visual-scala-reference//images/scala-logo-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="https://superruzafa.github.io/visual-scala-reference//images/scala-logo-144x144.png" type="image/png" />
+        
+    </head>
+    <body>
+<header class="header">
+  <div class="wrapper">
+    <div class="container-fluid">
+      <a class="logo" href="https://superruzafa.github.io/visual-scala-reference/pt//">
+        <span>Visual Scala Reference</span>
+      </a>
+      <div class="searchbox">
+        <input id="searchbox-input" class="searchbox__input" autocomplete="false">
+        <ul id="searchbox-results" class="searchbox__results">
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+<template id="search-result">
+  <li class="searchresult">
+    <a class="searchresult__link"></a>
+  </li>
+</template>
+<script>
+    const functions = [
+{ "name": "aggregate", "url": "/visual-scala-reference/pt/aggregate/" },
+{ "name": "andThen", "url": "/visual-scala-reference/pt/andThen/" },
+{ "name": "appended", "url": "/visual-scala-reference/pt/appended/" },
+{ "name": "appendedAll", "url": "/visual-scala-reference/pt/appendedAll/" },
+{ "name": "chain", "url": "/visual-scala-reference/pt/chain/" },
+{ "name": "collect", "url": "/visual-scala-reference/pt/collect/" },
+{ "name": "collectFirst", "url": "/visual-scala-reference/pt/collectFirst/" },
+{ "name": "combinations", "url": "/visual-scala-reference/pt/combinations/" },
+{ "name": "compose", "url": "/visual-scala-reference/pt/compose/" },
+{ "name": "concat", "url": "/visual-scala-reference/pt/concat/" },
+{ "name": "cond", "url": "/visual-scala-reference/pt/cond/" },
+{ "name": "condOpt", "url": "/visual-scala-reference/pt/condOpt/" },
+{ "name": "const", "url": "/visual-scala-reference/pt/const/" },
+{ "name": "contains", "url": "/visual-scala-reference/pt/contains/" },
+{ "name": "containsSlice", "url": "/visual-scala-reference/pt/containsSlice/" },
+{ "name": "copyToArray", "url": "/visual-scala-reference/pt/copyToArray/" },
+{ "name": "corresponds", "url": "/visual-scala-reference/pt/corresponds/" },
+{ "name": "count", "url": "/visual-scala-reference/pt/count/" },
+{ "name": "curried", "url": "/visual-scala-reference/pt/curried/" },
+{ "name": "diff", "url": "/visual-scala-reference/pt/diff/" },
+{ "name": "distinct", "url": "/visual-scala-reference/pt/distinct/" },
+{ "name": "distinctBy", "url": "/visual-scala-reference/pt/distinctBy/" },
+{ "name": "drop", "url": "/visual-scala-reference/pt/drop/" },
+{ "name": "dropRight", "url": "/visual-scala-reference/pt/dropRight/" },
+{ "name": "dropWhile", "url": "/visual-scala-reference/pt/dropWhile/" },
+{ "name": "empty (collections)", "url": "/visual-scala-reference/pt/empty_collections/" },
+{ "name": "empty (PartialFunction)", "url": "/visual-scala-reference/pt/empty_PartialFunction/" },
+{ "name": "endsWith", "url": "/visual-scala-reference/pt/endsWith/" },
+{ "name": "exists", "url": "/visual-scala-reference/pt/exists/" },
+{ "name": "fill", "url": "/visual-scala-reference/pt/fill/" },
+{ "name": "filter", "url": "/visual-scala-reference/pt/filter/" },
+{ "name": "filterKeys", "url": "/visual-scala-reference/pt/filterKeys/" },
+{ "name": "filterNot", "url": "/visual-scala-reference/pt/filterNot/" },
+{ "name": "find", "url": "/visual-scala-reference/pt/find/" },
+{ "name": "findLast", "url": "/visual-scala-reference/pt/findLast/" },
+{ "name": "flatMap", "url": "/visual-scala-reference/pt/flatMap/" },
+{ "name": "flatten", "url": "/visual-scala-reference/pt/flatten/" },
+{ "name": "fold", "url": "/visual-scala-reference/pt/fold/" },
+{ "name": "foldLeft", "url": "/visual-scala-reference/pt/foldLeft/" },
+{ "name": "foldRight", "url": "/visual-scala-reference/pt/foldRight/" },
+{ "name": "forall", "url": "/visual-scala-reference/pt/forall/" },
+{ "name": "foreach", "url": "/visual-scala-reference/pt/foreach/" },
+{ "name": "fromFunction", "url": "/visual-scala-reference/pt/fromFunction/" },
+{ "name": "getOrElse (Map)", "url": "/visual-scala-reference/pt/getOrElse_Map/" },
+{ "name": "getOrElse (Option)", "url": "/visual-scala-reference/pt/getOrElse_Option/" },
+{ "name": "groupBy", "url": "/visual-scala-reference/pt/groupBy/" },
+{ "name": "grouped", "url": "/visual-scala-reference/pt/grouped/" },
+{ "name": "groupMap", "url": "/visual-scala-reference/pt/groupMap/" },
+{ "name": "groupMapReduce", "url": "/visual-scala-reference/pt/groupMapReduce/" },
+{ "name": "head", "url": "/visual-scala-reference/pt/head/" },
+{ "name": "headOption", "url": "/visual-scala-reference/pt/headOption/" },
+{ "name": "indexOf", "url": "/visual-scala-reference/pt/indexOf/" },
+{ "name": "indexOfSlice", "url": "/visual-scala-reference/pt/indexOfSlice/" },
+{ "name": "indexWhere", "url": "/visual-scala-reference/pt/indexWhere/" },
+{ "name": "indices", "url": "/visual-scala-reference/pt/indices/" },
+{ "name": "init", "url": "/visual-scala-reference/pt/init/" },
+{ "name": "inits", "url": "/visual-scala-reference/pt/inits/" },
+{ "name": "intersect", "url": "/visual-scala-reference/pt/intersect/" },
+{ "name": "isDefinedAt (Map)", "url": "/visual-scala-reference/pt/isDefinedAt_Map/" },
+{ "name": "isDefinedAt (Seq)", "url": "/visual-scala-reference/pt/isDefinedAt_Seq/" },
+{ "name": "isEmpty", "url": "/visual-scala-reference/pt/isEmpty/" },
+{ "name": "isTraversableAgain", "url": "/visual-scala-reference/pt/isTraversableAgain/" },
+{ "name": "keys", "url": "/visual-scala-reference/pt/keys/" },
+{ "name": "last", "url": "/visual-scala-reference/pt/last/" },
+{ "name": "lastIndexOf", "url": "/visual-scala-reference/pt/lastIndexOf/" },
+{ "name": "lastIndexOfSlice", "url": "/visual-scala-reference/pt/lastIndexOfSlice/" },
+{ "name": "lastIndexWhere", "url": "/visual-scala-reference/pt/lastIndexWhere/" },
+{ "name": "lastOption", "url": "/visual-scala-reference/pt/lastOption/" },
+{ "name": "length", "url": "/visual-scala-reference/pt/length/" },
+{ "name": "lift", "url": "/visual-scala-reference/pt/lift/" },
+{ "name": "map", "url": "/visual-scala-reference/pt/map/" },
+{ "name": "mapConserve", "url": "/visual-scala-reference/pt/mapConserve/" },
+{ "name": "mapValues", "url": "/visual-scala-reference/pt/mapValues/" },
+{ "name": "max", "url": "/visual-scala-reference/pt/max/" },
+{ "name": "maxBy", "url": "/visual-scala-reference/pt/maxBy/" },
+{ "name": "maxByOption", "url": "/visual-scala-reference/pt/maxByOption/" },
+{ "name": "maxOption", "url": "/visual-scala-reference/pt/maxOption/" },
+{ "name": "min", "url": "/visual-scala-reference/pt/min/" },
+{ "name": "minBy", "url": "/visual-scala-reference/pt/minBy/" },
+{ "name": "minByOption", "url": "/visual-scala-reference/pt/minByOption/" },
+{ "name": "minOption", "url": "/visual-scala-reference/pt/minOption/" },
+{ "name": "mkString", "url": "/visual-scala-reference/pt/mkString/" },
+{ "name": "nonEmpty", "url": "/visual-scala-reference/pt/nonEmpty/" },
+{ "name": "orElse", "url": "/visual-scala-reference/pt/orElse/" },
+{ "name": "padTo", "url": "/visual-scala-reference/pt/padTo/" },
+{ "name": "partition", "url": "/visual-scala-reference/pt/partition/" },
+{ "name": "partitionMap", "url": "/visual-scala-reference/pt/partitionMap/" },
+{ "name": "patch", "url": "/visual-scala-reference/pt/patch/" },
+{ "name": "permutations", "url": "/visual-scala-reference/pt/permutations/" },
+{ "name": "prefixLength", "url": "/visual-scala-reference/pt/prefixLength/" },
+{ "name": "prepended", "url": "/visual-scala-reference/pt/prepended/" },
+{ "name": "prependedAll", "url": "/visual-scala-reference/pt/prependedAll/" },
+{ "name": "product", "url": "/visual-scala-reference/pt/product/" },
+{ "name": "range", "url": "/visual-scala-reference/pt/range/" },
+{ "name": "reduce", "url": "/visual-scala-reference/pt/reduce/" },
+{ "name": "reduceLeft", "url": "/visual-scala-reference/pt/reduceLeft/" },
+{ "name": "reduceLeftOption", "url": "/visual-scala-reference/pt/reduceLeftOption/" },
+{ "name": "reduceOption", "url": "/visual-scala-reference/pt/reduceOption/" },
+{ "name": "reduceRight", "url": "/visual-scala-reference/pt/reduceRight/" },
+{ "name": "reduceRightOption", "url": "/visual-scala-reference/pt/reduceRightOption/" },
+{ "name": "reverse", "url": "/visual-scala-reference/pt/reverse/" },
+{ "name": "reverseMap", "url": "/visual-scala-reference/pt/reverseMap/" },
+{ "name": "runWith", "url": "/visual-scala-reference/pt/runWith/" },
+{ "name": "sameElements", "url": "/visual-scala-reference/pt/sameElements/" },
+{ "name": "scanLeft", "url": "/visual-scala-reference/pt/scanLeft/" },
+{ "name": "scanRight", "url": "/visual-scala-reference/pt/scanRight/" },
+{ "name": "search", "url": "/visual-scala-reference/pt/search/" },
+{ "name": "segmentLength", "url": "/visual-scala-reference/pt/segmentLength/" },
+{ "name": "size", "url": "/visual-scala-reference/pt/size/" },
+{ "name": "slice", "url": "/visual-scala-reference/pt/slice/" },
+{ "name": "sliding", "url": "/visual-scala-reference/pt/sliding/" },
+{ "name": "sortBy", "url": "/visual-scala-reference/pt/sortBy/" },
+{ "name": "sorted", "url": "/visual-scala-reference/pt/sorted/" },
+{ "name": "sortWith", "url": "/visual-scala-reference/pt/sortWith/" },
+{ "name": "span", "url": "/visual-scala-reference/pt/span/" },
+{ "name": "splitAt", "url": "/visual-scala-reference/pt/splitAt/" },
+{ "name": "startsWith", "url": "/visual-scala-reference/pt/startsWith/" },
+{ "name": "sum", "url": "/visual-scala-reference/pt/sum/" },
+{ "name": "tabulate", "url": "/visual-scala-reference/pt/tabulate/" },
+{ "name": "tail", "url": "/visual-scala-reference/pt/tail/" },
+{ "name": "tails", "url": "/visual-scala-reference/pt/tails/" },
+{ "name": "take", "url": "/visual-scala-reference/pt/take/" },
+{ "name": "takeRight", "url": "/visual-scala-reference/pt/takeRight/" },
+{ "name": "takeWhile", "url": "/visual-scala-reference/pt/takeWhile/" },
+{ "name": "transpose", "url": "/visual-scala-reference/pt/transpose/" },
+{ "name": "tupled", "url": "/visual-scala-reference/pt/tupled/" },
+{ "name": "uncurried", "url": "/visual-scala-reference/pt/uncurried/" },
+{ "name": "unfold", "url": "/visual-scala-reference/pt/unfold/" },
+{ "name": "union", "url": "/visual-scala-reference/pt/union/" },
+{ "name": "unlift", "url": "/visual-scala-reference/pt/unlift/" },
+{ "name": "untupled", "url": "/visual-scala-reference/pt/untupled/" },
+{ "name": "unzip", "url": "/visual-scala-reference/pt/unzip/" },
+{ "name": "unzip3", "url": "/visual-scala-reference/pt/unzip3/" },
+{ "name": "updated", "url": "/visual-scala-reference/pt/updated/" },
+{ "name": "values", "url": "/visual-scala-reference/pt/values/" },
+{ "name": "withDefault", "url": "/visual-scala-reference/pt/withDefault/" },
+{ "name": "withDefaultValue", "url": "/visual-scala-reference/pt/withDefaultValue/" },
+{ "name": "zip", "url": "/visual-scala-reference/pt/zip/" },
+{ "name": "zipAll", "url": "/visual-scala-reference/pt/zipAll/" },
+{ "name": "zipWithIndex", "url": "/visual-scala-reference/pt/zipWithIndex/" },
+
+    ];
+  new Search(functions);
+</script>
+
+        <div class="wrapper">
+            <div class="container-fluid">
+
+
+<p>Este guia coleta algumas das funções mais comuns do idioma do
+programação <a href="https://www.scala-lang.org/">Scala</a> e as explica conceitualmente e graficamente de uma maneira simples.</p>
+<p>Para solicitar novas entradas, sugerir correções ou fornecer traduções
+vá para o repositório deste projeto no <a href="https://github.com/superruzafa/visual-scala-reference">Github</a>.</p>
+
+
+
+
+<ul class="function-list">
+    
+        
+        
+        
+        <li class="function-item function-initial">A</li>
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/aggregate/">aggregate</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/andThen/">andThen</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/appended/">appended</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/appendedAll/">appendedAll</a></li>
+    
+        
+        
+        
+        <li class="function-item function-initial">C</li>
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/chain/">chain</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/collect/">collect</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/collectFirst/">collectFirst</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/combinations/">combinations</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/compose/">compose</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/concat/">concat</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/cond/">cond</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/condOpt/">condOpt</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/const/">const</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/contains/">contains</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/containsSlice/">containsSlice</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/copyToArray/">copyToArray</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/corresponds/">corresponds</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/count/">count</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/curried/">curried</a></li>
+    
+        
+        
+        
+        <li class="function-item function-initial">D</li>
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/diff/">diff</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/distinct/">distinct</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/distinctBy/">distinctBy</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/drop/">drop</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/dropRight/">dropRight</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/dropWhile/">dropWhile</a></li>
+    
+        
+        
+        
+        <li class="function-item function-initial">E</li>
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/empty_collections/">empty (collections)</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/empty_PartialFunction/">empty (PartialFunction)</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/endsWith/">endsWith</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/exists/">exists</a></li>
+    
+        
+        
+        
+        <li class="function-item function-initial">F</li>
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/fill/">fill</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/filter/">filter</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/filterKeys/">filterKeys</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/filterNot/">filterNot</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/find/">find</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/findLast/">findLast</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/flatMap/">flatMap</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/flatten/">flatten</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/fold/">fold</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/foldLeft/">foldLeft</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/foldRight/">foldRight</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/forall/">forall</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/foreach/">foreach</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/fromFunction/">fromFunction</a></li>
+    
+        
+        
+        
+        <li class="function-item function-initial">G</li>
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/getOrElse_Map/">getOrElse (Map)</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/getOrElse_Option/">getOrElse (Option)</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/groupBy/">groupBy</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/grouped/">grouped</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/groupMap/">groupMap</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/groupMapReduce/">groupMapReduce</a></li>
+    
+        
+        
+        
+        <li class="function-item function-initial">H</li>
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/head/">head</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/headOption/">headOption</a></li>
+    
+        
+        
+        
+        <li class="function-item function-initial">I</li>
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/indexOf/">indexOf</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/indexOfSlice/">indexOfSlice</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/indexWhere/">indexWhere</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/indices/">indices</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/init/">init</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/inits/">inits</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/intersect/">intersect</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/isDefinedAt_Map/">isDefinedAt (Map)</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/isDefinedAt_Seq/">isDefinedAt (Seq)</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/isEmpty/">isEmpty</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/isTraversableAgain/">isTraversableAgain</a></li>
+    
+        
+        
+        
+        <li class="function-item function-initial">K</li>
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/keys/">keys</a></li>
+    
+        
+        
+        
+        <li class="function-item function-initial">L</li>
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/last/">last</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/lastIndexOf/">lastIndexOf</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/lastIndexOfSlice/">lastIndexOfSlice</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/lastIndexWhere/">lastIndexWhere</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/lastOption/">lastOption</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/length/">length</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/lift/">lift</a></li>
+    
+        
+        
+        
+        <li class="function-item function-initial">M</li>
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/map/">map</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/mapConserve/">mapConserve</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/mapValues/">mapValues</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/max/">max</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/maxBy/">maxBy</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/maxByOption/">maxByOption</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/maxOption/">maxOption</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/min/">min</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/minBy/">minBy</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/minByOption/">minByOption</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/minOption/">minOption</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/mkString/">mkString</a></li>
+    
+        
+        
+        
+        <li class="function-item function-initial">N</li>
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/nonEmpty/">nonEmpty</a></li>
+    
+        
+        
+        
+        <li class="function-item function-initial">O</li>
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/orElse/">orElse</a></li>
+    
+        
+        
+        
+        <li class="function-item function-initial">P</li>
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/padTo/">padTo</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/partition/">partition</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/partitionMap/">partitionMap</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/patch/">patch</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/permutations/">permutations</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/prefixLength/">prefixLength</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/prepended/">prepended</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/prependedAll/">prependedAll</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/product/">product</a></li>
+    
+        
+        
+        
+        <li class="function-item function-initial">R</li>
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/range/">range</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/reduce/">reduce</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/reduceLeft/">reduceLeft</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/reduceLeftOption/">reduceLeftOption</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/reduceOption/">reduceOption</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/reduceRight/">reduceRight</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/reduceRightOption/">reduceRightOption</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/reverse/">reverse</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/reverseMap/">reverseMap</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/runWith/">runWith</a></li>
+    
+        
+        
+        
+        <li class="function-item function-initial">S</li>
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/sameElements/">sameElements</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/scanLeft/">scanLeft</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/scanRight/">scanRight</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/search/">search</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/segmentLength/">segmentLength</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/size/">size</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/slice/">slice</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/sliding/">sliding</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/sortBy/">sortBy</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/sorted/">sorted</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/sortWith/">sortWith</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/span/">span</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/splitAt/">splitAt</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/startsWith/">startsWith</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/sum/">sum</a></li>
+    
+        
+        
+        
+        <li class="function-item function-initial">T</li>
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/tabulate/">tabulate</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/tail/">tail</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/tails/">tails</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/take/">take</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/takeRight/">takeRight</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/takeWhile/">takeWhile</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/transpose/">transpose</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/tupled/">tupled</a></li>
+    
+        
+        
+        
+        <li class="function-item function-initial">U</li>
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/uncurried/">uncurried</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/unfold/">unfold</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/union/">union</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/unlift/">unlift</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/untupled/">untupled</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/unzip/">unzip</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/unzip3/">unzip3</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/updated/">updated</a></li>
+    
+        
+        
+        
+        <li class="function-item function-initial">V</li>
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/values/">values</a></li>
+    
+        
+        
+        
+        <li class="function-item function-initial">W</li>
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/withDefault/">withDefault</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/withDefaultValue/">withDefaultValue</a></li>
+    
+        
+        
+        
+        <li class="function-item function-initial">Z</li>
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/zip/">zip</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/zipAll/">zipAll</a></li>
+    
+        
+        
+        
+        
+    <li class="function-item"><a href="https://superruzafa.github.io/visual-scala-reference/pt/zipWithIndex/">zipWithIndex</a></li>
+    
+</ul>
+
+<ul class="translation-links">
+
+    
+    <li class="translation-link "><a href="https://superruzafa.github.io/visual-scala-reference/">English</a></li>
+
+    
+    <li class="translation-link "><a href="https://superruzafa.github.io/visual-scala-reference/es/">Español</a></li>
+
+    
+    <li class="translation-link "><a href="https://superruzafa.github.io/visual-scala-reference/ja/">日本語</a></li>
+
+    
+    <li class="translation-link current-lang"><a href="https://superruzafa.github.io/visual-scala-reference/pt/">Português</a></li>
+
+</ul>
+
+
+            </div>
+        </div>
+
+
+<footer class="footer">
+    <div class="wrapper">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div class="col">
+                    <h3 class="section-title">Project</h3>
+                    <ul class="section-links">
+                        <li><a href="https://github.com/superruzafa/visual-scala-reference">Github Repository</a></li>
+                        <li><a href="https://superruzafa.github.io/visual-scala-reference/contributors/">Contributors</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3 class="section-title">Scala</h3>
+                    <ul class="section-links">
+                        <li><a href="https://www.scala-lang.org">Homepage</a></li>
+                        <li><a href="https://docs.scala-lang.org">Documentation</a></li>
+                        <li><a href="https://www.scala-lang.org/api/current">API</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </body>
+</html>

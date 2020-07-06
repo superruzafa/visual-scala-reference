@@ -1,0 +1,1428 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Visual Scala Reference</title>
+    <link>https://superruzafa.github.io/visual-scala-reference/ja/</link>
+    <description>Recent content on Visual Scala Reference</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://superruzafa.github.io/visual-scala-reference/ja/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>aggregate</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/aggregate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/aggregate/</guid>
+      <description>aggregate trait Collection[A] { def aggregate[B](z: =&amp;gt; B)(seqop: (B, A) =&amp;gt; B, combop: (B, B) =&amp;gt; B): B }   aggregate は二項演算子 seqop を要素のかたまりに適用し、二項演算子 combop を使って中間結果を結合します。 値 z は型 B の零元であり、何回も使われるかもしれません。
+ </description>
+    </item>
+    
+    <item>
+      <title>andThen</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/andThen/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/andThen/</guid>
+      <description>andThen trait Function1[X, Y] { def andThen[Z](g: (Y) =&amp;gt; Z): (X) =&amp;gt; Z }   andThen は匿名関数を作成します。その関数は、受け取った値にまずこの関数を適用し、次にその値に g を適用した結果を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>appended</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/appended/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/appended/</guid>
+      <description>appended trait Collection[A] { def appended[B &amp;gt;: A](b: B): Collection[B] def :+[B &amp;gt;: A](b: B): Collection[B] }   appended は、このコレクションの末尾に b が加わったコピーを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>appendedAll</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/appendedAll/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/appendedAll/</guid>
+      <description>appendedAll trait Collection[A] { def appendedAll[B &amp;gt;: A](bs: Collection[B]): Collection[B] def :++[B &amp;gt;: A](bs: Collection[B]): Collection[B] }   appendedAll は、このコレクションの末尾にコレクション bs が加わったコピーを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>chain</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/chain/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/chain/</guid>
+      <description>chain object Function { def chain[X](fs: Collection[(X) =&amp;gt; X]): (X) =&amp;gt; X }   chain は匿名関数を作成します。その関数は、受け取った値をコレクション fs に含まれるすべての関数を順々に摘要した結果を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>collect</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/collect/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/collect/</guid>
+      <description>collect trait Collection[A] { def collect[B](f: PartialFunction[A, B]): Collection[B] }   collect は、部分関数 f が定義された要素に f を適用し、それ以外の要素を捨てて、結果を要素とするコレクションを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>collectFirst</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/collectFirst/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/collectFirst/</guid>
+      <description>collectFirst trait Collection[A] { def collectFirst[B](f: PartialFunction[A, B]): Option[B] }   collectFirst は、このコレクション内で部分関数 f が定義された最初の要素に適用し、その結果を Some で包んで返します。
+ もし部分関数 f がこのコレクション内のどの要素にも定義されていなければ、None を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>combinations</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/combinations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/combinations/</guid>
+      <description>combinations trait Collection[A] { def combinations(k: Int): Iterator[Collection[A]] }   combinations は、このコレクションに含まれる要素から k 個取り出したありえる組み合わせをすべて計算し、それらを列挙する Iterator を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>compose</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/compose/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/compose/</guid>
+      <description>compose trait Function1[X, Y] { def compose[Z](g: (Z) =&amp;gt; X): (Z) =&amp;gt; Y }   compose は匿名関数を作成します。その関数は、受け取った値に g を適用し、次にその値にこの関数を適用した結果を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>concat</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/concat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/concat/</guid>
+      <description>concat object Collection { def concat[A](as: Collection[A]*): Collection[A] }   concat は、任意の数のコレクションを受け取り、それらの要素を使って1つのコレクションを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>cond</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/cond/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/cond/</guid>
+      <description>cond object PartialFunction { def cond[X](x: X)(pf: PartialFunction[X, Boolean]): Boolean }   cond は、値 x を受け取り、匿名部分関数を作成します。 その匿名部分関数は、部分関数 pf を受け取り、それを x に適用して、pf が返すのと同じ値を返します。
+ もし pf が入力値 x について定義されていなければ、その匿名関数は false を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>condOpt</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/condOpt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/condOpt/</guid>
+      <description>condOpt object PartialFunction { def condOpt[X, Y](pf: PartialFunction[X, Y]): Option[Y] }   condOpt accepts the value x and creates an anonymous partial function that in turn accepts the partial function pf, applies it to x and returns a Some wrapping the value returned by pf.
+ If pf is not defined for the input value x then the anonymous function returns None.
+ </description>
+    </item>
+    
+    <item>
+      <title>const</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/const/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/const/</guid>
+      <description>const object Function { def const[X, Y](x: X)(y: Y): X }   const は、値 x を受け取って、いかなる入力値 y に対してもその値 x を返す匿名関数を作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>contains</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/contains/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/contains/</guid>
+      <description>contains trait Collection[A] { def contains(a: A): Boolean }   contains は、与えられた値 g と等しい（==）要素がこのコレクションに少なくとも1つあるかを調べ、もしそうであれば true を返します。
+ もしその値に等しい要素がなければ、contains は false を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>containsSlice</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/containsSlice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/containsSlice/</guid>
+      <description>containsSlice trait Collection[A] { def containsSlice(as: Collection[A]): Boolean }   containsSliceは、与えられたコレクション as がこのコレクションの部分であるかを調べ、もしそうであれば true を返します。
+ もしコレクション as がこのコレクションの部分として見つからなければ、containsSlice は false を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>copyToArray</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/copyToArray/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/copyToArray/</guid>
+      <description>copyToArray trait Collection[A] { def copyToArray[B :&amp;gt; A](array: Array[B]): Int def copyToArray[B :&amp;gt; A](array: Array[B], i: Int): Int def copyToArray[B :&amp;gt; A](array: Array[B], i: Int, l: Int): Int }   copyToArray は、このコレクションの要素を Array にコピーし、何個の要素がコピーされたかを返します。
+ コピーは、ターゲット Array の指定したオフセット i 番目から行えます。
+ またコピーは最初の l 要素までに制限できます。
+ どのような場合でも、Array の境界を超えた要素は捨てられます。
+ </description>
+    </item>
+    
+    <item>
+      <title>corresponds</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/corresponds/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/corresponds/</guid>
+      <description>corresponds trait Collection[A] { def corresponds[B](bs: Collection[B])(p: (A, B) =&amp;gt; Boolean): Boolean }   corresponds は、このコレクションとコレクション bs の同じ添字のペアごとに述語 p が満たされるか調べ、もしそうであれば true を返します。
+ もし p を満足しない要素のペアまたはペアにならない要素が1つでもあれば、この関数は false を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>count</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/count/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/count/</guid>
+      <description>count trait Collection[A] { def count(p: (A) =&amp;gt; Boolean): Int }   count は、述語 p を満たす要素がこのコレクションに何個あるかを割り出します。
+ </description>
+    </item>
+    
+    <item>
+      <title>curried</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/curried/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/curried/</guid>
+      <description>curried trait Function[X1, X2..., Xn, Y] { def curried: (X1) =&amp;gt; (X2) =&amp;gt; ... =&amp;gt; (Xn) =&amp;gt; Y }   curried は、元の関数の1つ目のパラメーターを処理して残りの引数を取る関数を作成します。続いてその関数は、元の関数の2つ目のパラメーターを処理して残りの引数を取る関数を作成します。…というのが、すべてのパラメーターがなくなるまで続き、最終的な結果が計算されます。
+ </description>
+    </item>
+    
+    <item>
+      <title>diff</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/diff/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/diff/</guid>
+      <description>diff trait Collection[A] { def diff(as: Collection[A]): Collection[A] }   diff は、このコレクションとコレクション as の重複を許す差集合を計算します。
+ </description>
+    </item>
+    
+    <item>
+      <title>distinct</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/distinct/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/distinct/</guid>
+      <description>distinct trait Collection[A] { def distinct: Collection[A] }   distinct は、このコレクションから重複する要素を除いたコピーを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>distinctBy</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/distinctBy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/distinctBy/</guid>
+      <description>distinctBy trait Seq[A] { def distinctBy[K](f: (A) =&amp;gt; K): Seq[A] }   distinctBy は、このコレクションのコピーを作成しますが、関数 f を適用した結果が同じになる要素のうち1つだけを残します。
+ </description>
+    </item>
+    
+    <item>
+      <title>drop</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/drop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/drop/</guid>
+      <description>drop trait Collection[A] { def drop(i: Int): Collection[A] }   drop は、このコレクションの先頭 i 個を捨てて、残りを保持するコレクションを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>dropRight</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/dropRight/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/dropRight/</guid>
+      <description>dropRight trait Collection[A] { def dropRight(i: Int): Collection[A] }   dropRight は、このコレクションの最後の i 件を捨てて、残りを保持するコレクションを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>dropWhile</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/dropWhile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/dropWhile/</guid>
+      <description>dropWhile trait Collection[A] { def dropWhile(p: (A) =&amp;gt; Boolean): Collection[A] }   dropWhile は、先頭から始めて要素が述語 p を満たす間は捨て続けて、残りを保持したコレクションを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>empty (PartialFunction)</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/empty_PartialFunction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/empty_PartialFunction/</guid>
+      <description>empty For the collections&amp;rsquo; empty function go here.
+object PartialFunction { def empty[A, B]: PartialFunction[A, B] }   empty creates an anonymous partial function which is not defined for any value.
+ </description>
+    </item>
+    
+    <item>
+      <title>empty (コレクション)</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/empty_collections/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/empty_collections/</guid>
+      <description>empty PartialFunction の empty 関数については、こちら。
+object Collection { def empty[A]: Collection[A] }   empty は、型 A の要素を含めるコレクションを要素なしで作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>endsWith</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/endsWith/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/endsWith/</guid>
+      <description>endsWith trait Collection[A] { def endsWith(as: Collection[A]): Boolean }   endsWith は、コレクション as がこのコレクションの末尾と一致するかを調べ、もしそうであれば true を返します。
+ もし as がこのコレクションの末尾と一致しなければ、この関数は false を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>fill</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/fill/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/fill/</guid>
+      <description>fill object Collection { def fill[A](n1: Int, ..., nm: Int)(a: =&amp;gt; A): Collection[ ... Collection[A] ... ] }   fill は、何らかの計算 a の結果を含む n 次元のコレクションを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>filter</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/filter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/filter/</guid>
+      <description>filter trait Collection[A] { def filter(p: (A) =&amp;gt; Boolean): Collection[A] }   filter は、このコレクションの要素で述語 p を満たすものを残し、残りを捨てたコレクションを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>filterKeys</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/filterKeys/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/filterKeys/</guid>
+      <description>filterKeys trait Map[K, V] { def filterKeys(p: (K) =&amp;gt; Boolean): Map[K, V] }   filterKeys は、キーが述語 p を満たすキーと値のペアを残し、残りを捨てた Map を作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>filterNot</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/filterNot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/filterNot/</guid>
+      <description>filterNot trait Collection[A] { def filterNot(p: (A) =&amp;gt; Boolean): Collection[A] }   filterNot は、このコレクションの要素で述語 p を満たさないものを残し、残りを捨てたコレクションを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>find</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/find/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/find/</guid>
+      <description>find trait Collection[A] { def find(p: (A) =&amp;gt; Boolean): Option[A] }   find は、述語 p を満たす最初の要素を Some に包んで返します。
+ もし述語 p を満たす要素がこのコレクションになければ、この関数は None を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>findLast</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/findLast/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/findLast/</guid>
+      <description>findLast trait Collection[A] { def findLast(p: (A) =&amp;gt; Boolean): Option[A] }   findLast は、述語 p を満たす最後の要素を Some に包んで返します。
+ もし述語 p を満たす要素がこのコレクションになければ、この関数は None を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>flatMap</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/flatMap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/flatMap/</guid>
+      <description>flatMap trait Collection[A] { def flatMap(f: (A) =&amp;gt; Collection[B]): Collection[B] }   flatMap は、要素ひとつひとつに関数 f を適用してコレクションを作っていき、それらの結果の各要素を使った新しいコレクションを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>flatten</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/flatten/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/flatten/</guid>
+      <description>flatten trait Collection[A] { def flatten[B]: Collection[B] }   flatten は、このコレクションに含まれる下位コレクションの要素を使ってコレクションを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>fold</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/fold/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/fold/</guid>
+      <description>fold trait Collection[A] { def fold(z: A)(op: (A, A) =&amp;gt; A): A }   fold は、最終的な結果が計算されるまで、二項演算子 op をこのコレクションの要素のペアに適用していきます。 零元である要素 z は何回も使われることがあります。
+ </description>
+    </item>
+    
+    <item>
+      <title>foldLeft</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/foldLeft/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/foldLeft/</guid>
+      <description>foldLeft trait Collection[A] { def foldLeft[B](z: B)(op: (B, A) =&amp;gt; B): B }   foldLeft は、各要素と1つ前の op の結果に二項演算子 op を左から右の順で適用していきます。 最初に op が適用されるときは、初期値 z が入力されます。
+ 空のコレクションでは、この関数は op を適用せず、z が直接返されます。
+ </description>
+    </item>
+    
+    <item>
+      <title>foldRight</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/foldRight/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/foldRight/</guid>
+      <description>foldRight trait Collection[A] { def foldRight[B](z: B)(op: (A, B) =&amp;gt; B): B }   foldRight は、各要素と1つ前の op の結果に二項演算子 op を右から左の順で適用していきます。 最初に op が適用されるときは、初期値 z が入力されます。
+ 空のコレクションでは、この関数は op を適用せず、z が直接返されます。
+ </description>
+    </item>
+    
+    <item>
+      <title>foreach</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/foreach/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/foreach/</guid>
+      <description>foreach trait Collection[A] { def foreach(f: (A) =&amp;gt; Unit): Unit }   foreach は、関数 f をこのコレクションの各要素に適用していき、結果はいずれも捨てます。 この関数は () を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>fromFunction</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/fromFunction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/fromFunction/</guid>
+      <description>fromFunction object PartialFunction { def fromFunction[X, Y](f: (X) =&amp;gt; Y): PartialFunction[X, Y] }   fromFunction creates an anonymous partial function from a total function.
+ </description>
+    </item>
+    
+    <item>
+      <title>getOrElse (Map)</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/getOrElse_Map/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/getOrElse_Map/</guid>
+      <description>getOrElse Option の getOrElse 関数については、こちら。
+trait Map[K, V] { def getOrElse(k: K, v: =&amp;gt; V): V }   getOrElse は、この Map でキー k に紐付いた値を返します。
+ もしこの Map がキー k を含んでいないときは、この関数は計算 v の結果を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>getOrElse (Option)</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/getOrElse_Option/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/getOrElse_Option/</guid>
+      <description>getOrElse Map の getOrElse 関数については、こちら。
+trait Option[A] { def getOrElse[B &amp;gt;: A](b: =&amp;gt; B): B }   getOrElse は、この Option が Some のときは、包まれている値を返します。
+ この Option が None のときは、計算 b の結果を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>groupBy</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/groupBy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/groupBy/</guid>
+      <description>groupBy trait Collection[A] { def groupBy[K](f: (A) =&amp;gt; K): Map[K, Collection[A]] }   groupBy は、関数 f の適用結果が同じキーとなる要素をグループ化した Map を作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>grouped</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/grouped/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/grouped/</guid>
+      <description>grouped trait Collection[A] { def grouped(m: Int): Iterator[Collection[A]] }   grouped は、このコレクションを最大 m 個ずつの小さな下位コレクションに分割し、それらを列挙できる Iterator を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>groupMap</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/groupMap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/groupMap/</guid>
+      <description>groupMap trait Collection[A] { def groupMap[K, B](f: (A) =&amp;gt; K)(g: (A) =&amp;gt; B): Map[K, Collection[B]] }   groupMap は、関数 f の適用結果が同じキーとなる要素をグループ化し、グループには変換関数 g を適用した Map を作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>groupMapReduce</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/groupMapReduce/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/groupMapReduce/</guid>
+      <description>groupMapReduce trait Collection[A] { def groupMapReduce[K, B](k: (A) =&amp;gt; K)(f: (A) =&amp;gt; B)(op: (B, B) =&amp;gt; B): Map[K, B] }   groupMapReduce は、関数 k の適用結果が同じキーとなる要素をグループ化し、グループには変換関数 f を適用し、変換された要素に結合二項演算子 op を使った集計結果を値とする Map を作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>head</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/head/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/head/</guid>
+      <description>head trait Collection[A] { def head: A }   head は、このコレクションの最初の要素を返します。
+ 空のコレクションでは、この関数は NoSuchElementException を発生させます。
+ </description>
+    </item>
+    
+    <item>
+      <title>headOption</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/headOption/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/headOption/</guid>
+      <description>headOption trait Collection[A] { def headOption: Option[A] }   headOption は、このコレクションの最初の要素を Some に包んで返します。
+ 空のコレクションでは最初の要素がないので、この関数は None を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>indexOf</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/indexOf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/indexOf/</guid>
+      <description>indexOf trait Collection[A] { def indexOf(a: A): Int def indexOf(a: A, j: Int): Int }   indexOf は、値 a と等しい（==）最初の要素のインデックスを返します。
+ 探索は、与えられたオフセット j から始めることができます。
+ いずれの要素も a と等しくなければ、この関数は -1 を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>indexOfSlice</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/indexOfSlice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/indexOfSlice/</guid>
+      <description>indexOfSlice trait Collection[A] { def indexOfSlice(as: Collection[A]): Int def indexOfSlice(as: Collection[A], j: Int): Int }   indexOfSlice は、コレクション as がこのコレクションの一部として見つかったところの、最初のインデックスを返します。
+ 探索は、与えられたオフセット j から始めることができます。
+ もし as が見つからなければ、この関数は -1 を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>indexWhere</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/indexWhere/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/indexWhere/</guid>
+      <description>indexWhere trait Collection[A] { def indexWhere(p: (A) =&amp;gt; Boolean): Int def indexWhere(p: (A) =&amp;gt; Boolean: j: Int): Int }   indexWhere は、述語 p を満たす最初の要素のインデックスを返します。
+ 探索は、与えられたオフセット j から始めることができます。
+ いずれの要素も p を満たさなければ、この関数は -1 を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>indices</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/indices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/indices/</guid>
+      <description>indices trait Collection[A] { def indices: Range }   indices は、このコレクションで使われているインデックスで Range を作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>init</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/init/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/init/</guid>
+      <description>init trait Collection[A] { def init: Collection[A] }   init は、このコレクションの最後の要素を除いた全ての要素を返します。
+ 空のコレクションでは、この関数は UnsupportedOperationException 例外を発生させます。
+ </description>
+    </item>
+    
+    <item>
+      <title>inits</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/inits/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/inits/</guid>
+      <description>inits trait Collection[A] { def inits: Iterator[Collection[A]] }   inits は、このコレクションでありえる接頭辞コレクションをすべて計算し、それらを列挙する Iterator を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>intersect</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/intersect/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/intersect/</guid>
+      <description>intersect trait Collection[A] { def intersect(as: Collection[A]): Collection[A] }   intersect は、このコレクションとコレクション as の重複を許す積集合を計算します。
+ </description>
+    </item>
+    
+    <item>
+      <title>isDefinedAt (Map)</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/isDefinedAt_Map/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/isDefinedAt_Map/</guid>
+      <description>isDefinedAt Seq の isDefinedAt 関数については、こちら。
+trait Map[K, V] { def isDefinedAt(k: K): Boolean }   isDefinedAt は、Map が指定されたキー k に値を持っているかどうかを調べ、もしそうであれば true を返します。
+ キー k に要素が定義されていないときは、この関数は false を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>isDefinedAt (Seq)</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/isDefinedAt_Seq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/isDefinedAt_Seq/</guid>
+      <description>isDefinedAt Map の isDefinedAt 関数は、こちら.
+trait Seq[A] { def isDefinedAt(i: Int): Boolean }   isDefinedAt は、Seq が指定されたインデックス i に要素を持っているかどうかを調べ、もしそうであれば true を返します。
+ インデックス i に要素が定義されていないときは、この関数は false を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>isEmpty</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/isEmpty/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/isEmpty/</guid>
+      <description>isEmpty trait Collection[A] { def isEmpty: Boolean }   isEmpty は、このコレクションが一つの要素も含まないかを調べ、そうでなければ false を返します。
+ 空のコレクションの場合のみ true を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>keys</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/keys/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/keys/</guid>
+      <description>keys trait Map[K, V] { def keys: Iterable[V] }   keys は、この Map のキーを列挙する Iterator を作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>last</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/last/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/last/</guid>
+      <description>last trait Collection[A] { def last: A }   last は、このコレクションの最後の要素を返します。
+ 空のコレクションでは、この関数は NoSuchElementException を発生させます。
+ </description>
+    </item>
+    
+    <item>
+      <title>lastIndexOf</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/lastIndexOf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/lastIndexOf/</guid>
+      <description>lastIndexOf trait Collection[A] { def lastIndexOf(a: A): Int def lastIndexOf(a: A, j: Int): Int }   lastIndexOf は、値 a と等しい（==）最後の要素のインデックスを返します。
+ 探索は、与えられたオフセット j から始めることができます。
+ いずれの要素も a と等しくなければ、この関数は -1 を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>lastIndexOfSlice</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/lastIndexOfSlice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/lastIndexOfSlice/</guid>
+      <description>lastIndexOfSlice trait Collection[A] { def lastIndexOfSlice(as: Collection[A]): Int def lastIndexOfSlice(as: Collection[A], j: Int): Int }   lastIndexOfSlice は、コレクション as がこのコレクションの一部として見つかったところの、最後のインデックスを返します。
+ 探索は、与えられたオフセット j から始めることができます。
+ もし as が見つからなければ、この関数は -1 を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>lastIndexWhere</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/lastIndexWhere/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/lastIndexWhere/</guid>
+      <description>lastIndexWhere trait Collection[A] { def lastIndexWhere(p: (A) =&amp;gt; Boolean): Int def lastIndexWhere(p: (A) =&amp;gt; Boolean: j: Int): Int }   lastIndexWhere は、述語 p を満たす最後の要素のインデックスを返します。
+ 探索は、与えられたオフセット j から始めることができます。
+ いずれの要素も p を満たさなければ、この関数は -1 を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>lastOption</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/lastOption/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/lastOption/</guid>
+      <description>lastOption trait Collection[A] { def lastOption: Option[A] }   lastOption は、このコレクションの最後の要素を Some に包んで返します。
+ 空のコレクションでは最後の要素がないので、この関数は None を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>length</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/length/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/length/</guid>
+      <description>length trait Collection[A] { def length: Int }   length は、このコレクションが何個の要素を持っているかを返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>map</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/map/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/map/</guid>
+      <description>map trait Collection[A] { def map[B](f: (A) =&amp;gt; B): Collection[B] }   map は、このコレクションの各要素に関数 f を適用した結果を要素とするコレクションを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>mapConserve</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/mapConserve/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/mapConserve/</guid>
+      <description>mapConserve trait List[A] { def mapConserve[B &amp;gt;: A](f: (A) =&amp;gt; B): List[B] }   mapConserve は、関数 f をこの List の各要素に適用し、もし変換されたすべての要素が元の要素と等しい（eq で）場合、元のリストをそのまま返します。
+ もしひとつでも変換された要素がソース要素と等しくない（eq で）場合、この関数は変換結果から作られた新しい List を作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>mapValues</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/mapValues/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/mapValues/</guid>
+      <description>mapValues trait Map[K, V] { def mapValues[W](f: (V) =&amp;gt; W): Map[K, W] }   mapValues は、この Map のキーはそのままで各キーの値を関数 f で変換した Map を作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>max</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/max/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/max/</guid>
+      <description>max trait Collection[A] { def max: A }   max は、このコレクションの最大の値を返します。
+ 空のコレクションでは、この関数は UnsupportedOperationException 例外を発生させます。
+ </description>
+    </item>
+    
+    <item>
+      <title>maxBy</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/maxBy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/maxBy/</guid>
+      <description>maxBy trait Collection[A] { def maxBy[W](f: (A) =&amp;gt; W): A }   maxBy は、各要素に f を適用していき、最大の値を生成する元の要素を返します。
+ 空のコレクションでは、この関数は UnsupportedOperationException 例外を発生させます。
+ </description>
+    </item>
+    
+    <item>
+      <title>maxByOption</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/maxByOption/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/maxByOption/</guid>
+      <description>maxByOption trait Collection[A] { def maxByOption[W](f: (A) =&amp;gt; W): A }   maxByOption は、各要素に f を適用していき、最大の値を生成する元の要素を Some に包んで返します。
+ 空のコレクションでは、この関数は None を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>maxOption</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/maxOption/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/maxOption/</guid>
+      <description>maxOption trait Collection[A] { def maxOption: Option[A] }   maxOption は、このコレクションの最大の値を Some に包んで返します。
+ 空のコレクションでは、この関数は None を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>min</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/min/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/min/</guid>
+      <description>min trait Collection[A] { def min: A }   min は、このコレクションにの最小の値を返します。
+ 空のコレクションでは、この関数は UnsupportedOperationException 例外を発生させます。
+ </description>
+    </item>
+    
+    <item>
+      <title>minBy</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/minBy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/minBy/</guid>
+      <description>minBy trait Collection[A] { def minBy[W](f: (A) =&amp;gt; W): A }   minBy は、各要素に f を適用していき、最小の値を生成する元の要素を返します。
+ 空のコレクションでは、この関数は UnsupportedOperationException 例外を発生させます。
+ </description>
+    </item>
+    
+    <item>
+      <title>minByOption</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/minByOption/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/minByOption/</guid>
+      <description>minByOption trait Collection[A] { def minByOption[W](f: (A) =&amp;gt; W): A }   minByOption は、各要素に f を適用していき、最小の値を生成する元の要素を Some に包んで返します。
+ 空のコレクションでは、この関数は None を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>minOption</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/minOption/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/minOption/</guid>
+      <description>minOption trait Collection[A] { def minOption: Option[A] }   minOption は、このコレクションの最小の値を Some に包んで返します。
+ 空のコレクションでは、この関数は None を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>mkString</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/mkString/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/mkString/</guid>
+      <description>mkString trait Collection[A] { def mkString: String def mkString(sep: String): String def mkString(start: String, sep: String, end: String): String }   mkString は、このコレクションの各要素の文字列表現を結合した String を作り上げます。 各部分の間にはさまる sep、開始と終了の文字列としてそれぞれ start と end を、任意で使えます。
+ </description>
+    </item>
+    
+    <item>
+      <title>nonEmpty</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/nonEmpty/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/nonEmpty/</guid>
+      <description>nonEmpty trait Collection[A] { def nonEmpty: Boolean }   nonEmpty は、このコレクションに1つでも要素が含まれていれば true を返します。
+ 空のコレクションでは、この関数は false を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>orElse</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/orElse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/orElse/</guid>
+      <description>orElse trait PartialFunction[X, Y] { def orElse(g: PartialFunction[X, Y]): PartialFunction[X, Y] }   orElse は、この部分関数の値を返す匿名部分関数を作成します。
+ この部分関数が定義されていない入力値については、その匿名関数は g が返す値を返します。
+ 入力値に対して g も定義されていなければ、その匿名関数は MatchError 例外を発生させます。
+ </description>
+    </item>
+    
+    <item>
+      <title>padTo</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/padTo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/padTo/</guid>
+      <description>padTo trait Collection[A] { def padTo(m: Int, a: A): Collection[A] }   padTo は、長さが m になるまで右側に値 a を詰め込んだコレクションのコピーを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>partition</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/partition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/partition/</guid>
+      <description>partition trait Collection[A] { def partition(p: (A) =&amp;gt; Boolean): (Collection[A], Collection[A]) }   partition は、2つのコレクションからなる Tuple2 を作成します。 一方は述語 p を満たす要素すべてを含み、もう一方は満たさない要素すべてを含みます。
+ </description>
+    </item>
+    
+    <item>
+      <title>partitionMap</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/partitionMap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/partitionMap/</guid>
+      <description>partitionMap trait Collection[A] { def partitionMap[B, C](f: (A) =&amp;gt; Either[B, C]): (Collection[B], Collection[C]) }   partitionMap は、このコレクションの各要素に関数 f を適用し、変換された値が Left と Right のどちらで包まれているかによって2つのコレクションに分類します。
+ </description>
+    </item>
+    
+    <item>
+      <title>patch</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/patch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/patch/</guid>
+      <description>patch trait Collection[A] { def patch(j: Int, bs: Collection[A], m: Int): Collection[A] }   patch は、インデックス j から始まる m 個の要素をコレクション bs に置き換えたこのコレクションのコピーを作成します
+ </description>
+    </item>
+    
+    <item>
+      <title>permutations</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/permutations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/permutations/</guid>
+      <description>permutations trait Collection[A] { def permutations: Iterator[Collection[A]] }   permutations は、このコレクションの要素のありえる組み合わせをすべて計算し、それらを列挙する Iterator を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>prefixLength</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/prefixLength/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/prefixLength/</guid>
+      <description>prefixLength trait Collection[A] { def prefixLength(p: (A) =&amp;gt; Boolean): Int }   prefixLength は、述語 p を満たす最長の接尾辞要素の長さを返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>prepended</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/prepended/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/prepended/</guid>
+      <description>prepended trait Collection[A] { def prepended[B &amp;gt;: A](b: B): Collection[B] def +:[B &amp;gt;: A](b: B): Collection[B] }   prepended は、このコレクションの先頭に要素 b が加わったコピーを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>prependedAll</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/prependedAll/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/prependedAll/</guid>
+      <description>prependedAll trait Collection[A] { def prependedAll[B &amp;gt;: A](bs: Collection[B]): Collection[B] def ++:[B &amp;gt;: A](bs: Collection[B]): Collection[B] }   prependedAll は、このコレクションの先頭にコレクション bs が加わったコピーを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>product</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/product/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/product/</guid>
+      <description>product trait Collection[A] { def product: A }   product は、このコレクションの要素の積を計算します。
+ 空のコレクションでは、この関数は A 型の積操作の単位元を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>range</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/range/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/range/</guid>
+      <description>range object Collection { def range[A](start: A, end: A): Collection[A] def range[A](start: A, end: A, step: A): Collection[A] }   range は、start から始めて end に達するまでの値の数列を要素としたコレクションを作成します。
+ 数列の次の値を計算する増加量は、step で指定できます。
+ </description>
+    </item>
+    
+    <item>
+      <title>reduce</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/reduce/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/reduce/</guid>
+      <description>reduce trait Collection[A] { def reduce(op: (A, A) =&amp;gt; A): A }   reduce は、最終的な結果が計算されるまで、二項演算子 op をこのコレクションの要素のペアに適用していきます。
+ 空のコレクションでは、この関数は UnsupportedOperationException 例外を発生させます。
+ </description>
+    </item>
+    
+    <item>
+      <title>reduceLeft</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/reduceLeft/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/reduceLeft/</guid>
+      <description>reduceLeft trait Collection[A] { def reduceLeft[B :&amp;gt; A](op: (B, A) =&amp;gt; B): B }   reduceLeft は、各要素と1つ前の op の結果に二項演算子 op を左から右の順で適用していきます。 最初に op が適用されるときは、最初の2つの要素が入力されます。
+ 1要素のコレクションでは、その唯一の要素が返され、二項演算子 op は適用されません。
+ 空のコレクションでは、この関数は UnsupportedOperationException 例外を発生させます。
+ </description>
+    </item>
+    
+    <item>
+      <title>reduceLeftOption</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/reduceLeftOption/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/reduceLeftOption/</guid>
+      <description>reduceLeftOption trait Collection[A] { def reduceLeftOption[B :&amp;gt; A](f: (B, A) =&amp;gt; B): Option[B] }   reduceLeftOption は、各要素と1つ前の op の結果に二項演算子 op を左から右の順で適用していきます。 最初に op が適用されるときは、最初の2つの要素が入力されます。 最終的な結果は Some に包まれます。
+ 空のコレクションでは、この関数は None を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>reduceOption</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/reduceOption/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/reduceOption/</guid>
+      <description>reduceOption trait Collection[A] { def reduceOption(op: (A, A) =&amp;gt; A): Option[A] }   reduceOption は、最終的な結果が計算されるまで、二項演算子 op をこのコレクションの要素のペアに適用していき、最終的な結果を Some で包んで返します。
+ 空のコレクションでは、この関数は None を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>reduceRight</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/reduceRight/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/reduceRight/</guid>
+      <description>reduceRight trait Collection[A] { def reduceRight[B :&amp;gt; A](op: (A, B) =&amp;gt; B): B }   reduceRight は、各要素と1つ前の op の結果に二項演算子 op を左から右の順で適用していきます。 最初に op が適用されるときは、最初の2つの要素が入力されます。
+ 1要素のコレクションでは、その唯一の要素が返され、二項演算子 op は適用されません。
+ 空のコレクションでは、この関数は UnsupportedOperationException 例外を発生させます。
+ </description>
+    </item>
+    
+    <item>
+      <title>reduceRightOption</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/reduceRightOption/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/reduceRightOption/</guid>
+      <description>reduceRightOption trait Collection[A] { def reduceRightOption[B :&amp;gt; A](f: (A, B) =&amp;gt; B): Option[B] }   reduceRightOption は、各要素と1つ前の op の結果に二項演算子 op を左から右の順で適用していきます。 最初に op が適用されるときは、最初の2つの要素が入力されます。 最終的な結果は Some に包まれます。
+ 空のコレクションでは、この関数は None を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>reverse</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/reverse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/reverse/</guid>
+      <description>reverse trait Collection[A] { def reverse: Collection[A] }   reverse は、要素の順序を反転したコレクションを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>reverseMap</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/reverseMap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/reverseMap/</guid>
+      <description>reverseMap trait Collection[A] { def reverseMap[B](f: (A) =&amp;gt; B): Collection[B] }   reverseMap は、順序を反転し、各要素に変換関数 f を適用したコレクションを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>sameElements</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/sameElements/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/sameElements/</guid>
+      <description>sameElements trait Collection[A] { def sameElements(as: Collection[A]): Boolean }   sameElements は、このコレクションが別のコレクション as と同じ要素が同じ順序で含んでいるかを調べ、もしそうであれば true を返します。
+ 同じ位置の as と一致しない要素がひとつでもあれば、この関数は false を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>scanLeft</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/scanLeft/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/scanLeft/</guid>
+      <description>scanLeft trait Collection[A] { def scanLeft[B](z: B)(op: (B, A) =&amp;gt; B) }   scanLeft は、二項演算子 op をこのコレクションの要素に左から右へ適用していく中間結果のコレクションを作成します。 最初に op が適用されるときには、初期値 z が入力されます。
+ </description>
+    </item>
+    
+    <item>
+      <title>scanRight</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/scanRight/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/scanRight/</guid>
+      <description>scanRight trait Collection[A] { def scanRight[B](z: B)(op: (A, B) =&amp;gt; B) }   scanRight は、二項演算子 op をこのコレクションの要素に右から左へ適用していく中間結果のコレクションを作成します。 最初に op が適用されるときには、初期値 z が入力されます。
+ </description>
+    </item>
+    
+    <item>
+      <title>search</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/search/</guid>
+      <description>search trait Collection[A] { def search[B &amp;gt;: A](e: B): SearchResult def search[B &amp;gt;: A](e: B, i: Int, j: Int): SearchResult }   search は、このコレクションから要素 e に等しい（==）最初の要素を探索し、見つかった位置のインデックスを含む Found を返します。
+ もし e がコレクションで見つからなければ、その要素を挿入できるインデックスを含んだ InsertionPoint を返します。
+ 探索は、区間 [i, j) に制限できます。
+ </description>
+    </item>
+    
+    <item>
+      <title>segmentLength</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/segmentLength/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/segmentLength/</guid>
+      <description>segmentLength trait Collection[A] { def segmentLength(p: (A) =&amp;gt; Boolean, j: Int): Int }   segmentLength は、j から始めて述語 p を満たす最長の断片の長さを返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>size</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/size/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/size/</guid>
+      <description>size trait Collection[A] { def size: Int }   size は、このコレクションが何個の要素を持っているかを返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>slice</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/slice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/slice/</guid>
+      <description>slice trait Collection[A] { def slice(i: Int, j: Int): Collection[A] }   slice は、インデックス i から j までの一連の要素からなるコレクションを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>sliding</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/sliding/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/sliding/</guid>
+      <description>sliding trait Collection[A] { def sliding(m: Int, s: Int): Iterator[Collection[A]] }   sliding は、s の倍数にある要素から始まる m 個の要素の部分コレクションをすべて計算し、それらを列挙する Iterator を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>sortBy</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/sortBy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/sortBy/</guid>
+      <description>sortBy trait Collection[A] { def sortBy[W](f: (A) =&amp;gt; W): Collection[A] }   sortBy は、各要素に f を適用して生成された結果にもとづいて各要素がソートされたコレクションを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>sorted</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/sorted/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/sorted/</guid>
+      <description>sorted trait Collection[A] { def sorted: Collection[A] }   sorted は、要素がソートされたコレクションを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>sortWith</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/sortWith/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/sortWith/</guid>
+      <description>sortWith trait Collection[A] { def sortWith(lt: (A, A) =&amp;gt; Boolean): Collection[A] }   sortWith は、比較関数 lt でソートした要素のコレクションを作成します。 比較関数は第一引数が第二引数より小さいときには true を返し、それ以外では false を返さなければなりません。
+ </description>
+    </item>
+    
+    <item>
+      <title>span</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/span/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/span/</guid>
+      <description>span trait Collection[A] { def span(p: (A) =&amp;gt; Boolean): (Collection[A], Collection[A]) }   span は、2つのコレクションからなる Tuple2 を作成します。 一方は述語 p を満たす最長の接尾辞、もう一方は残りの要素を含みます。
+ </description>
+    </item>
+    
+    <item>
+      <title>splitAt</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/splitAt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/splitAt/</guid>
+      <description>splitAt trait Collection[A] { def splitAt(i: Int): (Collection[A], Collection[A]) }   splitAt は、2つのコレクションからなる Tuple2 を作成します。 １つ目にはインデックスが i より小さい要素すべて、もう一方には残りの要素が含まれます。
+ </description>
+    </item>
+    
+    <item>
+      <title>startsWith</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/startsWith/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/startsWith/</guid>
+      <description>startsWith trait Collection[A] { def startsWith(as: Collection[A]): Boolean def startsWith(as: Collection[A], j: Int): Boolean }   startsWith は、コレクション as がこのコレクションの先頭と一致するかを調べ、もしそうであれば true を返します。
+ 探索は、与えられたオフセット j から始めることができます。
+ もし as がこのコレクションの先頭と一致しなければ、false を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>sum</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/sum/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/sum/</guid>
+      <description>sum trait Collection[A] { def sum: A }   sum は、このコレクションの要素の和を計算します。
+ 空の要素では、この関数は型 A の和演算の単位元を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>tabulate</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/tabulate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/tabulate/</guid>
+      <description>tabulate object Collection { def tabulate[A](n1: Int, ..., nm: Int)(f: (Int, ..., Int): =&amp;gt; A) : Collection[ ... Collection[A] ... ] }   tabulate は、関数 f を複数の整数の範囲に適用した結果からなる 次元のコレクションを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>tail</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/tail/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/tail/</guid>
+      <description>tail trait Collection[A] { def tail: Collection[A] }   tail は、このコレクションの最初の要素以外すべてを返します。
+ 空のコレクションでは、この関数は NoSuchElementException を発生させます。
+ </description>
+    </item>
+    
+    <item>
+      <title>tails</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/tails/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/tails/</guid>
+      <description>tails trait Collection[A] { def tails: Iterator[Collection[A]] }   tails は、このコレクションでありえる接尾辞コレクションをすべて計算し、それらを列挙する Iterator を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>take</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/take/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/take/</guid>
+      <description>take trait Collection[A] { def take(i: Int): Collection[A] }   take は、このコレクションの先頭 i 個の要素を保持し、残りは捨てたコレクションを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>takeRight</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/takeRight/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/takeRight/</guid>
+      <description>takeRight trait Collection[A] { def takeRight(i: Int): Collection[A] }   takeRight は、このコレクションの末尾 i 個の要素を保持し、残りは捨てたコレクションを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>takeWhile</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/takeWhile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/takeWhile/</guid>
+      <description>takeWhile trait Collection[A] { def takeWhile(p: (A) =&amp;gt; Boolean): Collection[A] }   takeWhile は、先頭から始めて要素が述語 p を満たす間は保持し続けて、残りを捨てたコレクションを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>transpose</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/transpose/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/transpose/</guid>
+      <description>transpose trait Collection[A] { def transpose[B]: Collection[Collection[B]] }   transpose は、m x n 要素あるこのコレクションから新しい n x m 要素のコレクションを作成します。
+ もしすべての下位コレクションが同じサイズでなければ、この関数は IllegalArgumentException 例外を発生させます。
+ </description>
+    </item>
+    
+    <item>
+      <title>tupled</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/tupled/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/tupled/</guid>
+      <description>tupled object Function { def tupled[X1, ..., Xn, Y](f: (X1, ..., Xn) =&amp;gt; Y): ((X1, ..., Xn)) =&amp;gt; Y }   tupled は、関数 f と相当の働きをする匿名関数を返します。 その匿名関数は、この関数のパラメーターに対応する要素数 n のタプルを、単独のパラメーターとして受けとります。
+ </description>
+    </item>
+    
+    <item>
+      <title>uncurried</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/uncurried/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/uncurried/</guid>
+      <description>uncurried object Function { def uncurried[X1, ..., Xn, Y](f: (X1) =&amp;gt; ... =&amp;gt; (Xn) =&amp;gt; Y): (X1, ..., Xn) =&amp;gt; Y }   uncurried は、関数 f から始まる一連の高階関数が受け取る一連のパラメーターを一度に受け取る匿名関数を作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>unfold</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/unfold/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/unfold/</guid>
+      <description>unfold object Collection { def unfold[A, S](s: S)(f: (S) =&amp;gt; Option[(A, S)]): Collection[A] }   unfold は、関数 f が Some に包んだ値を返し続ける限り、その値のペアを使ってコレクションを作成します。 f は現在の状態を受け取り、次の要素と次の状態のペアを計算して返します。
+f が None をした時点でコレクションの構築は止まります。
+関数 f が始めて適用されるとき、初期状態 s が入力されます。
+ </description>
+    </item>
+    
+    <item>
+      <title>union</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/union/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/union/</guid>
+      <description>union trait Collection[A] { def union(as: Collection[A]): Collection[A] }   union は、このコレクションとコレクション as の重複を許す和集合を計算します。
+ </description>
+    </item>
+    
+    <item>
+      <title>untupled</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/untupled/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/untupled/</guid>
+      <description>untupled object Function { def untupled[X1, ..., Xn, Y](f: ((X1, ..., Xn)) =&amp;gt; Y): (X1, ..., Xn) =&amp;gt; Y }   untupled は、関数 f 相当の働きをする匿名関数を返します。 その匿名関数のパラメーターは、f が単独のパラメーターとして受け取る n 要素のタプルに対応しています。
+ </description>
+    </item>
+    
+    <item>
+      <title>unzip</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/unzip/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/unzip/</guid>
+      <description>unzip trait Collection[AB] { def unzip[A, B]: (Collection[A], Collection[B]) }   unzip は、2つのコレクションからなる Tuple2 を作成します。 1つ目にはペアである要素の1つ目が含まれ、2つ目には残りが含まれます。
+ </description>
+    </item>
+    
+    <item>
+      <title>unzip3</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/unzip3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/unzip3/</guid>
+      <description>unzip3 trait Collection[AB] { def unzip[A, B]: (Collection[A], Collection[B]) }   unzip3 は、3つのコレクションからなる Tuple3 を作成します。 1つ目には３つ組である要素の1つ目、2つ目には2つ目、3つ目には残りが含まれます。
+ </description>
+    </item>
+    
+    <item>
+      <title>updated</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/updated/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/updated/</guid>
+      <description>updated trait Collection[A] { def updated(i: Int, a: A): Collection[A] }   updated は、このコレクションの全要素、ただしインデックス i の要素だけ a に置き換えたコレクションを作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>values</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/values/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/values/</guid>
+      <description>values trait Map[K, V] { def values: Iterable[V] }   values は、この Map の値を列挙する Iterator を作成します。
+ </description>
+    </item>
+    
+    <item>
+      <title>withDefault</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/withDefault/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/withDefault/</guid>
+      <description>withDefault trait Map[K, V] { def withDefault(f: (K) =&amp;gt; V): Map[K, V] }   withDefault は、この Map から同じキー・値のペアを持つ Map を作成します。 ただしその Map の apply は、存在しないキーについては関数 f で計算した値を提供します。
+ </description>
+    </item>
+    
+    <item>
+      <title>withDefaultValue</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/withDefaultValue/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/withDefaultValue/</guid>
+      <description>withDefaultValue trait Map[K, V] { def withDefaultValue(v: V): Map[K, V] }   withDefaultValue は、この Map から同じキー・値のペアを持つ Map を作成します。 ただしその Map の apply は、存在しないキーについては固定の値 v を返します。
+ </description>
+    </item>
+    
+    <item>
+      <title>zip</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/zip/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/zip/</guid>
+      <description>zip trait Collection[A] { def zip[B](bs: Collection[B]): Collection[(A, B)] }   zip は、このコレクションとコレクション bs の同じインデックスにある各要素をペアにしたコレクションを作成し、ペアにならなかった要素は捨てます。
+ </description>
+    </item>
+    
+    <item>
+      <title>zipAll</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/zipAll/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/zipAll/</guid>
+      <description>zipAll trait Collection[A] { def zipAll[B](bs: Collection[B], a: A, b: B): Collection[(A, B)] }   zipAll は、このコレクションとコレクション bs の同じインデックスにある各要素をペアにしたコレクションを作成し、ペアにならなかった要素にはデフォルト値 a または b を当ててペアにします。
+ </description>
+    </item>
+    
+    <item>
+      <title>zipWithIndex</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/ja/zipWithIndex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/ja/zipWithIndex/</guid>
+      <description>zipWithIndex trait Collection[A] { def zipWithIndex: Collection[(A, Int)] }   zipWithIndex は、各要素とそのインデックスをペアにしたコレクションを作成します。
+ </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1483 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Visual Scala Reference</title>
+    <link>https://superruzafa.github.io/visual-scala-reference/es/</link>
+    <description>Recent content on Visual Scala Reference</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://superruzafa.github.io/visual-scala-reference/es/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>aggregate</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/aggregate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/aggregate/</guid>
+      <description>aggregate trait Collection[A] { def aggregate[B](z: =&amp;gt; B)(seqop: (B, A) =&amp;gt; B, combop: (B, B) =&amp;gt; B): B }   aggregate aplica el operador binario sepop a porciones de elementos y luego combina los resultados intermedios con el operador binario combop. El valor z es el elemento neutro para el tipo B y puede ser utilizado múltiples veces.
+ </description>
+    </item>
+    
+    <item>
+      <title>andThen</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/andThen/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/andThen/</guid>
+      <description>andThen trait Function1[X, Y] { def andThen[Z](g: (Y) =&amp;gt; Z): (X) =&amp;gt; Z }   andThen crea una función anónima que acepta un valor y devuelve el resultado de aplicar a este valor esta función primero y luego g.
+ </description>
+    </item>
+    
+    <item>
+      <title>appended</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/appended/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/appended/</guid>
+      <description>appended trait Collection[A] { def appended[B &amp;gt;: A](b: B): Collection[B] def :+[B &amp;gt;: A](b: B): Collection[B] }   appended crea una copia de esta colección añadiendo el elemento b al final.
+ </description>
+    </item>
+    
+    <item>
+      <title>appendedAll</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/appendedAll/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/appendedAll/</guid>
+      <description>appendedAll trait Collection[A] { def appendedAll[B &amp;gt;: A](bs: Collection[B]): Collection[B] def :++[B &amp;gt;: A](bs: Collection[B]): Collection[B] }   appendedAll crea una copia de esta colección añadiendo la colección bs al final.
+ </description>
+    </item>
+    
+    <item>
+      <title>chain</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/chain/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/chain/</guid>
+      <description>chain object Function { def chain[X](fs: Collection[(X) =&amp;gt; X]): (X) =&amp;gt; X }   chain crea una función anónima que acepta un valor y devuelve el resultado de aplicar secuencialmente todas las funciones contenidas en la colección fs.
+ </description>
+    </item>
+    
+    <item>
+      <title>collect</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/collect/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/collect/</guid>
+      <description>collect trait Collection[A] { def collect[B](f: PartialFunction[A, B]): Collection[B] }   collect construye una colección utilizando los resultados de aplicar la función parcial f a aquellos elementos para los cuales f está definida, descartando el resto de elementos.
+ </description>
+    </item>
+    
+    <item>
+      <title>collectFirst</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/collectFirst/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/collectFirst/</guid>
+      <description>collectFirst trait Collection[A] { def collectFirst[B](f: PartialFunction[A, B]): Option[B] }   collectFirst aplica la función parcial f al primer elemento de esta colección para el cual f está definida y devuelve su resultado envuelto con Some.
+ Si la función parcial f no está definida para ningún elemento de esta colección entonces se devuelve None.
+ </description>
+    </item>
+    
+    <item>
+      <title>combinations</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/combinations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/combinations/</guid>
+      <description>combinations trait Collection[A] { def combinations(k: Int): Iterator[Collection[A]] }   combinations computa todas las posibles combinaciones de elementos de esta colección tomados de k en k y devuelve un Iterator para iterarlos.
+ </description>
+    </item>
+    
+    <item>
+      <title>compose</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/compose/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/compose/</guid>
+      <description>compose trait Function1[X, Y] { def compose[Z](g: (Z) =&amp;gt; X): (Z) =&amp;gt; Y }   compose crea una función anónima que acepta un valor y devuelve el resultado de aplicar la función g primero y luego esta función a dicho valor.
+ </description>
+    </item>
+    
+    <item>
+      <title>concat</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/concat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/concat/</guid>
+      <description>concat object Collection { def concat[A](as: Collection[A]*): Collection[A] }   concat acepta un número indeterminado de colecciones y utiliza sus elementos para crear una única colección.
+ </description>
+    </item>
+    
+    <item>
+      <title>cond</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/cond/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/cond/</guid>
+      <description>cond object PartialFunction { def cond[X](x: X)(pf: PartialFunction[X, Boolean]): Boolean }   cond acepta el valor x y crea una función parcial anónima que a su vez acepta la función parcial pf, la aplica sobre x y devuelve el mismo valor devuelto por pf.
+ Si pf no está definida para el valor de entrada x entonces la función anónima devuelve false.
+ </description>
+    </item>
+    
+    <item>
+      <title>condOpt</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/condOpt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/condOpt/</guid>
+      <description>condOpt object PartialFunction { def condOpt[X, Y](pf: PartialFunction[X, Y]): Option[Y] }   condOpt acepta el valor x y crea una función parcial anónima que a su vez acepta la función parcial pf, la aplica sobre x y devuelve el valor devuelto por pf envolviéndolo con Some.
+ Si pf no está definida para el valor de entrada x entonces la función anónima devuelve None.
+ </description>
+    </item>
+    
+    <item>
+      <title>const</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/const/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/const/</guid>
+      <description>const object Function { def const[X, Y](x: X)(y: Y): X }   const acepta el valor x y crea una función anónima que devuelve dicho valor x ante cualquier valor de entrada y.
+ </description>
+    </item>
+    
+    <item>
+      <title>contains</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/contains/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/contains/</guid>
+      <description>contains trait Collection[A] { def contains(a: A): Boolean }   contains comprueba si un valor dado a es igual (==) a al menos algún elemento de esta colección, devolviendo true en ese caso.
+ Si ningún elemento es igual a dicho valor entonces esta función devuelve false.
+ </description>
+    </item>
+    
+    <item>
+      <title>containsSlice</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/containsSlice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/containsSlice/</guid>
+      <description>containsSlice trait Collection[A] { def containsSlice(as: Collection[A]): Boolean }   containsSlice comprueba si la colección as se halla como subcolección de esta colección, devolviendo true en ese caso.
+ Si la colección as no puede ser encontrada como subcolección de esta colección entonces esta función devuelve false.
+ </description>
+    </item>
+    
+    <item>
+      <title>copyToArray</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/copyToArray/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/copyToArray/</guid>
+      <description>copyToArray trait Collection[A] { def copyToArray[B :&amp;gt; A](array: Array[B]): Int def copyToArray[B :&amp;gt; A](array: Array[B], i: Int): Int def copyToArray[B :&amp;gt; A](array: Array[B], i: Int, l: Int): Int }   copyToArray copia elementos de esta colección a un Array y devuelve cuántos elementos fueron copiados.
+ La copia puede ser colocada en un desplazamiento i del Array de destino.
+ Además, se puede restringir la copia a, como mucho, los primeros l elementos.</description>
+    </item>
+    
+    <item>
+      <title>corresponds</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/corresponds/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/corresponds/</guid>
+      <description>corresponds trait Collection[A] { def corresponds[B](bs: Collection[B])(p: (A, B) =&amp;gt; Boolean): Boolean }   corresponds comprueba que el predicado p es satisfecho para cada par de elementos que ocupan la misma posición en esta y en la colección bs, devolviendo true en ese caso.
+ Si al menos un par de elementos no satisface p o hay elementos no emparejados entonces esta función devuelve false.
+ </description>
+    </item>
+    
+    <item>
+      <title>count</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/count/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/count/</guid>
+      <description>count trait Collection[A] { def count(p: (A) =&amp;gt; Boolean): Int }   count determina cuántos elementos de esta colección satisfacen el predicado p.
+ </description>
+    </item>
+    
+    <item>
+      <title>curried</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/curried/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/curried/</guid>
+      <description>curried trait Function[X1, X2..., Xn, Y] { def curried: (X1) =&amp;gt; (X2) =&amp;gt; ... =&amp;gt; (Xn) =&amp;gt; Y }   curried crea una función anónima equivalente para procesar el primer parámetro de esta función. A su vez, esta función anónima devuelve otra función anónima para procesar el segundo parámetro de esta función&amp;hellip; así sucesivamente hasta que todos los parámetros han sido procesados y el resultado final ha sido calculado.</description>
+    </item>
+    
+    <item>
+      <title>diff</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/diff/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/diff/</guid>
+      <description>diff trait Collection[A] { def diff(as: Collection[A]): Collection[A] }   diff computa la diferencia multiconjunto entre esta colección y la colección as.
+ </description>
+    </item>
+    
+    <item>
+      <title>distinct</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/distinct/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/distinct/</guid>
+      <description>distinct trait Collection[A] { def distinct: Collection[A] }   distinct crea una copia de esta colección sin elementos duplicados.
+ </description>
+    </item>
+    
+    <item>
+      <title>distinctBy</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/distinctBy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/distinctBy/</guid>
+      <description>distinctBy trait Seq[A] { def distinctBy[K](f: (A) =&amp;gt; K): Seq[A] }   distinct crea una copia de esta colección manteniendo uno de los elementos que emiten la misma clave tras serles aplicada la función f.
+ </description>
+    </item>
+    
+    <item>
+      <title>drop</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/drop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/drop/</guid>
+      <description>drop trait Collection[A] { def drop(i: Int): Collection[A] }   drop crea una colección descartando los primeros i elementos de esta colección, manteniendo el resto.
+ </description>
+    </item>
+    
+    <item>
+      <title>dropRight</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/dropRight/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/dropRight/</guid>
+      <description>dropRight trait Collection[A] { def dropRight(i: Int): Collection[A] }   dropRight crea una colección descartando los últimos i elementos de esta colección, manteniendo el resto.
+ </description>
+    </item>
+    
+    <item>
+      <title>dropWhile</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/dropWhile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/dropWhile/</guid>
+      <description>dropWhile trait Collection[A] { def dropWhile(p: (A) =&amp;gt; Boolean): Collection[A] }   dropWhile crea una colección descartando el prefijo de mayor longitud de elementos que satisfacen el predicado p, manteniendo el resto.
+ </description>
+    </item>
+    
+    <item>
+      <title>empty (colecciones)</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/empty_collections/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/empty_collections/</guid>
+      <description>empty Para la función empty de PartialFunction ir aquí.
+object Collection { def empty[A]: Collection[A] }   empty crea una colección para contener elementos de tipo A pero sin ningún elemento.
+ </description>
+    </item>
+    
+    <item>
+      <title>empty (PartialFunction)</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/empty_PartialFunction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/empty_PartialFunction/</guid>
+      <description>empty Para la función empty para colecciones ir aquí.
+object PartialFunction { def empty[A, B]: PartialFunction[A, B] }   empty crea una función parcial anónima que no está definida para ningún valor.
+ </description>
+    </item>
+    
+    <item>
+      <title>endsWith</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/endsWith/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/endsWith/</guid>
+      <description>endsWith trait Collection[A] { def endsWith(as: Collection[A]): Boolean }   endsWith comprueba si la colección as es un sufijo de esta colección, devolviendo true en ese caso.
+ Si as no es un sufijo de esta colección entonces esta función devuelve false.
+ </description>
+    </item>
+    
+    <item>
+      <title>exists</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/exists/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/exists/</guid>
+      <description>exists trait Collection[A] { def exists(p: (A) =&amp;gt; Boolean): Boolean }   exists comprueba si al menos un elemento de esta colección satisface el predicado p, devolviendo true si tal elemento existe.
+ En colecciones vacías, el predicado p no puede ser satisfecho al menos una vez, por lo que esta función devuelve false.
+ </description>
+    </item>
+    
+    <item>
+      <title>fill</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/fill/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/fill/</guid>
+      <description>fill object Collection { def fill[A](n1: Int, ..., nm: Int)(a: =&amp;gt; A): Collection[ ... Collection[A] ... ] }   fill crea una colección n-dimensional conteniendo el resultado de cierta computación a.
+ </description>
+    </item>
+    
+    <item>
+      <title>filter</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/filter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/filter/</guid>
+      <description>filter trait Collection[A] { def filter(p: (A) =&amp;gt; Boolean): Collection[A] }   filter crea una colección con aquellos elementos que satisfacen el predicado p, descartando el resto.
+ </description>
+    </item>
+    
+    <item>
+      <title>filterKeys</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/filterKeys/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/filterKeys/</guid>
+      <description>filterKeys trait Map[K, V] { def filterKeys(p: (K) =&amp;gt; Boolean): Map[K, V] }   filterKeys crea un Map con aquellos pares clave-valor cuya clave satisface el predicado p, descartando el resto.
+ </description>
+    </item>
+    
+    <item>
+      <title>filterNot</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/filterNot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/filterNot/</guid>
+      <description>filterNot trait Collection[A] { def filterNot(p: (A) =&amp;gt; Boolean): Collection[A] }   filterNot crea una colección con aquellos elementos que no satisfacen el predicado p, descartando el resto.
+ </description>
+    </item>
+    
+    <item>
+      <title>find</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/find/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/find/</guid>
+      <description>find trait Collection[A] { def find(p: (A) =&amp;gt; Boolean): Option[A] }   find devuelve el primer elemento que satisface el predicado p, envuelto con Some.
+ Si ningún elemento de esta colección satisface p entonces esta función devuelve None.
+ </description>
+    </item>
+    
+    <item>
+      <title>findLast</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/findLast/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/findLast/</guid>
+      <description>findLast trait Collection[A] { def findLast(p: (A) =&amp;gt; Boolean): Option[A] }   findLast devuelve el último elemento que satisface el predicado p, envuelto con Some.
+ Si ningún elemento de esta colección satisface p entonces esta función devuelve None.
+ </description>
+    </item>
+    
+    <item>
+      <title>flatMap</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/flatMap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/flatMap/</guid>
+      <description>flatMap trait Collection[A] { def flatMap(f: (A) =&amp;gt; Collection[B]): Collection[B] }   flatMap crea una colección aplicando la function f a cada elemento y utilizando los subelementos resultantes como elementos de la nueva colección.
+ </description>
+    </item>
+    
+    <item>
+      <title>flatten</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/flatten/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/flatten/</guid>
+      <description>flatten trait Collection[A] { def flatten[B]: Collection[B] }   flatten crea una colección utilizando los elementos de las subcolecciones de esta colección.
+ </description>
+    </item>
+    
+    <item>
+      <title>fold</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/fold/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/fold/</guid>
+      <description>fold trait Collection[A] { def fold(z: A)(op: (A, A) =&amp;gt; A): A }   fold aplica el operador binario op a pares de elementos de esta colección hasta que el resultado final es calculado. El elemento neutro z puede ser utilizado múltiples veces.
+ </description>
+    </item>
+    
+    <item>
+      <title>foldLeft</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/foldLeft/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/foldLeft/</guid>
+      <description>foldLeft trait Collection[A] { def foldLeft[B](z: B)(op: (B, A) =&amp;gt; B): B }   foldLeft aplica, de izquierda a derecha, el operador binario op a cada elemento y al resultado del anterior op. La primera vez que op es aplicado es alimentado con el valor inicial z.
+ En colecciones vacías, esta función ni siquiera aplica op y el valor inicial z es devuelto directamente.
+ </description>
+    </item>
+    
+    <item>
+      <title>foldRight</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/foldRight/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/foldRight/</guid>
+      <description>foldRight trait Collection[A] { def foldRight[B](z: B)(op: (A, B) =&amp;gt; B): B }   foldRight aplica, de derecha a izquierda, el operador binario op a cada elemento y al resultado del anterior op. La primera vez que op es aplicado es alimentado con el valor inicial z.
+ En colecciones vacías, esta función ni siquiera aplica op y el valor inicial z es devuelto directamente.
+ </description>
+    </item>
+    
+    <item>
+      <title>forall</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/forall/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/forall/</guid>
+      <description>forall trait Collection[A] { def forall(p: (A) =&amp;gt; Boolean): Boolean }   forall comprueba si todos los elementos de esta colección satisfacen el predicado p, devolviendo false si p no es satisfecho para al menos un elemento.
+ En colecciones vacías, no existe ningún elemento que no satisfaga p, por lo que esta función devuelve true.
+ </description>
+    </item>
+    
+    <item>
+      <title>foreach</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/foreach/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/foreach/</guid>
+      <description>foreach trait Collection[A] { def foreach(f: (A) =&amp;gt; Unit): Unit }   foreach aplica la función f a cada elemento de esta colección, descartando cualquier resultado. Esta función devuelve ().
+ </description>
+    </item>
+    
+    <item>
+      <title>fromFunction</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/fromFunction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/fromFunction/</guid>
+      <description>fromFunction object PartialFunction { def fromFunction[X, Y](f: (X) =&amp;gt; Y): PartialFunction[X, Y] }   fromFunction crea una función parcial anónima a partir de una función total.
+ </description>
+    </item>
+    
+    <item>
+      <title>getOrElse (Map)</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/getOrElse_Map/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/getOrElse_Map/</guid>
+      <description>getOrElse Para la función getOrElse de Option ir aquí.
+trait Map[K, V] { def getOrElse(k: K, v: =&amp;gt; V): V }   getOrElse devuelve el valor asociado a la clave k en este Map.
+ Si este Map no contiene la clave k entonces esta función devuelve el resultado de la computación v.
+ </description>
+    </item>
+    
+    <item>
+      <title>getOrElse (Option)</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/getOrElse_Option/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/getOrElse_Option/</guid>
+      <description>getOrElse Para la función getOrElse de Map ir aquí.
+trait Option[A] { def getOrElse[B &amp;gt;: A](b: =&amp;gt; B): B }   getOrElse devuelve el valor envuelto cuando este Option es Some.
+ Cuando este Option es None esta función devuelve el valor predeterminado b.
+ </description>
+    </item>
+    
+    <item>
+      <title>groupBy</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/groupBy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/groupBy/</guid>
+      <description>groupBy trait Collection[A] { def groupBy[K](f: (A) =&amp;gt; K): Map[K, Collection[A]] }   groupBy crea un Map agrupando los elementos bajo la clave que emiten cuando se les es aplicada la función f.
+ </description>
+    </item>
+    
+    <item>
+      <title>grouped</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/grouped/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/grouped/</guid>
+      <description>grouped trait Collection[A] { def grouped(m: Int): Iterator[Collection[A]] }   grouped parte esta colección en subcolecciones más pequeñas de, como mucho, m elementos y devuelve un Iterator para iterarlas.
+ </description>
+    </item>
+    
+    <item>
+      <title>groupMap</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/groupMap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/groupMap/</guid>
+      <description>groupMap trait Collection[A] { def groupMap[K, B](f: (A) =&amp;gt; K)(g: (A) =&amp;gt; B): Map[K, Collection[B]] }   groupMap crea un Map agrupando los elementos bajo la clave que emiten cuando se les es aplicada la función f y luego son transformados mediante la función g.
+ </description>
+    </item>
+    
+    <item>
+      <title>groupMapReduce</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/groupMapReduce/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/groupMapReduce/</guid>
+      <description>groupMapReduce trait Collection[A] { def groupMapReduce[K, B](k: (A) =&amp;gt; K)(f: (A) =&amp;gt; B)(op: (B, B) =&amp;gt; B): Map[K, B] }   groupMapReduce crea un Map agrupando los elementos bajo la clave emitida por la función k cuando se les es aplicada, aplicando la función de transformación f a los elementos agrupados y finalmente reduciendo los elementos transformados utilizando el operador binario asociativo op.
+ </description>
+    </item>
+    
+    <item>
+      <title>head</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/head/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/head/</guid>
+      <description>head trait Collection[A] { def head: A }   head devuelve el primer elemento de esta colección.
+ En colecciones vacías esta colección lanza una excepción NoSuchElementException.
+ </description>
+    </item>
+    
+    <item>
+      <title>headOption</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/headOption/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/headOption/</guid>
+      <description>headOption trait Collection[A] { def headOption: Option[A] }   headOption devuelve el primer elemento de esta colección, envuelto con Some.
+ En colecciones vacías donde no hay primer elemento esta función devuelve None.
+ </description>
+    </item>
+    
+    <item>
+      <title>indexOf</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/indexOf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/indexOf/</guid>
+      <description>indexOf trait Collection[A] { def indexOf(a: A): Int def indexOf(a: A, j: Int): Int }   indexOf devuelve el índice del primer elemento que es igual (==) al valor a.
+ La búsqueda puede empezar en un desplazamiento j.
+ Si ningún elemento es igual a a entonces esta función devuelve -1.
+ </description>
+    </item>
+    
+    <item>
+      <title>indexOfSlice</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/indexOfSlice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/indexOfSlice/</guid>
+      <description>indexOfSlice trait Collection[A] { def indexOfSlice(as: Collection[A]): Int def indexOfSlice(as: Collection[A], j: Int): Int }   indexOfSlice devuelve el índice del primer elemento donde la colección as puede ser encontrada como subcolección.
+ La búsqueda puede empezar en un desplazamiento j.
+ Si as no puede ser encontrado como subcolección de esta colección entonces esta función devuelve -1.
+ </description>
+    </item>
+    
+    <item>
+      <title>indexWhere</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/indexWhere/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/indexWhere/</guid>
+      <description>indexWhere trait Collection[A] { def indexWhere(p: (A) =&amp;gt; Boolean): Int def indexWhere(p: (A) =&amp;gt; Boolean: j: Int): Int }   indexWhere devuelve el índice del primer elemento que satisface el predicado p.
+ La búsqueda puede empezar en un desplazamiento j.
+ Si ningún elemento satisface p entonces esta función devuelve -1.
+ </description>
+    </item>
+    
+    <item>
+      <title>indices</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/indices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/indices/</guid>
+      <description>indices trait Collection[A] { def indices: Range }   indices crea un Range con los índices usados por esta colección.
+ </description>
+    </item>
+    
+    <item>
+      <title>init</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/init/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/init/</guid>
+      <description>init trait Collection[A] { def init: Collection[A] }   init devuelve todos los elementos de esta colección excepto el último.
+ En colecciones vacías esta colección lanza una excepción UnsupportedOperationException.
+ </description>
+    </item>
+    
+    <item>
+      <title>inits</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/inits/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/inits/</guid>
+      <description>inits trait Collection[A] { def inits: Iterator[Collection[A]] }   inits computa todos los posibles prefijos de esta colección y devuelve un Iterator para iterarlos.
+ </description>
+    </item>
+    
+    <item>
+      <title>intersect</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/intersect/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/intersect/</guid>
+      <description>intersect trait Collection[A] { def intersect(as: Collection[A]): Collection[A] }   intersect computa la intersección multiconjunto entre esta colección y la colección as.
+ </description>
+    </item>
+    
+    <item>
+      <title>isDefinedAt (Map)</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/isDefinedAt_Map/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/isDefinedAt_Map/</guid>
+      <description>isDefinedAt Para la función isDefinedAt de Seq ir aquí.
+trait Map[K, V] { def isDefinedAt(k: K): Boolean }   isDefinedAt comprueba si este Map contiene algún elemento cuya clave es k, devolviendo true en ese caso.
+ Cuando no hay ningún elemento definido con clave k esta función devuelve false.
+ </description>
+    </item>
+    
+    <item>
+      <title>isDefinedAt (Seq)</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/isDefinedAt_Seq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/isDefinedAt_Seq/</guid>
+      <description>isDefinedAt Para la función isDefinedAt de Map ir aquí.
+trait Seq[A] { def isDefinedAt(i: Int): Boolean }   isDefinedAt comprueba si un Seq contiene algún elemento en un índice i dado, devolviendo true en ese caso.
+ Cuando no hay ningún elemento definido en el índice i esta función devuelve false.
+ </description>
+    </item>
+    
+    <item>
+      <title>isEmpty</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/isEmpty/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/isEmpty/</guid>
+      <description>isEmpty trait Collection[A] { def isEmpty: Boolean }   isEmpty comprueba si esta colección no tiene elementos y devuelve false en otro caso.
+ Esta función sólo devuelve true para colecciones vacías.
+ </description>
+    </item>
+    
+    <item>
+      <title>isTraversableAgain</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/isTraversableAgain/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/isTraversableAgain/</guid>
+      <description>isTraversableAgain trait Collection[A] { def isTraversableAgain: Boolean }   isTraversableAgain comprueba si esta colección puede ser recorrida una y otra vez desde el principio y devuelve true en ese caso.
+ Si la colección no puede ser recorrida múltiples veces entonces esta función devuelve false.
+ </description>
+    </item>
+    
+    <item>
+      <title>keys</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/keys/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/keys/</guid>
+      <description>keys trait Map[K, V] { def keys: Iterable[V] }   keys crea un Iterator para iterar las claves de este Map.
+ </description>
+    </item>
+    
+    <item>
+      <title>last</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/last/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/last/</guid>
+      <description>last trait Collection[A] { def last: A }   last devuelve el último elemento de esta colección.
+ En colecciones vacías esta función lanza una excepción NoSuchElementException.
+ </description>
+    </item>
+    
+    <item>
+      <title>lastIndexOf</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/lastIndexOf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/lastIndexOf/</guid>
+      <description>lastIndexOf trait Collection[A] { def lastIndexOf(a: A): Int def lastIndexOf(a: A, j: Int): Int }   lastIndexOf devuelve el índice del último elemento que es igual (==) al valor a.
+ La búsqueda puede empezar en un desplazamiento j.
+ Si ningún elemento es igual a a entonces esta función devuelve -1.
+ </description>
+    </item>
+    
+    <item>
+      <title>lastIndexOfSlice</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/lastIndexOfSlice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/lastIndexOfSlice/</guid>
+      <description>lastIndexOfSlice trait Collection[A] { def lastIndexOfSlice(as: Collection[A]): Int def lastIndexOfSlice(as: Collection[A], j: Int): Int }   lastIndexOfSlice devuelve el índice del último elemento donde la colección as puede ser encontrada como subcolección.
+ La búsqueda puede empezar en un desplazamiento j.
+ Si as no puede ser encontrado como subcolección de esta colección entonces esta función devuelve -1.
+ </description>
+    </item>
+    
+    <item>
+      <title>lastIndexWhere</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/lastIndexWhere/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/lastIndexWhere/</guid>
+      <description>lastIndexWhere trait Collection[A] { def lastIndexWhere(p: (A) =&amp;gt; Boolean): Int def lastIndexWhere(p: (A) =&amp;gt; Boolean: j: Int): Int }   lastIndexWhere devuelve el índice del último elemento que satisface el predicado p.
+ La búsqueda puede empezar en un desplazamiento j.
+ Si ningún elemento satisface p entonces esta función devuelve -1.
+ </description>
+    </item>
+    
+    <item>
+      <title>lastOption</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/lastOption/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/lastOption/</guid>
+      <description>lastOption trait Collection[A] { def lastOption: Option[A] }   lastOption devuelve el último elemento de esta colección, envuelto con Some.
+ En colecciones vacías donde no hay último elemento esta colección devuelve None.
+ </description>
+    </item>
+    
+    <item>
+      <title>length</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/length/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/length/</guid>
+      <description>length trait Collection[A] { def length: Int }   length devuelve cuántos elementos tiene esta colección.
+ </description>
+    </item>
+    
+    <item>
+      <title>lift</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/lift/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/lift/</guid>
+      <description>lift trait PartialFunction[X, Y] { def lift: (X) =&amp;gt; Option[Y] }   lift crea una función anónima que envuelve con Some el valor devuelto por esta función parcial si está definida para el valor de entrada dado.
+creates an anonymous function that wraps with Some the value returned by this partial function if it&amp;rsquo;s defined for the given input value.
+ Para aquellos valores de entrada para los cuales esta función parcial no esté definida, la función anónima devolverá None.</description>
+    </item>
+    
+    <item>
+      <title>map</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/map/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/map/</guid>
+      <description>map trait Collection[A] { def map[B](f: (A) =&amp;gt; B): Collection[B] }   map crea una colección utilizando los resultados obtenidos de aplicar la función f a cada elemento de esta colección.
+ </description>
+    </item>
+    
+    <item>
+      <title>mapConserve</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/mapConserve/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/mapConserve/</guid>
+      <description>mapConserve trait List[A] { def mapConserve[B &amp;gt;: A](f: (A) =&amp;gt; B): List[B] }   mapConserve aplica la función f a cada elemento de esta List y la devuelve intacta si todos y cada uno de los elementos transformados son iguales (en términos de eq) al elemento a partir del cual fueron obtenidos.
+ Si al menos un elemento transformado no es igual (en términos de eq) al elemento original entonces esta función crea una nueva List compuesta por los resultados transformados.</description>
+    </item>
+    
+    <item>
+      <title>mapValues</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/mapValues/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/mapValues/</guid>
+      <description>mapValues trait Map[K, V] { def mapValues[W](f: (V) =&amp;gt; W): Map[K, W] }   mapValues crea un Map con las mismas claves de este Mappero transformando el valor de cada clave con la funciónf`.
+ </description>
+    </item>
+    
+    <item>
+      <title>max</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/max/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/max/</guid>
+      <description>max trait Collection[A] { def max: A }   max devuelve el mayor valor de esta colección.
+ En colecciones vacías esta función lanza una excepción UnsupportedOperationException.
+ </description>
+    </item>
+    
+    <item>
+      <title>maxBy</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/maxBy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/maxBy/</guid>
+      <description>maxBy trait Collection[A] { def maxBy[W](f: (A) =&amp;gt; W): A }   maxBy aplica f a cada elemento y devuelve el elemento que emitió el mayor valor.
+ En colecciones vacías esta función lanza una excepción UnsupportedOperationException.
+ </description>
+    </item>
+    
+    <item>
+      <title>maxByOption</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/maxByOption/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/maxByOption/</guid>
+      <description>maxByOption trait Collection[A] { def maxByOption[W](f: (A) =&amp;gt; W): A }   maxByOption aplica f a cada elemento y devuelve el elemento que emitió el mayor valor envuelto con Some.
+ En colecciones vacías esta functión devuelve None.
+ </description>
+    </item>
+    
+    <item>
+      <title>maxOption</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/maxOption/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/maxOption/</guid>
+      <description>maxOption trait Collection[A] { def maxOption: Option[A] }   maxOption devuelve el mayor valor de esta colección, envuelto con Some.
+ En colecciones vacías esta función devuelve None.
+ </description>
+    </item>
+    
+    <item>
+      <title>min</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/min/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/min/</guid>
+      <description>min trait Collection[A] { def min: A }   min devuelve el menor valor de esta colección.
+ En colecciones vacías esta función lanza una excepción UnsupportedOperationException.
+ </description>
+    </item>
+    
+    <item>
+      <title>minBy</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/minBy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/minBy/</guid>
+      <description>minBy trait Collection[A] { def minBy[W](f: (A) =&amp;gt; W): A }   minBy aplica f a cada elemento y devuelve el elemento que emitió el menor valor.
+ En colecciones vacías esta función lanza una excepción UnsupportedOperationException.
+ </description>
+    </item>
+    
+    <item>
+      <title>minByOption</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/minByOption/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/minByOption/</guid>
+      <description>minByOption trait Collection[A] { def minByOption[W](f: (A) =&amp;gt; W): A }   minByOption aplica f a cada elemento y devuelve el elemento que emitió el menor valor envuelto con Some.
+ En colecciones vacías esta functión devuelve None.
+ </description>
+    </item>
+    
+    <item>
+      <title>minOption</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/minOption/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/minOption/</guid>
+      <description>minOption trait Collection[A] { def minOption: Option[A] }   minOption devuelve el menor valor de esta colección, envuelto con Some.
+ En colecciones vacías esta función devuelve None.
+ </description>
+    </item>
+    
+    <item>
+      <title>mkString</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/mkString/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/mkString/</guid>
+      <description>mkString trait Collection[A] { def mkString: String def mkString(sep: String): String def mkString(start: String, sep: String, end: String): String }   mkString construye un String uniendo la representación textual de cada elemento de esta colección. Opcionalmente sep puede ser utilizado como pegamento de las partes mientras que start/end pueden ser utilizados como textos de inicio/fin, respectivamente.
+ </description>
+    </item>
+    
+    <item>
+      <title>nonEmpty</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/nonEmpty/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/nonEmpty/</guid>
+      <description>nonEmpty trait Collection[A] { def nonEmpty: Boolean }   nonEmpty devuelve true cuando esta colección tiene al menos un elemento.
+ En colecciones vacías esta función devuelve false.
+ </description>
+    </item>
+    
+    <item>
+      <title>orElse</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/orElse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/orElse/</guid>
+      <description>orElse trait PartialFunction[X, Y] { def orElse(g: PartialFunction[X, Y]): PartialFunction[X, Y] }   orElse crea una función parcial anónima que devuelve el valor devuelto por esta función parcial.
+ Para aquellos valores de entrada para los que esta función parcial no esté definida, la función parcial anónima devolverá el valor devuelto por g.
+ Si ni esta función ni g están definidas para el valor de entrada entonces la función anónima lanzará una excepción MatchError.</description>
+    </item>
+    
+    <item>
+      <title>padTo</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/padTo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/padTo/</guid>
+      <description>padTo trait Collection[A] { def padTo(m: Int, a: A): Collection[A] }   padTo crea una copia de esta colección y la rellena a la derecha con el valor a hasta alcanzar cierta longitud m.
+ </description>
+    </item>
+    
+    <item>
+      <title>partition</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/partition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/partition/</guid>
+      <description>partition trait Collection[A] { def partition(p: (A) =&amp;gt; Boolean): (Collection[A], Collection[A]) }   partition crea dos colecciones: una conteniendo aquellos elementos que satisfacen el predicado p y aquellos que no, y las devuelve en una Tuple2.
+ </description>
+    </item>
+    
+    <item>
+      <title>partitionMap</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/partitionMap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/partitionMap/</guid>
+      <description>partitionMap trait Collection[A] { def partitionMap[B, C](f: (A) =&amp;gt; Either[B, C]): (Collection[B], Collection[C]) }   partitionMap crea dos colecciones aplicando la función f a cada elemento de la colección y clasificando los valores transformados dependiendo de si fueron envueltos con Left o Right.
+ </description>
+    </item>
+    
+    <item>
+      <title>patch</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/patch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/patch/</guid>
+      <description>patch trait Collection[A] { def patch(j: Int, bs: Collection[A], m: Int): Collection[A] }   patch crea una copia de esta colección pero reemplaza los m elementos empezando en el índice j por la colección bs.
+ </description>
+    </item>
+    
+    <item>
+      <title>permutations</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/permutations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/permutations/</guid>
+      <description>permutations trait Collection[A] { def permutations: Iterator[Collection[A]] }   permutations computa todas las posibles permutaciones de esta colección y devuelve un Iterator para iterarlas.
+ </description>
+    </item>
+    
+    <item>
+      <title>prefixLength</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/prefixLength/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/prefixLength/</guid>
+      <description>prefixLength trait Collection[A] { def prefixLength(p: (A) =&amp;gt; Boolean): Int }   prefixLength devuelve la longitud del mayor prefijo de elementos que satisfacen el predicado p.
+ </description>
+    </item>
+    
+    <item>
+      <title>prepended</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/prepended/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/prepended/</guid>
+      <description>prepended trait Collection[A] { def prepended[B &amp;gt;: A](b: B): Collection[B] def +:[B &amp;gt;: A](b: B): Collection[B] }   prepended crea una copia de esta colección añadiendo el elemento b al principio.
+ </description>
+    </item>
+    
+    <item>
+      <title>prependedAll</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/prependedAll/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/prependedAll/</guid>
+      <description>prependedAll trait Collection[A] { def prependedAll[B &amp;gt;: A](bs: Collection[B]): Collection[B] def ++:[B &amp;gt;: A](bs: Collection[B]): Collection[B] }   prependedAll crea una copia de esta colección añadiendo la colección bs al principio.
+ </description>
+    </item>
+    
+    <item>
+      <title>product</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/product/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/product/</guid>
+      <description>product trait Collection[A] { def product: A }   product computa el producto de los elementos de esta colección.
+ En colecciones vacías esta función devuelve el elemento neutro para la operación producto del tipo A.
+ </description>
+    </item>
+    
+    <item>
+      <title>range</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/range/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/range/</guid>
+      <description>range object Collection { def range[A](start: A, end: A): Collection[A] def range[A](start: A, end: A, step: A): Collection[A] }   range crea una colección utilizando como elementos la secuencia de valores que empieza por start y termina antes de alcanzar end.
+ El incremento utilizado para calcular el siguiente valor en la secuencia puede ser especificado con step.
+ </description>
+    </item>
+    
+    <item>
+      <title>reduce</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/reduce/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/reduce/</guid>
+      <description>reduce trait Collection[A] { def reduce(op: (A, A) =&amp;gt; A): A }   reduce aplica el operador binario op a pares de elementos de esta colección hasta que el resultado final es calculado.
+ En colecciones vacías esta función lanza una excepción UnsupportedOperationException.
+ </description>
+    </item>
+    
+    <item>
+      <title>reduceLeft</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/reduceLeft/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/reduceLeft/</guid>
+      <description>reduceLeft trait Collection[A] { def reduceLeft[B :&amp;gt; A](op: (B, A) =&amp;gt; B): B }   reduceLeft aplica, de izquierda a derecha, el operador binario op a cada elemento y al resultado del anterior op. La primera vez que op es aplicado es alimentado con los dos primeros elementos.
+ En colecciones con un único elemento dicho elemento es devuelto y el operador binario op no es aplicado.
+ En colecciones vacías esta función lanza una excepción UnsupportedOperationException.</description>
+    </item>
+    
+    <item>
+      <title>reduceLeftOption</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/reduceLeftOption/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/reduceLeftOption/</guid>
+      <description>reduceLeftOption trait Collection[A] { def reduceLeftOption[B :&amp;gt; A](f: (B, A) =&amp;gt; B): Option[B] }   reduceLeftOption aplica, de izquierda a derecha, el operador binario op a cada elemento y al resultado del anterior op. La primera vez que op es aplicado es alimentado con los dos primeros elementos. El resultado final es envuelto con Some.
+ En colecciones vacías esta función devuelve None.
+ </description>
+    </item>
+    
+    <item>
+      <title>reduceOption</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/reduceOption/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/reduceOption/</guid>
+      <description>reduceOption trait Collection[A] { def reduceOption(op: (A, A) =&amp;gt; A): Option[A] }   reduceOption aplica el operador binario op a pares de elementos de esta colección hasta que el resultado final es calculado y devuelto envuelto con Some.
+ En colecciones vacías esta función devuelve None.
+ </description>
+    </item>
+    
+    <item>
+      <title>reduceRight</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/reduceRight/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/reduceRight/</guid>
+      <description>reduceRight trait Collection[A] { def reduceRight[B :&amp;gt; A](op: (A, B) =&amp;gt; B): B }   reduceLeft aplica, de derecha a izquierda, el operador binario op a cada elemento y al resultado del anterior op. La primera vez que op es aplicado es alimentado con los dos últimos elementos.
+ En colecciones con un único elemento dicho elemento es devuelto y el operador binario op no es aplicado.
+ En colecciones vacías esta función lanza una excepción UnsupportedOperationException.</description>
+    </item>
+    
+    <item>
+      <title>reduceRightOption</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/reduceRightOption/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/reduceRightOption/</guid>
+      <description>reduceRightOption trait Collection[A] { def reduceRightOption[B :&amp;gt; A](f: (A, B) =&amp;gt; B): Option[B] }   reduceRightOption aplica, de derecha a izquierda, el operador binario op a cada elemento y al resultado del anterior op. La primera vez que op es aplicado es alimentado con los dos últimos elementos. El resultado final es envuelto con Some.
+ En colecciones vacías esta función devuelve None.
+ </description>
+    </item>
+    
+    <item>
+      <title>reverse</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/reverse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/reverse/</guid>
+      <description>reverse trait Collection[A] { def reverse: Collection[A] }   reverse crea una colección invirtiendo el orden de los elementos.
+ </description>
+    </item>
+    
+    <item>
+      <title>reverseMap</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/reverseMap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/reverseMap/</guid>
+      <description>reverseMap trait Collection[A] { def reverseMap[B](f: (A) =&amp;gt; B): Collection[B] }   reverse crea una colección invirtiendo el orden y aplicando una función de transformación f a cada uno de los elementos.
+ </description>
+    </item>
+    
+    <item>
+      <title>runWith</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/runWith/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/runWith/</guid>
+      <description>runWith trait PartialFunction[X, Y] { def runWith[U](g: (Y) =&amp;gt; U): (X) =&amp;gt; Boolean }   runWith crea una función anónima que aplica esta función parcial y luego g a un valor de entrada, si esta función parcial está definida para dicho valor, y devuelve true.
+ Para aquellos valores para los que esta función parcial no está definida la función anónima devuelve false, sin ni siquiera aplicar la función g.</description>
+    </item>
+    
+    <item>
+      <title>sameElements</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/sameElements/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/sameElements/</guid>
+      <description>sameElements trait Collection[A] { def sameElements(as: Collection[A]): Boolean }   sameElements comprueba si esta colección tiene los mismos elementos en el mismo orden que la colección as, y devuelve true en ese caso.
+ Esta función devuelve false si al menos un elemento no coincide con su correspondiente elemento en as.
+ </description>
+    </item>
+    
+    <item>
+      <title>scanLeft</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/scanLeft/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/scanLeft/</guid>
+      <description>scanLeft trait Collection[A] { def scanLeft[B](z: B)(op: (B, A) =&amp;gt; B) }   scanLeft crea una colección con los resultados intermedios de aplicar el operador binario op a los elementos de esta colección, yendo de izquierda a derecha. La primera vez que op es aplicado es alimentado con el valor inicial z.
+ </description>
+    </item>
+    
+    <item>
+      <title>scanRight</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/scanRight/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/scanRight/</guid>
+      <description>scanRight trait Collection[A] { def scanRight[B](z: B)(op: (A, B) =&amp;gt; B) }   scanRight crea una colección con los resultados intermedios de aplicar el operador binario op a los elementos de esta colección, yendo de derecha a izquierda. La primera vez que op es aplicado es alimentado con el valor inicial z.
+ </description>
+    </item>
+    
+    <item>
+      <title>search</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/search/</guid>
+      <description>search trait Collection[A] { def search[B &amp;gt;: A](e: B): SearchResult def search[B &amp;gt;: A](e: B, i: Int, j: Int): SearchResult }   search busca en la colección el primer elemento que es igual (==) al elemento e y devuelve un Found conteniendo el índice donde se encontró.
+ Si e no puede ser encontrado en la colección entonces se devuelve un InsertionPoint conteniendo el índice que ocuparía el elemento en caso de ser añadido a la colección.</description>
+    </item>
+    
+    <item>
+      <title>segmentLength</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/segmentLength/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/segmentLength/</guid>
+      <description>segmentLength trait Collection[A] { def segmentLength(p: (A) =&amp;gt; Boolean, j: Int): Int }   segmentLength devuelve la longitud el mayor segmento de elementos empezando en j que satisfacen el predicado p.
+ </description>
+    </item>
+    
+    <item>
+      <title>size</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/size/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/size/</guid>
+      <description>size trait Collection[A] { def size: Int }   size devuelve cuántos elementos tiene esta colección.
+ </description>
+    </item>
+    
+    <item>
+      <title>slice</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/slice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/slice/</guid>
+      <description>slice trait Collection[A] { def slice(i: Int, j: Int): Collection[A] }   slice crea una colección con la secuencia de elementos comprendida entre el índice i hasta el índice j.
+ </description>
+    </item>
+    
+    <item>
+      <title>sliding</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/sliding/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/sliding/</guid>
+      <description>sliding trait Collection[A] { def sliding(m: Int, s: Int): Iterator[Collection[A]] }   sliding computa todas las subcolecciones de m elementos que empiezan cada s elementos y devuelve un Iterator para iterarlas.
+ </description>
+    </item>
+    
+    <item>
+      <title>sortBy</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/sortBy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/sortBy/</guid>
+      <description>sortBy trait Collection[A] { def sortBy[W](f: (A) =&amp;gt; W): Collection[A] }   sortBy crea una colección con los elementos ordenados según los resultados emitidos por f tras ser aplicada a cada elemento.
+ </description>
+    </item>
+    
+    <item>
+      <title>sorted</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/sorted/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/sorted/</guid>
+      <description>sorted trait Collection[A] { def sorted: Collection[A] }   sorted crea una colección con los elementos ordenados.
+ </description>
+    </item>
+    
+    <item>
+      <title>sortWith</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/sortWith/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/sortWith/</guid>
+      <description>sortWith trait Collection[A] { def sortWith(lt: (A, A) =&amp;gt; Boolean): Collection[A] }   sortWith crea una colección con los elementos ordenados utilizando una función de comparación lt la cual debe devolver true cuando el primer argumento es menor que el segundo y false en otro caso.
+ </description>
+    </item>
+    
+    <item>
+      <title>span</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/span/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/span/</guid>
+      <description>span trait Collection[A] { def span(p: (A) =&amp;gt; Boolean): (Collection[A], Collection[A]) }   span crea una Tuple2 con dos colecciones: una conteniendo el mayor prefijo de elementos que satisface el predicado p y la otra conteniendo el resto de elementos.
+ </description>
+    </item>
+    
+    <item>
+      <title>splitAt</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/splitAt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/splitAt/</guid>
+      <description>splitAt trait Collection[A] { def splitAt(i: Int): (Collection[A], Collection[A]) }   splitAt crea una Tuple2 con dos colecciones: la primera conteniendo todos los elementos cuyo índice es menor a i y la otra conteniendo el resto de elementos.
+ </description>
+    </item>
+    
+    <item>
+      <title>startsWith</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/startsWith/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/startsWith/</guid>
+      <description>startsWith trait Collection[A] { def startsWith(as: Collection[A]): Boolean def startsWith(as: Collection[A], j: Int): Boolean }   startsWith comprueba si la colección as es un prefijo de esta colección, devolviendo true en ese caso.
+ La búsqueda puede empezar en un desplazamiento j.
+ Si as no es un prefijo de esta colección entonces esta función devuelve false.
+ </description>
+    </item>
+    
+    <item>
+      <title>sum</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/sum/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/sum/</guid>
+      <description>sum trait Collection[A] { def sum: A }   sum computa la suma de los elementos de esta colección.
+ En colecciones vacías esta función devuelve el elemento neutro para la operación suma del tipo A.
+ </description>
+    </item>
+    
+    <item>
+      <title>tabulate</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/tabulate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/tabulate/</guid>
+      <description>tabulate object Collection { def tabulate[A](n1: Int, ..., nm: Int)(f: (Int, ..., Int): =&amp;gt; A) : Collection[ ... Collection[A] ... ] }   tabulate crea una colección n-dimensional conteniendo el resultado de la función f aplicada sobre un rango de enteros.
+ </description>
+    </item>
+    
+    <item>
+      <title>tail</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/tail/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/tail/</guid>
+      <description>tail trait Collection[A] { def tail: Collection[A] }   tail devuelve todos los elementos de esta colección excepto el primero.
+ En colecciones vacías esta función lanza una excepción NoSuchElementException.
+ </description>
+    </item>
+    
+    <item>
+      <title>tails</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/tails/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/tails/</guid>
+      <description>tails trait Collection[A] { def tails: Iterator[Collection[A]] }   tails computa todos los posibles sufijos de esta colección y devuelve un Iterator para iterarlos.
+ </description>
+    </item>
+    
+    <item>
+      <title>take</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/take/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/take/</guid>
+      <description>take trait Collection[A] { def take(i: Int): Collection[A] }   take crea una colección manteniendo los primeros i elementos de esta colección, descartando el resto.
+ </description>
+    </item>
+    
+    <item>
+      <title>takeRight</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/takeRight/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/takeRight/</guid>
+      <description>takeRight trait Collection[A] { def takeRight(i: Int): Collection[A] }   takeRight crea una colección manteniendo los últimos i elementos de esta colección, descartando el resto.
+ </description>
+    </item>
+    
+    <item>
+      <title>takeWhile</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/takeWhile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/takeWhile/</guid>
+      <description>takeWhile trait Collection[A] { def takeWhile(p: (A) =&amp;gt; Boolean): Collection[A] }   takeWhile crea una colección manteniendo el prefijo de mayor longitud de elementos que satisfacen el predicado p, descartando el resto.
+ </description>
+    </item>
+    
+    <item>
+      <title>transpose</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/transpose/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/transpose/</guid>
+      <description>transpose trait Collection[A] { def transpose[B]: Collection[Collection[B]] }   transpose toma esta collection de m x n elementos y crea una nueva colección de n x m elementos.
+ Si no todas las subcolecciones son del mismo tamaño entonces esta función lanza una excepción IllegalArgumentException.
+ </description>
+    </item>
+    
+    <item>
+      <title>tupled</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/tupled/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/tupled/</guid>
+      <description>tupled object Function { def tupled[X1, ..., Xn, Y](f: (X1, ..., Xn) =&amp;gt; Y): ((X1, ..., Xn)) =&amp;gt; Y }   tupled crea una función anónima equivalente que acepta una n-tupla como único parámetro y cuyos componentes corresponden a los parámetros de esta función.
+ </description>
+    </item>
+    
+    <item>
+      <title>uncurried</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/uncurried/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/uncurried/</guid>
+      <description>uncurried object Function { def uncurried[X1, ..., Xn, Y](f: (X1) =&amp;gt; ... =&amp;gt; (Xn) =&amp;gt; Y): (X1, ..., Xn) =&amp;gt; Y }   uncurried crea una función anónima equivalente que acepta en un único paso los parámetros sucesivamente aceptados por la secuencia de funciones de orden superior empezando por la función f.
+ </description>
+    </item>
+    
+    <item>
+      <title>unfold</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/unfold/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/unfold/</guid>
+      <description>unfold object Collection { def unfold[A, S](s: S)(f: (S) =&amp;gt; Option[(A, S)]): Collection[A] }   unfold crea una colección tomando cada par de valores devueltos por la función f tanto para obtener el elemento actual como para calcular el siguiente, mientras que la función los devuelva envueltos con Some.
+Deja de construir la colección tan pronto como f devuelva None.
+La primera vez que f es aplicada es alimentada con el valor inicial s.</description>
+    </item>
+    
+    <item>
+      <title>union</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/union/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/union/</guid>
+      <description>union trait Collection[A] { def union(as: Collection[A]): Collection[A] }   union computa la unión multiconjunto entre esta colección y la colección as.
+ </description>
+    </item>
+    
+    <item>
+      <title>unlift</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/unlift/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/unlift/</guid>
+      <description>unlift object Function { def unlift[X, Y](f: (X) =&amp;gt; Option[Y]): PartialFunction[X, Y] }   unlift crea una función parcial anónima que devuelve el valor extraido de Some devuelto por la función f.
+ Si f devuelve None entonces la función anónima lanzará una excepción MatchError.
+ </description>
+    </item>
+    
+    <item>
+      <title>untupled</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/untupled/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/untupled/</guid>
+      <description>untupled object Function { def untupled[X1, ..., Xn, Y](f: ((X1, ..., Xn)) =&amp;gt; Y): (X1, ..., Xn) =&amp;gt; Y }   untupled crea una función anónima equivalente que acepta n parámetros correspondientes a cada uno de los componentes de la n-tupla aceptada como único parámetro por la función f.
+ </description>
+    </item>
+    
+    <item>
+      <title>unzip</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/unzip/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/unzip/</guid>
+      <description>unzip trait Collection[AB] { def unzip[A, B]: (Collection[A], Collection[B]) }   unzip crea una Tuple2 con dos colecciones: la primera conteniendo el primer componente de cada pareja de elementos y la segunda conteniendo los restantes.
+ </description>
+    </item>
+    
+    <item>
+      <title>unzip3</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/unzip3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/unzip3/</guid>
+      <description>unzip3 trait Collection[AB] { def unzip[A, B]: (Collection[A], Collection[B]) }   unzip crea una Tuple3 con tres colecciones: la primera conteniendo el primer componente de cada trío de elementos, la segunda conteniendo el segundo componente y la tercera conteniendo los restantes.
+ </description>
+    </item>
+    
+    <item>
+      <title>updated</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/updated/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/updated/</guid>
+      <description>updated trait Collection[A] { def updated(i: Int, a: A): Collection[A] }   updated crea una colección copiando todos los elementos de esta colección pero reemplazando el i-ésimo elemento por el valor a.
+ </description>
+    </item>
+    
+    <item>
+      <title>values</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/values/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/values/</guid>
+      <description>values trait Map[K, V] { def values: Iterable[V] }   values crea un Iterator para iterar los valores de este Map.
+ </description>
+    </item>
+    
+    <item>
+      <title>withDefault</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/withDefault/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/withDefault/</guid>
+      <description>withDefault trait Map[K, V] { def withDefault(f: (K) =&amp;gt; V): Map[K, V] }   withDefault crea un Map con los mismos pares clave-valor de este Map pero proporcionando un valor calculado en base a aquellas claves no encontradas.
+ </description>
+    </item>
+    
+    <item>
+      <title>withDefaultValue</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/withDefaultValue/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/withDefaultValue/</guid>
+      <description>withDefaultValue trait Map[K, V] { def withDefaultValue(v: V): Map[K, V] }   withDefaultValue crea un Map con los mismos pares clave-valor de este Map pero proporcionando un valor predeterminado para aquellas claves no encontradas.
+ </description>
+    </item>
+    
+    <item>
+      <title>zip</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/zip/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/zip/</guid>
+      <description>zip trait Collection[A] { def zip[B](bs: Collection[B]): Collection[(A, B)] }   zip crea una colección emparejando cada elemento de esta colección con el elemento que ocupa el mismo índice en bs, descartando aquellos elementos que no tengan pareja.
+ </description>
+    </item>
+    
+    <item>
+      <title>zipAll</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/zipAll/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/zipAll/</guid>
+      <description>zipAll trait Collection[A] { def zipAll[B](bs: Collection[B], a: A, b: B): Collection[(A, B)] }   zipAll crea una colección emparejando cada elemento de esta colección con el elemento que ocupa el mismo índice en bs, proporcionando valores predeterminados a o b para aquellos elementos que no tengan pareja.
+ </description>
+    </item>
+    
+    <item>
+      <title>zipWithIndex</title>
+      <link>https://superruzafa.github.io/visual-scala-reference/es/zipWithIndex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://superruzafa.github.io/visual-scala-reference/es/zipWithIndex/</guid>
+      <description>zipWithIndex trait Collection[A] { def zipWithIndex: Collection[(A, Int)] }   zipWithIndex crea una colección emparejando cada elemento con su índice.
+ </description>
+    </item>
+    
+  </channel>
+</rss>

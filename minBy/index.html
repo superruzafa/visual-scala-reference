@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <title>minBy - Visual Scala Reference</title>
+        <meta name="description" content="Scala minBy function. Graphical representation of the Scala&#39;s minBy function">
+        <meta name="keywords" content="minBy function, scala minBy function">
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#dc322f">
+        <meta property="og:title" content="minBy">
+        <meta property="og:site_name" content="Visual Scala Reference">
+        <meta property="og:url" content="https://superruzafa.github.io/visual-scala-reference/minBy/">
+        <meta name="robots" content="all">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        
+        
+        <link rel="stylesheet" href="https://superruzafa.github.io/visual-scala-reference/scss/main.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="https://superruzafa.github.io/visual-scala-reference//scripts/search.js"></script>
+
+        
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-390889-8"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-390889-8');
+</script>
+
+
+        <link rel="shortcut icon" href="https://superruzafa.github.io/visual-scala-reference//images/scala-logo-16x16.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="https://superruzafa.github.io/visual-scala-reference//images/scala-logo-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="https://superruzafa.github.io/visual-scala-reference//images/scala-logo-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="https://superruzafa.github.io/visual-scala-reference//images/scala-logo-144x144.png" type="image/png" />
+        
+    </head>
+    <body>
+<header class="header">
+  <div class="wrapper">
+    <div class="container-fluid">
+      <a class="logo" href="https://superruzafa.github.io/visual-scala-reference//">
+        <span>Visual Scala Reference</span>
+      </a>
+      <div class="searchbox">
+        <input id="searchbox-input" class="searchbox__input" autocomplete="false">
+        <ul id="searchbox-results" class="searchbox__results">
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+<template id="search-result">
+  <li class="searchresult">
+    <a class="searchresult__link"></a>
+  </li>
+</template>
+<script>
+    const functions = [
+{ "name": "", "url": "/visual-scala-reference/contributors/" },
+{ "name": "aggregate", "url": "/visual-scala-reference/aggregate/" },
+{ "name": "andThen", "url": "/visual-scala-reference/andThen/" },
+{ "name": "appended", "url": "/visual-scala-reference/appended/" },
+{ "name": "appendedAll", "url": "/visual-scala-reference/appendedAll/" },
+{ "name": "chain", "url": "/visual-scala-reference/chain/" },
+{ "name": "collect", "url": "/visual-scala-reference/collect/" },
+{ "name": "collectFirst", "url": "/visual-scala-reference/collectFirst/" },
+{ "name": "combinations", "url": "/visual-scala-reference/combinations/" },
+{ "name": "compose", "url": "/visual-scala-reference/compose/" },
+{ "name": "concat", "url": "/visual-scala-reference/concat/" },
+{ "name": "cond", "url": "/visual-scala-reference/cond/" },
+{ "name": "condOpt", "url": "/visual-scala-reference/condOpt/" },
+{ "name": "const", "url": "/visual-scala-reference/const/" },
+{ "name": "contains", "url": "/visual-scala-reference/contains/" },
+{ "name": "containsSlice", "url": "/visual-scala-reference/containsSlice/" },
+{ "name": "copyToArray", "url": "/visual-scala-reference/copyToArray/" },
+{ "name": "corresponds", "url": "/visual-scala-reference/corresponds/" },
+{ "name": "count", "url": "/visual-scala-reference/count/" },
+{ "name": "curried", "url": "/visual-scala-reference/curried/" },
+{ "name": "diff", "url": "/visual-scala-reference/diff/" },
+{ "name": "distinct", "url": "/visual-scala-reference/distinct/" },
+{ "name": "distinctBy", "url": "/visual-scala-reference/distinctBy/" },
+{ "name": "drop", "url": "/visual-scala-reference/drop/" },
+{ "name": "dropRight", "url": "/visual-scala-reference/dropRight/" },
+{ "name": "dropWhile", "url": "/visual-scala-reference/dropWhile/" },
+{ "name": "empty (collections)", "url": "/visual-scala-reference/empty_collections/" },
+{ "name": "empty (PartialFunction)", "url": "/visual-scala-reference/empty_PartialFunction/" },
+{ "name": "endsWith", "url": "/visual-scala-reference/endsWith/" },
+{ "name": "exists", "url": "/visual-scala-reference/exists/" },
+{ "name": "fill", "url": "/visual-scala-reference/fill/" },
+{ "name": "filter", "url": "/visual-scala-reference/filter/" },
+{ "name": "filterKeys", "url": "/visual-scala-reference/filterKeys/" },
+{ "name": "filterNot", "url": "/visual-scala-reference/filterNot/" },
+{ "name": "find", "url": "/visual-scala-reference/find/" },
+{ "name": "findLast", "url": "/visual-scala-reference/findLast/" },
+{ "name": "flatMap", "url": "/visual-scala-reference/flatMap/" },
+{ "name": "flatten", "url": "/visual-scala-reference/flatten/" },
+{ "name": "fold", "url": "/visual-scala-reference/fold/" },
+{ "name": "foldLeft", "url": "/visual-scala-reference/foldLeft/" },
+{ "name": "foldRight", "url": "/visual-scala-reference/foldRight/" },
+{ "name": "forall", "url": "/visual-scala-reference/forall/" },
+{ "name": "foreach", "url": "/visual-scala-reference/foreach/" },
+{ "name": "fromFunction", "url": "/visual-scala-reference/fromFunction/" },
+{ "name": "getOrElse (Map)", "url": "/visual-scala-reference/getOrElse_Map/" },
+{ "name": "getOrElse (Option)", "url": "/visual-scala-reference/getOrElse_Option/" },
+{ "name": "groupBy", "url": "/visual-scala-reference/groupBy/" },
+{ "name": "grouped", "url": "/visual-scala-reference/grouped/" },
+{ "name": "groupMap", "url": "/visual-scala-reference/groupMap/" },
+{ "name": "groupMapReduce", "url": "/visual-scala-reference/groupMapReduce/" },
+{ "name": "head", "url": "/visual-scala-reference/head/" },
+{ "name": "headOption", "url": "/visual-scala-reference/headOption/" },
+{ "name": "indexOf", "url": "/visual-scala-reference/indexOf/" },
+{ "name": "indexOfSlice", "url": "/visual-scala-reference/indexOfSlice/" },
+{ "name": "indexWhere", "url": "/visual-scala-reference/indexWhere/" },
+{ "name": "indices", "url": "/visual-scala-reference/indices/" },
+{ "name": "init", "url": "/visual-scala-reference/init/" },
+{ "name": "inits", "url": "/visual-scala-reference/inits/" },
+{ "name": "intersect", "url": "/visual-scala-reference/intersect/" },
+{ "name": "isDefinedAt (Map)", "url": "/visual-scala-reference/isDefinedAt_Map/" },
+{ "name": "isDefinedAt (Seq)", "url": "/visual-scala-reference/isDefinedAt_Seq/" },
+{ "name": "isEmpty", "url": "/visual-scala-reference/isEmpty/" },
+{ "name": "isTraversableAgain", "url": "/visual-scala-reference/isTraversableAgain/" },
+{ "name": "keys", "url": "/visual-scala-reference/keys/" },
+{ "name": "last", "url": "/visual-scala-reference/last/" },
+{ "name": "lastIndexOf", "url": "/visual-scala-reference/lastIndexOf/" },
+{ "name": "lastIndexOfSlice", "url": "/visual-scala-reference/lastIndexOfSlice/" },
+{ "name": "lastIndexWhere", "url": "/visual-scala-reference/lastIndexWhere/" },
+{ "name": "lastOption", "url": "/visual-scala-reference/lastOption/" },
+{ "name": "length", "url": "/visual-scala-reference/length/" },
+{ "name": "lift", "url": "/visual-scala-reference/lift/" },
+{ "name": "map", "url": "/visual-scala-reference/map/" },
+{ "name": "mapConserve", "url": "/visual-scala-reference/mapConserve/" },
+{ "name": "mapValues", "url": "/visual-scala-reference/mapValues/" },
+{ "name": "max", "url": "/visual-scala-reference/max/" },
+{ "name": "maxBy", "url": "/visual-scala-reference/maxBy/" },
+{ "name": "maxByOption", "url": "/visual-scala-reference/maxByOption/" },
+{ "name": "maxOption", "url": "/visual-scala-reference/maxOption/" },
+{ "name": "min", "url": "/visual-scala-reference/min/" },
+{ "name": "minBy", "url": "/visual-scala-reference/minBy/" },
+{ "name": "minByOption", "url": "/visual-scala-reference/minByOption/" },
+{ "name": "minOption", "url": "/visual-scala-reference/minOption/" },
+{ "name": "mkString", "url": "/visual-scala-reference/mkString/" },
+{ "name": "nonEmpty", "url": "/visual-scala-reference/nonEmpty/" },
+{ "name": "orElse", "url": "/visual-scala-reference/orElse/" },
+{ "name": "padTo", "url": "/visual-scala-reference/padTo/" },
+{ "name": "partition", "url": "/visual-scala-reference/partition/" },
+{ "name": "partitionMap", "url": "/visual-scala-reference/partitionMap/" },
+{ "name": "patch", "url": "/visual-scala-reference/patch/" },
+{ "name": "permutations", "url": "/visual-scala-reference/permutations/" },
+{ "name": "prefixLength", "url": "/visual-scala-reference/prefixLength/" },
+{ "name": "prepended", "url": "/visual-scala-reference/prepended/" },
+{ "name": "prependedAll", "url": "/visual-scala-reference/prependedAll/" },
+{ "name": "product", "url": "/visual-scala-reference/product/" },
+{ "name": "range", "url": "/visual-scala-reference/range/" },
+{ "name": "reduce", "url": "/visual-scala-reference/reduce/" },
+{ "name": "reduceLeft", "url": "/visual-scala-reference/reduceLeft/" },
+{ "name": "reduceLeftOption", "url": "/visual-scala-reference/reduceLeftOption/" },
+{ "name": "reduceOption", "url": "/visual-scala-reference/reduceOption/" },
+{ "name": "reduceRight", "url": "/visual-scala-reference/reduceRight/" },
+{ "name": "reduceRightOption", "url": "/visual-scala-reference/reduceRightOption/" },
+{ "name": "reverse", "url": "/visual-scala-reference/reverse/" },
+{ "name": "reverseMap", "url": "/visual-scala-reference/reverseMap/" },
+{ "name": "runWith", "url": "/visual-scala-reference/runWith/" },
+{ "name": "sameElements", "url": "/visual-scala-reference/sameElements/" },
+{ "name": "scanLeft", "url": "/visual-scala-reference/scanLeft/" },
+{ "name": "scanRight", "url": "/visual-scala-reference/scanRight/" },
+{ "name": "search", "url": "/visual-scala-reference/search/" },
+{ "name": "segmentLength", "url": "/visual-scala-reference/segmentLength/" },
+{ "name": "size", "url": "/visual-scala-reference/size/" },
+{ "name": "slice", "url": "/visual-scala-reference/slice/" },
+{ "name": "sliding", "url": "/visual-scala-reference/sliding/" },
+{ "name": "sortBy", "url": "/visual-scala-reference/sortBy/" },
+{ "name": "sorted", "url": "/visual-scala-reference/sorted/" },
+{ "name": "sortWith", "url": "/visual-scala-reference/sortWith/" },
+{ "name": "span", "url": "/visual-scala-reference/span/" },
+{ "name": "splitAt", "url": "/visual-scala-reference/splitAt/" },
+{ "name": "startsWith", "url": "/visual-scala-reference/startsWith/" },
+{ "name": "sum", "url": "/visual-scala-reference/sum/" },
+{ "name": "tabulate", "url": "/visual-scala-reference/tabulate/" },
+{ "name": "tail", "url": "/visual-scala-reference/tail/" },
+{ "name": "tails", "url": "/visual-scala-reference/tails/" },
+{ "name": "take", "url": "/visual-scala-reference/take/" },
+{ "name": "takeRight", "url": "/visual-scala-reference/takeRight/" },
+{ "name": "takeWhile", "url": "/visual-scala-reference/takeWhile/" },
+{ "name": "transpose", "url": "/visual-scala-reference/transpose/" },
+{ "name": "tupled", "url": "/visual-scala-reference/tupled/" },
+{ "name": "uncurried", "url": "/visual-scala-reference/uncurried/" },
+{ "name": "unfold", "url": "/visual-scala-reference/unfold/" },
+{ "name": "union", "url": "/visual-scala-reference/union/" },
+{ "name": "unlift", "url": "/visual-scala-reference/unlift/" },
+{ "name": "untupled", "url": "/visual-scala-reference/untupled/" },
+{ "name": "unzip", "url": "/visual-scala-reference/unzip/" },
+{ "name": "unzip3", "url": "/visual-scala-reference/unzip3/" },
+{ "name": "updated", "url": "/visual-scala-reference/updated/" },
+{ "name": "values", "url": "/visual-scala-reference/values/" },
+{ "name": "withDefault", "url": "/visual-scala-reference/withDefault/" },
+{ "name": "withDefaultValue", "url": "/visual-scala-reference/withDefaultValue/" },
+{ "name": "zip", "url": "/visual-scala-reference/zip/" },
+{ "name": "zipAll", "url": "/visual-scala-reference/zipAll/" },
+{ "name": "zipWithIndex", "url": "/visual-scala-reference/zipWithIndex/" },
+
+    ];
+  new Search(functions);
+</script>
+
+        <div class="wrapper">
+            <div class="container-fluid">
+
+<main class="function">
+    <h1 id="minby"><code>minBy</code></h1>
+<div class="signature">
+    <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-scala" data-lang="scala"><span style="color:#000;font-weight:bold">trait</span> <span style="color:#458;font-weight:bold">Collection</span><span style="color:#000;font-weight:bold">[</span><span style="color:#458;font-weight:bold">A</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#000;font-weight:bold">def</span> minBy<span style="color:#000;font-weight:bold">[</span><span style="color:#458;font-weight:bold">W</span><span style="color:#000;font-weight:bold">](</span>f<span style="color:#000;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#458;font-weight:bold">A</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">=&gt;</span> W<span style="color:#000;font-weight:bold">)</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#458;font-weight:bold">A</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div>
+</div>
+<p><code>minBy</code> applies <code>f</code> to each element and returns the element that yields the smallest value.</p>
+
+
+<figure class="diagram">
+    <img src="https://superruzafa.github.io/visual-scala-reference/images/functions/minBy.svg">
+</figure>
+<p>On empty collections <code>minBy</code> throws a <code>UnsupportedOperationException</code> exception.</p>
+
+
+<figure class="diagram">
+    <img src="https://superruzafa.github.io/visual-scala-reference/images/functions/minBy.2.svg">
+</figure>
+
+</main>
+<ul class="translation-links">
+
+    
+    <li class="translation-link current-lang"><a href="https://superruzafa.github.io/visual-scala-reference/minBy/">English</a></li>
+
+    
+    <li class="translation-link "><a href="https://superruzafa.github.io/visual-scala-reference/es/minBy/">Español</a></li>
+
+    
+    <li class="translation-link "><a href="https://superruzafa.github.io/visual-scala-reference/ja/minBy/">日本語</a></li>
+
+    
+    <li class="translation-link "><a href="https://superruzafa.github.io/visual-scala-reference/pt/minBy/">Português</a></li>
+
+</ul>
+
+            </div>
+        </div>
+
+
+<footer class="footer">
+    <div class="wrapper">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div class="col">
+                    <h3 class="section-title">Project</h3>
+                    <ul class="section-links">
+                        <li><a href="https://github.com/superruzafa/visual-scala-reference">Github Repository</a></li>
+                        <li><a href="https://superruzafa.github.io/visual-scala-reference/contributors/">Contributors</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3 class="section-title">Scala</h3>
+                    <ul class="section-links">
+                        <li><a href="https://www.scala-lang.org">Homepage</a></li>
+                        <li><a href="https://docs.scala-lang.org">Documentation</a></li>
+                        <li><a href="https://www.scala-lang.org/api/current">API</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </body>
+</html>
