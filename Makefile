@@ -10,7 +10,7 @@ static/images/functions/%.svg: resources/_gen/images/functions/%.pdf
 	pdf2svg $< $@
 
 resources/_gen/images/functions/%.pdf: resources/_gen/images/functions/%.tex
-	pdflatex -halt-on-errors -output-directory $(dir $@) $<
+	pdflatex -interaction=batchmode -halt-on-error -output-directory $(dir $@) $<
 	rm -f $(subst .pdf,.aux,$@)
 	rm -f $(subst .pdf,.log,$@)
 
