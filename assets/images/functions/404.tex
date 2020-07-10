@@ -1,0 +1,4 @@
+\node (f) [function] {\texttt{ browser } };
+\draw [<- flow] (f.north io 1) -- +(0, .5)
+    node [element, above] {\texttt{url}};
+\draw [flow ->] (f.south io 1) -- +(0, -.5) node (none) [none, below];
