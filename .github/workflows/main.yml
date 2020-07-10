@@ -2,7 +2,7 @@ name: Publish Site
 
 on:
   push:
-    branch: [master]
+    branches: [master]
 
 jobs:
   build-deploy:
