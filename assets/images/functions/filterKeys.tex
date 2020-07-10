@@ -1,0 +1,38 @@
+\matrix (A) [collection] {
+    \node (k1) {$k_1$}; \\
+    \node (k2) {$k_2$}; \\
+    \node [vertical elements between]; \\
+    \node (ki) {$k_i$}; \\
+    \node (ki+1) {$k_{i + 1}$}; \\
+    \node [vertical elements between]; \\
+    \node (kn-1) {$k_{n-1}$}; \\
+    \node (kn) {$k_n$}; \\
+};
+
+\matrix (B) [collection, right=3 of A, anchor=center] {
+    \node (l2) {$k_2$}; \\
+    \node [vertical elements between]; \\
+    \node (li) {$k_i$}; \\
+    \node [vertical elements between]; \\
+    \node (ln-1) {$k_{n-1}$}; \\
+};
+
+\foreach \i/\r in {1/\false,2/\true,i/\true,i+1/\false,n-1/\true,n/\false}{
+    \draw [map ->] (k\i.east) -- +(.5, 0)
+        node [element, right] {$v_{\i}$};
+    \draw [subflow ->] (k\i.west) -- +(-.5, 0)
+        node (p) [horizontal subfunction, left] {\texttt{p}};
+    \draw [subflow ->] (p.west io 1) -- +(-.5, 0)
+        node [subelement, left] {\r};
+}
+
+\foreach \i in {2,i,n-1}{
+    \draw [map ->] (l\i.east) -- +(.5, 0)
+        node [element, right] {$v_{\i}$};
+}
+
+\begin{scope}[flow ->, out=0, in=180]
+    \draw ($ (k2.east)!.5!(k2.south east) $) to (l2);
+    \draw ($ (ki.east)!.5!(ki.south east) $) to (li);
+    \draw ($ (kn-1.east)!.5!(kn-1.north east) $) to (ln-1);
+\end{scope}

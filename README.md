@@ -8,9 +8,27 @@ https://superruzafa.github.io/visual-scala-reference
 
 ## Development
 
-This guide uses [Jekyll] as render engine.
+This guide uses [Hugo] as render engine.
 
-Also, you can use [Docker] by running `docker-compose up -d` and then browsing http://localhost:4000/visual-scala-reference/.
+To launch the server in your local machine just launch the following command:
 
-[Jekyll]: https://jekyllrb.com "Jekyll"
-[Docker]: https://www.docker.com "Docker"
+~~~ sh
+$ hugo server
+~~~
+
+and browse http://localhost:1313/visual-scala-reference
+
+The function diagrams are written using the TeX [TikZ] library.
+In order to build the images you must have configured a TeX environment
+(or build and use the image from the provided Dockerfile).
+
+Then, from the project's root dir just launch the following command:
+
+~~~ sh
+$ make
+~~~
+
+It will transform the .tex files into .svg images.
+
+[Hugo]: https://gohugo.io "Hugo"
+[TikZ]: https://github.com/pgf-tikz/pgf "TikZ"

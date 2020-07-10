@@ -1,0 +1,11 @@
+[home_description]
+other = "Scala 関数の図解"
+
+[home_keywords]
+other = "scala 関数, scala をわかりやすく説明, scala を学ぶ, 関数プログラミング, 視覚的 scala, scala 図解"
+
+[function_description]
+other = "Scala {{ .Title }} 関数. Scala　の {{ .Title }} 関数の図解"
+
+[function_keywords]
+other = "{{ .Title }} 関数, scala {{ .Title }} 関数"

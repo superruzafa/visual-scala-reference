@@ -1,0 +1,20 @@
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node [elements between]; &
+    \node (ai) {$a_i$}; &
+    \node [elements after]; \\
+};
+
+\foreach \i/\r in {1/\neq,2/\neq,i/=}{
+    \draw [subflow ->] (a\i.north) -- +(0, .5)
+        node (p) [subelement, above] {$\texttt{a} \r a_\i $};
+}
+
+\draw [<- subflow] (a1.north) arc [<- iterate];
+\draw [subflow ->, iterate ->] (a1.north) to (a2.north);
+\draw [subflow ->, iterate ->, dashed] (a2.north) arc;
+\draw [<- subflow, <- iterate, dashed] (ai.north) arc;
+
+\draw [flow ->] (ai.south) -- +(0, -1)
+    node [element, below] {$i$};

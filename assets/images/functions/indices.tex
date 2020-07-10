@@ -1,0 +1,21 @@
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node [elements between]; &
+    \node (ai) {$a_i$}; &
+    \node [elements between]; &
+    \node (an) {$a_n$}; \\
+};
+
+\matrix (B) [collection, below=2 of A] {
+    \node (b1) {$0$}; &
+    \node (b2) {$1$}; &
+    \node [elements between]; &
+    \node (bi) {$i-1$}; &
+    \node [elements between]; &
+    \node (bn) {$n-1$}; \\
+};
+
+\foreach \i in {1,2,i,n}{
+    \draw [flow ->] (a\i) -- (b\i);
+}

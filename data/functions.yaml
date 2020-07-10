@@ -1,0 +1,859 @@
+- name: aggregate
+  signature: |
+    trait Collection[A] {
+      def aggregate[B](z: => B)(seqop: (B, A) => B, combop: (B, B) => B): B
+    }
+
+- name: andThen
+  signature: |
+    trait Function1[X, Y] {
+      def andThen[Z](g: (Y) => Z): (X) => Z
+    }
+
+- name: appended
+  signature: |
+    trait Collection[A] {
+      def appended[B >: A](b: B): Collection[B]
+      def :+[B >: A](b: B): Collection[B]
+    }
+
+- name: appendedAll
+  signature: |
+    trait Collection[A] {
+      def appendedAll[B >: A](bs: Collection[B]): Collection[B]
+      def :++[B >: A](bs: Collection[B]): Collection[B]
+    }
+
+- name: chain
+  signature: |
+    object Function {
+      def chain[X](fs: Collection[(X) => X]): (X) => X
+    }
+
+- name: collect
+  signature: |
+    trait Collection[A] {
+      def collect[B](f: PartialFunction[A, B]): Collection[B]
+    }
+
+- name: collectFirst
+  signature: |
+    trait Collection[A] {
+      def collectFirst[B](f: PartialFunction[A, B]): Option[B]
+    }
+
+- name: combinations
+  signature: |
+    trait Collection[A] {
+      def combinations(k: Int): Iterator[Collection[A]]
+    }
+
+- name: compose
+  signature: |
+    trait Function1[X, Y] {
+      def compose[Z](g: (Z) => X): (Z) => Y
+    }
+
+- name: concat
+  signature: |
+    object Collection {
+      def concat[A](as: Collection[A]*): Collection[A]
+    }
+
+- name: cond
+  signature: |
+    object PartialFunction {
+      def cond[X](x: X)(pf: PartialFunction[X, Boolean]): Boolean
+    }
+
+- name: condOpt
+  signature: |
+    object PartialFunction {
+      def condOpt[X, Y](pf: PartialFunction[X, Y]): Option[Y]
+    }
+
+- name: const
+  signature: |
+    object Function {
+      def const[X, Y](x: X)(y: Y): X
+    }
+
+- name: contains
+  signature: |
+    trait Collection[A] {
+      def contains(a: A): Boolean
+    }
+
+- name: containsSlice
+  signature: |
+    trait Collection[A] {
+      def containsSlice(as: Collection[A]): Boolean
+    }
+
+- name: copyToArray
+  signature: |
+    trait Collection[A] {
+      def copyToArray[B :> A](array: Array[B]): Int
+      def copyToArray[B :> A](array: Array[B], i: Int): Int
+      def copyToArray[B :> A](array: Array[B], i: Int, l: Int): Int
+    }
+
+- name: corresponds
+  signature: |
+    trait Collection[A] {
+      def corresponds[B](bs: Collection[B])(p: (A, B) => Boolean): Boolean
+    }
+
+- name: count
+  signature: |
+    trait Collection[A] {
+      def count(p: (A) => Boolean): Int
+    }
+
+- name: curried
+  signature: |
+    trait Function[X1, X2..., Xn, Y] {
+      def curried: (X1) => (X2) => ... => (Xn) => Y
+    }
+
+- name: diff
+  signature: |
+    trait Collection[A] {
+      def diff(as: Collection[A]): Collection[A]
+    }
+
+- name: distinct
+  signature: |
+    trait Collection[A] {
+      def distinct: Collection[A]
+    }
+
+- name: distinctBy
+  signature: |
+    trait Seq[A] {
+      def distinctBy[K](f: (A) => K): Seq[A]
+    }
+
+- name: drop
+  signature: |
+    trait Collection[A] {
+      def drop(i: Int): Collection[A]
+    }
+
+- name: dropRight
+  signature: |
+    trait Collection[A] {
+      def dropRight(i: Int): Collection[A]
+    }
+
+- name: dropWhile
+  signature: |
+    trait Collection[A] {
+      def dropWhile(p: (A) => Boolean): Collection[A]
+    }
+
+- name: empty_PartialFunction
+  signature: |
+    object PartialFunction {
+      def empty[A, B]: PartialFunction[A, B]
+    }
+
+- name: empty_collections
+  signature: |
+    object Collection {
+      def empty[A]: Collection[A]
+    }
+
+- name: endsWith
+  signature: |
+    trait Collection[A] {
+      def endsWith(as: Collection[A]): Boolean
+    }
+
+- name: exists
+  signature: |
+    trait Collection[A] {
+      def exists(p: (A) => Boolean): Boolean
+    }
+
+- name: fill
+  signature: |
+    object Collection {
+      def fill[A](n1: Int, ..., nm: Int)(a: => A): Collection[ ... Collection[A] ... ]
+    }
+
+- name: filter
+  signature: |
+    trait Collection[A] {
+      def filter(p: (A) => Boolean): Collection[A]
+    }
+
+- name: filterKeys
+  signature: |
+    trait Map[K, V] {
+      def filterKeys(p: (K) => Boolean): Map[K, V]
+    }
+
+- name: filterNot
+  signature: |
+    trait Collection[A] {
+      def filterNot(p: (A) => Boolean): Collection[A]
+    }
+
+- name: find
+  signature: |
+    trait Collection[A] {
+      def find(p: (A) => Boolean): Option[A]
+    }
+
+- name: findLast
+  signature: |
+    trait Collection[A] {
+      def findLast(p: (A) => Boolean): Option[A]
+    }
+
+- name: flatMap
+  signature: |
+    trait Collection[A] {
+      def flatMap(f: (A) => Collection[B]): Collection[B]
+    }
+
+- name: flatten
+  signature: |
+    trait Collection[A] {
+      def flatten[B]: Collection[B]
+    }
+
+- name: fold
+  signature: |
+    trait Collection[A] {
+      def fold(z: A)(op: (A, A) => A): A
+    }
+
+- name: foldLeft
+  signature: |
+    trait Collection[A] {
+      def foldLeft[B](z: B)(op: (B, A) => B): B
+    }
+
+- name: foldRight
+  signature: |
+    trait Collection[A] {
+      def foldRight[B](z: B)(op: (A, B) => B): B
+    }
+
+- name: forall
+  signature: |
+    trait Collection[A] {
+      def forall(p: (A) => Boolean): Boolean
+    }
+
+- name: foreach
+  signature: |
+    trait Collection[A] {
+      def foreach(f: (A) => Unit): Unit
+    }
+
+- name: fromFunction
+  signature: |
+    object PartialFunction {
+      def fromFunction[X, Y](f: (X) => Y): PartialFunction[X, Y]
+    }
+
+- name: getOrElse_Map
+  signature: |
+    trait Map[K, V] {
+      def getOrElse(k: K, v: => V): V
+    }
+
+- name: getOrElse_Option
+  signature: |
+    trait Option[A] {
+      def getOrElse[B >: A](b: => B): B
+    }
+
+- name: groupBy
+  signature: |
+    trait Collection[A] {
+      def groupBy[K](f: (A) => K): Map[K, Collection[A]]
+    }
+
+- name: groupMap
+  signature: |
+    trait Collection[A] {
+      def groupMap[K, B](f: (A) => K)(g: (A) => B): Map[K, Collection[B]]
+    }
+
+- name: groupMapReduce
+  signature: |
+    trait Collection[A] {
+      def groupMapReduce[K, B](k: (A) => K)(f: (A) => B)(op: (B, B) => B): Map[K, B]
+    }
+
+- name: grouped
+  signature: |
+    trait Collection[A] {
+      def grouped(m: Int): Iterator[Collection[A]]
+    }
+
+- name: head
+  signature: |
+    trait Collection[A] {
+      def head: A
+    }
+
+- name: headOption
+  signature: |
+    trait Collection[A] {
+      def headOption: Option[A]
+    }
+
+- name: indexOf
+  signature: |
+    trait Collection[A] {
+      def indexOf(a: A): Int
+      def indexOf(a: A, j: Int): Int
+    }
+
+- name: indexOfSlice
+  signature: |
+    trait Collection[A] {
+      def indexOfSlice(as: Collection[A]): Int
+      def indexOfSlice(as: Collection[A], j: Int): Int
+    }
+
+- name: indexWhere
+  signature: |
+    trait Collection[A] {
+      def indexWhere(p: (A) => Boolean): Int
+      def indexWhere(p: (A) => Boolean: j: Int): Int
+    }
+
+- name: indices
+  signature: |
+    trait Collection[A] {
+      def indices: Range
+    }
+
+- name: init
+  signature: |
+    trait Collection[A] {
+      def init: Collection[A]
+    }
+
+- name: inits
+  signature: |
+    trait Collection[A] {
+      def inits: Iterator[Collection[A]]
+    }
+
+- name: intersect
+  signature: |
+    trait Collection[A] {
+      def intersect(as: Collection[A]): Collection[A]
+    }
+
+- name: isDefinedAt_Map
+  signature: |
+    trait Map[K, V] {
+      def isDefinedAt(k: K): Boolean
+    }
+
+- name: isDefinedAt_Seq
+  signature: |
+    trait Seq[A] {
+      def isDefinedAt(i: Int): Boolean
+    }
+
+- name: isEmpty
+  signature: |
+    trait Collection[A] {
+      def isEmpty: Boolean
+    }
+
+- name: isTraversableAgain
+  signature: |
+    trait Collection[A] {
+      def isTraversableAgain: Boolean
+    }
+
+- name: keys
+  signature: |
+    trait Map[K, V] {
+      def keys: Iterable[V]
+    }
+
+- name: last
+  signature: |
+    trait Collection[A] {
+      def last: A
+    }
+
+- name: lastIndexOf
+  signature: |
+    trait Collection[A] {
+      def lastIndexOf(a: A): Int
+      def lastIndexOf(a: A, j: Int): Int
+    }
+
+- name: lastIndexOfSlice
+  signature: |
+    trait Collection[A] {
+      def lastIndexOfSlice(as: Collection[A]): Int
+      def lastIndexOfSlice(as: Collection[A], j: Int): Int
+    }
+
+- name: lastIndexWhere
+  signature: |
+    trait Collection[A] {
+      def lastIndexWhere(p: (A) => Boolean): Int
+      def lastIndexWhere(p: (A) => Boolean: j: Int): Int
+    }
+
+- name: lastOption
+  signature: |
+    trait Collection[A] {
+      def lastOption: Option[A]
+    }
+
+- name: length
+  signature: |
+    trait Collection[A] {
+      def length: Int
+    }
+
+- name: lift
+  signature: |
+    trait PartialFunction[X, Y] {
+      def lift: (X) => Option[Y]
+    }
+
+- name: map
+  signature: |
+    trait Collection[A] {
+      def map[B](f: (A) => B): Collection[B]
+    }
+
+- name: mapConserve
+  signature: |
+    trait List[A] {
+      def mapConserve[B >: A](f: (A) => B): List[B]
+    }
+
+- name: mapValues
+  signature: |
+    trait Map[K, V] {
+      def mapValues[W](f: (V) => W): Map[K, W]
+    }
+
+- name: max
+  signature: |
+    trait Collection[A] {
+      def max: A
+    }
+
+- name: maxBy
+  signature: |
+    trait Collection[A] {
+      def maxBy[W](f: (A) => W): A
+    }
+
+- name: maxByOption
+  signature: |
+    trait Collection[A] {
+      def maxByOption[W](f: (A) => W): A
+    }
+
+- name: maxOption
+  signature: |
+    trait Collection[A] {
+      def maxOption: Option[A]
+    }
+
+- name: min
+  signature: |
+    trait Collection[A] {
+      def min: A
+    }
+
+- name: minBy
+  signature: |
+    trait Collection[A] {
+      def minBy[W](f: (A) => W): A
+    }
+
+- name: minByOption
+  signature: |
+    trait Collection[A] {
+      def minByOption[W](f: (A) => W): A
+    }
+
+- name: minOption
+  signature: |
+    trait Collection[A] {
+      def minOption: Option[A]
+    }
+
+- name: mkString
+  signature: |
+    trait Collection[A] {
+        def mkString: String
+        def mkString(sep: String): String
+        def mkString(start: String, sep: String, end: String): String
+    }
+
+- name: nonEmpty
+  signature: |
+    trait Collection[A] {
+      def nonEmpty: Boolean
+    }
+
+- name: orElse
+  signature: |
+    trait PartialFunction[X, Y] {
+      def orElse(g: PartialFunction[X, Y]): PartialFunction[X, Y]
+    }
+
+- name: padTo
+  signature: |
+    trait Collection[A] {
+      def padTo(m: Int, a: A): Collection[A]
+    }
+
+- name: partition
+  signature: |
+    trait Collection[A] {
+      def partition(p: (A) => Boolean): (Collection[A], Collection[A])
+    }
+
+- name: partitionMap
+  signature: |
+    trait Collection[A] {
+      def partitionMap[B, C](f: (A) => Either[B, C]): (Collection[B], Collection[C])
+    }
+
+- name: patch
+  signature: |
+    trait Collection[A] {
+      def patch(j: Int, bs: Collection[A], m: Int): Collection[A]
+    }
+
+- name: permutations
+  signature: |
+    trait Collection[A] {
+      def permutations: Iterator[Collection[A]]
+    }
+
+- name: prefixLength
+  signature: |
+    trait Collection[A] {
+      def prefixLength(p: (A) => Boolean): Int
+    }
+
+- name: prepended
+  signature: |
+    trait Collection[A] {
+      def prepended[B >: A](b: B): Collection[B]
+      def +:[B >: A](b: B): Collection[B]
+    }
+
+- name: prependedAll
+  signature: |
+    trait Collection[A] {
+      def prependedAll[B >: A](bs: Collection[B]): Collection[B]
+      def ++:[B >: A](bs: Collection[B]): Collection[B]
+    }
+
+- name: product
+  signature: |
+    trait Collection[A] {
+      def product: A
+    }
+
+- name: range
+  signature: |
+    object Collection {
+      def range[A](start: A, end: A): Collection[A]
+      def range[A](start: A, end: A, step: A): Collection[A]
+    }
+
+- name: reduce
+  signature: |
+    trait Collection[A] {
+      def reduce(op: (A, A) => A): A
+    }
+
+- name: reduceLeft
+  signature: |
+    trait Collection[A] {
+      def reduceLeft[B :> A](op: (B, A) => B): B
+    }
+
+- name: reduceLeftOption
+  signature: |
+    trait Collection[A] {
+      def reduceLeftOption[B :> A](f: (B, A) => B): Option[B]
+    }
+
+- name: reduceOption
+  signature: |
+    trait Collection[A] {
+      def reduceOption(op: (A, A) => A): Option[A]
+    }
+
+- name: reduceRight
+  signature: |
+    trait Collection[A] {
+      def reduceRight[B :> A](op: (A, B) => B): B
+    }
+
+- name: reduceRightOption
+  signature: |
+    trait Collection[A] {
+      def reduceRightOption[B :> A](f: (A, B) => B): Option[B]
+    }
+
+- name: reverse
+  signature: |
+    trait Collection[A] {
+      def reverse: Collection[A]
+    }
+
+- name: reverseMap
+  signature: |
+    trait Collection[A] {
+      def reverseMap[B](f: (A) => B): Collection[B]
+    }
+
+- name: runWith
+  signature: |
+    trait PartialFunction[X, Y] {
+      def runWith[U](g: (Y) => U): (X) => Boolean
+    }
+
+- name: sameElements
+  signature: |
+    trait Collection[A] {
+      def sameElements(as: Collection[A]): Boolean
+    }
+
+- name: scan
+  signature: |
+- name: scanLeft
+  signature: |
+    trait Collection[A] {
+      def scanLeft[B](z: B)(op: (B, A) => B)
+    }
+
+- name: scanRight
+  signature: |
+    trait Collection[A] {
+      def scanRight[B](z: B)(op: (A, B) => B)
+    }
+
+- name: search
+  signature: |
+    trait Collection[A] {
+      def search[B >: A](e: B): SearchResult
+      def search[B >: A](e: B, i: Int, j: Int): SearchResult
+    }
+
+- name: segmentLength
+  signature: |
+    trait Collection[A] {
+      def segmentLength(p: (A) => Boolean, j: Int): Int
+    }
+
+- name: size
+  signature: |
+    trait Collection[A] {
+      def size: Int
+    }
+
+- name: slice
+  signature: |
+    trait Collection[A] {
+      def slice(i: Int, j: Int): Collection[A]
+    }
+
+- name: sliding
+  signature: |
+    trait Collection[A] {
+      def sliding(m: Int, s: Int): Iterator[Collection[A]]
+    }
+
+- name: sortBy
+  signature: |
+    trait Collection[A] {
+      def sortBy[W](f: (A) => W): Collection[A]
+    }
+
+- name: sortWith
+  signature: |
+    trait Collection[A] {
+      def sortWith(lt: (A, A) => Boolean): Collection[A]
+    }
+
+- name: sorted
+  signature: |
+    trait Collection[A] {
+      def sorted: Collection[A]
+    }
+
+- name: span
+  signature: |
+    trait Collection[A] {
+      def span(p: (A) => Boolean): (Collection[A], Collection[A])
+    }
+
+- name: splitAt
+  signature: |
+    trait Collection[A] {
+      def splitAt(i: Int): (Collection[A], Collection[A])
+    }
+
+- name: startsWith
+  signature: |
+    trait Collection[A] {
+      def startsWith(as: Collection[A]): Boolean
+      def startsWith(as: Collection[A], j: Int): Boolean
+    }
+
+- name: sum
+  signature: |
+    trait Collection[A] {
+      def sum: A
+    }
+
+- name: tabulate
+  signature: |
+    object Collection {
+      def tabulate[A](n1: Int, ..., nm: Int)(f: (Int, ..., Int): => A)
+        : Collection[ ... Collection[A] ... ]
+    }
+
+- name: tail
+  signature: |
+    trait Collection[A] {
+      def tail: Collection[A]
+    }
+
+- name: tails
+  signature: |
+    trait Collection[A] {
+      def tails: Iterator[Collection[A]]
+    }
+
+- name: take
+  signature: |
+    trait Collection[A] {
+      def take(i: Int): Collection[A]
+    }
+
+- name: takeRight
+  signature: |
+    trait Collection[A] {
+      def takeRight(i: Int): Collection[A]
+    }
+
+- name: takeWhile
+  signature: |
+    trait Collection[A] {
+      def takeWhile(p: (A) => Boolean): Collection[A]
+    }
+
+- name: transpose
+  signature: |
+    trait Collection[A] {
+      def transpose[B]: Collection[Collection[B]]
+    }
+
+- name: tupled
+  signature: |
+    object Function {
+      def tupled[X1, ..., Xn, Y](f: (X1, ..., Xn) => Y): ((X1, ..., Xn)) => Y
+    }
+
+- name: uncurried
+  signature: |
+    object Function {
+      def uncurried[X1, ..., Xn, Y](f: (X1) => ... => (Xn) => Y): (X1, ..., Xn) => Y
+    }
+
+- name: unfold
+  signature: |
+    object Collection {
+      def unfold[A, S](s: S)(f: (S) => Option[(A, S)]): Collection[A]
+    }
+
+- name: union
+  signature: |
+    trait Collection[A] {
+      def union(as: Collection[A]): Collection[A]
+    }
+
+- name: unlift
+  signature: |
+    object Function {
+      def unlift[X, Y](f: (X) => Option[Y]): PartialFunction[X, Y]
+    }
+
+- name: untupled
+  signature: |
+    object Function {
+      def untupled[X1, ..., Xn, Y](f: ((X1, ..., Xn)) => Y): (X1, ..., Xn) => Y
+    }
+
+- name: unzip
+  signature: |
+    trait Collection[AB] {
+      def unzip[A, B]: (Collection[A], Collection[B])
+    }
+
+- name: unzip3
+  signature: |
+    trait Collection[ABC] {
+      def unzip3[A, B, C]: (Collection[A], Collection[B], Collection[C])
+    }
+
+- name: updated
+  signature: |
+    trait Collection[A] {
+      def updated(i: Int, a: A): Collection[A]
+    }
+
+- name: values
+  signature: |
+    trait Map[K, V] {
+      def values: Iterable[V]
+    }
+
+- name: withDefault
+  signature: |
+    trait Map[K, V] {
+      def withDefault(f: (K) => V): Map[K, V]
+    }
+
+- name: withDefaultValue
+  signature: |
+    trait Map[K, V] {
+      def withDefaultValue(v: V): Map[K, V]
+    }
+
+- name: zip
+  signature: |
+    trait Collection[A] {
+      def zip[B](bs: Collection[B]): Collection[(A, B)]
+    }
+
+- name: zipAll
+  signature: |
+    trait Collection[A] {
+      def zipAll[B](bs: Collection[B], a: A, b: B): Collection[(A, B)]
+    }
+
+- name: zipWithIndex
+  signature: |
+    trait Collection[A] {
+      def zipWithIndex: Collection[(A, Int)]
+    }

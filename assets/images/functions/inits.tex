@@ -1,0 +1,45 @@
+\matrix (A) [collection] {
+    \node {$a_1$}; &
+    \node {$a_2$}; &
+    \node [elements between]; &
+    \node {$a_{n - 1}$}; &
+    \node {$a_n$}; \\
+};
+
+\matrix (I1) [collection, below=2 of A] {
+    \node {$a_1$}; &
+    \node {$a_2$}; &
+    \node [elements between]; &
+    \node {$a_{n - 1}$}; &
+    \node {$a_n$}; \\
+};
+
+\matrix (I2) [collection, below=.5 of I1.south west, anchor=north west] {
+    \node {$a_1$}; &
+    \node {$a_2$}; &
+    \node [elements between]; &
+    \node {$a_{n - 1}$}; \\
+};
+
+\matrix (I3) [collection, below=1 of I2.south west, anchor=north west] {
+    \node {$a_1$}; &
+    \node {$a_2$}; \\
+};
+
+\matrix (I4) [collection, below=.5 of I3.south west, anchor=north west] {
+    \node {$a_1$}; \\
+};
+
+\node (If) [empty collection, below=.5 of I4.south west, anchor=north west] {};
+
+\draw [<- flow, iterate up, next] (I1.west) arc;
+\draw [flow ->, iterate down, next reversed] (I1.west) to (I2.west);
+\draw [flow ->, dashed, iterate down] (I2.west) arc;
+\draw [<- flow, dashed, iterate up, next] (I3.west) arc;
+\draw [flow ->, dashed, iterate down] (I3.west) arc;
+\draw [<- flow, dashed, iterate up, next] (I4.west) arc;
+\draw [flow ->, dashed, iterate down] (I4.west) arc;
+\draw [<- flow, dashed, iterate up, next] (If.west) arc;
+
+\coordinate (x) at ($ (A)!.5!(I1) $);
+\node at (x) [big arrow, rotate=-90] {};

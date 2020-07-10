@@ -1,0 +1,22 @@
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node [elements between]; &
+    \node (an) {$a_n$}; \\
+};
+
+\matrix (B) [collection, below=2 of A.south east, anchor=north east] {
+    \node (b0) {\texttt{b}}; &
+    \node (b1) {$a_1$}; &
+    \node (b2) {$a_2$}; &
+    \node [elements between]; &
+    \node (bn) {$a_n$}; \\
+};
+
+\braceflow[-.2]{(a1.south west)}{(an.south east)}
+\coordinate (x) at (lastbrace);
+\braceflow[.2]{(b1.north west)}{(bn.north east)}
+\draw [flow ->, out=270, in=90] (x) to (lastbrace);
+
+\draw [<- flow] (b0.north) -- ++(0, 1)
+    node [element, above] {\texttt{b}};

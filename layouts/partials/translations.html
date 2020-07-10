@@ -1,0 +1,6 @@
+<ul class="translation-links">
+{{ range .AllTranslations }}
+    
+    <li class="translation-link {{ if eq .Language $.Site.Language }}current-lang{{ end }}"><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+{{ end }}
+</ul>

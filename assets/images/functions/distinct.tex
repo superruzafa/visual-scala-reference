@@ -1,0 +1,45 @@
+\matrix (A) [collection] {
+    \node (a11) {$a_1$}; &
+    \node (a21) {$a_2$}; &
+    \node (a12) {$a_1$}; &
+    \node [elements between]; &
+    \node (an1) {$a_n$}; &
+    \node (a22) {$a_2$}; &
+    \node [elements between]; &
+    \node (a13) {$a_1$}; &
+    \node (an2) {$a_n$}; \\
+};
+
+\matrix (B) [collection, below=3 of A] {
+    \node (b1) {$a_1$}; &
+    \node (b2) {$a_2$}; &
+    \node [elements between]; &
+    \node (bn) {$a_n$}; \\
+};
+
+\coordinate (rule1) at ($ (a11)!.33!(b1)$);
+\coordinate (rule2) at ($ (a11)!.5!(b1)$);
+\coordinate (rule3) at ($ (a11)!.66!(b1)$);
+
+\coordinate (x) at (a11.south |- rule1);
+\draw [name path=p1, flow ->] (a11) -- (x) -| coordinate (y) (b1);
+\draw [name path=p2, flow] (a12) -- (a12 |- y);
+\draw [name path=p3, flow] (a13) |- (y);
+
+\coordinate (x) at (a21.south |- rule2);
+\draw [name path=p4, flow ->] (a21) -- (x) -| coordinate (y) (b2);
+\draw [name path=p5, flow] (a22) |- (y);
+
+\coordinate (x) at (an1.south |- rule3);
+\draw [name path=p6, flow ->] (an1) -- (x) -| coordinate (y) (bn);
+\draw [name path=p7, flow] (an2) |- (y);
+
+\draw [flow, name intersections={of=p1 and p4, by={a, b}}]
+    (a) pic {jump=90}
+    (b) pic {jump=0};
+\draw [flow, name intersections={of=p3 and p5, by={a}}]
+    (a) pic {jump=90};
+\draw [flow, name intersections={of=p3 and p6, by={a}}]
+    (a) pic {jump=90};
+\draw [flow, name intersections={of=p5 and p6, by={a}}]
+    (a) pic {jump=90};

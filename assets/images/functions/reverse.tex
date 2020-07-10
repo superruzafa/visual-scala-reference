@@ -1,0 +1,36 @@
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node [elements between]; &
+    \node (ai) {$a_i$}; &
+    \node [elements between]; &
+    \node (an) {$a_n$}; \\
+};
+
+\matrix (B) [collection, below=3 of A] {
+    \node (bn) {$a_n$}; &
+    \node [elements between]; &
+    \node (bi) {$a_i$}; &
+    \node [elements between]; &
+    \node (b2) {$a_2$}; &
+    \node (b1) {$a_1$}; \\
+};
+
+\coordinate (x) at ($ (A)!.5!(B) $);
+
+\newlength\reverseradius
+\setlength\reverseradius{.2\masterunit}
+\draw [flow ->] (x) ++ (0:\reverseradius)
+    arc [radius=\reverseradius, start angle=0, end angle=170];
+\draw [flow ->] (x) ++ (180:\reverseradius)
+    arc [radius=\reverseradius, start angle=180, end angle=350];
+
+\node at (x) [
+  draw,
+  rotate=-90,
+  line width=\defaultpenwidth,
+  minimum height=\masterunit,
+  minimum width=4\reverseradius,
+  single arrow,
+  single arrow tip angle=90,
+  single arrow head extend=.01\masterunit] {};

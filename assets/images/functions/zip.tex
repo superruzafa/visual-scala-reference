@@ -1,0 +1,41 @@
+\tikzset{group/.style={
+    draw,
+    flow,
+    minimum height=2\masterunit,
+    minimum width=3ex,
+    rounded corners=0.2\masterunit,
+}}
+
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node [elements between]; &
+    \node (ai) {$a_i$}; &
+    \node [elements between]; &
+    \node (an) {$a_n$}; \\
+};
+
+\matrix (B) [collection, below=.5 of A.south west, anchor=north west] {
+    \node (b1) {$b_1$}; &
+    \node (b2) {$b_2$}; &
+    \node [elements between]; &
+    \node (bi) {$b_i$}; &
+    \node [elements between]; &
+    \node (bn) {$b_n$}; &
+    \node (bn+1) {$b_{n+1}$}; &
+    \node [elements after]; \\
+};
+
+\matrix (C) [collection, below=3 of A] {
+    \node [font=\small] (c1) {$(a_1, b_1)$}; &
+    \node [font=\small] (c2) {$(a_2, b_2)$}; &
+    \node [elements between]; &
+    \node [font=\small] (ci) {$(a_i, b_i)$}; &
+    \node [elements between]; &
+    \node [font=\small] (cn) {$(a_n, b_n)$}; \\
+};
+
+\foreach \i in {1,2,i,n}{
+    \node (g) [group] at ($ (a\i)!.5!(b\i) $) {};
+    \draw (g) [flow ->] -- (c\i);
+}

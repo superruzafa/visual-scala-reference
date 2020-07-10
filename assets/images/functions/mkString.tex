@@ -1,0 +1,36 @@
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node [elements between]; &
+    \node (ai) {$a_i$}; &
+    \node [elements between]; &
+    \node (an) {$a_n$}; \\
+};
+
+\foreach \i in {1,2,i,n}{
+    \node (b\i) [element, below=1 of a\i] {$a_\i$};
+    \draw [flow ->] (a\i) -- (b\i);
+}
+
+
+\begin{scope}[every node/.style={element, baseline}]
+\node (sep1) at ($ (b1.base)!.5!(b2.base) $) {,};
+\node (d) at ($ (b2.base)!.5!(bi.base) $) {\ldots};
+\node (sep2) at ($ (b2.base)!.5!(d.base) $) {,};
+\node (sep3) at ($ (d.base)!.5!(bi.base) $) {,};
+\node (d) at ($ (bi.base)!.5!(bn.base) $) {\ldots};
+\node (sep4) at ($ (bi.base)!.5!(d.base) $) {,};
+\node (sep5) at ($ (d.base)!.5!(bn.base) $) {,};
+\node (start) [base left=.125 of b1] {[};
+\node [base left=.125 of start] {``};
+\node (end) [base right=.125 of bn] {]};
+\node [base right=.125 of end] {''};
+\end{scope}
+
+\begin{scope}[<- flow, every node/.style={subelement, below}]
+    \draw (start) -- +(0, -1) node {\texttt{start}};
+    \draw (end) -- +(0, -1) node {\texttt{end}};
+    \foreach \i in {1,2,3,4,5}{
+        \draw (sep\i) -- +(0, -1) node {\texttt{sep}};
+    }
+\end{scope}

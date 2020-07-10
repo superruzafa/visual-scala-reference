@@ -1,0 +1,16 @@
+\node (ff) [object function] {\texttt{fromFunction}};
+
+\node (f) [function, left=1 of ff] {\texttt{f}};
+\node (pf) [function, right=1 of ff] {$\lambda$};
+
+\draw [flow ->] (f.east) -- (ff.west io 1);
+\draw [flow ->] (ff.east io 1) -- (pf.west);
+
+\draw [<- subflow] (f.north io 1) -- +(0, .5)
+    node [element, above] {$x$};
+\draw [<- subflow] (pf.north io 1) -- +(0, .5)
+    node [element, above] {$x$};
+\draw [subflow ->] (f.south io 1) -- +(0, -.5)
+    node [element, below] {$y$};
+\draw [subflow ->] (pf.south io 1) -- node [partial] {} +(0, -.5)
+    node [element, below] {$y$};

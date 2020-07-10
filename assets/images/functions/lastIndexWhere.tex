@@ -1,0 +1,21 @@
+\matrix (A) [collection] {
+    \node [elements before]; &
+    \node (an-i) {$a_{n - i}$}; &
+    \node [elements between]; &
+    \node (an-1) {$a_{n - 1}$}; &
+    \node (an) {$a_n$}; \\
+};
+
+\foreach \i/\r in {n/\false,n-1/\false,n-i/\true}{
+    \draw [subflow ->] (a\i.north) -- +(0, .5)
+        node (c) [subfunction, above] {\texttt{p}};
+    \draw [subflow ->] (c.north) -- +(0, .5) node (r) [subelement, above] {\r};
+}
+
+\draw [<- subflow, iterate ->] (an.north) arc;
+\draw [subflow ->, <- iterate] (an.north) to (an-1.north);
+\draw [subflow ->, <- iterate, dashed] (an-1.north) arc;
+\draw [<- subflow, iterate ->, dashed] (an-i.north) arc;
+
+\draw [flow ->] (an-i.south) -- +(0, -1)
+    node (b) [element, below] {$n - i$};

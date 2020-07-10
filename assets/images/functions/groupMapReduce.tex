@@ -1,0 +1,101 @@
+\tikzset{microfunction/.style={
+    subfunction,
+    scale=0.66,
+}}
+
+\tikzset{microop/.style={
+    subfunction,
+    scale=0.66,
+    /function/north io=2,
+    node contents={\texttt{op}},
+}}
+
+\tikzset{microop right out/.style={
+    microop,
+    /function/south io=0,
+    /function/east io=1,
+}}
+
+\tikzset{microop left out/.style={
+    microop,
+    /function/south io=0,
+    /function/west io=1,
+}}
+
+\matrix (KA1) [subcollection] {
+    \node (a1) {$a_1$}; &
+    \node (a3) {$a_3$}; &
+    \node [elements between=1]; &
+    \node (an) {$a_n$}; \\
+};
+
+\matrix (KB1) [subcollection, below=1 of KA1] {
+    \node (b1) {$b_1$}; &
+    \node (b3) {$b_3$}; &
+    \node [elements between=1]; &
+    \node (bn) {$b_n$}; \\
+};
+
+\foreach \i in {1,3,n}{
+    \node (f) at ($ (a\i)!.5!(b\i) $) [microfunction] {\texttt{f}};
+    \draw [subflow ->] (a\i) -- (f.north io 1);
+    \draw [subflow ->] (f.south io 1) -- (b\i);
+}
+
+\node (op) [microop right out, below=.5 of b1.south east];
+\coordinate (rule) at ($ (op.north)!.5!(b1.south) $);
+\draw [subflow ->] (b1.south) -- (b1.south |- rule) -| (op.north io 1);
+\draw [subflow ->] (b3.south) -- (b3.south |- rule) -| (op.north io 2);
+\draw [subflow] (op.east io 1) -- +(.25, 0) coordinate (x);
+\draw [subflow ->, dashed] (x) -- +(0, -.25);
+
+\node (op) [microop left out, below=.5 of bn.south west];
+\draw [subflow ->] (bn.south) -- (bn.south |- rule) -| (op.north io 2);
+\draw [<- subflow] (op.north io 1) |- (op.north io 1 |- rule) coordinate (x);
+\draw [subflow, dashed] (x) -- +(-.25, 0);
+\draw [subflow] (op.west io 1) -- +(-.25, 0) coordinate (x);
+\draw [subflow ->, dashed] (x) -- +(0, -.25) coordinate (x);
+
+\coordinate (x) at (x -| KB1);
+
+\node (op) [microop, below=.5 of x];
+\draw [<- subflow] (op.north io 1) -- +(0, .25) coordinate (x);
+\draw [subflow, dashed] (x) -- +(-.25, 0);
+\draw [<- subflow] (op.north io 2) -- +(0, .25) coordinate (x);
+\draw [subflow, dashed] (x) -- +(.25, 0);
+\draw [subflow ->] (op.south io 1) -- +(0, -.25)
+    node (r1) [element, below, white] {$b_{k_1}$};
+
+\coordinate (x) at ($ (KB1.west) + (-1, 0) $);
+\coordinate (x) at (x |- r1);
+
+\matrix (B) [collection, left=of x, anchor=north, yshift=.5\masterunit] {
+    \node (k1) {$k_1$}; \\
+    \node (k2) {$k_2$}; \\
+    \node [vertical elements between]; \\
+    \node (km) {$k_m$}; \\
+};
+
+\foreach \i in {1,2,m}{
+    \draw [map ->] (k\i.east) -- (\currentcoordinate -| r1.west)
+        node (r\i) [element, right] {$b_{k_\i}$};
+}
+
+\matrix (A) [collection, above=2 of current bounding box.north] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node (a3) {$a_3$}; &
+    \node [elements between]; &
+    \node (ai) {$a_i$}; &
+    \node [elements between]; &
+    \node (an) {$a_n$}; \\
+};
+
+\foreach \i/\r in {1/1,2/2,3/1,i/m,n/1}{
+    \draw [subflow ->] (a\i.north) -- +(0, .5)
+        node (f) [subfunction, above] {\texttt{k}};
+    \draw [subflow ->] (f.north io 1) -- +(0, .5)
+        node [subelement, above] {$k_\r$};
+}
+
+\node [big arrow, rotate=-90, below=1 of A];

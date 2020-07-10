@@ -1,0 +1,26 @@
+\matrix (A) [collection] {
+    \node (k1) {$k_1$}; \\
+    \node (k2) {$k_2$}; \\
+    \node [vertical elements between]; \\
+    \node (kn) {$k_n$}; \\
+};
+
+\matrix (B) [collection, right=3.5 of A.north east, anchor=north] {
+    \node (l1) {$k_1$}; \\
+    \node (l2) {$k_2$}; \\
+    \node [vertical elements between]; \\
+    \node (ln) {$k_n$}; \\
+    \node (l_) {$k_\_$}; \\
+};
+
+\foreach \i in {1,2,n}{
+    \draw [map ->] (k\i.east) -- +(.5, 0)
+        node [element, right] {$v_\i$} coordinate (v);
+    \draw [map ->] (l\i.east) -- +(.5, 0)
+        node [element, right] {$v_\i$};
+}
+\draw [map ->] (l_.east) -- +(.5, 0)
+    node [element, right] {\texttt{v}};
+
+\coordinate (x) at ($ (v.east)!.5!(B.west) $);
+\node at (A -| x) [big arrow];

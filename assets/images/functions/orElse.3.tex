@@ -1,0 +1,45 @@
+\node (f) [function] {$f$};
+\node (exf) [subexception=MatchError, font=\footnotesize, below=.25 of f.south];
+\coordinate (x) at ($ (exf.north west)!.5!(f.west) $);
+\coordinate (y) at (x |- f.west);
+\coordinate (z) at (exf.north west -| y);
+\draw [throw ->] (f.west) -- (y) -- (z);
+
+\node (g) [function, right=1 of f] {\texttt{g}};
+\node (exg) [subexception=MatchError, font=\footnotesize, below=.25 of g.south];
+\coordinate (x) at ($ (exg.north west)!.5!(g.west) $);
+\coordinate (y) at (x |- g.west);
+\coordinate (z) at (exg.north west -| y);
+\draw [throw ->] (g.west) -- (y) -- (z);
+
+\coordinate (z) at ($ (f)!.5!(g) $);
+\node (h) at (z) [function, minimum width=3.75\masterunit, minimum height=3\masterunit] {};
+
+\coordinate (x) at ($ (h.north west)!.5!(f.north io 1) $);
+\coordinate (y) at ($ (x -| f.north io 1) + (0, .1) $);
+\coordinate (z) at (y -| h.north io 1);
+\draw [<- flow] (f.north io 1) -- (y) -- (z) -- (h.north io 1) -- +(0, .5)
+    node (x1) [element, above] {$x$};
+\draw [flow ->] (f.north io 1) +(0, .375) -| (g.north io 1);
+
+\node (ex) [exception=MatchError, below=.5 of h.south];
+\coordinate (x) at (h.south east |- exg);
+\coordinate (y) at ($ (ex.north)!.5!(h.south) $);
+\draw [throw ->] (exg) -- (x) -- +(.25, 0) |- (y) -- (ex);
+
+\node (f2) [function, above=4 of f] {$f$};
+\draw [<- flow] (f2.north io 1) -- +(0, .5)
+    node [element, above] {$x$};
+\draw [flow ->] (f2.south io 1) -- node [partial] {} +(0, -.5)
+    node (y1) [element, below, yshift=-.3\masterunit, anchor=base] {$y$};
+
+\node (g2) [function, above=4 of g] {\texttt{g}};
+\draw [<- flow] (g2.north io 1) -- +(0, .5)
+    node [element, above] {$x$};
+\draw [flow ->] (g2.south io 1) -- node [partial] {} +(0, -.5);
+\draw [flow ->] (g2.south io 1) -- node [partial] {} +(0, -.5)
+    node (y2) [element, below, yshift=-.3\masterunit, anchor=base] {$y^\prime$};
+
+\coordinate (x) at ($ (y1)!.5!(y2) $);
+\coordinate (y) at ($ (x)!.5!(x1) $);
+\node at (y) [big arrow, rotate=-90];

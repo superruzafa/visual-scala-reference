@@ -1,0 +1,11 @@
+{{ define "title" }}{{ .Title }} - {{ $.Site.Title }}{{ end }}
+{{ define "meta_description" }}{{ i18n "function_description" .Page }}{{ end }}
+{{ define "meta_keywords" }}{{ i18n "function_keywords" .Page }}{{ end }}
+
+
+{{ define "main" }}
+<main class="function">
+    {{ .Content }}
+</main>
+{{ partial "translations.html" . }}
+{{ end }}

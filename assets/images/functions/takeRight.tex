@@ -1,0 +1,22 @@
+\matrix (A) [collection] {
+    \node [elements before]; &
+    \node (an-i) {$a_{n-i}$}; &
+    \node (an-i+1) {$a_{n-i+1}$}; &
+    \node [elements between]; &
+    \node (an-1) {$a_{n-1}$}; &
+    \node (an) {$a_n$}; \\
+};
+
+\matrix (B) [collection, below=2 of A.south east, anchor=north east] {
+    \node (bn-i+1) {$a_{n-i+1}$}; &
+    \node [elements between]; &
+    \node (bn-1) {$a_{n-1}$}; &
+    \node (bn) {$a_n$}; \\
+};
+
+\measure{$i$}{an-i+1.north west}{an.north east}
+
+\braceflow[-.2]{(an-i+1.south west)}{(an.south east)}
+\coordinate (x) at (lastbrace);
+\braceflow[.2]{(bn-i+1.north west)}{(bn.north east)}
+\draw [flow ->, out=270, in=90] (x) to (lastbrace);

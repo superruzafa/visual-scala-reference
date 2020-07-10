@@ -1,0 +1,27 @@
+<header class="header">
+  <div class="wrapper">
+    <div class="container-fluid">
+      <a class="logo" href="{{ $.Site.Home.Permalink }}/">
+        <span>{{ $.Site.Title }}</span>
+      </a>
+      <div class="searchbox">
+        <input id="searchbox-input" class="searchbox__input" autocomplete="false">
+        <ul id="searchbox-results" class="searchbox__results">
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+<template id="search-result">
+  <li class="searchresult">
+    <a class="searchresult__link"></a>
+  </li>
+</template>
+<script>
+    const functions = [
+{{ range $.Site.RegularPages -}}
+        { "name": {{ .Title }}, "url": {{ .RelPermalink }} },
+{{ end }}
+    ];
+  new Search(functions);
+</script>

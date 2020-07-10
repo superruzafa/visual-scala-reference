@@ -1,0 +1,50 @@
+\tikzset{fun/.style={
+    subfunction,
+    inner sep=.1\masterunit,
+    node contents={\texttt{f}},
+    /function/north io=0,
+    /function/south io=0,
+    /function/west io=1,
+    /function/east io=1,
+}}
+
+\tikzset{jump subflow over collection/.pic={
+    \fill [white] circle [radius=.09\masterunit];
+    \draw [subflow, line cap=rect] (-.1\masterunit, 0) arc [start angle=180, end angle=0, radius=.1\masterunit];
+    \draw [collection element line width] (0, -.12) -- +(0, .2);
+}}
+
+
+\matrix (A) [collection] {
+    \node (k1) {$k_1$}; \\
+    \node (k2) {$k_2$}; \\
+    \node [vertical elements between]; \\
+    \node (kn) {$k_n$}; \\
+};
+
+\matrix (B) [collection, right=3 of A, nodes={anchor=base}] {
+    \node (l1) {$k_1$}; \\
+    \node (l2) {$k_2$}; \\
+    \node [vertical elements between]; \\
+    \node (ln) {$k_n$}; \\
+};
+
+\foreach \i in {1,2,n}{
+    \draw [map ->] (k\i.east) ++ (0, -.25) -- +(.5, 0)
+        node (v\i) [element, right] {$v_\i$} coordinate (x);
+    \draw [map ->] (l\i.east) ++ (0, -.25) -- +(.5, 0)
+        node (w\i) [element, right] {$w_\i$};
+    \coordinate (x) at ($ (v\i.east)!.5!(l\i.west) $);
+    \node (f) at ($ (x) + (0, .375) $) [fun];
+    \draw [subflow ->] (v\i) |- (f.west io 1);
+    \draw [subflow ->] (f.east io 1) -| (w\i);
+}
+
+\foreach \i in {1,2,n}{
+    \foreach \j in {west,east}{
+        \path ($ (l\i.north \j) + (0, -.25) $) pic {jump subflow over collection};
+    }
+}
+
+\coordinate (x) at ($ (A)!.5!(B) $);
+\node at (x) [big arrow];

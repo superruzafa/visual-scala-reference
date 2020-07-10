@@ -1,0 +1,88 @@
+\tikzset{op/.style={
+    subfunction,
+    font=\footnotesize,
+    /function/north io=2,
+    /function/north io sep=.2\masterunit,
+}}
+
+\tikzset{seq op/.style={
+    op,
+    node contents={\texttt{seqop}},
+}}
+
+\tikzset{comb op/.style={
+    op,
+    node contents={\texttt{combop}},
+}}
+
+\tikzset{left out/.style={
+    /function/west io=1,
+    /function/south io=0,
+}}
+
+\tikzset{right out/.style={
+    /function/east io=1,
+    /function/south io=0,
+}}
+
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node [elements between]; &
+    \node (ai) {$a_i$}; &
+    \node [elements between]; &
+    \node (an-1) {$a_{n-1}$}; &
+    \node (an) {$a_n$}; \\
+};
+
+\node (s1) [seq op, right out, below=1 of a1.south, anchor=north io 2];
+\draw [<- flow] (s1.north io 1) -- +(0, .5)
+    node [element, above] {\texttt{z}};
+\draw [flow ->] (a1) -- (s1.north io 2);
+
+\node (s2) [seq op, right out, below=2.125 of a2.south, anchor=north io 2];
+\draw [flow ->] (a2) -- (s2.north io 2);
+\draw [flow ->] (s1.east io 1) -| (s2.north io 1);
+\draw [flow] (s2.east io 1) -- +(.25, 0) coordinate (last);
+\draw [flow ->, dashed] (last) -- +(0, -.5);
+
+\node (si) [seq op, left out, below=1 of ai.south, anchor=north io 2];
+\draw [flow ->] (ai) -- (si.north io 2);
+\coordinate (x) at ($ (si.north io 1)!.5!(ai.south) $);
+\coordinate (rule) at (si.north io 1 |- x);
+\draw [<- flow] (si.north io 1) |- (rule);
+\draw [flow, dashed] (rule) -- +(-.25, 0);
+\draw [flow] (si.west io 1) -- +(-.25, 0) coordinate (last);
+\draw [flow ->, dashed] (last) -- +(0, -.5);
+
+\node (sn) [seq op, below=1 of an.south, anchor=north io 2];
+\draw [<- flow] (sn.north io 1) -- +(0, .5)
+    node [element, above] {\texttt{z}};
+\draw [flow ->] (an) -- (sn.north io 2);
+
+\node (sn-1) [seq op, left out, below=2.125 of an-1.south, anchor=north io 1];
+\coordinate (x) at ($ (sn-1.north io 2)!.5!(sn.south io 1) $);
+\coordinate (y) at ($ (x) + (0, .05) $);
+\draw [flow ->] (sn.south io 1)
+    -- (sn.south io 1 |- y)
+    -| (sn-1.north io 2);
+\draw [flow ->] (an-1) -- (sn-1.north io 1);
+\draw [flow] (sn-1.west io 1) -- +(-.25, 0) coordinate (last);
+\draw [flow ->, dashed] (last) -- +(0, -.5);
+
+\node (c3) [comb op, below=5 of A];
+\node (c1) [comb op, right out, above left=.5 and 0 of c3];
+\node (c2) [comb op, left out, above right=.5 and 0 of c3];
+
+\foreach \i in {1,2}{
+    \draw [<- flow] (c\i.north io 1) -- +(0, .5) coordinate (last);
+    \draw [flow, dashed] (last) -- +(-.25, 0);
+    \draw [<- flow] (c\i.north io 2) -- +(0, .5) coordinate (last);
+    \draw [flow, dashed] (last) -- +(.25, 0);
+}
+
+\draw [flow ->] (c1.east io 1) -| (c3.north io 1);
+\draw [flow ->] (c2.west io 1) -| (c3.north io 2);
+
+\draw [flow ->] (c3.south io 1) -- +(0, -.5)
+    node [element, below] {$b$};

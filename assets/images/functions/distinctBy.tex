@@ -1,0 +1,52 @@
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node (a3) {$a_3$}; &
+    \node (eb1) [elements between]; &
+    \node (ai) {$a_i$}; &
+    \node (ai+1) {$a_{i + 1}$}; &
+    \node (eb2) [elements between]; &
+    \node (an) {$a_n$}; \\
+};
+
+\foreach \i/\j in {1/1,2/2,3/1,i/m,i+1/2,n/m} {
+    \draw [subflow ->] (a\i.north) -- +(0, .5)
+        node (f) [subfunction, above] {\texttt{f}};
+    \draw [subflow ->] (f.north) -- +(0, .5)
+        node (k\i) [subelement, above] {$k_\j$};
+}
+
+\newlength\rad
+\setlength\rad{.1\masterunit}
+
+\draw [name path=p1] (k1) -- ++(0, .5) -- (\currentcoordinate -| k3) coordinate (x) -- (k3);
+\draw [solid dashed] (x) -- (\currentcoordinate -| eb1);
+
+\draw [name path=p2] (ki) -- ++(0, .5) -- (\currentcoordinate -| ki+1.east) coordinate (x);
+\draw [solid dashed solid] (x) -- (\currentcoordinate -| kn.west) coordinate (x);
+\draw (x) -| (kn);
+
+\path [name path=p3] (k2) -- ++(0, 1) coordinate (x) -- (\currentcoordinate -| ki+1) -- (ki+1);
+\path [name path=c, name intersections={of={p1 and p3}, by={i}}] (i) circle [radius=\rad];
+\path [name intersections={of=p3 and c, by={c1, c2}}];
+\path [name path=c, name intersections={of={p2 and p3}, by={i}}] (i) circle [radius=\rad];
+\path [name intersections={of=p3 and c, by={c3, c4}}];
+
+\draw (k2) -- (c2) arc [radius=\rad, start angle=270, end angle=90] -- (x)
+    -| (\currentcoordinate -| a3.east) coordinate (x);
+\draw [solid dashed solid] (x) -- (\currentcoordinate -| ki.west) coordinate (x);
+\draw (x) -- (\currentcoordinate -| ki+1) coordinate (x)
+    -- (c3) arc [radius=\rad, start angle=90, end angle=270] -- (ki+1);
+\draw [solid dashed] (x) -- (\currentcoordinate -| eb2);
+
+\matrix [collection, below=2 of A] {
+    \node (b1) {$a_1$}; &
+    \node (b2) {$a_2$}; &
+    \node [elements between]; &
+    \node (bi) {$a_i$}; &
+    \node [elements after]; \\
+};
+
+\foreach \i in {1,2,i} {
+    \draw [flow ->] (a\i.south) -- +(0, -.25) -- ($ (b\i.north) + (0, .25) $) -- (b\i.north);
+}

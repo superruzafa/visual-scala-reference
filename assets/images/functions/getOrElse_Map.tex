@@ -1,0 +1,23 @@
+\matrix (K) [collection] {
+    \node [vertical elements before]; \\
+    \node (k1) {$k_1$}; \\
+    \node (k2) {$k_2$}; \\
+    \node [vertical elements between]; \\
+    \node (ki) {$k_i$}; \\
+    \node [vertical elements after]; \\
+\\ };
+
+\foreach \i/\j in {1/\neq,2/\neq,i/=}{
+    \draw [map ->] (k\i.east) -- +(.5, 0)
+        node [element, right] {$v_\i$};
+    \draw [subflow ->] (k\i.west) -- +(-.5, 0)
+        node [subelement, left] {$k \j k_\i $};
+}
+
+\draw [<- subflow, iterate up] (k1.west) arc;
+\draw [subflow ->, iterate down] (k1.west) to (k2.west);
+\draw [subflow ->, dashed, iterate down] (k2.west) arc;
+\draw [<- subflow, dashed, iterate up] (ki.west) arc;
+
+\draw [flow ->] (ki.west) arc [start angle=135, end angle=180, x radius=1, y radius=3]
+    node [element, below] {$v_i$};

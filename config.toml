@@ -1,0 +1,37 @@
+baseURL = "https://superruzafa.github.io/visual-scala-reference/"
+languageCode = "en"
+title = "Visual Scala Reference"
+disablePathToLower = true
+googleAnalytics = "UA-390889-8"
+
+[languages]
+  [languages.en]
+    contentDir = "content/en"
+    languageName = "English"
+
+  [languages.es]
+    contentDir = "content/es"
+    languageName = "Español"
+
+  [languages.ja]
+    contentDir = "content/ja"
+    languageName = "日本語"
+
+  [languages.pt]
+    contentDir = "content/pt"
+    languageName = "Português"
+
+[permalinks]
+functions = "/:slug"
+
+[markup]
+  [markup.highlight]
+    codeFences = false
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "github"
+    tabWidth = 2

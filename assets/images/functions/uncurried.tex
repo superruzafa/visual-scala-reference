@@ -1,0 +1,42 @@
+\tikzset{g function/.style={
+    function,
+    /function/south io width=.5\masterunit,
+    /function/south io narrow width=.333\masterunit,
+}}
+
+\node (f) [function, /function/north io=4] {$\lambda$};
+\foreach \i/\j in {1/1,2/2,4/n}{
+    \draw [<- flow] (f.north io \i) -- +(0, .5) node [element, above] {$x_\j$};
+}
+\draw [flow ->] (f.south io 1) -- +(0, -.5) node [element, below] {$y$};
+\fill [white] ($ (f.north io 3) + (-.2, -.2) $) rectangle +(.4, .3);
+\draw [flow, dotted] (f.north west -| f.north io 3) ++(-.2, 0) -- +(.4, 0);
+
+\node (g1) [g function, left=3 of f] {\texttt{f}};
+\draw [<- flow] (g1.north io 1) -- +(0, .5) node [element, above] {$x_1$};
+\node (g2) [g function, below=.5 of g1] {$\lambda_2$};
+\node (g3) [function, below=1.25 of g2] {$\lambda_n$};
+
+\node (x) [element, above right=0 and -1.5 of g2.north io 1] {$x_2$};
+\draw [flow ->] (x) -| (g2.north io 1);
+
+\node (x) [element, above right=0 and -1.5 of g3.north io 1] {$x_n$};
+\draw [flow ->] (x) -| (g3.north io 1);
+
+\draw [flow ->] (g3.south io 1) -- +(0, -.5) node [element, below] {$y$};
+
+\begin{scope}[dashed]
+\draw ($ (g1.south io 1) + (-.25, 0) $) -- (g2.north west);
+\draw ($ (g1.south io 1) + (.25, 0) $) -- (g2.north east);
+\coordinate (x) at ($ (g2.south io 1) + (-.25, 0) $);
+\draw (x) -- ($ (x)!.25!(g3.north west) $);
+\draw (g3.north west) -- ($ (g3.north west)!.25!(x) $);
+\coordinate (x) at ($ (g2.south io 1) + (.25, 0) $);
+\draw (x) -- ($ (x)!.25!(g3.north east) $);
+\draw (g3.north east) -- ($ (g3.north east)!.25!(x) $);
+\end{scope}
+
+\coordinate (x) at ($ (f.west)!.5!(g1.east) $);
+\node (u) at (x) [object function] {\texttt{uncurried}};
+\draw [flow ->] (g1.east) -- (u.west);
+\draw [flow ->] (u.east) -- (f.west);

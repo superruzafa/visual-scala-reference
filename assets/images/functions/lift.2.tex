@@ -1,0 +1,30 @@
+\node (f) [function] {$f$};
+\draw [<- flow] (f.north io 1) -- +(0, .5)
+    node [element, above] {$x^\prime$};
+\node (ex) [font=\small, exception=MatchError, below=.5 of f.south io 1];
+
+\coordinate (x) at ($ (f.south io 1)!.5!(ex.north) $);
+\draw [throw ->] (f.west) -- ++(-.25, 0) |- (x) -- (ex);
+
+\tikzset{wrapper/.style={
+    function,
+    minimum height=2.5\masterunit,
+    minimum width=2\masterunit,
+}}
+
+\node (g) [function, right=3 of f] {$f$};
+\node (h) at (g) [wrapper, yshift=-.375\masterunit] {};
+\draw [<- flow] (g.north io 1) -- ($ (h.north io 1) + (0, .5) $)
+    node [element, above] {$x^\prime$};
+\node (ex) [font=\small, exception=MatchError, below=.5 of g.south io 1];
+\draw [flow ->] (ex) -- ($ (h.south io 1) + (0, -.5) $)
+    node [none, below];
+
+\coordinate (y) at ($ (g.west)!.5!(h.west) $);
+\coordinate (x) at (g.west -| y);
+\coordinate (z) at ($ (g.south io 1)!.5!(ex.north) $);
+
+\draw [throw ->] (g.west) -- (x) |- (z) -- (ex);
+
+\coordinate (x) at ($ (f.east)!.5!(h.west) $);
+\node at (f.east -| x) [big arrow];

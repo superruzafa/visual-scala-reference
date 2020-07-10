@@ -1,0 +1,20 @@
+{{ define "main" }}
+
+<main>
+    <h1>Contributors</h1>
+
+    <ul>
+{{ range $.Site.Data.contributors }}
+        <li>
+            <strong><a href="https://github.com/{{ .github_username }}">{{ .name }}</a></strong>
+            <ul>
+    {{ range .contributions }}
+                <li>{{ . }}</li>
+    {{ end }}
+            </ul>
+        </li>
+{{ end }}
+    </ul>
+</main>
+
+{{ end }}

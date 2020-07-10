@@ -1,0 +1,21 @@
+\matrix (A) [collection] {
+    \node (a1) {$a_1$}; &
+    \node (a2) {$a_2$}; &
+    \node [elements between]; &
+    \node (an) {$a_n$}; \\
+};
+
+\foreach \i in {1,2,n}{
+    \draw [subflow ->] (a\i.north) -- +(0, .5)
+        node (p) [subfunction, above] {\texttt{p}};
+    \draw [subflow ->] (p.north io 1) -- +(0, .5)
+        node [subelement, above] {\false};
+}
+
+\draw [<- subflow] (a1.north) arc [<- iterate];
+\draw [subflow ->, iterate ->] (a1.north) to (a2.north);
+\draw [subflow ->, iterate ->, dashed] (a2.north) arc;
+\draw [<- subflow, <- iterate, dashed] (an.north) arc;
+
+\node (b) [element, below right=1 and 1 of an] {-1};
+\draw [flow ->] (an.north) .. controls +(1.1, 1.1) and +(0, 1) .. (b.north);

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="{{ .Language }}">
+    <head>
+        {{ block "meta" . }}
+        <title>{{ block "title" . }}{{ .Title }}{{ end }}</title>
+        <meta name="description" content="{{ block "meta_description" . }}{{ end }}">
+        <meta name="keywords" content="{{ block "meta_keywords" . }}{{ end }}">
+        {{ end }}
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#dc322f">
+        <meta property="og:title" content="{{ .Title }}">
+        <meta property="og:site_name" content="{{ $.Site.Title }}">
+        <meta property="og:url" content="{{ .Permalink }}">
+        <meta name="robots" content="all">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        {{ $main := resources.Get "scss/main.scss" }}
+        {{ $style := $main | resources.ToCSS }}
+        <link rel="stylesheet" href="{{ $style.Permalink }}">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="{{ $.Site.BaseURL }}/scripts/search.js"></script>
+
+        {{ partial "ga.html" . }}
+
+        <link rel="shortcut icon" href="{{ $.Site.BaseURL }}/images/scala-logo-16x16.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="{{ $.Site.BaseURL }}/images/scala-logo-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="{{ $.Site.BaseURL }}/images/scala-logo-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="{{ $.Site.BaseURL }}/images/scala-logo-144x144.png" type="image/png" />
+        
+    </head>
+    <body>
+{{ partial "header.html" . }}
+        <div class="wrapper">
+            <div class="container-fluid">
+{{ block "main" . }}{{ .Content }}{{ end }}
+            </div>
+        </div>
+{{ partial "footer.html" . }}
+    </body>
+</html>

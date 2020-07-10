@@ -1,0 +1,24 @@
+\matrix (B) [collection] {
+    \node [elements before]; &
+    \node (bi-1) {$b_{i - 1}$}; &
+    \node (bi) {$a_1$}; &
+    \node [elements between]; &
+    \node (bi+n-1) {$a_n$}; &
+    \node (bi+n) {$b_{i + n}$}; &
+    \node [elements after]; \\
+};
+
+\matrix (A) [collection, above=2 of bi.north west, anchor=south west] {
+    \node (a1) {$a_1$}; &
+    \node [elements between]; &
+    \node (an) {$a_n$}; \\
+};
+
+\braceflow[-.2]{(a1.south west)}{(an.south east)}
+\coordinate (x) at (lastbrace);
+\braceflow[.2]{(bi.north west)}{(bi+n-1.north east)}
+\draw [flow ->] (x) -- (lastbrace);
+
+\measure[-.5]{$n$}{bi.south west}{bi+n-1.south east}
+\draw [flow ->] (last measure) -- +(0, -1)
+    node [element, below] {$n$};

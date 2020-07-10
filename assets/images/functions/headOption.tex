@@ -1,0 +1,8 @@
+\matrix [collection] {
+    \node (a1) {$a_1$}; &
+    \node {$a_2$}; &
+    \node [elements after]; \\
+};
+
+\draw [flow ->] (a1.south) -- +(0, -1)
+    node [some, below] {$a_1$};
