@@ -69,7 +69,7 @@
 - name: condOpt
   signature: |
     object PartialFunction {
-      def condOpt[X, Y](pf: PartialFunction[X, Y]): Option[Y]
+      def condOpt[X, Y](x: X)(pf: PartialFunction[X, Y]): Option[Y]
     }
 
 - name: const
