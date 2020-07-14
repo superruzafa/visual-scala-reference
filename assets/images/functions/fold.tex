@@ -52,6 +52,8 @@
 \draw [flow ->] (an) -- (fn.north io 2);
 \draw [<- flow] (fn.north io 1) -- +(0, .5) coordinate (last);
 \draw [flow, dashed] (last) -- +(-.25, 0);
+\draw [flow] (fn.west io 1) -- +(-.25, 0) coordinate (last);
+\draw [flow ->, dashed] (last) -- +(0, -.5);
 
 \node (f) [ops, below=4 of A] {\texttt{op}};
 \draw [<- flow] (f.north io 1) -- +(0, .5) coordinate (last);
