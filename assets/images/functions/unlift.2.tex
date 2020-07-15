@@ -1,6 +1,6 @@
 \node (f) [function] {\texttt{f}};
 \draw [<- flow] (f.north io 1) -- +(0, .5) node [element, above] {$x^\prime$};
-\draw [flow ->] (f.south io 1) -- +(0, -.5) node [some, below] {$y$};
+\draw [flow ->] (f.south io 1) -- +(0, -.5) node [none, below];
 
 \tikzset{wrapper/.style={
     function,
