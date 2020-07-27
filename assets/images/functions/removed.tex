@@ -1,0 +1,38 @@
+\matrix (A) [collection] {
+    \node (k1) {$k_1$}; \\
+    \node [vertical elements between]; \\
+    \node (ki-1) {$k_{i - 1}$}; \\
+    \node (ki) {$k_i\!\!=\!\!\texttt{k}$}; \\
+    \node (ki+1) {$k_{i + 1}$}; \\
+    \node [vertical elements between]; \\
+    \node (kn) {$k_n$}; \\
+};
+
+\foreach \i in {1,i-1,i,i+1,n}{
+    \draw [map ->] (k\i.east) -- +(.5, 0)
+        node [element, right] {$v_{\i}$};
+}
+
+\matrix (B) [collection, right=4 of A.east, anchor=center] {
+    \node (l1) {$k_1$}; \\
+    \node [vertical elements between]; \\
+    \node (li-1) {$k_{i - 1}$}; \\
+    \node (li+1) {$k_{i + 1}$}; \\
+    \node [vertical elements between]; \\
+    \node (ln) {$k_n$}; \\
+};
+
+\foreach \i in {1,i-1,i+1,n}{
+    \draw [map ->] (l\i.east) -- +(.5, 0)
+        node [element, right] {$v_{\i}$};
+}
+
+\braceflow[1.2]{(k1.north east)}{(ki-1.south east)}
+\coordinate (x) at (lastbrace_v);
+\braceflow[-.2]{(l1.north west)}{($ (li-1.south west) + (0, \pgflinewidth) $)}
+\draw [flow ->, out=0, in=180] (x) to (lastbrace_v);
+
+\braceflow[1.2]{(ki+1.north east)}{(kn.south east)}
+\coordinate (x) at (lastbrace_v);
+\braceflow[-.2]{($ (li+1.north west) + (0, -\pgflinewidth) $)}{(ln.south west)}
+\draw [flow ->, out=0, in=180] (x) to (lastbrace_v);

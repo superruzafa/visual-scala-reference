@@ -441,9 +441,12 @@
     \draw [brace flow=#1] #2 -- #3;
     \ifdim #1pt<0pt
         \coordinate (lastbrace) at ($ #2!.5!#3 + (0, -.2) + (0, #1) $);
+        \coordinate (lastbrace_v) at ($ #3!.5!#2 + (-.2, 0) + (#1, 0) $);
     \else
         \coordinate (lastbrace) at ($ #2!.5!#3 + (0, .2) + (0, #1) $);
+        \coordinate (lastbrace_v) at ($ #2!.5!#3 + (.2, 0) + (#1, 0) $);
     \fi
+    \coordinate (lastbrace_h) at (lastbrace);
 }
 
 \tikzset{measure width/.style={

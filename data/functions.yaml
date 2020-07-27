@@ -613,6 +613,12 @@
       def reduceRightOption[B :> A](f: (A, B) => B): Option[B]
     }
 
+- name: removed
+  signature: |
+    trait Map[K, V] {
+      def removed(k: K): Map[K, V]
+    }
+
 - name: reverse
   signature: |
     trait Collection[A] {
