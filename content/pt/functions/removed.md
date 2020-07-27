@@ -1,12 +1,11 @@
 ---
 title: removed
-untranslated: true
 ---
 
 # `removed`
 
 {{< signature removed >}}
 
-`removed` creates a new `Map` by copying all the elements from this one but omitting the element with key `k`.
+`removed` cria um novo `Map` copiando todos os elemento dele mas omitindo o elemento com a chave `k`.
 
 {{< figure src="images/functions/removed.svg" >}}
