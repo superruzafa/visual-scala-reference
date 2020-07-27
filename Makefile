@@ -24,4 +24,11 @@ resources/_gen/images/functions/%.tex: assets/images/functions/%.tex
 		$< \
 		assets/images/functions/_footer.tex > $@
 
+.PHONY: watch
+watch:
+	while true; do \
+		inotifywait -qr -e modify -e create -e delete -e move assets/images/functions; \
+		make; \
+	done
+
 .SECONDARY: $(TEXFILES) $(PDFFILES)
