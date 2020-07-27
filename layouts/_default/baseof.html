@@ -36,6 +36,9 @@
 {{ partial "header.html" . }}
         <div class="wrapper">
             <div class="container-fluid">
+{{ if .Page.Params.untranslated }}
+                <p class="untranslated-message">{{ i18n "untranslated_page" . }}</p>
+{{ end }}
 {{ block "main" . }}{{ .Content }}{{ end }}
             </div>
         </div>

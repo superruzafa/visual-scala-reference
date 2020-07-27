@@ -1,6 +1,12 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
-draft: true
+title: {{ .Name }}
+untranslated: true
 ---
 
+# `{{ .Name }}`
+
+{{< signature {{ .Name }} >}}
+
+`{{ .Name }}` description
+
+{{< figure src="images/functions/{{ .Name }}.svg" >}}

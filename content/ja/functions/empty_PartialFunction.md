@@ -1,7 +1,7 @@
 ---
 title: empty (PartialFunction)
 slug: empty_PartialFunction
-translated: false
+untranslated: true
 ---
 
 # `empty`

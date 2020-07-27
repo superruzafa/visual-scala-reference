@@ -62,6 +62,10 @@
   &.function-initial {
     border-bottom: 1px solid #e0e0e0;
   }
+
+  &--untranslated {
+    font-style: italic;
+  }
 }
 
 .logo {
@@ -169,11 +173,6 @@
   &.current-lang {
     font-weight: 600;
   }
-}
-
-.untranslated-message {
-  font-style: italic;
-  font-size: 0.9rem;
 }
 
 .wrapper {

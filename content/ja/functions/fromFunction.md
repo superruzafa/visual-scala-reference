@@ -1,6 +1,6 @@
 ---
 title: fromFunction
-translated: false
+untranslated: true
 ---
 
 # `fromFunction`

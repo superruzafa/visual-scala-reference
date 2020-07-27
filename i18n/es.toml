@@ -9,3 +9,6 @@ other = "Función {{ .Title }} de Scala. Representación gráfica de la function
 
 [function_keywords]
 other = "función {{ .Title }}, función {{ .Title }} de scala"
+
+[untranslated_page]
+other = "Esta página aún no ha sido traducida al Español."

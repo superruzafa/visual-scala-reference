@@ -1,6 +1,6 @@
 ---
 title: condOpt
-translated: false
+untranslated: true
 ---
 
 # `condOpt`

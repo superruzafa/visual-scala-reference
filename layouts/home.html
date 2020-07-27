@@ -16,7 +16,7 @@
         <li class="function-item function-initial">{{ upper $curr_initial }}</li>
         {{ end}}
         {{ $scratch.Set "last_initial" $curr_initial }}
-    <li class="function-item"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+    <li class="function-item{{ if .Params.untranslated }} function-item--untranslated{{ end }}"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
     {{ end }}
 </ul>
 

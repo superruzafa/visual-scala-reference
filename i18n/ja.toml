@@ -9,3 +9,6 @@ other = "Scala {{ .Title }} 関数. Scala　の {{ .Title }} 関数の図解"
 
 [function_keywords]
 other = "{{ .Title }} 関数, scala {{ .Title }} 関数"
+
+[untranslated_page]
+other = "このページはまだ日本語に翻訳されていません。"
