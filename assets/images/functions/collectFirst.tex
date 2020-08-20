@@ -16,7 +16,7 @@
 \draw [throw ->] (f2.east) -| +(.5, -.75)
     node [exception=MatchError, font=\tiny, below];
 \draw [flow ->] (fi.south io 1) -- node [partial] {} +(0, -.5)
-    node (b) [element, below] {$b$};
+    node (b) [element, below] {$b_i$};
 \draw [flow ->] (b.south) -- +(0, -.5)
     node [some, below] {$b_i$};
 
