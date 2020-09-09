@@ -4,7 +4,7 @@ title: runWith
 
 # `runWith`
 
-{{< signature runWith >}}
+{{< signature >}}
 
 `runWith` crea una función anónima que aplica esta función parcial y luego `g` a un valor de entrada, si esta función parcial está definida para dicho valor, y devuelve `true`.
 

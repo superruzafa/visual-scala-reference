@@ -4,7 +4,7 @@ title: startsWith
 
 # `startsWith`
 
-{{< signature startsWith >}}
+{{< signature >}}
 
 `startsWith` verifique se a coleção `as` é um prefixo desta coleção, retornando `true` nesse caso.
 

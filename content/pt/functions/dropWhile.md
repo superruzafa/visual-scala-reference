@@ -4,7 +4,7 @@ title: dropWhile
 
 # `dropWhile`
 
-{{< signature dropWhile >}}
+{{< signature >}}
 
 `dropWhile` cria uma coleção descartando o prefixo mais longo de elementos que satisfazem o predicado `p`, mantendo o restante.
 

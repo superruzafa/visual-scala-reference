@@ -4,7 +4,7 @@ title: search
 
 # `search`
 
-{{< signature search >}}
+{{< signature >}}
 
 `search` は、このコレクションから要素 `e` に等しい（`==`）最初の要素を探索し、見つかった位置のインデックスを含む `Found` を返します。
 

@@ -4,7 +4,7 @@ title: mkString
 
 # `mkString`
 
-{{< signature mkString >}}
+{{< signature >}}
 
 `mkString` construi uma `String` juntando a representação textual de cada elemento desta coleção.
 

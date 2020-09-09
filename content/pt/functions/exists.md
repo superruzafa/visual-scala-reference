@@ -4,7 +4,7 @@ title: exists
 
 # `exists`
 
-{{< signature exists >}}
+{{< signature >}}
 
 `exists` verifica se pelo menos um elemento nesta coleção satisfaz o predicado `p`, retornando `true` se esse elemento existir.
 

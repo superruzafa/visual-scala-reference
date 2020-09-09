@@ -4,7 +4,7 @@ title: sliding
 
 # `sliding`
 
-{{< signature sliding >}}
+{{< signature >}}
 
 `sliding` computes all the slices of `m` elements starting every `s` elements and returns an `Iterator` to iterate them.
 

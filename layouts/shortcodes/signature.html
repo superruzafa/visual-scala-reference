@@ -1,9 +1,8 @@
-{{ $function := index .Params 0 }}
-
+{{- $function_name := .Page.Title -}}
 {{- range $.Site.Data.functions -}}
-{{- if eq $function .name -}}
+    {{- if eq $function_name .name -}}
 <div class="signature">
-    {{ highlight .signature "scala" ""}}
+        {{- highlight .signature "scala" "" -}}
 </div>
     {{- end -}}
 {{- end -}}

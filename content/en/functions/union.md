@@ -4,7 +4,7 @@ title: union
 
 # `union`
 
-{{< signature union >}}
+{{< signature >}}
 
 `union` computes the multiset union between this and the `as` collection.
 

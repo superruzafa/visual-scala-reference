@@ -4,7 +4,7 @@ title: keys
 
 # `keys`
 
-{{< signature keys >}}
+{{< signature >}}
 
 `keys` creates an `Iterator` to iterate this `Map`'s keys.
 

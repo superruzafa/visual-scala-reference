@@ -7,7 +7,7 @@ slug: isDefinedAt_Map
 
 For the `Seq`'s `isDefinedAt` function go [here](../isDefinedAt_Seq).
 
-{{< signature isDefinedAt_Map >}}
+{{< signature >}}
 
 `isDefinedAt` checks whether this `Map` contains any element with a given key `k`, returning `true` if so.
 

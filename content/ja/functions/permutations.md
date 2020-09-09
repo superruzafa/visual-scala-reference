@@ -4,7 +4,7 @@ title: permutations
 
 # `permutations`
 
-{{< signature permutations >}}
+{{< signature >}}
 
 `permutations` は、このコレクションの要素のありえる組み合わせをすべて計算し、それらを列挙する `Iterator` を返します。
 

@@ -5,7 +5,7 @@ untranslated: true
 
 # `condOpt`
 
-{{< signature condOpt >}}
+{{< signature >}}
 
 `condOpt` accepts the value `x` and creates an anonymous partial function that in
 turn accepts the partial function `pf`, applies it to `x` and returns a `Some`

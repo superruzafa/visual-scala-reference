@@ -4,7 +4,7 @@ title: nonEmpty
 
 # `nonEmpty`
 
-{{< signature nonEmpty >}}
+{{< signature >}}
 
 `nonEmpty` は、このコレクションに<strong>1つでも</strong>要素が含まれていれば `true` を返します。
 

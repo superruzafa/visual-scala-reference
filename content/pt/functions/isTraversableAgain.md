@@ -4,7 +4,7 @@ title: isTraversableAgain
 
 # `isTraversableAgain`
 
-{{< signature isTraversableAgain >}}
+{{< signature >}}
 
 `isTraversableAgain` verifica se esta coleção pode ser percorrida repetidamente a partir do
 `start` e retorna `true` nesse caso.

@@ -4,7 +4,7 @@ title: lift
 
 # `lift`
 
-{{< signature lift >}}
+{{< signature >}}
 
 `lift` cria uma função anônima que agrupa com `Some` o valor retornado por essa função parcial, se definido para o valor de entrada especificado.
 

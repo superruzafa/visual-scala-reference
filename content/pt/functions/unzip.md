@@ -4,7 +4,7 @@ title: unzip
 
 # `unzip`
 
-{{< signature unzip >}}
+{{< signature >}}
 
 `unzip` cria uma `Tuple2` com duas coleções: a primeira contendo o primeiro componente de cada par de elementos e a segunda contendo o restante.
 

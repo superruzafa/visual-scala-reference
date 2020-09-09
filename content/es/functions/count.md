@@ -4,7 +4,7 @@ title: count
 
 # `count`
 
-{{< signature count >}}
+{{< signature >}}
 
 `count` determina cuántos elementos de esta colección satisfacen el predicado `p`.
 

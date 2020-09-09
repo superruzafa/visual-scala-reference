@@ -4,7 +4,7 @@ title: indexOfSlice
 
 # `indexOfSlice`
 
-{{< signature indexOfSlice >}}
+{{< signature >}}
 
 `indexOfSlice` returns the index of the first element where the collection `as` can be found as a slice.
 

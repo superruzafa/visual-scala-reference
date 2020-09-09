@@ -4,7 +4,7 @@ title: compose
 
 # `compose`
 
-{{< signature compose >}}
+{{< signature >}}
 
 `compose` crea una función anónima que acepta un valor y devuelve el resultado de aplicar la función `g` primero y luego esta función a dicho valor.
 

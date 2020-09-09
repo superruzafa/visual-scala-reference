@@ -4,7 +4,7 @@ title: union
 
 # `union`
 
-{{< signature union >}}
+{{< signature >}}
 
 `union` computa la unión multiconjunto entre esta colección y la colección `as`.
 

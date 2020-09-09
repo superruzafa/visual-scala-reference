@@ -4,7 +4,7 @@ title: zipWithIndex
 
 # `zipWithIndex`
 
-{{< signature zipWithIndex >}}
+{{< signature >}}
 
 `zipWithIndex` は、各要素とそのインデックスをペアにしたコレクションを作成します。
 

@@ -4,7 +4,7 @@ title: lift
 
 # `lift`
 
-{{< signature lift >}}
+{{< signature >}}
 
 `lift` crea una función anónima que envuelve con `Some` el valor devuelto por esta función parcial si está definida para el valor de entrada dado.
 

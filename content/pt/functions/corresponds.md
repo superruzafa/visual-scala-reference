@@ -4,7 +4,7 @@ title: corresponds
 
 # `corresponds`
 
-{{< signature corresponds >}}
+{{< signature >}}
 
 `corresponds` verifica se o predicado `p` é satisfeito para cada par de elementos que eles ocupam
 a mesma posição nesta e na coleção `bs`, retornando `true` nesse caso.

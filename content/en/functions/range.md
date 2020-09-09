@@ -4,7 +4,7 @@ title: range
 
 # `range`
 
-{{< signature range >}}
+{{< signature >}}
 
 `range` creates a collection using as elements the sequence of values that starts with `start` and stops before reaching `end`.
 

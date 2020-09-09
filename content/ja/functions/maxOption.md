@@ -4,7 +4,7 @@ title: maxOption
 
 # `maxOption`
 
-{{< signature maxOption >}}
+{{< signature >}}
 
 `maxOption` は、このコレクションの最大の値を `Some` に包んで返します。
 

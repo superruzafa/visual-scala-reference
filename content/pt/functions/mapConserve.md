@@ -4,7 +4,7 @@ title: mapConserve
 
 # `mapConserve`
 
-{{< signature mapConserve >}}
+{{< signature >}}
 
 `mapConserve` aplica a função `f` a cada elemento da `List` e o
 retorna intacto se cada elemento transformado for igual

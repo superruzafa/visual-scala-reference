@@ -4,7 +4,7 @@ title: partition
 
 # `partition`
 
-{{< signature partition >}}
+{{< signature >}}
 
 `partition` crea dos colecciones: una conteniendo aquellos elementos que satisfacen el predicado `p` y aquellos que no, y las devuelve en una `Tuple2`.
 

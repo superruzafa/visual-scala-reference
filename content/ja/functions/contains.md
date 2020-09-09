@@ -4,7 +4,7 @@ title: contains
 
 # `contains`
 
-{{< signature contains >}}
+{{< signature >}}
 
 `contains` は、与えられた値 `g` と等しい（`==`）要素がこのコレクションに少なくとも1つあるかを調べ、もしそうであれば `true` を返します。
 

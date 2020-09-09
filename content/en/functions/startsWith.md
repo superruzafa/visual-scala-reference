@@ -4,7 +4,7 @@ title: startsWith
 
 # `startsWith`
 
-{{< signature startsWith >}}
+{{< signature >}}
 
 `startsWith` checks whether the collection `as` is a prefix of this collection, returning `true` if so.
 

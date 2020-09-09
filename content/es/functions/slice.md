@@ -4,7 +4,7 @@ title: slice
 
 # `slice`
 
-{{< signature slice >}}
+{{< signature >}}
 
 `slice` crea una colección con la secuencia de elementos comprendida entre el índice `i` hasta el índice `j`.
 

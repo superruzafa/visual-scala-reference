@@ -4,7 +4,7 @@ title: sortBy
 
 # `sortBy`
 
-{{< signature sortBy >}}
+{{< signature >}}
 
 `sortBy` crea una colección con los elementos ordenados según los resultados emitidos por `f` tras ser aplicada a cada elemento.
 

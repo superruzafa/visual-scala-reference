@@ -4,7 +4,7 @@ title: orElse
 
 # `orElse`
 
-{{< signature orElse >}}
+{{< signature >}}
 
 `orElse` crea una función parcial anónima que devuelve el valor devuelto por esta función parcial.
 

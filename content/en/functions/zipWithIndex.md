@@ -4,7 +4,7 @@ title: zipWithIndex
 
 # `zipWithIndex`
 
-{{< signature zipWithIndex >}}
+{{< signature >}}
 
 `zipWithIndex` creates a collection by pairing each element with its own index.
 

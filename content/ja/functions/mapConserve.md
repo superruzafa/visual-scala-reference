@@ -4,7 +4,7 @@ title: mapConserve
 
 # `mapConserve`
 
-{{< signature mapConserve >}}
+{{< signature >}}
 
 `mapConserve` は、関数 `f` をこの `List` の各要素に適用し、もし変換されたすべての要素が元の要素と等しい（`eq` で）場合、元のリストをそのまま返します。
 

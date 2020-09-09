@@ -4,7 +4,7 @@ title: forall
 
 # `forall`
 
-{{< signature forall >}}
+{{< signature >}}
 
 `forall` checks whether all elements in this collection satisfy the predicate `p`, returning `false` if `p` doesn't stand for at least one element.
 

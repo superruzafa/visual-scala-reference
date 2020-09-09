@@ -4,7 +4,7 @@ title: size
 
 # `size`
 
-{{< signature size >}}
+{{< signature >}}
 
 `size` returns how many elements this collection has.
 

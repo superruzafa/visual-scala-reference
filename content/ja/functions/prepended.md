@@ -4,7 +4,7 @@ title: prepended
 
 # `prepended`
 
-{{< signature prepended >}}
+{{< signature >}}
 
 `prepended` は、このコレクションの先頭に要素 `b` が加わったコピーを作成します。
 

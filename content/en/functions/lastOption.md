@@ -4,7 +4,7 @@ title: lastOption
 
 # `lastOption`
 
-{{< signature lastOption >}}
+{{< signature >}}
 
 `lastOption` returns the last element of this collection, wrapped with `Some`.
 

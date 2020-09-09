@@ -4,7 +4,7 @@ title: minOption
 
 # `minOption`
 
-{{< signature minOption >}}
+{{< signature >}}
 
 `minOption` は、このコレクションの最小の値を `Some` に包んで返します。
 

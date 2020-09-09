@@ -4,7 +4,7 @@ title: dropRight
 
 # `dropRight`
 
-{{< signature dropRight >}}
+{{< signature >}}
 
 `dropRight` cria uma coleção descartando os últimos elementos `i` dessa coleção, mantendo o restante.
 

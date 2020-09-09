@@ -4,7 +4,7 @@ title: diff
 
 # `diff`
 
-{{< signature diff >}}
+{{< signature >}}
 
 `diff` computes the multiset difference between this and the `as` collection.
 

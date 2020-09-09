@@ -4,7 +4,7 @@ title: collectFirst
 
 # `collectFirst`
 
-{{< signature collectFirst >}}
+{{< signature >}}
 
 `collectFirst` は、このコレクション内で部分関数 `f` が定義された最初の要素に適用し、その結果を `Some` で包んで返します。
 

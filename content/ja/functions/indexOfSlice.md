@@ -4,7 +4,7 @@ title: indexOfSlice
 
 # `indexOfSlice`
 
-{{< signature indexOfSlice >}}
+{{< signature >}}
 
 `indexOfSlice` は、コレクション `as` がこのコレクションの一部として見つかったところの、最初のインデックスを返します。
 

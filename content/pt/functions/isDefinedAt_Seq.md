@@ -7,7 +7,7 @@ slug: isDefinedAt_Seq
 
 Para função `isDefinedAt` de `Map` ver [aqui](../isDefinedAt_Map).
 
-{{< signature isDefinedAt_Seq >}}
+{{< signature >}}
 
 `isDefinedAt` verifica se uma `Seq` contém algum elemento em um dado índice` i`, retornando `true` nesse caso.
 

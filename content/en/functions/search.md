@@ -4,7 +4,7 @@ title: search
 
 # `search`
 
-{{< signature search >}}
+{{< signature >}}
 
 `search` searches the first element in this collection which equals (`==`) the element `e` and returns
 a `Found` containing the index where it was found.

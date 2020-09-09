@@ -4,7 +4,7 @@ title: containsSlice
 
 # `containsSlice`
 
-{{< signature containsSlice >}}
+{{< signature >}}
 
 `containsSlice` checks whether the collection `as` can be found as a slice in this collection, returning `true` if so.
 

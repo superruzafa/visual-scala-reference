@@ -4,7 +4,7 @@ title: sum
 
 # `sum`
 
-{{< signature sum >}}
+{{< signature >}}
 
 `sum` computa la suma de los elementos de esta colección.
 

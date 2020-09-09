@@ -4,7 +4,7 @@ title: contains
 
 # `contains`
 
-{{< signature contains >}}
+{{< signature >}}
 
 `contains` comprueba si un valor dado `a` es igual (`==`) a _al menos_ algún elemento de esta colección, devolviendo `true` en ese caso.
 

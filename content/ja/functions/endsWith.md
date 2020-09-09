@@ -4,7 +4,7 @@ title: endsWith
 
 # `endsWith`
 
-{{< signature endsWith >}}
+{{< signature >}}
 
 `endsWith` は、コレクション `as` がこのコレクションの末尾と一致するかを調べ、もしそうであれば `true` を返します。
 

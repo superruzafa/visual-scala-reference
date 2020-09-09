@@ -4,7 +4,7 @@ title: indices
 
 # `indices`
 
-{{< signature indices >}}
+{{< signature >}}
 
 `indices` creates a `Range` with the indices used by this collection.
 

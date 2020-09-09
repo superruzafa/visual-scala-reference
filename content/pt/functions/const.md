@@ -4,7 +4,7 @@ title: const
 
 # `const`
 
-{{< signature const >}}
+{{< signature >}}
 
 `const` aceita o valor `x` e cria uma função anônima que retorna esse valor `x` contra qualquer valor de entrada `y`.
 

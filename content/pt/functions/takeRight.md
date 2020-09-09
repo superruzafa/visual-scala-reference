@@ -4,7 +4,7 @@ title: takeRight
 
 # `takeRight`
 
-{{< signature takeRight >}}
+{{< signature >}}
 
 `takeRight` crie uma coleção mantendo os últimos elementos `i` desta coleção, descartando o restante.
 

@@ -7,7 +7,7 @@ slug: getOrElse_Option
 
 For the `Map`'s `getOrElse` function go [here](../getOrElse_Map).
 
-{{< signature getOrElse_Option >}}
+{{< signature >}}
 
 `getOrElse` returns the wrapped value when this `Option` is `Some`.
 

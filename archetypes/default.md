@@ -5,7 +5,7 @@ untranslated: true
 
 # `{{ .Name }}`
 
-{{< signature {{ .Name }} >}}
+{{< signature >}}
 
 `{{ .Name }}` description
 

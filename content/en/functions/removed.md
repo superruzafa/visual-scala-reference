@@ -4,7 +4,7 @@ title: removed
 
 # `removed`
 
-{{< signature removed >}}
+{{< signature >}}
 
 `removed` creates a new `Map` by copying all the elements from this one but omitting the element with key `k`.
 

@@ -4,7 +4,7 @@ title: map
 
 # `map`
 
-{{< signature map >}}
+{{< signature >}}
 
 `map` creates a collection using as elements the results obtained from applying the function `f` to each element of this collection.
 

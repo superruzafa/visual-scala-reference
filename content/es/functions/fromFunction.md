@@ -4,7 +4,7 @@ title: fromFunction
 
 # `fromFunction`
 
-{{< signature fromFunction >}}
+{{< signature >}}
 
 `fromFunction` crea una función parcial anónima a partir de una función total.
 

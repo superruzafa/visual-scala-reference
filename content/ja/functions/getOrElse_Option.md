@@ -7,7 +7,7 @@ slug: getOrElse_Option
 
 `Map` の `getOrElse` 関数については、[こちら](../getOrElse_Map)。
 
-{{< signature getOrElse_Option >}}
+{{< signature >}}
 
 `getOrElse` は、この `Option` が `Some` のときは、包まれている値を返します。
 

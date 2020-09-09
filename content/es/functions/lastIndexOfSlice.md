@@ -4,7 +4,7 @@ title: lastIndexOfSlice
 
 # `lastIndexOfSlice`
 
-{{< signature lastIndexOfSlice >}}
+{{< signature >}}
 
 `lastIndexOfSlice` devuelve el índice del último elemento donde la colección `as` puede ser encontrada como subcolección.
 

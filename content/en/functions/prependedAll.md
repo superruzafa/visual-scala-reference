@@ -4,7 +4,7 @@ title: prependedAll
 
 # `prependedAll`
 
-{{< signature prependedAll >}}
+{{< signature >}}
 
 `prependedAll` creates a copy of this collection by adding the collection `bs` at the beginning.
 

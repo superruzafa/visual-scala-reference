@@ -7,7 +7,7 @@ slug: empty_PartialFunction
 
 For the collections' `empty` function go [here](../empty_collections).
 
-{{< signature empty_PartialFunction >}}
+{{< signature >}}
 
 `empty` creates an anonymous partial function which is not defined for any
 value.

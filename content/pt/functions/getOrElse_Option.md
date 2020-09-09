@@ -7,7 +7,7 @@ slug: getOrElse_Option
 
 Para função `getOrElse` de `Map` ir [aquí](../getOrElse_Map).
 
-{{< signature getOrElse_Option >}}
+{{< signature >}}
 
 `getOrElse` retorna o valor agrupado quando esta `Opção` é `Some`.
 

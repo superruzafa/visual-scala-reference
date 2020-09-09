@@ -5,7 +5,7 @@ untranslated: true
 
 # `exists`
 
-{{< signature exists >}}
+{{< signature >}}
 
 `exists` checks whether at least one element in this collection satisfy the predicate `p`, returning `true` if such element exists.
 

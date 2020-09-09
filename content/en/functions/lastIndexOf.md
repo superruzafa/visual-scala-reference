@@ -4,7 +4,7 @@ title: lastIndexOf
 
 # `lastIndexOf`
 
-{{< signature lastIndexOf >}}
+{{< signature >}}
 
 `lastIndexOf` returns the index of the last element that equals (`==`) the value `a`.
 

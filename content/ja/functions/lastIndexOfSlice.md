@@ -4,7 +4,7 @@ title: lastIndexOfSlice
 
 # `lastIndexOfSlice`
 
-{{< signature lastIndexOfSlice >}}
+{{< signature >}}
 
 `lastIndexOfSlice` は、コレクション `as` がこのコレクションの一部として見つかったところの、最後のインデックスを返します。
 

@@ -4,7 +4,7 @@ title: segmentLength
 
 # `segmentLength`
 
-{{< signature segmentLength >}}
+{{< signature >}}
 
 `segmentLength` returns the length of the largest segment of elements starting at `j` that satisfy the predicate `p`.
 

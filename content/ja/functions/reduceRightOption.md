@@ -4,7 +4,7 @@ title: reduceRightOption
 
 # `reduceRightOption`
 
-{{< signature reduceRightOption >}}
+{{< signature >}}
 
 `reduceRightOption` は、各要素と1つ前の `op` の結果に二項演算子 `op` を左から右の順で適用していきます。
 最初に `op` が適用されるときは、最初の2つの要素が入力されます。

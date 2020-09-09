@@ -7,7 +7,7 @@ slug: empty_PartialFunction
 
 Para função `empty` para coleções, veja [aqui](../empty_collections).
 
-{{< signature empty_PartialFunction >}}
+{{< signature >}}
 
 `empty` cria uma função parcial anônima que não está definida para nenhum valor.
 

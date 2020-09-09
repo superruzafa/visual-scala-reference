@@ -4,7 +4,7 @@ title: head
 
 # `head`
 
-{{< signature head >}}
+{{< signature >}}
 
 `head` returns the first element of this collection.
 

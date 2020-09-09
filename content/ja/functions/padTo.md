@@ -4,7 +4,7 @@ title: padTo
 
 # `padTo`
 
-{{< signature padTo >}}
+{{< signature >}}
 
 `padTo` は、長さが `m` になるまで右側に値 `a` を詰め込んだコレクションのコピーを作成します。
 

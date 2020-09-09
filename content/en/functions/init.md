@@ -4,7 +4,7 @@ title: init
 
 # `init`
 
-{{< signature init >}}
+{{< signature >}}
 
 `init` returns all but the last element of this collection.
 

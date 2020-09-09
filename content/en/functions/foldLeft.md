@@ -4,7 +4,7 @@ title: foldLeft
 
 # `foldLeft`
 
-{{< signature foldLeft >}}
+{{< signature >}}
 
 `foldLeft` applies, going from left to right, the binary operator `op` to each element and the previous `op` result.
 The first time `op` is applied it's fed with the initial value `z`.

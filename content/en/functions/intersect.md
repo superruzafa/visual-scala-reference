@@ -4,7 +4,7 @@ title: intersect
 
 # `intersect`
 
-{{< signature intersect >}}
+{{< signature >}}
 
 `intersect` computes the multiset intersection between this and the `as` collection.
 

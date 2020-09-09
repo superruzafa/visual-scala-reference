@@ -4,7 +4,7 @@ title: intersect
 
 # `intersect`
 
-{{< signature intersect >}}
+{{< signature >}}
 
 `intersect` は、このコレクションとコレクション `as` の重複を許す積集合を計算します。
 

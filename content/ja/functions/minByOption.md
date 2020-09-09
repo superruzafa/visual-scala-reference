@@ -4,7 +4,7 @@ title: minByOption
 
 # `minByOption`
 
-{{< signature minByOption >}}
+{{< signature >}}
 
 `minByOption` は、各要素に `f` を適用していき、最小の値を生成する元の要素を `Some` に包んで返します。
 

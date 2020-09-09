@@ -4,7 +4,7 @@ title: sum
 
 # `sum`
 
-{{< signature sum >}}
+{{< signature >}}
 
 `sum` は、このコレクションの要素の和を計算します。
 

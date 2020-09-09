@@ -4,7 +4,7 @@ title: count
 
 # `count`
 
-{{< signature count >}}
+{{< signature >}}
 
 `count` determines how many elements in this collection satisfy the predicate `p`.
 

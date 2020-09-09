@@ -7,7 +7,7 @@ slug: getOrElse_Map
 
 `Option` の `getOrElse` 関数については、[こちら](../getOrElse_Option)。
 
-{{< signature getOrElse_Map >}}
+{{< signature >}}
 
 `getOrElse` は、この `Map` でキー `k` に紐付いた値を返します。
 

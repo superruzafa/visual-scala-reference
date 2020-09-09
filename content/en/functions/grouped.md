@@ -4,7 +4,7 @@ title: grouped
 
 # `grouped`
 
-{{< signature grouped >}}
+{{< signature >}}
 
 `grouped` splits this collection in smaller subcollections of, as much, `m` elements and returns an `Iterator` to iterate them.
 

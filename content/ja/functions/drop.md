@@ -4,7 +4,7 @@ title: drop
 
 # `drop`
 
-{{< signature drop >}}
+{{< signature >}}
 
 `drop` は、このコレクションの先頭 `i` 個を捨てて、残りを保持するコレクションを作成します。
 

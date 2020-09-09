@@ -4,7 +4,7 @@ title: length
 
 # `length`
 
-{{< signature length >}}
+{{< signature >}}
 
 `length` devuelve cuántos elementos tiene esta colección.
 

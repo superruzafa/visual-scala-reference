@@ -4,7 +4,7 @@ title: maxOption
 
 # `maxOption`
 
-{{< signature maxOption >}}
+{{< signature >}}
 
 `maxOption` returns the largest value in this collection wrapped with `Some`.
 

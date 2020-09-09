@@ -4,7 +4,7 @@ title: intersect
 
 # `intersect`
 
-{{< signature intersect >}}
+{{< signature >}}
 
 `intersect` calcula a interseção multiset entre esta coleção e a coleção `as`.
 

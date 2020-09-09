@@ -4,7 +4,7 @@ title: maxByOption
 
 # `maxByOption`
 
-{{< signature maxByOption >}}
+{{< signature >}}
 
 `maxByOption` aplica `f` para cada elemento e retorna o elemento que emitiu o maior valor envolvido com `Some`.
 

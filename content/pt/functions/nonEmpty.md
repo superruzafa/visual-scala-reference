@@ -4,7 +4,7 @@ title: nonEmpty
 
 # `nonEmpty`
 
-{{< signature nonEmpty >}}
+{{< signature >}}
 
 `nonEmpty` retorna `true` quando esta coleção possui _pelo menos_ um elemento.
 

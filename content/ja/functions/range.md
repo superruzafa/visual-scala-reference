@@ -4,7 +4,7 @@ title: range
 
 # `range`
 
-{{< signature range >}}
+{{< signature >}}
 
 `range` は、`start` から始めて `end` に達するまでの値の数列を要素としたコレクションを作成します。
 

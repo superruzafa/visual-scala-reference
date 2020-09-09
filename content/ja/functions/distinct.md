@@ -4,7 +4,7 @@ title: distinct
 
 # `distinct`
 
-{{< signature distinct >}}
+{{< signature >}}
 
 `distinct` は、このコレクションから重複する要素を除いたコピーを作成します。
 

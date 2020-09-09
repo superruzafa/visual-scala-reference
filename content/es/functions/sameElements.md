@@ -4,7 +4,7 @@ title: sameElements
 
 # `sameElements`
 
-{{< signature sameElements >}}
+{{< signature >}}
 
 `sameElements` comprueba si esta colección tiene los mismos elementos en el mismo orden que la colección `as`, y devuelve `true` en ese caso.
 

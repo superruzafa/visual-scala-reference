@@ -4,7 +4,7 @@ title: sameElements
 
 # `sameElements`
 
-{{< signature sameElements >}}
+{{< signature >}}
 
 `sameElements` は、このコレクションが別のコレクション `as` と同じ要素が同じ順序で含んでいるかを調べ、もしそうであれば `true` を返します。
 

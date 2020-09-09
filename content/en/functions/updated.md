@@ -4,7 +4,7 @@ title: updated
 
 # `updated`
 
-{{< signature updated >}}
+{{< signature >}}
 
 `updated` creates a collection by copying all the elements of this collection but changing the `i`-esim element by the value `a`.
 

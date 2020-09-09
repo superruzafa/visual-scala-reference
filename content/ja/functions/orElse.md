@@ -4,7 +4,7 @@ title: orElse
 
 # `orElse`
 
-{{< signature orElse >}}
+{{< signature >}}
 
 `orElse` は、この部分関数の値を返す匿名部分関数を作成します。
 

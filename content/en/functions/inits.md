@@ -4,7 +4,7 @@ title: inits
 
 # `inits`
 
-{{< signature inits >}}
+{{< signature >}}
 
 `inits` computes all possible prefixes of this collection and returns an `Iterator` to iterate them.
 

@@ -4,7 +4,7 @@ title: product
 
 # `product`
 
-{{< signature product >}}
+{{< signature >}}
 
 `product` は、このコレクションの要素の積を計算します。
 

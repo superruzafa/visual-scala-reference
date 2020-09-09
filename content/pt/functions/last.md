@@ -4,7 +4,7 @@ title: last
 
 # `last`
 
-{{< signature last >}}
+{{< signature >}}
 
 `last` retorna o último item nesta coleção.
 

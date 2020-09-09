@@ -4,7 +4,7 @@ title: zipWithIndex
 
 # `zipWithIndex`
 
-{{< signature zipWithIndex >}}
+{{< signature >}}
 
 `zipWithIndex` cria uma coleção combinando cada item ao seu índice.
 

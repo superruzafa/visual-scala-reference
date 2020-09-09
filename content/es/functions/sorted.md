@@ -4,7 +4,7 @@ title: sorted
 
 # `sorted`
 
-{{< signature sorted >}}
+{{< signature >}}
 
 `sorted` crea una colección con los elementos ordenados.
 

@@ -4,7 +4,7 @@ title: orElse
 
 # `orElse`
 
-{{< signature orElse >}}
+{{< signature >}}
 
 `orElse` creates an anonymous partial function that returns the value this partial function does.
 

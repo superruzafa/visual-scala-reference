@@ -4,7 +4,7 @@ title: tail
 
 # `tail`
 
-{{< signature tail >}}
+{{< signature >}}
 
 `tail` returns all but the first element in this collection.
 

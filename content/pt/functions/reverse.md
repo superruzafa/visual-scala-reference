@@ -4,7 +4,7 @@ title: reverse
 
 # `reverse`
 
-{{< signature reverse >}}
+{{< signature >}}
 
 `reverse` cria uma coleção revertendo a ordem dos elementos.
 

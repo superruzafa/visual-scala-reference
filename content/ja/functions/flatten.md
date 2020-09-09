@@ -4,7 +4,7 @@ title: flatten
 
 # `flatten`
 
-{{< signature flatten >}}
+{{< signature >}}
 
 `flatten` は、このコレクションに含まれる下位コレクションの要素を使ってコレクションを作成します。
 

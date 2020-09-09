@@ -4,7 +4,7 @@ title: unlift
 
 # `unlift`
 
-{{< signature unlift >}}
+{{< signature >}}
 
 `unlift` creates an anonymous partial function that returns the value extracted
 from `Some` returned by the function `f`.

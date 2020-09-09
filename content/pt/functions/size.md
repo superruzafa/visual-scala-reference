@@ -4,7 +4,7 @@ title: size
 
 # `size`
 
-{{< signature size >}}
+{{< signature >}}
 
 `size` retorna quantos itens esta coleção possui.
 

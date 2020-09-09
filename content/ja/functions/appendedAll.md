@@ -4,7 +4,7 @@ title: appendedAll
 
 # `appendedAll`
 
-{{< signature appendedAll >}}
+{{< signature >}}
 
 `appendedAll` は、このコレクションの末尾にコレクション `bs` が加わったコピーを作成します。
 

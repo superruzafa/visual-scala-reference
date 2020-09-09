@@ -7,7 +7,7 @@ slug: empty_collections
 
 For the `PartialFunction`'s `empty` function go [here](../empty_PartialFunction).
 
-{{< signature empty_collections >}}
+{{< signature >}}
 
 `empty` creates a collection to contain elements of type `A` but without any element.
 

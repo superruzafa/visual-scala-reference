@@ -7,7 +7,7 @@ slug: empty_collections
 
 `PartialFunction` の `empty` 関数については、[こちら](../empty_PartialFunction)。
 
-{{< signature empty_collections >}}
+{{< signature >}}
 
 `empty` は、型 `A` の要素を含めるコレクションを要素なしで作成します。
 

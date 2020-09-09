@@ -4,7 +4,7 @@ title: reduce
 
 # `reduce`
 
-{{< signature reduce >}}
+{{< signature >}}
 
 `reduce` は、最終的な結果が計算されるまで、二項演算子 `op` をこのコレクションの要素のペアに適用していきます。
 

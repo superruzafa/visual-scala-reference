@@ -4,7 +4,7 @@ title: transpose
 
 # `transpose`
 
-{{< signature transpose >}}
+{{< signature >}}
 
 `transpose` takes this collection of *m* x *n* elements and creates a new
 collection of *n* x *m* elements.

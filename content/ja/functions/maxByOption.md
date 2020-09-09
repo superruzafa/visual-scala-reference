@@ -4,7 +4,7 @@ title: maxByOption
 
 # `maxByOption`
 
-{{< signature maxByOption >}}
+{{< signature >}}
 
 `maxByOption` は、各要素に `f` を適用していき、最大の値を生成する元の要素を `Some` に包んで返します。
 

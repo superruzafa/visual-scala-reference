@@ -4,7 +4,7 @@ title: endsWith
 
 # `endsWith`
 
-{{< signature endsWith >}}
+{{< signature >}}
 
 `endsWith` comprueba si la colección `as` es un sufijo de esta colección, devolviendo `true` en ese caso.
 

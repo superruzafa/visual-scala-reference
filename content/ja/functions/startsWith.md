@@ -4,7 +4,7 @@ title: startsWith
 
 # `startsWith`
 
-{{< signature startsWith >}}
+{{< signature >}}
 
 `startsWith` は、コレクション `as` がこのコレクションの先頭と一致するかを調べ、もしそうであれば `true` を返します。
 

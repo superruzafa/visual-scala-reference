@@ -4,7 +4,7 @@ title: appended
 
 # `appended`
 
-{{< signature appended >}}
+{{< signature >}}
 
 `appended` cria uma cópia dessa coleção adicionando o elemento `b` no final.
 

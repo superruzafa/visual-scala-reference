@@ -7,7 +7,7 @@ slug: getOrElse_Map
 
 Para função `getOrElse` de `Option` ir [aquí](../getOrElse_Option).
 
-{{< signature getOrElse_Map >}}
+{{< signature >}}
 
 `getOrElse` retorna o valor associado à chave `k` neste `Map`.
 

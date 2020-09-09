@@ -4,7 +4,7 @@ title: product
 
 # `product`
 
-{{< signature product >}}
+{{< signature >}}
 
 `product` computa el producto de los elementos de esta colección.
 

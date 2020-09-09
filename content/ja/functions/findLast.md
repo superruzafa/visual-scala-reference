@@ -4,7 +4,7 @@ title: findLast
 
 # `findLast`
 
-{{< signature findLast >}}
+{{< signature >}}
 
 `findLast` は、述語 `p` を満たす最後の要素を `Some` に包んで返します。
 

@@ -4,7 +4,7 @@ title: findLast
 
 # `findLast`
 
-{{< signature findLast >}}
+{{< signature >}}
 
 `findLast` returns the last element that satisfy the predicate `p`, wrapped with `Some`.
 

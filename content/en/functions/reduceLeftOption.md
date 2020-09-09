@@ -4,7 +4,7 @@ title: reduceLeftOption
 
 # `reduceLeftOption`
 
-{{< signature reduceLeftOption >}}
+{{< signature >}}
 
 `reduceLeftOption` applies the binary operator `op` to each element, going from left to right, and the previous `op` result.
 The first time `op` is applied it's fed with the two first elements.

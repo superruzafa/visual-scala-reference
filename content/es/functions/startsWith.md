@@ -4,7 +4,7 @@ title: startsWith
 
 # `startsWith`
 
-{{< signature startsWith >}}
+{{< signature >}}
 
 `startsWith` comprueba si la colección `as` es un prefijo de esta colección, devolviendo `true` en ese caso.
 

@@ -4,7 +4,7 @@ title: min
 
 # `min`
 
-{{< signature min >}}
+{{< signature >}}
 
 `min` devuelve el menor valor de esta colección.
 

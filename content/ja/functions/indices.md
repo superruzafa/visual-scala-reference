@@ -4,7 +4,7 @@ title: indices
 
 # `indices`
 
-{{< signature indices >}}
+{{< signature >}}
 
 `indices` は、このコレクションで使われているインデックスで `Range` を作成します。
 

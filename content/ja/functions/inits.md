@@ -4,7 +4,7 @@ title: inits
 
 # `inits`
 
-{{< signature inits >}}
+{{< signature >}}
 
 `inits` は、このコレクションでありえる接頭辞コレクションをすべて計算し、それらを列挙する `Iterator` を返します。
 

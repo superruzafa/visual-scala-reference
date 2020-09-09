@@ -4,7 +4,7 @@ title: copyToArray
 
 # `copyToArray`
 
-{{< signature copyToArray >}}
+{{< signature >}}
 
 `copyToArray` は、このコレクションの要素を `Array` にコピーし、何個の要素がコピーされたかを返します。
 

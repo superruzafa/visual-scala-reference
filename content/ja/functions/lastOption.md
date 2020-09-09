@@ -4,7 +4,7 @@ title: lastOption
 
 # `lastOption`
 
-{{< signature lastOption >}}
+{{< signature >}}
 
 `lastOption` は、このコレクションの最後の要素を `Some` に包んで返します。
 

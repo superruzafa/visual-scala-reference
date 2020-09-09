@@ -4,7 +4,7 @@ title: containsSlice
 
 # `containsSlice`
 
-{{< signature containsSlice >}}
+{{< signature >}}
 
 `containsSlice`は、与えられたコレクション `as` がこのコレクションの部分であるかを調べ、もしそうであれば `true` を返します。
 

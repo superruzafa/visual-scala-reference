@@ -4,7 +4,7 @@ title: headOption
 
 # `headOption`
 
-{{< signature headOption >}}
+{{< signature >}}
 
 `headOption` は、このコレクションの最初の要素を `Some` に包んで返します。
 

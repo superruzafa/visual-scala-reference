@@ -4,7 +4,7 @@ title: copyToArray
 
 # `copyToArray`
 
-{{< signature copyToArray >}}
+{{< signature >}}
 
 `copyToArray` copies elements from this collection to an `Array` and returns
 how many elements were copied.

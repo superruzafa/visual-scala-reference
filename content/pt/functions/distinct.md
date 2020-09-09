@@ -4,7 +4,7 @@ title: distinct
 
 # `distinct`
 
-{{< signature distinct >}}
+{{< signature >}}
 
 `distinct` cria uma cópia desta coleção sem itens duplicados.
 

@@ -4,7 +4,7 @@ title: prependedAll
 
 # `prependedAll`
 
-{{< signature prependedAll >}}
+{{< signature >}}
 
 `prependedAll` は、このコレクションの先頭にコレクション `bs` が加わったコピーを作成します。
 

@@ -4,7 +4,7 @@ title: withDefaultValue
 
 # `withDefaultValue`
 
-{{< signature withDefaultValue >}}
+{{< signature >}}
 
 `withDefaultValue` creates a `Map` with the same key-value pairs from this `Map` but providing a fixed value for those missing keys.
 

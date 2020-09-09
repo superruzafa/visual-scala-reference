@@ -4,7 +4,7 @@ title: diff
 
 # `diff`
 
-{{< signature diff >}}
+{{< signature >}}
 
 `diff` computa la diferencia multiconjunto entre esta colección y la colección `as`.
 

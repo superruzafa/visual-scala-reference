@@ -4,7 +4,7 @@ title: values
 
 # `values`
 
-{{< signature values >}}
+{{< signature >}}
 
 `values` crea un `Iterator` para iterar los valores de este `Map`.
 

@@ -4,7 +4,7 @@ title: cond
 
 # `cond`
 
-{{< signature cond >}}
+{{< signature >}}
 
 `cond` aceita o valor `x` e cria uma função parcial anônima que por sua vez
 aceita a função parcial `pf`, aplica-a em `x` e retorna o mesmo valor

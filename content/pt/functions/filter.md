@@ -4,7 +4,7 @@ title: filter
 
 # `filter`
 
-{{< signature filter >}}
+{{< signature >}}
 
 `filter` cria uma coleção com os elementos que satisfazem o predicado `p`, descartando o restante.
 

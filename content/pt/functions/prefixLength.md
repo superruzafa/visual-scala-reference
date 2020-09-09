@@ -4,7 +4,7 @@ title: prefixLength
 
 # `prefixLength`
 
-{{< signature prefixLength >}}
+{{< signature >}}
 
 `prefixLength` retorna o comprimento do maior prefixo de elementos que satisfazem o predicado `p`.
 

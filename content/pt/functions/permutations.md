@@ -4,7 +4,7 @@ title: permutations
 
 # `permutations`
 
-{{< signature permutations >}}
+{{< signature >}}
 
 `permutations` calcula todas as permutações possíveis dessa coleção e retorna um `Iterator` para iterar.
 

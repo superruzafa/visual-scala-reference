@@ -4,7 +4,7 @@ title: isEmpty
 
 # `isEmpty`
 
-{{< signature isEmpty >}}
+{{< signature >}}
 
 `isEmpty` checks whether this collection has no elements and returns `false` otherwise.
 

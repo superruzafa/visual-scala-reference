@@ -4,7 +4,7 @@ title: collectFirst
 
 # `collectFirst`
 
-{{< signature collectFirst >}}
+{{< signature >}}
 
 `collectFirst` aplica la función parcial `f` al primer elemento de esta colección para el cual `f` está definida y devuelve su resultado envuelto con `Some`.
 

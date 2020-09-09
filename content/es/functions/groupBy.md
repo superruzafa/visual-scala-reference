@@ -4,7 +4,7 @@ title: groupBy
 
 # `groupBy`
 
-{{< signature groupBy >}}
+{{< signature >}}
 
 `groupBy` crea un `Map` agrupando los elementos bajo la clave que emiten cuando se les es aplicada la función `f`.
 

@@ -4,7 +4,7 @@ title: maxBy
 
 # `maxBy`
 
-{{< signature maxBy >}}
+{{< signature >}}
 
 `maxBy` aplica `f` a cada elemento y devuelve el elemento que emitió el mayor valor.
 

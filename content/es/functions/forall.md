@@ -4,7 +4,7 @@ title: forall
 
 # `forall`
 
-{{< signature forall >}}
+{{< signature >}}
 
 `forall` comprueba si todos los elementos de esta colección satisfacen el predicado `p`, devolviendo `false` si `p` no es satisfecho para al menos un elemento.
 

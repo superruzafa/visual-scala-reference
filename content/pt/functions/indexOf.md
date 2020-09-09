@@ -4,7 +4,7 @@ title: indexOf
 
 # `indexOf`
 
-{{< signature indexOf >}}
+{{< signature >}}
 
 `indexOf` retorna o índice do primeiro elemento que é igual (`==`) ao valor `a`.
 

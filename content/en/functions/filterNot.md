@@ -4,7 +4,7 @@ title: filterNot
 
 # `filterNot`
 
-{{< signature filterNot >}}
+{{< signature >}}
 
 `filterNot` creates a collection with those elements that do not satisfy the predicate `p` and discarding the rest.
 

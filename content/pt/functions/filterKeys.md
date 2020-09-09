@@ -4,7 +4,7 @@ title: filterKeys
 
 # `filterKeys`
 
-{{< signature filterKeys >}}
+{{< signature >}}
 
 `filterKeys` cria um `Map` com esses pares de valores-chave cuja chave satisfaz o predicado `p`, descartando o restante.
 

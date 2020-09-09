@@ -4,7 +4,7 @@ title: reverseMap
 
 # `reverseMap`
 
-{{< signature reverseMap >}}
+{{< signature >}}
 
 `reverseMap` creates a collection by reversing the order and applying a transformation function `f` to each element.
 

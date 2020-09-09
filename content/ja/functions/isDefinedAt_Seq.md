@@ -7,7 +7,7 @@ slug: isDefinedAt_Seq
 
 `Map` の `isDefinedAt` 関数は、[こちら](../isDefinedAt_Map).
 
-{{< signature isDefinedAt_Seq >}}
+{{< signature >}}
 
 `isDefinedAt` は、`Seq` が指定されたインデックス `i` に要素を持っているかどうかを調べ、もしそうであれば `true` を返します。
 

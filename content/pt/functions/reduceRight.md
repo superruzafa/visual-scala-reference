@@ -4,7 +4,7 @@ title: reduceRight
 
 # `reduceRight`
 
-{{< signature reduceRight >}}
+{{< signature >}}
 
 `reduceLeft` aplica, da direita para a esquerda, o operador binário `op` a cada elemento e o resultado da anterior `op`.
 A primeira vez que `op` é aplicada, ela é alimentada com os dois últimos elementos.

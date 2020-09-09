@@ -4,7 +4,7 @@ title: indexWhere
 
 # `indexWhere`
 
-{{< signature indexWhere >}}
+{{< signature >}}
 
 `indexWhere` devuelve el índice del primer elemento que satisface el predicado `p`.
 

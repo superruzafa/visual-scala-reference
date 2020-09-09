@@ -4,7 +4,7 @@ title: unfold
 
 # `unfold`
 
-{{< signature unfold >}}
+{{< signature >}}
 
 `unfold` は、関数 `f` が `Some` に包んだ値を返し続ける限り、その値のペアを使ってコレクションを作成します。
 `f` は現在の状態を受け取り、次の要素と次の状態のペアを計算して返します。

@@ -4,7 +4,7 @@ title: max
 
 # `max`
 
-{{< signature max >}}
+{{< signature >}}
 
 `max` は、このコレクションの最大の値を返します。
 

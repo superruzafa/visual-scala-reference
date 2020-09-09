@@ -4,7 +4,7 @@ title: lastIndexWhere
 
 # `lastIndexWhere`
 
-{{< signature lastIndexWhere >}}
+{{< signature >}}
 
 `lastIndexWhere` は、述語 `p` を満たす最後の要素のインデックスを返します。
 

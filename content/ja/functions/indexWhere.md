@@ -4,7 +4,7 @@ title: indexWhere
 
 # `indexWhere`
 
-{{< signature indexWhere >}}
+{{< signature >}}
 
 `indexWhere` は、述語 `p` を満たす最初の要素のインデックスを返します。
 

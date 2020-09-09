@@ -4,7 +4,7 @@ title: minBy
 
 # `minBy`
 
-{{< signature minBy >}}
+{{< signature >}}
 
 `minBy` applies `f` to each element and returns the element that yields the smallest value.
 

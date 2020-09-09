@@ -4,7 +4,7 @@ title: unfold
 
 # `unfold`
 
-{{< signature unfold >}}
+{{< signature >}}
 
 `unfold` cria uma coleção pegando cada par de valores retornados pela função `f` para obter o item atual e calcular o próximo, enquanto a função os devolve envolvidos com `Some`.
 

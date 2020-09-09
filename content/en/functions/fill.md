@@ -4,7 +4,7 @@ title: fill
 
 # `fill`
 
-{{< signature fill >}}
+{{< signature >}}
 
 `fill` creates an n-dimensional collection containing the result of some computation `a`.
 

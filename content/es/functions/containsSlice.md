@@ -4,7 +4,7 @@ title: containsSlice
 
 # `containsSlice`
 
-{{< signature containsSlice >}}
+{{< signature >}}
 
 `containsSlice` comprueba si la colección `as` se halla como subcolección de esta colección, devolviendo `true` en ese caso.
 

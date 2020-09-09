@@ -4,7 +4,7 @@ title: reduceOption
 
 # `reduceOption`
 
-{{< signature reduceOption >}}
+{{< signature >}}
 
 `reduceOption` applies the binary operator `op` to pairs of elements in this collection until the final result is calculated and returned wrapped with `Some`.
 

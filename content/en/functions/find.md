@@ -4,7 +4,7 @@ title: find
 
 # `find`
 
-{{< signature find >}}
+{{< signature >}}
 
 `find` returns the first element that satisfy the predicate `p`, wrapped with `Some`.
 

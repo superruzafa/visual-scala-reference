@@ -4,7 +4,7 @@ title: max
 
 # `max`
 
-{{< signature max >}}
+{{< signature >}}
 
 `max` returns the largest value in this collection.
 

@@ -4,7 +4,7 @@ title: minByOption
 
 # `minByOption`
 
-{{< signature minByOption >}}
+{{< signature >}}
 
 `minByOption` aplica `f` a cada elemento y devuelve el elemento que emitió el menor valor envuelto con `Some`.
 

@@ -4,7 +4,7 @@ title: take
 
 # `take`
 
-{{< signature take >}}
+{{< signature >}}
 
 `take` cria uma coleção mantendo os primeiros elementos `i` desta coleção, descartando o restante.
 

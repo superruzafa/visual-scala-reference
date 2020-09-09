@@ -4,7 +4,7 @@ title: transpose
 
 # `transpose`
 
-{{< signature transpose >}}
+{{< signature >}}
 
 `transpose` は、**m** x **n** 要素あるこのコレクションから新しい **n** x **m** 要素のコレクションを作成します。
 

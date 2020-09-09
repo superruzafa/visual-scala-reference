@@ -4,7 +4,7 @@ title: drop
 
 # `drop`
 
-{{< signature drop >}}
+{{< signature >}}
 
 `drop` cria uma coleção descartando os primeiros elementos `i` desta coleção, mantendo o restante.
 

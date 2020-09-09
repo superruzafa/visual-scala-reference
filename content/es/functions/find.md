@@ -4,7 +4,7 @@ title: find
 
 # `find`
 
-{{< signature find >}}
+{{< signature >}}
 
 `find` devuelve el primer elemento que satisface el predicado `p`, envuelto con `Some`.
 

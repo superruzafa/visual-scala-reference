@@ -4,7 +4,7 @@ title: tails
 
 # `tails`
 
-{{< signature tails >}}
+{{< signature >}}
 
 `tails` computa todos los posibles sufijos de esta colección y devuelve un `Iterator` para iterarlos.
 

@@ -4,7 +4,7 @@ title: tabulate
 
 # `tabulate`
 
-{{< signature tabulate >}}
+{{< signature >}}
 
 `tabulate` crea una colección n-dimensional conteniendo el resultado de la función `f` aplicada sobre un rango de enteros.
 

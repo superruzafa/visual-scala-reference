@@ -4,7 +4,7 @@ title: tails
 
 # `tails`
 
-{{< signature tails >}}
+{{< signature >}}
 
 `tails` computes all possible suffixes of this collection and returns an `Iterator` to iterate them.
 

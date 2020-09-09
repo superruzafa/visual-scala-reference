@@ -4,7 +4,7 @@ title: reduce
 
 # `reduce`
 
-{{< signature reduce >}}
+{{< signature >}}
 
 `reduce` applies the binary operator `op` to pairs of elements in this collection until the final result is calculated.
 

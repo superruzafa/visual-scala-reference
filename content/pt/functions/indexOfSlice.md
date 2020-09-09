@@ -4,7 +4,7 @@ title: indexOfSlice
 
 # `indexOfSlice`
 
-{{< signature indexOfSlice >}}
+{{< signature >}}
 
 `indexOfSlice` retorna o índice do primeiro elemento em que a coleção `as` pode ser encontrada como uma sub-coleção.
 

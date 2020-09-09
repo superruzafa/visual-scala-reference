@@ -4,7 +4,7 @@ title: minOption
 
 # `minOption`
 
-{{< signature minOption >}}
+{{< signature >}}
 
 `minOption` devuelve el menor valor de esta colección, envuelto con `Some`.
 

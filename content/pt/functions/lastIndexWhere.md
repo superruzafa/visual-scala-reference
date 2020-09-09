@@ -4,7 +4,7 @@ title: lastIndexWhere
 
 # `lastIndexWhere`
 
-{{< signature lastIndexWhere >}}
+{{< signature >}}
 
 `lastIndexWhere` retorna o índice do último elemento que satisfaz o predicado `p`.
 

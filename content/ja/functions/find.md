@@ -4,7 +4,7 @@ title: find
 
 # `find`
 
-{{< signature find >}}
+{{< signature >}}
 
 `find` は、述語 `p` を満たす最初の要素を `Some` に包んで返します。
 

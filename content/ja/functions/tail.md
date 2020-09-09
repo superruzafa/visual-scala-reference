@@ -4,7 +4,7 @@ title: tail
 
 # `tail`
 
-{{< signature tail >}}
+{{< signature >}}
 
 `tail` は、このコレクションの最初の要素以外すべてを返します。
 

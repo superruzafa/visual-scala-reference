@@ -4,7 +4,7 @@ title: prepended
 
 # `prepended`
 
-{{< signature prepended >}}
+{{< signature >}}
 
 `prepended` creates a copy of this collection by adding the element `b` at the
 beginning.

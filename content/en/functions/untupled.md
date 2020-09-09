@@ -4,7 +4,7 @@ title: untupled
 
 # `untupled`
 
-{{< signature untupled >}}
+{{< signature >}}
 
 `untupled` creates an equivalent anonymous function that accepts _n_ parameters
 corresponding to each component of the n-tuple accepted by the function `f` as a

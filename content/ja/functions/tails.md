@@ -4,7 +4,7 @@ title: tails
 
 # `tails`
 
-{{< signature tails >}}
+{{< signature >}}
 
 `tails` は、このコレクションでありえる接尾辞コレクションをすべて計算し、それらを列挙する `Iterator` を返します。
 
