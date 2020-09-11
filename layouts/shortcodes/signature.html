@@ -1,5 +1,5 @@
-{{- $function_name := .Page.Title -}}
-{{- range $.Site.Data.functions -}}
+{{- $function_name := default .Page.Title .Page.Params.slug -}}
+{{- range $.Site.Data.signatures -}}
     {{- if eq $function_name .name -}}
 <div class="signature">
         {{- highlight .signature "scala" "" -}}
