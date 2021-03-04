@@ -648,13 +648,13 @@
 - name: scanLeft
   signature: |
     trait Collection[A] {
-      def scanLeft[B](z: B)(op: (B, A) => B)
+      def scanLeft[B](z: B)(op: (B, A) => B): Collection[B]
     }
 
 - name: scanRight
   signature: |
     trait Collection[A] {
-      def scanRight[B](z: B)(op: (A, B) => B)
+      def scanRight[B](z: B)(op: (A, B) => B): Collection[B]
     }
 
 - name: search
